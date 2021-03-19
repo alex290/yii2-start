@@ -98,6 +98,7 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
+    /*
     public function actionAddUser()
 	{
         $user = new \app\models\User();
@@ -109,4 +110,37 @@ class SiteController extends Controller
         $user->save();
         return 'ОК';
 	}
+    */
+
+    public function actionRbac()
+    {
+        $auth = Yii::$app->authManager;
+
+        // добавляем разрешение "userPermission"
+        $userPermission = $auth->createPermission('userPermission');
+        $userPermission->description = 'Разрешение пользователя';
+        $auth->add($userPermission);
+
+        // добавляем разрешение "adminPermission"
+        $adminPermission = $auth->createPermission('adminPermission');
+        $adminPermission->description = 'Разрешение администратора';
+        $auth->add($adminPermission);
+
+        // добавляем роль "user" и даём роли разрешение "userPermission"
+        $user = $auth->createRole('user');
+        $user->description = 'Пользователь';
+        $auth->add($user);
+        $auth->addChild($user, $userPermission);
+
+        // добавляем роль "admin" и даём роли разрешение "adminPermission"
+        // а также все разрешения роли "user"
+        $admin = $auth->createRole('admin');
+        $auth->add($admin);
+        $auth->addChild($admin, $adminPermission);
+        $auth->addChild($admin, $user);
+
+        // Назначение ролей пользователям. 1 и 2 это IDs возвращаемые IdentityInterface::getId()
+        // обычно реализуемый в модели User.
+        $auth->assign($admin, 1);
+    }
 }
