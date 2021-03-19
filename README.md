@@ -1,6 +1,7 @@
 INSTALLATION
 ------------
 
+    composer update
 
     php yii migrate
     
@@ -17,3 +18,14 @@ INSTALLATION
     public function actionAddUser()
 
 и старт  http://ваш_домен/site/add-user
+
+Добавить права  и роли (RBAC)
+------------
+
+раскоментировать 
+
+в SiteController.php
+
+    public function actionRbac()
+
+и старт  http://ваш_домен/site/rbac
