@@ -1,6 +1,8 @@
 INSTALLATION
 ------------
 
+    git clone https://github.com/alex290/yii2-start.git ./
+
     composer update
 
     php yii migrate
