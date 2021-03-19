@@ -4,8 +4,52 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9cd87f007dcd9d8cf647fb718b0384f8",
+    "content-hash": "b92011af0db89ccb012a0569d4dbc8f6",
     "packages": [
+        {
+            "name": "alex290/yii2-admin",
+            "version": "2.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alex290/yii2-admin.git",
+                "reference": "3295d1b8ad479f1a96e7dcd67c24e5e7a2c64f5b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alex290/yii2-admin/zipball/3295d1b8ad479f1a96e7dcd67c24e5e7a2c64f5b",
+                "reference": "3295d1b8ad479f1a96e7dcd67c24e5e7a2c64f5b",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "~2.0.0"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "alex290\\admin\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex WebGoal",
+                    "email": "alexmar12@yandex.ru"
+                }
+            ],
+            "description": "Yii2 Admin тема",
+            "keywords": [
+                "extension",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/alex290/yii2-admin/issues",
+                "source": "https://github.com/alex290/yii2-admin/tree/2.0.6"
+            },
+            "time": "2020-12-13T16:01:38+00:00"
+        },
         {
             "name": "bower-asset/bootstrap",
             "version": "v3.4.1",
