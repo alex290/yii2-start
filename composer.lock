@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b92011af0db89ccb012a0569d4dbc8f6",
+    "content-hash": "606d823506231d7f8a30a791f33aa838",
     "packages": [
         {
             "name": "alex290/yii2-admin",
@@ -49,6 +49,94 @@
                 "source": "https://github.com/alex290/yii2-admin/tree/2.0.6"
             },
             "time": "2020-12-13T16:01:38+00:00"
+        },
+        {
+            "name": "alex290/yii2-treemanager",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alex290/yii2-treemanager.git",
+                "reference": "a934d5f0cda50fa834e1c801ef61175186347cdc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alex290/yii2-treemanager/zipball/a934d5f0cda50fa834e1c801ef61175186347cdc",
+                "reference": "a934d5f0cda50fa834e1c801ef61175186347cdc",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "~2.0.0"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "alex290\\treemanager\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "WebGoal",
+                    "email": "alex@webgoal.ru"
+                }
+            ],
+            "description": "Yii2 Tree manager category",
+            "keywords": [
+                "extension",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/alex290/yii2-treemanager/issues",
+                "source": "https://github.com/alex290/yii2-treemanager/tree/0.2.0"
+            },
+            "time": "2020-03-16T13:28:13+00:00"
+        },
+        {
+            "name": "alex290/yii2-treeselect",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alex290/yii2-treeselect.git",
+                "reference": "5ba014ad1f537bcbe964bec9cdf8a94f7ddfdd13"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alex290/yii2-treeselect/zipball/5ba014ad1f537bcbe964bec9cdf8a94f7ddfdd13",
+                "reference": "5ba014ad1f537bcbe964bec9cdf8a94f7ddfdd13",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "alex290\\treeselect\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Alexandr Martynov",
+                    "email": "alex@webgoal.ru"
+                }
+            ],
+            "description": "Select Tree Map",
+            "keywords": [
+                "extension",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/alex290/yii2-treeselect/issues",
+                "source": "https://github.com/alex290/yii2-treeselect/tree/master"
+            },
+            "time": "2018-01-03T09:40:08+00:00"
         },
         {
             "name": "bower-asset/bootstrap",
