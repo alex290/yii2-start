@@ -4,8 +4,61 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "606d823506231d7f8a30a791f33aa838",
+    "content-hash": "86a8d346a6c8d8a9d2c73f10ab48b4e2",
     "packages": [
+        {
+            "name": "abeautifulsite/simpleimage",
+            "version": "2.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/claviska/SimpleImage.git",
+                "reference": "54a99d302355d22ee00d9842a8dbe101a52203d8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/claviska/SimpleImage/zipball/54a99d302355d22ee00d9842a8dbe101a52203d8",
+                "reference": "54a99d302355d22ee00d9842a8dbe101a52203d8",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gd": "*",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "abeautifulsite": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nazar Mokrynskyi",
+                    "email": "nazar@mokrynskyi.com",
+                    "homepage": "http://cleverstyle.org/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Cory LaViska",
+                    "homepage": "http://www.abeautifulsite.net/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A PHP class that simplifies working with images",
+            "support": {
+                "issues": "https://github.com/claviska/SimpleImage/issues",
+                "source": "https://github.com/claviska/SimpleImage/tree/master"
+            },
+            "time": "2017-01-06T16:38:10+00:00"
+        },
         {
             "name": "alex290/yii2-admin",
             "version": "2.0.6",
@@ -49,6 +102,68 @@
                 "source": "https://github.com/alex290/yii2-admin/tree/2.0.6"
             },
             "time": "2020-12-13T16:01:38+00:00"
+        },
+        {
+            "name": "alex290/yii2-images",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alex290/yii2-images.git",
+                "reference": "10151305a98f40ac04f43726d7b7a17bb3ba8e24"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alex290/yii2-images/zipball/10151305a98f40ac04f43726d7b7a17bb3ba8e24",
+                "reference": "10151305a98f40ac04f43726d7b7a17bb3ba8e24",
+                "shasum": ""
+            },
+            "require": {
+                "abeautifulsite/simpleimage": "2.7",
+                "yiisoft/yii2": "*"
+            },
+            "require-dev": {
+                "codeception/specify": "*",
+                "codeception/verify": "*",
+                "mikey179/vfsstream": "1.6.*",
+                "yiisoft/yii2-codeception": "*"
+            },
+            "suggest": {
+                "ext-imagick": ""
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "alex290\\yii2images\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Costa alex290",
+                    "email": "zetogo@gmail.com"
+                },
+                {
+                    "name": "Rob Rhyne",
+                    "email": "rob.rhyne@gmail.com"
+                }
+            ],
+            "description": "yii2 images module for storing images",
+            "keywords": [
+                "Costa alex290",
+                "images",
+                "images store",
+                "store",
+                "yii2",
+                "yii2-images"
+            ],
+            "support": {
+                "issues": "https://github.com/alex290/yii2-images/issues",
+                "source": "https://github.com/alex290/yii2-images/tree/master"
+            },
+            "time": "2020-02-17T10:08:35+00:00"
         },
         {
             "name": "alex290/yii2-treemanager",
