@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/1728b664/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9c5d0894/solarized_light.css" rel="stylesheet">
+<link href="./assets/f2ce5bcd/style.css" rel="stylesheet">
+<script src="./assets/bbf84a7a/jquery.js"></script>
+<script src="./assets/1728b664/js/bootstrap.js"></script>
+<script src="./assets/fd63b446/jssearch.js"></script>    <title>Dependency Injection Container - Основные понятия - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w757" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w757-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w757-collapse" class="collapse navbar-collapse"><ul id="w758" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w759" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-741" data-toggle="collapse" data-parent="#navigation">Введение <b class="caret"></b></a><div id="navigation-741" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">О Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Обновление с версии 1.1</a></div>
+<a class="list-group-item" href="#navigation-742" data-toggle="collapse" data-parent="#navigation">Первое знакомство <b class="caret"></b></a><div id="navigation-742" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Установка Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Запуск приложения</a>
+<a class="list-group-item" href="./guide-start-hello.html">Говорим «привет»</a>
+<a class="list-group-item" href="./guide-start-forms.html">Работа с формами</a>
+<a class="list-group-item" href="./guide-start-databases.html">Работа с базами данных</a>
+<a class="list-group-item" href="./guide-start-gii.html">Генерация кода при помощи Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Что дальше?</a></div>
+<a class="list-group-item" href="#navigation-743" data-toggle="collapse" data-parent="#navigation">Структура приложения <b class="caret"></b></a><div id="navigation-743" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Входные скрипты</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Приложения</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Компоненты приложения</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-structure-models.html">Модели</a>
+<a class="list-group-item" href="./guide-structure-views.html">Представления</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Модули</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Фильтры</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Виджеты</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Расширения</a></div>
+<a class="list-group-item" href="#navigation-744" data-toggle="collapse" data-parent="#navigation">Обработка запросов <b class="caret"></b></a><div id="navigation-744" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Разбор и генерация URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Запросы</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Ответы</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Сессии и куки</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Обработка ошибок</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Логирование</a></div>
+<a class="list-group-item active" href="#navigation-745" data-toggle="collapse" data-parent="#navigation">Основные понятия <b class="caret"></b></a><div id="navigation-745" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-concept-components.html">Компоненты</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Свойства</a>
+<a class="list-group-item" href="./guide-concept-events.html">События</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Поведения</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Конфигурации</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Псевдонимы</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Автозагрузка классов</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item active" href="./guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item" href="#navigation-746" data-toggle="collapse" data-parent="#navigation">Работа с базами данных <b class="caret"></b></a><div id="navigation-746" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Объекты доступа к данным (DAO)</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Построитель запросов</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Миграции</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-ru/README.md">Sphinx</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-redis/blob/master/docs/guide-ru/README.md">Redis</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-ru/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-ru/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-747" data-toggle="collapse" data-parent="#navigation">Получение данных от пользователя <b class="caret"></b></a><div id="navigation-747" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Создание форм</a>
+<a class="list-group-item" href="./guide-input-validation.html">Валидация</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Загрузка файлов</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Табличный ввод</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Работа с несколькими моделями</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">Расширение ActiveForm на стороне клиента</a></div>
+<a class="list-group-item" href="#navigation-748" data-toggle="collapse" data-parent="#navigation">Отображение данных <b class="caret"></b></a><div id="navigation-748" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Форматирование данных</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Постраничная разбивка</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Сортировка</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Провайдеры данных</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Виджеты для данных</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Работа с клиентскими скриптами</a>
+<a class="list-group-item" href="./guide-output-theming.html">Темизация</a></div>
+<a class="list-group-item" href="#navigation-749" data-toggle="collapse" data-parent="#navigation">Безопасность <b class="caret"></b></a><div id="navigation-749" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-security-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Авторизация</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Работа с паролями</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">Криптография</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-ru/README.md">Клиенты авторизации</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Лучшие практики</a></div>
+<a class="list-group-item" href="#navigation-750" data-toggle="collapse" data-parent="#navigation">Кеширование <b class="caret"></b></a><div id="navigation-750" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-caching-data.html">Кэширование данных</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Кэширование фрагментов</a>
+<a class="list-group-item" href="./guide-caching-page.html">Кэширование страниц</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP кэширование</a></div>
+<a class="list-group-item" href="#navigation-751" data-toggle="collapse" data-parent="#navigation">Веб-сервисы REST <b class="caret"></b></a><div id="navigation-751" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Быстрый старт</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Роутинг</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Форматирование ответа</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Ограничение частоты запросов</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Версионирование</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Обработка ошибок</a></div>
+<a class="list-group-item" href="#navigation-752" data-toggle="collapse" data-parent="#navigation">Инструменты разработчика <b class="caret"></b></a><div id="navigation-752" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Отладочная панель и отладчик</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide/README.md">Генерация кода с Gii</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">Генератор документации API</a></div>
+<a class="list-group-item" href="#navigation-753" data-toggle="collapse" data-parent="#navigation">Тестирование <b class="caret"></b></a><div id="navigation-753" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Настройка тестового окружения</a>
+<a class="list-group-item" href="./guide-test-unit.html">Модульные тесты</a>
+<a class="list-group-item" href="./guide-test-functional.html">Функциональные тесты</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Приёмочные тесты</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Фикстуры</a></div>
+<a class="list-group-item" href="#navigation-754" data-toggle="collapse" data-parent="#navigation">Специальные темы <b class="caret"></b></a><div id="navigation-754" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">Шаблон приложения advanced</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Создание приложения с нуля</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Консольные команды</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Встроенные валидаторы</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Интернационализация</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Отправка почты</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Оптимизация производительности</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Окружение виртуального хостинга</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Шаблонизаторы</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Работа со сторонним кодом</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">Использование Yii в качестве микро-framework&#039;а</a></div>
+<a class="list-group-item" href="#navigation-755" data-toggle="collapse" data-parent="#navigation">Виджеты <b class="caret"></b></a><div id="navigation-755" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-ru/README.md">Виджеты Bootstrap</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-ru/README.md">Виджеты Jquery UI</a></div>
+<a class="list-group-item" href="#navigation-756" data-toggle="collapse" data-parent="#navigation">Хелперы <b class="caret"></b></a><div id="navigation-756" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url хелпер</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Контейнер внедрения зависимостей <span id="kontejner-vnedrenia-zavisimostej"></span><a href="#kontejner-vnedrenia-zavisimostej" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#dependency-injection">Внедрение зависимостей</a></li>
+<li><a href="#advanced-practical-usage">Более сложное практическое применение</a></li>
+<li><a href="#registering-dependencies">Регистрация зависимостей</a></li>
+<li><a href="#resolving-dependencies">Разрешение зависимостей</a></li>
+<li><a href="#practical-usage">Практическое применение</a></li>
+<li><a href="#when-to-register-dependencies">Когда следует регистрировать зависимости</a></li>
+<li><a href="#summary">Итог</a></li></ol></div>
+<p>Контейнер внедрения зависимостей — это объект, который знает, как создать и настроить экземпляр класса и зависимых от него объектов.
+<a href="http://martinfowler.com/articles/injection.html">Статья Мартина Фаулера</a> хорошо объясняет, почему контейнер внедрения зависимостей является полезным. Здесь, преимущественно, будет объясняться использование контейнера внедрения зависимостей, предоставляемого в Yii.</p>
+<h2>Внедрение зависимостей  <span id="dependency-injection"></span><a href="#dependency-injection" class="hashlink">&para;</a></h2><p>Yii обеспечивает функционал контейнера внедрения зависимостей через класс <a href="./yii-di-container.html">yii\di\Container</a>. Он поддерживает следующие виды внедрения зависимостей:</p>
+<ul>
+<li>Внедрение зависимости через конструктор;</li>
+<li>Внедрение зависимости через метод;</li>
+<li>Внедрение зависимости через сеттер и свойство;</li>
+<li>Внедрение зависимости через PHP callback;</li>
+</ul>
+<h3>Внедрение зависимости через конструктор  <span id="constructor-injection"></span><a href="#constructor-injection" class="hashlink">&para;</a></h3><p>Контейнер внедрения зависимостей поддерживает внедрение зависимости через конструктор при помощи указания типов для параметров конструктора.
+Указанные типы сообщают контейнеру, какие классы или интерфейсы зависят от него при создании нового объекта.
+Контейнер попытается получить экземпляры зависимых классов или интерфейсов, а затем передать их в новый объект через конструктор. Например,</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(Bar $bar)</span>
+    </span>{
+    }
+}
+
+$foo = $container-&gt;get(<span class="hljs-string">'Foo'</span>);
+<span class="hljs-comment">// что равносильно следующему:</span>
+$bar = <span class="hljs-keyword">new</span> Bar;
+$foo = <span class="hljs-keyword">new</span> Foo($bar);
+</code></pre>
+<h3>Внедрение зависимости через метод  <span id="method-injection"></span><a href="#method-injection" class="hashlink">&para;</a></h3><p>Обычно зависимости класса передаются в конструктор и становятся доступными внутри класса в течение всего времени
+его существования. При помощи инъекции через метод возможно задать зависимость, которая необходима в единственном
+методе класса. Передавать такую зависимость через конструктор либо невозможно, либо это влечёт за собой ненужные
+накладные расходы в большинстве случаев.</p>
+<p>Метод класса может быть определён так же, как <code>doSomething()</code> в примере ниже:</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyClass</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Component</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(<span class="hljs-comment">/*Легковесные зависимости тут*/</span>, $config = [])</span>
+    </span>{
+        <span class="hljs-comment">// ...</span>
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doSomething</span><span class="hljs-params">($param1, \my\heavy\Dependency $something)</span>
+    </span>{
+        <span class="hljs-comment">// Работаем с $something</span>
+    }
+}
+</code></pre>
+<p>Метод можно вызвать либо передав экземпляр <code>\my\heavy\Dependency</code> самостоятельно, либо использовав
+<a href="./yii-di-container.html#invoke()-detail">yii\di\Container::invoke()</a>:</p>
+<pre><code class="hljs php language-php">$obj = <span class="hljs-keyword">new</span> MyClass(<span class="hljs-comment">/*...*/</span>);
+Yii::$container-&gt;invoke([$obj, <span class="hljs-string">'doSomething'</span>], [<span class="hljs-string">'param1'</span> =&gt; <span class="hljs-number">42</span>]); <span class="hljs-comment">// $something будет предоставлено DI-контейнером</span>
+</code></pre>
+<h3>Внедрение зависимости через сеттер и свойство  <span id="setter-and-property-injection"></span><a href="#setter-and-property-injection" class="hashlink">&para;</a></h3><p>Внедрение зависимости через сеттер и свойство поддерживается через <a href="guide-concept-configurations.html">конфигурации</a>.
+При регистрации зависимости или при создании нового объекта, вы можете предоставить конфигурацию, которая
+будет использована контейнером для внедрения зависимостей через соответствующие сеттеры или свойства.
+Например,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">BaseObject</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BaseObject</span>
+</span>{
+    <span class="hljs-keyword">public</span> $bar;
+
+    <span class="hljs-keyword">private</span> $_qux;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getQux</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;_qux;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setQux</span><span class="hljs-params">(Qux $qux)</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;_qux = $qux;
+    }
+}
+
+$container-&gt;get(<span class="hljs-string">'Foo'</span>, [], [
+    <span class="hljs-string">'bar'</span> =&gt; $container-&gt;get(<span class="hljs-string">'Bar'</span>),
+    <span class="hljs-string">'qux'</span> =&gt; $container-&gt;get(<span class="hljs-string">'Qux'</span>),
+]);
+</code></pre>
+<blockquote class="info"><p><strong>Информация: </strong>Метод <a href="./yii-di-container.html#get()-detail">yii\di\Container::get()</a> третьим аргументом принимает массив конфигурации, которым инициализируется создаваемый объект. Если класс реализует интерфейс <a href="./yii-base-configurable.html">yii\base\Configurable</a> (например, <a href="./yii-base-baseobject.html">yii\base\BaseObject</a>), то массив конфигурации передается в последний параметр конструктора класса. Иначе конфигурация применяется уже <em>после</em> создания объекта.</p>
+</blockquote>
+<h2>Более сложное практическое применение  <span id="advanced-practical-usage"></span><a href="#advanced-practical-usage" class="hashlink">&para;</a></h2><p>Допустим, мы работаем над API и у нас есть:</p>
+<ul>
+<li><code>app\components\Request</code>, наследуемый от <code>yii\web\Request</code> и реализующий дополнительные возможности.</li>
+<li><code>app\components\Response</code>, наследуемый от <code>yii\web\Response</code> со свойством <code>format</code>, по умолчанию инициализируемом как <code>json</code>.</li>
+<li><p><code>app\storage\FileStorage</code> и <code>app\storage\DocumentsReader</code>, где реализована некая логика для работы с документами в
+неком файловом хранилище:</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FileStorage</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">($root)</span> </span>{
+        <span class="hljs-comment">// делаем что-то</span>
+    }
+}
+  
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DocumentsReader</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(FileStorage $fs)</span> </span>{
+        <span class="hljs-comment">// делаем что-то</span>
+    }
+}
+</code></pre>
+</li>
+</ul>
+<p>Возможно настроить несколько компонентов сразу передав массив конфигурации в метод 
+<a href="./yii-di-container.html#setDefinitions()-detail">setDefinitions()</a> или <a href="./yii-di-container.html#setSingletons()-detail">setSingletons()</a>.
+Внутри метода фреймворк обойдёт массив конфигурации и вызовет для каждого элемента <a href="./yii-di-container.html#set()-detail">set()</a> или
+<a href="./yii-di-container.html#setSingleton()-detail">setSingleton()</a> соответственно.</p>
+<p>Формат массива конфигурации следующий:</p>
+<ul>
+<li>Ключ: имя класса, интерфейса или псевдонима. Ключ передаётся в первый аргумент <code>$class</code> метода
+ <a href="./yii-di-container.html#set()-detail">set()</a>.</li>
+<li>Значение: конфигурация для класса. Возможные значения описаны в документации параметра <code>$definition</code> метода
+ <a href="./yii-di-container.html#set()-detail">set()</a>. Значение передаётся в аргумент <code>$definition</code> метода <span class="broken-link">set()</span>.</li>
+</ul>
+<p>Для примера, давайте настроим наш контейнер:</p>
+<pre><code class="hljs php language-php">$container-&gt;setDefinitions([
+    <span class="hljs-string">'yii\web\Request'</span> =&gt; <span class="hljs-string">'app\components\Request'</span>,
+    <span class="hljs-string">'yii\web\Response'</span> =&gt; [
+        <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'app\components\Response'</span>,
+        <span class="hljs-string">'format'</span> =&gt; <span class="hljs-string">'json'</span>
+    ],
+    <span class="hljs-string">'app\storage\DocumentsReader'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($container, $params, $config)</span> </span>{
+        $fs = <span class="hljs-keyword">new</span> app\storage\FileStorage(<span class="hljs-string">'/var/tempfiles'</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> app\storage\DocumentsReader($fs);
+    }
+]);
+
+$reader = $container-&gt;get(<span class="hljs-string">'app\storage\DocumentsReader'</span>);
+<span class="hljs-comment">// Создаст объект DocumentReader со всеми зависимостями </span>
+</code></pre>
+<blockquote class="tip"><p><strong>Подсказка: </strong>Начиная с версии 2.0.11 контейнер может быть настроен в декларативном стиле через конфигурацию приложения. 
+Как это сделать ищите в подразделе <a href="guide-concept-configurations.html#application-configurations">Конфигурация приложения</a>
+раздела <a href="guide-concept-configurations.html">Конфигурации</a>.</p>
+</blockquote>
+<p>Вроде всё работает, но если нам необходимо создать экземпляр класса <code>DocumentWriter</code>, придётся скопировать код, 
+создающий экземпляр<code>FileStorage</code>, что, очевидно, не является оптимальным.</p>
+<p>Как описано в подразделе <a href="#resolving-dependencies">Разрешение зависимостей</a>, <a href="./yii-di-container.html#set()-detail">set()</a>
+и <a href="./yii-di-container.html#setSingleton()-detail">setSingleton()</a> могут опционально принимать третьим аргументов параметры
+для конструктора. Формат таков:</p>
+<ul>
+<li>Ключ: имя класса, интерфейса или псевдонима. Ключ передаётся в первый аргумент <code>$class</code> метода <a href="./yii-di-container.html#set()-detail">set()</a>.</li>
+<li>Значение: массив из двух элементов. Первый элемент передаётся в метод <a href="./yii-di-container.html#set()-detail">set()</a> вторым
+  аргументом <code>$definition</code>, второй элемент — аргументом <code>$params</code>.</li>
+</ul>
+<p>Исправим наш пример:</p>
+<pre><code class="hljs php language-php">$container-&gt;setDefinitions([
+    <span class="hljs-string">'tempFileStorage'</span> =&gt; [ <span class="hljs-comment">// для удобства мы задали псевдоним</span>
+        [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'app\storage\FileStorage'</span>],
+        [<span class="hljs-string">'/var/tempfiles'</span>]
+    ],
+    <span class="hljs-string">'app\storage\DocumentsReader'</span> =&gt; [
+        [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'app\storage\DocumentsReader'</span>],
+        [Instance::of(<span class="hljs-string">'tempFileStorage'</span>)]
+    ],
+    <span class="hljs-string">'app\storage\DocumentsWriter'</span> =&gt; [
+        [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'app\storage\DocumentsWriter'</span>],
+        [Instance::of(<span class="hljs-string">'tempFileStorage'</span>)]
+    ]
+]);
+
+$reader = $container-&gt;get(<span class="hljs-string">'app\storage\DocumentsReader'</span>); 
+<span class="hljs-comment">// Код будет работать ровно так же, как и в предыдущем примере.</span>
+</code></pre>
+<p>Вы могли заметить вызов <code>Instance::of('tempFileStorage')</code>. Он означает, что <a href="./yii-di-container.html">Container</a>
+неявно предоставит зависимость, зарегистрированную с именем <code>tempFileStorage</code> и передаст её первым аргументом 
+в конструктор <code>app\storage\DocumentsWriter</code>.</p>
+<blockquote class="note"><p><strong>Примечание: </strong>Методы <a href="./yii-di-container.html#setDefinitions()-detail">setDefinitions()</a> и <a href="./yii-di-container.html#setSingletons()-detail">setSingletons()</a>
+  доступны с версии 2.0.11.</p>
+</blockquote>
+<p>Ещё один шаг по оптимизации конфигурации — регистрировать некоторые зависимости как синглтоны. Зависимость, регистрируемая 
+через метод <a href="./yii-di-container.html#set()-detail">set()</a>, будет создаваться каждый раз при обращении к ней. Некоторые классы не меняют
+своего состояния на протяжении всей работы приложения, поэтому могут быть зарегистрированы как синглтоны. Это увеличит
+производительность приложения. </p>
+<p>Хорошим примером может быть класс <code>app\storage\FileStorage</code>, который выполняет некие операции над файловой системой
+через простой API: <code>$fs-&gt;read()</code>, <code>$fs-&gt;write()</code>. Обе операции не меняют внутреннее состояние класса, поэтому мы можем
+создать класс один раз и далее использовать его.</p>
+<pre><code class="hljs php language-php">$container-&gt;setSingletons([
+    <span class="hljs-string">'tempFileStorage'</span> =&gt; [
+        [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'app\storage\FileStorage'</span>],
+        [<span class="hljs-string">'/var/tempfiles'</span>]
+    ],
+]);
+
+$container-&gt;setDefinitions([
+    <span class="hljs-string">'app\storage\DocumentsReader'</span> =&gt; [
+        [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'app\storage\DocumentsReader'</span>],
+        [Instance::of(<span class="hljs-string">'tempFileStorage'</span>)]
+    ],
+    <span class="hljs-string">'app\storage\DocumentsWriter'</span> =&gt; [
+        [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'app\storage\DocumentsWriter'</span>],
+        [Instance::of(<span class="hljs-string">'tempFileStorage'</span>)]
+    ]
+]);
+
+$reader = $container-&gt;get(<span class="hljs-string">'app\storage\DocumentsReader'</span>);
+</code></pre>
+<h3>Внедрение зависимости через PHP callback  <span id="php-callable-injection"></span><a href="#php-callable-injection" class="hashlink">&para;</a></h3><p>В данном случае, контейнер будет использовать зарегистрированный PHP callback для создания новых экземпляров класса.
+Каждый раз при вызове <a href="./yii-di-container.html#get()-detail">yii\di\Container::get()</a> вызывается соответствующий callback.
+Callback отвечает за разрешения зависимостей и внедряет их в соответствии с вновь создаваемыми объектами. Например,</p>
+<pre><code class="hljs php language-php">$container-&gt;set(<span class="hljs-string">'Foo'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($container, $params, $config)</span> </span>{
+    $foo = <span class="hljs-keyword">new</span> Foo(<span class="hljs-keyword">new</span> Bar);
+    <span class="hljs-comment">// ... дополнительная инициализация</span>
+    <span class="hljs-keyword">return</span> $foo;
+});
+
+$foo = $container-&gt;get(<span class="hljs-string">'Foo'</span>);
+</code></pre>
+<p>Для того, чтобы скрыть сложную логику инициализации нового объекта, можно использовать статический метод, возвращающий
+callable:</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FooBuilder</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">build</span><span class="hljs-params">($container, $params, $config)</span>
+    </span>{
+        $foo = <span class="hljs-keyword">new</span> Foo(<span class="hljs-keyword">new</span> Bar);
+        <span class="hljs-comment">// ... дополнительная инициализация ...</span>
+        <span class="hljs-keyword">return</span> $foo;
+    }
+}
+
+$container-&gt;set(<span class="hljs-string">'Foo'</span>, [<span class="hljs-string">'app\helper\FooBuilder'</span>, <span class="hljs-string">'build'</span>]);
+
+$foo = $container-&gt;get(<span class="hljs-string">'Foo'</span>);
+</code></pre>
+<p>Теперь тот, кто будет настраивать класс <code>Foo</code>, не обязан знать, как этот класс устроен.</p>
+<h2>Регистрация зависимостей  <span id="registering-dependencies"></span><a href="#registering-dependencies" class="hashlink">&para;</a></h2><p>Вы можете использовать <a href="./yii-di-container.html#set()-detail">yii\di\Container::set()</a> для регистрации зависимостей. При регистрации требуется имя зависимости, а также определение зависимости. Именем зависимости может быть имя класса, интерфейса или алиас, 
+так же определением зависимости может быть имя класса, конфигурационным массивом, или PHP callback'ом.</p>
+<pre><code class="hljs php language-php">$container = <span class="hljs-keyword">new</span> \yii\di\Container;
+
+<span class="hljs-comment">// регистрация имени класса, как есть. Это может быть пропущено.</span>
+$container-&gt;set(<span class="hljs-string">'yii\db\Connection'</span>);
+
+<span class="hljs-comment">// регистрация интерфейса</span>
+<span class="hljs-comment">// Когда класс зависит от интерфейса, соответствующий класс</span>
+<span class="hljs-comment">// будет использован в качестве зависимости объекта</span>
+$container-&gt;set(<span class="hljs-string">'yii\mail\MailInterface'</span>, <span class="hljs-string">'yii\swiftmailer\Mailer'</span>);
+
+<span class="hljs-comment">// регистрация алиаса. Вы можете использовать $container-&gt;get('foo')</span>
+<span class="hljs-comment">// для создания экземпляра Connection</span>
+$container-&gt;set(<span class="hljs-string">'foo'</span>, <span class="hljs-string">'yii\db\Connection'</span>);
+
+<span class="hljs-comment">// регистрация класса с конфигурацией. Конфигурация</span>
+<span class="hljs-comment">// будет применена при создании экземпляра класса через get()</span>
+$container-&gt;set(<span class="hljs-string">'yii\db\Connection'</span>, [
+    <span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'mysql:host=127.0.0.1;dbname=demo'</span>,
+    <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'root'</span>,
+    <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">''</span>,
+    <span class="hljs-string">'charset'</span> =&gt; <span class="hljs-string">'utf8'</span>,
+]);
+
+<span class="hljs-comment">// регистрация алиаса с конфигурацией класса</span>
+<span class="hljs-comment">// В данном случае, параметр "class" требуется для указания класса</span>
+$container-&gt;set(<span class="hljs-string">'db'</span>, [
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\db\Connection'</span>,
+    <span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'mysql:host=127.0.0.1;dbname=demo'</span>,
+    <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'root'</span>,
+    <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">''</span>,
+    <span class="hljs-string">'charset'</span> =&gt; <span class="hljs-string">'utf8'</span>,
+]);
+
+<span class="hljs-comment">// регистрация PHP callback'a</span>
+<span class="hljs-comment">// Callback будет выполняться каждый раз при вызове $container-&gt;get('db')</span>
+$container-&gt;set(<span class="hljs-string">'db'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($container, $params, $config)</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> \yii\db\Connection($config);
+});
+
+<span class="hljs-comment">// регистрация экземпляра компонента</span>
+<span class="hljs-comment">// $container-&gt;get('pageCache') вернёт тот же экземпляр при каждом вызове</span>
+$container-&gt;set(<span class="hljs-string">'pageCache'</span>, <span class="hljs-keyword">new</span> FileCache);
+</code></pre>
+<blockquote class="tip"><p><strong>Подсказка: </strong>Если имя зависимости такое же, как и определение соответствующей зависимости, то её повторная регистрация в контейнере внедрения зависимостей не нужна.</p>
+</blockquote>
+<p>Зависимость, зарегистрированная через <code>set()</code> создаёт экземпляр каждый раз, когда зависимость необходима.
+Вы можете использовать <a href="./yii-di-container.html#setSingleton()-detail">yii\di\Container::setSingleton()</a> для регистрации зависимости, которая создаст только один экземпляр:</p>
+<pre><code class="hljs php language-php">$container-&gt;setSingleton(<span class="hljs-string">'yii\db\Connection'</span>, [
+    <span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'mysql:host=127.0.0.1;dbname=demo'</span>,
+    <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'root'</span>,
+    <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">''</span>,
+    <span class="hljs-string">'charset'</span> =&gt; <span class="hljs-string">'utf8'</span>,
+]);
+</code></pre>
+<h2>Разрешение зависимостей  <span id="resolving-dependencies"></span><a href="#resolving-dependencies" class="hashlink">&para;</a></h2><p>После регистрации зависимостей, вы можете использовать контейнер внедрения зависимостей для создания новых объектов,
+и контейнер автоматически разрешит зависимости их экземпляра и их внедрений во вновь создаваемых объектах. Разрешение
+зависимостей рекурсивно, то есть если зависимость имеет другие зависимости, эти зависимости также будут автоматически
+разрешены.</p>
+<p>Вы можете использовать <a href="./yii-di-container.html#get()-detail">yii\di\Container::get()</a> для создания или получения объектов. Метод принимает имя зависимости,
+которым может быть имя класса, имя интерфейса или псевдоним. Имя зависимости может быть зарегистрировано через
+<code>set()</code> или <code>setSingleton()</code>. Вы можете опционально предоставить список параметров конструктора класса и
+<a href="guide-concept-configurations.html">конфигурацию</a> для настройки созданного объекта.</p>
+<p>Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// "db" ранее зарегистрированный псевдоним</span>
+$db = $container-&gt;get(<span class="hljs-string">'db'</span>);
+
+<span class="hljs-comment">// эквивалентно: $engine = new \app\components\SearchEngine($apiKey, $apiSecret, ['type' =&gt; 1]);</span>
+$engine = $container-&gt;get(<span class="hljs-string">'app\components\SearchEngine'</span>, [$apiKey, $apiSecret], [<span class="hljs-string">'type'</span> =&gt; <span class="hljs-number">1</span>]);
+
+<span class="hljs-comment">// эквивалентно: $api = new \app\components\Api($host, $apiKey);</span>
+$api = $container-&gt;get(<span class="hljs-string">'app\components\Api'</span>, [<span class="hljs-string">'host'</span> =&gt; $host, <span class="hljs-string">'apiKey'</span> =&gt; $apiKey]);
+</code></pre>
+<p>За кулисами, контейнер внедрения зависимостей делает гораздо больше работы, чем просто создание нового объекта.
+Прежде всего, контейнер, осмотрит конструктор класса, чтобы узнать имя зависимого класса или интерфейса, а затем
+автоматически разрешит эти зависимости рекурсивно.</p>
+<p>Следующий код демонстрирует более сложный пример. Класс <code>UserLister</code> зависит от объекта, реализующего интерфейс
+<code>UserFinderInterface</code>; класс <code>UserFinder</code> реализует этот интерфейс и зависит от объекта <code>Connection</code>. Все эти зависимости
+были объявлены через тип подсказки параметров конструктора класса. При регистрации зависимости через свойство, контейнер
+внедрения зависимостей позволяет автоматически разрешить эти зависимости и создаёт новый экземпляр <code>UserLister</code> простым
+вызовом <code>get('userLister')</code>.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">BaseObject</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Connection</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">di</span>\<span class="hljs-title">Container</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">UserFinderInterface</span>
+</span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">findUser</span><span class="hljs-params">()</span></span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserFinder</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BaseObject</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">UserFinderInterface</span>
+</span>{
+    <span class="hljs-keyword">public</span> $db;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(Connection $db, $config = [])</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;db = $db;
+        <span class="hljs-keyword">parent</span>::__construct($config);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">findUser</span><span class="hljs-params">()</span>
+    </span>{
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserLister</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BaseObject</span>
+</span>{
+    <span class="hljs-keyword">public</span> $finder;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(UserFinderInterface $finder, $config = [])</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;finder = $finder;
+        <span class="hljs-keyword">parent</span>::__construct($config);
+    }
+}
+
+$container = <span class="hljs-keyword">new</span> Container;
+$container-&gt;set(<span class="hljs-string">'yii\db\Connection'</span>, [
+    <span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'...'</span>,
+]);
+$container-&gt;set(<span class="hljs-string">'app\models\UserFinderInterface'</span>, [
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'app\models\UserFinder'</span>,
+]);
+$container-&gt;set(<span class="hljs-string">'userLister'</span>, <span class="hljs-string">'app\models\UserLister'</span>);
+
+$lister = $container-&gt;get(<span class="hljs-string">'userLister'</span>);
+
+<span class="hljs-comment">// что эквивалентно:</span>
+
+$db = <span class="hljs-keyword">new</span> \yii\db\Connection([<span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'...'</span>]);
+$finder = <span class="hljs-keyword">new</span> UserFinder($db);
+$lister = <span class="hljs-keyword">new</span> UserLister($finder);
+</code></pre>
+<h2>Практическое применение  <span id="practical-usage"></span><a href="#practical-usage" class="hashlink">&para;</a></h2><p>Yii создаёт контейнер внедрения зависимостей когда вы подключаете файл <code>Yii.php</code> во <a href="guide-structure-entry-scripts.html">входном скрипте</a> 
+вашего приложения. Контейнер внедрения зависимостей доступен через <a href="./yii-baseyii.html#$container-detail">Yii::$container</a>. При вызове <a href="./yii-baseyii.html#createObject()-detail">Yii::createObject()</a>,
+метод на самом деле вызовет метод контейнера <a href="./yii-di-container.html#get()-detail">get()</a>, чтобы создать новый объект.
+Как упомянуто выше, контейнер внедрения зависимостей автоматически разрешит зависимости (если таковые имеются) и внедрит их
+получаемый объект. Поскольку Yii использует <a href="./yii-baseyii.html#createObject()-detail">Yii::createObject()</a> в большей части кода своего ядра для создания новых
+объектов, это означает, что вы можете настроить глобальные объекты, имея дело с <a href="./yii-baseyii.html#$container-detail">Yii::$container</a>.</p>
+<p>Например, давайте настроим количество кнопок в пейджере <a href="./yii-widgets-linkpager.html">yii\widgets\LinkPager</a> по умолчанию глобально:</p>
+<pre><code class="hljs php language-php">\Yii::$container-&gt;set(<span class="hljs-string">'yii\widgets\LinkPager'</span>, [<span class="hljs-string">'maxButtonCount'</span> =&gt; <span class="hljs-number">5</span>]);
+</code></pre>
+<p>Теперь, если вы вызовете в представлении виджет, используя следующий код, то свойство <code>maxButtonCount</code> будет инициализировано как 5 вместо значения по умолчанию 10, как это определено в классе.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \yii\widgets\LinkPager::widget();
+</code></pre>
+<p>Хотя вы всё ещё можете переопределить установленное значение через контейнер внедрения зависимостей:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \yii\widgets\LinkPager::widget([<span class="hljs-string">'maxButtonCount'</span> =&gt; <span class="hljs-number">20</span>]);
+</code></pre>
+<p>Другим примером является использование автоматического внедрения зависимости через конструктор контейнера внедрения зависимостей.
+Предположим, ваш класс контроллера зависит от ряда других объектов, таких как сервис бронирования гостиницы. Вы
+можете объявить зависимость через параметр конструктора и позволить контейнеру внедрения зависимостей, разрешить её за вас.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>\<span class="hljs-title">BookingInterface</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HotelController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">protected</span> $bookingService;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">($id, $module, BookingInterface $bookingService, $config = [])</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;bookingService = $bookingService;
+        <span class="hljs-keyword">parent</span>::__construct($id, $module, $config);
+    }
+}
+</code></pre>
+<p>Если у вас есть доступ к этому контроллеру из браузера, вы увидите сообщение об ошибке, который жалуется на то, что <code>BookingInterface</code>
+не может быть создан. Это потому что вы должны указать контейнеру внедрения зависимостей, как обращаться с этой зависимостью:</p>
+<pre><code class="hljs php language-php">\Yii::$container-&gt;set(<span class="hljs-string">'app\components\BookingInterface'</span>, <span class="hljs-string">'app\components\BookingService'</span>);
+</code></pre>
+<p>Теперь, если вы попытаетесь получить доступ к контроллеру снова, то экземпляр <code>app\components\BookingService</code> будет создан и введён в качестве 3-го параметра конструктора контроллера.</p>
+<h2>Когда следует регистрировать зависимости  <span id="when-to-register-dependencies"></span><a href="#when-to-register-dependencies" class="hashlink">&para;</a></h2><p>Поскольку зависимости необходимы тогда, когда создаются новые объекты, то их регистрация должна быть сделана
+как можно раньше. Ниже приведены рекомендуемые практики:</p>
+<ul>
+<li>Если вы разработчик приложения, то вы можете зарегистрировать зависимости в конфигурации вашего приложения.
+Как это сделать описано в подразделе <a href="guide-concept-service-locator.html#application-configurations">Конфигурация приложения</a> 
+раздела <a href="guide-concept-configurations.html">Конфигурации</a>.</li>
+<li>Если вы разработчик распространяемого <a href="guide-structure-extensions.html">расширения</a>, то вы можете зарегистрировать зависимости
+в загрузочном классе расширения.</li>
+</ul>
+<h2>Итог  <span id="summary"></span><a href="#summary" class="hashlink">&para;</a></h2><p>Как dependency injection, так и <a href="guide-concept-service-locator.html">service locator</a> являются популярными паттернами проектирования, которые позволяют 
+создавать программное обеспечение в слабосвязанной и более тестируемой манере.
+Мы настоятельно рекомендуем к прочтению
+<a href="http://martinfowler.com/articles/injection.html">статью Мартина Фаулера</a>, для более глубокого понимания dependency injection и service locator. </p>
+<p>Yii реализует свой <a href="guide-concept-service-locator.html">service locator</a> поверх контейнера внедрения зависимостей.
+Когда service locator пытается создать новый экземпляр объекта, он перенаправляет вызов на контейнер внедрения зависимостей.
+Последний будет разрешать зависимости автоматически, как описано выше.</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 09 Dec 2020 00:16:05 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/1728b664/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9c5d0894/solarized_light.css" rel="stylesheet">
+<link href="./assets/f2ce5bcd/style.css" rel="stylesheet">
+<script src="./assets/bbf84a7a/jquery.js"></script>
+<script src="./assets/1728b664/js/bootstrap.js"></script>
+<script src="./assets/fd63b446/jssearch.js"></script>    <title>Миграции - Работа с базами данных - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1783" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1783-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1783-collapse" class="collapse navbar-collapse"><ul id="w1784" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1785" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1767" data-toggle="collapse" data-parent="#navigation">Введение <b class="caret"></b></a><div id="navigation-1767" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">О Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Обновление с версии 1.1</a></div>
+<a class="list-group-item" href="#navigation-1768" data-toggle="collapse" data-parent="#navigation">Первое знакомство <b class="caret"></b></a><div id="navigation-1768" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Установка Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Запуск приложения</a>
+<a class="list-group-item" href="./guide-start-hello.html">Говорим «привет»</a>
+<a class="list-group-item" href="./guide-start-forms.html">Работа с формами</a>
+<a class="list-group-item" href="./guide-start-databases.html">Работа с базами данных</a>
+<a class="list-group-item" href="./guide-start-gii.html">Генерация кода при помощи Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Что дальше?</a></div>
+<a class="list-group-item" href="#navigation-1769" data-toggle="collapse" data-parent="#navigation">Структура приложения <b class="caret"></b></a><div id="navigation-1769" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Входные скрипты</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Приложения</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Компоненты приложения</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-structure-models.html">Модели</a>
+<a class="list-group-item" href="./guide-structure-views.html">Представления</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Модули</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Фильтры</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Виджеты</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Расширения</a></div>
+<a class="list-group-item" href="#navigation-1770" data-toggle="collapse" data-parent="#navigation">Обработка запросов <b class="caret"></b></a><div id="navigation-1770" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Разбор и генерация URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Запросы</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Ответы</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Сессии и куки</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Обработка ошибок</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Логирование</a></div>
+<a class="list-group-item" href="#navigation-1771" data-toggle="collapse" data-parent="#navigation">Основные понятия <b class="caret"></b></a><div id="navigation-1771" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Компоненты</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Свойства</a>
+<a class="list-group-item" href="./guide-concept-events.html">События</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Поведения</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Конфигурации</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Псевдонимы</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Автозагрузка классов</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item active" href="#navigation-1772" data-toggle="collapse" data-parent="#navigation">Работа с базами данных <b class="caret"></b></a><div id="navigation-1772" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-db-dao.html">Объекты доступа к данным (DAO)</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Построитель запросов</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item active" href="./guide-db-migrations.html">Миграции</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-ru/README.md">Sphinx</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-redis/blob/master/docs/guide-ru/README.md">Redis</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-ru/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-ru/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1773" data-toggle="collapse" data-parent="#navigation">Получение данных от пользователя <b class="caret"></b></a><div id="navigation-1773" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Создание форм</a>
+<a class="list-group-item" href="./guide-input-validation.html">Валидация</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Загрузка файлов</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Табличный ввод</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Работа с несколькими моделями</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">Расширение ActiveForm на стороне клиента</a></div>
+<a class="list-group-item" href="#navigation-1774" data-toggle="collapse" data-parent="#navigation">Отображение данных <b class="caret"></b></a><div id="navigation-1774" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Форматирование данных</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Постраничная разбивка</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Сортировка</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Провайдеры данных</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Виджеты для данных</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Работа с клиентскими скриптами</a>
+<a class="list-group-item" href="./guide-output-theming.html">Темизация</a></div>
+<a class="list-group-item" href="#navigation-1775" data-toggle="collapse" data-parent="#navigation">Безопасность <b class="caret"></b></a><div id="navigation-1775" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-security-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Авторизация</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Работа с паролями</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">Криптография</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-ru/README.md">Клиенты авторизации</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Лучшие практики</a></div>
+<a class="list-group-item" href="#navigation-1776" data-toggle="collapse" data-parent="#navigation">Кеширование <b class="caret"></b></a><div id="navigation-1776" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-caching-data.html">Кэширование данных</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Кэширование фрагментов</a>
+<a class="list-group-item" href="./guide-caching-page.html">Кэширование страниц</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP кэширование</a></div>
+<a class="list-group-item" href="#navigation-1777" data-toggle="collapse" data-parent="#navigation">Веб-сервисы REST <b class="caret"></b></a><div id="navigation-1777" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Быстрый старт</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Роутинг</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Форматирование ответа</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Ограничение частоты запросов</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Версионирование</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Обработка ошибок</a></div>
+<a class="list-group-item" href="#navigation-1778" data-toggle="collapse" data-parent="#navigation">Инструменты разработчика <b class="caret"></b></a><div id="navigation-1778" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Отладочная панель и отладчик</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide/README.md">Генерация кода с Gii</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">Генератор документации API</a></div>
+<a class="list-group-item" href="#navigation-1779" data-toggle="collapse" data-parent="#navigation">Тестирование <b class="caret"></b></a><div id="navigation-1779" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Настройка тестового окружения</a>
+<a class="list-group-item" href="./guide-test-unit.html">Модульные тесты</a>
+<a class="list-group-item" href="./guide-test-functional.html">Функциональные тесты</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Приёмочные тесты</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Фикстуры</a></div>
+<a class="list-group-item" href="#navigation-1780" data-toggle="collapse" data-parent="#navigation">Специальные темы <b class="caret"></b></a><div id="navigation-1780" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">Шаблон приложения advanced</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Создание приложения с нуля</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Консольные команды</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Встроенные валидаторы</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Интернационализация</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Отправка почты</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Оптимизация производительности</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Окружение виртуального хостинга</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Шаблонизаторы</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Работа со сторонним кодом</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">Использование Yii в качестве микро-framework&#039;а</a></div>
+<a class="list-group-item" href="#navigation-1781" data-toggle="collapse" data-parent="#navigation">Виджеты <b class="caret"></b></a><div id="navigation-1781" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-ru/README.md">Виджеты Bootstrap</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-ru/README.md">Виджеты Jquery UI</a></div>
+<a class="list-group-item" href="#navigation-1782" data-toggle="collapse" data-parent="#navigation">Хелперы <b class="caret"></b></a><div id="navigation-1782" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url хелпер</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Миграции баз данных <span id="migracii-baz-dannyh"></span><a href="#migracii-baz-dannyh" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#creating-migrations">Создание миграций</a></li>
+<li><a href="#generating-migrations">Генерация миграций</a></li>
+<li><a href="#applying-migrations">Применение Миграций</a></li>
+<li><a href="#reverting-migrations">Отмена Миграций</a></li>
+<li><a href="#redoing-migrations">Перезагрузка Миграций</a></li>
+<li><a href="#listing-migrations">Список Миграций</a></li>
+<li><a href="#modifying-migration-history">Изменение Истории Миграций</a></li>
+<li><a href="#customizing-migrations">Настройка Миграций</a></li>
+<li><a href="#migrating-multiple-databases">Миграции в Несколько Баз Данных</a></li></ol></div>
+<p>В ходе разработки и ведения баз данных приложений, которые управляют данными, структуры используемых баз данных развиваются, как и исходный код приложений. Например, при разработке приложения, в будущем может оказаться необходимой новая таблица; уже после того, как приложение будет развернуто в рабочем режиме (продакшене), также может быть обнаружено, что для повышения производительности запросов должен быть создан определённый индекс; и так далее.
+В связи с тем, что изменение структуры базы данных часто требует изменение исходного кода, yii поддерживает так
+называемую возможность <em>миграции баз данных</em>, которая позволяет отслеживать изменения в базах данных при помощи терминов <em>миграции баз данных</em>, которые являются системой контроля версий вместе с исходным кодом.</p>
+<p>Следующие шаги показывают, как миграции базы данных могут быть использованы командой разработчиков в процессе разработки:</p>
+<ol>
+<li>Илья создает новую миграцию (например, создается новая таблица или изменяется определение столбца и т.п.).</li>
+<li>Илья фиксирует новую миграцию в системе управления версиями (например, в Git, Mercurial).</li>
+<li>Алексей обновляет свой репозиторий из системы контроля версий и получает новую миграцию.</li>
+<li>Алексей применяет миграцию к своей локальной базе данных, тем самым синхронизируя свою базу данных, для того чтобы отразить изменения, которые сделал Илья.</li>
+</ol>
+<p>А следующие шаги показывают, как развернуть новый релиз с миграциями баз данных в рабочем режиме (продакшена):</p>
+<ol>
+<li>Сергей создаёт новую версию проекта репозитория, которая содержит некоторые новые миграции баз данных.</li>
+<li>Сергей обновляет исходный код на рабочем сервере до новой версии.</li>
+<li>Сергей применяет любую из накопленных миграций баз данных в рабочую базу данных.</li>
+</ol>
+<p>Yii предоставляет набор инструментов для миграций из командной строки, которые позволяют:</p>
+<ul>
+<li>создавать новые миграции;</li>
+<li>применять миграции;</li>
+<li>отменять миграции;</li>
+<li>применять миграции повторно;</li>
+<li>показывать историю и статус миграций;</li>
+</ul>
+<p>Все эти инструменты доступны через команду <code>yii migrate</code>. В этом разделе мы опишем подробно, как выполнять различные задачи, используя эти инструменты. Вы также можете сами посмотреть как использовать каждый отдельный инструмент при помощи команды <code>yii help migrate</code>.</p>
+<blockquote class="tip"><p><strong>Подсказка: </strong>Миграции могут не только изменять схему базы данных, но и приводить данные в соответствие с новой схемой, создавать иерархию RBAC или очищать кеш.</p>
+</blockquote>
+<h2>Создание миграций  <span id="creating-migrations"></span><a href="#creating-migrations" class="hashlink">&para;</a></h2><p>Чтобы создать новую миграцию, выполните следующую команду:</p>
+<pre><code class="hljs sql">yii migrate/<span class="hljs-keyword">create</span> &lt;<span class="hljs-keyword">name</span>&gt;
+</code></pre>
+<p>Требуемый аргумент <code>name</code> даёт краткое описание новой миграции. Например, если миграция о создании новой таблицы с именем <em>news</em>, вы можете использовать имя <code>create_news_table</code> и выполнить следующую команду:</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> migrate/create create_news_table
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>Поскольку аргумент <code>name</code> будет использован как часть имени класса создаваемой миграции, он должен содержать только буквы, цифры и/или символы подчеркивания.</p>
+</blockquote>
+<p>Приведенная выше команда создаст новый PHP класс с именем файла <code>m150101_185401_create_news_table.php</code> в директории <code>@app/migrations</code>. Файл содержит следующий код, который главным образом декларирует класс миграции <code>m150101_185401_create_news_table</code> со следующим каркасом кода:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Migration</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150101_185401_create_news_table</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">"m101129_185401_create_news_table cannot be reverted.\n"</span>;
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    }
+
+    <span class="hljs-comment">/*
+    // Use safeUp/safeDown to run migration code within a transaction
+    public function safeUp()
+    {
+    }
+
+    public function safeDown()
+    {
+    }
+    */</span>
+}
+</code></pre>
+<p>Каждая миграция базы данных определяется как PHP класс расширяющийся от <a href="./yii-db-migration.html">yii\db\Migration</a>. Имя класса миграции автоматически создается в формате <code>m&lt;YYMMDD_HHMMSS&gt;_&lt;Name&gt;</code> (<code>m&lt;ГодМесяцДень_ЧасыМинутыСекунды&gt;_&lt;Имя&gt;</code>), где</p>
+<ul>
+<li><code>&lt;YYMMDD_HHMMSS&gt;</code> относится к UTC дате-времени при котором команда создания миграции была выполнена.</li>
+<li><code>&lt;Name&gt;</code> это то же самое значение аргумента <code>name</code> которое вы прописываете в команду.</li>
+</ul>
+<p>В классе миграции, вы должны прописать код в методе <code>up()</code> когда делаете изменения в структуре базы данных.
+Вы также можете написать код в методе <code>down()</code>, чтобы отменить сделанные <code>up()</code> изменения. Метод <code>up</code> вызывается для обновления базы данных с помощью данной миграции, а метод <code>down()</code> вызывается для отката изменений базы данных.
+Следующий код показывает как можно реализовать класс миграции, чтобы создать таблицу <code>news</code>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Schema</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Migration</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150101_185401_create_news_table</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;createTable(<span class="hljs-string">'news'</span>, [
+            <span class="hljs-string">'id'</span> =&gt; Schema::TYPE_PK,
+            <span class="hljs-string">'title'</span> =&gt; Schema::TYPE_STRING . <span class="hljs-string">' NOT NULL'</span>,
+            <span class="hljs-string">'content'</span> =&gt; Schema::TYPE_TEXT,
+        ]);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;dropTable(<span class="hljs-string">'news'</span>);
+    }
+}
+</code></pre>
+<blockquote class="info"><p><strong>Информация: </strong>Не все миграции являются обратимыми. Например, если метод <code>up()</code> удаляет строку из таблицы, возможно что у вас уже не будет возможности вернуть эту строку методом <code>down()</code>. Иногда Вам может быть просто слишком лень реализовывать метод <code>down()</code>, в связи с тем, что это не очень распространено - откатывать миграции базы данных. В этом случае вы должны в методе <code>down()</code> вернуть <code>false</code>, чтобы указать, что миграция не является обратимой.</p>
+</blockquote>
+<p>Базовый класс миграций <a href="./yii-db-migration.html">yii\db\Migration</a> предоставляет подключение к базе данных через свойство <a href="./yii-db-migration.html#$db-detail">db</a>. Вы можете использовать его для манипулирования схемой базы данных используя методы описанные в <a href="guide-db-dao.html#database-schema">работе со схемой базы данных</a>.</p>
+<p>Вместо использования физических типов данных, при создании таблицы или столбца, следует использовать <em>абстрактные типы</em> для того, чтобы ваша миграция являлась независимой от конкретной СУБД. Класс <a href="./yii-db-schema.html">yii\db\Schema</a> определяет набор констант для предоставления поддержки абстрактных типов. Эти константы называются в следующем формате <code>TYPE_&lt;Name&gt;</code>. Например,
+<code>TYPE_PK</code> относится к типу автоинкремента (AUTO_INCREMENT) первичного ключа;
+<code>TYPE_STRING</code> относится к строковому типу.
+Когда миграция применяется к конкретной базе данных, абстрактные типы будут переведены в соответствующие физические типы.
+В случае с MySQL, <code>TYPE_PK</code> будет превращено в <code>int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY</code>, а <code>TYPE_STRING</code> станет <code>varchar(255)</code>.</p>
+<p>Вы можете добавить дополнительные ограничения при использовании абстрактных типов. В приведенном выше примере, <code> NOT NULL</code> добавляется к <code>Schema::TYPE_STRING</code> чтобы указать, что столбец не может быть <code>NULL</code>.</p>
+<blockquote class="info"><p><strong>Информация: </strong>Сопоставление абстрактных типов и физических типов определяется свойством <a href="./yii-db-querybuilder.html#$typeMap-detail">$typeMap</a> в каждом конкретном <code>QueryBuilder</code> классе.</p>
+</blockquote>
+<p>Начиная с версии 2.0.6, появился новый построитель схем, который является более удобным инструментом для описания структуры столбцов.
+Теперь, при написании миграций, можно использовать такой код:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Migration</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150101_185401_create_news_table</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;createTable(<span class="hljs-string">'news'</span>, [
+            <span class="hljs-string">'id'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;primaryKey(),
+            <span class="hljs-string">'title'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;string()-&gt;notNull(),
+            <span class="hljs-string">'content'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;text(),
+        ]);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;dropTable(<span class="hljs-string">'news'</span>);
+    }
+}
+</code></pre>
+<p>Весь список методов описания типов столбцов доступен в API документации <a href="./yii-db-schemabuildertrait.html">yii\db\SchemaBuilderTrait</a>.</p>
+<h2>Генерация миграций  <span id="generating-migrations"></span><a href="#generating-migrations" class="hashlink">&para;</a></h2><p>Начиная с версии 2.0.7 появился удобный способ создания миграций из консоли.</p>
+<p>В том случае, если миграция названа особым образом, таким как, например, <code>create_xxx_table</code> или <code>drop_xxx_table</code> сгенерированный
+файл миграции будет содержать дополнительный код.</p>
+<h3>Создание таблицы <span id="sozdanie-tablicy"></span><a href="#sozdanie-tablicy" class="hashlink">&para;</a></h3><pre><code class="hljs php language-php">yii migrate/create create_post_table
+</code></pre>
+<p>сгенерирует</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150811_220037_create_post_table</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;createTable(<span class="hljs-string">'post'</span>, [
+            <span class="hljs-string">'id'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;primaryKey()
+        ]);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;dropTable(<span class="hljs-string">'post'</span>);
+    }
+}
+</code></pre>
+<p>Чтобы сразу создать поля таблицы, укажите их через опцию <code>--fields</code>.</p>
+<pre><code class="hljs php language-php">yii migrate/create create_post_table --fields=title:string,body:text
+</code></pre>
+<p>сгенерирует</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150811_220037_create_post_table</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;createTable(<span class="hljs-string">'post'</span>, [
+            <span class="hljs-string">'id'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;primaryKey(),
+            <span class="hljs-string">'title'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;string(),
+            <span class="hljs-string">'body'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;text()
+        ]);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;dropTable(<span class="hljs-string">'post'</span>);
+    }
+}
+</code></pre>
+<p>Можно указать дополнительные параметры.</p>
+<pre><code class="hljs php language-php">yii migrate/create create_post_table --fields=title:string(<span class="hljs-number">12</span>):notNull:unique,body:text
+</code></pre>
+<p>сгенерирует</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150811_220037_create_post_table</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;createTable(<span class="hljs-string">'post'</span>, [
+            <span class="hljs-string">'id'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;primaryKey(),
+            <span class="hljs-string">'title'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;string(<span class="hljs-number">12</span>)-&gt;notNull()-&gt;unique(),
+            <span class="hljs-string">'body'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;text()
+        ]);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;dropTable(<span class="hljs-string">'post'</span>);
+    }
+}
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>первичный ключ добавляется автоматически и по умолчанию называется <code>id</code>. Если вам необходимо другое имя,
+указать его можно через опцию <code>--fields=name:primaryKey</code>.</p>
+</blockquote>
+<h3>Внешние ключи <span id="vnesnie-kluci"></span><a href="#vnesnie-kluci" class="hashlink">&para;</a></h3><p>Начиная с версии 2.0.8, генератор поддерживает создание внешних ключей через ключевое слово <code>foreignKey</code>.</p>
+<pre><code class="hljs php language-php">yii migrate/create create_post_table --fields=<span class="hljs-string">"author_id:integer:notNull:foreignKey(user),category_id:integer:defaultValue(1):foreignKey,title:string,body:text"</span>
+</code></pre>
+<p>сгенерирует</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">/**
+ * Handles the creation for table `post`.
+ * Has foreign keys to the tables:
+ *
+ * - `user`
+ * - `category`
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m160328_040430_create_post_table</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-comment">/**
+     * {<span class="hljs-doctag">@inheritdoc</span>}
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;createTable(<span class="hljs-string">'post'</span>, [
+            <span class="hljs-string">'id'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;primaryKey(),
+            <span class="hljs-string">'author_id'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;integer()-&gt;notNull(),
+            <span class="hljs-string">'category_id'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;integer()-&gt;defaultValue(<span class="hljs-number">1</span>),
+            <span class="hljs-string">'title'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;string(),
+            <span class="hljs-string">'body'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;text(),
+        ]);
+
+        <span class="hljs-comment">// creates index for column `author_id`</span>
+        <span class="hljs-keyword">$this</span>-&gt;createIndex(
+            <span class="hljs-string">'idx-post-author_id'</span>,
+            <span class="hljs-string">'post'</span>,
+            <span class="hljs-string">'author_id'</span>
+        );
+
+        <span class="hljs-comment">// add foreign key for table `user`</span>
+        <span class="hljs-keyword">$this</span>-&gt;addForeignKey(
+            <span class="hljs-string">'fk-post-author_id'</span>,
+            <span class="hljs-string">'post'</span>,
+            <span class="hljs-string">'author_id'</span>,
+            <span class="hljs-string">'user'</span>,
+            <span class="hljs-string">'id'</span>,
+            <span class="hljs-string">'CASCADE'</span>
+        );
+
+        <span class="hljs-comment">// creates index for column `category_id`</span>
+        <span class="hljs-keyword">$this</span>-&gt;createIndex(
+            <span class="hljs-string">'idx-post-category_id'</span>,
+            <span class="hljs-string">'post'</span>,
+            <span class="hljs-string">'category_id'</span>
+        );
+
+        <span class="hljs-comment">// add foreign key for table `category`</span>
+        <span class="hljs-keyword">$this</span>-&gt;addForeignKey(
+            <span class="hljs-string">'fk-post-category_id'</span>,
+            <span class="hljs-string">'post'</span>,
+            <span class="hljs-string">'category_id'</span>,
+            <span class="hljs-string">'category'</span>,
+            <span class="hljs-string">'id'</span>,
+            <span class="hljs-string">'CASCADE'</span>
+        );
+    }
+
+    <span class="hljs-comment">/**
+     * {<span class="hljs-doctag">@inheritdoc</span>}
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-comment">// drops foreign key for table `user`</span>
+        <span class="hljs-keyword">$this</span>-&gt;dropForeignKey(
+            <span class="hljs-string">'fk-post-author_id'</span>,
+            <span class="hljs-string">'post'</span>
+        );
+
+        <span class="hljs-comment">// drops index for column `author_id`</span>
+        <span class="hljs-keyword">$this</span>-&gt;dropIndex(
+            <span class="hljs-string">'idx-post-author_id'</span>,
+            <span class="hljs-string">'post'</span>
+        );
+
+        <span class="hljs-comment">// drops foreign key for table `category`</span>
+        <span class="hljs-keyword">$this</span>-&gt;dropForeignKey(
+            <span class="hljs-string">'fk-post-category_id'</span>,
+            <span class="hljs-string">'post'</span>
+        );
+
+        <span class="hljs-comment">// drops index for column `category_id`</span>
+        <span class="hljs-keyword">$this</span>-&gt;dropIndex(
+            <span class="hljs-string">'idx-post-category_id'</span>,
+            <span class="hljs-string">'post'</span>
+        );
+
+        <span class="hljs-keyword">$this</span>-&gt;dropTable(<span class="hljs-string">'post'</span>);
+    }
+}
+</code></pre>
+<p>Положение ключевого слова <code>foreignKey</code> в описании поля не изменяет сгенерированный код. Это значит, что:</p>
+<ul>
+<li><code>author_id:integer:notNull:foreignKey(user)</code></li>
+<li><code>author_id:integer:foreignKey(user):notNull</code></li>
+<li><code>author_id:foreignKey(user):integer:notNull</code></li>
+</ul>
+<p>Генерируют один и тот же код.</p>
+<p>Ключевое слово <code>foreignKey</code> может принимать в скобках параметр, который будет использован в качестве имени таблицы для внешнего ключа. Если параметр не был передан, то имя таблицы будет извлечено из названия поля.</p>
+<p>В приведенном выше примере <code>author_id:integer:notNull:foreignKey(user)</code> будет генерировать поле <code>author_id</code> с внешним ключом на таблицу <code>user</code>, а <code>category_id:integer:defaultValue(1):foreignKey</code> сгенерирует поле <code>category_id</code> с внешним ключом на таблицу <code>category</code>.</p>
+<p>Начиная с версии 2.0.11, ключевое слово <code>foreignKey</code> может принимать второй параметр, который следует указывать через пробел.
+Этот параметр будет использован в качестве имени поля внешнего ключа.
+В случае, если второй параметр не будет передан, то поле для внешнего ключа будет извлечено из схемы таблицы.
+Тем не менее, это справедливо только в тех случаях, когда таблица имеется в базе данных, первичный ключ задан и не является составным.
+В иных случаях будет использоваться имя по умолчанию <code>id</code>.</p>
+<h3>Удаление таблицы <span id="udalenie-tablicy"></span><a href="#udalenie-tablicy" class="hashlink">&para;</a></h3><pre><code class="hljs php language-php">yii migrate/create drop_post_table --fields=title:string(<span class="hljs-number">12</span>):notNull:unique,body:text
+</code></pre>
+<p>сгенерирует</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150811_220037_drop_post_table</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;dropTable(<span class="hljs-string">'post'</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;createTable(<span class="hljs-string">'post'</span>, [
+            <span class="hljs-string">'id'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;primaryKey(),
+            <span class="hljs-string">'title'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;string(<span class="hljs-number">12</span>)-&gt;notNull()-&gt;unique(),
+            <span class="hljs-string">'body'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;text()
+        ]);
+    }
+}
+</code></pre>
+<h3>Добавление столбца <span id="dobavlenie-stolbca"></span><a href="#dobavlenie-stolbca" class="hashlink">&para;</a></h3><p>Если имя миграции задано как <code>add_xxx_column_to_yyy_table</code>, файл будет содержать необходимые методы <code>addColumn</code> и <code>dropColumn</code>.</p>
+<p>Для добавления столбца:</p>
+<pre><code class="hljs php language-php">yii migrate/create add_position_column_to_post_table --fields=position:integer
+</code></pre>
+<p>сгенерирует</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150811_220037_add_position_column_to_post_table</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;addColumn(<span class="hljs-string">'post'</span>, <span class="hljs-string">'position'</span>, <span class="hljs-keyword">$this</span>-&gt;integer());
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;dropColumn(<span class="hljs-string">'post'</span>, <span class="hljs-string">'position'</span>);
+    }
+}
+</code></pre>
+<h3>Удаление столбца <span id="udalenie-stolbca"></span><a href="#udalenie-stolbca" class="hashlink">&para;</a></h3><p>Если имя миграции задано как <code>drop_xxx_column_from_yyy_table</code>, файл будет содержать необходимые методы <code>addColumn</code> и <code>dropColumn</code>.</p>
+<pre><code class="hljs php language-php">yii migrate/create drop_position_column_from_post_table --fields=position:integer
+</code></pre>
+<p>сгенерирует</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150811_220037_drop_position_column_from_post_table</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;dropColumn(<span class="hljs-string">'post'</span>, <span class="hljs-string">'position'</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;addColumn(<span class="hljs-string">'post'</span>, <span class="hljs-string">'position'</span>, <span class="hljs-keyword">$this</span>-&gt;integer());
+    }
+}
+</code></pre>
+<h3>Добавление промежуточной таблицы <span id="dobavlenie-promezutocnoj-tablicy"></span><a href="#dobavlenie-promezutocnoj-tablicy" class="hashlink">&para;</a></h3><p>Если имя миграции задано как <code>create_junction_table_for_xxx_and_yyy_tables</code>, файл будет содержать код для создания промежуточной таблицы.</p>
+<pre><code class="hljs php language-php">yii migrate/create create_junction_table_for_post_and_tag_tables
+</code></pre>
+<p>сгенерирует</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">/**
+ * Handles the creation for table `post_tag`.
+ * Has foreign keys to the tables:
+ *
+ * - `post`
+ * - `tag`
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m160328_041642_create_junction_table_for_post_and_tag_tables</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-comment">/**
+     * {<span class="hljs-doctag">@inheritdoc</span>}
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;createTable(<span class="hljs-string">'post_tag'</span>, [
+            <span class="hljs-string">'post_id'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;integer(),
+            <span class="hljs-string">'tag_id'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;integer(),
+            <span class="hljs-string">'created_at'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;dateTime(),
+            <span class="hljs-string">'PRIMARY KEY(post_id, tag_id)'</span>,
+        ]);
+
+        <span class="hljs-comment">// creates index for column `post_id`</span>
+        <span class="hljs-keyword">$this</span>-&gt;createIndex(
+            <span class="hljs-string">'idx-post_tag-post_id'</span>,
+            <span class="hljs-string">'post_tag'</span>,
+            <span class="hljs-string">'post_id'</span>
+        );
+
+        <span class="hljs-comment">// add foreign key for table `post`</span>
+        <span class="hljs-keyword">$this</span>-&gt;addForeignKey(
+            <span class="hljs-string">'fk-post_tag-post_id'</span>,
+            <span class="hljs-string">'post_tag'</span>,
+            <span class="hljs-string">'post_id'</span>,
+            <span class="hljs-string">'post'</span>,
+            <span class="hljs-string">'id'</span>,
+            <span class="hljs-string">'CASCADE'</span>
+        );
+
+        <span class="hljs-comment">// creates index for column `tag_id`</span>
+        <span class="hljs-keyword">$this</span>-&gt;createIndex(
+            <span class="hljs-string">'idx-post_tag-tag_id'</span>,
+            <span class="hljs-string">'post_tag'</span>,
+            <span class="hljs-string">'tag_id'</span>
+        );
+
+        <span class="hljs-comment">// add foreign key for table `tag`</span>
+        <span class="hljs-keyword">$this</span>-&gt;addForeignKey(
+            <span class="hljs-string">'fk-post_tag-tag_id'</span>,
+            <span class="hljs-string">'post_tag'</span>,
+            <span class="hljs-string">'tag_id'</span>,
+            <span class="hljs-string">'tag'</span>,
+            <span class="hljs-string">'id'</span>,
+            <span class="hljs-string">'CASCADE'</span>
+        );
+    }
+
+    <span class="hljs-comment">/**
+     * {<span class="hljs-doctag">@inheritdoc</span>}
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-comment">// drops foreign key for table `post`</span>
+        <span class="hljs-keyword">$this</span>-&gt;dropForeignKey(
+            <span class="hljs-string">'fk-post_tag-post_id'</span>,
+            <span class="hljs-string">'post_tag'</span>
+        );
+
+        <span class="hljs-comment">// drops index for column `post_id`</span>
+        <span class="hljs-keyword">$this</span>-&gt;dropIndex(
+            <span class="hljs-string">'idx-post_tag-post_id'</span>,
+            <span class="hljs-string">'post_tag'</span>
+        );
+
+        <span class="hljs-comment">// drops foreign key for table `tag`</span>
+        <span class="hljs-keyword">$this</span>-&gt;dropForeignKey(
+            <span class="hljs-string">'fk-post_tag-tag_id'</span>,
+            <span class="hljs-string">'post_tag'</span>
+        );
+
+        <span class="hljs-comment">// drops index for column `tag_id`</span>
+        <span class="hljs-keyword">$this</span>-&gt;dropIndex(
+            <span class="hljs-string">'idx-post_tag-tag_id'</span>,
+            <span class="hljs-string">'post_tag'</span>
+        );
+
+        <span class="hljs-keyword">$this</span>-&gt;dropTable(<span class="hljs-string">'post_tag'</span>);
+    }
+}
+</code></pre>
+<p>Начиная с версии 2.0.11, имена полей для внешних ключей промежуточной таблицы будут извлечены из объединяемых таблиц.
+Тем не менее, это справедливо только в тех случаях, когда таблица имеется в базе данных, первичный ключ задан и не является составным.
+В других иных случаях для поля будет сгенерировано значение по умолчанию <code>id</code>.</p>
+<h3>Транзакции Миграций  <span id="transactional-migrations"></span><a href="#transactional-migrations" class="hashlink">&para;</a></h3><p>При выполнении сложных миграций баз данных, важно обеспечить каждую миграцию либо успехом, либо ошибкой, в целом так, чтобы база данных могла поддерживать целостность и непротиворечивость. Для достижения данной цели рекомендуется, заключить операции каждой миграции базы данных в <a href="guide-db-dao.html#performing-transactions">транзакции</a>.</p>
+<p>Самый простой способ реализации транзакций миграций это прописать код миграций в методы <code>safeUp()</code> и <code>safeDown()</code>. Эти два метода отличаются от методов <code>up()</code> и <code>down()</code> тем, что они неявно заключены в транзакции. В результате если какая-либо операция в этих методах не удается, все предыдущие операции будут отменены автоматически.</p>
+<p>В следующем примере, помимо создания таблицы <code>news</code> мы также вставляем в этой таблице начальную строку.</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Migration</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150101_185401_create_news_table</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">safeUp</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;createTable(<span class="hljs-string">'news'</span>, [
+            <span class="hljs-string">'id'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;primaryKey(),
+            <span class="hljs-string">'title'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;string()-&gt;notNull(),
+            <span class="hljs-string">'content'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;text(),
+        ]);
+
+        <span class="hljs-keyword">$this</span>-&gt;insert(<span class="hljs-string">'news'</span>, [
+            <span class="hljs-string">'title'</span> =&gt; <span class="hljs-string">'test 1'</span>,
+            <span class="hljs-string">'content'</span> =&gt; <span class="hljs-string">'content 1'</span>,
+        ]);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">safeDown</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;delete(<span class="hljs-string">'news'</span>, [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">1</span>]);
+        <span class="hljs-keyword">$this</span>-&gt;dropTable(<span class="hljs-string">'news'</span>);
+    }
+}
+</code></pre>
+<p>Обратите внимание, что обычно при выполнении нескольких операций в базе данных при помощи метода <code>safeUp()</code>, вы должны
+реализовать обратный порядок исполнения в методе <code>safeDown()</code>. В приведенном выше примере мы сначала создали таблицу,
+а затем вставили строку в <code>safeUp()</code>; а в <code>safeDown()</code> мы сначала удаляем строку и затем удаляем таблицу.</p>
+<blockquote class="note"><p><strong>Примечание: </strong>Не все СУБД поддерживают транзакции. И некоторые запросы к базам данных не могут быть введены в транзакции.
+Для различных примеров, пожалуйста, обратитесь к <a href="http://dev.mysql.com/doc/refman/5.7/en/implicit-commit.html">негласным обязательствам</a>.
+В этом случае вместо этих методов вы должны реализовать методы <code>up()</code> и <code>down()</code>.</p>
+</blockquote>
+<h3>Методы доступа к базе данных  <span id="db-accessing-methods"></span><a href="#db-accessing-methods" class="hashlink">&para;</a></h3><p>Базовый класс миграции <a href="./yii-db-migration.html">yii\db\Migration</a> предоставляет набор методов, которые позволяют Вам получить доступ и управлять
+базами данных. Вы можете найти эти методы, их названия аналогичны <a href="guide-db-dao.html">методам DAO</a>, предоставленным в классе <a href="./yii-db-command.html">yii\db\Command</a>.
+Например, метод <a href="./yii-db-migration.html#createTable()-detail">yii\db\Migration::createTable()</a> позволяет создать новую таблицу, подобно методу <a href="./yii-db-command.html#createTable()-detail">yii\db\Command::createTable()</a>.</p>
+<p>Преимущество методов, описанных при помощи <a href="./yii-db-migration.html">yii\db\Migration</a> заключается в том, что Вам не нужно явно создавать
+экземпляр/копию <a href="./yii-db-command.html">yii\db\Command</a> и исполнение каждого метода будет автоматически отображать полезные сообщения
+говорящие вам, что операции с базой данных выполняются и сколько они идут.</p>
+<p>Ниже представлен список всех этих методов доступа к базам данных:</p>
+<ul>
+<li><a href="./yii-db-migration.html#execute()-detail">execute()</a>: выполнение SQL инструкции</li>
+<li><a href="./yii-db-migration.html#insert()-detail">insert()</a>: вставка одной строки</li>
+<li><a href="./yii-db-migration.html#batchInsert()-detail">batchInsert()</a>: вставка нескольких строк</li>
+<li><a href="./yii-db-migration.html#update()-detail">update()</a>: обновление строк</li>
+<li><a href="./yii-db-migration.html#delete()-detail">delete()</a>: удаление строк</li>
+<li><a href="./yii-db-migration.html#createTable()-detail">createTable()</a>: создание таблицы</li>
+<li><a href="./yii-db-migration.html#renameTable()-detail">renameTable()</a>: переименование таблицы</li>
+<li><a href="./yii-db-migration.html#dropTable()-detail">dropTable()</a>: удаление таблицы</li>
+<li><a href="./yii-db-migration.html#truncateTable()-detail">truncateTable()</a>: удаление всех строк в таблице</li>
+<li><a href="./yii-db-migration.html#addColumn()-detail">addColumn()</a>: добавление столбца</li>
+<li><a href="./yii-db-migration.html#renameColumn()-detail">renameColumn()</a>: переименование столбца</li>
+<li><a href="./yii-db-migration.html#dropColumn()-detail">dropColumn()</a>: удаление столбца</li>
+<li><a href="./yii-db-migration.html#alterColumn()-detail">alterColumn()</a>: изменения столбца</li>
+<li><a href="./yii-db-migration.html#addPrimaryKey()-detail">addPrimaryKey()</a>: добавление первичного ключа</li>
+<li><a href="./yii-db-migration.html#dropPrimaryKey()-detail">dropPrimaryKey()</a>: удаление первичного ключа</li>
+<li><a href="./yii-db-migration.html#addForeignKey()-detail">addForeignKey()</a>: добавление внешнего ключа</li>
+<li><a href="./yii-db-migration.html#dropForeignKey()-detail">dropForeignKey()</a>: удаление внешнего ключа</li>
+<li><a href="./yii-db-migration.html#createIndex()-detail">createIndex()</a>: создание индекса</li>
+<li><a href="./yii-db-migration.html#dropIndex()-detail">dropIndex()</a>: удаление индекса</li>
+</ul>
+<blockquote class="info"><p><strong>Информация: </strong><a href="./yii-db-migration.html">yii\db\Migration</a> не предоставляет методы запросов к базе данных. Это потому, что обычно не требуется отображать дополнительные сообщения об извлечении данных из базы данных. Это также, потому, что можно использовать более мощный <a href="guide-db-query-builder.html">Построитель Запросов</a> для построения и выполнения сложных запросов.</p>
+</blockquote>
+<blockquote class="note"><p><strong>Примечание: </strong>при обработке данных внутри миграции, может показаться, что использование существующих классов <a href="guide-db-active-record.html">Active Record</a>, со всей их готовой бизнес логикой, будет разумным решением и упросит код миграции. Однако следует помнить, что код миграций не должен меняться, по определению. В отличие от миграций, бизнес логика приложений часто изменяется. Это может привести к нарушению работы миграции при определённых изменениях на уровне Active Record. Поэтому рекомендуется делать миграции независимыми от других частей приложения, таких как классы Active Record.</p>
+</blockquote>
+<h2>Применение Миграций  <span id="applying-migrations"></span><a href="#applying-migrations" class="hashlink">&para;</a></h2><p>Для обновления базы данных до последней структуры, вы должны применить все новые миграции, используя следующую команду:</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> migrate
+</code></pre>
+<p>Эта команда выведет список всех миграций, которые не применялись до сих пор. Если вы подтвердите, что вы хотите применить эти миграций, то этим самым запустите метод <code>up()</code> или <code>safeUp()</code> в каждом новом классе миграции, один за другим, в порядке их временного значения timestamp.</p>
+<p>Для каждой миграции которая была успешно проведена, эта команда будет вставлять строку в таблицу базы данных с именем
+<code>migration</code> записав успешное проведение миграции. Это позволяет инструменту миграции выявлять какие миграции были применены, а какие - нет.</p>
+<blockquote class="note"><p><strong>Примечание: </strong>Инструмент миграции автоматически создаст таблицу <code>migration</code> в базе данных указанной в параметре <a href="./yii-console-controllers-migratecontroller.html#$db-detail">db</a>. По умолчанию база данных определяется как <a href="guide-structure-application-components.html">компонент приложения</a> <code>db</code>.</p>
+</blockquote>
+<p>Иногда, необходимо применить одну или несколько новых миграций, вместо всех доступных миграций. Это возможно сделать, указав, при выполнении команды, количество миграций, которые необходимо применить. Например, следующая команда будет пытаться применить следующие три доступные миграции:</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> migrate <span class="hljs-number">3</span>
+</code></pre>
+<p>Также можно явно указать конкретную миграцию, которая должна быть применена к базе данных, это можно сделать при помощи команды <code>migrate/to</code> в одном из следующих форматов:</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> migrate/to 150101_185401                      <span class="hljs-comment"># используя временную метку определяющую миграцию</span>
+yii migrate/to <span class="hljs-string">"2015-01-01 18:54:01"</span>              <span class="hljs-comment"># используя строку, которая может быть получена путем использования функции strtotime()</span>
+yii migrate/to m150101_185401_create_news_table   <span class="hljs-comment"># используя полное имя</span>
+yii migrate/to <span class="hljs-number">1392853618</span>                         <span class="hljs-comment"># используя временную метку UNIX</span>
+</code></pre>
+<p>Если раньше имелись какие-либо не применённые миграции, до указанной конкретной миграции, то все они будут применены до данной миграции.
+А если указанная миграция уже применялась ранее, то любые более поздние версии данной прикладной миграции будут отменены.</p>
+<h2>Отмена Миграций  <span id="reverting-migrations"></span><a href="#reverting-migrations" class="hashlink">&para;</a></h2><p>Чтобы отменить (откатить) одну или несколько миграций, которые применялись ранее, нужно запустить следующую команду:</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> migrate/down     <span class="hljs-comment"># отменяет самую последнюю применённую миграцию</span>
+yii migrate/down <span class="hljs-number">3</span>   <span class="hljs-comment"># отменяет 3 последних применённых миграции</span>
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>Не все миграции являются обратимыми. При попытке отката таких миграций произойдёт ошибка и остановится весь процесс отката.</p>
+</blockquote>
+<h2>Перезагрузка Миграций  <span id="redoing-migrations"></span><a href="#redoing-migrations" class="hashlink">&para;</a></h2><p>Под перезагрузкой миграций подразумевается, сначала последовательный откат определённых миграций, а потом применение их снова. Это может быть сделано следующим образом:</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> migrate/redo        <span class="hljs-comment"># перезагрузить последнюю применённую миграцию</span>
+yii migrate/redo <span class="hljs-number">3</span>      <span class="hljs-comment"># перезагрузить 3 последние применённые миграции</span>
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>Если миграция не является обратимой, вы не сможете её перезагрузить.</p>
+</blockquote>
+<h2>Список Миграций  <span id="listing-migrations"></span><a href="#listing-migrations" class="hashlink">&para;</a></h2><p>Чтобы посмотреть какие миграции были применены, а какие нет, используйте следующие команды:</p>
+<pre><code class="hljs bash">yii migrate/<span class="hljs-built_in">history</span>     <span class="hljs-comment"># показать последних 10 применённых миграций</span>
+yii migrate/<span class="hljs-built_in">history</span> 5   <span class="hljs-comment"># показать последних 5 применённых миграций</span>
+yii migrate/<span class="hljs-built_in">history</span> all <span class="hljs-comment"># показать все применённые миграции</span>
+
+yii migrate/new         <span class="hljs-comment"># показать первых 10 новых миграций</span>
+yii migrate/new 5       <span class="hljs-comment"># показать первых 5 новых миграций</span>
+yii migrate/new all     <span class="hljs-comment"># показать все новые миграции</span>
+</code></pre>
+<h2>Изменение Истории Миграций  <span id="modifying-migration-history"></span><a href="#modifying-migration-history" class="hashlink">&para;</a></h2><p>Вместо применения или отката миграций, есть возможность просто <b>отметить</b>, что база данных была обновлена до определенной миграции. Это часто используется при ручном изменении базы данных в конкретное состояние и Вам не нужно применять миграции для того, чтобы это изменение было повторно применено позже. Этой цели можно добиться с помощью следующей команды:</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> migrate/mark 150101_185401                      <span class="hljs-comment"># используя временную метку определённой миграции</span>
+yii migrate/mark <span class="hljs-string">"2015-01-01 18:54:01"</span>              <span class="hljs-comment"># используя строку, которая может быть получена путем использования функции strtotime()</span>
+yii migrate/mark m150101_185401_create_news_table   <span class="hljs-comment"># используя полное имя</span>
+yii migrate/mark <span class="hljs-number">1392853618</span>                         <span class="hljs-comment"># используя временную метку UNIX</span>
+</code></pre>
+<p>Эта команда изменит таблицу <code>migration</code> добавив или удалив определенные строки, тем самым указав, что к базе данных была применена указанная миграция. Никаких миграций не будет применяться или отменяться по этой команде.</p>
+<h2>Настройка Миграций  <span id="customizing-migrations"></span><a href="#customizing-migrations" class="hashlink">&para;</a></h2><p>Есть несколько способов настроить команду миграции.</p>
+<h3>Используя параметры командной строки <span id="using-command-line-options"></span><a href="#using-command-line-options" class="hashlink">&para;</a></h3><p>В команду миграций входит несколько параметров командной строки, которые могут использоваться, для того, чтобы настроить
+поведение миграции:</p>
+<ul>
+<li><p><code>interactive</code>: логический тип - boolean (по умолчанию <code>true</code>). Указывает, следует ли выполнять миграцию в интерактивном
+режиме. Если это значение является - <code>true</code>, то пользователю будет выдан запрос, перед выполнением командой определенных
+действий. Вы можете установить это значение в <code>false</code> если команда используется в фоновом режиме.</p>
+</li>
+<li><p><code>migrationPath</code>: строка - string (по умолчанию <code>@app/migrations</code>). Указывает каталог для хранения всех файлов классов
+миграций. Этот параметр может быть определён либо как путь до директории, либо как <a href="guide-concept-aliases.html">псевдоним</a> пути.
+Обратите внимание, что данный каталог должен существовать, иначе команда будет выдавать ошибку.</p>
+</li>
+<li><p><code>migrationTable</code>: строка - string (по умолчанию <code>migration</code>). Определяет имя таблицы в базе данных в которой хранится
+информация об истории миграций. Эта таблица будет автоматически создана командой миграции, если её не существует.
+Вы также можете создать её вручную, используя структуру <code>version varchar(255) primary key, apply_time integer</code>.</p>
+</li>
+<li><p><code>db</code>: строка - string (по умолчанию <code>db</code>). Определяет ID базы данных <a href="guide-structure-application-components.html">компонента приложения</a>.
+Этот параметр представляет собой базу данных, которая подвергается миграциям при помощи команды миграций.</p>
+</li>
+<li><p><code>templateFile</code>: строка - string (по умолчанию <code>@yii/views/migration.php</code>). Указывает путь до файла шаблона, который
+используется для формирования скелета класса файлов миграции. Этот параметр может быть определён либо как путь до файла,
+либо как <a href="guide-concept-aliases.html">псевдоним</a> пути. Файл шаблона - это PHP скрипт, в котором можно использовать
+предопределенную переменную с именем <code>$className</code> для того, чтобы получить имя класса миграции.</p>
+</li>
+<li><p><code>generatorTemplateFiles</code>: массив (по умолчанию `[</p>
+<pre><code class="hljs php">  <span class="hljs-string">'create_table'</span> =&gt; <span class="hljs-string">'@yii/views/createTableMigration.php'</span>,
+  <span class="hljs-string">'drop_table'</span> =&gt; <span class="hljs-string">'@yii/views/dropTableMigration.php'</span>,
+  <span class="hljs-string">'add_column'</span> =&gt; <span class="hljs-string">'@yii/views/addColumnMigration.php'</span>,
+  <span class="hljs-string">'drop_column'</span> =&gt; <span class="hljs-string">'@yii/views/dropColumnMigration.php'</span>,
+  <span class="hljs-string">'create_junction'</span> =&gt; <span class="hljs-string">'@yii/views/createTableMigration.php'</span>
+</code></pre>
+<p>]`), в котором указаны файлы шаблонов для генерации миграций. Подробнее в разделе «<a href="#generating-migrations">Генерация миграций</a>».</p>
+</li>
+<li><p><code>fields</code>: массив конфигураций столбцов, который используется для генерации кода миграции. По умолчанию пуст. Формат
+каждой конфигурации <code>ИМЯ_СТОЛБЦА:ТИП_СТОЛБЦА:ДЕКОРАТОР_СТОЛБЦА</code>. Например, <code>--fields=name:string(12):notNull</code> даст нам
+столбец типа строка размера 12 с ограничением <code>not null</code>.</p>
+</li>
+</ul>
+<p>В следующем примере показано, как можно использовать эти параметры.</p>
+<p>Например, если мы хотим перенести модуль <code>forum</code>, чьи файлы миграций расположены в каталоге <code>migrations</code> данного модуля,
+для этого мы можем использовать следующую команду:</p>
+<pre><code class="hljs nginx"><span class="hljs-comment"># не интерактивная миграция модуля форума</span>
+<span class="hljs-attribute">yii</span> migrate --migrationPath=<span class="hljs-variable">@app</span>/modules/forum/migrations --interactive=<span class="hljs-number">0</span>
+</code></pre>
+<h3>Глобальная настройка команд  <span id="configuring-command-globally"></span><a href="#configuring-command-globally" class="hashlink">&para;</a></h3><p>Вместо того, чтобы каждый раз вводить одинаковые значения параметров миграции, когда вы запускаете команду миграции,
+можно настроить её раз и навсегда в конфигурации приложения, как показано ниже:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'controllerMap'</span> =&gt; [
+        <span class="hljs-string">'migrate'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\console\controllers\MigrateController'</span>,
+            <span class="hljs-string">'migrationTable'</span> =&gt; <span class="hljs-string">'backend_migration'</span>,
+        ],
+    ],
+];
+</code></pre>
+<p>С приведённой выше конфигурацией, каждый раз при запуске команды миграции, таблица <code>backend_migration</code> будет использована для записи истории миграций. И Вам больше не нужно указывать её через параметр <code>migrationTable</code> в командной строке.</p>
+<h3>Миграции с пространством имен  <span id="namespaced-migrations"></span><a href="#namespaced-migrations" class="hashlink">&para;</a></h3><p>Начиная с версии 2.0.10 вы можете использовать пространства имен при объявлении класса миграции. Вы можете указать список пространств
+имен миграций через <a href="./yii-console-controllers-basemigratecontroller.html#$migrationNamespaces-detail">migrationNamespaces</a>. Использование пространств
+имен для классов миграции позволяет сочетать несколько источников миграций. Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'controllerMap'</span> =&gt; [
+        <span class="hljs-string">'migrate'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\console\controllers\MigrateController'</span>,
+            <span class="hljs-string">'migrationNamespaces'</span> =&gt; [
+                <span class="hljs-string">'app\migrations'</span>, <span class="hljs-comment">// Общие миграции приложения</span>
+                <span class="hljs-string">'module\migrations'</span>, <span class="hljs-comment">// Миграции одного из модулей проекта</span>
+                <span class="hljs-string">'some\extension\migrations'</span>, <span class="hljs-comment">// Миграции одного из расширений</span>
+            ],
+        ],
+    ],
+];
+</code></pre>
+<blockquote><p>Замечание: миграции из различных пространств имен образуют <strong>единую</strong> историю, т.е. вы не сможете
+  применить или откатить миграции из одного конкретного пространства имен.</p>
+</blockquote>
+<p>Работая с миграциями по пространствам имен: при создании, отмене и т.д., следует указывать полное имя пространства имен
+перед именем миграции. Имейте в виду, что символ обратного слеша (<code>\</code>), как правило, является специальным символом в консоли,
+так что вам придется экранировать его соответствующим образом во избежание ошибок или неверного поведения. Например:</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> migrate/create <span class="hljs-string">'app\\migrations\\createUserTable'</span>
+</code></pre>
+<blockquote><p>Замечание: миграции заданные через <a href="./yii-console-controllers-basemigratecontroller.html#$migrationPath-detail">migrationPath</a> не могут содержать
+  пространство имен, миграции, объявленные с пространством имен, могут быть применены только используя свойство <a href="./yii-console-controllers-basemigratecontroller.html#$migrationNamespaces-detail">yii\console\controllers\MigrateController::$migrationNamespaces</a>.</p>
+</blockquote>
+<h3>Отдельностоящие Миграции  <span id="separated-migrations"></span><a href="#separated-migrations" class="hashlink">&para;</a></h3><p>Иногда использование единой истории для всех миграций проекта не желательно. Например: вы можете установить расширение
+'blog', которое содержит полностью независимый функционал и содержит собственные миграции, которые не должны затрагивать
+миграции связанные с основной функциональностью проекта.</p>
+<p>Если необходимо, чтобы миграции из разных источников были независимы друг от друга, вы можете сконфигурировать
+несколько команд миграции, которые будут использовать разные пространства имён и разные таблицы для хранения истории
+миграций:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'controllerMap'</span> =&gt; [
+        <span class="hljs-comment">// Общие миграции приложения</span>
+        <span class="hljs-string">'migrate-app'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\console\controllers\MigrateController'</span>,
+            <span class="hljs-string">'migrationNamespaces'</span> =&gt; [<span class="hljs-string">'app\migrations'</span>],
+            <span class="hljs-string">'migrationTable'</span> =&gt; <span class="hljs-string">'migration_app'</span>,
+        ],
+        <span class="hljs-comment">// Миграции одного из модулей проекта</span>
+        <span class="hljs-string">'migrate-module'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\console\controllers\MigrateController'</span>,
+            <span class="hljs-string">'migrationNamespaces'</span> =&gt; [<span class="hljs-string">'module\migrations'</span>],
+            <span class="hljs-string">'migrationTable'</span> =&gt; <span class="hljs-string">'migration_module'</span>,
+        ],
+        <span class="hljs-comment">// Миграции одного из расширений</span>
+        <span class="hljs-string">'migrate-rbac'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\console\controllers\MigrateController'</span>,
+            <span class="hljs-string">'migrationPath'</span> =&gt; <span class="hljs-string">'@yii/rbac/migrations'</span>,
+            <span class="hljs-string">'migrationTable'</span> =&gt; <span class="hljs-string">'migration_rbac'</span>,
+        ],
+    ],
+];
+</code></pre>
+<p>Учтите, что для синхронизации базы данных при такой конфигурации потребуется вызвать несколько команд вместо одной:</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> migrate-app
+yii migrate-module
+yii migrate-rbac
+</code></pre>
+<h2>Миграции в Несколько Баз Данных  <span id="migrating-multiple-databases"></span><a href="#migrating-multiple-databases" class="hashlink">&para;</a></h2><p>По умолчанию, миграции применяются для базы данных, указанной в <code>db</code> <a href="guide-structure-application-components.html">компоненте приложения</a>.
+Если вы хотите применить миграцию к другой базе данных, вы можете определить параметр <code>db</code> в командной строке как показано ниже,</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> migrate --db=db2
+</code></pre>
+<p>Приведенная выше команда применит миграции к базе данных <code>db2</code>.</p>
+<p>Иногда может случиться так, что вы захотите применить <em>некоторые</em> из миграций к одной базе данных, а некоторые другие к другой базе данных. Для достижения этой цели, при реализации класса миграции, необходимо явно указать идентификатор ID компонента базы данных, который миграция будет использовать, следующим образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Migration</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150101_185401_create_news_table</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;db = <span class="hljs-string">'db2'</span>;
+        <span class="hljs-keyword">parent</span>::init();
+    }
+}
+</code></pre>
+<p>Вышеуказанная миграция будет применена к <code>db2</code> даже если указать другую базу данных через параметр <code>db</code> командной строки. Обратите внимание, что история миграций в этом случае будет записана в базу данных, указанную в параметре <code>db</code> командной строки.</p>
+<p>Если у вас есть несколько миграций, которые используют ту же другую базу данных, то рекомендуется создать базовый класс миграций выше кода <code>init()</code>. Затем каждый класс миграции может расширяться от этого базового класса.</p>
+<blockquote><p>Совет: Кроме установки свойства <a href="./yii-db-migration.html#$db-detail">db</a>, вы также можете работать с разными базами данных путем создания нового соединения с конкретной базой данных в классе Вашей миграции. Можно использовать <a href="guide-db-dao.html">DAO методы</a> с этими соединениями для манипулирования различными базами данных.</p>
+</blockquote>
+<p>Другая стратегия, которую вы можете выбрать, чтобы перенести (мигрировать) несколько баз данных - это сохранить миграции различных баз данных в разные директории. Затем вы можете перенести эти базы данных в нужные базы следующими командами:</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> migrate --migrationPath=<span class="hljs-variable">@app</span>/migrations/db1 --db=db1
+yii migrate --migrationPath=<span class="hljs-variable">@app</span>/migrations/db2 --db=db2
+...
+</code></pre>
+<p>Первая команда применит миграции в директории <code>@app/migrations/db1</code> к базе данных <code>db1</code>, а вторая команда применит миграции в директории <code>@app/migrations/db2</code> к базе данных <code>db2</code> и так далее.</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 09 Dec 2020 00:16:08 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

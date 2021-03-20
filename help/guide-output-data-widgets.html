@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/1728b664/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9c5d0894/solarized_light.css" rel="stylesheet">
+<link href="./assets/f2ce5bcd/style.css" rel="stylesheet">
+<script src="./assets/bbf84a7a/jquery.js"></script>
+<script src="./assets/1728b664/js/bootstrap.js"></script>
+<script src="./assets/fd63b446/jssearch.js"></script>    <title>Виджеты для данных - Отображение данных - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w719" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w719-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w719-collapse" class="collapse navbar-collapse"><ul id="w720" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w721" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-703" data-toggle="collapse" data-parent="#navigation">Введение <b class="caret"></b></a><div id="navigation-703" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">О Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Обновление с версии 1.1</a></div>
+<a class="list-group-item" href="#navigation-704" data-toggle="collapse" data-parent="#navigation">Первое знакомство <b class="caret"></b></a><div id="navigation-704" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Установка Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Запуск приложения</a>
+<a class="list-group-item" href="./guide-start-hello.html">Говорим «привет»</a>
+<a class="list-group-item" href="./guide-start-forms.html">Работа с формами</a>
+<a class="list-group-item" href="./guide-start-databases.html">Работа с базами данных</a>
+<a class="list-group-item" href="./guide-start-gii.html">Генерация кода при помощи Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Что дальше?</a></div>
+<a class="list-group-item" href="#navigation-705" data-toggle="collapse" data-parent="#navigation">Структура приложения <b class="caret"></b></a><div id="navigation-705" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Входные скрипты</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Приложения</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Компоненты приложения</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-structure-models.html">Модели</a>
+<a class="list-group-item" href="./guide-structure-views.html">Представления</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Модули</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Фильтры</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Виджеты</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Расширения</a></div>
+<a class="list-group-item" href="#navigation-706" data-toggle="collapse" data-parent="#navigation">Обработка запросов <b class="caret"></b></a><div id="navigation-706" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Разбор и генерация URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Запросы</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Ответы</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Сессии и куки</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Обработка ошибок</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Логирование</a></div>
+<a class="list-group-item" href="#navigation-707" data-toggle="collapse" data-parent="#navigation">Основные понятия <b class="caret"></b></a><div id="navigation-707" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Компоненты</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Свойства</a>
+<a class="list-group-item" href="./guide-concept-events.html">События</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Поведения</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Конфигурации</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Псевдонимы</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Автозагрузка классов</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item" href="#navigation-708" data-toggle="collapse" data-parent="#navigation">Работа с базами данных <b class="caret"></b></a><div id="navigation-708" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Объекты доступа к данным (DAO)</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Построитель запросов</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Миграции</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-ru/README.md">Sphinx</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-redis/blob/master/docs/guide-ru/README.md">Redis</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-ru/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-ru/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-709" data-toggle="collapse" data-parent="#navigation">Получение данных от пользователя <b class="caret"></b></a><div id="navigation-709" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Создание форм</a>
+<a class="list-group-item" href="./guide-input-validation.html">Валидация</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Загрузка файлов</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Табличный ввод</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Работа с несколькими моделями</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">Расширение ActiveForm на стороне клиента</a></div>
+<a class="list-group-item active" href="#navigation-710" data-toggle="collapse" data-parent="#navigation">Отображение данных <b class="caret"></b></a><div id="navigation-710" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-output-formatting.html">Форматирование данных</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Постраничная разбивка</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Сортировка</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Провайдеры данных</a>
+<a class="list-group-item active" href="./guide-output-data-widgets.html">Виджеты для данных</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Работа с клиентскими скриптами</a>
+<a class="list-group-item" href="./guide-output-theming.html">Темизация</a></div>
+<a class="list-group-item" href="#navigation-711" data-toggle="collapse" data-parent="#navigation">Безопасность <b class="caret"></b></a><div id="navigation-711" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-security-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Авторизация</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Работа с паролями</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">Криптография</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-ru/README.md">Клиенты авторизации</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Лучшие практики</a></div>
+<a class="list-group-item" href="#navigation-712" data-toggle="collapse" data-parent="#navigation">Кеширование <b class="caret"></b></a><div id="navigation-712" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-caching-data.html">Кэширование данных</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Кэширование фрагментов</a>
+<a class="list-group-item" href="./guide-caching-page.html">Кэширование страниц</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP кэширование</a></div>
+<a class="list-group-item" href="#navigation-713" data-toggle="collapse" data-parent="#navigation">Веб-сервисы REST <b class="caret"></b></a><div id="navigation-713" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Быстрый старт</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Роутинг</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Форматирование ответа</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Ограничение частоты запросов</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Версионирование</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Обработка ошибок</a></div>
+<a class="list-group-item" href="#navigation-714" data-toggle="collapse" data-parent="#navigation">Инструменты разработчика <b class="caret"></b></a><div id="navigation-714" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Отладочная панель и отладчик</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide/README.md">Генерация кода с Gii</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">Генератор документации API</a></div>
+<a class="list-group-item" href="#navigation-715" data-toggle="collapse" data-parent="#navigation">Тестирование <b class="caret"></b></a><div id="navigation-715" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Настройка тестового окружения</a>
+<a class="list-group-item" href="./guide-test-unit.html">Модульные тесты</a>
+<a class="list-group-item" href="./guide-test-functional.html">Функциональные тесты</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Приёмочные тесты</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Фикстуры</a></div>
+<a class="list-group-item" href="#navigation-716" data-toggle="collapse" data-parent="#navigation">Специальные темы <b class="caret"></b></a><div id="navigation-716" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">Шаблон приложения advanced</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Создание приложения с нуля</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Консольные команды</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Встроенные валидаторы</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Интернационализация</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Отправка почты</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Оптимизация производительности</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Окружение виртуального хостинга</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Шаблонизаторы</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Работа со сторонним кодом</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">Использование Yii в качестве микро-framework&#039;а</a></div>
+<a class="list-group-item" href="#navigation-717" data-toggle="collapse" data-parent="#navigation">Виджеты <b class="caret"></b></a><div id="navigation-717" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-ru/README.md">Виджеты Bootstrap</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-ru/README.md">Виджеты Jquery UI</a></div>
+<a class="list-group-item" href="#navigation-718" data-toggle="collapse" data-parent="#navigation">Хелперы <b class="caret"></b></a><div id="navigation-718" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url хелпер</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Виджеты для данных <span id="vidzety-dla-dannyh"></span><a href="#vidzety-dla-dannyh" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#detail-view">DetailView</a></li>
+<li><a href="#list-view">ListView</a></li>
+<li><a href="#grid-view">GridView</a></li></ol></div>
+<p>Yii предоставляет набор <a href="guide-structure-widgets.html">виджетов</a>, которые могут быть использованы для отображения данных.
+В то время как виджет <a href="#detail-view">DetailView</a> может быть использован для отображения данных по одной записи, то
+виджеты <a href="#list-view">ListView</a> и <a href="#grid-view">GridView</a> могут быть использованы для показа данных в виде списка или
+таблицы с возможностью сортировки, фильтрации и разбивки данных постранично.</p>
+<h2>DetailView  <span id="detail-view"></span><a href="#detail-view" class="hashlink">&para;</a></h2><p>Виджет <a href="./yii-widgets-detailview.html">DetailView</a> отображает детали по данным для одной <a href="./yii-widgets-detailview.html#$model-detail">model</a>.</p>
+<p>Этот виджет лучше использовать для отображения данных модели в обычном формате(т.е. каждый атрибут модели будет представлен
+в виде строки в таблице). Модель может быть либо объектом класса <a href="./yii-base-model.html">yii\base\Model</a> или его наследником, таких как
+<a href="guide-db-active-record.html">active record</a> , либо ассоциативным массивом.</p>
+<p>DetailView использует свойство <a href="./yii-widgets-detailview.html#$attributes-detail">$attributes</a> для определений, какие атрибуты модели
+должны быть показаны и в каком формате. Обратитесь к разделу <a href="guide-output-formatting.html">Форматирование данных</a> за возможными
+настройками форматирования.</p>
+<p>Обычное использование DetailView сводится к следующему коду:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> DetailView::widget([
+    <span class="hljs-string">'model'</span> =&gt; $model,
+    <span class="hljs-string">'attributes'</span> =&gt; [
+        <span class="hljs-string">'title'</span>,                                           <span class="hljs-comment">// title свойство (обычный текст)</span>
+        <span class="hljs-string">'description:html'</span>,                                <span class="hljs-comment">// description свойство, как HTML</span>
+        [                                                  <span class="hljs-comment">// name свойство зависимой модели owner</span>
+            <span class="hljs-string">'label'</span> =&gt; <span class="hljs-string">'Owner'</span>,
+            <span class="hljs-string">'value'</span> =&gt; $model-&gt;owner-&gt;name,            
+            <span class="hljs-string">'contentOptions'</span> =&gt; [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'bg-red'</span>],     <span class="hljs-comment">// настройка HTML атрибутов для тега, соответсвующего value</span>
+            <span class="hljs-string">'captionOptions'</span> =&gt; [<span class="hljs-string">'tooltip'</span> =&gt; <span class="hljs-string">'Tooltip'</span>],  <span class="hljs-comment">// настройка HTML атрибутов для тега, соответсвующего label</span>
+        ],
+        <span class="hljs-string">'created_at:datetime'</span>,                             <span class="hljs-comment">// дата создания в формате datetime</span>
+    ],
+]);
+</code></pre>
+<h2>ListView  <span id="list-view"></span><a href="#list-view" class="hashlink">&para;</a></h2><p>Виджет <a href="./yii-widgets-listview.html">ListView</a> использует для отображения информации <a href="guide-output-data-providers.html">провайдера данных</a>.
+Каждая модель отображается, используя определённый <a href="./yii-widgets-listview.html#$itemView-detail">вид</a>. Поскольку провайдер включает
+в себя разбивку на страницы, сортировку и фильтрацию, то его использование удобно для отображения информации конечному
+пользователю и создания интерфейса управления данными.</p>
+<p>Обычное использование сводится к следующему коду:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">widgets</span>\<span class="hljs-title">ListView</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">data</span>\<span class="hljs-title">ActiveDataProvider</span>;
+
+$dataProvider = <span class="hljs-keyword">new</span> ActiveDataProvider([
+    <span class="hljs-string">'query'</span> =&gt; Post::find(),
+    <span class="hljs-string">'pagination'</span> =&gt; [
+        <span class="hljs-string">'pageSize'</span> =&gt; <span class="hljs-number">20</span>,
+    ],
+]);
+<span class="hljs-keyword">echo</span> ListView::widget([
+    <span class="hljs-string">'dataProvider'</span> =&gt; $dataProvider,
+    <span class="hljs-string">'itemView'</span> =&gt; <span class="hljs-string">'_post'</span>,
+]);
+</code></pre>
+<p><code>_post</code> файл вид, который может содержать следующее:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">Html</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">HtmlPurifier</span>;
+<span class="hljs-meta">?&gt;</span>
+&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>="<span class="hljs-title">post</span>"&gt;
+    &lt;<span class="hljs-title">h2</span>&gt;&lt;?= <span class="hljs-title">Html</span>::<span class="hljs-title">encode</span>($<span class="hljs-title">model</span>-&gt;<span class="hljs-title">title</span>) ?&gt;&lt;/<span class="hljs-title">h2</span>&gt;
+
+    &lt;?= <span class="hljs-title">HtmlPurifier</span>::<span class="hljs-title">process</span>($<span class="hljs-title">model</span>-&gt;<span class="hljs-title">text</span>) ?&gt;
+&lt;/<span class="hljs-title">div</span>&gt;
+</span></code></pre>
+<p>В вышеописанном коде текущая модель доступна как <code>$model</code>. Кроме этого доступны дополнительные переменные:</p>
+<ul>
+<li><code>$key</code>: mixed, значение ключа в соответствии с данными.</li>
+<li><code>$index</code>: integer, индекс элемента данных в массиве элементов, возвращенных поставщику данных, который начинается с 0.</li>
+<li><code>$widget</code>: ListView, это экземпляр виджета.</li>
+</ul>
+<p>Если необходимо послать дополнительные данные в каждый вид, то можно использовать свойство <a href="./yii-widgets-listview.html#$viewParams-detail">$viewParams</a>
+как ключ-значение, например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> ListView::widget([
+    <span class="hljs-string">'dataProvider'</span> =&gt; $dataProvider,
+    <span class="hljs-string">'itemView'</span> =&gt; <span class="hljs-string">'_post'</span>,
+    <span class="hljs-string">'viewParams'</span> =&gt; [
+        <span class="hljs-string">'fullView'</span> =&gt; <span class="hljs-keyword">true</span>,
+        <span class="hljs-string">'context'</span> =&gt; <span class="hljs-string">'main-page'</span>,
+        <span class="hljs-comment">// ...</span>
+    ],
+]);
+</code></pre>
+<p>Они также станут доступны в виде в качестве переменных.</p>
+<h2>GridView  <span id="grid-view"></span><a href="#grid-view" class="hashlink">&para;</a></h2><p>Таблица данных или GridView - это один из сверхмощных Yii виджетов. Он может быть полезен, если необходимо быстро создать
+административный раздел системы. GridView использует данные, как <a href="guide-output-data-providers.html">провайдер данных</a> и отображает
+каждую строку используя <a href="./yii-grid-gridview.html#$columns-detail">columns</a> для предоставления данных в таблице.</p>
+<p>Каждая строка из таблицы представлена данными из одиночной записи и колонка, как правило, представляет собой атрибут
+записи (некоторые столбцы могут соответствовать сложным выражениям атрибутов или статическому тексту).</p>
+<p>Минимальный код, который необходим для использования GridView:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">grid</span>\<span class="hljs-title">GridView</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">data</span>\<span class="hljs-title">ActiveDataProvider</span>;
+
+$dataProvider = <span class="hljs-keyword">new</span> ActiveDataProvider([
+    <span class="hljs-string">'query'</span> =&gt; Post::find(),
+    <span class="hljs-string">'pagination'</span> =&gt; [
+        <span class="hljs-string">'pageSize'</span> =&gt; <span class="hljs-number">20</span>,
+    ],
+]);
+<span class="hljs-keyword">echo</span> GridView::widget([
+    <span class="hljs-string">'dataProvider'</span> =&gt; $dataProvider,
+]);
+</code></pre>
+<p>В вышеприведённом коде сначала создаётся провайдер данных и затем используется GridView для отображения атрибутов для
+каждого элемента из провайдера данных. Отображенная таблица оснащена функционалом сортировки и разбивки на страницы из
+коробки.</p>
+<h3>Колонки таблицы <span id="kolonki-tablicy"></span><a href="#kolonki-tablicy" class="hashlink">&para;</a></h3><p>Колонки таблицы настраиваются с помощью определённых <a href="./yii-grid-column.html">yii\grid\Column</a> классов, которые настраиваются в свойстве
+<a href="./yii-grid-gridview.html#$columns-detail">columns</a> виджета GridView. В зависимости от типа колонки и их настроек, данные отображаются
+по разному. По умолчанию это класс <a href="./yii-grid-datacolumn.html">yii\grid\DataColumn</a>, который представляет атрибут модели с возможностью сортировки
+и фильтрации по нему.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> GridView::widget([
+    <span class="hljs-string">'dataProvider'</span> =&gt; $dataProvider,
+    <span class="hljs-string">'columns'</span> =&gt; [
+        [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\grid\SerialColumn'</span>],
+        <span class="hljs-comment">// Обычные поля определенные данными содержащимися в $dataProvider.</span>
+        <span class="hljs-comment">// Будут использованы данные из полей модели.</span>
+        <span class="hljs-string">'id'</span>,
+        <span class="hljs-string">'username'</span>,
+        <span class="hljs-comment">// Более сложный пример.</span>
+        [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\grid\DataColumn'</span>, <span class="hljs-comment">// может быть опущено, поскольку является значением по умолчанию</span>
+            <span class="hljs-string">'value'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($data)</span> </span>{
+                <span class="hljs-keyword">return</span> $data-&gt;name; <span class="hljs-comment">// $data['name'] для массивов, например, при использовании SqlDataProvider.</span>
+            },
+        ],
+    ],
+]);
+</code></pre>
+<p>Учтите, что если <a href="./yii-grid-gridview.html#$columns-detail">columns</a> не сконфигурирована, то Yii попытается отобразить все возможные
+колонки из провайдера данных.</p>
+<h3>Классы колонок <span id="klassy-kolonok"></span><a href="#klassy-kolonok" class="hashlink">&para;</a></h3><p>Колонки таблицы могут быть настроены, используя различные классы колонок:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> GridView::widget([
+    <span class="hljs-string">'dataProvider'</span> =&gt; $dataProvider,
+    <span class="hljs-string">'columns'</span> =&gt; [
+        [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\grid\SerialColumn'</span>, <span class="hljs-comment">// &lt;-- тут</span>
+            <span class="hljs-comment">// тут можно настроить дополнительные свойства</span>
+        ],
+</code></pre>
+<p>В дополнение к классам колонок от Yii, вы можете самостоятельно создать свой собственный класс.</p>
+<p>Каждый класс колонки наследуется от <a href="./yii-grid-column.html">yii\grid\Column</a>, так что есть некоторые общие параметры, которые можно установить
+при настройке колонок.</p>
+<ul>
+<li><a href="./yii-grid-column.html#$header-detail">header</a> позволяет установить содержание для строки заголовка.</li>
+<li><a href="./yii-grid-column.html#$footer-detail">footer</a> позволяет установить содержание для "подвала".</li>
+<li><a href="./yii-grid-column.html#$visible-detail">visible</a> определяет, должен ли столбец быть видимым.</li>
+<li><p><a href="./yii-grid-column.html#$content-detail">content</a> позволяет передавать действительный обратный вызов, который будет возвращать данные для строки.Формат следующий:</p>
+<pre><code class="hljs php language-php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($model, $key, $index, $column)</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'a string'</span>;
+}
+</code></pre>
+</li>
+</ul>
+<p>Вы можете задать различные параметры контейнера HTML через массивы:</p>
+<ul>
+<li><a href="./yii-grid-column.html#$headerOptions-detail">headerOptions</a></li>
+<li><a href="./yii-grid-column.html#$footerOptions-detail">footerOptions</a></li>
+<li><a href="./yii-grid-column.html#$filterOptions-detail">filterOptions</a></li>
+<li><a href="./yii-grid-column.html#$contentOptions-detail">contentOptions</a></li>
+</ul>
+<h4>DataColumn  <span id="data-column"></span><a href="#data-column" class="hashlink">&para;</a></h4><p><a href="./yii-grid-datacolumn.html">Data column</a> используется для отображения и сортировки данных. По умолчанию этот тип
+используется для всех колонок.</p>
+<p>Основная настройка этой колонки - это свойство <a href="./yii-grid-datacolumn.html#$format-detail">format</a>. Значение этого свойства посылается
+в методы <code>formatter</code> <a href="guide-structure-application-components.html">компонента</a>, который по умолчанию <a href="./yii-i18n-formatter.html">Formatter</a></p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> GridView::widget([
+    <span class="hljs-string">'columns'</span> =&gt; [
+        [
+            <span class="hljs-string">'attribute'</span> =&gt; <span class="hljs-string">'name'</span>,
+            <span class="hljs-string">'format'</span> =&gt; <span class="hljs-string">'text'</span>
+        ],
+        [
+            <span class="hljs-string">'attribute'</span> =&gt; <span class="hljs-string">'birthday'</span>,
+            <span class="hljs-string">'format'</span> =&gt; [<span class="hljs-string">'date'</span>, <span class="hljs-string">'php:Y-m-d'</span>]
+        ],
+        <span class="hljs-string">'created_at:datetime'</span>, <span class="hljs-comment">// короткий вид записи формата</span>
+        [
+            <span class="hljs-string">'label'</span> =&gt; <span class="hljs-string">'Education'</span>,
+            <span class="hljs-string">'attribute'</span> =&gt; <span class="hljs-string">'education'</span>,
+            <span class="hljs-string">'filter'</span> =&gt; [<span class="hljs-string">'0'</span> =&gt; <span class="hljs-string">'Elementary'</span>, <span class="hljs-string">'1'</span> =&gt; <span class="hljs-string">'Secondary'</span>, <span class="hljs-string">'2'</span> =&gt; <span class="hljs-string">'Higher'</span>],
+            <span class="hljs-string">'filterInputOptions'</span> =&gt; [<span class="hljs-string">'prompt'</span> =&gt; <span class="hljs-string">'All educations'</span>, <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'form-control'</span>, <span class="hljs-string">'id'</span> =&gt; <span class="hljs-keyword">null</span>]
+        ],
+    ],
+]);
+</code></pre>
+<p>В вышеприведённом коде  <code>text</code> соответствует <a href="./yii-i18n-formatter.html#asText()-detail">yii\i18n\Formatter::asText()</a>. В качестве первого аргумента для этого
+метода будет передаваться значение колонки. Во второй колонки описано  <code>date</code>, которая соответствует <a href="./yii-i18n-formatter.html#asDate()-detail">yii\i18n\Formatter::asDate()</a>.
+В качестве первого аргумента, опять же, будет передаваться значение колонки, в то время как второй аргумент будет
+'php:Y-m-d'.</p>
+<p>Доступный список форматов смотрите в разделе <a href="guide-output-formatting.html">Форматирование данных</a>.</p>
+<p>Для конфигурации колонок данных также доступен короткий вид записи, который описан в API документации для <a href="./yii-grid-gridview.html#$columns-detail">колонок</a>.</p>
+<p>Используйте <a href="./yii-grid-datacolumn.html#$filter-detail">filter</a> и <a href="./yii-grid-datacolumn.html#$filterInputOptions-detail">filterInputOptions</a> для
+настройки HTML кода фильтра.</p>
+<p>По умолчанию заголовки колонок генерируются используя <a href="./yii-data-sort.html#link()-detail">yii\data\Sort::link()</a>. Это можно изменить через свойство
+<a href="./yii-grid-column.html#$header-detail">yii\grid\Column::$header</a>. Для изменения заголовка нужно задать <a href="./yii-grid-datacolumn.html#$label-detail">yii\grid\DataColumn::$label</a>, как в
+примере выше. По умолчанию текст будет взят из модели данных. Подробное описание ищите в <a href="./yii-grid-datacolumn.html#getHeaderCellLabel()-detail">yii\grid\DataColumn::getHeaderCellLabel()</a>.</p>
+<h4>ActionColumn <span id="actioncolumn"></span><a href="#actioncolumn" class="hashlink">&para;</a></h4><p><a href="./yii-grid-actioncolumn.html">ActionColumn</a> отображает кнопки действия, такие как изменение или удаление для каждой строки.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> GridView::widget([
+    <span class="hljs-string">'dataProvider'</span> =&gt; $dataProvider,
+    <span class="hljs-string">'columns'</span> =&gt; [
+        [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\grid\ActionColumn'</span>,
+            <span class="hljs-comment">// вы можете настроить дополнительные свойства здесь.</span>
+        ],
+</code></pre>
+<p>Доступные свойства для конфигурации:</p>
+<ul>
+<li><a href="./yii-grid-actioncolumn.html#$controller-detail">controller</a> это идентификатор контроллера, который должен обрабатывать действия.
+ Если не установлен, то будет использоваться текущий активный контроллер.</li>
+<li><a href="./yii-grid-actioncolumn.html#$template-detail">template</a> определяет шаблон для каждой ячейки в колонке действия. Маркеры заключённые
+ в фигурные скобки являются ID действием контроллера (также называются <em>именами кнопок</em> в контексте колонки действия).
+ Они могут быть заменены, через свойство <a href="./yii-grid-actioncolumn.html#$buttons-detail">buttons</a>. Например, маркер <code>{view}</code> будет
+ заменён результатом из функции, определённой в <code>buttons['view']</code>. Если такая функция не может быть найдена, то маркер
+ заменяется на пустую строку. По умолчанию шаблон имеет вид <code>{view} {update} {delete}</code>.</li>
+<li><p><a href="./yii-grid-actioncolumn.html#$buttons-detail">buttons</a> массив из функций для отображения кнопок. Ключи массива представлены как
+ имена кнопок (как описывалось выше), а значения представлены в качестве анонимных функций, которые выводят кнопки. Замыкания
+ должны использоваться в следующем виде:</p>
+<pre><code class="hljs php language-php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($url, $model, $key)</span> </span>{
+    <span class="hljs-comment">// возвращаем HTML код для кнопки</span>
+}
+</code></pre>
+<p>где, <code>$url</code> - это URL, который будет повешен как ссылка на кнопку, <code>$model</code> - это объект модели для текущей строки и
+<code>$key</code> - это ключ для модели из провайдера данных.</p>
+</li>
+<li><a href="./yii-grid-actioncolumn.html#$urlCreator-detail">urlCreator</a> замыкание, которое создаёт URL используя информацию из модели. Вид
+ замыкания должен быть таким же как и в <a href="./yii-grid-actioncolumn.html#createUrl()-detail">yii\grid\ActionColumn::createUrl()</a>. Если свойство не задано, то URL для кнопки
+ будет создана используя метод <a href="./yii-grid-actioncolumn.html#createUrl()-detail">yii\grid\ActionColumn::createUrl()</a>.</li>
+<li><a href="./yii-grid-actioncolumn.html#$visibleButtons-detail">visibleButtons</a> это массив условий видимости каждой из кнопок.
+ Ключи массива представлены как имена кнопок (как описывалось выше), а значения представлены как булево значение или
+ анонимная функция. Если имя кнопки не описано в массиве, она будет отображена по умолчанию.
+ Замыкания должны использоваться в следующем виде:</li>
+</ul>
+<p> <code>`</code>php
+ function ($model, $key, $index) {
+   return $model-&gt;status === 'editable'; // отображать ли кнопку
+ }
+ <code>`</code></p>
+<p> Или вы можете передать булево значение:</p>
+<p> <code>`</code>php
+ [</p>
+<pre><code class="hljs php"> <span class="hljs-string">'update'</span> =&gt; \Yii::$app-&gt;user-&gt;can(<span class="hljs-string">'update'</span>)
+</code></pre>
+<p> ]
+ <code>`</code></p>
+<h4>CheckboxColumn <span id="checkboxcolumn"></span><a href="#checkboxcolumn" class="hashlink">&para;</a></h4><p><a href="./yii-grid-checkboxcolumn.html">Checkbox column</a> отображает колонку как флаг (сheckbox).</p>
+<p>Для добавления CheckboxColumn в виджет GridView, необходимо добавить его в  <a href="./yii-grid-gridview.html#$columns-detail">columns</a>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> GridView::widget([
+    <span class="hljs-string">'dataProvider'</span> =&gt; $dataProvider,
+    <span class="hljs-string">'columns'</span> =&gt; [
+        <span class="hljs-comment">// ...</span>
+        [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\grid\CheckboxColumn'</span>,
+            <span class="hljs-comment">// вы можете настроить дополнительные свойства здесь.</span>
+        ],
+    ],
+</code></pre>
+<p>Пользователи могут нажимать на флаги для выделения строк в таблице. Отмеченные строки могут быть обработаны с помощью
+JavaScript кода:</p>
+<pre><code class="hljs javascript language-javascript"><span class="hljs-keyword">var</span> keys = $(<span class="hljs-string">'#grid'</span>).yiiGridView(<span class="hljs-string">'getSelectedRows'</span>);
+<span class="hljs-comment">// массив ключей для отмеченных строк</span>
+</code></pre>
+<h4>SerialColumn <span id="serialcolumn"></span><a href="#serialcolumn" class="hashlink">&para;</a></h4><p><a href="./yii-grid-serialcolumn.html">Serial column</a> выводит в строках номера начиная с <code>1</code> и увеличивая их по мере вывода строк.</p>
+<p>Использование очень простое :</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> GridView::widget([
+    <span class="hljs-string">'dataProvider'</span> =&gt; $dataProvider,
+    <span class="hljs-string">'columns'</span> =&gt; [
+        [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\grid\SerialColumn'</span>], <span class="hljs-comment">// &lt;-- тут</span>
+        <span class="hljs-comment">// ...</span>
+</code></pre>
+<h3>Сортировка данных <span id="sortirovka-dannyh"></span><a href="#sortirovka-dannyh" class="hashlink">&para;</a></h3><blockquote class="note"><p><strong>Примечание: </strong>Эта секция под разработкой</p>
+<ul>
+<li><a href="https://github.com/yiisoft/yii2/issues/1576">https://github.com/yiisoft/yii2/issues/1576</a></li>
+</ul>
+</blockquote>
+<h3>Фильтрация данных <span id="filtracia-dannyh"></span><a href="#filtracia-dannyh" class="hashlink">&para;</a></h3><p>Для фильтрации данных в GridView необходима <a href="guide-structure-models.html">модель</a>, которая описывает форму для фильтрации, внося
+условия в запрос поиска для провайдера данных.
+Общепринятой практикой считается использование <a href="guide-db-active-record.html">active records</a> и создание для неё класса модели для
+поиска, которая содержит необходимую функциональность(может быть сгенерирована через <a href="guide-start-gii.html">Gii</a>). Класс модели
+для поиска должен описывать правила валидации и реализовать метод <code>search()</code>, который будет возвращать провайдер данных.</p>
+<p>Для поиска возможных <code>Post</code> моделей, можно создать <code>PostSearch</code> наподобие следующего примера:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Model</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">data</span>\<span class="hljs-title">ActiveDataProvider</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PostSearch</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Post</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-comment">// только поля определенные в rules() будут доступны для поиска</span>
+        <span class="hljs-keyword">return</span> [
+            [[<span class="hljs-string">'id'</span>], <span class="hljs-string">'integer'</span>],
+            [[<span class="hljs-string">'title'</span>, <span class="hljs-string">'creation_date'</span>], <span class="hljs-string">'safe'</span>],
+        ];
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">scenarios</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-comment">// bypass scenarios() implementation in the parent class</span>
+        <span class="hljs-keyword">return</span> Model::scenarios();
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">search</span><span class="hljs-params">($params)</span>
+    </span>{
+        $query = Post::find();
+
+        $dataProvider = <span class="hljs-keyword">new</span> ActiveDataProvider([
+            <span class="hljs-string">'query'</span> =&gt; $query,
+        ]);
+
+        <span class="hljs-comment">// загружаем данные формы поиска и производим валидацию</span>
+        <span class="hljs-keyword">if</span> (!(<span class="hljs-keyword">$this</span>-&gt;load($params) &amp;&amp; <span class="hljs-keyword">$this</span>-&gt;validate())) {
+            <span class="hljs-keyword">return</span> $dataProvider;
+        }
+
+        <span class="hljs-comment">// изменяем запрос добавляя в его фильтрацию</span>
+        $query-&gt;andFilterWhere([<span class="hljs-string">'id'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;id]);
+        $query-&gt;andFilterWhere([<span class="hljs-string">'like'</span>, <span class="hljs-string">'title'</span>, <span class="hljs-keyword">$this</span>-&gt;title])
+              -&gt;andFilterWhere([<span class="hljs-string">'like'</span>, <span class="hljs-string">'creation_date'</span>, <span class="hljs-keyword">$this</span>-&gt;creation_date]);
+
+        <span class="hljs-keyword">return</span> $dataProvider;
+    }
+}
+
+</code></pre>
+<p>Теперь можно использовать этот метод в контроллере, чтобы получить провайдер данных для GridView:</p>
+<pre><code class="hljs php language-php">$searchModel = <span class="hljs-keyword">new</span> PostSearch();
+$dataProvider = $searchModel-&gt;search(Yii::$app-&gt;request-&gt;get());
+
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;render(<span class="hljs-string">'myview'</span>, [
+    <span class="hljs-string">'dataProvider'</span> =&gt; $dataProvider,
+    <span class="hljs-string">'searchModel'</span> =&gt; $searchModel,
+]);
+</code></pre>
+<p>и в виде присвоить их  <code>$dataProvider</code> и <code>$searchModel</code> в виджете GridView:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> GridView::widget([
+    <span class="hljs-string">'dataProvider'</span> =&gt; $dataProvider,
+    <span class="hljs-string">'filterModel'</span> =&gt; $searchModel,
+    <span class="hljs-string">'columns'</span> =&gt; [
+        <span class="hljs-comment">// ...</span>
+    ],
+]);
+</code></pre>
+<h3>Отдельная форма фильтрации <span id="otdelnaa-forma-filtracii"></span><a href="#otdelnaa-forma-filtracii" class="hashlink">&para;</a></h3><p>Фильтров в шапке GridView достаточно для большинства задач, но добавление отдельной формы фильтрации не представляет
+особой сложности. Она бывает полезна в случае необходимости фильтрации по полям, которые не отображаются в GridView
+или особых условий фильтрации, например по диапазону дат.</p>
+<p>Создайте частичное представление <code>_search.php</code> со следующим содержимым:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">Html</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">widgets</span>\<span class="hljs-title">ActiveForm</span>;
+
+<span class="hljs-comment">/* <span class="hljs-doctag">@var</span> $this yii\web\View */</span>
+<span class="hljs-comment">/* <span class="hljs-doctag">@var</span> $model app\models\PostSearch */</span>
+<span class="hljs-comment">/* <span class="hljs-doctag">@var</span> $form yii\widgets\ActiveForm */</span>
+<span class="hljs-meta">?&gt;</span>
+
+&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>="<span class="hljs-title">post</span>-<span class="hljs-title">search</span>"&gt;
+    &lt;?<span class="hljs-title">php</span> $<span class="hljs-title">form</span> = <span class="hljs-title">ActiveForm</span>::<span class="hljs-title">begin</span>([
+        '<span class="hljs-title">action</span>' =&gt; ['<span class="hljs-title">index</span>'],
+        '<span class="hljs-title">method</span>' =&gt; '<span class="hljs-title">get</span>',
+    ]); ?&gt;
+
+    &lt;?= $<span class="hljs-title">form</span>-&gt;<span class="hljs-title">field</span>($<span class="hljs-title">model</span>, '<span class="hljs-title">title</span>') ?&gt;
+
+    &lt;?= $<span class="hljs-title">form</span>-&gt;<span class="hljs-title">field</span>($<span class="hljs-title">model</span>, '<span class="hljs-title">creation_date</span>') ?&gt;
+
+    &lt;<span class="hljs-title">div</span> <span class="hljs-title">class</span>="<span class="hljs-title">form</span>-<span class="hljs-title">group</span>"&gt;
+        &lt;?= <span class="hljs-title">Html</span>::<span class="hljs-title">submitButton</span>('Искатьать<span class="hljs-title">class</span>' =&gt; '<span class="hljs-title">btn</span> <span class="hljs-title">btn</span>-<span class="hljs-title">primary</span>']) ?&gt;
+        &lt;?= <span class="hljs-title">Html</span>::<span class="hljs-title">resetButton</span>('Сброситьситьтьь<span class="hljs-title">class</span>' =&gt; '<span class="hljs-title">btn</span> <span class="hljs-title">btn</span>-<span class="hljs-title">default</span>']) ?&gt;
+    &lt;/<span class="hljs-title">div</span>&gt;
+
+    &lt;?<span class="hljs-title">php</span> <span class="hljs-title">ActiveForm</span>::<span class="hljs-title">end</span>(); ?&gt;
+&lt;/<span class="hljs-title">div</span>&gt;
+</span></code></pre>
+<p>и добавьте его отображение в <code>index.php</code> таким образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?</span>= <span class="hljs-keyword">$this</span>-&gt;render(<span class="hljs-string">'_search'</span>, [<span class="hljs-string">'model'</span> =&gt; $searchModel]) <span class="hljs-meta">?&gt;</span>
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>если вы используете Gii для генерации CRUD кода, отдельная форма фильтрации (<code>_search.php</code>)
+генерируется по умолчанию, но закомментирована в представлении <code>index.php</code>. Вам остается только раскомментировать
+эту строку и форма готова к использованию!</p>
+</blockquote>
+<p>Для фильтра по диапазону дат мы можем добавить дополнительные атрибуты <code>createdFrom</code> и <code>createdTo</code> в поисковую модель
+(их нет в соответствующей таблице модели):</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PostSearch</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Post</span>
+</span>{
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">public</span> $createdFrom;
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">public</span> $createdTo;
+}
+</code></pre>
+<p>Расширим условия запроса в методе <code>search()</code>:</p>
+<pre><code class="hljs php language-php">$query-&gt;andFilterWhere([<span class="hljs-string">'&gt;='</span>, <span class="hljs-string">'creation_date'</span>, <span class="hljs-keyword">$this</span>-&gt;createdFrom])
+      -&gt;andFilterWhere([<span class="hljs-string">'&lt;='</span>, <span class="hljs-string">'creation_date'</span>, <span class="hljs-keyword">$this</span>-&gt;createdTo]);
+</code></pre>
+<p>И добавим соответствующие поля в форму фильтрации:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?</span>= $form-&gt;field($model, <span class="hljs-string">'creationFrom'</span>) <span class="hljs-meta">?&gt;</span>
+
+<span class="hljs-meta">&lt;?</span>= $form-&gt;field($model, <span class="hljs-string">'creationTo'</span>) <span class="hljs-meta">?&gt;</span>
+</code></pre>
+<h3>Отображение зависимых моделей <span id="otobrazenie-zavisimyh-modelej"></span><a href="#otobrazenie-zavisimyh-modelej" class="hashlink">&para;</a></h3><p>Бывают случаи, когда необходимо в GridView вывести в колонке значения из зависимой модели для active records, например
+имя автора новости, вместо его <code>id</code>. Для этого необходимо задать <a href="./yii-grid-gridview.html#$columns-detail">yii\grid\GridView::$columns</a> как <code>author.name</code>, если
+же модель <code>Post</code> содержит зависимость с именем <code>author</code> и имя автора хранится в атрибуте <code>name</code>. GridView отобразит
+имя автора, но вот сортировка и фильтрации по этому полю будет не доступна. Необходимо дополнить некоторый функционал в
+<code>PostSearch</code> модель, которая была упомянута в предыдущем разделе.</p>
+<p>Для включения сортировки по зависимой колонки необходимо присоединить зависимую таблицу и добавить правило в компонент
+Sort для провайдера данных.:</p>
+<pre><code class="hljs php language-php">$query = Post::find();
+$dataProvider = <span class="hljs-keyword">new</span> ActiveDataProvider([
+    <span class="hljs-string">'query'</span> =&gt; $query,
+]);
+
+<span class="hljs-comment">// присоединяем зависимость `author` которая является связью с таблицей `users`</span>
+<span class="hljs-comment">// и устанавливаем алиас таблицы в значение `author`</span>
+$query-&gt;joinWith([<span class="hljs-string">'author'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($query)</span> </span>{ $query-&gt;from([<span class="hljs-string">'author'</span> =&gt; <span class="hljs-string">'users'</span>]); }]);
+<span class="hljs-comment">// добавляем сортировку по колонке из зависимости</span>
+$dataProvider-&gt;sort-&gt;attributes[<span class="hljs-string">'author.name'</span>] = [
+    <span class="hljs-string">'asc'</span> =&gt; [<span class="hljs-string">'author.name'</span> =&gt; SORT_ASC],
+    <span class="hljs-string">'desc'</span> =&gt; [<span class="hljs-string">'author.name'</span> =&gt; SORT_DESC],
+];
+
+<span class="hljs-comment">// ...</span>
+</code></pre>
+<p>Фильтрации также необходим вызов joinWith, как описано выше. Также необходимо определить для поиска столбец в атрибутах
+и правилах:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">attributes</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// делаем поле зависимости доступным для поиска</span>
+    <span class="hljs-keyword">return</span> array_merge(<span class="hljs-keyword">parent</span>::attributes(), [<span class="hljs-string">'author.name'</span>]);
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        [[<span class="hljs-string">'id'</span>], <span class="hljs-string">'integer'</span>],
+        [[<span class="hljs-string">'title'</span>, <span class="hljs-string">'creation_date'</span>, <span class="hljs-string">'author.name'</span>], <span class="hljs-string">'safe'</span>],
+    ];
+}
+</code></pre>
+<p>В <code>search()</code> просто добавляется другое условие фильтрации:</p>
+<pre><code class="hljs php language-php">$query-&gt;andFilterWhere([<span class="hljs-string">'LIKE'</span>, <span class="hljs-string">'author.name'</span>, <span class="hljs-keyword">$this</span>-&gt;getAttribute(<span class="hljs-string">'author.name'</span>)]);
+</code></pre>
+<blockquote class="info"><p><strong>Информация: </strong>В коде, что выше, используется такая же строка, как и имя зависимости и псевдонима таблицы.
+Однако, когда ваш псевдоним и имя связи различаются, вы должны обратить внимание, где вы используете псевдоним,
+а где имя связи. Простым правилом для этого является использование псевдонима в каждом месте, которое используется
+для построения запроса к базе данных, и имя связи во всех других определениях, таких как <code>attributes()</code>, <code>rules()</code> и т.д.</p>
+<p>Например, если вы используете псевдоним <code>au</code> для связи с таблицей автора, то joinWith будет выглядеть так:</p>
+<pre><code class="hljs php language-php">$query-&gt;joinWith([<span class="hljs-string">'author'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($query)</span> </span>{ $query-&gt;from([<span class="hljs-string">'au'</span> =&gt; <span class="hljs-string">'users'</span>]); }]);
+</code></pre>
+<p>Это также возможно вызвать как <code>$query-&gt;joinWith(['author']);</code>, когда псевдоним определен в определении отношения.</p>
+<p>Псевдоним должен быть использован в состоянии фильтра, но имя атрибута остается неизменным:</p>
+<pre><code class="hljs php language-php">$query-&gt;andFilterWhere([<span class="hljs-string">'LIKE'</span>, <span class="hljs-string">'au.name'</span>, <span class="hljs-keyword">$this</span>-&gt;getAttribute(<span class="hljs-string">'author.name'</span>)]);
+</code></pre>
+<p>То же самое верно и для определения сортировки:</p>
+<pre><code class="hljs php language-php">$dataProvider-&gt;sort-&gt;attributes[<span class="hljs-string">'author.name'</span>] = [
+     <span class="hljs-string">'asc'</span> =&gt; [<span class="hljs-string">'au.name'</span> =&gt; SORT_ASC],
+     <span class="hljs-string">'desc'</span> =&gt; [<span class="hljs-string">'au.name'</span> =&gt; SORT_DESC],
+];
+</code></pre>
+<p>Кроме того, при определении <a href="./yii-data-sort.html#$defaultOrder-detail">defaultOrder</a> для сортировки необходимо использовать имя
+зависимости вместо псевдонима:</p>
+<pre><code class="hljs php language-php">$dataProvider-&gt;sort-&gt;defaultOrder = [<span class="hljs-string">'author.name'</span> =&gt; SORT_ASC];
+</code></pre>
+</blockquote>
+<blockquote class="info"><p><strong>Информация: </strong>Для подробной информации по <code>joinWith</code> и запросам, выполняемым в фоновом режиме, обратитесь к
+<a href="guide-db-active-record.html#joining-with-relations">active record документации</a>.</p>
+</blockquote>
+<h4>Использование SQL видов для вывода данных, их сортировки и фильтрации. <span id="ispolzovanie-sql-vidov-dla-vyvoda-dannyh-ih-sortirovki-i-filtracii"></span><a href="#ispolzovanie-sql-vidov-dla-vyvoda-dannyh-ih-sortirovki-i-filtracii" class="hashlink">&para;</a></h4><p>Существует и другой подход, который быстре и более удобен - SQL виды. Например, если необходимо показать таблицу из
+пользователей и их профилей, то можно выбрать такой путь:</p>
+<pre><code class="hljs sql language-sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">OR</span> <span class="hljs-keyword">REPLACE</span> <span class="hljs-keyword">VIEW</span> vw_user_info <span class="hljs-keyword">AS</span>
+    <span class="hljs-keyword">SELECT</span> user.*, user_profile.lastname, user_profile.firstname
+    <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">user</span>, user_profile
+    <span class="hljs-keyword">WHERE</span> user.id = user_profile.user_id
+</code></pre>
+<p>Теперь вам необходимо создать ActiveRecord, через который будут доступны данные из вида выше:</p>
+<pre><code class="hljs php language-php">
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>\<span class="hljs-title">views</span>\<span class="hljs-title">grid</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserView</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+
+    <span class="hljs-comment">/**
+     * {<span class="hljs-doctag">@inheritdoc</span>}
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">tableName</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'vw_user_info'</span>;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">primaryKey</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [<span class="hljs-string">'id'</span>];
+    }
+
+    <span class="hljs-comment">/**
+     * {<span class="hljs-doctag">@inheritdoc</span>}
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            <span class="hljs-comment">// здесь определяйте ваши правила</span>
+        ];
+    }
+
+    <span class="hljs-comment">/**
+     * {<span class="hljs-doctag">@inheritdoc</span>}
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">attributeLabels</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            <span class="hljs-comment">// здесь определяйте ваши метки атрибутов</span>
+        ];
+    }
+}
+</code></pre>
+<p>После этого вы можете использовать UserView в модели поиска, без каких-либо дополнительных условий по сортировке и фильтрации.
+Все атрибуты будут работать из коробки. Но такая реализация имеет свои плюсы и минусы:</p>
+<ul>
+<li>вам не надо определять условия сортировок и фильтраций. Всё работает из коробки;</li>
+<li>это намного быстрее данных, так как некоторые запросы уже выполнены (т.е. для каждой зависимости не нужно выполнять дополнительные запросы)</li>
+<li>поскольку это простое отображение данных из sql вида, то в модели будет отсутствовать некоторая доменная логика, например
+такие методы как <code>isActive</code>, <code>isDeleted</code>, необходимо продублировать в классе, который описывает вид.</li>
+</ul>
+<h3>Несколько GridViews на одной странице <span id="neskolko-gridviews-na-odnoj-stranice"></span><a href="#neskolko-gridviews-na-odnoj-stranice" class="hashlink">&para;</a></h3><p>Вы можете использовать больше одной GridView на одной странице. Для этого нужно внести некоторые дополнительные настройки
+для того, чтобы они друг другу не мешали.
+При использовании нескольких экземпляров GridView вы должны настроить различные имена параметров для сортировки и ссылки
+для разбиения на страницы так, чтобы каждый GridView имел свою индивидуальную сортировку и разбиение на страницы.
+Сделать это возможно через настройку <a href="./yii-data-sort.html#$sortParam-detail">sortParam</a> и <a href="./yii-data-pagination.html#$pageParam-detail">pageParam</a>
+свойств провайдеров данных <a href="./yii-data-basedataprovider.html#$sort-detail">sort</a> и <a href="./yii-data-basedataprovider.html#$pagination-detail">pagination</a></p>
+<p>Допустим мы хотим список моделей <code>Post</code> и <code>User</code>, для которых мы уже подготовили провайдеры данных <code>$userProvider</code> и
+<code>$postProvider</code>, тогда код будет выглядеть следующим образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">grid</span>\<span class="hljs-title">GridView</span>;
+
+$userProvider-&gt;pagination-&gt;pageParam = <span class="hljs-string">'user-page'</span>;
+$userProvider-&gt;sort-&gt;sortParam = <span class="hljs-string">'user-sort'</span>;
+
+$postProvider-&gt;pagination-&gt;pageParam = <span class="hljs-string">'post-page'</span>;
+$postProvider-&gt;sort-&gt;sortParam = <span class="hljs-string">'post-sort'</span>;
+
+<span class="hljs-keyword">echo</span> <span class="hljs-string">'&lt;h1&gt;Users&lt;/h1&gt;'</span>;
+<span class="hljs-keyword">echo</span> GridView::widget([
+    <span class="hljs-string">'dataProvider'</span> =&gt; $userProvider,
+]);
+
+<span class="hljs-keyword">echo</span> <span class="hljs-string">'&lt;h1&gt;Posts&lt;/h1&gt;'</span>;
+<span class="hljs-keyword">echo</span> GridView::widget([
+    <span class="hljs-string">'dataProvider'</span> =&gt; $postProvider,
+]);
+</code></pre>
+<h3>Использование GridView с Pjax <span id="ispolzovanie-gridview-s-pjax"></span><a href="#ispolzovanie-gridview-s-pjax" class="hashlink">&para;</a></h3><blockquote class="note"><p><strong>Примечание: </strong>Секция находится в стадии разработки</p>
+</blockquote>
+<p>TBD</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 09 Dec 2020 00:16:05 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/1728b664/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9c5d0894/solarized_light.css" rel="stylesheet">
+<link href="./assets/f2ce5bcd/style.css" rel="stylesheet">
+<script src="./assets/bbf84a7a/jquery.js"></script>
+<script src="./assets/1728b664/js/bootstrap.js"></script>
+<script src="./assets/fd63b446/jssearch.js"></script>    <title>Расширение ActiveForm на стороне клиента - Получение данных от пользователя - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w662" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w662-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w662-collapse" class="collapse navbar-collapse"><ul id="w663" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w664" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-646" data-toggle="collapse" data-parent="#navigation">Введение <b class="caret"></b></a><div id="navigation-646" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">О Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Обновление с версии 1.1</a></div>
+<a class="list-group-item" href="#navigation-647" data-toggle="collapse" data-parent="#navigation">Первое знакомство <b class="caret"></b></a><div id="navigation-647" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Установка Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Запуск приложения</a>
+<a class="list-group-item" href="./guide-start-hello.html">Говорим «привет»</a>
+<a class="list-group-item" href="./guide-start-forms.html">Работа с формами</a>
+<a class="list-group-item" href="./guide-start-databases.html">Работа с базами данных</a>
+<a class="list-group-item" href="./guide-start-gii.html">Генерация кода при помощи Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Что дальше?</a></div>
+<a class="list-group-item" href="#navigation-648" data-toggle="collapse" data-parent="#navigation">Структура приложения <b class="caret"></b></a><div id="navigation-648" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Входные скрипты</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Приложения</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Компоненты приложения</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-structure-models.html">Модели</a>
+<a class="list-group-item" href="./guide-structure-views.html">Представления</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Модули</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Фильтры</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Виджеты</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Расширения</a></div>
+<a class="list-group-item" href="#navigation-649" data-toggle="collapse" data-parent="#navigation">Обработка запросов <b class="caret"></b></a><div id="navigation-649" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Разбор и генерация URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Запросы</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Ответы</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Сессии и куки</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Обработка ошибок</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Логирование</a></div>
+<a class="list-group-item" href="#navigation-650" data-toggle="collapse" data-parent="#navigation">Основные понятия <b class="caret"></b></a><div id="navigation-650" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Компоненты</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Свойства</a>
+<a class="list-group-item" href="./guide-concept-events.html">События</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Поведения</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Конфигурации</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Псевдонимы</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Автозагрузка классов</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item" href="#navigation-651" data-toggle="collapse" data-parent="#navigation">Работа с базами данных <b class="caret"></b></a><div id="navigation-651" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Объекты доступа к данным (DAO)</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Построитель запросов</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Миграции</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-ru/README.md">Sphinx</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-redis/blob/master/docs/guide-ru/README.md">Redis</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-ru/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-ru/README.md">ElasticSearch</a></div>
+<a class="list-group-item active" href="#navigation-652" data-toggle="collapse" data-parent="#navigation">Получение данных от пользователя <b class="caret"></b></a><div id="navigation-652" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-input-forms.html">Создание форм</a>
+<a class="list-group-item" href="./guide-input-validation.html">Валидация</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Загрузка файлов</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Табличный ввод</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Работа с несколькими моделями</a>
+<a class="list-group-item active" href="./guide-input-form-javascript.html">Расширение ActiveForm на стороне клиента</a></div>
+<a class="list-group-item" href="#navigation-653" data-toggle="collapse" data-parent="#navigation">Отображение данных <b class="caret"></b></a><div id="navigation-653" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Форматирование данных</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Постраничная разбивка</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Сортировка</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Провайдеры данных</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Виджеты для данных</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Работа с клиентскими скриптами</a>
+<a class="list-group-item" href="./guide-output-theming.html">Темизация</a></div>
+<a class="list-group-item" href="#navigation-654" data-toggle="collapse" data-parent="#navigation">Безопасность <b class="caret"></b></a><div id="navigation-654" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-security-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Авторизация</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Работа с паролями</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">Криптография</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-ru/README.md">Клиенты авторизации</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Лучшие практики</a></div>
+<a class="list-group-item" href="#navigation-655" data-toggle="collapse" data-parent="#navigation">Кеширование <b class="caret"></b></a><div id="navigation-655" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-caching-data.html">Кэширование данных</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Кэширование фрагментов</a>
+<a class="list-group-item" href="./guide-caching-page.html">Кэширование страниц</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP кэширование</a></div>
+<a class="list-group-item" href="#navigation-656" data-toggle="collapse" data-parent="#navigation">Веб-сервисы REST <b class="caret"></b></a><div id="navigation-656" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Быстрый старт</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Роутинг</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Форматирование ответа</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Ограничение частоты запросов</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Версионирование</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Обработка ошибок</a></div>
+<a class="list-group-item" href="#navigation-657" data-toggle="collapse" data-parent="#navigation">Инструменты разработчика <b class="caret"></b></a><div id="navigation-657" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Отладочная панель и отладчик</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide/README.md">Генерация кода с Gii</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">Генератор документации API</a></div>
+<a class="list-group-item" href="#navigation-658" data-toggle="collapse" data-parent="#navigation">Тестирование <b class="caret"></b></a><div id="navigation-658" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Настройка тестового окружения</a>
+<a class="list-group-item" href="./guide-test-unit.html">Модульные тесты</a>
+<a class="list-group-item" href="./guide-test-functional.html">Функциональные тесты</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Приёмочные тесты</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Фикстуры</a></div>
+<a class="list-group-item" href="#navigation-659" data-toggle="collapse" data-parent="#navigation">Специальные темы <b class="caret"></b></a><div id="navigation-659" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">Шаблон приложения advanced</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Создание приложения с нуля</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Консольные команды</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Встроенные валидаторы</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Интернационализация</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Отправка почты</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Оптимизация производительности</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Окружение виртуального хостинга</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Шаблонизаторы</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Работа со сторонним кодом</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">Использование Yii в качестве микро-framework&#039;а</a></div>
+<a class="list-group-item" href="#navigation-660" data-toggle="collapse" data-parent="#navigation">Виджеты <b class="caret"></b></a><div id="navigation-660" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-ru/README.md">Виджеты Bootstrap</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-ru/README.md">Виджеты Jquery UI</a></div>
+<a class="list-group-item" href="#navigation-661" data-toggle="collapse" data-parent="#navigation">Хелперы <b class="caret"></b></a><div id="navigation-661" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url хелпер</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Расширение ActiveForm на стороне клиента <span id="rassirenie-activeform-na-storone-klienta"></span><a href="#rassirenie-activeform-na-storone-klienta" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#activeform-sobytia">ActiveForm события</a></li>
+<li><a href="#otpravka-formy-cerez-ajax">Отправка формы через AJAX</a></li>
+<li><a href="#dobavlenia-polej-dinamiceski">Добавления полей динамически</a></li></ol></div>
+<p>Виджет <a href="./yii-widgets-activeform.html">yii\widgets\ActiveForm</a> поставляется с набором JavaScript методов, которые используются для проверки на стороне клиента.
+Его реализация очень гибкая и позволяет расширять его различными способами.</p>
+<h2>ActiveForm события <span id="activeform-sobytia"></span><a href="#activeform-sobytia" class="hashlink">&para;</a></h2><p>ActiveForm запускает серию специальных событий. Используя код, подобный следующему, вы можете подписаться на эти события и обрабатывать их:</p>
+<pre><code class="hljs javascript language-javascript">$(<span class="hljs-string">'#contact-form'</span>).on(<span class="hljs-string">'beforeSubmit'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
+	<span class="hljs-keyword">if</span> (!confirm(<span class="hljs-string">"Everything is correct. Submit?"</span>)) {
+		<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+	}
+	<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+});
+</code></pre>
+<p>Ниже мы рассмотрим доступные события.</p>
+<h3><code>beforeValidate</code> <span id="beforevalidate"></span><a href="#beforevalidate" class="hashlink">&para;</a></h3><p><code>beforeValidate</code> запускается перед проверкой всей формы.</p>
+<p>Сигнатура обработчика событий должна быть:</p>
+<pre><code class="hljs javascript language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event, messages, deferreds</span>) </span>{}
+</code></pre>
+<p>где</p>
+<ul>
+<li><code>event</code>: объект <code>Event</code></li>
+<li><code>messages</code>: ассоциативный массив с ключами, являющимися идентификаторами атрибутов, и значениями, являющимися массивами сообщений об ошибках для соответствующих атрибутов</li>
+<li><code>deferreds</code>: массив отложенных объектов. Вы можете использовать <code>deferreds.add(callback)</code>, чтобы добавить новую отложенную проверку</li>
+</ul>
+<p>Если обработчик возвращает логическое <code>false</code>, он остановит дальнейшую проверку формы после этого события. И, как результат, событие <code>afterValidate</code> не будет запущено.</p>
+<h3><code>afterValidate</code> <span id="aftervalidate"></span><a href="#aftervalidate" class="hashlink">&para;</a></h3><p><code>afterValidate</code> событие запускается после проверки всей формы.</p>
+<p>Сигнатура обработчика события должна быть:</p>
+<pre><code class="hljs javascript language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event, messages, errorAttributes</span>) </span>{}
+</code></pre>
+<p>где</p>
+<ul>
+<li><code>event</code>: объект <code>Event</code></li>
+<li><code>messages</code>: ассоциативный массив с ключами, являющимися идентификаторами атрибутов, и значениями, являющимися массивами сообщений об ошибках для соответствующих атрибутов</li>
+<li><code>errorAttributes</code>: массив атрибутов, которые имеют ошибки проверки. Пожалуйста, обратитесь к <code>attributeDefaults</code> для просмотра структуры этого параметра</li>
+</ul>
+<h3><code>beforeValidateAttribute</code> <span id="beforevalidateattribute"></span><a href="#beforevalidateattribute" class="hashlink">&para;</a></h3><p><code>beforeValidateAttribute</code> событие инициируется перед проверкой атрибута.</p>
+<p>Сигнатура обработчика события должна быть:</p>
+<pre><code class="hljs javascript language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event, attribute, messages, deferreds</span>)
+</span></code></pre>
+<p>где</p>
+<ul>
+<li><code>event</code>: объект <code>Event</code></li>
+<li><code>attribute</code>: атрибут для проверки. Пожалуйста, обратитесь к <code>attributeDefaults</code> для просмотра структуры этого параметра</li>
+<li><code>messages</code>: массив, в который вы можете добавить сообщения об ошибках проверки для указанного атрибута</li>
+<li><code>deferreds</code>: массив отложенных объектов. Вы можете использовать <code>deferreds.add (callback)</code>, чтобы добавить новую отложенную проверку</li>
+</ul>
+<p>Если обработчик возвращает логическое <code>false</code>, он остановит дальнейшую проверку указанного атрибута.
+И, как результат, событие <code>afterValidateAttribute</code> не будет запущено.</p>
+<h3><code>afterValidateAttribute</code> <span id="aftervalidateattribute"></span><a href="#aftervalidateattribute" class="hashlink">&para;</a></h3><p><code>afterValidateAttribute</code> событие запускается после проверки всей формы и каждого атрибута.</p>
+<p>Сигнатура обработчика события должна быть:</p>
+<pre><code class="hljs javascript language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event, attribute, messages</span>)
+</span></code></pre>
+<p>где</p>
+<ul>
+<li><code>event</code>: объект <code>Event</code></li>
+<li><code>attribute</code>: проверяемый атрибут. Пожалуйста, обратитесь к <code>attributeDefaults</code> для просмотра структуры этого параметра</li>
+<li><code>messages</code>: массив, в который вы можете добавить дополнительные сообщения об ошибках валидации для указанного атрибута</li>
+</ul>
+<h3><code>beforeSubmit</code> <span id="beforesubmit"></span><a href="#beforesubmit" class="hashlink">&para;</a></h3><p><code>beforeSubmit</code> событие запускается перед отправкой формы после того, как все проверки пройдены.</p>
+<p>Сигнатура обработчика события должна быть:</p>
+<pre><code class="hljs javascript language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>)
+</span></code></pre>
+<p>где событие является объектом <code>Event</code>.</p>
+<p>Если обработчик возвращает логическое значение <code>false</code>, он остановит отправку формы.</p>
+<h3><code>ajaxBeforeSend</code> <span id="ajaxbeforesend"></span><a href="#ajaxbeforesend" class="hashlink">&para;</a></h3><p><code>ajaxBeforeSend</code> событие инициируется перед отправкой AJAX запроса для проверки основанной на AJAX.</p>
+<p>Сигнатура обработчика события должна быть:</p>
+<pre><code class="hljs javascript language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event, jqXHR, settings</span>)
+</span></code></pre>
+<p>где</p>
+<ul>
+<li><code>event</code>: объект <code>Event</code></li>
+<li><code>jqXHR</code>: объект <code>jqXHR</code></li>
+<li><code>settings</code>: настройки для AJAX запроса</li>
+</ul>
+<h3><code>ajaxComplete</code> <span id="ajaxcomplete"></span><a href="#ajaxcomplete" class="hashlink">&para;</a></h3><p><code>ajaxComplete</code> событие запускается после выполнения AJAX запроса для проверки основанной на AJAX.</p>
+<p>Сигнатура обработчика события должна быть:</p>
+<pre><code class="hljs javascript language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event, jqXHR, textStatus</span>)
+</span></code></pre>
+<p>где</p>
+<ul>
+<li><code>event</code>: объект <code>Event</code></li>
+<li><code>jqXHR</code>: объект <code>jqXHR</code></li>
+<li><code>textStatus</code>: статус запроса ("success", "notmodified", "error", "timeout", "abort", или "parsererror")</li>
+</ul>
+<h2>Отправка формы через AJAX <span id="otpravka-formy-cerez-ajax"></span><a href="#otpravka-formy-cerez-ajax" class="hashlink">&para;</a></h2><p>Хотя проверка может быть выполнена на стороне клиента или с помощью AJAX-запроса, сама отправка формы, по умолчанию, выполняется как обычный запрос.
+Если вы хотите, чтобы форма была отправлена через AJAX, вы можете достичь этого, обработав событие <code>beforeSubmit</code> формы следующим образом:</p>
+<pre><code class="hljs javascript language-javascript"><span class="hljs-keyword">var</span> $form = $(<span class="hljs-string">'#formId'</span>);
+$form.on(<span class="hljs-string">'beforeSubmit'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> data = $form.serialize();
+    $.ajax({
+        <span class="hljs-attr">url</span>: $form.attr(<span class="hljs-string">'action'</span>),
+        <span class="hljs-attr">type</span>: <span class="hljs-string">'POST'</span>,
+        <span class="hljs-attr">data</span>: data,
+        <span class="hljs-attr">success</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+            <span class="hljs-comment">// Implement successful</span>
+        },
+        <span class="hljs-attr">error</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">jqXHR, errMsg</span>) </span>{
+            alert(errMsg);
+        }
+     });
+     <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>; <span class="hljs-comment">// prevent default submit</span>
+});
+</code></pre>
+<p>Чтобы узнать больше о jQuery функции <code>ajax()</code>, обратитесь к документации <a href="https://api.jquery.com/jQuery.ajax/">jQuery documentation</a>.</p>
+<h2>Добавления полей динамически <span id="dobavlenia-polej-dinamiceski"></span><a href="#dobavlenia-polej-dinamiceski" class="hashlink">&para;</a></h2><p>В современных веб-приложениях часто возникает необходимость изменения формы после ее отображения пользователю.
+Это может быть, например, добавление новых полей после нажатия на значок "плюс".
+Чтобы включить проверку, на стороне клиента, для этих полей, они должны быть зарегистрированы с помощью JavaScript плагина Active Form.</p>
+<p>Вы должны добавить само поле, а затем добавить его в список проверки:</p>
+<pre><code class="hljs javascript language-javascript">$(<span class="hljs-string">'#contact-form'</span>).yiiActiveForm(<span class="hljs-string">'add'</span>, {
+    <span class="hljs-attr">id</span>: <span class="hljs-string">'address'</span>,
+    <span class="hljs-attr">name</span>: <span class="hljs-string">'address'</span>,
+    <span class="hljs-attr">container</span>: <span class="hljs-string">'.field-address'</span>,
+    <span class="hljs-attr">input</span>: <span class="hljs-string">'#address'</span>,
+    <span class="hljs-attr">error</span>: <span class="hljs-string">'.help-block'</span>,
+    <span class="hljs-attr">validate</span>:  <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">attribute, value, messages, deferred, $form</span>) </span>{
+        yii.validation.required(value, messages, {<span class="hljs-attr">message</span>: <span class="hljs-string">"Validation Message Here"</span>});
+    }
+});
+</code></pre>
+<p>Для удаления поля из списка проверки, чтобы оно не было проверено, выполните следующие действия:</p>
+<pre><code class="hljs javascript language-javascript">$(<span class="hljs-string">'#contact-form'</span>).yiiActiveForm(<span class="hljs-string">'remove'</span>, <span class="hljs-string">'address'</span>);
+</code></pre>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 09 Dec 2020 00:16:05 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

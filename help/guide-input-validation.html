@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/1728b664/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9c5d0894/solarized_light.css" rel="stylesheet">
+<link href="./assets/f2ce5bcd/style.css" rel="stylesheet">
+<script src="./assets/bbf84a7a/jquery.js"></script>
+<script src="./assets/1728b664/js/bootstrap.js"></script>
+<script src="./assets/fd63b446/jssearch.js"></script>    <title>Валидация - Получение данных от пользователя - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1308" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1308-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1308-collapse" class="collapse navbar-collapse"><ul id="w1309" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1310" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1292" data-toggle="collapse" data-parent="#navigation">Введение <b class="caret"></b></a><div id="navigation-1292" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">О Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Обновление с версии 1.1</a></div>
+<a class="list-group-item" href="#navigation-1293" data-toggle="collapse" data-parent="#navigation">Первое знакомство <b class="caret"></b></a><div id="navigation-1293" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Установка Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Запуск приложения</a>
+<a class="list-group-item" href="./guide-start-hello.html">Говорим «привет»</a>
+<a class="list-group-item" href="./guide-start-forms.html">Работа с формами</a>
+<a class="list-group-item" href="./guide-start-databases.html">Работа с базами данных</a>
+<a class="list-group-item" href="./guide-start-gii.html">Генерация кода при помощи Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Что дальше?</a></div>
+<a class="list-group-item" href="#navigation-1294" data-toggle="collapse" data-parent="#navigation">Структура приложения <b class="caret"></b></a><div id="navigation-1294" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Входные скрипты</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Приложения</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Компоненты приложения</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-structure-models.html">Модели</a>
+<a class="list-group-item" href="./guide-structure-views.html">Представления</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Модули</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Фильтры</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Виджеты</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Расширения</a></div>
+<a class="list-group-item" href="#navigation-1295" data-toggle="collapse" data-parent="#navigation">Обработка запросов <b class="caret"></b></a><div id="navigation-1295" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Разбор и генерация URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Запросы</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Ответы</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Сессии и куки</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Обработка ошибок</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Логирование</a></div>
+<a class="list-group-item" href="#navigation-1296" data-toggle="collapse" data-parent="#navigation">Основные понятия <b class="caret"></b></a><div id="navigation-1296" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Компоненты</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Свойства</a>
+<a class="list-group-item" href="./guide-concept-events.html">События</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Поведения</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Конфигурации</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Псевдонимы</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Автозагрузка классов</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item" href="#navigation-1297" data-toggle="collapse" data-parent="#navigation">Работа с базами данных <b class="caret"></b></a><div id="navigation-1297" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Объекты доступа к данным (DAO)</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Построитель запросов</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Миграции</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-ru/README.md">Sphinx</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-redis/blob/master/docs/guide-ru/README.md">Redis</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-ru/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-ru/README.md">ElasticSearch</a></div>
+<a class="list-group-item active" href="#navigation-1298" data-toggle="collapse" data-parent="#navigation">Получение данных от пользователя <b class="caret"></b></a><div id="navigation-1298" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-input-forms.html">Создание форм</a>
+<a class="list-group-item active" href="./guide-input-validation.html">Валидация</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Загрузка файлов</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Табличный ввод</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Работа с несколькими моделями</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">Расширение ActiveForm на стороне клиента</a></div>
+<a class="list-group-item" href="#navigation-1299" data-toggle="collapse" data-parent="#navigation">Отображение данных <b class="caret"></b></a><div id="navigation-1299" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Форматирование данных</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Постраничная разбивка</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Сортировка</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Провайдеры данных</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Виджеты для данных</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Работа с клиентскими скриптами</a>
+<a class="list-group-item" href="./guide-output-theming.html">Темизация</a></div>
+<a class="list-group-item" href="#navigation-1300" data-toggle="collapse" data-parent="#navigation">Безопасность <b class="caret"></b></a><div id="navigation-1300" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-security-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Авторизация</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Работа с паролями</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">Криптография</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-ru/README.md">Клиенты авторизации</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Лучшие практики</a></div>
+<a class="list-group-item" href="#navigation-1301" data-toggle="collapse" data-parent="#navigation">Кеширование <b class="caret"></b></a><div id="navigation-1301" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-caching-data.html">Кэширование данных</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Кэширование фрагментов</a>
+<a class="list-group-item" href="./guide-caching-page.html">Кэширование страниц</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP кэширование</a></div>
+<a class="list-group-item" href="#navigation-1302" data-toggle="collapse" data-parent="#navigation">Веб-сервисы REST <b class="caret"></b></a><div id="navigation-1302" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Быстрый старт</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Роутинг</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Форматирование ответа</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Ограничение частоты запросов</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Версионирование</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Обработка ошибок</a></div>
+<a class="list-group-item" href="#navigation-1303" data-toggle="collapse" data-parent="#navigation">Инструменты разработчика <b class="caret"></b></a><div id="navigation-1303" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Отладочная панель и отладчик</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide/README.md">Генерация кода с Gii</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">Генератор документации API</a></div>
+<a class="list-group-item" href="#navigation-1304" data-toggle="collapse" data-parent="#navigation">Тестирование <b class="caret"></b></a><div id="navigation-1304" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Настройка тестового окружения</a>
+<a class="list-group-item" href="./guide-test-unit.html">Модульные тесты</a>
+<a class="list-group-item" href="./guide-test-functional.html">Функциональные тесты</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Приёмочные тесты</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Фикстуры</a></div>
+<a class="list-group-item" href="#navigation-1305" data-toggle="collapse" data-parent="#navigation">Специальные темы <b class="caret"></b></a><div id="navigation-1305" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">Шаблон приложения advanced</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Создание приложения с нуля</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Консольные команды</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Встроенные валидаторы</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Интернационализация</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Отправка почты</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Оптимизация производительности</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Окружение виртуального хостинга</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Шаблонизаторы</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Работа со сторонним кодом</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">Использование Yii в качестве микро-framework&#039;а</a></div>
+<a class="list-group-item" href="#navigation-1306" data-toggle="collapse" data-parent="#navigation">Виджеты <b class="caret"></b></a><div id="navigation-1306" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-ru/README.md">Виджеты Bootstrap</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-ru/README.md">Виджеты Jquery UI</a></div>
+<a class="list-group-item" href="#navigation-1307" data-toggle="collapse" data-parent="#navigation">Хелперы <b class="caret"></b></a><div id="navigation-1307" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url хелпер</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Проверка входящих данных <span id="proverka-vhodasih-dannyh"></span><a href="#proverka-vhodasih-dannyh" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#declaring-rules">Правила проверки</a></li>
+<li><a href="#ad-hoc-validation">Специальная валидация</a></li>
+<li><a href="#creating-validators">Создание Валидаторов</a></li>
+<li><a href="#client-side-validation">Валидация на стороне клиента</a></li></ol></div>
+<p>Как правило, вы никогда не должны доверять данным, полученным от пользователей и всегда проверять их прежде, чем работать с ними и добавлять в базу данных.</p>
+<p>Учитывая <a href="guide-structure-models.html">модель</a> данных которые должен заполнить пользователь, можно проверить эти данные на валидность воспользовавшись методом <a href="./yii-base-model.html#validate()-detail">yii\base\Model::validate()</a>. Метод возвращает логическое значение с результатом валидации ложь/истина. Если данные не валидны, ошибку можно получить воспользовавшись свойством <a href="./yii-base-model.html#$errors-detail">yii\base\Model::$errors</a>. Рассмотрим пример:</p>
+<pre><code class="hljs php language-php">$model = <span class="hljs-keyword">new</span> \app\models\ContactForm;
+
+<span class="hljs-comment">// заполняем модель пользовательскими данными</span>
+$model-&gt;load(\Yii::$app-&gt;request-&gt;post());
+<span class="hljs-comment">// аналогично следующей строке:</span>
+<span class="hljs-comment">// $model-&gt;attributes = \Yii::$app-&gt;request-&gt;post('ContactForm');</span>
+
+<span class="hljs-keyword">if</span> ($model-&gt;validate()) {
+    <span class="hljs-comment">// все данные корректны</span>
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">// данные не корректны: $errors - массив содержащий сообщения об ошибках</span>
+    $errors = $model-&gt;errors;
+}
+</code></pre>
+<h2>Правила проверки  <span id="declaring-rules"></span><a href="#declaring-rules" class="hashlink">&para;</a></h2><p>Для того, чтобы  <code>validate()</code> действительно работал, нужно объявить правила проверки атрибутов.
+Правила для проверки нужно указать в методе <a href="./yii-base-model.html#rules()-detail">yii\base\Model::rules()</a>. В следующем примере показано, как
+правила для проверки модели <code>ContactForm</code>, нужно объявлять:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-comment">// атрибут required указывает, что name, email, subject, body обязательны для заполнения</span>
+        [[<span class="hljs-string">'name'</span>, <span class="hljs-string">'email'</span>, <span class="hljs-string">'subject'</span>, <span class="hljs-string">'body'</span>], <span class="hljs-string">'required'</span>],
+
+        <span class="hljs-comment">// атрибут email указывает, что в переменной email должен быть корректный адрес электронной почты</span>
+        [<span class="hljs-string">'email'</span>, <span class="hljs-string">'email'</span>],
+    ];
+}
+</code></pre>
+<p>Метод <a href="./yii-base-model.html#rules()-detail">rules()</a> должен возвращать массив правил, каждое из которых является массивом в следующем формате:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// обязательный, указывает, какие атрибуты должны быть проверены по этому правилу.</span>
+    <span class="hljs-comment">// Для одного атрибута, вы можете использовать имя атрибута не создавая массив</span>
+    [<span class="hljs-string">'attribute1'</span>, <span class="hljs-string">'attribute2'</span>, ...],
+
+    <span class="hljs-comment">// обязательный, указывает тип правила.</span>
+    <span class="hljs-comment">// Это может быть имя класса, псевдоним валидатора, или метод для проверки</span>
+    <span class="hljs-string">'validator'</span>,
+
+    <span class="hljs-comment">// необязательный, указывает, в каком случае(ях) это правило должно применяться</span>
+    <span class="hljs-comment">// если не указан, это означает, что правило применяется ко всем сценариям</span>
+    <span class="hljs-comment">// Вы также можете настроить "except" этот вариант применяет правило ко всем</span>
+    <span class="hljs-comment">// сценариям кроме перечисленных</span>
+    <span class="hljs-string">'on'</span> =&gt; [<span class="hljs-string">'scenario1'</span>, <span class="hljs-string">'scenario2'</span>, ...],
+
+    <span class="hljs-comment">// необязательный, задает дополнительные конфигурации для объекта validator</span>
+    <span class="hljs-string">'property1'</span> =&gt; <span class="hljs-string">'value1'</span>, <span class="hljs-string">'property2'</span> =&gt; <span class="hljs-string">'value2'</span>, ...
+]
+</code></pre>
+<p>Для каждого правила необходимо указать, по крайней мере, какие атрибуты относится к этому правилу и тип правила.
+Вы можете указать тип правила в одном из следующих форматов:</p>
+<ul>
+<li>Псевдонимы основного валидатора, например <code>required</code>, <code>in</code>, <code>date</code> и другие. Пожалуйста, обратитесь к списку
+<a href="guide-tutorial-core-validators.html">Основных валидаторов</a> за более подробной информацией.</li>
+<li>Название метода проверки в модели класса, или анонимную функцию. Пожалуйста, обратитесь к разделу
+<a href="#inline-validators">Встроенных валидаторов</a> за более подробной информацией.</li>
+<li>Полное имя класса валидатора. Пожалуйста, обратитесь к разделу <a href="#standalone-validators">Автономных валидаторов</a>
+за более подробной информацией.</li>
+</ul>
+<p>Правило может использоваться для проверки одного или нескольких атрибутов. Атрибут может быть проверен одним или несколькими правилами.
+Правило может быть применено только к определенным <a href="guide-structure-models.html#scenarios">сценариям</a> указав свойство <code>on</code>.
+Если вы не укажите свойство <code>on</code>, это означает, что правило будет применяться ко всем сценариям.</p>
+<p>Когда вызывается  метод <code>validate()</code> для проверки, он выполняет следующие действия:</p>
+<ol>
+<li>Определяет, какие атрибуты должны проверяться путем получения списка атрибутов от <a href="./yii-base-model.html#scenarios()-detail">yii\base\Model::scenarios()</a>
+используя текущий <a href="./yii-base-model.html#$scenario-detail">scenario</a>. Эти атрибуты называются - <em>активными атрибутами</em>.</li>
+<li>Определяет, какие правила проверки должны использоваться, получив список правил от <a href="./yii-base-model.html#rules()-detail">yii\base\Model::rules()</a>
+используя текущий <a href="./yii-base-model.html#$scenario-detail">scenario</a>. Эти правила называются - <em>активными правилами</em>.</li>
+<li>Каждое активное правило проверяет каждый активный атрибут, который ассоциируется с правилом.
+Правила проверки выполняются в том порядке, как они перечислены.</li>
+</ol>
+<p>Согласно вышеизложенным пунктам, атрибут будет проверяться, если и только если он является
+активным атрибутом, объявленным в <code>scenarios()</code> и связан с одним или несколькими активными правилами,
+объявленными в <code>rules()</code>.</p>
+<blockquote class="note"><p><strong>Примечание: </strong>Правилам валидации полезно давать имена. Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-comment">// ...</span>
+        <span class="hljs-string">'password'</span> =&gt; [[<span class="hljs-string">'password'</span>], <span class="hljs-string">'string'</span>, <span class="hljs-string">'max'</span> =&gt; <span class="hljs-number">60</span>],
+    ];
+}
+</code></pre>
+<p>В случае наследования предыдущей модели, именованные правила можно модифицировать или удалить:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+</span>{
+    $rules = <span class="hljs-keyword">parent</span>::rules();
+    <span class="hljs-keyword">unset</span>($rules[<span class="hljs-string">'password'</span>]);
+    <span class="hljs-keyword">return</span> $rules;
+}
+</code></pre>
+</blockquote>
+<h3>Настройка сообщений об ошибках  <span id="customizing-error-messages"></span><a href="#customizing-error-messages" class="hashlink">&para;</a></h3><p>Большинство валидаторов имеют сообщения об ошибках по умолчанию, которые будут добавлены к модели когда его атрибуты не проходят проверку.
+Например, <a href="./yii-validators-requiredvalidator.html">required</a> валидатор добавляет к модели сообщение об ошибке "Имя пользователя не может быть пустым." когда атрибут <code>username</code> не удовлетворил правилу этого валидатора.</p>
+<p>Вы можете настроить сообщение об ошибке для каждого правила, указав свойство <code>message</code> при объявлении правила, следующим образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        [<span class="hljs-string">'username'</span>, <span class="hljs-string">'required'</span>, <span class="hljs-string">'message'</span> =&gt; <span class="hljs-string">'Please choose a username.'</span>],
+    ];
+}
+</code></pre>
+<p>Некоторые валидаторы могут поддерживать дополнительные сообщения об ошибках, чтобы более точно описать причину ошибки.
+Например, <a href="./yii-validators-numbervalidator.html">number</a> валидатор поддерживает
+<a href="./yii-validators-numbervalidator.html#$tooBig-detail">tooBig</a> и <a href="./yii-validators-numbervalidator.html#$tooSmall-detail">tooSmall</a>
+для описания ошибки валидации, когда проверяемое значение является слишком большим и слишком маленьким, соответственно.
+Вы можете настроить эти сообщения об ошибках, как в настройках валидаторов, так и непосредственно в правилах проверки.</p>
+<h3>События валидации  <span id="validation-events"></span><a href="#validation-events" class="hashlink">&para;</a></h3><p>Когда вызывается метод <a href="./yii-base-model.html#validate()-detail">yii\base\Model::validate()</a> он инициализирует вызов двух методов,
+которые можно переопределить, чтобы настроить процесс проверки:</p>
+<ul>
+<li><a href="./yii-base-model.html#beforeValidate()-detail">yii\base\Model::beforeValidate()</a>: выполнение по умолчанию вызовет <a href="./yii-base-model.html#EVENT_BEFORE_VALIDATE-detail">yii\base\Model::EVENT_BEFORE_VALIDATE</a>
+событие. Вы можете переопределить этот метод, или обрабатывать это событие, чтобы сделать некоторую предобработку данных (например, форматирование входных данных), метод вызывается до начала валидации. Этот метод должен возвращать логическое значение, указывающее, следует ли продолжать проверку или нет.</li>
+<li><a href="./yii-base-model.html#afterValidate()-detail">yii\base\Model::afterValidate()</a>: выполнение по умолчанию вызовет  <a href="./yii-base-model.html#EVENT_AFTER_VALIDATE-detail">yii\base\Model::EVENT_AFTER_VALIDATE</a>
+событие. Вы можете либо переопределить этот метод или обрабатывать это событие, чтобы сделать некоторую  постобработку данных (например, отформатировать данные удобным для дальнейшей обработки образом), метод вызывается после валидации.</li>
+</ul>
+<h3>Условные валидации  <span id="conditional-validation"></span><a href="#conditional-validation" class="hashlink">&para;</a></h3><p>Для проверки атрибутов только при выполнении определенных условий, например если один атрибут зависит от значения другого атрибута можно использовать <a href="./yii-validators-validator.html#$when-detail">when</a> свойство, чтобы определить такие условия. Например:</p>
+<pre><code class="hljs php language-php">    [<span class="hljs-string">'state'</span>, <span class="hljs-string">'required'</span>, <span class="hljs-string">'when'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($model)</span> </span>{
+        <span class="hljs-keyword">return</span> $model-&gt;country == <span class="hljs-string">'USA'</span>;
+    }],
+</code></pre>
+<p>Это свойство <a href="./yii-validators-validator.html#$when-detail">when</a> принимает PHP callable функцию с следующим описанием:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">/**
+ * <span class="hljs-doctag">@param</span> Model $model модель используемая для проверки
+ * <span class="hljs-doctag">@param</span> string $attribute атрибут для проверки
+ * <span class="hljs-doctag">@return</span> bool следует ли применять правило
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($model, $attribute)</span>
+</span></code></pre>
+<p>Если вам нужна поддержка условной проверки на стороне клиента, вы должны настроить свойство метода
+<a href="./yii-validators-validator.html#$whenClient-detail">whenClient</a>, которое принимает строку, представляющую JavaScript
+функцию, возвращаемое значение определяет, следует ли применять правило или нет. Например:</p>
+<pre><code class="hljs php language-php">    [<span class="hljs-string">'state'</span>, <span class="hljs-string">'required'</span>, <span class="hljs-string">'when'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($model)</span> </span>{
+        <span class="hljs-keyword">return</span> $model-&gt;country == <span class="hljs-string">'USA'</span>;
+    }, <span class="hljs-string">'whenClient'</span> =&gt; <span class="hljs-string">"function (attribute, value) {
+        return $('#country').val() == 'USA';
+    }"</span>]
+</code></pre>
+<h3>Фильтрация данных  <span id="data-filtering"></span><a href="#data-filtering" class="hashlink">&para;</a></h3><p>Пользователь часто вводит данные которые нужно предварительно отфильтровать или предварительно обработать(очистить).
+Например, вы хотите обрезать пробелы вокруг <code>username</code>. Вы можете использовать правила валидации для
+достижения этой цели.</p>
+<p>В следующих примерах показано, как обрезать пробелы во входных данных и превратить пустые входные данные в <code>NULL</code>
+с помощью <a href="guide-tutorial-core-validators.html#trim">trim</a> и указать значения по умолчанию с помощью свойства
+<a href="guide-tutorial-core-validators.html#default">default</a> основного валидатора:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    [[<span class="hljs-string">'username'</span>, <span class="hljs-string">'email'</span>], <span class="hljs-string">'trim'</span>],
+    [[<span class="hljs-string">'username'</span>, <span class="hljs-string">'email'</span>], <span class="hljs-string">'default'</span>],
+];
+</code></pre>
+<p>Вы также можете использовать более сложные фильтрации данных с помощью анонимной функции
+ подробнее об этом <a href="guide-tutorial-core-validators.html#filter">filter</a>.</p>
+<p>Как видите, эти правила валидации на самом деле не проверяют входные данные. Вместо этого,
+они будут обрабатывать значения и обратно возвращать результат работы. Фильтры по сути выполняют предобработку входящих данных.</p>
+<h3>Обработка пустых входных данных  <span id="handling-empty-inputs"></span><a href="#handling-empty-inputs" class="hashlink">&para;</a></h3><p>Если входные данные представлены из HTML-формы, часто нужно присвоить некоторые значения
+по умолчанию для входных данных, если они не заполнены. Вы можете сделать это с помощью
+валидатора <a href="guide-tutorial-core-validators.html#default">default</a>. Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// установим "username" и "email" как NULL, если они пустые</span>
+    [[<span class="hljs-string">'username'</span>, <span class="hljs-string">'email'</span>], <span class="hljs-string">'default'</span>],
+
+    <span class="hljs-comment">// установим "level" как 1 если он пустой</span>
+    [<span class="hljs-string">'level'</span>, <span class="hljs-string">'default'</span>, <span class="hljs-string">'value'</span> =&gt; <span class="hljs-number">1</span>],
+];
+</code></pre>
+<p>По умолчанию входные данные считаются пустыми, если их значением является пустая строка, пустой массив или <code>null</code>.
+Вы можете реализовать свою логику определения пустых входящих данных путем переопределения метода <a href="./yii-validators-validator.html#isEmpty()-detail">yii\validators\Validator::isEmpty()</a>
+используя анонимную функцию. Например:</p>
+<pre><code class="hljs php language-php">    [<span class="hljs-string">'agree'</span>, <span class="hljs-string">'required'</span>, <span class="hljs-string">'isEmpty'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($value)</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">empty</span>($value);
+    }]
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>большинство валидаторов не обрабатывает пустые входные данные, если их
+  <span class="broken-link">yii\base\Validator::skipOnEmpty</span> свойство принимает значение по умолчанию <code>true</code>.
+  Они просто будут пропущены во время проверки, если связанные с ними атрибуты являются пустыми.
+  Среди <a href="guide-tutorial-core-validators.html">основных валидаторов</a>, только <code>captcha</code>, <code>default</code>, <code>filter</code>,
+  <code>required</code>, и <code>trim</code> будут обрабатывать пустые входные данные.</p>
+</blockquote>
+<h2>Специальная валидация  <span id="ad-hoc-validation"></span><a href="#ad-hoc-validation" class="hashlink">&para;</a></h2><p>Иногда вам нужно сделать специальную валидацию для значений, которые не связаны с какой-либо моделью.</p>
+<p>Если необходимо выполнить только один тип проверки (например, проверка адреса электронной почты),
+вы можете вызвать метод <a href="./yii-validators-validator.html#validate()-detail">validate()</a> нужного валидатора.
+Например:</p>
+<pre><code class="hljs php language-php">$email = <span class="hljs-string">'test@example.com'</span>;
+$validator = <span class="hljs-keyword">new</span> yii\validators\EmailValidator();
+
+<span class="hljs-keyword">if</span> ($validator-&gt;validate($email, $error)) {
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">'Email is valid.'</span>;
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">echo</span> $error;
+}
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>Не все валидаторы поддерживают такой тип проверки. Примером может служить
+<a href="guide-tutorial-core-validators.html#unique">unique</a> валидатор, который предназначен для работы с моделью.</p>
+</blockquote>
+<blockquote class="note"><p><strong>Примечание: </strong>Свойство <span class="broken-link">yii\base\Validator::skipOnEmpty</span> используется только в <a href="./yii-base-model.html">yii\base\Model</a> и использование его отдельно не будет иметь никакого эффекта.</p>
+</blockquote>
+<p>Если необходимо выполнить несколько проверок в отношении нескольких значений,
+вы можете использовать <a href="./yii-base-dynamicmodel.html">yii\base\DynamicModel</a>, который поддерживает объявление, как
+атрибутов так и правил "на лету". Его использование выглядит следующим образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionSearch</span><span class="hljs-params">($name, $email)</span>
+</span>{
+    $model = DynamicModel::validateData(compact(<span class="hljs-string">'name'</span>, <span class="hljs-string">'email'</span>), [
+        [[<span class="hljs-string">'name'</span>, <span class="hljs-string">'email'</span>], <span class="hljs-string">'string'</span>, <span class="hljs-string">'max'</span> =&gt; <span class="hljs-number">128</span>],
+        [<span class="hljs-string">'email'</span>, <span class="hljs-string">'email'</span>],
+    ]);
+
+    <span class="hljs-keyword">if</span> ($model-&gt;hasErrors()) {
+        <span class="hljs-comment">// валидация завершилась с ошибкой</span>
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">// Валидация успешно выполнена</span>
+    }
+}
+</code></pre>
+<p>Метод <a href="./yii-base-dynamicmodel.html#validateData()-detail">yii\base\DynamicModel::validateData()</a> создает экземпляр <code>DynamicModel</code>, определяет
+атрибуты, используя приведенные данные (<code>name</code> и <code>email</code> в этом примере), и затем вызывает
+<a href="./yii-base-model.html#validate()-detail">yii\base\Model::validate()</a>
+с данными правилами.</p>
+<p>Кроме того, вы можете использовать следующий "классический" синтаксис для выполнения специальной проверки данных:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionSearch</span><span class="hljs-params">($name, $email)</span>
+</span>{
+    $model = <span class="hljs-keyword">new</span> DynamicModel(compact(<span class="hljs-string">'name'</span>, <span class="hljs-string">'email'</span>));
+    $model-&gt;addRule([<span class="hljs-string">'name'</span>, <span class="hljs-string">'email'</span>], <span class="hljs-string">'string'</span>, [<span class="hljs-string">'max'</span> =&gt; <span class="hljs-number">128</span>])
+        -&gt;addRule(<span class="hljs-string">'email'</span>, <span class="hljs-string">'email'</span>)
+        -&gt;validate();
+
+    <span class="hljs-keyword">if</span> ($model-&gt;hasErrors()) {
+        <span class="hljs-comment">// валидация завершилась с ошибкой</span>
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">// Валидация успешно выполнена</span>
+    }
+}
+</code></pre>
+<p>После валидации, вы можете проверить успешность выполнения вызвав
+метод <a href="./yii-base-model.html#hasErrors()-detail">hasErrors()</a> и затем получить ошибки проверки вызвав
+метод <a href="./yii-base-model.html#$errors-detail">errors</a> как это делают нормальные модели.
+Вы можете также получить доступ к динамическим атрибутам, определенным через экземпляр модели, например,
+<code>$model-&gt;name</code> и <code>$model-&gt;email</code>.</p>
+<h2>Создание Валидаторов  <span id="creating-validators"></span><a href="#creating-validators" class="hashlink">&para;</a></h2><p>Кроме того, используя <a href="guide-tutorial-core-validators.html">основные валидаторы</a>, включенные в релизы Yii, вы также можете
+создавать свои собственные валидаторы. Вы можете создавать встроенные валидаторы или автономные валидаторы.</p>
+<h3>Встроенные Валидаторы  <span id="inline-validators"></span><a href="#inline-validators" class="hashlink">&para;</a></h3><p>Встроенный валидатор наследует методы модели или использует анонимную функцию.
+Описание метода/функции:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">/**
+ * <span class="hljs-doctag">@param</span> string $attribute атрибут проверяемый в настоящее время
+ * <span class="hljs-doctag">@param</span> array $params дополнительные пары имя-значение, заданное в правиле
+ * <span class="hljs-doctag">@param</span> \yii\validators\InlineValidator $validator связь с экземпляром InlineValidator
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($attribute, $params, $validator)</span>
+</span></code></pre>
+<p>Если атрибут не прошел проверку, метод/функция должна вызвать <a href="./yii-base-model.html#addError()-detail">yii\base\Model::addError()</a>,
+чтобы сохранить сообщение об ошибке в модели, для того чтобы позже можно было получить сообщение об ошибке для
+представления конечным пользователям.</p>
+<p>Ниже приведены некоторые примеры:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Model</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyForm</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Model</span>
+</span>{
+    <span class="hljs-keyword">public</span> $country;
+    <span class="hljs-keyword">public</span> $token;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            <span class="hljs-comment">// встроенный валидатор определяется как модель метода validateCountry()</span>
+            [<span class="hljs-string">'country'</span>, <span class="hljs-string">'validateCountry'</span>],
+
+            <span class="hljs-comment">// встроенный валидатор определяется как анонимная функция</span>
+            [<span class="hljs-string">'token'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($attribute, $params)</span> </span>{
+                <span class="hljs-keyword">if</span> (!ctype_alnum(<span class="hljs-keyword">$this</span>-&gt;$attribute)) {
+                    <span class="hljs-keyword">$this</span>-&gt;addError($attribute, <span class="hljs-string">'Токен должен содержать буквы или цифры.'</span>);
+                }
+            }],
+        ];
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validateCountry</span><span class="hljs-params">($attribute, $params)</span>
+    </span>{
+        <span class="hljs-keyword">if</span> (!in_array(<span class="hljs-keyword">$this</span>-&gt;$attribute, [<span class="hljs-string">'USA'</span>, <span class="hljs-string">'Indonesia'</span>])) {
+            <span class="hljs-keyword">$this</span>-&gt;addError($attribute, <span class="hljs-string">'Страна должна быть либо "USA" или "Indonesia".'</span>);
+        }
+    }
+}
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>по умолчанию, встроенные валидаторы не будут применяться, если связанные с ними атрибуты
+получат пустые входные данные, или если они уже не смогли пройти некоторые правила валидации.
+Если вы хотите, чтобы, это правило применялось всегда, вы можете настроить свойства
+<a href="./yii-validators-validator.html#$skipOnEmpty-detail">skipOnEmpty</a> и/или <a href="./yii-validators-validator.html#$skipOnError-detail">skipOnError</a>
+свойства <code>false</code> в правиле объявления. Например:</p>
+<pre><code class="hljs php language-php">[
+    [<span class="hljs-string">'country'</span>, <span class="hljs-string">'validateCountry'</span>, <span class="hljs-string">'skipOnEmpty'</span> =&gt; <span class="hljs-keyword">false</span>, <span class="hljs-string">'skipOnError'</span> =&gt; <span class="hljs-keyword">false</span>],
+]
+</code></pre>
+</blockquote>
+<h3>Автономные валидаторы  <span id="standalone-validators"></span><a href="#standalone-validators" class="hashlink">&para;</a></h3><p>Автономный валидатор - это класс, расширяющий <a href="./yii-validators-validator.html">yii\validators\Validator</a> или его дочерний класс.
+Вы можете реализовать свою логику проверки путем переопределения метода
+<a href="./yii-validators-validator.html#validateAttribute()-detail">yii\validators\Validator::validateAttribute()</a>. Если атрибут не прошел проверку, вызвать
+<a href="./yii-base-model.html#addError()-detail">yii\base\Model::addError()</a>,
+чтобы сохранить сообщение об ошибке в модели, как это делают <a href="#inline-validators">встроенные валидаторы</a>.</p>
+<p>Валидация может быть помещена в отдельный класс [[components/validators/CountryValidator]]. В этом случае можно использовать метод  <a href="./yii-validators-validator.html#addError()-detail">yii\validators\Validator::addError()</a> для того, чтобы добавить своё сообщение об ошибке в модель:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">validators</span>\<span class="hljs-title">Validator</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CountryValidator</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Validator</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validateAttribute</span><span class="hljs-params">($model, $attribute)</span>
+    </span>{
+        <span class="hljs-keyword">if</span> (!in_array($model-&gt;$attribute, [<span class="hljs-string">'USA'</span>, <span class="hljs-string">'Indonesia'</span>])) {
+            <span class="hljs-keyword">$this</span>-&gt;addError($model, $attribute, <span class="hljs-string">'Страна должна быть либо "{country1}" либо "{country2}".'</span>, [<span class="hljs-string">'country1'</span> =&gt; <span class="hljs-string">'USA'</span>, <span class="hljs-string">'country2'</span> =&gt; <span class="hljs-string">'Indonesia'</span>]);
+        }
+    }
+}
+</code></pre>
+<p>Если вы хотите, чтобы ваш валидатор поддерживал проверку значений без модели, также необходимо переопределить
+<a href="./yii-validators-validator.html#validate()-detail">yii\validators\Validator::validate()</a>. Вы можете также
+переопределить <a href="./yii-validators-validator.html#validateValue()-detail">yii\validators\Validator::validateValue()</a>
+вместо <code>validateAttribute()</code> и <code>validate()</code>, потому что по умолчанию последние два метода
+реализуются путем вызова <code>validateValue()</code>.</p>
+<h2>Валидация на стороне клиента  <span id="client-side-validation"></span><a href="#client-side-validation" class="hashlink">&para;</a></h2><p>Проверка на стороне клиента на основе JavaScript целесообразна, когда конечные пользователи вводят
+входные данные через HTML-формы, так как эта проверка позволяет пользователям узнать ошибки ввода
+быстрее и таким образом улучшает ваш пользовательский интерфейс. Вы можете использовать или
+реализовать валидатор, который поддерживает валидацию на стороне клиента <em>в дополнение</em> к проверке на стороне сервера.</p>
+<blockquote class="info"><p><strong>Информация: </strong>Проверка на стороне клиента желательна, но необязательна. Её основная цель заключается в
+предоставлении пользователям более удобного интерфейса. Так как входные данные, поступают от конечных
+пользователей, вы никогда не должны доверять верификации на стороне клиента. По этой причине, вы всегда
+должны выполнять верификацию на стороне сервера путем вызова <a href="./yii-base-model.html#validate()-detail">yii\base\Model::validate()</a>,
+как описано в предыдущих пунктах.</p>
+</blockquote>
+<h3>Использование валидации на стороне клиента  <span id="using-client-side-validation"></span><a href="#using-client-side-validation" class="hashlink">&para;</a></h3><p>Многие <a href="guide-tutorial-core-validators.html">основные валидаторы</a> поддерживают проверку на стороне клиента out-of-the-box.
+Все, что вам нужно сделать, это просто использовать <a href="./yii-widgets-activeform.html">yii\widgets\ActiveForm</a> для построения HTML-форм.</p>
+<p>Например, <code>LoginForm</code> ниже объявляет два правила: первое использует <a href="guide-tutorial-core-validators.html#required">required</a>
+основной валидатор, который поддерживается на стороне клиента и сервера; второе использует <code>validatePassword</code>
+встроенный валидатор, который поддерживается только на стороне сервера.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Model</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>\<span class="hljs-title">User</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LoginForm</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Model</span>
+</span>{
+    <span class="hljs-keyword">public</span> $username;
+    <span class="hljs-keyword">public</span> $password;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            <span class="hljs-comment">// username и password обязательны для заполнения</span>
+            [[<span class="hljs-string">'username'</span>, <span class="hljs-string">'password'</span>], <span class="hljs-string">'required'</span>],
+
+            <span class="hljs-comment">// проверке пароля с помощью validatePassword()</span>
+            [<span class="hljs-string">'password'</span>, <span class="hljs-string">'validatePassword'</span>],
+        ];
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validatePassword</span><span class="hljs-params">()</span>
+    </span>{
+        $user = User::findByUsername(<span class="hljs-keyword">$this</span>-&gt;username);
+
+        <span class="hljs-keyword">if</span> (!$user || !$user-&gt;validatePassword(<span class="hljs-keyword">$this</span>-&gt;password)) {
+            <span class="hljs-keyword">$this</span>-&gt;addError(<span class="hljs-string">'password'</span>, <span class="hljs-string">'Неправильное имя пользователя или пароль.'</span>);
+        }
+    }
+}
+</code></pre>
+<p>HTML-форма построена с помощью следующего кода, содержит поля для ввода <code>username</code> и <code>password</code>.
+Если вы отправите форму, не вводя ничего, вы получите сообщения об ошибках, требующих ввести данные.
+Сообщения появятся сразу, без обращения к серверу.</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span> $form = yii\widgets\ActiveForm::begin(); <span class="hljs-meta">?&gt;</span>
+    <span class="hljs-meta">&lt;?</span>= $form-&gt;field($model, <span class="hljs-string">'username'</span>) <span class="hljs-meta">?&gt;</span>
+    <span class="hljs-meta">&lt;?</span>= $form-&gt;field($model, <span class="hljs-string">'password'</span>)-&gt;passwordInput() <span class="hljs-meta">?&gt;</span>
+    <span class="hljs-meta">&lt;?</span>= Html::submitButton(<span class="hljs-string">'Login'</span>) <span class="hljs-meta">?&gt;</span>
+<span class="hljs-meta">&lt;?php</span> yii\widgets\ActiveForm::end(); <span class="hljs-meta">?&gt;</span>
+</code></pre>
+<p>Класс <a href="./yii-widgets-activeform.html">yii\widgets\ActiveForm</a> будет читать правила проверки заявленные в модели и генерировать
+соответствующий код JavaScript для валидаторов, которые поддерживают проверку на стороне клиента.
+Когда пользователь изменяет значение поля ввода или отправляет форму, JavaScript на стороне клиента
+будет срабатывать и проверять введенные данные.</p>
+<p>Если вы хотите отключить проверку на стороне клиента полностью, вы можете настроить свойство
+<a href="./yii-widgets-activeform.html#$enableClientValidation-detail">yii\widgets\ActiveForm::$enableClientValidation</a> установив значение <code>false</code>. Вы также можете отключить
+проверку на стороне клиента отдельных полей ввода, настроив их с помощью свойства
+<a href="./yii-widgets-activefield.html#$enableClientValidation-detail">yii\widgets\ActiveField::$enableClientValidation</a> установив значение <code>false</code>.</p>
+<h3>Реализация проверки на стороне клиента  <span id="implementing-client-side-validation"></span><a href="#implementing-client-side-validation" class="hashlink">&para;</a></h3><p>Чтобы создать валидатор, который поддерживает проверку на стороне клиента, вы должны реализовать метод
+<a href="./yii-validators-validator.html#clientValidateAttribute()-detail">yii\validators\Validator::clientValidateAttribute()</a> возвращающий фрагмент кода JavaScript,
+который выполняет проверку на стороне клиента. В JavaScript-коде, вы можете использовать следующие предопределенные переменные:</p>
+<ul>
+<li><code>attribute</code>: имя атрибута для проверки.</li>
+<li><code>value</code>: проверяемое значение.</li>
+<li><code>messages</code>: массив, используемый для хранения сообщений об ошибках проверки значения атрибута.</li>
+<li><code>deferred</code>: массив, который содержит отложенные объекты (описано в следующем подразделе).</li>
+</ul>
+<p> В следующем примере мы создаем <code>StatusValidator</code> который проверяет значение поля на соответствие допустимым статусам.
+ Валидатор поддерживает оба способа проверки и на стороне сервера и на стороне клиента.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">validators</span>\<span class="hljs-title">Validator</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>\<span class="hljs-title">Status</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StatusValidator</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Validator</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">parent</span>::init();
+        <span class="hljs-keyword">$this</span>-&gt;message = <span class="hljs-string">'Invalid status input.'</span>;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validateAttribute</span><span class="hljs-params">($model, $attribute)</span>
+    </span>{
+        $value = $model-&gt;$attribute;
+        <span class="hljs-keyword">if</span> (!Status::find()-&gt;where([<span class="hljs-string">'id'</span> =&gt; $value])-&gt;exists()) {
+            $model-&gt;addError($attribute, <span class="hljs-keyword">$this</span>-&gt;message);
+        }
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clientValidateAttribute</span><span class="hljs-params">($model, $attribute, $view)</span>
+    </span>{
+        $statuses = json_encode(Status::find()-&gt;select(<span class="hljs-string">'id'</span>)-&gt;asArray()-&gt;column());
+        $message = json_encode(<span class="hljs-keyword">$this</span>-&gt;message, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&lt;&lt;&lt;JS
+if ($.inArray(value, <span class="hljs-subst">$statuses</span>) === -1) {
+    messages.push(<span class="hljs-subst">$message</span>);
+}
+JS;</span>
+    }
+}
+</code></pre>
+<blockquote class="tip"><p><strong>Подсказка: </strong>приведенный выше код даётся, в основном, чтобы продемонстрировать, как осуществляется
+поддержка проверки на стороне клиента. На практике вы можете использовать
+<a href="guide-tutorial-core-validators.html#in">in</a> основные валидаторы для достижения той же цели.
+Вы можете написать проверку, как правило, например:</p>
+<pre><code class="hljs php language-php">[
+    [<span class="hljs-string">'status'</span>, <span class="hljs-string">'in'</span>, <span class="hljs-string">'range'</span> =&gt; Status::find()-&gt;select(<span class="hljs-string">'id'</span>)-&gt;asArray()-&gt;column()],
+]
+</code></pre>
+</blockquote>
+<h3>Отложенная валидация  <span id="deferred-validation"></span><a href="#deferred-validation" class="hashlink">&para;</a></h3><p>Если Вам необходимо выполнить асинхронную проверку на стороне клиента, вы можете создавать
+<a href="http://api.jquery.com/category/deferred-object/">Deferred objects</a>. Например, чтобы выполнить
+пользовательские AJAX проверки, вы можете использовать следующий код:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clientValidateAttribute</span><span class="hljs-params">($model, $attribute, $view)</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&lt;&lt;&lt;JS
+        deferred.push($.get("/check", {value: value}).done(function(data) {
+            if ('' !== data) {
+                messages.push(data);
+            }
+        }));
+JS;</span>
+}
+</code></pre>
+<p>В примере выше переменная <code>deferred</code> предусмотренная Yii, которая является массивом Отложенных объектов.
+<code>$.get()</code> метод jQuery создает Отложенный объект, который помещается в массив <code>deferred</code>.</p>
+<p>Также можно явно создать Отложенный объект и вызвать его методом <code>resolve()</code>, тогда выполняется асинхронный
+вызов к серверу. В следующем примере показано, как проверить размеры загружаемого файла изображения
+на стороне клиента.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clientValidateAttribute</span><span class="hljs-params">($model, $attribute, $view)</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&lt;&lt;&lt;JS
+        var def = $.Deferred();
+        var img = new Image();
+        img.onload = function() {
+            if (this.width &gt; 150) {
+                messages.push('Изображение слишком широкое!');
+            }
+            def.resolve();
+        }
+        var reader = new FileReader();
+        reader.onloadend = function() {
+            img.src = reader.result;
+        }
+        reader.readAsDataURL(file);
+
+        deferred.push(def);
+JS;</span>
+}
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>метод <code>resolve()</code> должен быть вызван после того, как атрибут был проверен.
+В противном случае основная проверка формы не будет завершена.</p>
+</blockquote>
+<p>Для простоты работы с массивом <code>deferred</code>, существует упрощенный метод <code>add()</code>, который автоматически создает Отложенный объект и добавляет его в <code>deferred</code> массив. Используя этот метод, вы можете упростить пример выше, следующим образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clientValidateAttribute</span><span class="hljs-params">($model, $attribute, $view)</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&lt;&lt;&lt;JS
+        deferred.add(function(def) {
+            var img = new Image();
+            img.onload = function() {
+                if (this.width &gt; 150) {
+                    messages.push('Изображение слишком широкое!');
+                }
+                def.resolve();
+            }
+            var reader = new FileReader();
+            reader.onloadend = function() {
+                img.src = reader.result;
+            }
+            reader.readAsDataURL(file);
+        });
+JS;</span>
+}
+</code></pre>
+<h3>AJAX валидация  <span id="ajax-validation"></span><a href="#ajax-validation" class="hashlink">&para;</a></h3><p>Некоторые проверки можно сделать только на стороне сервера, потому что только сервер имеет необходимую информацию.
+Например, чтобы проверить логин пользователя на уникальность, необходимо проверить логин в
+базе данных на стороне сервера. Вы можете использовать проверку на основе AJAX в этом случае.
+Это вызовет AJAX-запрос в фоновом режиме, чтобы проверить логин пользователя, сохраняя при этом валидацию
+на стороне клиента. Выполняя её перед запросом к серверу.</p>
+<p>Чтобы включить AJAX-валидацию для одного поля, Вы должны свойство <a href="./yii-widgets-activefield.html#$enableAjaxValidation-detail">enableAjaxValidation</a> выбрать как <code>true</code> и указать уникальный <code>id</code> формы:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">widgets</span>\<span class="hljs-title">ActiveForm</span>;
+
+$form = ActiveForm::begin([
+    <span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'registration-form'</span>,
+]);
+
+<span class="hljs-keyword">echo</span> $form-&gt;field($model, <span class="hljs-string">'username'</span>, [<span class="hljs-string">'enableAjaxValidation'</span> =&gt; <span class="hljs-keyword">true</span>]);
+
+<span class="hljs-comment">// ...</span>
+
+ActiveForm::end();
+</code></pre>
+<p>Чтобы включить AJAX-валидацию для всей формы, Вы должны свойство
+<a href="./yii-widgets-activeform.html#$enableAjaxValidation-detail">enableAjaxValidation</a> выбрать как <code>true</code> для формы:</p>
+<pre><code class="hljs php language-php">$form = yii\widgets\ActiveForm::begin([
+    <span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'contact-form'</span>,
+    <span class="hljs-string">'enableAjaxValidation'</span> =&gt; <span class="hljs-keyword">true</span>,
+]);
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>В случае, если свойство <code>enableAjaxValidation</code> указано и у поля и у формы, первый вариант будет иметь приоритет.</p>
+</blockquote>
+<p>Также необходимо подготовить сервер для обработки AJAX-запросов валидации. Это может быть достигнуто
+с помощью следующего фрагмента кода, в контроллере действий:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">if</span> (Yii::$app-&gt;request-&gt;isAjax &amp;&amp; $model-&gt;load(Yii::$app-&gt;request-&gt;post())) {
+    Yii::$app-&gt;response-&gt;format = Response::FORMAT_JSON;
+    <span class="hljs-keyword">return</span> ActiveForm::validate($model);
+}
+</code></pre>
+<p>Приведенный выше код будет проверять, является ли текущий запрос AJAX. Если да,
+он будет отвечать на этот запрос, предварительно выполнив проверку и возвратит ошибки в
+случае их появления в формате JSON.</p>
+<blockquote class="info"><p><strong>Информация: </strong>Вы также можете использовать <a href="#deferred-validation">Deferred Validation</a> AJAX валидации.
+Однако, AJAX-функция проверки, описанная здесь более интегрированная и требует меньше усилий к написанию кода.</p>
+</blockquote>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 09 Dec 2020 00:16:07 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/1728b664/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9c5d0894/solarized_light.css" rel="stylesheet">
+<link href="./assets/f2ce5bcd/style.css" rel="stylesheet">
+<script src="./assets/bbf84a7a/jquery.js"></script>
+<script src="./assets/1728b664/js/bootstrap.js"></script>
+<script src="./assets/fd63b446/jssearch.js"></script>    <title>Провайдеры данных - Отображение данных - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w738" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w738-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w738-collapse" class="collapse navbar-collapse"><ul id="w739" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w740" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-722" data-toggle="collapse" data-parent="#navigation">Введение <b class="caret"></b></a><div id="navigation-722" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">О Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Обновление с версии 1.1</a></div>
+<a class="list-group-item" href="#navigation-723" data-toggle="collapse" data-parent="#navigation">Первое знакомство <b class="caret"></b></a><div id="navigation-723" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Установка Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Запуск приложения</a>
+<a class="list-group-item" href="./guide-start-hello.html">Говорим «привет»</a>
+<a class="list-group-item" href="./guide-start-forms.html">Работа с формами</a>
+<a class="list-group-item" href="./guide-start-databases.html">Работа с базами данных</a>
+<a class="list-group-item" href="./guide-start-gii.html">Генерация кода при помощи Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Что дальше?</a></div>
+<a class="list-group-item" href="#navigation-724" data-toggle="collapse" data-parent="#navigation">Структура приложения <b class="caret"></b></a><div id="navigation-724" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Входные скрипты</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Приложения</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Компоненты приложения</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-structure-models.html">Модели</a>
+<a class="list-group-item" href="./guide-structure-views.html">Представления</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Модули</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Фильтры</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Виджеты</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Расширения</a></div>
+<a class="list-group-item" href="#navigation-725" data-toggle="collapse" data-parent="#navigation">Обработка запросов <b class="caret"></b></a><div id="navigation-725" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Разбор и генерация URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Запросы</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Ответы</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Сессии и куки</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Обработка ошибок</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Логирование</a></div>
+<a class="list-group-item" href="#navigation-726" data-toggle="collapse" data-parent="#navigation">Основные понятия <b class="caret"></b></a><div id="navigation-726" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Компоненты</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Свойства</a>
+<a class="list-group-item" href="./guide-concept-events.html">События</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Поведения</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Конфигурации</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Псевдонимы</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Автозагрузка классов</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item" href="#navigation-727" data-toggle="collapse" data-parent="#navigation">Работа с базами данных <b class="caret"></b></a><div id="navigation-727" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Объекты доступа к данным (DAO)</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Построитель запросов</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Миграции</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-ru/README.md">Sphinx</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-redis/blob/master/docs/guide-ru/README.md">Redis</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-ru/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-ru/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-728" data-toggle="collapse" data-parent="#navigation">Получение данных от пользователя <b class="caret"></b></a><div id="navigation-728" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Создание форм</a>
+<a class="list-group-item" href="./guide-input-validation.html">Валидация</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Загрузка файлов</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Табличный ввод</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Работа с несколькими моделями</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">Расширение ActiveForm на стороне клиента</a></div>
+<a class="list-group-item active" href="#navigation-729" data-toggle="collapse" data-parent="#navigation">Отображение данных <b class="caret"></b></a><div id="navigation-729" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-output-formatting.html">Форматирование данных</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Постраничная разбивка</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Сортировка</a>
+<a class="list-group-item active" href="./guide-output-data-providers.html">Провайдеры данных</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Виджеты для данных</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Работа с клиентскими скриптами</a>
+<a class="list-group-item" href="./guide-output-theming.html">Темизация</a></div>
+<a class="list-group-item" href="#navigation-730" data-toggle="collapse" data-parent="#navigation">Безопасность <b class="caret"></b></a><div id="navigation-730" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-security-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Авторизация</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Работа с паролями</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">Криптография</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-ru/README.md">Клиенты авторизации</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Лучшие практики</a></div>
+<a class="list-group-item" href="#navigation-731" data-toggle="collapse" data-parent="#navigation">Кеширование <b class="caret"></b></a><div id="navigation-731" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-caching-data.html">Кэширование данных</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Кэширование фрагментов</a>
+<a class="list-group-item" href="./guide-caching-page.html">Кэширование страниц</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP кэширование</a></div>
+<a class="list-group-item" href="#navigation-732" data-toggle="collapse" data-parent="#navigation">Веб-сервисы REST <b class="caret"></b></a><div id="navigation-732" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Быстрый старт</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Роутинг</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Форматирование ответа</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Ограничение частоты запросов</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Версионирование</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Обработка ошибок</a></div>
+<a class="list-group-item" href="#navigation-733" data-toggle="collapse" data-parent="#navigation">Инструменты разработчика <b class="caret"></b></a><div id="navigation-733" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Отладочная панель и отладчик</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide/README.md">Генерация кода с Gii</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">Генератор документации API</a></div>
+<a class="list-group-item" href="#navigation-734" data-toggle="collapse" data-parent="#navigation">Тестирование <b class="caret"></b></a><div id="navigation-734" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Настройка тестового окружения</a>
+<a class="list-group-item" href="./guide-test-unit.html">Модульные тесты</a>
+<a class="list-group-item" href="./guide-test-functional.html">Функциональные тесты</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Приёмочные тесты</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Фикстуры</a></div>
+<a class="list-group-item" href="#navigation-735" data-toggle="collapse" data-parent="#navigation">Специальные темы <b class="caret"></b></a><div id="navigation-735" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">Шаблон приложения advanced</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Создание приложения с нуля</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Консольные команды</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Встроенные валидаторы</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Интернационализация</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Отправка почты</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Оптимизация производительности</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Окружение виртуального хостинга</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Шаблонизаторы</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Работа со сторонним кодом</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">Использование Yii в качестве микро-framework&#039;а</a></div>
+<a class="list-group-item" href="#navigation-736" data-toggle="collapse" data-parent="#navigation">Виджеты <b class="caret"></b></a><div id="navigation-736" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-ru/README.md">Виджеты Bootstrap</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-ru/README.md">Виджеты Jquery UI</a></div>
+<a class="list-group-item" href="#navigation-737" data-toggle="collapse" data-parent="#navigation">Хелперы <b class="caret"></b></a><div id="navigation-737" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url хелпер</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Провайдеры данных <span id="provajdery-dannyh"></span><a href="#provajdery-dannyh" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#active-data-provider">ActiveDataProvider</a></li>
+<li><a href="#sql-data-provider">SqlDataProvider</a></li>
+<li><a href="#array-data-provider">ArrayDataProvider</a></li>
+<li><a href="#working-with-keys">Принципы работы с ключами данных</a></li>
+<li><a href="#custom-data-provider">Создание своего провайдера данных</a></li></ol></div>
+<p>В разделах <a href="guide-output-pagination.html">Постраничное разделение данных</a> и <a href="guide-output-sorting.html">Сортировка</a> было описано, 
+как сделать возможность для конечных пользователей, чтобы они могли выбирать определённую страницу для вывода данных и
+сортировку их по некоторым колонкам.</p>
+<p>Провайдер данных это класс, который реализует <a href="./yii-data-dataproviderinterface.html">yii\data\DataProviderInterface</a>. Такая реализация поддерживает в основном 
+разбивку на страницы и сортировку. Они обычно используются для работы <a href="guide-output-data-widgets.html">виджетов данных</a>, что позволяет
+конечным пользователям интерактивно использовать сортировку данных и их разбивку на страницы.</p>
+<p>В Yii реализованы следующие классы провайдеров данных:</p>
+<ul>
+<li><a href="./yii-data-activedataprovider.html">yii\data\ActiveDataProvider</a>: использует <a href="./yii-db-query.html">yii\db\Query</a> или <a href="./yii-db-activequery.html">yii\db\ActiveQuery</a> для запроса данных из базы данных,
+возвращая их в виде массива или экземпляров <a href="guide-db-active-record.html">Active Record</a>.</li>
+<li><a href="./yii-data-sqldataprovider.html">yii\data\SqlDataProvider</a>: выполняет запрос SQL к базе данных и возвращает результат в виде массива.</li>
+<li><a href="./yii-data-arraydataprovider.html">yii\data\ArrayDataProvider</a>: принимает большой массив и возвращает выборку из него с возможностью сортировки и разбивки
+ на страницы.</li>
+</ul>
+<p>Использование всех этих провайдеров данных имеет общую закономерность:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// создание провайдера данных с конфигурацией для сортировки и постраничной разбивки</span>
+$provider = <span class="hljs-keyword">new</span> XyzDataProvider([
+    <span class="hljs-string">'pagination'</span> =&gt; [...],
+    <span class="hljs-string">'sort'</span> =&gt; [...],
+]);
+
+<span class="hljs-comment">// Получение данных с разбивкой на страницы и сортировкой.</span>
+$models = $provider-&gt;getModels();
+
+<span class="hljs-comment">// получение количества данных на текущей странице</span>
+$count = $provider-&gt;getCount();
+
+<span class="hljs-comment">// получение общего количества данных на всех страницах</span>
+$totalCount = $provider-&gt;getTotalCount();
+</code></pre>
+<p>Определение поведений сортировки и разбивки для провайдера данных устанавливается через его свойства
+<a href="./yii-data-basedataprovider.html#$pagination-detail">pagination</a> и <a href="./yii-data-basedataprovider.html#$sort-detail">sort</a>, которые соответствуют
+настройкам <a href="./yii-data-pagination.html">yii\data\Pagination</a> and <a href="./yii-data-sort.html">yii\data\Sort</a>. Вы можете отключить сортировку и разбивку на страницы путём
+выставления их настроек в <code>false</code>.</p>
+<p><a href="guide-output-data-widgets.html">Виджеты данных</a>, такие как <a href="./yii-grid-gridview.html">yii\grid\GridView</a>, имеют свойство <code>dataProvider</code>, которое может
+принимать экземпляр провайдера данных для отображения его данных. Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> yii\grid\GridView::widget([
+    <span class="hljs-string">'dataProvider'</span> =&gt; $dataProvider,
+]);
+</code></pre>
+<p>Эти провайдеры данных в некоторой степени различаются по использовании, в зависимости от источника данных. Далее 
+опишем более подробно использование каждого провайдера данных.</p>
+<h2>ActiveDataProvider  <span id="active-data-provider"></span><a href="#active-data-provider" class="hashlink">&para;</a></h2><p>Для использования <a href="./yii-data-activedataprovider.html">yii\data\ActiveDataProvider</a>, необходимо настроить его свойство <a href="./yii-data-activedataprovider.html#$query-detail">query</a>.
+Оно принимает любой объект <a href="./yii-db-query.html">yii\db\Query</a> или <a href="./yii-db-activequery.html">yii\db\ActiveQuery</a>. Если использовать первый, то данные будут возвращены в 
+виде массивов, если второй - данные также могут быть возвращены в виде массивов, а также в виде экземпляров 
+<a href="guide-db-active-record.html">Active Record</a>. Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">data</span>\<span class="hljs-title">ActiveDataProvider</span>;
+
+$query = Post::find()-&gt;where([<span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">1</span>]);
+
+$provider = <span class="hljs-keyword">new</span> ActiveDataProvider([
+    <span class="hljs-string">'query'</span> =&gt; $query,
+    <span class="hljs-string">'pagination'</span> =&gt; [
+        <span class="hljs-string">'pageSize'</span> =&gt; <span class="hljs-number">10</span>,
+    ],
+    <span class="hljs-string">'sort'</span> =&gt; [
+        <span class="hljs-string">'defaultOrder'</span> =&gt; [
+            <span class="hljs-string">'created_at'</span> =&gt; SORT_DESC,
+            <span class="hljs-string">'title'</span> =&gt; SORT_ASC, 
+        ]
+    ],
+]);
+
+<span class="hljs-comment">// возвращает массив Post объектов</span>
+$posts = $provider-&gt;getModels();
+</code></pre>
+<p>Если изменить <code>$query</code> в этом примере на следующий код, то будут возвращены сырые массивы.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Query</span>;
+
+$query = (<span class="hljs-keyword">new</span> Query())-&gt;from(<span class="hljs-string">'post'</span>)-&gt;where([<span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">1</span>]); 
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>Если query содержит условия сортировки в <code>orderBy</code>, то новые условия, полученные от конечных пользователей
+ (через настройки <code>sort</code>) будут добавлены к существующим условиям в <code>orderBy</code>. Любые условия в <code>limit</code> и <code>offset</code> 
+ будут переписаны запросом конечного пользователя к различным страницам (через конфигурацию  <code>pagination</code>).</p>
+</blockquote>
+<p>По умолчанию <a href="./yii-data-activedataprovider.html">yii\data\ActiveDataProvider</a> использует компонент приложения <code>db</code> для подключения к базе данных. Можно
+использовать разные базы данных, настроив подключение через конфигурацию свойства <a href="./yii-data-activedataprovider.html#$db-detail">yii\data\ActiveDataProvider::$db</a>.</p>
+<h2>SqlDataProvider  <span id="sql-data-provider"></span><a href="#sql-data-provider" class="hashlink">&para;</a></h2><p><a href="./yii-data-sqldataprovider.html">yii\data\SqlDataProvider</a> работает с сырыми запросами SQL, которые используются для извлечение необходимых данных.
+Основываясь на спецификации из <a href="./yii-data-basedataprovider.html#$sort-detail">sort</a> и  <a href="./yii-data-basedataprovider.html#$pagination-detail">pagination</a>,
+провайдер данных будет добавлять конструкции <code>ORDER BY</code> и <code>LIMIT</code> к SQL-запросу, для возврата только запрошенной 
+страницы данных с учётом определённой сортировки.</p>
+<p>Для использования <a href="./yii-data-sqldataprovider.html">yii\data\SqlDataProvider</a>, необходимо настроить свойства <a href="./yii-data-sqldataprovider.html#$sql-detail">sql</a> и
+<a href="./yii-data-basedataprovider.html#$totalCount-detail">totalCount</a>. Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">data</span>\<span class="hljs-title">SqlDataProvider</span>;
+
+$count = Yii::$app-&gt;db-&gt;createCommand(<span class="hljs-string">'
+    SELECT COUNT(*) FROM post WHERE status=:status
+'</span>, [<span class="hljs-string">':status'</span> =&gt; <span class="hljs-number">1</span>])-&gt;queryScalar();
+
+$provider = <span class="hljs-keyword">new</span> SqlDataProvider([
+    <span class="hljs-string">'sql'</span> =&gt; <span class="hljs-string">'SELECT * FROM post WHERE status=:status'</span>,
+    <span class="hljs-string">'params'</span> =&gt; [<span class="hljs-string">':status'</span> =&gt; <span class="hljs-number">1</span>],
+    <span class="hljs-string">'totalCount'</span> =&gt; $count,
+    <span class="hljs-string">'pagination'</span> =&gt; [
+        <span class="hljs-string">'pageSize'</span> =&gt; <span class="hljs-number">10</span>,
+    ],
+    <span class="hljs-string">'sort'</span> =&gt; [
+        <span class="hljs-string">'attributes'</span> =&gt; [
+            <span class="hljs-string">'title'</span>,
+            <span class="hljs-string">'view_count'</span>,
+            <span class="hljs-string">'created_at'</span>,
+        ],
+    ],
+]);
+
+<span class="hljs-comment">// возвращает массив данных</span>
+$models = $provider-&gt;getModels();
+</code></pre>
+<blockquote><p>Совет: Свойство <a href="./yii-data-basedataprovider.html#$totalCount-detail">totalCount</a> обязательно только тогда, когда вам нужна разбивка
+на страницы. Всё потому, что запрос SQL <a href="./yii-data-sqldataprovider.html#$sql-detail">sql</a> будет изменяться провайдером данных для возврата
+только текущей запрошенной страницы. Провайдеру необходимо знать общее количество данных в запросе для корректного 
+вычисления разбивки на доступные страницы.</p>
+</blockquote>
+<h2>ArrayDataProvider  <span id="array-data-provider"></span><a href="#array-data-provider" class="hashlink">&para;</a></h2><p><a href="./yii-data-arraydataprovider.html">yii\data\ArrayDataProvider</a> лучше использовать для работы с большим массивом. Этот провайдер помогает вернуть выборку
+из большого массива с сортировкой по одному или нескольким колонкам. Для использования <a href="./yii-data-arraydataprovider.html">yii\data\ArrayDataProvider</a>
+необходимо определить свойство <a href="./yii-data-arraydataprovider.html#$allModels-detail">allModels</a>, как большой массив. Элементы в 
+большом массиве могут быть ассоциативными массивами (например, результаты выборки из <a href="guide-db-dao.html">DAO</a>) или объекты (экземпляры <a href="guide-db-active-record.html">Active Record</a>). Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">data</span>\<span class="hljs-title">ArrayDataProvider</span>;
+
+$data = [
+    [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">1</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'name 1'</span>, ...],
+    [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">2</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'name 2'</span>, ...],
+    ...
+    [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">100</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'name 100'</span>, ...],
+];
+
+$provider = <span class="hljs-keyword">new</span> ArrayDataProvider([
+    <span class="hljs-string">'allModels'</span> =&gt; $data,
+    <span class="hljs-string">'pagination'</span> =&gt; [
+        <span class="hljs-string">'pageSize'</span> =&gt; <span class="hljs-number">10</span>,
+    ],
+    <span class="hljs-string">'sort'</span> =&gt; [
+        <span class="hljs-string">'attributes'</span> =&gt; [<span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>],
+    ],
+]);
+
+<span class="hljs-comment">// получает строки для текущей запрошенной странице</span>
+$rows = $provider-&gt;getModels();
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>По сравнению с <a href="#active-data-provider">Active Data Provider</a> и <a href="#sql-data-provider">SQL Data Provider</a>,
+ArrayDataProvider менее эффективный, потому что требует загрузки <em>всех</em> данных в память.</p>
+</blockquote>
+<h2>Принципы работы с ключами данных  <span id="working-with-keys"></span><a href="#working-with-keys" class="hashlink">&para;</a></h2><p>При возврате данных с помощью провайдера, часто требуется идентификация каждого элемента по уникальному ключу. Например,
+если данные - это какая-то информация по клиенту, то возможно понадобится использовать ID клиента, как ключ для данных по 
+каждому клиенту. Провайдер данных через <a href="./yii-data-dataproviderinterface.html#getModels()-detail">yii\data\DataProviderInterface::getModels()</a> может вернуть список из ключей
+и соответствующего набора данных. Например,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">data</span>\<span class="hljs-title">ActiveDataProvider</span>;
+
+$query = Post::find()-&gt;where([<span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">1</span>]);
+
+$provider = <span class="hljs-keyword">new</span> ActiveDataProvider([
+    <span class="hljs-string">'query'</span> =&gt; $query,
+]);
+
+<span class="hljs-comment">// возвращает массив объектов Post</span>
+$posts = $provider-&gt;getModels();
+
+<span class="hljs-comment">// возвращает значения первичного ключа в соответствии с $posts</span>
+$ids = $provider-&gt;getKeys();
+</code></pre>
+<p>В вышеописанном примере, так как <a href="./yii-data-activedataprovider.html">yii\data\ActiveDataProvider</a> предоставляется один <a href="./yii-db-activequery.html">yii\db\ActiveQuery</a> объект, то
+в этом случае провайдер достаточно умён, чтобы вернуть значения первичных ключей в качестве идентификатора. Также есть
+возможность настроить способ вычисления значения идентификатора, через настройку <a href="./yii-data-activedataprovider.html#$key-detail">yii\data\ActiveDataProvider::$key</a>, как
+имя колонки или функцию вычисления значений ключа. Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// в качестве ключа используется столбец "slug"</span>
+$provider = <span class="hljs-keyword">new</span> ActiveDataProvider([
+    <span class="hljs-string">'query'</span> =&gt; Post::find(),
+    <span class="hljs-string">'key'</span> =&gt; <span class="hljs-string">'slug'</span>,
+]);
+
+<span class="hljs-comment">// в качестве ключа используется md5(id)</span>
+$provider = <span class="hljs-keyword">new</span> ActiveDataProvider([
+    <span class="hljs-string">'query'</span> =&gt; Post::find(),
+    <span class="hljs-string">'key'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($model)</span> </span>{
+        <span class="hljs-keyword">return</span> md5($model-&gt;id);
+    }
+]);
+</code></pre>
+<h2>Создание своего провайдера данных  <span id="custom-data-provider"></span><a href="#custom-data-provider" class="hashlink">&para;</a></h2><p>Для создания своих классов провайдера данных, необходимо реализовать <a href="./yii-data-dataproviderinterface.html">yii\data\DataProviderInterface</a>. Простой способ 
+сделать это - наследовать <a href="./yii-data-basedataprovider.html">yii\data\BaseDataProvider</a>, который помогает сфокусироваться на логике ядра провайдера данных.
+В основном необходимо реализовать следующие методы:</p>
+<ul>
+<li><a href="./yii-data-basedataprovider.html#prepareModels()-detail">prepareModels()</a>: подготавливает модели данных, которые будут доступны
+ в текущей странице и возвращает их в виде массива.</li>
+<li><a href="./yii-data-basedataprovider.html#prepareKeys()-detail">prepareKeys()</a>: принимает массив имеющихся в настоящее время моделей 
+данных и возвращает ключи, связанные с ними.</li>
+<li><a href="./yii-data-basedataprovider.html#prepareTotalCount()-detail">prepareTotalCount</a>: возвращает значение, указывающее общее количество
+ моделей данных в провайдере данных.</li>
+</ul>
+<p>Ниже приведён пример провайдера данных, который эффективно считывает данные из CSV:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">data</span>\<span class="hljs-title">BaseDataProvider</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CsvDataProvider</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BaseDataProvider</span>
+</span>{
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@var</span> string имя CSV-файла для чтения
+     */</span>
+    <span class="hljs-keyword">public</span> $filename;
+    
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@var</span> string|callable имя столбца с ключом или callback-функция, возвращающие его
+     */</span>
+    <span class="hljs-keyword">public</span> $key;
+    
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@var</span> SplFileObject
+     */</span>
+    <span class="hljs-keyword">protected</span> $fileObject; <span class="hljs-comment">// с помощью SplFileObject очень удобно искать конкретную строку в файле</span>
+    
+ 
+    <span class="hljs-comment">/**
+     * {<span class="hljs-doctag">@inheritdoc</span>}
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">parent</span>::init();
+        
+        <span class="hljs-comment">// открыть файл</span>
+        <span class="hljs-keyword">$this</span>-&gt;fileObject = <span class="hljs-keyword">new</span> SplFileObject(<span class="hljs-keyword">$this</span>-&gt;filename);
+    }
+ 
+    <span class="hljs-comment">/**
+     * {<span class="hljs-doctag">@inheritdoc</span>}
+     */</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">prepareModels</span><span class="hljs-params">()</span>
+    </span>{
+        $models = [];
+        $pagination = <span class="hljs-keyword">$this</span>-&gt;getPagination();
+ 
+        <span class="hljs-keyword">if</span> ($pagination === <span class="hljs-keyword">false</span>) {
+            <span class="hljs-comment">// в случае отсутствия разбивки на страницы - прочитать все строки</span>
+            <span class="hljs-keyword">while</span> (!<span class="hljs-keyword">$this</span>-&gt;fileObject-&gt;eof()) {
+                $models[] = <span class="hljs-keyword">$this</span>-&gt;fileObject-&gt;fgetcsv();
+                <span class="hljs-keyword">$this</span>-&gt;fileObject-&gt;next();
+            }
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-comment">// в случае, если разбивка на страницы есть - прочитать только одну страницу</span>
+            $pagination-&gt;totalCount = <span class="hljs-keyword">$this</span>-&gt;getTotalCount();
+            <span class="hljs-keyword">$this</span>-&gt;fileObject-&gt;seek($pagination-&gt;getOffset());
+            $limit = $pagination-&gt;getLimit();
+ 
+            <span class="hljs-keyword">for</span> ($count = <span class="hljs-number">0</span>; $count &lt; $limit; ++$count) {
+                $models[] = <span class="hljs-keyword">$this</span>-&gt;fileObject-&gt;fgetcsv();
+                <span class="hljs-keyword">$this</span>-&gt;fileObject-&gt;next();
+            }
+        }
+ 
+        <span class="hljs-keyword">return</span> $models;
+    }
+ 
+    <span class="hljs-comment">/**
+     * {<span class="hljs-doctag">@inheritdoc</span>}
+     */</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">prepareKeys</span><span class="hljs-params">($models)</span>
+    </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;key !== <span class="hljs-keyword">null</span>) {
+            $keys = [];
+ 
+            <span class="hljs-keyword">foreach</span> ($models <span class="hljs-keyword">as</span> $model) {
+                <span class="hljs-keyword">if</span> (is_string(<span class="hljs-keyword">$this</span>-&gt;key)) {
+                    $keys[] = $model[<span class="hljs-keyword">$this</span>-&gt;key];
+                } <span class="hljs-keyword">else</span> {
+                    $keys[] = call_user_func(<span class="hljs-keyword">$this</span>-&gt;key, $model);
+                }
+            }
+ 
+            <span class="hljs-keyword">return</span> $keys;
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">return</span> array_keys($models);
+        }
+    }
+ 
+    <span class="hljs-comment">/**
+     * {<span class="hljs-doctag">@inheritdoc</span>}
+     */</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">prepareTotalCount</span><span class="hljs-params">()</span>
+    </span>{
+        $count = <span class="hljs-number">0</span>;
+ 
+        <span class="hljs-keyword">while</span> (!<span class="hljs-keyword">$this</span>-&gt;fileObject-&gt;eof()) {
+            <span class="hljs-keyword">$this</span>-&gt;fileObject-&gt;next();
+            ++$count;
+        }
+ 
+        <span class="hljs-keyword">return</span> $count;
+    }
+}
+</code></pre>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 09 Dec 2020 00:16:05 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

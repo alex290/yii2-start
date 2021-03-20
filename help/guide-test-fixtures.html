@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/1728b664/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9c5d0894/solarized_light.css" rel="stylesheet">
+<link href="./assets/f2ce5bcd/style.css" rel="stylesheet">
+<script src="./assets/bbf84a7a/jquery.js"></script>
+<script src="./assets/1728b664/js/bootstrap.js"></script>
+<script src="./assets/fd63b446/jssearch.js"></script>    <title>Фикстуры - Тестирование - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1194" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1194-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1194-collapse" class="collapse navbar-collapse"><ul id="w1195" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1196" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1178" data-toggle="collapse" data-parent="#navigation">Введение <b class="caret"></b></a><div id="navigation-1178" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">О Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Обновление с версии 1.1</a></div>
+<a class="list-group-item" href="#navigation-1179" data-toggle="collapse" data-parent="#navigation">Первое знакомство <b class="caret"></b></a><div id="navigation-1179" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Установка Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Запуск приложения</a>
+<a class="list-group-item" href="./guide-start-hello.html">Говорим «привет»</a>
+<a class="list-group-item" href="./guide-start-forms.html">Работа с формами</a>
+<a class="list-group-item" href="./guide-start-databases.html">Работа с базами данных</a>
+<a class="list-group-item" href="./guide-start-gii.html">Генерация кода при помощи Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Что дальше?</a></div>
+<a class="list-group-item" href="#navigation-1180" data-toggle="collapse" data-parent="#navigation">Структура приложения <b class="caret"></b></a><div id="navigation-1180" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Входные скрипты</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Приложения</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Компоненты приложения</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-structure-models.html">Модели</a>
+<a class="list-group-item" href="./guide-structure-views.html">Представления</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Модули</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Фильтры</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Виджеты</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Расширения</a></div>
+<a class="list-group-item" href="#navigation-1181" data-toggle="collapse" data-parent="#navigation">Обработка запросов <b class="caret"></b></a><div id="navigation-1181" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Разбор и генерация URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Запросы</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Ответы</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Сессии и куки</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Обработка ошибок</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Логирование</a></div>
+<a class="list-group-item" href="#navigation-1182" data-toggle="collapse" data-parent="#navigation">Основные понятия <b class="caret"></b></a><div id="navigation-1182" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Компоненты</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Свойства</a>
+<a class="list-group-item" href="./guide-concept-events.html">События</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Поведения</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Конфигурации</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Псевдонимы</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Автозагрузка классов</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item" href="#navigation-1183" data-toggle="collapse" data-parent="#navigation">Работа с базами данных <b class="caret"></b></a><div id="navigation-1183" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Объекты доступа к данным (DAO)</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Построитель запросов</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Миграции</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-ru/README.md">Sphinx</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-redis/blob/master/docs/guide-ru/README.md">Redis</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-ru/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-ru/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1184" data-toggle="collapse" data-parent="#navigation">Получение данных от пользователя <b class="caret"></b></a><div id="navigation-1184" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Создание форм</a>
+<a class="list-group-item" href="./guide-input-validation.html">Валидация</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Загрузка файлов</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Табличный ввод</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Работа с несколькими моделями</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">Расширение ActiveForm на стороне клиента</a></div>
+<a class="list-group-item" href="#navigation-1185" data-toggle="collapse" data-parent="#navigation">Отображение данных <b class="caret"></b></a><div id="navigation-1185" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Форматирование данных</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Постраничная разбивка</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Сортировка</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Провайдеры данных</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Виджеты для данных</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Работа с клиентскими скриптами</a>
+<a class="list-group-item" href="./guide-output-theming.html">Темизация</a></div>
+<a class="list-group-item" href="#navigation-1186" data-toggle="collapse" data-parent="#navigation">Безопасность <b class="caret"></b></a><div id="navigation-1186" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-security-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Авторизация</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Работа с паролями</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">Криптография</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-ru/README.md">Клиенты авторизации</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Лучшие практики</a></div>
+<a class="list-group-item" href="#navigation-1187" data-toggle="collapse" data-parent="#navigation">Кеширование <b class="caret"></b></a><div id="navigation-1187" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-caching-data.html">Кэширование данных</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Кэширование фрагментов</a>
+<a class="list-group-item" href="./guide-caching-page.html">Кэширование страниц</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP кэширование</a></div>
+<a class="list-group-item" href="#navigation-1188" data-toggle="collapse" data-parent="#navigation">Веб-сервисы REST <b class="caret"></b></a><div id="navigation-1188" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Быстрый старт</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Роутинг</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Форматирование ответа</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Ограничение частоты запросов</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Версионирование</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Обработка ошибок</a></div>
+<a class="list-group-item" href="#navigation-1189" data-toggle="collapse" data-parent="#navigation">Инструменты разработчика <b class="caret"></b></a><div id="navigation-1189" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Отладочная панель и отладчик</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide/README.md">Генерация кода с Gii</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">Генератор документации API</a></div>
+<a class="list-group-item active" href="#navigation-1190" data-toggle="collapse" data-parent="#navigation">Тестирование <b class="caret"></b></a><div id="navigation-1190" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-test-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Настройка тестового окружения</a>
+<a class="list-group-item" href="./guide-test-unit.html">Модульные тесты</a>
+<a class="list-group-item" href="./guide-test-functional.html">Функциональные тесты</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Приёмочные тесты</a>
+<a class="list-group-item active" href="./guide-test-fixtures.html">Фикстуры</a></div>
+<a class="list-group-item" href="#navigation-1191" data-toggle="collapse" data-parent="#navigation">Специальные темы <b class="caret"></b></a><div id="navigation-1191" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">Шаблон приложения advanced</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Создание приложения с нуля</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Консольные команды</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Встроенные валидаторы</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Интернационализация</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Отправка почты</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Оптимизация производительности</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Окружение виртуального хостинга</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Шаблонизаторы</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Работа со сторонним кодом</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">Использование Yii в качестве микро-framework&#039;а</a></div>
+<a class="list-group-item" href="#navigation-1192" data-toggle="collapse" data-parent="#navigation">Виджеты <b class="caret"></b></a><div id="navigation-1192" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-ru/README.md">Виджеты Bootstrap</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-ru/README.md">Виджеты Jquery UI</a></div>
+<a class="list-group-item" href="#navigation-1193" data-toggle="collapse" data-parent="#navigation">Хелперы <b class="caret"></b></a><div id="navigation-1193" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url хелпер</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Фикстуры <span id="fikstury"></span><a href="#fikstury" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#obavlenie-fikstury">Объявление фикстуры</a></li>
+<li><a href="#ispolzovanie-fikstur">Использование фикстур</a></li>
+<li><a href="#opredelenie-i-ispolzovanie-globalnyh-fikstur">Определение и использование глобальных фикстур</a></li>
+<li><a href="#organizacia-klassov-fikstur-i-fajlov-s-dannymi">Организация классов фикстур и файлов с данными</a></li>
+<li><a href="#rezume">Резюме</a></li>
+<li><a href="#format-fikstury">Формат фикстуры</a></li>
+<li><a href="#zagruzka-fikstur">Загрузка фикстур</a></li>
+<li><a href="#vygruzka-fikstur">Выгрузка фикстур</a></li>
+<li><a href="#globalnaa-nastrojka-komandy">Глобальная настройка команды</a></li>
+<li><a href="#avtomaticeskaa-generacia-fikstur">Автоматическая генерация фикстур</a></li></ol></div>
+<p>Фикстуры (англ. fixtures) - это важная составляющая тестирования. Их основная задача заключается в подготовке окружения
+с заранее фиксированным/известным состоянием для гарантии повторяемости процесса тестирования. Yii предоставляет
+фреймворк, который позволяет легко и точно определять фикстуры и использовать их в ваших тестах.</p>
+<p>Ключевым понятием в фреймворке фикстур Yii является так называемый <em>объект фикстуры</em>. Объект фикстуры представляет собой 
+особый аспект тестового окружения, который наследуется от <a href="./yii-test-fixture.html">yii\test\Fixture</a> или его наследников. Например, вы можете
+использовать <code>UserFixture</code> для того, чтобы быть уверенным, что таблица пользователей содержит известный набор данных. Вы
+загружаете один или несколько объектов фикстур перед запуском теста и выгружаете их после его завершения.</p>
+<p>Фикстура может зависеть от других фикстур, заданных через свойство <a href="./yii-test-fixture.html#$depends-detail">yii\test\Fixture::$depends</a>.
+Когда фикстура загружается, фикстуры, от которых она зависит, будут автоматически загружены ДО нее, а когда она 
+выгружается все зависимые фикстуры будут выгружены ПОСЛЕ нее.</p>
+<h2>Объявление фикстуры <span id="obavlenie-fikstury"></span><a href="#obavlenie-fikstury" class="hashlink">&para;</a></h2><p>Для объявления фикстуры создайте новый класс унаследованный от <a href="./yii-test-fixture.html">yii\test\Fixture</a> или <a href="./yii-test-activefixture.html">yii\test\ActiveFixture</a>.
+Первый лучше всего подходит для фикстур общего назначения, в то время как последний имеет расширенные функции, 
+специально предназначенные для работы с базой данных и ActiveRecord.</p>
+<p>Следующий код показывает как объявить фикстуру для модели ActiveRecord <code>User</code>, которая соответствует таблице пользователей.</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">tests</span>\<span class="hljs-title">fixtures</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">test</span>\<span class="hljs-title">ActiveFixture</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserFixture</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveFixture</span>
+</span>{
+    <span class="hljs-keyword">public</span> $modelClass = <span class="hljs-string">'app\models\User'</span>;
+}
+</code></pre>
+<blockquote class="tip"><p><strong>Подсказка: </strong>каждая <code>ActiveFixture</code> предназначена для подготовки таблицы базы данных для тестирования. Вы можете указать
+таблицу как через свойство <a href="./yii-test-activefixture.html#$tableName-detail">yii\test\ActiveFixture::$tableName</a>, так и через свойство <a href="./yii-test-baseactivefixture.html#$modelClass-detail">yii\test\ActiveFixture::$modelClass</a>.
+Если последнее, то в этом случае имя таблицы будет взято из модели <code>ActiveRecord</code>, указанной в <code>modelClass</code>.</p>
+</blockquote>
+<blockquote class="note"><p><strong>Примечание: </strong><a href="./yii-test-activefixture.html">yii\test\ActiveFixture</a> используется только для реляционных баз данных. Для NoSQL-решений Yii
+предоставляет следующие классы <code>ActiveFixture</code>:</p>
+<ul>
+<li>MongoDB: <a href="./yii-mongodb-activefixture.html">yii\mongodb\ActiveFixture</a></li>
+<li>Elasticsearch: <a href="./yii-elasticsearch-activefixture.html">yii\elasticsearch\ActiveFixture</a> (начиная с версии 2.0.2)</li>
+</ul>
+</blockquote>
+<p>Данные для фикстуры <code>ActiveFixture</code>, как правило, находятся в файле <code>FixturePath/data/TableName.php</code>,<br />
+где <code>FixturePath</code> указывает на директорию, в которой располагается файл класса фикстуры, а <code>TableName</code> на имя таблицы,
+с которой она ассоциируется. Для примера выше, данные должны быть в файле <code>@app/tests/fixtures/data/user.php</code>. 
+Данный файл должен вернуть массив данных для строк, которые будут вставлены в таблицу пользователей. Например  </p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'user1'</span> =&gt; [
+        <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'lmayert'</span>,
+        <span class="hljs-string">'email'</span> =&gt; <span class="hljs-string">'strosin.vernice@jerde.com'</span>,
+        <span class="hljs-string">'auth_key'</span> =&gt; <span class="hljs-string">'K3nF70it7tzNsHddEiq0BZ0i-OU8S3xV'</span>,
+        <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">'$2y$13$WSyE5hHsG1rWN2jV8LRHzubilrCLI5Ev/iK0r3jRuwQEs2ldRu.a2'</span>,
+    ],
+    <span class="hljs-string">'user2'</span> =&gt; [
+        <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'napoleon69'</span>,
+        <span class="hljs-string">'email'</span> =&gt; <span class="hljs-string">'aileen.barton@heaneyschumm.com'</span>,
+        <span class="hljs-string">'auth_key'</span> =&gt; <span class="hljs-string">'dZlXsVnIDgIzFgX4EduAqkEPuphhOh9q'</span>,
+        <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">'$2y$13$kkgpvJ8lnjKo8RuoR30ay.RjDf15bMcHIF7Vz1zz/6viYG5xJExU6'</span>,
+    ],
+];
+</code></pre>
+<p>Вы можете задать псевдоним строке для того, чтобы в будущем вы могли ссылаться на нее в ваших тестах. В примере выше 
+2 строки имеют псевдонимы <code>user1</code> и <code>user2</code>, соответственно.</p>
+<p>Также вам не нужно указывать данные для столбцов с автоинкрементом. Yii автоматически заполнит значения данных столбцов
+в момент загрузки фикстуры.</p>
+<blockquote class="tip"><p><strong>Подсказка: </strong>вы можете указать свой путь до файла данных через свойство <a href="./yii-test-activefixture.html#$dataFile-detail">yii\test\ActiveFixture::$dataFile</a>.
+Вы также можете переопределить метод <a href="./yii-test-activefixture.html#getData()-detail">yii\test\ActiveFixture::getData()</a>, чтобы предоставить данные.</p>
+</blockquote>
+<p>Как мы описали ранее, фикстура может зависеть от других фикстур. Например, для <code>UserProfileFixture</code> возможно потребуется
+зависимость от <code>UserFixture</code> так как таблица пользовательских профилей содержит внешний ключ, указывающий на таблицу пользователей.
+Зависимость указывается через свойство <a href="./yii-test-fixture.html#$depends-detail">yii\test\Fixture::$depends</a>, как в следующем примере</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">tests</span>\<span class="hljs-title">fixtures</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">test</span>\<span class="hljs-title">ActiveFixture</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserProfileFixture</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveFixture</span>
+</span>{
+    <span class="hljs-keyword">public</span> $modelClass = <span class="hljs-string">'app\models\UserProfile'</span>;
+    <span class="hljs-keyword">public</span> $depends = [<span class="hljs-string">'app\tests\fixtures\UserFixture'</span>];
+}
+</code></pre>
+<p>Зависимость также гарантирует, что фикстуры загружаются и выгружаются в определенном порядке. В предыдущем примере <code>UserFixture</code>
+будет автоматически загружена до <code>UserProfileFixture</code>, тем самым гарантируя существование всех внешних ключей, и будет выгружена
+после того как выгрузится <code>UserProfileFixture</code> по тем же причинам. </p>
+<p>Выше мы показали как объявить фикстуру для таблицы базы данных. Для объявления фикстуры, не связанной с базой данных (например,
+фикстуры для определенных файлов и директорий), вам следует унаследовать ее от класса <a href="./yii-test-fixture.html">yii\test\Fixture</a> 
+и переопределить методы <a href="./yii-test-fixture.html#load()-detail">load()</a> и <a href="./yii-test-fixture.html#unload()-detail">unload()</a>.</p>
+<h2>Использование фикстур <span id="ispolzovanie-fikstur"></span><a href="#ispolzovanie-fikstur" class="hashlink">&para;</a></h2><p>Если вы используете <a href="http://codeception.com/">Codeception</a> для тестирования вашего кода, вам следует рассмотреть вопрос
+об использовании расширения <code>yii2-codeception</code>, которое имеет встроенную поддержку загрузки фикстур и доступа к ним.
+Если вы используете другой фреймворк для тестирования, вы можете использовать <a href="./yii-test-fixturetrait.html">yii\test\FixtureTrait</a> в ваших тестах для 
+этих целей.</p>
+<p>Далее мы опишем как написать класс модульного тестирования для модели <code>UserProfile</code> с использованием расширения <code>yii2-codeception</code>.</p>
+<p>Объявите какие фикстуры вы хотите использовать в методе <a href="./yii-test-fixturetrait.html#fixtures()-detail">fixtures()</a> вашего класса модульного
+тестирования, унаследованного от <span class="broken-link">yii\codeception\DbTestCase</span> или <span class="broken-link">yii\codeception\TestCase</span>. Например,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">tests</span>\<span class="hljs-title">unit</span>\<span class="hljs-title">models</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">codeception</span>\<span class="hljs-title">DbTestCase</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">tests</span>\<span class="hljs-title">fixtures</span>\<span class="hljs-title">UserProfileFixture</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserProfileTest</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">DbTestCase</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fixtures</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            <span class="hljs-string">'profiles'</span> =&gt; UserProfileFixture::className(),
+        ];
+    }
+
+    <span class="hljs-comment">// ...методы тестирования...</span>
+}
+</code></pre>
+<p>Фикстуры перечисленные в методе <code>fixtures()</code> будут автоматически загружены перед выполнением каждого метода тестирования тест-кейса
+и выгружены после завершения каждого метода тестирования. И, как мы описали ранее, когда фикстура загружается, все зависимые от нее
+фикстуры будут автоматически загружены в первую очередь. В приведенном выше примере, при выполнении любого метода тестирования
+в тест-кейсе последовательно будут загружены две фикстуры: <code>UserFixture</code> и <code>UserProfileFixture</code>, поскольку <code>UserProfileFixture</code> 
+зависит от <code>UserFixture</code>.</p>
+<p>Для определения фикстур в методе <code>fixtures()</code> вы можете использовать либо имя класса, либо массив настроек. С помощью массива
+настроек вы можете настроить свойства фикстуры, которые будут установлены при ее загрузке.</p>
+<p>Вы также можете назначить фикстуре псевдоним. В примере выше, <code>profiles</code> является псевдонимом фикстуры <code>UserProfileFixture</code>.
+С помощью псевдонима вы можете получить объект фикстуры в ваших методах тестирования. Например, <code>$this-&gt;profiles</code> вернет
+объект <code>UserProfileFixture</code>.</p>
+<p>Поскольку <code>UserProfileFixture</code> наследуется от <code>ActiveFixture</code>, вы можете также использовать следующий синтаксис для доступа к
+данным фикстуры:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// вернет строку данных для псевдонима 'user1'</span>
+$row = <span class="hljs-keyword">$this</span>-&gt;profiles[<span class="hljs-string">'user1'</span>];
+<span class="hljs-comment">// вернет модель UserProfile, соответствующую строке данных для псевдонима 'user1'</span>
+$profile = <span class="hljs-keyword">$this</span>-&gt;profiles(<span class="hljs-string">'user1'</span>);
+<span class="hljs-comment">// обход данных фикстуры в цикле</span>
+<span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">$this</span>-&gt;profiles <span class="hljs-keyword">as</span> $row) ...
+</code></pre>
+<blockquote class="info"><p><strong>Информация: </strong><code>$this-&gt;profiles</code> продолжает быть объектом класса <code>UserProfileFixture</code>. Указанные особенности доступа реализуются
+через магические методы PHP.</p>
+</blockquote>
+<h2>Определение и использование глобальных фикстур <span id="opredelenie-i-ispolzovanie-globalnyh-fikstur"></span><a href="#opredelenie-i-ispolzovanie-globalnyh-fikstur" class="hashlink">&para;</a></h2><p>Фикстуры, описанные выше, в основном используются в рамках определенных тест-кейсов. В большинстве случаев, вам также нужны 
+глобальные фикстры, которые применяются во ВСЕХ или большинстве тест-кейсов. Примером является фикстура <a href="./yii-test-initdbfixture.html">yii\test\InitDbFixture</a>, 
+которая делает 2 вещи:</p>
+<ul>
+<li>Запускает скрипт <code>@app/tests/fixtures/initdb.php</code> для выполнения ряда общих задач инициализации тестового окружения;</li>
+<li>Отключает проверку целостности данных перед загрузкой остальных фикстур, и включает ее обратно после того как все остальные фикстуры будут выгружены.</li>
+</ul>
+<p>Использование глобальных фикстур схоже с использованием не глобальных. Единственное отличие в том, что вы должны объявить эти
+фикстуры в методе <span class="broken-link">yii\codeception\TestCase::globalFixtures()</span>, а не <code>fixtures()</code>. Когда тест-кейс загружает фикстуры, сначала
+загружаются глобальные фикстуры, затем все остальные.</p>
+<p>По умолчанию фикстура <code>InitDbFixture</code> уже обяъвлена в методе <code>globalFixtures()</code> класса <span class="broken-link">yii\codeception\DbTestCase</span>.
+Это означает, что вы должны работать только с файлом <code>@app/tests/fixtures/initdb.php</code>, если вы хотите чтобы перед каждым тестом
+выполнялись определенные подготовительные работы. В противном случае вы просто можете сфокусироваться на разработке 
+конкретных тест-кейсов и соответствующих фикстур.</p>
+<h2>Организация классов фикстур и файлов с данными <span id="organizacia-klassov-fikstur-i-fajlov-s-dannymi"></span><a href="#organizacia-klassov-fikstur-i-fajlov-s-dannymi" class="hashlink">&para;</a></h2><p>По умолчанию классы фикстур ищут соответствующие файлы данных в директории <code>data</code>, которая является подпапкой папки, содержащей 
+файлы классов фикстур. Вы можете следовать этому соглашению при работе над простыми проектами. Есть вероятность, что на больших 
+проектах вам потребуется менять набор данных для одного и того же класса фикстур в разных тестах. Таким образом, мы рекомендуем
+вам организовать файлы данных иерархически, подобно пространству имен ваших классов. Например,</p>
+<pre><code class="hljs css"># в папке <span class="hljs-selector-tag">tests</span>\<span class="hljs-selector-tag">unit</span>\<span class="hljs-selector-tag">fixtures</span>
+
+<span class="hljs-selector-tag">data</span>\
+    <span class="hljs-selector-tag">components</span>\
+        <span class="hljs-selector-tag">fixture_data_file1</span><span class="hljs-selector-class">.php</span>
+        <span class="hljs-selector-tag">fixture_data_file2</span><span class="hljs-selector-class">.php</span>
+        ...
+        <span class="hljs-selector-tag">fixture_data_fileN</span><span class="hljs-selector-class">.php</span>
+    <span class="hljs-selector-tag">models</span>\
+        <span class="hljs-selector-tag">fixture_data_file1</span><span class="hljs-selector-class">.php</span>
+        <span class="hljs-selector-tag">fixture_data_file2</span><span class="hljs-selector-class">.php</span>
+        ...
+        <span class="hljs-selector-tag">fixture_data_fileN</span><span class="hljs-selector-class">.php</span>
+# и так далее
+</code></pre>
+<p>Таким образом вы избежите коллизий файлов данных фикстур между тестами и будете использовать их, как вам нужно.</p>
+<blockquote class="note"><p><strong>Примечание: </strong>в примере выше файлы данных фикстур названы так только в качестве примера. В реальных жизни вам следует
+называть их в соответствии с тем от какого класса наследуется ваш класс фикстуры. Например, при наследовании от <a href="./yii-test-activefixture.html">yii\test\ActiveFixture</a>
+для фикстур БД вам следует использовать имя таблицы в качестве имени файла данных; при наследовании от <a href="./yii-mongodb-activefixture.html">yii\mongodb\ActiveFixture</a>
+для фикстур MongoDB вам следует использовать имя коллекции в качестве имени файла.</p>
+</blockquote>
+<p>Вы можете использовать похожую иерархию для организации файлов классов фикстур. Чтобы избежать конфликта с файлами данных 
+вы можете использовать в качестве корневой директории <code>fixtures</code> вместо <code>data</code>.  </p>
+<h2>Резюме <span id="rezume"></span><a href="#rezume" class="hashlink">&para;</a></h2><blockquote class="note"><p><strong>Примечание: </strong>Этот раздел находится в разработке.</p>
+</blockquote>
+<p>Выше мы описали как объявлять и использовать фикстуры. Ниже приведен типовой сценарий выполнения модульных тестов, связанных с БД:</p>
+<ol>
+<li>Используйте команду <code>yii migrate</code> для обновления тестовой БД до последней версии;</li>
+<li>Выполнить тест-кейс:<ul>
+<li>Загрузка фикстур: очистка соответствующих таблиц БД и заполнение их данными фикстур;</li>
+<li>Выполнение теста;</li>
+<li>Выгрузка фикстур.</li>
+</ul>
+</li>
+<li>Повторение шага 2 до тех пор, пока не выполнятся все тесты.</li>
+</ol>
+<p><strong>Будет доработано</strong></p>
+<h1>Управление фикстурами <span id="upravlenie-fiksturami"></span><a href="#upravlenie-fiksturami" class="hashlink">&para;</a></h1><blockquote class="note"><p><strong>Примечание: </strong>Данный раздел находится в разработке.</p>
+<p>todo: данный раздел может быть объединен с предыдущими частями test-fixtures.md</p>
+</blockquote>
+<p>Фикстуры являются важной составляющей тестирования. Их основная задача в предоставлении набора данных, необходимого для тестирования
+различных сценариев работы вашего приложения. С этими данными использование ваших тестов становятся более эффективным и полезным.</p>
+<p>Yii поддерживает фикстуры через утилиту командной строки <code>yii fixture</code>. Эта утилита поддерживает:</p>
+<ul>
+<li>Загрузку фикстур в различные хранилища, такие как: RDBMS, NoSQL и другие;</li>
+<li>Выгрузку фикстур разными способами (как правило очищает хранилище);</li>
+<li>Автоматическую генерацию фикстур и наполнение их случайными данными</li>
+</ul>
+<h2>Формат фикстуры <span id="format-fikstury"></span><a href="#format-fikstury" class="hashlink">&para;</a></h2><p>Фикстуры - это объекты с различными методами и конфигурацией, с которыми вы можете ознакомиться в официальной <a href="https://github.com/yiisoft/yii2/blob/master/docs/guide/test-fixture.md">документации</a>.</p>
+<p>Давайте предположим, что у нас есть следующий набор данных фикстуры для загрузки:</p>
+<pre><code class="hljs php"><span class="hljs-comment"># файл users.php в директории файлов данных фикстур, по умолчанию @tests\unit\fixtures\data</span>
+
+<span class="hljs-keyword">return</span> [
+    [
+        <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'Chase'</span>,
+        <span class="hljs-string">'login'</span> =&gt; <span class="hljs-string">'lmayert'</span>,
+        <span class="hljs-string">'email'</span> =&gt; <span class="hljs-string">'strosin.vernice@jerde.com'</span>,
+        <span class="hljs-string">'auth_key'</span> =&gt; <span class="hljs-string">'K3nF70it7tzNsHddEiq0BZ0i-OU8S3xV'</span>,
+        <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">'$2y$13$WSyE5hHsG1rWN2jV8LRHzubilrCLI5Ev/iK0r3jRuwQEs2ldRu.a2'</span>,
+    ],
+    [
+        <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'Celestine'</span>,
+        <span class="hljs-string">'login'</span> =&gt; <span class="hljs-string">'napoleon69'</span>,
+        <span class="hljs-string">'email'</span> =&gt; <span class="hljs-string">'aileen.barton@heaneyschumm.com'</span>,
+        <span class="hljs-string">'auth_key'</span> =&gt; <span class="hljs-string">'dZlXsVnIDgIzFgX4EduAqkEPuphhOh9q'</span>,
+        <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">'$2y$13$kkgpvJ8lnjKo8RuoR30ay.RjDf15bMcHIF7Vz1zz/6viYG5xJExU6'</span>,
+    ],
+];
+</code></pre>
+<p>Если вы используете фикстуру, которая загружает данные в базу данных, то эти строки будут применены к таблице <code>users</code>. 
+Если вы используете фикстуру для загрузки данных в nosql, например, фикстура для <code>mongodb</code>, то данные будут применены к коллекции <code>users</code>.
+Для того, чтобы узнать о реализации различных сценариях загрузки фикстур, обратитесь к официальной <a href="https://github.com/yiisoft/yii2/blob/master/docs/guide/test-fixture.md">документации</a>. 
+Предыдущий пример фикстуры был сгенерирован автоматически с использованием расширения <code>yii2-faker</code>, подробнее про это читайте в этом <a href="#auto-generating-fixtures">разделе</a>.
+Имя класса фикстуры должно быть в единственном числе.</p>
+<h2>Загрузка фикстур <span id="zagruzka-fikstur"></span><a href="#zagruzka-fikstur" class="hashlink">&para;</a></h2><p>Класс фикстур должны содержать суффикс <code>Fixture</code>. По умолчанию поиск фикстур выполняется в пространстве имен <code>tests\unit\fixtures</code>, но вы можете изменить это поведение
+через конфигурационный файл или параметры команды. Вы можете исключить некоторые фикстуры из загрузки или выгрузки добавив <code>-</code> перед их именем, например <code>-User</code>.</p>
+<p>Чтобы загрузить фикстуру, выполните следующую команду:</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> fixture/load &lt;fixture_name&gt;
+</code></pre>
+<p>Обязательный параметр <code>fixture_name</code> указываем на имя фикстуры, которая должна быть загружена. Вы можете загрузить несколько фикстур за раз.
+Ниже указаны примеры корректного использования данной команды:</p>
+<pre><code class="hljs javascript"><span class="hljs-comment">// загрузить фикстуру `User`</span>
+yii fixture/load User
+
+<span class="hljs-comment">// то же что и выше, т.к. "load" является действием по умолчанию для команды "fixture"</span>
+yii fixture User
+
+<span class="hljs-comment">// загрузить нескольких фикстур</span>
+yii fixture <span class="hljs-string">"User, UserProfile"</span>
+
+<span class="hljs-comment">// загрузить все фикстуры</span>
+yii fixture/load <span class="hljs-string">"*"</span>
+
+<span class="hljs-comment">// то же что и выше</span>
+yii fixture <span class="hljs-string">"*"</span>
+
+<span class="hljs-comment">// загрузить все фикстуры кроме указанной</span>
+yii fixture <span class="hljs-string">"*, -DoNotLoadThisOne"</span>
+
+<span class="hljs-comment">// загрузка фикстур, но искать их следует в другом пространстве имен. Пространство имен по умолчанию: tests\unit\fixtures.</span>
+yii fixture User --namespace=<span class="hljs-string">'alias\my\custom\namespace'</span>
+
+<span class="hljs-comment">// загрузить глобальную фикстуру `some\name\space\CustomFixture` перед загрузкой остальных фикстур.</span>
+<span class="hljs-comment">// По умолчанию данный параметр установлен в `InitDbFixture` для включения/отключения проверки целостности данных.</span>
+<span class="hljs-comment">// Вы можете задать несколько глобальных фикстур, указав их через запятую</span>
+yii fixture User --globalFixtures=<span class="hljs-string">'some\name\space\Custom'</span>
+</code></pre>
+<h2>Выгрузка фикстур <span id="vygruzka-fikstur"></span><a href="#vygruzka-fikstur" class="hashlink">&para;</a></h2><p>Для выгрузки фикстур выполните следующую команду:</p>
+<pre><code class="hljs javascript"><span class="hljs-comment">// выгрузить фикстуру `Users`, по умолчанию будут удалены все данные из таблицы "users" или из коллекции "users", если это фикстура mongodb</span>
+yii fixture/unload User
+
+<span class="hljs-comment">// выгрузить несколько фикстур</span>
+yii fixture/unload <span class="hljs-string">"User, UserProfile"</span>
+
+<span class="hljs-comment">// выгрузить все фикстуры</span>
+yii fixture/unload <span class="hljs-string">"*"</span>
+
+<span class="hljs-comment">// выгрузить все фикстуры за исключением указанной</span>
+yii fixture/unload <span class="hljs-string">"*, -DoNotUnloadThisOne"</span>
+
+</code></pre>
+<p>При выгрузке фикстур вы также можете использовать параметры <code>namespace</code> и <code>globalFixtures</code>.</p>
+<h2>Глобальная настройка команды <span id="globalnaa-nastrojka-komandy"></span><a href="#globalnaa-nastrojka-komandy" class="hashlink">&para;</a></h2><p>Хотя параметры командой строки и позволяют нам настраивать команду миграции на лету, иногда нам может понадобиться настроить 
+команду один раз для всех сценариев запуска. Например, вы можете настроить различные пути до файлов с фикстурами как в примере ниже:</p>
+<pre><code class="hljs php"><span class="hljs-string">'controllerMap'</span> =&gt; [
+    <span class="hljs-string">'fixture'</span> =&gt; [
+        <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\console\controllers\FixtureController'</span>,
+        <span class="hljs-string">'namespace'</span> =&gt; <span class="hljs-string">'myalias\some\custom\namespace'</span>,
+        <span class="hljs-string">'globalFixtures'</span> =&gt; [
+            <span class="hljs-string">'some\name\space\Foo'</span>,
+            <span class="hljs-string">'other\name\space\Bar'</span>
+        ],
+    ],
+]
+</code></pre>
+<h2>Автоматическая генерация фикстур <span id="avtomaticeskaa-generacia-fikstur"></span><a href="#avtomaticeskaa-generacia-fikstur" class="hashlink">&para;</a></h2><p>Yii также может автоматически генерировать для вас фикстуры на основе некоторого шаблона. Вы можете генерировать фикстуры с 
+различным набором данных на разных языках и в разных форматах. Данная возможность основана на использовании библиотеки <a href="https://github.com/fzaninotto/Faker">Faker</a>
+и расширения <code>yii2-faker</code>. </p>
+<p>Для получения дополнительной информации ознакомьтесь с <a href="https://github.com/yiisoft/yii2-faker">руководством</a>.</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 09 Dec 2020 00:16:07 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

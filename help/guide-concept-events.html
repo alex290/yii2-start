@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/1728b664/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9c5d0894/solarized_light.css" rel="stylesheet">
+<link href="./assets/f2ce5bcd/style.css" rel="stylesheet">
+<script src="./assets/bbf84a7a/jquery.js"></script>
+<script src="./assets/1728b664/js/bootstrap.js"></script>
+<script src="./assets/fd63b446/jssearch.js"></script>    <title>События - Основные понятия - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1023" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1023-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1023-collapse" class="collapse navbar-collapse"><ul id="w1024" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1025" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1007" data-toggle="collapse" data-parent="#navigation">Введение <b class="caret"></b></a><div id="navigation-1007" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">О Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Обновление с версии 1.1</a></div>
+<a class="list-group-item" href="#navigation-1008" data-toggle="collapse" data-parent="#navigation">Первое знакомство <b class="caret"></b></a><div id="navigation-1008" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Установка Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Запуск приложения</a>
+<a class="list-group-item" href="./guide-start-hello.html">Говорим «привет»</a>
+<a class="list-group-item" href="./guide-start-forms.html">Работа с формами</a>
+<a class="list-group-item" href="./guide-start-databases.html">Работа с базами данных</a>
+<a class="list-group-item" href="./guide-start-gii.html">Генерация кода при помощи Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Что дальше?</a></div>
+<a class="list-group-item" href="#navigation-1009" data-toggle="collapse" data-parent="#navigation">Структура приложения <b class="caret"></b></a><div id="navigation-1009" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Входные скрипты</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Приложения</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Компоненты приложения</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-structure-models.html">Модели</a>
+<a class="list-group-item" href="./guide-structure-views.html">Представления</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Модули</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Фильтры</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Виджеты</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Расширения</a></div>
+<a class="list-group-item" href="#navigation-1010" data-toggle="collapse" data-parent="#navigation">Обработка запросов <b class="caret"></b></a><div id="navigation-1010" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Разбор и генерация URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Запросы</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Ответы</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Сессии и куки</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Обработка ошибок</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Логирование</a></div>
+<a class="list-group-item active" href="#navigation-1011" data-toggle="collapse" data-parent="#navigation">Основные понятия <b class="caret"></b></a><div id="navigation-1011" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-concept-components.html">Компоненты</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Свойства</a>
+<a class="list-group-item active" href="./guide-concept-events.html">События</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Поведения</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Конфигурации</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Псевдонимы</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Автозагрузка классов</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item" href="#navigation-1012" data-toggle="collapse" data-parent="#navigation">Работа с базами данных <b class="caret"></b></a><div id="navigation-1012" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Объекты доступа к данным (DAO)</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Построитель запросов</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Миграции</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-ru/README.md">Sphinx</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-redis/blob/master/docs/guide-ru/README.md">Redis</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-ru/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-ru/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1013" data-toggle="collapse" data-parent="#navigation">Получение данных от пользователя <b class="caret"></b></a><div id="navigation-1013" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Создание форм</a>
+<a class="list-group-item" href="./guide-input-validation.html">Валидация</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Загрузка файлов</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Табличный ввод</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Работа с несколькими моделями</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">Расширение ActiveForm на стороне клиента</a></div>
+<a class="list-group-item" href="#navigation-1014" data-toggle="collapse" data-parent="#navigation">Отображение данных <b class="caret"></b></a><div id="navigation-1014" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Форматирование данных</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Постраничная разбивка</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Сортировка</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Провайдеры данных</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Виджеты для данных</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Работа с клиентскими скриптами</a>
+<a class="list-group-item" href="./guide-output-theming.html">Темизация</a></div>
+<a class="list-group-item" href="#navigation-1015" data-toggle="collapse" data-parent="#navigation">Безопасность <b class="caret"></b></a><div id="navigation-1015" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-security-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Авторизация</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Работа с паролями</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">Криптография</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-ru/README.md">Клиенты авторизации</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Лучшие практики</a></div>
+<a class="list-group-item" href="#navigation-1016" data-toggle="collapse" data-parent="#navigation">Кеширование <b class="caret"></b></a><div id="navigation-1016" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-caching-data.html">Кэширование данных</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Кэширование фрагментов</a>
+<a class="list-group-item" href="./guide-caching-page.html">Кэширование страниц</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP кэширование</a></div>
+<a class="list-group-item" href="#navigation-1017" data-toggle="collapse" data-parent="#navigation">Веб-сервисы REST <b class="caret"></b></a><div id="navigation-1017" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Быстрый старт</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Роутинг</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Форматирование ответа</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Ограничение частоты запросов</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Версионирование</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Обработка ошибок</a></div>
+<a class="list-group-item" href="#navigation-1018" data-toggle="collapse" data-parent="#navigation">Инструменты разработчика <b class="caret"></b></a><div id="navigation-1018" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Отладочная панель и отладчик</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide/README.md">Генерация кода с Gii</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">Генератор документации API</a></div>
+<a class="list-group-item" href="#navigation-1019" data-toggle="collapse" data-parent="#navigation">Тестирование <b class="caret"></b></a><div id="navigation-1019" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Настройка тестового окружения</a>
+<a class="list-group-item" href="./guide-test-unit.html">Модульные тесты</a>
+<a class="list-group-item" href="./guide-test-functional.html">Функциональные тесты</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Приёмочные тесты</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Фикстуры</a></div>
+<a class="list-group-item" href="#navigation-1020" data-toggle="collapse" data-parent="#navigation">Специальные темы <b class="caret"></b></a><div id="navigation-1020" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">Шаблон приложения advanced</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Создание приложения с нуля</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Консольные команды</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Встроенные валидаторы</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Интернационализация</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Отправка почты</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Оптимизация производительности</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Окружение виртуального хостинга</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Шаблонизаторы</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Работа со сторонним кодом</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">Использование Yii в качестве микро-framework&#039;а</a></div>
+<a class="list-group-item" href="#navigation-1021" data-toggle="collapse" data-parent="#navigation">Виджеты <b class="caret"></b></a><div id="navigation-1021" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-ru/README.md">Виджеты Bootstrap</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-ru/README.md">Виджеты Jquery UI</a></div>
+<a class="list-group-item" href="#navigation-1022" data-toggle="collapse" data-parent="#navigation">Хелперы <b class="caret"></b></a><div id="navigation-1022" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url хелпер</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>События <span id="sobytia"></span><a href="#sobytia" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#event-handlers">Обработчики событий</a></li>
+<li><a href="#attaching-event-handlers">Присоединение обработчиков событий</a></li>
+<li><a href="#poradok-obrabotki-sobytij">Порядок обработки событий</a></li>
+<li><a href="#triggering-events">Инициирование событий</a></li>
+<li><a href="#detaching-event-handlers">Отсоединение обработчиков событий</a></li>
+<li><a href="#class-level-event-handlers">Обработчики событий на уровне класса</a></li>
+<li><a href="#interface-level-event-handlers">Обработчики событий на уровне интерфейсов</a></li>
+<li><a href="#global-events">Глобальные события</a></li></ol></div>
+<p>События - это механизм, внедряющий элементы собственного кода в существующий код в определенные моменты его исполнения. К событию можно присоединить собственный код, который будет выполняться автоматически при срабатывании события. Например, объект, отвечающий за почту, может инициировать событие <code>messageSent</code> при успешной отправке сообщения. При этом если нужно отслеживать успешно отправленные сообщения, достаточно присоединить соответствующий код к событию <code>messageSent</code>.</p>
+<p>Для работы с событиями Yii использует базовый класс <a href="./yii-base-component.html">yii\base\Component</a>. Если класс должен инициировать события, его нужно унаследовать от <a href="./yii-base-component.html">yii\base\Component</a> или потомка этого класса.</p>
+<h2>Обработчики событий  <span id="event-handlers"></span><a href="#event-handlers" class="hashlink">&para;</a></h2><p>Обработчик события - это <a href="https://secure.php.net/manual/ru/language.types.callable.php">callback-функция PHP</a>, которая выполняется при срабатывании события, к которому она присоединена. Можно использовать следующие callback-функции:</p>
+<ul>
+<li>глобальную функцию PHP, указав строку с именем функции (без скобок), например, <code>'trim'</code>;</li>
+<li>метод объекта, указав массив, содержащий строки с именами объекта и метода (без скобок), например, <code>[$object, 'methodName']</code>;</li>
+<li>статический метод класса, указав массив, содержащий строки с именами класса и метода (без скобок), например, <code>['ClassName', 'methodName']</code>;</li>
+<li>анонимную функцию, например, <code>function ($event) { ... }</code>.</li>
+</ul>
+<p>Сигнатура обработчика события выглядит следующим образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($event)</span> </span>{
+    <span class="hljs-comment">// $event - это объект класса yii\base\Event или его потомка</span>
+}
+</code></pre>
+<p>Через параметр <code>$event</code> обработчик события может получить следующую информацию о возникшем событии:</p>
+<ul>
+<li><a href="./yii-base-event.html#$name-detail">event name</a></li>
+<li><a href="./yii-base-event.html#$sender-detail">event sender</a>: объект, метод <code>trigger()</code> которого был вызван</li>
+<li><a href="./yii-base-event.html#$data-detail">custom data</a>: данные, которые были предоставлены во время присоединения обработчика события (будет описано ниже)</li>
+</ul>
+<h2>Присоединение обработчиков событий  <span id="attaching-event-handlers"></span><a href="#attaching-event-handlers" class="hashlink">&para;</a></h2><p>Обработчики события присоединяются с помощью метода <a href="./yii-base-component.html#on()-detail">yii\base\Component::on()</a>. Например:</p>
+<pre><code class="hljs php language-php">$foo = <span class="hljs-keyword">new</span> Foo;
+
+<span class="hljs-comment">// обработчик - глобальная функция</span>
+$foo-&gt;on(Foo::EVENT_HELLO, <span class="hljs-string">'function_name'</span>);
+
+<span class="hljs-comment">// обработчик - метод объекта</span>
+$foo-&gt;on(Foo::EVENT_HELLO, [$object, <span class="hljs-string">'methodName'</span>]);
+
+<span class="hljs-comment">// обработчик - статический метод класса</span>
+$foo-&gt;on(Foo::EVENT_HELLO, [<span class="hljs-string">'app\components\Bar'</span>, <span class="hljs-string">'methodName'</span>]);
+
+<span class="hljs-comment">// обработчик - анонимная функция</span>
+$foo-&gt;on(Foo::EVENT_HELLO, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($event)</span> </span>{
+    <span class="hljs-comment">// логика обработки события</span>
+});
+</code></pre>
+<p>Также обработчики событий можно присоединять с помощью <a href="guide-concept-configurations.html">конфигураций</a>. Дополнительную информацию см. в разделе <a href="guide-concept-configurations.html#configuration-format">Конфигурации</a>.</p>
+<p>Присоединяя обработчик события, можно передать дополнительные данные с помощью третьего параметра метода <a href="./yii-base-component.html#on()-detail">yii\base\Component::on()</a>. Эти данные будут доступны в обработчике, когда сработает событие и он будет вызван. Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// Следующий код выводит "abc" при срабатывании события</span>
+<span class="hljs-comment">// так как в $event-&gt;data содержатся данные, которые переданы в качестве третьего аргумента метода "on"</span>
+$foo-&gt;on(Foo::EVENT_HELLO, <span class="hljs-string">'function_name'</span>, <span class="hljs-string">'abc'</span>);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">function_name</span><span class="hljs-params">($event)</span> </span>{
+    <span class="hljs-keyword">echo</span> $event-&gt;data;
+}
+</code></pre>
+<h2>Порядок обработки событий <span id="poradok-obrabotki-sobytij"></span><a href="#poradok-obrabotki-sobytij" class="hashlink">&para;</a></h2><p>К одному событию можно присоединить несколько обработчиков. При срабатывании события обработчики будут вызываться в том порядке, в котором они присоединялись к событию. Чтобы запретить в обработчике вызов всех следующих за ним обработчиков, необходимо установить свойство <a href="./yii-base-event.html#$handled-detail">yii\base\Event::$handled</a> параметра <code>$event</code> в <code>true</code>:</p>
+<pre><code class="hljs php language-php">$foo-&gt;on(Foo::EVENT_HELLO, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($event)</span> </span>{
+    $event-&gt;handled = <span class="hljs-keyword">true</span>;
+});
+</code></pre>
+<p>По умолчанию, новые обработчики присоединяются к концу очереди обработчиков, уже существующей у события.
+В результате при срабатывании события обработчик выполнится последним.
+Чтобы обработчик присоединился к началу очереди и запускался первым, при вызове <a href="./yii-base-component.html#on()-detail">yii\base\Component::on()</a> в качестве четвертого параметра <code>$append</code> следует передать <code>false</code>:</p>
+<pre><code class="hljs php language-php">$foo-&gt;on(Foo::EVENT_HELLO, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($event)</span> </span>{
+    <span class="hljs-comment">// ...</span>
+}, $data, <span class="hljs-keyword">false</span>);
+</code></pre>
+<h2>Инициирование событий  <span id="triggering-events"></span><a href="#triggering-events" class="hashlink">&para;</a></h2><p>События инициируются при вызове метода <a href="./yii-base-component.html#trigger()-detail">yii\base\Component::trigger()</a>. Методу нужно передать <em>имя события</em>, а при необходимости - объект события, в котором описываются параметры, передаваемые обработчикам событий. Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Component</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Event</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span>
+</span>{
+    <span class="hljs-keyword">const</span> EVENT_HELLO = <span class="hljs-string">'hello'</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bar</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;trigger(<span class="hljs-keyword">self</span>::EVENT_HELLO);
+    }
+}
+</code></pre>
+<p>Показанный выше код инициирует событие <code>hello</code> при каждом вызове метода <code>bar()</code>.</p>
+<blockquote class="tip"><p><strong>Подсказка: </strong>Желательно для обозначения имен событий использовать константы класса. В предыдущем примере константа <code>EVENT_HELLO</code> обозначает событие <code>hello</code>. У такого подхода три преимущества. Во-первых, исключаются опечатки. Во-вторых, для событий работает автозавершение в различных средах разработки. В-третьих, чтобы узнать, какие события поддерживаются классом, достаточно проверить константы, объявленные в нем.</p>
+</blockquote>
+<p>Иногда при инициировании события может понадобиться передать его обработчику дополнительную информацию. Например, объекту, отвечающему за почту, может понадобиться передать обработчику события <code>messageSent</code> определенные данные, раскрывающие смысл отправленных почтовых сообщений. Для этого в качестве второго параметра методу <a href="./yii-base-component.html#trigger()-detail">yii\base\Component::trigger()</a> передается объект события. Объект события должен быть экземпляром класса <a href="./yii-base-event.html">yii\base\Event</a> или его потомка. Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Component</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Event</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MessageEvent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Event</span>
+</span>{
+    <span class="hljs-keyword">public</span> $message;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Mailer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span>
+</span>{
+    <span class="hljs-keyword">const</span> EVENT_MESSAGE_SENT = <span class="hljs-string">'messageSent'</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">send</span><span class="hljs-params">($message)</span>
+    </span>{
+        <span class="hljs-comment">// ...отправка $message...</span>
+
+        $event = <span class="hljs-keyword">new</span> MessageEvent;
+        $event-&gt;message = $message;
+        <span class="hljs-keyword">$this</span>-&gt;trigger(<span class="hljs-keyword">self</span>::EVENT_MESSAGE_SENT, $event);
+    }
+}
+</code></pre>
+<p>При вызове метода <a href="./yii-base-component.html#trigger()-detail">yii\base\Component::trigger()</a> будут вызваны все обработчики, присоединенные к указанному событию.</p>
+<h2>Отсоединение обработчиков событий  <span id="detaching-event-handlers"></span><a href="#detaching-event-handlers" class="hashlink">&para;</a></h2><p>Для отсоединения обработчика от события используется метод <a href="./yii-base-component.html#off()-detail">yii\base\Component::off()</a>. Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// обработчик - глобальная функция</span>
+$foo-&gt;off(Foo::EVENT_HELLO, <span class="hljs-string">'function_name'</span>);
+
+<span class="hljs-comment">// обработчик - метод объекта</span>
+$foo-&gt;off(Foo::EVENT_HELLO, [$object, <span class="hljs-string">'methodName'</span>]);
+
+<span class="hljs-comment">// обработчик - статический метод класса</span>
+$foo-&gt;off(Foo::EVENT_HELLO, [<span class="hljs-string">'app\components\Bar'</span>, <span class="hljs-string">'methodName'</span>]);
+
+<span class="hljs-comment">// обработчик - анонимная функция</span>
+$foo-&gt;off(Foo::EVENT_HELLO, $anonymousFunction);
+</code></pre>
+<p>Учтите, что в общем случае отсоединять обработчики - анонимные функции можно только если они где-то сохраняются в момент присоединения к событию. В предыдущем примере предполагается, что анонимная функция сохранена в переменной <code>$anonymousFunction</code>.</p>
+<p>Чтобы отсоединить ВСЕ обработчики от события, достаточно вызвать <a href="./yii-base-component.html#off()-detail">yii\base\Component::off()</a> без второго параметра:</p>
+<pre><code class="hljs php language-php">$foo-&gt;off(Foo::EVENT_HELLO);
+</code></pre>
+<h2>Обработчики событий на уровне класса  <span id="class-level-event-handlers"></span><a href="#class-level-event-handlers" class="hashlink">&para;</a></h2><p>Во всех предыдущих примерах мы рассматривали присоединение событий <em>на уровне экземпляров</em>. Есть случаи, когда необходимо обрабатывать события, которые инициируются <em>любым</em> экземпляром класса, а не только конкретным экземпляром. В таком случае присоединять обработчик события к каждому экземпляру класса не нужно. Достаточно присоединить обработчик <em>на уровне класса</em>, вызвав статический метод <a href="./yii-base-event.html#on()-detail">yii\base\Event::on()</a>.</p>
+<p>Например, объект <a href="guide-db-active-record.html">Active Record</a> инициирует событие <a href="./yii-db-baseactiverecord.html#EVENT_AFTER_INSERT-detail">EVENT_AFTER_INSERT</a> после добавления в базу данных новой записи. Чтобы отслеживать записи, добавленные в базу данных <em>каждым</em> объектом <a href="guide-db-active-record.html">Active Record</a>, можно использовать следующий код:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Event</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>;
+
+Event::on(ActiveRecord::className(), ActiveRecord::EVENT_AFTER_INSERT, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($event)</span> </span>{
+    Yii::debug(get_class($event-&gt;sender) . <span class="hljs-string">' добавлен'</span>);
+});
+</code></pre>
+<p>Обработчик будет вызван при срабатывании события <a href="./yii-db-baseactiverecord.html#EVENT_AFTER_INSERT-detail">EVENT_AFTER_INSERT</a> в экземплярах класса <a href="./yii-db-activerecord.html">ActiveRecord</a> или его потомков. В обработчике можно получить доступ к объекту, который инициировал событие, с помощью свойства <code>$event-&gt;sender</code>.</p>
+<p>При срабатывании события будут в первую очередь вызваны обработчики на уровне экземпляра, а затем - обработчики на уровне класса.</p>
+<p>Инициировать событие <em>на уровне класса</em> можно с помощью статического метода <a href="./yii-base-event.html#trigger()-detail">yii\base\Event::trigger()</a>. Событие на уровне класса не связано ни с одним конкретным объектом. В таком случае будут вызваны только обработчики события на уровне класса. Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Event</span>;
+
+Event::on(Foo::className(), Foo::EVENT_HELLO, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($event)</span> </span>{
+    var_dump($event-&gt;sender);  <span class="hljs-comment">// выводит "null"</span>
+});
+
+Event::trigger(Foo::className(), Foo::EVENT_HELLO);
+</code></pre>
+<p>Обратите внимание, что в данном случае <code>$event-&gt;sender</code> имеет значение <code>null</code> вместо экзепляра класса, который инициировал событие.</p>
+<blockquote class="note"><p><strong>Примечание: </strong>Поскольку обработчики на уровне класса отвечают на события, инициируемые всеми экземплярами этого класса и всех его потомков, их следует использовать с осторожностью, особенно в случае базовых классов низкого уровня, таких как <a href="./yii-base-baseobject.html">yii\base\BaseObject</a>.</p>
+</blockquote>
+<p>Отсоединить обработчик события на уровне класса можно с помощью метода <a href="./yii-base-event.html#off()-detail">yii\base\Event::off()</a>. Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// отсоединение $handler</span>
+Event::off(Foo::className(), Foo::EVENT_HELLO, $handler);
+
+<span class="hljs-comment">// отсоединяются все обработчики Foo::EVENT_HELLO</span>
+Event::off(Foo::className(), Foo::EVENT_HELLO);
+</code></pre>
+<h2>Обработчики событий на уровне интерфейсов  <span id="interface-level-event-handlers"></span><a href="#interface-level-event-handlers" class="hashlink">&para;</a></h2><p>Существует еще более абстрактный способ обработки событий.
+Вы можете создать отдельный интерфейс для общего события и реализовать его в классах, где это необходимо.</p>
+<p>Например, создадим следующий интерфейс:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">interfaces</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">DanceEventInterface</span>
+</span>{
+    <span class="hljs-keyword">const</span> EVENT_DANCE = <span class="hljs-string">'dance'</span>;
+}
+</code></pre>
+<p>И два класса, которые его реализуют:</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dog</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">DanceEventInterface</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">meetBuddy</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">"Woof!"</span>;
+        <span class="hljs-keyword">$this</span>-&gt;trigger(DanceEventInterface::EVENT_DANCE);
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Developer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">DanceEventInterface</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testsPassed</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">"Yay!"</span>;
+        <span class="hljs-keyword">$this</span>-&gt;trigger(DanceEventInterface::EVENT_DANCE);
+    }
+}
+</code></pre>
+<p>Для обработки события <code>EVENT_DANCE</code>, инициализированного любым из этих классов,
+вызовите <a href="./yii-base-event.html#on()-detail">Event:on()</a>, передав ему в качестве первого параметра имя интерфейса.</p>
+<pre><code class="hljs php language-php">Event::on(<span class="hljs-string">'app\interfaces\DanceEventInterface'</span>, DanceEventInterface::EVENT_DANCE, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($event)</span> </span>{
+    Yii::debug(get_class($event-&gt;sender) . <span class="hljs-string">' just danced'</span>); <span class="hljs-comment">// Оставит запись в журнале о том, что кто-то танцевал</span>
+});
+</code></pre>
+<p>Вы можете также инициализировать эти события:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// trigger event for Dog class</span>
+Event::trigger(Dog::className(), DanceEventInterface::EVENT_DANCE);
+
+<span class="hljs-comment">// trigger event for Developer class</span>
+Event::trigger(Developer::className(), DanceEventInterface::EVENT_DANCE);
+</code></pre>
+<p>Однако невозможно инициализировать событие во всех классах, которые реализуют интерфейс:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// НЕ БУДЕТ РАБОТАТЬ</span>
+Event::trigger(<span class="hljs-string">'app\interfaces\DanceEventInterface'</span>, DanceEventInterface::EVENT_DANCE);
+</code></pre>
+<p>Отсоединить обработчик события можно с помощью метода <a href="./yii-base-event.html#off()-detail">Event::off()</a>. Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// отсоединяет $handler</span>
+Event::off(<span class="hljs-string">'app\interfaces\DanceEventInterface'</span>, DanceEventInterface::EVENT_DANCE, $handler);
+
+<span class="hljs-comment">// отсоединяются все обработчики DanceEventInterface::EVENT_DANCE</span>
+Event::off(<span class="hljs-string">'app\interfaces\DanceEventInterface'</span>, DanceEventInterface::EVENT_DANCE);
+</code></pre>
+<h2>Глобальные события  <span id="global-events"></span><a href="#global-events" class="hashlink">&para;</a></h2><p>Yii поддерживает так называемые <em>глобальные события</em>, которые на самом деле основаны на нестандартном использовании описанного выше механизма событий. Для глобальных событий нужен глобально доступный объект-синглтон, например, экземпляр приложения - <a href="guide-structure-applications.html">application</a>.</p>
+<p>Чтобы создать глобальное событие, отправитель сообщения вызывает метод <code>trigger()</code> синглтона, а не свой собственный метод <code>trigger()</code>. Аналогичным образом обработчики события также присоединяются к событиям синглтона. Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Event</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>\<span class="hljs-title">Foo</span>;
+
+Yii::$app-&gt;on(<span class="hljs-string">'bar'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($event)</span> </span>{
+    <span class="hljs-keyword">echo</span> get_class($event-&gt;sender);  <span class="hljs-comment">// выводит "app\components\Foo"</span>
+});
+
+Yii::$app-&gt;trigger(<span class="hljs-string">'bar'</span>, <span class="hljs-keyword">new</span> Event([<span class="hljs-string">'sender'</span> =&gt; <span class="hljs-keyword">new</span> Foo]));
+</code></pre>
+<p>Преимущество глобальных событий в том, что им не нужен объект, к событию которого бы присоединялся обработчик и объект, с помощью которого бы это событие инициировалось. Вместо этого и для присоединения обработчика, и для инициирования события используется синглтон (например, экземпляр приложения).</p>
+<p>Тем не менее, так как пространство имен глобальных событий едино для всего приложения, их имена нельзя назначать бездумно. Например, полезными могут быть искусственные пространства имен ("frontend.mail.sent", "backend.mail.sent").</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 09 Dec 2020 00:16:06 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

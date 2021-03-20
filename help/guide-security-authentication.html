@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/1728b664/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9c5d0894/solarized_light.css" rel="stylesheet">
+<link href="./assets/f2ce5bcd/style.css" rel="stylesheet">
+<script src="./assets/bbf84a7a/jquery.js"></script>
+<script src="./assets/1728b664/js/bootstrap.js"></script>
+<script src="./assets/fd63b446/jssearch.js"></script>    <title>Аутентификация - Безопасность - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1745" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1745-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1745-collapse" class="collapse navbar-collapse"><ul id="w1746" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1747" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1729" data-toggle="collapse" data-parent="#navigation">Введение <b class="caret"></b></a><div id="navigation-1729" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">О Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Обновление с версии 1.1</a></div>
+<a class="list-group-item" href="#navigation-1730" data-toggle="collapse" data-parent="#navigation">Первое знакомство <b class="caret"></b></a><div id="navigation-1730" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Установка Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Запуск приложения</a>
+<a class="list-group-item" href="./guide-start-hello.html">Говорим «привет»</a>
+<a class="list-group-item" href="./guide-start-forms.html">Работа с формами</a>
+<a class="list-group-item" href="./guide-start-databases.html">Работа с базами данных</a>
+<a class="list-group-item" href="./guide-start-gii.html">Генерация кода при помощи Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Что дальше?</a></div>
+<a class="list-group-item" href="#navigation-1731" data-toggle="collapse" data-parent="#navigation">Структура приложения <b class="caret"></b></a><div id="navigation-1731" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Входные скрипты</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Приложения</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Компоненты приложения</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-structure-models.html">Модели</a>
+<a class="list-group-item" href="./guide-structure-views.html">Представления</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Модули</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Фильтры</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Виджеты</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Расширения</a></div>
+<a class="list-group-item" href="#navigation-1732" data-toggle="collapse" data-parent="#navigation">Обработка запросов <b class="caret"></b></a><div id="navigation-1732" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Разбор и генерация URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Запросы</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Ответы</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Сессии и куки</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Обработка ошибок</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Логирование</a></div>
+<a class="list-group-item" href="#navigation-1733" data-toggle="collapse" data-parent="#navigation">Основные понятия <b class="caret"></b></a><div id="navigation-1733" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Компоненты</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Свойства</a>
+<a class="list-group-item" href="./guide-concept-events.html">События</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Поведения</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Конфигурации</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Псевдонимы</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Автозагрузка классов</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item" href="#navigation-1734" data-toggle="collapse" data-parent="#navigation">Работа с базами данных <b class="caret"></b></a><div id="navigation-1734" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Объекты доступа к данным (DAO)</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Построитель запросов</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Миграции</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-ru/README.md">Sphinx</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-redis/blob/master/docs/guide-ru/README.md">Redis</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-ru/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-ru/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1735" data-toggle="collapse" data-parent="#navigation">Получение данных от пользователя <b class="caret"></b></a><div id="navigation-1735" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Создание форм</a>
+<a class="list-group-item" href="./guide-input-validation.html">Валидация</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Загрузка файлов</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Табличный ввод</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Работа с несколькими моделями</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">Расширение ActiveForm на стороне клиента</a></div>
+<a class="list-group-item" href="#navigation-1736" data-toggle="collapse" data-parent="#navigation">Отображение данных <b class="caret"></b></a><div id="navigation-1736" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Форматирование данных</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Постраничная разбивка</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Сортировка</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Провайдеры данных</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Виджеты для данных</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Работа с клиентскими скриптами</a>
+<a class="list-group-item" href="./guide-output-theming.html">Темизация</a></div>
+<a class="list-group-item active" href="#navigation-1737" data-toggle="collapse" data-parent="#navigation">Безопасность <b class="caret"></b></a><div id="navigation-1737" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-security-overview.html">Обзор</a>
+<a class="list-group-item active" href="./guide-security-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Авторизация</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Работа с паролями</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">Криптография</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-ru/README.md">Клиенты авторизации</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Лучшие практики</a></div>
+<a class="list-group-item" href="#navigation-1738" data-toggle="collapse" data-parent="#navigation">Кеширование <b class="caret"></b></a><div id="navigation-1738" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-caching-data.html">Кэширование данных</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Кэширование фрагментов</a>
+<a class="list-group-item" href="./guide-caching-page.html">Кэширование страниц</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP кэширование</a></div>
+<a class="list-group-item" href="#navigation-1739" data-toggle="collapse" data-parent="#navigation">Веб-сервисы REST <b class="caret"></b></a><div id="navigation-1739" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Быстрый старт</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Роутинг</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Форматирование ответа</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Ограничение частоты запросов</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Версионирование</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Обработка ошибок</a></div>
+<a class="list-group-item" href="#navigation-1740" data-toggle="collapse" data-parent="#navigation">Инструменты разработчика <b class="caret"></b></a><div id="navigation-1740" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Отладочная панель и отладчик</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide/README.md">Генерация кода с Gii</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">Генератор документации API</a></div>
+<a class="list-group-item" href="#navigation-1741" data-toggle="collapse" data-parent="#navigation">Тестирование <b class="caret"></b></a><div id="navigation-1741" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Настройка тестового окружения</a>
+<a class="list-group-item" href="./guide-test-unit.html">Модульные тесты</a>
+<a class="list-group-item" href="./guide-test-functional.html">Функциональные тесты</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Приёмочные тесты</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Фикстуры</a></div>
+<a class="list-group-item" href="#navigation-1742" data-toggle="collapse" data-parent="#navigation">Специальные темы <b class="caret"></b></a><div id="navigation-1742" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">Шаблон приложения advanced</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Создание приложения с нуля</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Консольные команды</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Встроенные валидаторы</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Интернационализация</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Отправка почты</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Оптимизация производительности</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Окружение виртуального хостинга</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Шаблонизаторы</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Работа со сторонним кодом</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">Использование Yii в качестве микро-framework&#039;а</a></div>
+<a class="list-group-item" href="#navigation-1743" data-toggle="collapse" data-parent="#navigation">Виджеты <b class="caret"></b></a><div id="navigation-1743" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-ru/README.md">Виджеты Bootstrap</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-ru/README.md">Виджеты Jquery UI</a></div>
+<a class="list-group-item" href="#navigation-1744" data-toggle="collapse" data-parent="#navigation">Хелперы <b class="caret"></b></a><div id="navigation-1744" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url хелпер</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Аутентификация <span id="autentifikacia"></span><a href="#autentifikacia" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#configuring-user">Настройка yii\web\User</a></li>
+<li><a href="#implementing-identity">Реализация yii\web\IdentityInterface</a></li>
+<li><a href="#using-user">Использование yii\web\User</a></li>
+<li><a href="#auth-events">События аутентификации</a></li></ol></div>
+<p>Аутентификация — это процесс проверки подлинности пользователя. Обычно используется идентификатор
+(например, <code>username</code> или адрес электронной почты) и секретный токен (например, пароль или ключ доступа), чтобы судить о
+том, что пользователь именно тот, за кого себя выдаёт. Аутентификация является основной функцией формы входа.</p>
+<p>Yii предоставляет фреймворк авторизации с различными компонентами, обеспечивающими процесс входа.
+Для использования этого фреймворка вам нужно проделать следующее:</p>
+<ul>
+<li>Настроить компонент приложения <a href="./yii-web-user.html">user</a>;</li>
+<li>Создать класс, реализующий интерфейс <a href="./yii-web-identityinterface.html">yii\web\IdentityInterface</a>.</li>
+</ul>
+<h2>Настройка <a href="./yii-web-user.html">yii\web\User</a>  <span id="configuring-user"></span><a href="#configuring-user" class="hashlink">&para;</a></h2><p>Компонент <a href="./yii-web-user.html">user</a> управляет статусом аутентификации пользователя.
+Он требует, чтобы вы указали <a href="./yii-web-user.html#$identityClass-detail">identity class</a>, который будет содержать
+текущую логику аутентификации. В следующей конфигурации приложения, <a href="./yii-web-user.html#$identityClass-detail">identity class</a> для
+<a href="./yii-web-user.html">user</a> задан как <code>app\models\User</code>, реализация которого будет объяснена в следующем разделе:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'user'</span> =&gt; [
+            <span class="hljs-string">'identityClass'</span> =&gt; <span class="hljs-string">'app\models\User'</span>,
+        ],
+    ],
+];
+</code></pre>
+<h2>Реализация <a href="./yii-web-identityinterface.html">yii\web\IdentityInterface</a>  <span id="implementing-identity"></span><a href="#implementing-identity" class="hashlink">&para;</a></h2><p><a href="./yii-web-user.html#$identityClass-detail">identity class</a> должен реализовывать <a href="./yii-web-identityinterface.html">yii\web\IdentityInterface</a>,
+который содержит следующие методы:</p>
+<ul>
+<li><a href="./yii-web-identityinterface.html#findIdentity()-detail">findIdentity()</a>: Этот метод находит экземпляр <code>identity class</code>,
+используя ID пользователя. Этот метод используется, когда необходимо поддерживать состояние аутентификации через сессии.</li>
+<li><a href="./yii-web-identityinterface.html#findIdentityByAccessToken()-detail">findIdentityByAccessToken()</a>: Этот метод находит экземпляр <code>identity class</code>,
+используя токен доступа. Метод используется, когда требуется аутентифицировать пользователя
+только по секретному токену (например в RESTful приложениях, не сохраняющих состояние между запросами).</li>
+<li><a href="./yii-web-identityinterface.html#getId()-detail">getId()</a>: Этот метод возвращает ID пользователя, представленного данным экземпляром <code>identity</code>.</li>
+<li><a href="./yii-web-identityinterface.html#getAuthKey()-detail">getAuthKey()</a>: Этот метод возвращает ключ, используемый для основанной на <code>cookie</code> аутентификации.
+Ключ сохраняется в аутентификационной cookie и позже сравнивается с версией, находящейся на сервере,
+чтобы удостоверится, что аутентификационная <code>cookie</code> верная.</li>
+<li><a href="./yii-web-identityinterface.html#validateAuthKey()-detail">validateAuthKey()</a>: Этот метод реализует логику проверки ключа
+для основанной на <code>cookie</code> аутентификации.</li>
+</ul>
+<p>Если какой-то из методов не требуется, то можно реализовать его с пустым телом. Для примера,
+если у вас RESTful приложение, не сохраняющее состояние между запросами, вы можете реализовать только
+<a href="./yii-web-identityinterface.html#findIdentityByAccessToken()-detail">findIdentityByAccessToken()</a>
+и <a href="./yii-web-identityinterface.html#getId()-detail">getId()</a>, тогда как остальные методы оставить пустыми.</p>
+<p>В следующем примере, <a href="./yii-web-user.html#$identityClass-detail">identity class</a> реализован
+как класс <a href="guide-db-active-record.html">Active Record</a>, связанный с таблицей <code>user</code>.</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">IdentityInterface</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">IdentityInterface</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">tableName</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'user'</span>;
+    }
+
+    <span class="hljs-comment">/**
+     * Finds an identity by the given ID.
+     *
+     * <span class="hljs-doctag">@param</span> string|int $id the ID to be looked for
+     * <span class="hljs-doctag">@return</span> IdentityInterface|null the identity object that matches the given ID.
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">findIdentity</span><span class="hljs-params">($id)</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">static</span>::findOne($id);
+    }
+
+    <span class="hljs-comment">/**
+     * Finds an identity by the given token.
+     *
+     * <span class="hljs-doctag">@param</span> string $token the token to be looked for
+     * <span class="hljs-doctag">@return</span> IdentityInterface|null the identity object that matches the given token.
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">findIdentityByAccessToken</span><span class="hljs-params">($token, $type = null)</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">static</span>::findOne([<span class="hljs-string">'access_token'</span> =&gt; $token]);
+    }
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@return</span> int|string current user ID
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getId</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;id;
+    }
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@return</span> string current user auth key
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getAuthKey</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;auth_key;
+    }
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@param</span> string $authKey
+     * <span class="hljs-doctag">@return</span> bool if auth key is valid for current user
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validateAuthKey</span><span class="hljs-params">($authKey)</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;getAuthKey() === $authKey;
+    }
+}
+</code></pre>
+<p>Как объяснялось ранее, вам нужно реализовать только <code>getAuthKey()</code> и <code>validateAuthKey()</code>, если ваше приложение использует
+только аутентификацию основанную на <code>cookie</code>. В этом случае вы можете использовать следующий код для генерации
+ключа аутентификации для каждого пользователя и хранения его в таблице <code>user</code>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">IdentityInterface</span>
+</span>{
+    ......
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">beforeSave</span><span class="hljs-params">($insert)</span>
+    </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">parent</span>::beforeSave($insert)) {
+            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;isNewRecord) {
+                <span class="hljs-keyword">$this</span>-&gt;auth_key = \Yii::$app-&gt;security-&gt;generateRandomString();
+            }
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    }
+}
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>Не путайте <code>identity</code> класс <code>User</code> с классом <a href="./yii-web-user.html">yii\web\User</a>. Первый является классом, реализующим
+  логику аутентификации пользователя. Он часто реализуется как класс <a href="guide-db-active-record.html">Active Record</a>, связанный
+  с некоторым постоянным хранилищем, где лежит информация о пользователях. Второй — это класс компонента приложения,
+  отвечающий за управление состоянием аутентификации пользователя.</p>
+</blockquote>
+<h2>Использование <a href="./yii-web-user.html">yii\web\User</a>  <span id="using-user"></span><a href="#using-user" class="hashlink">&para;</a></h2><p>В основном класс <a href="./yii-web-user.html">yii\web\User</a> используют как компонент приложения <code>user</code>.</p>
+<p>Можно получить <code>identity</code> текущего пользователя, используя выражение <code>Yii::$app-&gt;user-&gt;identity</code>. Оно вернёт экземпляр
+<a href="./yii-web-user.html#$identityClass-detail">identity class</a>, представляющий текущего аутентифицированного пользователя,
+или <code>null</code>, если текущий пользователь не аутентифицирован (например, гость). Следующий код показывает, как получить
+другую связанную с аутентификацией информацию из <a href="./yii-web-user.html">yii\web\User</a>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// `identity` текущего пользователя. `Null`, если пользователь не аутентифицирован.</span>
+$identity = Yii::$app-&gt;user-&gt;identity;
+
+<span class="hljs-comment">// ID текущего пользователя. `Null`, если пользователь не аутентифицирован.</span>
+$id = Yii::$app-&gt;user-&gt;id;
+
+<span class="hljs-comment">// проверка на то, что текущий пользователь гость (не аутентифицирован)</span>
+$isGuest = Yii::$app-&gt;user-&gt;isGuest;
+</code></pre>
+<p>Для залогинивания пользователя вы можете использовать следующий код:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// найти identity с указанным username.</span>
+<span class="hljs-comment">// замечание: также вы можете проверить и пароль, если это нужно</span>
+$identity = User::findOne([<span class="hljs-string">'username'</span> =&gt; $username]);
+
+<span class="hljs-comment">// логиним пользователя</span>
+Yii::$app-&gt;user-&gt;login($identity);
+</code></pre>
+<p>Метод <a href="./yii-web-user.html#login()-detail">yii\web\User::login()</a> устанавливает <code>identity</code> текущего пользователя в <a href="./yii-web-user.html">yii\web\User</a>. Если сессии
+<a href="./yii-web-user.html#$enableSession-detail">включены</a>, то <code>identity</code> будет сохраняться в сессии, так что состояние
+статуса аутентификации будет поддерживаться на всём протяжении сессии. Если <a href="./yii-web-user.html#$enableAutoLogin-detail">включен</a> вход, основанный на cookie (так называемый "запомни меня" вход), то <code>identity</code> также будет сохранена
+в <code>cookie</code> так, чтобы статус аутентификации пользователя мог быть восстановлен на протяжении всего времени жизни <code>cookie</code>.</p>
+<p>Для включения входа, основанного на <code>cookie</code>, вам нужно установить <a href="./yii-web-user.html#$enableAutoLogin-detail">yii\web\User::$enableAutoLogin</a> в <code>true</code>
+в конфигурации приложения. Вы также можете настроить время жизни, передав его при вызове метода <a href="./yii-web-user.html#login()-detail">yii\web\User::login()</a>.</p>
+<p>Для выхода пользователя, просто вызовите</p>
+<pre><code class="hljs php language-php">Yii::$app-&gt;user-&gt;logout();
+</code></pre>
+<p>Обратите внимание: выход пользователя имеет смысл только если сессии включены. Метод сбрасывает статус аутентификации
+сразу и из памяти и из сессии. И по умолчанию, будут также уничтожены <em>все</em> сессионные данные пользователя.
+Если вы хотите сохранить сессионные данные, вы должны вместо этого вызвать <code>Yii::$app-&gt;user-&gt;logout(false)</code>.</p>
+<h2>События аутентификации  <span id="auth-events"></span><a href="#auth-events" class="hashlink">&para;</a></h2><p>Класс <a href="./yii-web-user.html">yii\web\User</a> вызывает несколько событий во время процессов входа и выхода.</p>
+<ul>
+<li><a href="./yii-web-user.html#EVENT_BEFORE_LOGIN-detail">EVENT_BEFORE_LOGIN</a>: вызывается перед вызовом <a href="./yii-web-user.html#login()-detail">yii\web\User::login()</a>.
+Если обработчик устанавливает свойство <a href="./yii-web-userevent.html#$isValid-detail">isValid</a> объекта в <code>false</code>,
+процесс входа будет прерван.</li>
+<li><a href="./yii-web-user.html#EVENT_AFTER_LOGIN-detail">EVENT_AFTER_LOGIN</a>: вызывается после успешного входа.</li>
+<li><a href="./yii-web-user.html#EVENT_BEFORE_LOGOUT-detail">EVENT_BEFORE_LOGOUT</a>: вызывается перед вызовом <a href="./yii-web-user.html#logout()-detail">yii\web\User::logout()</a>.
+Если обработчик устанавливает свойство <a href="./yii-web-userevent.html#$isValid-detail">isValid</a> объекта в <code>false</code>,
+процесс выхода будет прерван.</li>
+<li><a href="./yii-web-user.html#EVENT_AFTER_LOGOUT-detail">EVENT_AFTER_LOGOUT</a>: вызывается после успешного выхода.</li>
+</ul>
+<p>Вы можете использовать эти события для реализации функции аудита входа, сбора статистики онлайн пользователей. Например,
+в обработчике для <a href="./yii-web-user.html#EVENT_AFTER_LOGIN-detail">EVENT_AFTER_LOGIN</a> вы можете сделать запись о времени и IP
+адресе входа в таблицу <code>user</code>.</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 09 Dec 2020 00:16:08 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

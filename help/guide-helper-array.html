@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/1728b664/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9c5d0894/solarized_light.css" rel="stylesheet">
+<link href="./assets/f2ce5bcd/style.css" rel="stylesheet">
+<script src="./assets/bbf84a7a/jquery.js"></script>
+<script src="./assets/1728b664/js/bootstrap.js"></script>
+<script src="./assets/fd63b446/jssearch.js"></script>    <title>ArrayHelper - Хелперы - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1688" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1688-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1688-collapse" class="collapse navbar-collapse"><ul id="w1689" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1690" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1672" data-toggle="collapse" data-parent="#navigation">Введение <b class="caret"></b></a><div id="navigation-1672" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">О Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Обновление с версии 1.1</a></div>
+<a class="list-group-item" href="#navigation-1673" data-toggle="collapse" data-parent="#navigation">Первое знакомство <b class="caret"></b></a><div id="navigation-1673" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Установка Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Запуск приложения</a>
+<a class="list-group-item" href="./guide-start-hello.html">Говорим «привет»</a>
+<a class="list-group-item" href="./guide-start-forms.html">Работа с формами</a>
+<a class="list-group-item" href="./guide-start-databases.html">Работа с базами данных</a>
+<a class="list-group-item" href="./guide-start-gii.html">Генерация кода при помощи Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Что дальше?</a></div>
+<a class="list-group-item" href="#navigation-1674" data-toggle="collapse" data-parent="#navigation">Структура приложения <b class="caret"></b></a><div id="navigation-1674" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Входные скрипты</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Приложения</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Компоненты приложения</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-structure-models.html">Модели</a>
+<a class="list-group-item" href="./guide-structure-views.html">Представления</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Модули</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Фильтры</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Виджеты</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Расширения</a></div>
+<a class="list-group-item" href="#navigation-1675" data-toggle="collapse" data-parent="#navigation">Обработка запросов <b class="caret"></b></a><div id="navigation-1675" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Разбор и генерация URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Запросы</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Ответы</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Сессии и куки</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Обработка ошибок</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Логирование</a></div>
+<a class="list-group-item" href="#navigation-1676" data-toggle="collapse" data-parent="#navigation">Основные понятия <b class="caret"></b></a><div id="navigation-1676" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Компоненты</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Свойства</a>
+<a class="list-group-item" href="./guide-concept-events.html">События</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Поведения</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Конфигурации</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Псевдонимы</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Автозагрузка классов</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item" href="#navigation-1677" data-toggle="collapse" data-parent="#navigation">Работа с базами данных <b class="caret"></b></a><div id="navigation-1677" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Объекты доступа к данным (DAO)</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Построитель запросов</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Миграции</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-ru/README.md">Sphinx</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-redis/blob/master/docs/guide-ru/README.md">Redis</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-ru/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-ru/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1678" data-toggle="collapse" data-parent="#navigation">Получение данных от пользователя <b class="caret"></b></a><div id="navigation-1678" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Создание форм</a>
+<a class="list-group-item" href="./guide-input-validation.html">Валидация</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Загрузка файлов</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Табличный ввод</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Работа с несколькими моделями</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">Расширение ActiveForm на стороне клиента</a></div>
+<a class="list-group-item" href="#navigation-1679" data-toggle="collapse" data-parent="#navigation">Отображение данных <b class="caret"></b></a><div id="navigation-1679" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Форматирование данных</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Постраничная разбивка</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Сортировка</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Провайдеры данных</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Виджеты для данных</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Работа с клиентскими скриптами</a>
+<a class="list-group-item" href="./guide-output-theming.html">Темизация</a></div>
+<a class="list-group-item" href="#navigation-1680" data-toggle="collapse" data-parent="#navigation">Безопасность <b class="caret"></b></a><div id="navigation-1680" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-security-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Авторизация</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Работа с паролями</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">Криптография</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-ru/README.md">Клиенты авторизации</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Лучшие практики</a></div>
+<a class="list-group-item" href="#navigation-1681" data-toggle="collapse" data-parent="#navigation">Кеширование <b class="caret"></b></a><div id="navigation-1681" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-caching-data.html">Кэширование данных</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Кэширование фрагментов</a>
+<a class="list-group-item" href="./guide-caching-page.html">Кэширование страниц</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP кэширование</a></div>
+<a class="list-group-item" href="#navigation-1682" data-toggle="collapse" data-parent="#navigation">Веб-сервисы REST <b class="caret"></b></a><div id="navigation-1682" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Быстрый старт</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Роутинг</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Форматирование ответа</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Ограничение частоты запросов</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Версионирование</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Обработка ошибок</a></div>
+<a class="list-group-item" href="#navigation-1683" data-toggle="collapse" data-parent="#navigation">Инструменты разработчика <b class="caret"></b></a><div id="navigation-1683" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Отладочная панель и отладчик</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide/README.md">Генерация кода с Gii</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">Генератор документации API</a></div>
+<a class="list-group-item" href="#navigation-1684" data-toggle="collapse" data-parent="#navigation">Тестирование <b class="caret"></b></a><div id="navigation-1684" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Настройка тестового окружения</a>
+<a class="list-group-item" href="./guide-test-unit.html">Модульные тесты</a>
+<a class="list-group-item" href="./guide-test-functional.html">Функциональные тесты</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Приёмочные тесты</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Фикстуры</a></div>
+<a class="list-group-item" href="#navigation-1685" data-toggle="collapse" data-parent="#navigation">Специальные темы <b class="caret"></b></a><div id="navigation-1685" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">Шаблон приложения advanced</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Создание приложения с нуля</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Консольные команды</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Встроенные валидаторы</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Интернационализация</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Отправка почты</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Оптимизация производительности</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Окружение виртуального хостинга</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Шаблонизаторы</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Работа со сторонним кодом</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">Использование Yii в качестве микро-framework&#039;а</a></div>
+<a class="list-group-item" href="#navigation-1686" data-toggle="collapse" data-parent="#navigation">Виджеты <b class="caret"></b></a><div id="navigation-1686" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-ru/README.md">Виджеты Bootstrap</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-ru/README.md">Виджеты Jquery UI</a></div>
+<a class="list-group-item active" href="#navigation-1687" data-toggle="collapse" data-parent="#navigation">Хелперы <b class="caret"></b></a><div id="navigation-1687" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-helper-overview.html">Обзор</a>
+<a class="list-group-item active" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url хелпер</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>ArrayHelper <span id="arrayhelper"></span><a href="#arrayhelper" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#getting-values">Получение значений</a></li>
+<li><a href="#setting-values">Запись значений</a></li>
+<li><a href="#removing-values">Изъять значение из массива</a></li>
+<li><a href="#checking-existence-of-keys">Проверка наличия ключей</a></li>
+<li><a href="#retrieving-columns">Извлечение столбцов</a></li>
+<li><a href="#reindexing-arrays">Переиндексация массивов</a></li>
+<li><a href="#building-maps">Получение пар ключ-значение</a></li>
+<li><a href="#multidimensional-sorting">Многомерная сортировка</a></li>
+<li><a href="#detecting-array-types">Определение типа массива</a></li>
+<li><a href="#html-encoding-values">HTML-кодирование и HTML-декодирование значений</a></li>
+<li><a href="#merging-arrays">Слияние массивов</a></li>
+<li><a href="#converting-objects-to-arrays">Получение массива из объекта</a></li>
+<li><a href="#testing-arrays">Проверка на присутствие в массиве</a></li></ol></div>
+<p>Вдобавок к <a href="https://secure.php.net/manual/ru/book.array.php">богатому набору функций</a>  для работы с массивами, которые есть в самом PHP, хелпер Yii Array предоставляет свои статические функции - возможно они могут быть вам полезны.</p>
+<h2>Получение значений  <span id="getting-values"></span><a href="#getting-values" class="hashlink">&para;</a></h2><p>Извлечение значений из массива, объекта или структуры состоящей из них обоих с помощью стандартных средств PHP является довольно скучным занятием. Сначала вам нужно проверить есть ли соответствующий ключ с помощью <code>isset</code>, и если есть – получить, если нет – подставить значение по умолчанию.</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span>
+</span>{
+    <span class="hljs-keyword">public</span> $name = <span class="hljs-string">'Alex'</span>;
+}
+
+$array = [
+    <span class="hljs-string">'foo'</span> =&gt; [
+        <span class="hljs-string">'bar'</span> =&gt; <span class="hljs-keyword">new</span> User(),
+    ]
+];
+
+$value = <span class="hljs-keyword">isset</span>($array[<span class="hljs-string">'foo'</span>][<span class="hljs-string">'bar'</span>]-&gt;name) ? $array[<span class="hljs-string">'foo'</span>][<span class="hljs-string">'bar'</span>]-&gt;name : <span class="hljs-keyword">null</span>;
+</code></pre>
+<p>Yii предлагает очень удобный метод для таких случаев:</p>
+<pre><code class="hljs php language-php">$value = ArrayHelper::getValue($array, <span class="hljs-string">'foo.bar.name'</span>);
+</code></pre>
+<p>Первый аргумент – массив или объект из которого мы извлекаем значение. Второй аргумент определяет как будут извлекаться данные и может выглядеть как один из таких вариантов:</p>
+<ul>
+<li>Имя ключа массива или свойства объекта, значение которого нужно вернуть</li>
+<li>Путь к нужному значению, разделенный точками, как в примере выше</li>
+<li>Callback-функция, возвращающая значение</li>
+</ul>
+<p>Callback-функция должна выглядеть примерно так:</p>
+<pre><code class="hljs php language-php">$fullName = ArrayHelper::getValue($user, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($user, $defaultValue)</span> </span>{
+    <span class="hljs-keyword">return</span> $user-&gt;firstName . <span class="hljs-string">' '</span> . $user-&gt;lastName;
+});
+</code></pre>
+<p>Третий необязательный аргумент определяет значение по умолчанию. Если не установлен – равен <code>null</code>. Используется так:</p>
+<pre><code class="hljs php language-php">$username = ArrayHelper::getValue($comment, <span class="hljs-string">'user.username'</span>, <span class="hljs-string">'Unknown'</span>);
+</code></pre>
+<h2>Запись значений  <span id="setting-values"></span><a href="#setting-values" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">$array = [
+    <span class="hljs-string">'key'</span> =&gt; [
+        <span class="hljs-string">'in'</span> =&gt; [<span class="hljs-string">'k'</span> =&gt; <span class="hljs-string">'value'</span>]
+    ]
+];
+
+ArrayHelper::setValue($array, <span class="hljs-string">'key.in'</span>, [<span class="hljs-string">'arr'</span> =&gt; <span class="hljs-string">'val'</span>]);
+<span class="hljs-comment">// путь для записи значения в `$array` можно указать как массив</span>
+ArrayHelper::setValue($array, [<span class="hljs-string">'key'</span>, <span class="hljs-string">'in'</span>], [<span class="hljs-string">'arr'</span> =&gt; <span class="hljs-string">'val'</span>]);
+</code></pre>
+<p>В результате исходное значение <code>$array['key']['in']</code> будет перезаписано новым</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'key'</span> =&gt; [
+        <span class="hljs-string">'in'</span> =&gt; [<span class="hljs-string">'arr'</span> =&gt; <span class="hljs-string">'val'</span>]
+    ]
+]
+</code></pre>
+<p>Если путь содержит несуществующий ключ, то он будет создан</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// Если `$array['key']['in']['arr0']` не пустой, то значение будет добавлено в массив</span>
+ArrayHelper::setValue($array, <span class="hljs-string">'key.in.arr0.arr1'</span>, <span class="hljs-string">'val'</span>);
+
+<span class="hljs-comment">// если необходимо полностью переопределить значение `$array['key']['in']['arr0']`</span>
+ArrayHelper::setValue($array, <span class="hljs-string">'key.in.arr0'</span>, [<span class="hljs-string">'arr1'</span> =&gt; <span class="hljs-string">'val'</span>]);
+</code></pre>
+<p>Результатом будет следующим:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'key'</span> =&gt; [
+        <span class="hljs-string">'in'</span> =&gt; [
+            <span class="hljs-string">'k'</span> =&gt; <span class="hljs-string">'value'</span>,
+            <span class="hljs-string">'arr0'</span> =&gt; [<span class="hljs-string">'arr1'</span> =&gt; <span class="hljs-string">'val'</span>]
+        ]
+    ]
+]
+</code></pre>
+<h2>Изъять значение из массива  <span id="removing-values"></span><a href="#removing-values" class="hashlink">&para;</a></h2><p>Если вы хотите получить значение и тут же удалить его из массива, вы можете использовать метод <code>remove</code></p>
+<pre><code class="hljs php language-php">$array = [<span class="hljs-string">'type'</span> =&gt; <span class="hljs-string">'A'</span>, <span class="hljs-string">'options'</span> =&gt; [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]];
+$type = ArrayHelper::remove($array, <span class="hljs-string">'type'</span>);
+</code></pre>
+<p>После выполнения этого кода переменная <code>$array</code> будет содержать <code>['options' =&gt; [1, 2]]</code>, а в переменной <code>$type</code> будет значение <code>А</code>. В отличие от метода <code>getValue</code>, метод <code>remove</code> поддерживает только простое имя ключа.</p>
+<h2>Проверка наличия ключей  <span id="checking-existence-of-keys"></span><a href="#checking-existence-of-keys" class="hashlink">&para;</a></h2><p><code>ArrayHelper::keyExists</code> работает так же, как и стандартный <a href="https://secure.php.net/manual/ru/function.array-key-exists.php">array_key_exists</a>,
+но также может проверять ключи без учёта регистра:</p>
+<pre><code class="hljs php language-php">$data1 = [
+    <span class="hljs-string">'userName'</span> =&gt; <span class="hljs-string">'Alex'</span>,
+];
+
+$data2 = [
+    <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'Carsten'</span>,
+];
+
+<span class="hljs-keyword">if</span> (!ArrayHelper::keyExists(<span class="hljs-string">'username'</span>, $data1, <span class="hljs-keyword">false</span>) || !ArrayHelper::keyExists(<span class="hljs-string">'username'</span>, $data2, <span class="hljs-keyword">false</span>)) {
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">"Пожалуйста, укажите имя пользователя."</span>;
+}
+</code></pre>
+<h2>Извлечение столбцов  <span id="retrieving-columns"></span><a href="#retrieving-columns" class="hashlink">&para;</a></h2><p>Часто нужно извлечь столбец значений из многомерного массива или объекта. Например, список ID.</p>
+<pre><code class="hljs php language-php">$array = [
+    [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'123'</span>, <span class="hljs-string">'data'</span> =&gt; <span class="hljs-string">'abc'</span>],
+    [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'345'</span>, <span class="hljs-string">'data'</span> =&gt; <span class="hljs-string">'def'</span>],
+];
+$ids = ArrayHelper::getColumn($array, <span class="hljs-string">'id'</span>);
+</code></pre>
+<p>Результатом будет <code>['123', '345']</code>.</p>
+<p>Если нужны какие-то дополнительные трансформации или способ получения значения специфический, вторым аргументом может быть анонимная функция:</p>
+<pre><code class="hljs php language-php">$result = ArrayHelper::getColumn($array, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($element)</span> </span>{
+    <span class="hljs-keyword">return</span> $element[<span class="hljs-string">'id'</span>];
+});
+</code></pre>
+<h2>Переиндексация массивов  <span id="reindexing-arrays"></span><a href="#reindexing-arrays" class="hashlink">&para;</a></h2><p>Чтобы проиндексировать массив в соответствии с определенным ключом, используется метод <code>index</code> . Входящий массив должен
+быть многомерным или массивом объектов. Ключом может быть имя ключа вложенного массива, имя свойства объекта или
+анонимная функция, которая будет возвращать значение ключа по переданному массиву.</p>
+<p>Если значение ключа равно <code>null</code>, то соответствующий элемент массива будет опущен и не попадет в результат.</p>
+<pre><code class="hljs php language-php">$array = [
+    [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'123'</span>, <span class="hljs-string">'data'</span> =&gt; <span class="hljs-string">'abc'</span>],
+    [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'345'</span>, <span class="hljs-string">'data'</span> =&gt; <span class="hljs-string">'def'</span>],
+];
+$result = ArrayHelper::index($array, <span class="hljs-string">'id'</span>);
+<span class="hljs-comment">// результат будет таким:</span>
+<span class="hljs-comment">// [</span>
+<span class="hljs-comment">//     '123' =&gt; ['id' =&gt; '123', 'data' =&gt; 'abc'],</span>
+<span class="hljs-comment">//     '345' =&gt; ['id' =&gt; '345', 'data' =&gt; 'def'],</span>
+<span class="hljs-comment">// ]</span>
+
+<span class="hljs-comment">// использование анонимной функции</span>
+$result = ArrayHelper::index($array, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($element)</span> </span>{
+    <span class="hljs-keyword">return</span> $element[<span class="hljs-string">'id'</span>];
+});
+</code></pre>
+<h2>Получение пар ключ-значение  <span id="building-maps"></span><a href="#building-maps" class="hashlink">&para;</a></h2><p>Для получения пар ключ-значение из многомерного массива или из массива объектов вы можете использовать метод <code>map</code>.</p>
+<p>Параметры <code>$from</code> и <code>$to</code> определяют имена ключей или свойств, которые будут использованы в map. Также третьим необязательным параметром вы можете задать правила группировки.</p>
+<pre><code class="hljs php language-php">$array = [
+    [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'123'</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'aaa'</span>, <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'x'</span>],
+    [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'124'</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'bbb'</span>, <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'x'</span>],
+    [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'345'</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'ccc'</span>, <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'y'</span>],
+);
+
+$result = ArrayHelper::map($array, <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>);
+<span class="hljs-comment">// результат будет таким:</span>
+<span class="hljs-comment">// [</span>
+<span class="hljs-comment">//     '123' =&gt; 'aaa',</span>
+<span class="hljs-comment">//     '124' =&gt; 'bbb',</span>
+<span class="hljs-comment">//     '345' =&gt; 'ccc',</span>
+<span class="hljs-comment">// ]</span>
+
+$result = ArrayHelper::map($array, <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>, <span class="hljs-string">'class'</span>);
+<span class="hljs-comment">// результат будет таким:</span>
+<span class="hljs-comment">// [</span>
+<span class="hljs-comment">//     'x' =&gt; [</span>
+<span class="hljs-comment">//         '123' =&gt; 'aaa',</span>
+<span class="hljs-comment">//         '124' =&gt; 'bbb',</span>
+<span class="hljs-comment">//     ],</span>
+<span class="hljs-comment">//     'y' =&gt; [</span>
+<span class="hljs-comment">//         '345' =&gt; 'ccc',</span>
+<span class="hljs-comment">//     ],</span>
+<span class="hljs-comment">// ]</span>
+</code></pre>
+<h2>Многомерная сортировка  <span id="multidimensional-sorting"></span><a href="#multidimensional-sorting" class="hashlink">&para;</a></h2><p>Метод <code>multisort</code> помогает сортировать массивы объектов или вложенные массивы по одному или нескольким ключам. Например:</p>
+<pre><code class="hljs php language-php">$data = [
+    [<span class="hljs-string">'age'</span> =&gt; <span class="hljs-number">30</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'Alexander'</span>],
+    [<span class="hljs-string">'age'</span> =&gt; <span class="hljs-number">30</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'Brian'</span>],
+    [<span class="hljs-string">'age'</span> =&gt; <span class="hljs-number">19</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'Barney'</span>],
+];
+ArrayHelper::multisort($data, [<span class="hljs-string">'age'</span>, <span class="hljs-string">'name'</span>], [SORT_ASC, SORT_DESC]);
+</code></pre>
+<p>После сортировки мы получим:</p>
+<pre><code class="hljs php language-php">[
+    [<span class="hljs-string">'age'</span> =&gt; <span class="hljs-number">19</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'Barney'</span>],
+    [<span class="hljs-string">'age'</span> =&gt; <span class="hljs-number">30</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'Brian'</span>],
+    [<span class="hljs-string">'age'</span> =&gt; <span class="hljs-number">30</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'Alexander'</span>],
+];
+</code></pre>
+<p>Второй аргумент, определяющий ключи для сортировки может быть строкой, если это один ключ, массивом, если используются несколько ключей или анонимной функцией, как в примере ниже:</p>
+<pre><code class="hljs php language-php">ArrayHelper::multisort($data, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($item)</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">isset</span>($item[<span class="hljs-string">'age'</span>]) ? [<span class="hljs-string">'age'</span>, <span class="hljs-string">'name'</span>] : <span class="hljs-string">'name'</span>;
+});
+</code></pre>
+<p>Третий аргумент определяет способ сортировки – от большего к меньшему или от меньшего к большему. В случае, если мы сортируем по одному ключу, передаем  <code>SORT_ASC</code>  или  <code>SORT_DESC</code>. Если сортировка осуществляется по нескольким ключам, вы можете назначить направление сортировки для каждого из них с помощью массива.</p>
+<p>Последний аргумент – это флаг, который используется в стандартной функции PHP <code>sort()</code>. Посмотреть его возможные значения можно <a href="https://secure.php.net/manual/ru/function.sort.php">тут</a>.</p>
+<h2>Определение типа массива  <span id="detecting-array-types"></span><a href="#detecting-array-types" class="hashlink">&para;</a></h2><p>Удобный способ для определения, является массив индексным или ассоциативным. Вот пример:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// ключи не определены</span>
+$indexed = [<span class="hljs-string">'Qiang'</span>, <span class="hljs-string">'Paul'</span>];
+<span class="hljs-keyword">echo</span> ArrayHelper::isIndexed($indexed);
+
+<span class="hljs-comment">// все ключи - строки</span>
+$associative = [<span class="hljs-string">'framework'</span> =&gt; <span class="hljs-string">'Yii'</span>, <span class="hljs-string">'version'</span> =&gt; <span class="hljs-string">'2.0'</span>];
+<span class="hljs-keyword">echo</span> ArrayHelper::isAssociative($associative);
+</code></pre>
+<h2>HTML-кодирование и HTML-декодирование значений  <span id="html-encoding-values"></span><a href="#html-encoding-values" class="hashlink">&para;</a></h2><p>Для того, чтобы закодировать или раскодировать специальные символы в массиве строк в HTML-сущности, вы можете пользоваться методами ниже:</p>
+<pre><code class="hljs php language-php">$encoded = ArrayHelper::htmlEncode($data);
+$decoded = ArrayHelper::htmlDecode($data);
+</code></pre>
+<p>По умолчанию кодируются только значения. Если установить второй параметр в <code>false</code>, то ключи массива будут так же кодированы. Кодирование использует кодировку приложения, которая может быть изменена с помощью третьего аргумента.</p>
+<h2>Слияние массивов  <span id="merging-arrays"></span><a href="#merging-arrays" class="hashlink">&para;</a></h2><p>Слияние двух или больше массивов в один рекурсивно.
+Если каждый массив имеет одинаковый ключ, последний будет перезаписывать предыдущий (в отличие от функции array_merge_recursive).
+Рекурсивное слияние проводится когда все массивы имеют элемент одного и того же типа с одним и тем же ключом. Для элементов, ключом которого является значение типа integer, элементы из последнего будут добавлены к предыдущим массивам. Вы можете добавлять дополнительные массивы для слияния третьим, четвертым, пятым (и так далее) параметром.</p>
+<pre><code class="hljs php language-php">ArrayHelper::merge($a, $b);
+</code></pre>
+<h2>Получение массива из объекта  <span id="converting-objects-to-arrays"></span><a href="#converting-objects-to-arrays" class="hashlink">&para;</a></h2><p>Часто нужно конвертировать объект в массив. Наиболее распространенный случай – конвертация модели Active Record в массив.</p>
+<pre><code class="hljs php language-php">$posts = Post::find()-&gt;limit(<span class="hljs-number">10</span>)-&gt;all();
+$data = ArrayHelper::toArray($posts, [
+    <span class="hljs-string">'app\models\Post'</span> =&gt; [
+        <span class="hljs-string">'id'</span>,
+        <span class="hljs-string">'title'</span>,
+        <span class="hljs-comment">// ключ в результирующем массиве =&gt; имя свойства</span>
+        <span class="hljs-string">'createTime'</span> =&gt; <span class="hljs-string">'created_at'</span>,
+        <span class="hljs-comment">// ключ в результирующем массиве =&gt; анонимная функция</span>
+        <span class="hljs-string">'length'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($post)</span> </span>{
+            <span class="hljs-keyword">return</span> strlen($post-&gt;content);
+        },
+    ],
+]);
+</code></pre>
+<p>Первый аргумент содержит данные, которые вы хотите конвертировать. В нашем случае это модель Active Record <code>Post</code>.</p>
+<p>Второй аргумент служит для управления процессом конвертации и может быть трех видов:</p>
+<ul>
+<li>просто имя поля</li>
+<li>пара ключ-значение, где ключ определяет ключ в результирующем массиве, а значение – название поля в модели, откуда берется значение.</li>
+<li>пара ключ-значение, где в качестве значения передается callback-функция, которая возвращает значение.</li>
+</ul>
+<p>Результат конвертации будет таким:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">123</span>,
+    <span class="hljs-string">'title'</span> =&gt; <span class="hljs-string">'test'</span>,
+    <span class="hljs-string">'createTime'</span> =&gt; <span class="hljs-string">'2013-01-01 12:00AM'</span>,
+    <span class="hljs-string">'length'</span> =&gt; <span class="hljs-number">301</span>,
+]
+</code></pre>
+<p>Вы можете определить способ конвертации из объекта в массив по-умолчанию реализовав интерфейс
+<a href="./yii-base-arrayable.html">Arrayable</a> в этом классе</p>
+<h2>Проверка на присутствие в массиве  <span id="testing-arrays"></span><a href="#testing-arrays" class="hashlink">&para;</a></h2><p>Часто необходимо проверить, содержится ли элемент в массиве, или является ли массив подмножеством другого массива.
+К сожалению, PHP-функция <code>in_array()</code> не поддерживает подмножества объектов, реализующих интерфейс <code>\Traversable</code>.</p>
+<p>Для таких случаев <a href="./yii-helpers-arrayhelper.html">yii\helpers\ArrayHelper</a> предоставляет <a href="./yii-helpers-basearrayhelper.html#isIn()-detail">isIn()</a> и
+<a href="./yii-helpers-basearrayhelper.html#isSubset()-detail">isSubset()</a>. Методы принимают такие же параметры, что и
+<a href="https://secure.php.net/manual/ru/function.in-array.php">in_array()</a>.</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// true</span>
+ArrayHelper::isIn(<span class="hljs-string">'a'</span>, [<span class="hljs-string">'a'</span>]);
+<span class="hljs-comment">// true</span>
+ArrayHelper::isIn(<span class="hljs-string">'a'</span>, <span class="hljs-keyword">new</span>(ArrayObject[<span class="hljs-string">'a'</span>]));
+
+<span class="hljs-comment">// true</span>
+ArrayHelper::isSubset(<span class="hljs-keyword">new</span>(ArrayObject[<span class="hljs-string">'a'</span>, <span class="hljs-string">'c'</span>]), <span class="hljs-keyword">new</span>(ArrayObject[<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>])
+
+</code></pre>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 09 Dec 2020 00:16:08 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

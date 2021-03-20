@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/1728b664/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9c5d0894/solarized_light.css" rel="stylesheet">
+<link href="./assets/f2ce5bcd/style.css" rel="stylesheet">
+<script src="./assets/bbf84a7a/jquery.js"></script>
+<script src="./assets/1728b664/js/bootstrap.js"></script>
+<script src="./assets/fd63b446/jssearch.js"></script>    <title>Конфигурации - Основные понятия - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w966" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w966-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w966-collapse" class="collapse navbar-collapse"><ul id="w967" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w968" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-950" data-toggle="collapse" data-parent="#navigation">Введение <b class="caret"></b></a><div id="navigation-950" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">О Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Обновление с версии 1.1</a></div>
+<a class="list-group-item" href="#navigation-951" data-toggle="collapse" data-parent="#navigation">Первое знакомство <b class="caret"></b></a><div id="navigation-951" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Установка Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Запуск приложения</a>
+<a class="list-group-item" href="./guide-start-hello.html">Говорим «привет»</a>
+<a class="list-group-item" href="./guide-start-forms.html">Работа с формами</a>
+<a class="list-group-item" href="./guide-start-databases.html">Работа с базами данных</a>
+<a class="list-group-item" href="./guide-start-gii.html">Генерация кода при помощи Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Что дальше?</a></div>
+<a class="list-group-item" href="#navigation-952" data-toggle="collapse" data-parent="#navigation">Структура приложения <b class="caret"></b></a><div id="navigation-952" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Входные скрипты</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Приложения</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Компоненты приложения</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-structure-models.html">Модели</a>
+<a class="list-group-item" href="./guide-structure-views.html">Представления</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Модули</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Фильтры</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Виджеты</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Расширения</a></div>
+<a class="list-group-item" href="#navigation-953" data-toggle="collapse" data-parent="#navigation">Обработка запросов <b class="caret"></b></a><div id="navigation-953" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Разбор и генерация URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Запросы</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Ответы</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Сессии и куки</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Обработка ошибок</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Логирование</a></div>
+<a class="list-group-item active" href="#navigation-954" data-toggle="collapse" data-parent="#navigation">Основные понятия <b class="caret"></b></a><div id="navigation-954" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-concept-components.html">Компоненты</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Свойства</a>
+<a class="list-group-item" href="./guide-concept-events.html">События</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Поведения</a>
+<a class="list-group-item active" href="./guide-concept-configurations.html">Конфигурации</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Псевдонимы</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Автозагрузка классов</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item" href="#navigation-955" data-toggle="collapse" data-parent="#navigation">Работа с базами данных <b class="caret"></b></a><div id="navigation-955" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Объекты доступа к данным (DAO)</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Построитель запросов</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Миграции</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-ru/README.md">Sphinx</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-redis/blob/master/docs/guide-ru/README.md">Redis</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-ru/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-ru/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-956" data-toggle="collapse" data-parent="#navigation">Получение данных от пользователя <b class="caret"></b></a><div id="navigation-956" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Создание форм</a>
+<a class="list-group-item" href="./guide-input-validation.html">Валидация</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Загрузка файлов</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Табличный ввод</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Работа с несколькими моделями</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">Расширение ActiveForm на стороне клиента</a></div>
+<a class="list-group-item" href="#navigation-957" data-toggle="collapse" data-parent="#navigation">Отображение данных <b class="caret"></b></a><div id="navigation-957" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Форматирование данных</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Постраничная разбивка</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Сортировка</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Провайдеры данных</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Виджеты для данных</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Работа с клиентскими скриптами</a>
+<a class="list-group-item" href="./guide-output-theming.html">Темизация</a></div>
+<a class="list-group-item" href="#navigation-958" data-toggle="collapse" data-parent="#navigation">Безопасность <b class="caret"></b></a><div id="navigation-958" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-security-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Авторизация</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Работа с паролями</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">Криптография</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-ru/README.md">Клиенты авторизации</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Лучшие практики</a></div>
+<a class="list-group-item" href="#navigation-959" data-toggle="collapse" data-parent="#navigation">Кеширование <b class="caret"></b></a><div id="navigation-959" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-caching-data.html">Кэширование данных</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Кэширование фрагментов</a>
+<a class="list-group-item" href="./guide-caching-page.html">Кэширование страниц</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP кэширование</a></div>
+<a class="list-group-item" href="#navigation-960" data-toggle="collapse" data-parent="#navigation">Веб-сервисы REST <b class="caret"></b></a><div id="navigation-960" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Быстрый старт</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Роутинг</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Форматирование ответа</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Ограничение частоты запросов</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Версионирование</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Обработка ошибок</a></div>
+<a class="list-group-item" href="#navigation-961" data-toggle="collapse" data-parent="#navigation">Инструменты разработчика <b class="caret"></b></a><div id="navigation-961" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Отладочная панель и отладчик</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide/README.md">Генерация кода с Gii</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">Генератор документации API</a></div>
+<a class="list-group-item" href="#navigation-962" data-toggle="collapse" data-parent="#navigation">Тестирование <b class="caret"></b></a><div id="navigation-962" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Настройка тестового окружения</a>
+<a class="list-group-item" href="./guide-test-unit.html">Модульные тесты</a>
+<a class="list-group-item" href="./guide-test-functional.html">Функциональные тесты</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Приёмочные тесты</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Фикстуры</a></div>
+<a class="list-group-item" href="#navigation-963" data-toggle="collapse" data-parent="#navigation">Специальные темы <b class="caret"></b></a><div id="navigation-963" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">Шаблон приложения advanced</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Создание приложения с нуля</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Консольные команды</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Встроенные валидаторы</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Интернационализация</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Отправка почты</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Оптимизация производительности</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Окружение виртуального хостинга</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Шаблонизаторы</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Работа со сторонним кодом</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">Использование Yii в качестве микро-framework&#039;а</a></div>
+<a class="list-group-item" href="#navigation-964" data-toggle="collapse" data-parent="#navigation">Виджеты <b class="caret"></b></a><div id="navigation-964" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-ru/README.md">Виджеты Bootstrap</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-ru/README.md">Виджеты Jquery UI</a></div>
+<a class="list-group-item" href="#navigation-965" data-toggle="collapse" data-parent="#navigation">Хелперы <b class="caret"></b></a><div id="navigation-965" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url хелпер</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Конфигурации <span id="konfiguracii"></span><a href="#konfiguracii" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#configuration-format">Формат конфигурации</a></li>
+<li><a href="#using-configurations">Использование конфигурации</a></li>
+<li><a href="#configuration-files">Конфигурационные файлы</a></li>
+<li><a href="#default-configurations">Значения конфигурации по умолчанию</a></li>
+<li><a href="#environment-constants">Константы окружения</a></li></ol></div>
+<p>Конфигурации широко используются в Yii при создании новых объектов или при инициализации уже существующих объектов. 
+Обычно конфигурации включают в себя названия классов создаваемых объектов и список первоначальных значений,
+которые должны быть присвоены <a href="guide-concept-properties.html">свойствам</a> объекта. Также в конфигурациях можно указать список
+<a href="guide-concept-events.html">обработчиков событий</a> объекта и/или список <a href="guide-concept-behaviors.html">поведений</a> объекта.</p>
+<p>Пример конфигурации подключения к базе данных и дальнейшей инициализации подключения: </p>
+<pre><code class="hljs php language-php">$config = [
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\db\Connection'</span>,
+    <span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'mysql:host=127.0.0.1;dbname=demo'</span>,
+    <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'root'</span>,
+    <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">''</span>,
+    <span class="hljs-string">'charset'</span> =&gt; <span class="hljs-string">'utf8'</span>,
+];
+
+$db = Yii::createObject($config);
+</code></pre>
+<p>Метод <a href="./yii-baseyii.html#createObject()-detail">Yii::createObject()</a> принимает в качестве аргумента массив с конфигурацией и создаёт объект указанного в них класса.
+При этом оставшаяся часть конфигурации используется для инициализации свойств, обработчиков событий и поведений объекта.</p>
+<p>Если объект уже создан, вы можете использовать <a href="./yii-baseyii.html#configure()-detail">Yii::configure()</a> для того, чтобы инициализировать свойства объекта
+массивом с конфигурацией:</p>
+<pre><code class="hljs php language-php">Yii::configure($object, $config);
+</code></pre>
+<p>Обратите внимание, что в этом случае массив с конфигурацией не должен содержать ключ <code>class</code>.</p>
+<h2>Формат конфигурации  <span id="configuration-format"></span><a href="#configuration-format" class="hashlink">&para;</a></h2><p>Формат конфигурации выглядит следующим образом:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'ClassName'</span>,
+    <span class="hljs-string">'propertyName'</span> =&gt; <span class="hljs-string">'propertyValue'</span>,
+    <span class="hljs-string">'on eventName'</span> =&gt; $eventHandler,
+    <span class="hljs-string">'as behaviorName'</span> =&gt; $behaviorConfig,
+]
+</code></pre>
+<p>где</p>
+<ul>
+<li>Элемент <code>class</code> указывает абсолютное имя класса создаваемого объекта.</li>
+<li>Элементы <code>propertyName</code> указывают первоначальные значения свойств создаваемого объекта. Ключи являются именами свойств
+создаваемого объекта, а значения — начальными значениями свойств создаваемого объекта.
+Таким способом могут быть установлены только публичные переменные объекта и его <a href="guide-concept-properties.html">свойства</a>,
+созданные через геттеры и сеттеры.</li>
+<li>Элементы <code>on eventName</code> указывают на то, какие обработчики должны быть прикреплены к <a href="guide-concept-events.html">событиям</a> объекта.
+Обратите внимание, что ключи массива начинаются с <code>on </code>. Чтобы узнать весь список поддерживаемых видов
+обработчиков событий, обратитесь в раздел <a href="guide-concept-events.html">события</a></li>
+<li>Элементы <code>as behaviorName</code> указывают на то, какие <a href="guide-concept-behaviors.html">поведения</a> должны быть внедрены в объект.
+Обратите внимание, что ключи массива начинаются с <code>as </code>; а <code>$behaviorConfig</code> представляет собой конфигурацию для
+создания <a href="guide-concept-behaviors.html">поведения</a>, похожую на все остальные конфигурации.</li>
+</ul>
+<p>Пример конфигурации с установкой первоначальных значений свойств объекта, обработчика событий и поведения:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'app\components\SearchEngine'</span>,
+    <span class="hljs-string">'apiKey'</span> =&gt; <span class="hljs-string">'xxxxxxxx'</span>,
+    <span class="hljs-string">'on search'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($event)</span> </span>{
+        Yii::info(<span class="hljs-string">"Keyword searched: "</span> . $event-&gt;keyword);
+    },
+    <span class="hljs-string">'as indexer'</span> =&gt; [
+        <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'app\components\IndexerBehavior'</span>,
+        <span class="hljs-comment">// ... начальные значения свойств ...</span>
+    ],
+]
+</code></pre>
+<h2>Использование конфигурации  <span id="using-configurations"></span><a href="#using-configurations" class="hashlink">&para;</a></h2><p>Конфигурации повсеместно используются в Yii. В самом начале данной главы мы узнали как
+создать объект с необходимыми параметрами, используя метод <a href="./yii-baseyii.html#createObject()-detail">Yii::createObject()</a>.
+В данном разделе речь пойдет о конфигурации приложения и конфигурациях виджетов — двух основных способов
+использования конфигурации. </p>
+<h3>Конфигурация приложения  <span id="application-configurations"></span><a href="#application-configurations" class="hashlink">&para;</a></h3><p>Конфигурация <a href="guide-structure-applications.html">приложения</a>, пожалуй, самая сложная из используемых в фреймворке.
+Причина в том, что класс <a href="./yii-web-application.html">application</a> содержит большое количество конфигурируемых
+свойств и событий. Более того, свойство приложения <a href="./yii-di-servicelocator.html#$components-detail">components</a>
+может принимать массив с конфигурацией для создания компонентов, регистрируемых на уровне приложения.
+Пример конфигурации приложения для <a href="guide-start-installation.html">шаблона приложения basic</a>.</p>
+<pre><code class="hljs php language-php">$config = [
+    <span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'basic'</span>,
+    <span class="hljs-string">'basePath'</span> =&gt; dirname(<span class="hljs-keyword">__DIR__</span>),
+    <span class="hljs-string">'extensions'</span> =&gt; <span class="hljs-keyword">require</span> <span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">'/../vendor/yiisoft/extensions.php'</span>,
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'cache'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\caching\FileCache'</span>,
+        ],
+        <span class="hljs-string">'mailer'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\swiftmailer\Mailer'</span>,
+        ],
+        <span class="hljs-string">'log'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\log\Dispatcher'</span>,
+            <span class="hljs-string">'traceLevel'</span> =&gt; YII_DEBUG ? <span class="hljs-number">3</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">'targets'</span> =&gt; [
+                [
+                    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\log\FileTarget'</span>,
+                ],
+            ],
+        ],
+        <span class="hljs-string">'db'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\db\Connection'</span>,
+            <span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'mysql:host=localhost;dbname=stay2'</span>,
+            <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'root'</span>,
+            <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">''</span>,
+            <span class="hljs-string">'charset'</span> =&gt; <span class="hljs-string">'utf8'</span>,
+        ],
+    ],
+];
+</code></pre>
+<p>Ключ <code>class</code> в данной конфигурации не указывается. Причина в том, что класс вызывается по полному имени во
+<a href="guide-structure-entry-scripts.html">входном скрипте</a>:</p>
+<pre><code class="hljs php language-php">(<span class="hljs-keyword">new</span> yii\web\Application($config))-&gt;run();
+</code></pre>
+<p>За более подробной документацией о настройках свойства <code>components</code> в конфигурации приложения обратитесь к главам
+<a href="guide-structure-applications.html">приложения</a> и <a href="guide-concept-service-locator.html">Service Locator</a>.</p>
+<p>Начиная с версии 2.0.11, можно настраивать <a href="guide-concept-di-container.html">контейнер зависимостей</a> через конфигурацию
+приложения. Для этого используется свойство <code>container</code>:</p>
+<pre><code class="hljs php language-php">$config = [
+    <span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'basic'</span>,
+    <span class="hljs-string">'basePath'</span> =&gt; dirname(<span class="hljs-keyword">__DIR__</span>),
+    <span class="hljs-string">'extensions'</span> =&gt; <span class="hljs-keyword">require</span> <span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">'/../vendor/yiisoft/extensions.php'</span>,
+    <span class="hljs-string">'container'</span> =&gt; [
+        <span class="hljs-string">'definitions'</span> =&gt; [
+            <span class="hljs-string">'yii\widgets\LinkPager'</span> =&gt; [<span class="hljs-string">'maxButtonCount'</span> =&gt; <span class="hljs-number">5</span>]
+        ],
+        <span class="hljs-string">'singletons'</span> =&gt; [
+            <span class="hljs-comment">// Конфигурация для единожды создающихся объектов</span>
+        ]
+    ]
+];
+</code></pre>
+<p>Чтобы узнать о возможных значениях <code>definitions</code> и <code>singletons</code>, а также о реальных примерах использования,
+прочитайте подраздел <a href="guide-concept-di-container.html#advanced-practical-usage">Более сложное практическое применение</a> раздела
+<a href="guide-concept-di-container.html">Контейнер внедрения зависимостей</a>.</p>
+<h3>Конфигурации виджетов  <span id="widget-configurations"></span><a href="#widget-configurations" class="hashlink">&para;</a></h3><p>При использовании <a href="guide-structure-widgets.html">виджетов</a> часто возникает необходимость изменить параметры виджета с помощью
+конфигурации. Для создания виджета можно использовать два метода: <a href="./yii-base-widget.html#widget()-detail">yii\base\Widget::widget()</a> и 
+<a href="./yii-base-widget.html#begin()-detail">yii\base\Widget::begin()</a>. Оба метода принимают конфигурацию в виде PHP-массива:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">widgets</span>\<span class="hljs-title">Menu</span>;
+
+<span class="hljs-keyword">echo</span> Menu::widget([
+    <span class="hljs-string">'activateItems'</span> =&gt; <span class="hljs-keyword">false</span>,
+    <span class="hljs-string">'items'</span> =&gt; [
+        [<span class="hljs-string">'label'</span> =&gt; <span class="hljs-string">'Home'</span>, <span class="hljs-string">'url'</span> =&gt; [<span class="hljs-string">'site/index'</span>]],
+        [<span class="hljs-string">'label'</span> =&gt; <span class="hljs-string">'Products'</span>, <span class="hljs-string">'url'</span> =&gt; [<span class="hljs-string">'product/index'</span>]],
+        [<span class="hljs-string">'label'</span> =&gt; <span class="hljs-string">'Login'</span>, <span class="hljs-string">'url'</span> =&gt; [<span class="hljs-string">'site/login'</span>], <span class="hljs-string">'visible'</span> =&gt; Yii::$app-&gt;user-&gt;isGuest],
+    ],
+]);
+</code></pre>
+<p>Данный код создает виджет <code>Menu</code> и устанавливает параметр виджета <code>activeItems</code> в значение <code>false</code>.
+Также устанавливается параметр <code>items</code>, состоящий из элементов меню.</p>
+<p>Обратите внимание, что параметр <code>class</code> НЕ передается, так как полное имя уже указано.</p>
+<h2>Конфигурационные файлы  <span id="configuration-files"></span><a href="#configuration-files" class="hashlink">&para;</a></h2><p>Если конфигурация очень сложная, то её, как правило, разделяют по нескольким PHP-файлам. Такие файлы называют
+<em>конфигурационными файлами</em>. Конфигурационный файл возвращает массив PHP, являющийся конфигурацией.
+Например, конфигурацию приложения можно хранить в отдельном файле <code>web.php</code>, как показано ниже:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'basic'</span>,
+    <span class="hljs-string">'basePath'</span> =&gt; dirname(<span class="hljs-keyword">__DIR__</span>),
+    <span class="hljs-string">'extensions'</span> =&gt; <span class="hljs-keyword">require</span> <span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">'/../vendor/yiisoft/extensions.php'</span>,
+    <span class="hljs-string">'components'</span> =&gt; <span class="hljs-keyword">require</span> <span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">'/components.php'</span>,
+];
+</code></pre>
+<p>Параметр <code>components</code> также имеет сложную конфигурацию, поэтому можно его хранить в файле <code>components.php</code>
+и подключать в файл <code>web.php</code> используя <code>require</code> как и показано выше. 
+Содержимое файла <code>components.php</code>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'cache'</span> =&gt; [
+        <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\caching\FileCache'</span>,
+    ],
+    <span class="hljs-string">'mailer'</span> =&gt; [
+        <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\swiftmailer\Mailer'</span>,
+    ],
+    <span class="hljs-string">'log'</span> =&gt; [
+        <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\log\Dispatcher'</span>,
+        <span class="hljs-string">'traceLevel'</span> =&gt; YII_DEBUG ? <span class="hljs-number">3</span> : <span class="hljs-number">0</span>,
+        <span class="hljs-string">'targets'</span> =&gt; [
+            [
+                <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\log\FileTarget'</span>,
+            ],
+        ],
+    ],
+    <span class="hljs-string">'db'</span> =&gt; [
+        <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\db\Connection'</span>,
+        <span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'mysql:host=localhost;dbname=stay2'</span>,
+        <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'root'</span>,
+        <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">''</span>,
+        <span class="hljs-string">'charset'</span> =&gt; <span class="hljs-string">'utf8'</span>,
+    ],
+];
+</code></pre>
+<p>Чтобы получить конфигурацию, хранящуюся в файле, достаточно подключить файл с помощью <code>require</code>:</p>
+<pre><code class="hljs php language-php">$config = <span class="hljs-keyword">require</span> <span class="hljs-string">'path/to/web.php'</span>;
+(<span class="hljs-keyword">new</span> yii\web\Application($config))-&gt;run();
+</code></pre>
+<h2>Значения конфигурации по умолчанию  <span id="default-configurations"></span><a href="#default-configurations" class="hashlink">&para;</a></h2><p>Метод <a href="./yii-baseyii.html#createObject()-detail">Yii::createObject()</a> реализован с использованием <a href="guide-concept-di-container.html">контейнера внедрения зависимостей</a>.
+Это позволяет задавать так называемые <em>значения конфигурации по умолчанию</em>, которые будут применены ко ВСЕМ экземплярам классов во время их инициализации методом <a href="./yii-baseyii.html#createObject()-detail">Yii::createObject()</a>. Значения конфигурации по умолчанию указываются с помощью метода <code>Yii::$container-&gt;set()</code> на этапе <a href="guide-runtime-bootstrapping.html">предварительной загрузки</a>.</p>
+<p>Например, если мы хотим изменить виджет <a href="./yii-widgets-linkpager.html">yii\widgets\LinkPager</a> так, чтобы все виджеты данного вида показывали максимум
+5 кнопок на странице вместо 10 (как это установлено изначально), можно использовать следующий код:</p>
+<pre><code class="hljs php language-php">\Yii::$container-&gt;set(<span class="hljs-string">'yii\widgets\LinkPager'</span>, [
+    <span class="hljs-string">'maxButtonCount'</span> =&gt; <span class="hljs-number">5</span>,
+]);
+</code></pre>
+<p>Без использования значений конфигурации по умолчанию, при использовании LinkPager, вам пришлось бы каждый раз
+задавать значение <code>maxButtonCount</code>.</p>
+<h2>Константы окружения  <span id="environment-constants"></span><a href="#environment-constants" class="hashlink">&para;</a></h2><p>Конфигурации могут различаться в зависимости от режима, в котором происходит запуск приложения. Например,
+в окружении разработчика (development) вы используете базу данных <code>mydb_dev</code>, а в эксплуатационном (production) окружении
+базу данных <code>mydb_prod</code>. Для упрощения смены окружений в Yii существует константа <code>YII_ENV</code>.  Вы можете указать её во 
+<a href="guide-structure-entry-scripts.html">входном скрипте</a> своего приложения:</p>
+<pre><code class="hljs php language-php">defined(<span class="hljs-string">'YII_ENV'</span>) <span class="hljs-keyword">or</span> define(<span class="hljs-string">'YII_ENV'</span>, <span class="hljs-string">'dev'</span>);
+</code></pre>
+<p><code>YII_ENV</code> может принимать следующие значения:</p>
+<ul>
+<li><code>prod</code>: окружение production, т.е. эксплуатационный режим сервера. Константа <code>YII_ENV_PROD</code> установлена в <code>true</code>.
+ Значение по умолчанию.</li>
+<li><code>dev</code>: окружение development, т.е. режим для разработки. Константа <code>YII_ENV_DEV</code> установлена в <code>true</code>.</li>
+<li><code>test</code>: окружение testing, т.е. режим для тестирования. Константа <code>YII_ENV_TEST</code> установлена в <code>true</code>.</li>
+</ul>
+<p>Используя эти константы, вы можете задать в конфигурации значения параметров зависящие от текущего окружения.
+Например, чтобы включить <a href="guide-tool-debugger.html">отладочную панель и отладчик</a> в режиме разработки, вы можете использовать
+следующий код в конфигурации приложения: </p>
+<pre><code class="hljs php language-php">$config = [...];
+
+<span class="hljs-keyword">if</span> (YII_ENV_DEV) {
+    <span class="hljs-comment">// значения параметров конфигурации для окружения разработки 'dev'</span>
+    $config[<span class="hljs-string">'bootstrap'</span>][] = <span class="hljs-string">'debug'</span>;
+    $config[<span class="hljs-string">'modules'</span>][<span class="hljs-string">'debug'</span>] = <span class="hljs-string">'yii\debug\Module'</span>;
+}
+
+<span class="hljs-keyword">return</span> $config;
+</code></pre>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 09 Dec 2020 00:16:06 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

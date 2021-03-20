@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/1728b664/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9c5d0894/solarized_light.css" rel="stylesheet">
+<link href="./assets/f2ce5bcd/style.css" rel="stylesheet">
+<script src="./assets/bbf84a7a/jquery.js"></script>
+<script src="./assets/1728b664/js/bootstrap.js"></script>
+<script src="./assets/fd63b446/jssearch.js"></script>    <title>Логирование - Обработка запросов - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w776" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w776-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w776-collapse" class="collapse navbar-collapse"><ul id="w777" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w778" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-760" data-toggle="collapse" data-parent="#navigation">Введение <b class="caret"></b></a><div id="navigation-760" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">О Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Обновление с версии 1.1</a></div>
+<a class="list-group-item" href="#navigation-761" data-toggle="collapse" data-parent="#navigation">Первое знакомство <b class="caret"></b></a><div id="navigation-761" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Установка Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Запуск приложения</a>
+<a class="list-group-item" href="./guide-start-hello.html">Говорим «привет»</a>
+<a class="list-group-item" href="./guide-start-forms.html">Работа с формами</a>
+<a class="list-group-item" href="./guide-start-databases.html">Работа с базами данных</a>
+<a class="list-group-item" href="./guide-start-gii.html">Генерация кода при помощи Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Что дальше?</a></div>
+<a class="list-group-item" href="#navigation-762" data-toggle="collapse" data-parent="#navigation">Структура приложения <b class="caret"></b></a><div id="navigation-762" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Входные скрипты</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Приложения</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Компоненты приложения</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-structure-models.html">Модели</a>
+<a class="list-group-item" href="./guide-structure-views.html">Представления</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Модули</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Фильтры</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Виджеты</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Расширения</a></div>
+<a class="list-group-item active" href="#navigation-763" data-toggle="collapse" data-parent="#navigation">Обработка запросов <b class="caret"></b></a><div id="navigation-763" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-runtime-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Разбор и генерация URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Запросы</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Ответы</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Сессии и куки</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Обработка ошибок</a>
+<a class="list-group-item active" href="./guide-runtime-logging.html">Логирование</a></div>
+<a class="list-group-item" href="#navigation-764" data-toggle="collapse" data-parent="#navigation">Основные понятия <b class="caret"></b></a><div id="navigation-764" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Компоненты</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Свойства</a>
+<a class="list-group-item" href="./guide-concept-events.html">События</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Поведения</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Конфигурации</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Псевдонимы</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Автозагрузка классов</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item" href="#navigation-765" data-toggle="collapse" data-parent="#navigation">Работа с базами данных <b class="caret"></b></a><div id="navigation-765" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Объекты доступа к данным (DAO)</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Построитель запросов</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Миграции</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-ru/README.md">Sphinx</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-redis/blob/master/docs/guide-ru/README.md">Redis</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-ru/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-ru/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-766" data-toggle="collapse" data-parent="#navigation">Получение данных от пользователя <b class="caret"></b></a><div id="navigation-766" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Создание форм</a>
+<a class="list-group-item" href="./guide-input-validation.html">Валидация</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Загрузка файлов</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Табличный ввод</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Работа с несколькими моделями</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">Расширение ActiveForm на стороне клиента</a></div>
+<a class="list-group-item" href="#navigation-767" data-toggle="collapse" data-parent="#navigation">Отображение данных <b class="caret"></b></a><div id="navigation-767" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Форматирование данных</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Постраничная разбивка</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Сортировка</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Провайдеры данных</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Виджеты для данных</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Работа с клиентскими скриптами</a>
+<a class="list-group-item" href="./guide-output-theming.html">Темизация</a></div>
+<a class="list-group-item" href="#navigation-768" data-toggle="collapse" data-parent="#navigation">Безопасность <b class="caret"></b></a><div id="navigation-768" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-security-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Авторизация</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Работа с паролями</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">Криптография</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-ru/README.md">Клиенты авторизации</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Лучшие практики</a></div>
+<a class="list-group-item" href="#navigation-769" data-toggle="collapse" data-parent="#navigation">Кеширование <b class="caret"></b></a><div id="navigation-769" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-caching-data.html">Кэширование данных</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Кэширование фрагментов</a>
+<a class="list-group-item" href="./guide-caching-page.html">Кэширование страниц</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP кэширование</a></div>
+<a class="list-group-item" href="#navigation-770" data-toggle="collapse" data-parent="#navigation">Веб-сервисы REST <b class="caret"></b></a><div id="navigation-770" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Быстрый старт</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Роутинг</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Форматирование ответа</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Ограничение частоты запросов</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Версионирование</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Обработка ошибок</a></div>
+<a class="list-group-item" href="#navigation-771" data-toggle="collapse" data-parent="#navigation">Инструменты разработчика <b class="caret"></b></a><div id="navigation-771" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Отладочная панель и отладчик</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide/README.md">Генерация кода с Gii</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">Генератор документации API</a></div>
+<a class="list-group-item" href="#navigation-772" data-toggle="collapse" data-parent="#navigation">Тестирование <b class="caret"></b></a><div id="navigation-772" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Настройка тестового окружения</a>
+<a class="list-group-item" href="./guide-test-unit.html">Модульные тесты</a>
+<a class="list-group-item" href="./guide-test-functional.html">Функциональные тесты</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Приёмочные тесты</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Фикстуры</a></div>
+<a class="list-group-item" href="#navigation-773" data-toggle="collapse" data-parent="#navigation">Специальные темы <b class="caret"></b></a><div id="navigation-773" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">Шаблон приложения advanced</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Создание приложения с нуля</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Консольные команды</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Встроенные валидаторы</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Интернационализация</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Отправка почты</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Оптимизация производительности</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Окружение виртуального хостинга</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Шаблонизаторы</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Работа со сторонним кодом</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">Использование Yii в качестве микро-framework&#039;а</a></div>
+<a class="list-group-item" href="#navigation-774" data-toggle="collapse" data-parent="#navigation">Виджеты <b class="caret"></b></a><div id="navigation-774" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-ru/README.md">Виджеты Bootstrap</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-ru/README.md">Виджеты Jquery UI</a></div>
+<a class="list-group-item" href="#navigation-775" data-toggle="collapse" data-parent="#navigation">Хелперы <b class="caret"></b></a><div id="navigation-775" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url хелпер</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Логирование <span id="logirovanie"></span><a href="#logirovanie" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#log-messages">Сообщения лога</a></li>
+<li><a href="#log-targets">Цели логов</a></li>
+<li><a href="#performance-profiling">Профилирование производительности</a></li></ol></div>
+<p>Yii предоставляет мощную, гибко настраиваемую и легко расширяемую систему логирования. Эта система логирования позволяет удобным способом сохранять сообщения разных типов и фильтровать их. Сообщения могут быть сохранены в файлы, базы данных или отправлены на email.</p>
+<p>Использование Системы логирования Yii включает следующие шаги:</p>
+<ul>
+<li>Запись <a href="#log-messages">сообщений лога</a> в различных частях кода приложения;</li>
+<li>Настройка <a href="#log-targets">целей лога</a> в конфигурации приложения;</li>
+<li>Изучение отфильтрованных сообщений лога, например, при помощи <a href="guide-tool-debugger.html">Отладчика Yii</a>.</li>
+</ul>
+<p>В данном разделе будем рассматривать первые два шага.</p>
+<h2>Сообщения лога  <span id="log-messages"></span><a href="#log-messages" class="hashlink">&para;</a></h2><p>Запись сообщений лога осуществляется вызовом одного из следующих методов:</p>
+<ul>
+<li><a href="./yii-baseyii.html#debug()-detail">Yii::debug()</a>: записывает сообщения для отслеживания выполнения кода приложения. Используется, в основном, при разработке.</li>
+<li><a href="./yii-baseyii.html#info()-detail">Yii::info()</a>: записывает сообщение, содержащее какую-либо полезную информацию.</li>
+<li><a href="./yii-baseyii.html#warning()-detail">Yii::warning()</a>: записывает <em>тревожное</em> сообщение при возникновении неожиданного события.</li>
+<li><a href="./yii-baseyii.html#error()-detail">Yii::error()</a>: записывает критическую ошибку, на которую нужно, как можно скорее, обратить внимание.</li>
+</ul>
+<p>Эти методы позволяют записывать сообщения разных <em>уровней важности</em> и <em>категорий</em>. Они имеют одинаковое описание функции <code>function ($message, $category = 'application')</code>, где <code>$message</code> передает сообщение для записи, а <code>$category</code> - категорию сообщения. В следующем примере будет записано <em>trace</em> сообщение с категорией по умолчанию <code>application</code>:</p>
+<pre><code class="hljs php language-php">Yii::debug(<span class="hljs-string">'начало вычисления среднего дохода'</span>);
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>Сообщение может быть как строкой, так и объектом или массивом. За корректную работу с содержимым сообщения отвечают <a href="#log-targets">цели лога</a>. По умолчанию, если сообщение не является строкой, оно будет приведено к строковому типу при помощи <a href="./yii-helpers-basevardumper.html#export()-detail">yii\helpers\VarDumper::export()</a>.</p>
+</blockquote>
+<p>Для упрощения работы с сообщениями лога и их фильтрации, рекомендуется явно указывать подходящую категорию для каждого сообщения. Возможно использование иерархической системы именования категорий, что значительно упростит <a href="#log-targets">целям лога</a> фильтрацию сообщений по категориям. Простым и эффективным способом именования категорий является использование магической PHP-константы <code>__METHOD__</code>. Такой подход используется в ядре фреймворка Yii. Например,</p>
+<pre><code class="hljs php language-php">Yii::debug(<span class="hljs-string">'начало вычисления среднего дохода'</span>, <span class="hljs-keyword">__METHOD__</span>);
+</code></pre>
+<p>Константа <code>__METHOD__</code> вычисляется как имя метода (включая полное имя класса), в котором она использована. Например, её значение будет вычислено как <code>'app\controllers\RevenueController::calculate'</code>, если показанный выше код вызывается в соответствующем методе.</p>
+<blockquote class="info"><p><strong>Информация: </strong>методы логирования, описанные выше являются, на самом деле, ярлыками для метода <a href="./yii-log-logger.html#log()-detail">log()</a> <a href="./yii-log-logger.html">объекта логгера</a>, который доступен как синглтон <code>Yii::getLogger()</code>.
+При определенном количестве записанных сообщений или завершении приложения, объект логгера вызывает <a href="./yii-log-dispatcher.html">message dispatcher</a> для отправки записанных сообщений зарегистрированным <a href="#log-targets">целям логов</a>.</p>
+</blockquote>
+<h2>Цели логов  <span id="log-targets"></span><a href="#log-targets" class="hashlink">&para;</a></h2><p>Цель логов - это экземпляр класса <a href="./yii-log-target.html">yii\log\Target</a> или класса, унаследованного от него. Цель фильтрует сообщения логов по уровню важности и категории, а затем выгружает их в соответствующее хранилище. Например, <a href="./yii-log-dbtarget.html">database target</a> выгружает отфильтрованные сообщения логов в таблицу базы данных, а <a href="./yii-log-emailtarget.html">email target</a> отправляет сообщения логов на заданные адреса email.</p>
+<p>При помощи компонента приложения <code>log</code> возможна регистрация нескольких целей логов. Пример конфигурации приложения:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// Компонент "log" должен быть загружен на этапе предзагрузки</span>
+    <span class="hljs-string">'bootstrap'</span> =&gt; [<span class="hljs-string">'log'</span>],
+    <span class="hljs-comment">// Компонент "log" обрабатывает сообщения с меткой времени timestamp.</span>
+    <span class="hljs-comment">// Задайте временную зону для создания корректных меток времени.</span>
+    <span class="hljs-string">'timeZone'</span> =&gt; <span class="hljs-string">'Europe/Moscow'</span>,
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'log'</span> =&gt; [
+            <span class="hljs-string">'targets'</span> =&gt; [
+                [
+                    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\log\DbTarget'</span>,
+                    <span class="hljs-string">'levels'</span> =&gt; [<span class="hljs-string">'error'</span>, <span class="hljs-string">'warning'</span>],
+                ],
+                [
+                    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\log\EmailTarget'</span>,
+                    <span class="hljs-string">'levels'</span> =&gt; [<span class="hljs-string">'error'</span>],
+                    <span class="hljs-string">'categories'</span> =&gt; [<span class="hljs-string">'yii\db\*'</span>],
+                    <span class="hljs-string">'message'</span> =&gt; [
+                       <span class="hljs-string">'from'</span> =&gt; [<span class="hljs-string">'log@example.com'</span>],
+                       <span class="hljs-string">'to'</span> =&gt; [<span class="hljs-string">'admin@example.com'</span>, <span class="hljs-string">'developer@example.com'</span>],
+                       <span class="hljs-string">'subject'</span> =&gt; <span class="hljs-string">'Ошибки базы данных на сайте example.com'</span>,
+                    ],
+                ],
+            ],
+        ],
+    ],
+];
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>Компонент <code>log</code> должен быть загружен в процессе <a href="guide-runtime-bootstrapping.html">предзагрузки</a>, тогда он сможет оперативно передавать сообщения целям логов. Поэтому он указан в массиве <code>bootstrap</code>.</p>
+</blockquote>
+<p>В приведенном выше коде в свойстве <a href="./yii-log-dispatcher.html#$targets-detail">yii\log\Dispatcher::$targets</a> зарегистрированы две цели логов:</p>
+<ul>
+<li>первая цель выбирает ошибки и предупреждения и сохраняет их в базу данных;</li>
+<li>вторая цель выбирает ошибки с категорией, имя которой начинается с <code>yii\db\</code> и шлет сразу на два адреса email <code>admin@example.com</code> и <code>developer@example.com</code>.</li>
+</ul>
+<p>На данный момент, Yii содержит следующие встроенные цели логов. В документации по API подробно описана настройка и использование этих классов.</p>
+<ul>
+<li><a href="./yii-log-dbtarget.html">yii\log\DbTarget</a>: сохраняет сообщения логов в таблицу базы данных.</li>
+<li><a href="./yii-log-emailtarget.html">yii\log\EmailTarget</a>: шлет сообщения логов на заранее указанный email.</li>
+<li><a href="./yii-log-filetarget.html">yii\log\FileTarget</a>: сохраняет сообщения логов в файлы.</li>
+<li><a href="./yii-log-syslogtarget.html">yii\log\SyslogTarget</a>: сохраняет сообщения логов в системный лог используя функцию PHP <code>syslog()</code>.</li>
+</ul>
+<p>Дальше рассмотрим общие для этих четырех классов возможности.</p>
+<h3>Фильтрация сообщений  <span id="message-filtering"></span><a href="#message-filtering" class="hashlink">&para;</a></h3><p>Для каждой цели можно настроить свойства <a href="./yii-log-target.html#$levels-detail">levels</a> и <a href="./yii-log-target.html#$categories-detail">categories</a>, которые указывают уровни важности и категории сообщений логов, которые цель должна обрабатывать.</p>
+<p>Свойство <a href="./yii-log-target.html#$levels-detail">levels</a> принимает массив, содержащий одно или несколько следующих значений:</p>
+<ul>
+<li><code>error</code>: соответствует сообщениям, сохраненным методом <a href="./yii-baseyii.html#error()-detail">Yii::error()</a>.</li>
+<li><code>warning</code>: соответствует сообщениям, сохраненным методом <a href="./yii-baseyii.html#warning()-detail">Yii::warning()</a>.</li>
+<li><code>info</code>: соответствует сообщениям, сохраненным методом <a href="./yii-baseyii.html#info()-detail">Yii::info()</a>.</li>
+<li><code>trace</code>: соответствует сообщениям, сохраненным методом <a href="./yii-baseyii.html#debug()-detail">Yii::debug()</a>.</li>
+<li><code>profile</code>: соответствует сообщениям, сохраненным методами <a href="./yii-baseyii.html#beginProfile()-detail">Yii::beginProfile()</a> и <a href="./yii-baseyii.html#endProfile()-detail">Yii::endProfile()</a>, подробнее о которых написано в подразделе <a href="#performance-profiling">Профилирование производительности</a>.</li>
+</ul>
+<p>Если свойство <a href="./yii-log-target.html#$levels-detail">levels</a> не задано, цель логов будет обрабатывать сообщения с <em>любым</em> уровнем важности.</p>
+<p>Свойство <a href="./yii-log-target.html#$categories-detail">categories</a> принимает массив, содержащий имена категорий или шаблоны.
+Цель будет обрабатывать только те сообщения, категория которых совпадает с одним из значений или шаблонов этого массива. Шаблон категории должен состоять из префикса имени категории и звездочки <code>*</code> на конце. Имя категории совпадает с шаблоном, если оно начинается с префикса шаблона. Например, <code>yii\db\Command::execute</code> и <code>yii\db\Command::query</code> используются в качестве имен категорий сообщений, записанных в классе <a href="./yii-db-command.html">yii\db\Command</a>. Оба они совпадают с шаблоном <code>yii\db\*</code>.</p>
+<p>Если свойство <a href="./yii-log-target.html#$categories-detail">categories</a> не задано, цель будет обрабатывать сообщения любой категории.</p>
+<p>Кроме списка включаемый категорий, заданного свойством <a href="./yii-log-target.html#$categories-detail">categories</a>, при помощи свойства <a href="./yii-log-target.html#$except-detail">except</a> возможно задать список исключаемых категорий. Если категория сообщения совпадает со значением или шаблоном из списка исключаемых категорий, такое сообщение не будет обработано.</p>
+<p>В следующем примере показан вариант конфигурации цели логов, которая должна обрабатывать только сообщения об ошибках и предупреждениях в категориях <code>yii\db\*</code> и <code>yii\web\HttpException:*</code>, за исключением <code>yii\web\HttpException:404</code>.</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\log\FileTarget'</span>,
+    <span class="hljs-string">'levels'</span> =&gt; [<span class="hljs-string">'error'</span>, <span class="hljs-string">'warning'</span>],
+    <span class="hljs-string">'categories'</span> =&gt; [
+        <span class="hljs-string">'yii\db\*'</span>,
+        <span class="hljs-string">'yii\web\HttpException:*'</span>,
+    ],
+    <span class="hljs-string">'except'</span> =&gt; [
+        <span class="hljs-string">'yii\web\HttpException:404'</span>,
+    ],
+]
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>При обработке HTTP-исключения <a href="guide-runtime-handling-errors.html">обработчиком ошибок</a>, сообщение будет сохранено с категорией вида <code>yii\web\HttpException:ErrorCode</code>. Например, исключение <a href="./yii-web-notfoundhttpexception.html">yii\web\NotFoundHttpException</a> вызовет сообщение об ошибке с категорией <code>yii\web\HttpException:404</code>.</p>
+</blockquote>
+<h3>Форматирование сообщений  <span id="message-formatting"></span><a href="#message-formatting" class="hashlink">&para;</a></h3><p>Цели логов выгружают отфильтрованные сообщения в определенном формате. Например, цель класса <a href="./yii-log-filetarget.html">yii\log\FileTarget</a> сохранит сообщение следующего формата в файле <code>runtime/log/app.log</code>:</p>
+<pre><code class="hljs markdown">2014-10-04 18:10:15 [<span class="hljs-string">::1</span>][<span class="hljs-symbol"></span>][<span class="hljs-string">-</span>][<span class="hljs-symbol">trace</span>][<span class="hljs-string">yii\base\Module::getModule</span>] Loading module: debug
+</code></pre>
+<p>По умолчанию сообщения логов форматируются методом <a href="./yii-log-target.html#formatMessage()-detail">yii\log\Target::formatMessage()</a>:</p>
+<pre><code class="hljs markdown">Временная метка [<span class="hljs-string">IP-адрес</span>][<span class="hljs-symbol">ID пользователя</span>][<span class="hljs-string">ID сессии</span>][<span class="hljs-symbol">Уровень важности</span>][<span class="hljs-string">Категория</span>] Текст сообщения
+</code></pre>
+<p>Этот формат может быть изменен при помощи свойства <a href="./yii-log-target.html#$prefix-detail">yii\log\Target::$prefix</a>, которое получает анонимную функцию, возвращающую нужный префикс сообщения. Например, следующий код позволяет настроить вывод идентификатор текущего пользователя в качестве префикса для всех сообщений.</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\log\FileTarget'</span>,
+    <span class="hljs-string">'prefix'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($message)</span> </span>{
+        $user = Yii::$app-&gt;has(<span class="hljs-string">'user'</span>, <span class="hljs-keyword">true</span>) ? Yii::$app-&gt;get(<span class="hljs-string">'user'</span>) : <span class="hljs-keyword">null</span>;
+        $userID = $user ? $user-&gt;getId(<span class="hljs-keyword">false</span>) : <span class="hljs-string">'-'</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"[$userID]"</span>;
+    }
+]
+</code></pre>
+<p>Кроме префиксов сообщений, также возможно добавление общей информации для каждого набора сообщений лога.
+По умолчанию включаются значения следующих глобальных PHP-переменных: <code>$_GET</code>, <code>$_POST</code>, <code>$_FILES</code>, <code>$_COOKIE</code>,
+<code>$_SESSION</code> и <code>$_SERVER</code>. Эта возможность настраивается при помощи свойства <a href="./yii-log-target.html#$logVars-detail">yii\log\Target::$logVars</a>, содержащего массив имен переменных, которые необходимо включить в лог. Например, следующий код позволяет настроить цель логов так, чтобы к сообщениям присоединялось только содержимое переменной <code>$_SERVER</code>.</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\log\FileTarget'</span>,
+    <span class="hljs-string">'logVars'</span> =&gt; [<span class="hljs-string">'_SERVER'</span>],
+]
+</code></pre>
+<p>При задании значением свойства <code>logVars</code> пустого массива, общая информация не будет выводиться.
+Для определения собственного алгоритма подключения общей информации, следует переопределить метод <a href="./yii-log-target.html#getContextMessage()-detail">yii\log\Target::getContextMessage()</a>.</p>
+<h3>Уровень отслеживания выполнения кода  <span id="trace-level"></span><a href="#trace-level" class="hashlink">&para;</a></h3><p>В процессе разработки, часто бывает необходимость видеть источники сообщений. Для этого нужно использовать свойство <a href="./yii-log-dispatcher.html#$traceLevel-detail">traceLevel</a> компонента <code>log</code>. Например,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'bootstrap'</span> =&gt; [<span class="hljs-string">'log'</span>],
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'log'</span> =&gt; [
+            <span class="hljs-string">'traceLevel'</span> =&gt; YII_DEBUG ? <span class="hljs-number">3</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">'targets'</span> =&gt; [...],
+        ],
+    ],
+];
+</code></pre>
+<p>При такой настройке свойство <a href="./yii-log-dispatcher.html#$traceLevel-detail">traceLevel</a> будет равно 3 при <code>YII_DEBUG</code> равном <code>true</code>  и 0 при <code>YII_DEBUG</code> равном <code>false</code>. Это означает, что при включенном <code>YII_DEBUG</code>, каждое сообщение лога будет содержать до трех уровней стека вызовов, а при выключенном <code>YII_DEBUG</code> информация о стеке вызовов не будет включаться в лог.</p>
+<blockquote class="info"><p><strong>Информация: </strong>Получение информации стека вызовов является не простым процессом. Поэтому такую возможность следует использовать только при разработке или отладке приложения.</p>
+</blockquote>
+<h3>Передача на обработку и выгрузка сообщений  <span id="flushing-exporting"></span><a href="#flushing-exporting" class="hashlink">&para;</a></h3><p>Как упоминалось выше, сообщения логов обрабатываются в массиве <a href="./yii-log-logger.html">объектом логгера</a>. Для ограничения объема памяти, занятого этим массивом, при накоплении определенного числа сообщений, логгер передает их на обработку <a href="#log-targets">целям логов</a>. Максимальное количество сообщений определяется свойством <a href="./yii-log-dispatcher.html#$flushInterval-detail">flushInterval</a> компонента <code>log</code>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'bootstrap'</span> =&gt; [<span class="hljs-string">'log'</span>],
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'log'</span> =&gt; [
+            <span class="hljs-string">'flushInterval'</span> =&gt; <span class="hljs-number">100</span>,   <span class="hljs-comment">// по умолчанию 1000</span>
+            <span class="hljs-string">'targets'</span> =&gt; [...],
+        ],
+    ],
+];
+</code></pre>
+<blockquote class="info"><p><strong>Информация: </strong>При завершении приложения, так же происходит передача сообщений на обработку.</p>
+</blockquote>
+<p>После передачи сообщений <a href="./yii-log-logger.html">объектом логгера</a> в <a href="#log-targets">цели логов</a>, сообщения не выгружаются немедленно. Вместо этого, выгрузка сообщений происходит когда цель логов накопит определенное количество фильтрованных сообщений. Максимальное количество сообщений определяется свойством <a href="./yii-log-target.html#$exportInterval-detail">exportInterval</a> <a href="#log-targets">цели логов</a>. Например,</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\log\FileTarget'</span>,
+    <span class="hljs-string">'exportInterval'</span> =&gt; <span class="hljs-number">100</span>,  <span class="hljs-comment">// по умолчанию 1000</span>
+]
+</code></pre>
+<p>Из-за того, что значения максимального количества сообщений для передачи и выгрузки по умолчанию достаточно велико, при вызове метода <code>Yii::debug()</code> или любого другого метода логирования, сообщение не появится сразу в файле или таблице базы данных. Такое поведение может стать проблемой, например, в консольных приложениях с большим временем исполнения. Для того, чтобы все сообщения логов сразу попадали в лог, необходимо установить значения свойств <a href="./yii-log-dispatcher.html#$flushInterval-detail">flushInterval</a> и <a href="./yii-log-target.html#$exportInterval-detail">exportInterval</a> равными 1, например так:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'bootstrap'</span> =&gt; [<span class="hljs-string">'log'</span>],
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'log'</span> =&gt; [
+            <span class="hljs-string">'flushInterval'</span> =&gt; <span class="hljs-number">1</span>,
+            <span class="hljs-string">'targets'</span> =&gt; [
+                [
+                    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\log\FileTarget'</span>,
+                    <span class="hljs-string">'exportInterval'</span> =&gt; <span class="hljs-number">1</span>,
+                ],
+            ],
+        ],
+    ],
+];
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>Частая передача и выгрузка сообщений может сильно снизить производительность приложения.</p>
+</blockquote>
+<h3>Переключение целей логов  <span id="toggling-log-targets"></span><a href="#toggling-log-targets" class="hashlink">&para;</a></h3><p>Свойство <a href="./yii-log-target.html#$enabled-detail">enabled</a> отвечает за включение или отключение цели логов. Возможно управлением этим свойством как в конфигурации приложения, так и при помощи следующего PHP-кода:</p>
+<pre><code class="hljs php language-php">Yii::$app-&gt;log-&gt;targets[<span class="hljs-string">'file'</span>]-&gt;enabled = <span class="hljs-keyword">false</span>;
+</code></pre>
+<p>В данном примере используется цель логов <code>file</code>, которая может быть настроена в конфигурации приложения следующим образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'bootstrap'</span> =&gt; [<span class="hljs-string">'log'</span>],
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'log'</span> =&gt; [
+            <span class="hljs-string">'targets'</span> =&gt; [
+                <span class="hljs-string">'file'</span> =&gt; [
+                    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\log\FileTarget'</span>,
+                ],
+                <span class="hljs-string">'db'</span> =&gt; [
+                    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\log\DbTarget'</span>,
+                ],
+            ],
+        ],
+    ],
+];
+</code></pre>
+<h3>Создание новых целей  <span id="new-targets"></span><a href="#new-targets" class="hashlink">&para;</a></h3><p>Создание новой цели логов не является сложной задачей. В общем случае нужно реализовать метод <a href="./yii-log-target.html#export()-detail">yii\log\Target::export()</a>, выгружающий массив <a href="./yii-log-target.html#$messages-detail">yii\log\Target::$messages</a> в место хранения логов. Возможно использование метода <a href="./yii-log-target.html#formatMessage()-detail">yii\log\Target::formatMessage()</a> для форматирования сообщения. Детали реализации можно подсмотреть в исходном коде любого из классов целей логов, включенных в состав Yii.</p>
+<h2>Профилирование производительности  <span id="performance-profiling"></span><a href="#performance-profiling" class="hashlink">&para;</a></h2><p>Профилирование производительности - это специальный тип сообщений логов, используемый для измерения времени выполнения определенных участков кода и определения проблем производительности. Например, класс <a href="./yii-db-command.html">yii\db\Command</a> использует профилирование производительности для определения времени исполнения каждого запроса базы данных.</p>
+<p>Для использования профилирования производительности нужно определить участок кода для измерения и <em>обернуть</em> его вызовами методов <a href="./yii-baseyii.html#beginProfile()-detail">Yii::beginProfile()</a> и <a href="./yii-baseyii.html#endProfile()-detail">Yii::endProfile()</a>. Например,</p>
+<pre><code class="hljs php language-php">\Yii::beginProfile(<span class="hljs-string">'myBenchmark'</span>);
+
+<span class="hljs-comment">// участок кода для профилирования...</span>
+
+\Yii::endProfile(<span class="hljs-string">'myBenchmark'</span>);
+</code></pre>
+<p>где <code>myBenchmark</code> является уникальным идентификатором данного измеряемого участка кода. 
+В дальнейшем, при изучении результатов профилирования, уникальный идентификатор поможет определить время выполнения соответствующего участка кода.</p>
+<p>Очень важно соблюдать уровни вложенности пар <code>beginProfile</code> и <code>endProfile</code>. Например, </p>
+<pre><code class="hljs php language-php">\Yii::beginProfile(<span class="hljs-string">'block1'</span>);
+
+    <span class="hljs-comment">// код для профилирования</span>
+
+    \Yii::beginProfile(<span class="hljs-string">'block2'</span>);
+        <span class="hljs-comment">// другой код для профилирования</span>
+    \Yii::endProfile(<span class="hljs-string">'block2'</span>);
+
+\Yii::endProfile(<span class="hljs-string">'block1'</span>);
+</code></pre>
+<p>Если пропустить <code>\Yii::endProfile('block1')</code> или поменять местами <code>\Yii::endProfile('block1')</code> и
+<code>\Yii::endProfile('block2')</code>, профилирование производительности не будет работать.</p>
+<p>Для каждого участка кода, будет записано сообщение лога с уровнем важности <code>profile</code>. Для сбора таких сообщений можно настроить <a href="#log-targets">цель логов</a> или воспользоваться <a href="guide-tool-debugger.html">Отладчиком Yii</a>, который имеет встроенную панель профилирования производительности, отображающую результаты измерений.</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 09 Dec 2020 00:16:05 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

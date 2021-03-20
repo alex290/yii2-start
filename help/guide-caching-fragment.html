@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/1728b664/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9c5d0894/solarized_light.css" rel="stylesheet">
+<link href="./assets/f2ce5bcd/style.css" rel="stylesheet">
+<script src="./assets/bbf84a7a/jquery.js"></script>
+<script src="./assets/1728b664/js/bootstrap.js"></script>
+<script src="./assets/fd63b446/jssearch.js"></script>    <title>Кэширование фрагментов - Кеширование - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w263" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w263-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w263-collapse" class="collapse navbar-collapse"><ul id="w264" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w265" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-247" data-toggle="collapse" data-parent="#navigation">Введение <b class="caret"></b></a><div id="navigation-247" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">О Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Обновление с версии 1.1</a></div>
+<a class="list-group-item" href="#navigation-248" data-toggle="collapse" data-parent="#navigation">Первое знакомство <b class="caret"></b></a><div id="navigation-248" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Установка Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Запуск приложения</a>
+<a class="list-group-item" href="./guide-start-hello.html">Говорим «привет»</a>
+<a class="list-group-item" href="./guide-start-forms.html">Работа с формами</a>
+<a class="list-group-item" href="./guide-start-databases.html">Работа с базами данных</a>
+<a class="list-group-item" href="./guide-start-gii.html">Генерация кода при помощи Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Что дальше?</a></div>
+<a class="list-group-item" href="#navigation-249" data-toggle="collapse" data-parent="#navigation">Структура приложения <b class="caret"></b></a><div id="navigation-249" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Входные скрипты</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Приложения</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Компоненты приложения</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-structure-models.html">Модели</a>
+<a class="list-group-item" href="./guide-structure-views.html">Представления</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Модули</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Фильтры</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Виджеты</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Расширения</a></div>
+<a class="list-group-item" href="#navigation-250" data-toggle="collapse" data-parent="#navigation">Обработка запросов <b class="caret"></b></a><div id="navigation-250" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Разбор и генерация URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Запросы</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Ответы</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Сессии и куки</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Обработка ошибок</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Логирование</a></div>
+<a class="list-group-item" href="#navigation-251" data-toggle="collapse" data-parent="#navigation">Основные понятия <b class="caret"></b></a><div id="navigation-251" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Компоненты</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Свойства</a>
+<a class="list-group-item" href="./guide-concept-events.html">События</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Поведения</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Конфигурации</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Псевдонимы</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Автозагрузка классов</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item" href="#navigation-252" data-toggle="collapse" data-parent="#navigation">Работа с базами данных <b class="caret"></b></a><div id="navigation-252" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Объекты доступа к данным (DAO)</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Построитель запросов</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Миграции</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-ru/README.md">Sphinx</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-redis/blob/master/docs/guide-ru/README.md">Redis</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-ru/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-ru/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-253" data-toggle="collapse" data-parent="#navigation">Получение данных от пользователя <b class="caret"></b></a><div id="navigation-253" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Создание форм</a>
+<a class="list-group-item" href="./guide-input-validation.html">Валидация</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Загрузка файлов</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Табличный ввод</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Работа с несколькими моделями</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">Расширение ActiveForm на стороне клиента</a></div>
+<a class="list-group-item" href="#navigation-254" data-toggle="collapse" data-parent="#navigation">Отображение данных <b class="caret"></b></a><div id="navigation-254" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Форматирование данных</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Постраничная разбивка</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Сортировка</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Провайдеры данных</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Виджеты для данных</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Работа с клиентскими скриптами</a>
+<a class="list-group-item" href="./guide-output-theming.html">Темизация</a></div>
+<a class="list-group-item" href="#navigation-255" data-toggle="collapse" data-parent="#navigation">Безопасность <b class="caret"></b></a><div id="navigation-255" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-security-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Авторизация</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Работа с паролями</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">Криптография</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-ru/README.md">Клиенты авторизации</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Лучшие практики</a></div>
+<a class="list-group-item active" href="#navigation-256" data-toggle="collapse" data-parent="#navigation">Кеширование <b class="caret"></b></a><div id="navigation-256" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-caching-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-caching-data.html">Кэширование данных</a>
+<a class="list-group-item active" href="./guide-caching-fragment.html">Кэширование фрагментов</a>
+<a class="list-group-item" href="./guide-caching-page.html">Кэширование страниц</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP кэширование</a></div>
+<a class="list-group-item" href="#navigation-257" data-toggle="collapse" data-parent="#navigation">Веб-сервисы REST <b class="caret"></b></a><div id="navigation-257" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Быстрый старт</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Роутинг</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Форматирование ответа</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Ограничение частоты запросов</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Версионирование</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Обработка ошибок</a></div>
+<a class="list-group-item" href="#navigation-258" data-toggle="collapse" data-parent="#navigation">Инструменты разработчика <b class="caret"></b></a><div id="navigation-258" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Отладочная панель и отладчик</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide/README.md">Генерация кода с Gii</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">Генератор документации API</a></div>
+<a class="list-group-item" href="#navigation-259" data-toggle="collapse" data-parent="#navigation">Тестирование <b class="caret"></b></a><div id="navigation-259" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Настройка тестового окружения</a>
+<a class="list-group-item" href="./guide-test-unit.html">Модульные тесты</a>
+<a class="list-group-item" href="./guide-test-functional.html">Функциональные тесты</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Приёмочные тесты</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Фикстуры</a></div>
+<a class="list-group-item" href="#navigation-260" data-toggle="collapse" data-parent="#navigation">Специальные темы <b class="caret"></b></a><div id="navigation-260" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">Шаблон приложения advanced</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Создание приложения с нуля</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Консольные команды</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Встроенные валидаторы</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Интернационализация</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Отправка почты</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Оптимизация производительности</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Окружение виртуального хостинга</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Шаблонизаторы</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Работа со сторонним кодом</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">Использование Yii в качестве микро-framework&#039;а</a></div>
+<a class="list-group-item" href="#navigation-261" data-toggle="collapse" data-parent="#navigation">Виджеты <b class="caret"></b></a><div id="navigation-261" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-ru/README.md">Виджеты Bootstrap</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-ru/README.md">Виджеты Jquery UI</a></div>
+<a class="list-group-item" href="#navigation-262" data-toggle="collapse" data-parent="#navigation">Хелперы <b class="caret"></b></a><div id="navigation-262" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url хелпер</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Кэширование фрагментов <span id="kesirovanie-fragmentov"></span><a href="#kesirovanie-fragmentov" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#caching-options">Параметры кэширования</a></li>
+<li><a href="#nested-caching">Вложенное кэширование</a></li>
+<li><a href="#dynamic-content">Динамическое содержимое</a></li></ol></div>
+<p>Кэширование фрагментов относится к кэшированию фрагментов страницы. Например, если страница отображает в таблице суммарные годовые продажи, мы можем сохранить эту таблицу в кэше с целью экономии времени, требуемого для создания таблицы при каждом запросе. Кэширование фрагментов основано на <a href="guide-caching-data.html">кэшировании данных</a>.</p>
+<p>Для кэширования фрагментов используйте следующий код в <a href="guide-structure-views.html">представлении</a>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;beginCache($id)) {
+
+    <span class="hljs-comment">// ... здесь создаём содержимое ...</span>
+
+    <span class="hljs-keyword">$this</span>-&gt;endCache();
+}
+</code></pre>
+<p>Таким образом заключите то, что вы хотите закэшировать между вызовом <a href="./yii-base-view.html#beginCache()-detail">beginCache()</a> и
+<a href="./yii-base-view.html#endCache()-detail">endCache()</a>. Если содержимое будет найдено в кэше, <a href="./yii-base-view.html#beginCache()-detail">beginCache()</a>
+отобразит закэшированное содержимое и вернёт <code>false</code>, минуя генерацию содержимого.
+В противном случае будет выполнен код генерации контента и когда будет вызван <a href="./yii-base-view.html#endCache()-detail">endCache()</a>, то сгенерированное содержимое будет записано и сохранено в кэше.</p>
+<p>Так же как и <a href="guide-caching-data.html">кэширование данных</a>, для кэширования фрагментов требуется уникальный идентификатор для определения кэшируемого фрагмента.</p>
+<h2>Параметры кэширования  <span id="caching-options"></span><a href="#caching-options" class="hashlink">&para;</a></h2><p>Вызывая метод <a href="./yii-base-view.html#beginCache()-detail">beginCache()</a>, мы можем передать в качестве второго аргумента массив, содержащий параметры кэширования для управления кэшированием фрагмента. Заглядывая за кулисы, можно увидеть, что этот массив будет использоваться для настройки виджета <a href="./yii-widgets-fragmentcache.html">yii\widgets\FragmentCache</a>, который реализует фактическое кэширование фрагментов.</p>
+<h3>Срок хранения  <span id="duration"></span><a href="#duration" class="hashlink">&para;</a></h3><p>Наверное, наиболее часто используемым параметром является <a href="./yii-widgets-fragmentcache.html#$duration-detail">duration</a>.
+Он определяет какое количество секунд содержимое будет оставаться действительным (корректным). Следующий код помещает фрагмент в кэш не более, чем на час:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;beginCache($id, [<span class="hljs-string">'duration'</span> =&gt; <span class="hljs-number">3600</span>])) {
+
+    <span class="hljs-comment">// ... здесь создаём содержимое ...</span>
+
+    <span class="hljs-keyword">$this</span>-&gt;endCache();
+}
+</code></pre>
+<p>Если мы не установим длительность (срок хранения), она будет равна значению по умолчанию (60 секунд). Это значит, что кэшированное содержимое станет недействительным через 60 секунд.</p>
+<h3>Зависимости  <span id="dependencies"></span><a href="#dependencies" class="hashlink">&para;</a></h3><p>Так же как и <a href="guide-caching-data.html#cache-dependencies">кэширование данных</a>, кэшируемое содержимое фрагмента тоже может иметь зависимости. Например, отображение содержимого сообщения зависит от того, изменено или нет это сообщение.</p>
+<p>Для определения зависимости мы устанавливаем параметр <a href="./yii-widgets-fragmentcache.html#$dependency-detail">dependency</a>, который может быть либо объектом <a href="./yii-caching-dependency.html">yii\caching\Dependency</a>, либо массивом настроек, который может быть использован для создания объекта <a href="./yii-caching-dependency.html">yii\caching\Dependency</a>. Следующий код определяет содержимое фрагмента, зависящее от изменения значения столбца <code>updated_at</code>:</p>
+<pre><code class="hljs php language-php">$dependency = [
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\caching\DbDependency'</span>,
+    <span class="hljs-string">'sql'</span> =&gt; <span class="hljs-string">'SELECT MAX(updated_at) FROM post'</span>,
+];
+
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;beginCache($id, [<span class="hljs-string">'dependency'</span> =&gt; $dependency])) {
+
+    <span class="hljs-comment">// ... здесь создаём содержимое ...</span>
+
+    <span class="hljs-keyword">$this</span>-&gt;endCache();
+}
+</code></pre>
+<h3>Вариации  <span id="variations"></span><a href="#variations" class="hashlink">&para;</a></h3><p>Кэшируемое содержимое может быть изменено в соответствии с некоторыми параметрами. Например, для веб-приложений, поддерживающих несколько языков, одна и та же часть кода может создавать содержимое на нескольких языках. Поэтому у вас может возникнуть желание кэшировать содержимое в зависимости от текущего языка приложения.</p>
+<p>Чтобы задать вариации кэша, установите параметр <a href="./yii-widgets-fragmentcache.html#$variations-detail">variations</a>, который должен быть массивом, содержащим скалярные значения, каждое из которых представляет определенный коэффициент вариации. Например, 
+чтобы кэшировать содержимое в зависимости от языка приложения, вы можете использовать следующий код:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;beginCache($id, [<span class="hljs-string">'variations'</span> =&gt; [Yii::$app-&gt;language]])) {
+
+    <span class="hljs-comment">// ... здесь создаём содержимое ...</span>
+
+    <span class="hljs-keyword">$this</span>-&gt;endCache();
+}
+</code></pre>
+<h3>Переключение кэширования  <span id="toggling-caching"></span><a href="#toggling-caching" class="hashlink">&para;</a></h3><p>Иногда может потребоваться включать кэширование фрагментов только для определённых условий. Например, страницу с формой мы хотим кэшировать только тогда, когда обращение к ней произошло впервые (посредством GET запроса). Любое последующее отображение формы (посредством POST запроса) не должно быть кэшировано, потому что может содержать данные, введённые пользователем. Для этого мы задаём параметр <a href="./yii-widgets-fragmentcache.html#$enabled-detail">enabled</a>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;beginCache($id, [<span class="hljs-string">'enabled'</span> =&gt; Yii::$app-&gt;request-&gt;isGet])) {
+
+    <span class="hljs-comment">// ... здесь создаём содержимое ...</span>
+
+    <span class="hljs-keyword">$this</span>-&gt;endCache();
+}
+</code></pre>
+<h2>Вложенное кэширование  <span id="nested-caching"></span><a href="#nested-caching" class="hashlink">&para;</a></h2><p>Кэширование фрагментов может быть вложенным. Это значит, что кэшируемый фрагмент окружён более крупным фрагментом (содержится в нём), который также кэшируется. Например, комментарии кэшируются во внутреннем фрагменте кэша, и они же кэшируются вместе с содержимым сообщения во внешнем фрагменте кэша. Следующий код демонстрирует как два фрагмента кэша могут быть вложенными:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;beginCache($id1)) {
+
+    <span class="hljs-comment">// ...логика создания контента...</span>
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;beginCache($id2, $options2)) {
+
+        <span class="hljs-comment">// ...логика создания контента...</span>
+
+        <span class="hljs-keyword">$this</span>-&gt;endCache();
+    }
+
+    <span class="hljs-comment">// ...логика создания контента...</span>
+
+    <span class="hljs-keyword">$this</span>-&gt;endCache();
+}
+</code></pre>
+<p>Параметры кэширования могут быть различными для вложенных кэшей. Например, внутренний и внешний кэши в вышеприведённом примере могут иметь разные сроки хранения. Даже когда данные внешнего кэша уже не являются актуальными, внутренний кэш может содержать актуальный фрагмент. Тем не менее, обратное не верно. Если внешний кэш актуален, данные будут отдаваться из него даже если внутренний кэш содержит устаревшие данные. Следует проявлять осторожность при выставлении срока хранения и задания зависимостей для вложенных кэшей. В противном случае вы можете получить устаревшие данные.</p>
+<h2>Динамическое содержимое  <span id="dynamic-content"></span><a href="#dynamic-content" class="hashlink">&para;</a></h2><p>Когда используется кэширование фрагментов, вы можете столкнуться с ситуацией когда большой фрагмент содержимого статичен за исключением одного или нескольких мест. Например, заголовок страницы может отображаться в главном меню вместе с 
+именем текущего пользователя. Еще одна проблема в том, что содержимое, которое было закэшировано, может содержать PHP код, который должен выполняться для каждого запроса (например код для регистрации в asset bundle). Обе проблемы могут быть решены с помощью, так называемой функции <em>динамического содержимого</em>.</p>
+<p>Динамическое содержимое значит, что часть вывода не будет закэширована даже если она заключена в кэширование фрагментов. Чтобы сделать содержимое динамическим постоянно, оно должно быть создано, используя специальный PHP код.</p>
+<p>Вы можете вызвать <a href="./yii-base-view.html#renderDynamic()-detail">yii\base\View::renderDynamic()</a> в пределах кэширования фрагмента для вставки динамического содержимого 
+в нужное место, как в примере ниже:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;beginCache($id1)) {
+
+    <span class="hljs-comment">// ...логика создания контента...</span>
+
+    <span class="hljs-keyword">echo</span> <span class="hljs-keyword">$this</span>-&gt;renderDynamic(<span class="hljs-string">'return Yii::$app-&gt;user-&gt;identity-&gt;name;'</span>);
+
+    <span class="hljs-comment">// ...логика создания контента...</span>
+
+    <span class="hljs-keyword">$this</span>-&gt;endCache();
+}
+</code></pre>
+<p>Метод <a href="./yii-base-view.html#renderDynamic()-detail">renderDynamic()</a> принимает некоторую часть PHP кода как параметр.
+Возвращаемое значение этого кода будет вставлено в динамическое содержимое. Этот PHP код будет выполняться для каждого запроса, независимо от того находится ли он внутри кэширования фрагмента или нет.</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 09 Dec 2020 00:16:03 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

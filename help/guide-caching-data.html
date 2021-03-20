@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/1728b664/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9c5d0894/solarized_light.css" rel="stylesheet">
+<link href="./assets/f2ce5bcd/style.css" rel="stylesheet">
+<script src="./assets/bbf84a7a/jquery.js"></script>
+<script src="./assets/1728b664/js/bootstrap.js"></script>
+<script src="./assets/fd63b446/jssearch.js"></script>    <title>Кэширование данных - Кеширование - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w168" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w168-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w168-collapse" class="collapse navbar-collapse"><ul id="w169" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w170" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-152" data-toggle="collapse" data-parent="#navigation">Введение <b class="caret"></b></a><div id="navigation-152" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">О Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Обновление с версии 1.1</a></div>
+<a class="list-group-item" href="#navigation-153" data-toggle="collapse" data-parent="#navigation">Первое знакомство <b class="caret"></b></a><div id="navigation-153" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Установка Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Запуск приложения</a>
+<a class="list-group-item" href="./guide-start-hello.html">Говорим «привет»</a>
+<a class="list-group-item" href="./guide-start-forms.html">Работа с формами</a>
+<a class="list-group-item" href="./guide-start-databases.html">Работа с базами данных</a>
+<a class="list-group-item" href="./guide-start-gii.html">Генерация кода при помощи Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Что дальше?</a></div>
+<a class="list-group-item" href="#navigation-154" data-toggle="collapse" data-parent="#navigation">Структура приложения <b class="caret"></b></a><div id="navigation-154" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Входные скрипты</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Приложения</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Компоненты приложения</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-structure-models.html">Модели</a>
+<a class="list-group-item" href="./guide-structure-views.html">Представления</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Модули</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Фильтры</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Виджеты</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Расширения</a></div>
+<a class="list-group-item" href="#navigation-155" data-toggle="collapse" data-parent="#navigation">Обработка запросов <b class="caret"></b></a><div id="navigation-155" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Разбор и генерация URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Запросы</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Ответы</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Сессии и куки</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Обработка ошибок</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Логирование</a></div>
+<a class="list-group-item" href="#navigation-156" data-toggle="collapse" data-parent="#navigation">Основные понятия <b class="caret"></b></a><div id="navigation-156" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Компоненты</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Свойства</a>
+<a class="list-group-item" href="./guide-concept-events.html">События</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Поведения</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Конфигурации</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Псевдонимы</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Автозагрузка классов</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item" href="#navigation-157" data-toggle="collapse" data-parent="#navigation">Работа с базами данных <b class="caret"></b></a><div id="navigation-157" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Объекты доступа к данным (DAO)</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Построитель запросов</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Миграции</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-ru/README.md">Sphinx</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-redis/blob/master/docs/guide-ru/README.md">Redis</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-ru/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-ru/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-158" data-toggle="collapse" data-parent="#navigation">Получение данных от пользователя <b class="caret"></b></a><div id="navigation-158" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Создание форм</a>
+<a class="list-group-item" href="./guide-input-validation.html">Валидация</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Загрузка файлов</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Табличный ввод</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Работа с несколькими моделями</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">Расширение ActiveForm на стороне клиента</a></div>
+<a class="list-group-item" href="#navigation-159" data-toggle="collapse" data-parent="#navigation">Отображение данных <b class="caret"></b></a><div id="navigation-159" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Форматирование данных</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Постраничная разбивка</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Сортировка</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Провайдеры данных</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Виджеты для данных</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Работа с клиентскими скриптами</a>
+<a class="list-group-item" href="./guide-output-theming.html">Темизация</a></div>
+<a class="list-group-item" href="#navigation-160" data-toggle="collapse" data-parent="#navigation">Безопасность <b class="caret"></b></a><div id="navigation-160" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-security-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Авторизация</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Работа с паролями</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">Криптография</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-ru/README.md">Клиенты авторизации</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Лучшие практики</a></div>
+<a class="list-group-item active" href="#navigation-161" data-toggle="collapse" data-parent="#navigation">Кеширование <b class="caret"></b></a><div id="navigation-161" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-caching-overview.html">Обзор</a>
+<a class="list-group-item active" href="./guide-caching-data.html">Кэширование данных</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Кэширование фрагментов</a>
+<a class="list-group-item" href="./guide-caching-page.html">Кэширование страниц</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP кэширование</a></div>
+<a class="list-group-item" href="#navigation-162" data-toggle="collapse" data-parent="#navigation">Веб-сервисы REST <b class="caret"></b></a><div id="navigation-162" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Быстрый старт</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Роутинг</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Форматирование ответа</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Ограничение частоты запросов</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Версионирование</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Обработка ошибок</a></div>
+<a class="list-group-item" href="#navigation-163" data-toggle="collapse" data-parent="#navigation">Инструменты разработчика <b class="caret"></b></a><div id="navigation-163" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Отладочная панель и отладчик</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide/README.md">Генерация кода с Gii</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">Генератор документации API</a></div>
+<a class="list-group-item" href="#navigation-164" data-toggle="collapse" data-parent="#navigation">Тестирование <b class="caret"></b></a><div id="navigation-164" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Настройка тестового окружения</a>
+<a class="list-group-item" href="./guide-test-unit.html">Модульные тесты</a>
+<a class="list-group-item" href="./guide-test-functional.html">Функциональные тесты</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Приёмочные тесты</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Фикстуры</a></div>
+<a class="list-group-item" href="#navigation-165" data-toggle="collapse" data-parent="#navigation">Специальные темы <b class="caret"></b></a><div id="navigation-165" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">Шаблон приложения advanced</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Создание приложения с нуля</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Консольные команды</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Встроенные валидаторы</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Интернационализация</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Отправка почты</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Оптимизация производительности</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Окружение виртуального хостинга</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Шаблонизаторы</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Работа со сторонним кодом</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">Использование Yii в качестве микро-framework&#039;а</a></div>
+<a class="list-group-item" href="#navigation-166" data-toggle="collapse" data-parent="#navigation">Виджеты <b class="caret"></b></a><div id="navigation-166" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-ru/README.md">Виджеты Bootstrap</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-ru/README.md">Виджеты Jquery UI</a></div>
+<a class="list-group-item" href="#navigation-167" data-toggle="collapse" data-parent="#navigation">Хелперы <b class="caret"></b></a><div id="navigation-167" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url хелпер</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Кэширование данных <span id="kesirovanie-dannyh"></span><a href="#kesirovanie-dannyh" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#cache-components">Компоненты кэширования</a></li>
+<li><a href="#cache-apis">Кэш API,</a></li>
+<li><a href="#query-caching">Кэширование запросов</a></li></ol></div>
+<p>Кэширование данных заключается в сохранении некоторой переменной PHP в кэше и её последующем извлечении. Оно является основой для расширенных возможностей, таких как <a href="#query-caching">кэширование запросов</a>
+и <a href="guide-caching-page.html">кэширование страниц</a>.</p>
+<p>Приведённый ниже код является типичным случаем кэширования данных, где <code>$cache</code> указывает на <a href="#cache-components">компонент кэширования</a>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// Пробуем извлечь $data из кэша.</span>
+$data = $cache-&gt;get($key);
+
+<span class="hljs-keyword">if</span> ($data === <span class="hljs-keyword">false</span>) {
+    <span class="hljs-comment">// $data нет в кэше, вычисляем заново</span>
+    $data = <span class="hljs-keyword">$this</span>-&gt;calculateSomething();
+
+    <span class="hljs-comment">// Сохраняем значение $data в кэше. Данные можно получить в следующий раз.</span>
+    $cache-&gt;set($key, $data);
+}
+
+<span class="hljs-comment">// Значение $data доступно здесь.</span>
+</code></pre>
+<p>Начиная с версии 2.0.11, <a href="#cache-components">компонент кэширования</a> предоставляет метод
+<a href="./yii-caching-cache.html#getOrSet()-detail">getOrSet()</a>, который упрощает код при получении, вычислении и сохранении данных.
+Приведённый ниже код делает в точности то же самое, что и код в предыдущем примере:</p>
+<pre><code class="hljs php language-php">$data = $cache-&gt;getOrSet($key, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;calculateSomething();
+});
+</code></pre>
+<p>Если в кэше есть данные по ключу <code>$key</code>, они будут сразу возвращены. 
+Иначе, будет вызвана переданная анонимная функция, вычисляющая значение, которое будет сохранено в кэш и возвращено
+из метода.</p>
+<p>В случае, когда анонимной функции требуются данные из внешней области видимости, можно передать их с помощью
+оператора <code>use</code>. Например:</p>
+<pre><code class="hljs php language-php">$user_id = <span class="hljs-number">42</span>;
+$data = $cache-&gt;getOrSet($key, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> <span class="hljs-title">use</span> <span class="hljs-params">($user_id)</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;calculateSomething($user_id);
+});
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>В <a href="./yii-caching-cache.html#getOrSet()-detail">getOrSet()</a> можно передать срок действия и зависимости кэша.
+  Прочтите <a href="#cache-expiration">Срок действия кэша</a> и <a href="#cache-dependencies">Зависимости кеша</a> чтобы узнать больше.</p>
+</blockquote>
+<h2>Компоненты кэширования  <span id="cache-components"></span><a href="#cache-components" class="hashlink">&para;</a></h2><p>Кэширование данных опирается на <em>компоненты кэширования</em>, которые представляют различные хранилища, такие как память, файлы и базы данных.</p>
+<p>Кэш-компоненты, как правило, зарегистрированы в качестве <a href="guide-structure-application-components.html">компонентов приложения</a>, так что их можно настраивать и обращаться к ним глобально. Следующий код показывает, как настроить компонент приложения <code>cache</code> для использования <a href="http://memcached.org/">Memcached</a> с двумя серверами:</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'components'</span> =&gt; [
+    <span class="hljs-string">'cache'</span> =&gt; [
+        <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\caching\MemCache'</span>,
+        <span class="hljs-string">'servers'</span> =&gt; [
+            [
+                <span class="hljs-string">'host'</span> =&gt; <span class="hljs-string">'server1'</span>,
+                <span class="hljs-string">'port'</span> =&gt; <span class="hljs-number">11211</span>,
+                <span class="hljs-string">'weight'</span> =&gt; <span class="hljs-number">100</span>,
+            ],
+            [
+                <span class="hljs-string">'host'</span> =&gt; <span class="hljs-string">'server2'</span>,
+                <span class="hljs-string">'port'</span> =&gt; <span class="hljs-number">11211</span>,
+                <span class="hljs-string">'weight'</span> =&gt; <span class="hljs-number">50</span>,
+            ],
+        ],
+    ],
+],
+</code></pre>
+<p>Вы можете получить доступ к компоненту кэша, используя выражение <code>Yii::$app-&gt;cache</code>.</p>
+<p>Поскольку все компоненты кэша поддерживают единый API-интерфейс - вы можете менять основной компонент кэша на другой через конфигурацию приложения. Код, использующий кэш, при этом не меняется. Например, можно изменить конфигурацию выше для использования <a href="./yii-caching-apccache.html">APC cache</a> следующим образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'components'</span> =&gt; [
+    <span class="hljs-string">'cache'</span> =&gt; [
+        <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\caching\ApcCache'</span>,
+    ],
+],
+</code></pre>
+<blockquote class="tip"><p><strong>Подсказка: </strong>Вы можете зарегистрировать несколько кэш-компонентов приложения. Компонент с именем <code>cache</code> используется по умолчанию многими классами (например, <a href="./yii-web-urlmanager.html">yii\web\UrlManager</a>).</p>
+</blockquote>
+<h3>Поддерживаемые хранилища  <span id="supported-cache-storage"></span><a href="#supported-cache-storage" class="hashlink">&para;</a></h3><p>Yii поддерживает множество хранилищ кэша:</p>
+<ul>
+<li><a href="./yii-caching-apccache.html">yii\caching\ApcCache</a>: использует расширение PHP <a href="https://secure.php.net/manual/en/book.apc.php">APC</a>. Эта опция считается самой быстрой при работе с кэшем в «толстом» централизованном приложении (т.е. один сервер, без выделенного балансировщика нагрузки и т.д.);</li>
+<li><a href="./yii-caching-dbcache.html">yii\caching\DbCache</a>: использует таблицу базы данных для хранения кэшированных данных. Чтобы использовать этот кэш, вы должны создать таблицу так, как это описано в <a href="./yii-caching-dbcache.html#$cacheTable-detail">yii\caching\DbCache::$cacheTable</a>;</li>
+<li><a href="./yii-caching-dummycache.html">yii\caching\DummyCache</a>: является кэшем-пустышкой, не реализующим реального кэширования. Смысл этого компонента в упрощении кода, проверяющего наличие кэша. Вы можете использовать данный тип кэша и переключиться на реальное кэширование позже. Примеры: использование при разработке; если сервер не поддерживает кэш. Для извлечения данных в этом случае используется один и тот же код <code>Yii::$app-&gt;cache-&gt;get($key)</code>. При этом можно не беспокоиться, что <code>Yii::$app-&gt;cache</code> может быть <code>null</code>;</li>
+<li><a href="./yii-caching-filecache.html">yii\caching\FileCache</a>: использует обычные файлы для хранения кэшированных данных. Замечательно подходит для кэширования больших кусков данных, таких как содержимое страницы;</li>
+<li><a href="./yii-caching-memcache.html">yii\caching\MemCache</a>: использует расширения PHP <a href="https://secure.php.net/manual/en/book.memcache.php">memcache</a> и <a href="https://secure.php.net/manual/en/book.memcached.php">memcached</a>. Этот вариант может рассматриваться как самый быстрый при работе в распределенных приложениях (например, с несколькими серверами, балансировкой нагрузки и так далее);</li>
+<li><a href="./yii-redis-cache.html">yii\redis\Cache</a>: реализует компонент кэша на основе <a href="http://redis.io/">Redis</a>, хранилища ключ-значение (требуется Redis версии 2.6.12 или выше);</li>
+<li><a href="./yii-caching-wincache.html">yii\caching\WinCache</a>: использует расширение PHP <a href="http://iis.net/downloads/microsoft/wincache-extension">WinCache</a> (<a href="https://secure.php.net/manual/en/book.wincache.php">смотрите также</a>);</li>
+<li><a href="./yii-caching-xcache.html">yii\caching\XCache</a> <em>(deprecated)</em>: использует расширение PHP <a href="http://xcache.lighttpd.net/">XCache</a>;</li>
+<li><a href="./yii-caching-zenddatacache.html">yii\caching\ZendDataCache</a> <em>(deprecated)</em>: использует <a href="http://files.zend.com/help/Zend-Server-6/zend-server.htm#data_cache_component.htm">Zend Data Cache</a>.</li>
+</ul>
+<blockquote class="tip"><p><strong>Подсказка: </strong>Вы можете использовать разные способы хранения кэша в одном приложении. Общая стратегия заключается в использовании памяти под хранение небольших часто используемых данных (например, статистические данные). Для больших и реже используемых данных (например, содержимое страницы) лучше использовать файлы или базу данных.</p>
+</blockquote>
+<h2>Кэш API,  <span id="cache-apis"></span><a href="#cache-apis" class="hashlink">&para;</a></h2><p>У всех компонентов кэша имеется один базовый класс <a href="./yii-caching-cache.html">yii\caching\Cache</a> со следующими методами:</p>
+<ul>
+<li><a href="./yii-caching-cache.html#get()-detail">get()</a>: возвращает данные по указанному ключу. Если данные не найдены или устарели, то
+значение <code>false</code> будет возвращено;</li>
+<li><a href="./yii-caching-cache.html#set()-detail">set()</a>: сохраняет данные по ключу;</li>
+<li><a href="./yii-caching-cache.html#add()-detail">add()</a>: сохраняет данные по ключу если такого ключа ещё нет;</li>
+<li><a href="./yii-caching-cache.html#getOrSet()-detail">getOrSet()</a>: возвращает данные по указанному ключу или выполняет переданную
+анонимную функцию для вычисления значения, а полученные данные сохраняет в кэш и возвращает;  </li>
+<li><a href="./yii-caching-cache.html#multiGet()-detail">multiGet()</a>: извлекает сразу несколько элементов данных из кэша по заданным ключам;</li>
+<li><a href="./yii-caching-cache.html#multiSet()-detail">multiSet()</a>: сохраняет несколько элементов данных. Каждый элемент идентифицируется ключом;</li>
+<li><a href="./yii-caching-cache.html#multiAdd()-detail">multiAdd()</a>: сохраняет несколько элементов данных. Каждый элемент идентифицируется ключом.
+Если ключ уже существует, то сохранения не происходит;</li>
+<li><a href="./yii-caching-cache.html#exists()-detail">exists()</a>: есть ли указанный ключ в кэше;</li>
+<li><a href="./yii-caching-cache.html#delete()-detail">delete()</a>: удаляет указанный ключ;</li>
+<li><a href="./yii-caching-cache.html#flush()-detail">flush()</a>: удаляет все данные.</li>
+</ul>
+<blockquote class="note"><p><strong>Примечание: </strong>Не кэшируйте непосредственно значение <code>false</code>, потому что <a href="./yii-caching-cache.html#get()-detail">get()</a> использует
+<code>false</code> для случая, когда данные не найдены в кэше. Вы можете обернуть <code>false</code> в массив и закэшировать его, чтобы
+избежать данной проблемы.</p>
+</blockquote>
+<p>Некоторые кэш-хранилища, например, MemCache или APC, поддерживают получение нескольких значений в пакетном режиме, что
+может сократить накладные расходы на получение данных. Данную возможность возможно использовать при помощи
+<a href="./yii-caching-cache.html#multiGet()-detail">multiGet()</a> и <a href="./yii-caching-cache.html#multiAdd()-detail">multiAdd()</a>. В случае, если хранилище
+не поддерживает эту функцию, она будет имитироваться.</p>
+<p>Так как <a href="./yii-caching-cache.html">yii\caching\Cache</a> реализует <code>ArrayAccess</code> - следовательно компонент кэша можно использовать как массив:</p>
+<pre><code class="hljs php language-php">$cache[<span class="hljs-string">'var1'</span>] = $value1;  <span class="hljs-comment">// эквивалентно: $cache-&gt;set('var1', $value1);</span>
+$value2 = $cache[<span class="hljs-string">'var2'</span>];  <span class="hljs-comment">// эквивалентно: $value2 = $cache-&gt;get('var2');</span>
+</code></pre>
+<h3>Ключи кэша  <span id="cache-keys"></span><a href="#cache-keys" class="hashlink">&para;</a></h3><p>Каждый элемент данных, хранящийся в кэше, идентифицируется ключом. Когда вы сохраняете элемент данных в кэше, необходимо указать для него ключ. Позже, когда вы извлекаете элемент данных из кэша, вы также должны предоставить соответствующий ключ.</p>
+<p>Вы можете использовать строку или произвольное значение в качестве ключа кэша. Если ключ не строка, то он будет автоматически сериализован в строку.</p>
+<p>Обычно ключ задаётся массивом всех значимых частей. Например, для хранения информации о таблице в <a href="./yii-db-schema.html">yii\db\Schema</a> используются следующие части для ключа:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-keyword">__CLASS__</span>,              <span class="hljs-comment">// Название класса схемы.</span>
+    <span class="hljs-keyword">$this</span>-&gt;db-&gt;dsn,         <span class="hljs-comment">// Данные для соединения с базой.</span>
+    <span class="hljs-keyword">$this</span>-&gt;db-&gt;username,    <span class="hljs-comment">// Логин для соединения с базой.</span>
+    $name,                  <span class="hljs-comment">// Название таблицы.</span>
+];
+</code></pre>
+<p>Как вы можете видеть, ключ строится так, чтобы однозначно идентифицировать данные таблицы.</p>
+<p>Если одно хранилище кэша используется несколькими приложениями, стоит указать префикс ключа во избежание конфликтов. Сделать это можно путём настройки <a href="./yii-caching-cache.html#$keyPrefix-detail">yii\caching\Cache::$keyPrefix</a>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'components'</span> =&gt; [
+    <span class="hljs-string">'cache'</span> =&gt; [
+        <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\caching\ApcCache'</span>,
+        <span class="hljs-string">'keyPrefix'</span> =&gt; <span class="hljs-string">'myapp'</span>, <span class="hljs-comment">// уникальный префикс ключей кэша</span>
+    ],
+],
+</code></pre>
+<p>Для обеспечения совместимости должны быть использованы только алфавитно-цифровые символы.</p>
+<h3>Срок действия кэша  <span id="cache-expiration"></span><a href="#cache-expiration" class="hashlink">&para;</a></h3><p>Элементы данных, хранимые в кэше, остаются там навсегда и могут быть удалены только из-за особенностей функционирования хранилища (например, место для кэширования заполнено и старые данные удаляются). Чтобы изменить этот режим, вы можете передать истечение срока действия ключа при вызове метода <a href="./yii-caching-cache.html#set()-detail">set()</a>. Параметр указывает на то,  сколько секунд элемент кэша может считаться актуальным. Если срок годности ключа истёк, <a href="./yii-caching-cache.html#get()-detail">get()</a> вернёт <code>false</code>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// Хранить данные в кэше не более 45 секунд</span>
+$cache-&gt;set($key, $data, <span class="hljs-number">45</span>);
+
+sleep(<span class="hljs-number">50</span>);
+
+$data = $cache-&gt;get($key);
+<span class="hljs-keyword">if</span> ($data === <span class="hljs-keyword">false</span>) {
+    <span class="hljs-comment">// срок действия истек или ключ не найден в кэше</span>
+}
+</code></pre>
+<p>Начиная с версии 2.0.11 вы можете изменить значение по умолчанию (бесконечность) для длительности кэширования задав
+<a href="./yii-caching-cache.html#$defaultDuration-detail">defaultDuration</a> в конфигурации компонента кэша. Таким образом, можно будет
+не передавать значение <code>duration</code> в <a href="./yii-caching-cache.html#set()-detail">set()</a> каждый раз.</p>
+<h3>Зависимости кэша  <span id="cache-dependencies"></span><a href="#cache-dependencies" class="hashlink">&para;</a></h3><p>В добавок к изменению срока действия ключа элемент может быть признан недействительным из-за <em>изменения зависимостей</em>. К примеру, <a href="./yii-caching-filedependency.html">yii\caching\FileDependency</a> представляет собой зависимость от времени изменения файла. Когда это время изменяется, любые устаревшие данные, найденные в кэше, должны быть признаны недействительным, а <a href="./yii-caching-cache.html#get()-detail">get()</a> в этом случае должен вернуть <code>false</code>. </p>
+<p>Зависимости кэша представлены в виде объектов потомков класса <a href="./yii-caching-dependency.html">yii\caching\Dependency</a>. Когда вы вызываете <a href="./yii-caching-cache.html#set()-detail">set()</a> метод, чтобы сохранить элемент данных в кэше, вы можете передать туда зависимость.</p>
+<p>Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// Создать зависимость от времени модификации файла example.txt.</span>
+$dependency = <span class="hljs-keyword">new</span> \yii\caching\FileDependency([<span class="hljs-string">'fileName'</span> =&gt; <span class="hljs-string">'example.txt'</span>]);
+
+<span class="hljs-comment">// Данные устаревают через 30 секунд.</span>
+<span class="hljs-comment">// Данные могут устареть и раньше, если example.txt будет изменён.</span>
+$cache-&gt;set($key, $data, <span class="hljs-number">30</span>, $dependency);
+
+<span class="hljs-comment">// Кэш будет проверен, если данные устарели.</span>
+<span class="hljs-comment">// Он также будет проверен, если указанная зависимость была изменена.</span>
+<span class="hljs-comment">// Вернется `false`, если какое-либо из этих условий выполнено.</span>
+$data = $cache-&gt;get($key);
+</code></pre>
+<p>Ниже приведен список доступных зависимостей кэша:</p>
+<ul>
+<li><a href="./yii-caching-chaineddependency.html">yii\caching\ChainedDependency</a>: зависимость меняется, если любая зависимость в цепочке изменяется;</li>
+<li><a href="./yii-caching-dbdependency.html">yii\caching\DbDependency</a>: зависимость меняется, если результат некоторого определенного SQL запроса изменён;</li>
+<li><a href="./yii-caching-expressiondependency.html">yii\caching\ExpressionDependency</a>: зависимость меняется, если результат определенного PHP выражения изменён;</li>
+<li><a href="./yii-caching-filedependency.html">yii\caching\FileDependency</a>: зависимость меняется, если изменилось время последней модификации файла;</li>
+<li><a href="./yii-caching-tagdependency.html">yii\caching\TagDependency</a>: Связывает кэшированные данные элемента с одним или несколькими тегами. Вы можете аннулировать кэширование данных элементов с заданным тегом(тегами) по вызову. <a href="./yii-caching-tagdependency.html#invalidate()-detail">yii\caching\TagDependency::invalidate()</a>;</li>
+</ul>
+<h2>Кэширование запросов  <span id="query-caching"></span><a href="#query-caching" class="hashlink">&para;</a></h2><p>Кэширование запросов - это специальная функция, построенная на основе кэширования данных.
+Она предназначена для кэширования результатов запросов к базе данных.</p>
+<p>Кэширование запросов требует <a href="./yii-db-connection.html">DB connection</a> действительный <code>cache</code> компонента приложения. Предпологая, что <code>$db</code> это <a href="./yii-db-connection.html">yii\db\Connection</a> экземпляр, простое использование запросов кэширования происходит следующим образом:</p>
+<pre><code class="hljs php language-php">$result = $db-&gt;cache(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($db)</span> </span>{
+
+    <span class="hljs-comment">// Результат SQL запроса будет возвращен из кэша если</span>
+    <span class="hljs-comment">// кэширование запросов включено и результат запроса присутствует в кэше</span>
+    <span class="hljs-keyword">return</span> $db-&gt;createCommand(<span class="hljs-string">'SELECT * FROM customer WHERE id=1'</span>)-&gt;queryOne();
+
+});
+</code></pre>
+<p>Кэширование запросов может быть использовано как для <a href="guide-db-dao.html">DAO</a>, так и для <a href="guide-db-active-record.html">ActiveRecord</a>:</p>
+<pre><code class="hljs php language-php">$result = Customer::getDb()-&gt;cache(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($db)</span> </span>{
+    <span class="hljs-keyword">return</span> Customer::find()-&gt;where([<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">1</span>])-&gt;one();
+});
+</code></pre>
+<blockquote class="info"><p><strong>Информация: </strong>Некоторые СУБД (например, <a href="http://dev.mysql.com/doc/refman/5.1/en/query-cache.html">MySQL</a>) поддерживают кэширование запросов любого механизма на стороне сервера БД. КЗ описано разделом выше. Оно имеет безусловное преимущество, поскольку, благодаря ему, можно указать гибкие зависимости кэша и это более эффективно.</p>
+</blockquote>
+<h3>Очистка кэша <span id="cache-flushing"> <span id="ocistka-kesa"></span><a href="#ocistka-kesa" class="hashlink">&para;</a></h3><p>Для очистки всего кэша, вы можете вызвать <a href="./yii-caching-cache.html#flush()-detail">yii\caching\Cache::flush()</a>.</p>
+<p>Также вы можете очистить кэш из консоли, вызвав <code>yii cache/flush</code>.</p>
+<ul>
+<li><code>yii cache</code>: отображает список доступных кэширующих компонентов приложения</li>
+<li><code>yii cache/flush cache1 cache2</code>: очищает кэш в компонентах <code>cache1</code>, <code>cache2</code> (можно передать несколько названий
+ компонентов кэширования, разделяя их пробелом)</li>
+<li><code>yii cache/flush-all</code>: очищает кэш во всех кэширующих компонентах приложения</li>
+<li><code>yii cache/flush-schema db</code>: очищает кеш схемы базы данных для данного компонента соединения</li>
+</ul>
+<blockquote class="info"><p><strong>Информация: </strong>Консольное приложение использует отдельный конфигурационный файл по умолчанию. Для получения должного
+результата, убедитесь, что в конфигурациях консольного и веб-приложения у вас одинаковые компоненты кэширования.</p>
+</blockquote>
+<h3>Конфигурации  <span id="query-caching-configs"></span><a href="#query-caching-configs" class="hashlink">&para;</a></h3><p>Кэширование запросов имеет три глобальных конфигурационных параметра через <a href="./yii-db-connection.html">yii\db\Connection</a>:</p>
+<ul>
+<li><a href="./yii-db-connection.html#$enableQueryCache-detail">enableQueryCache</a>: включить или выключить кэширование запросов; По умолчанию <code>true</code>. Стоит отметить, что для использования кэширования вам может понадобиться компонент cache, как показано в <a href="./yii-db-connection.html#$queryCache-detail">queryCache</a>;</li>
+<li><a href="./yii-db-connection.html#$queryCacheDuration-detail">queryCacheDuration</a>: количество секунд кэширования результата. Для бесконечного кэша используйте <code>0</code>. Именно это значение выставляется <a href="./yii-db-connection.html#cache()-detail">yii\db\Connection::cache()</a>, если не указать время явно;</li>
+<li><a href="./yii-db-connection.html#$queryCache-detail">queryCache</a>: ID компонента кэширования. По умолчанию <code>'cache'</code>. Кэширования запросов работает только в том случае, если используется компонент приложения кэш.</li>
+</ul>
+<h3>Использование  <span id="query-caching-usages"></span><a href="#query-caching-usages" class="hashlink">&para;</a></h3><p>Вы можете использовать <a href="./yii-db-connection.html#cache()-detail">yii\db\Connection::cache()</a>, если у вас есть несколько SQL запросов, которые необходимо закэшировать:</p>
+<pre><code class="hljs php language-php">$duration = <span class="hljs-number">60</span>;     <span class="hljs-comment">// кэширование результата на 60 секунд</span>
+$dependency = ...;  <span class="hljs-comment">// параметры зависимости</span>
+
+$result = $db-&gt;cache(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($db)</span> </span>{
+
+    <span class="hljs-comment">// ... выполнять SQL запросы здесь ...</span>
+
+    <span class="hljs-keyword">return</span> $result;
+
+}, $duration, $dependency);
+</code></pre>
+<p>Любые SQL запросы в анонимной функции будут кэшироваться в течение указанного промежутка времени и с помощью заданной зависимости. Если результат запроса в кэше актуален, запрос будет пропущен, и вместо этого из кэша будет возвращен результат. Если вы не укажете параметр <code>'$duration'</code>, то значение <a href="./yii-db-connection.html#$queryCacheDuration-detail">queryCacheDuration</a> будет использоваться вместо него.</p>
+<p>Иногда в пределах <code>"cache()"</code> вы можете захотеть отключить кэширование запроса. В этом случае вы можете использовать <a href="./yii-db-connection.html#noCache()-detail">yii\db\Connection::noCache()</a>.</p>
+<pre><code class="hljs php language-php">$result = $db-&gt;cache(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($db)</span> </span>{
+
+    <span class="hljs-comment">// SQL запросы, которые используют кэширование</span>
+
+    $db-&gt;noCache(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($db)</span> </span>{
+
+        <span class="hljs-comment">// SQL запросы, которые не используют кэширование</span>
+
+    });
+
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-keyword">return</span> $result;
+});
+</code></pre>
+<p>Если вы просто хотите использовать кэширование для одного запроса, вы можете вызвать <a href="./yii-db-command.html#cache()-detail">yii\db\Command::cache()</a> при построении команды. Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// использовать кэширование запросов и установить срок действия кэша на 60 секунд</span>
+$customer = $db-&gt;createCommand(<span class="hljs-string">'SELECT * FROM customer WHERE id=1'</span>)-&gt;cache(<span class="hljs-number">60</span>)-&gt;queryOne();
+</code></pre>
+<p>Вы также можете использовать <a href="./yii-db-command.html#noCache()-detail">yii\db\Command::noCache()</a> для отключения кэширования запросов для одной команды. Например:</p>
+<pre><code class="hljs php language-php">$result = $db-&gt;cache(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($db)</span> </span>{
+
+    <span class="hljs-comment">// Используется кэширование SQL запросов</span>
+
+    <span class="hljs-comment">// не использовать кэширование запросов для этой команды</span>
+    $customer = $db-&gt;createCommand(<span class="hljs-string">'SELECT * FROM customer WHERE id=1'</span>)-&gt;noCache()-&gt;queryOne();
+
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-keyword">return</span> $result;
+});
+</code></pre>
+<h3>Ограничения  <span id="query-caching-limitations"></span><a href="#query-caching-limitations" class="hashlink">&para;</a></h3><p>Кэширование запросов не работает с результатами запросов, которые содержат обработчики ресурсов. Например, при использовании столбца типа <code>BLOB</code> в некоторых СУБД, в качестве результата запроса будет возвращен указатель на ресурс для этого столбца данных.</p>
+<p>Некоторые кэш хранилища имеют ограничение в размере данных. Например, Memcache ограничивает максимальный размер каждой записи до 1 Мб. Таким образом, если результат запроса превышает этот предел, данные не будут закэшированы.</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 09 Dec 2020 00:16:02 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

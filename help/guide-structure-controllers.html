@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/1728b664/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9c5d0894/solarized_light.css" rel="stylesheet">
+<link href="./assets/f2ce5bcd/style.css" rel="stylesheet">
+<script src="./assets/bbf84a7a/jquery.js"></script>
+<script src="./assets/1728b664/js/bootstrap.js"></script>
+<script src="./assets/fd63b446/jssearch.js"></script>    <title>Контроллеры - Структура приложения - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w833" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w833-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w833-collapse" class="collapse navbar-collapse"><ul id="w834" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w835" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-817" data-toggle="collapse" data-parent="#navigation">Введение <b class="caret"></b></a><div id="navigation-817" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">О Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Обновление с версии 1.1</a></div>
+<a class="list-group-item" href="#navigation-818" data-toggle="collapse" data-parent="#navigation">Первое знакомство <b class="caret"></b></a><div id="navigation-818" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Установка Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Запуск приложения</a>
+<a class="list-group-item" href="./guide-start-hello.html">Говорим «привет»</a>
+<a class="list-group-item" href="./guide-start-forms.html">Работа с формами</a>
+<a class="list-group-item" href="./guide-start-databases.html">Работа с базами данных</a>
+<a class="list-group-item" href="./guide-start-gii.html">Генерация кода при помощи Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Что дальше?</a></div>
+<a class="list-group-item active" href="#navigation-819" data-toggle="collapse" data-parent="#navigation">Структура приложения <b class="caret"></b></a><div id="navigation-819" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-structure-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Входные скрипты</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Приложения</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Компоненты приложения</a>
+<a class="list-group-item active" href="./guide-structure-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-structure-models.html">Модели</a>
+<a class="list-group-item" href="./guide-structure-views.html">Представления</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Модули</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Фильтры</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Виджеты</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Расширения</a></div>
+<a class="list-group-item" href="#navigation-820" data-toggle="collapse" data-parent="#navigation">Обработка запросов <b class="caret"></b></a><div id="navigation-820" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Разбор и генерация URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Запросы</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Ответы</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Сессии и куки</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Обработка ошибок</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Логирование</a></div>
+<a class="list-group-item" href="#navigation-821" data-toggle="collapse" data-parent="#navigation">Основные понятия <b class="caret"></b></a><div id="navigation-821" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Компоненты</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Свойства</a>
+<a class="list-group-item" href="./guide-concept-events.html">События</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Поведения</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Конфигурации</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Псевдонимы</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Автозагрузка классов</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item" href="#navigation-822" data-toggle="collapse" data-parent="#navigation">Работа с базами данных <b class="caret"></b></a><div id="navigation-822" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Объекты доступа к данным (DAO)</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Построитель запросов</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Миграции</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-ru/README.md">Sphinx</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-redis/blob/master/docs/guide-ru/README.md">Redis</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-ru/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-ru/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-823" data-toggle="collapse" data-parent="#navigation">Получение данных от пользователя <b class="caret"></b></a><div id="navigation-823" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Создание форм</a>
+<a class="list-group-item" href="./guide-input-validation.html">Валидация</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Загрузка файлов</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Табличный ввод</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Работа с несколькими моделями</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">Расширение ActiveForm на стороне клиента</a></div>
+<a class="list-group-item" href="#navigation-824" data-toggle="collapse" data-parent="#navigation">Отображение данных <b class="caret"></b></a><div id="navigation-824" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Форматирование данных</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Постраничная разбивка</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Сортировка</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Провайдеры данных</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Виджеты для данных</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Работа с клиентскими скриптами</a>
+<a class="list-group-item" href="./guide-output-theming.html">Темизация</a></div>
+<a class="list-group-item" href="#navigation-825" data-toggle="collapse" data-parent="#navigation">Безопасность <b class="caret"></b></a><div id="navigation-825" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-security-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Авторизация</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Работа с паролями</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">Криптография</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-ru/README.md">Клиенты авторизации</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Лучшие практики</a></div>
+<a class="list-group-item" href="#navigation-826" data-toggle="collapse" data-parent="#navigation">Кеширование <b class="caret"></b></a><div id="navigation-826" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-caching-data.html">Кэширование данных</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Кэширование фрагментов</a>
+<a class="list-group-item" href="./guide-caching-page.html">Кэширование страниц</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP кэширование</a></div>
+<a class="list-group-item" href="#navigation-827" data-toggle="collapse" data-parent="#navigation">Веб-сервисы REST <b class="caret"></b></a><div id="navigation-827" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Быстрый старт</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Роутинг</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Форматирование ответа</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Ограничение частоты запросов</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Версионирование</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Обработка ошибок</a></div>
+<a class="list-group-item" href="#navigation-828" data-toggle="collapse" data-parent="#navigation">Инструменты разработчика <b class="caret"></b></a><div id="navigation-828" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Отладочная панель и отладчик</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide/README.md">Генерация кода с Gii</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">Генератор документации API</a></div>
+<a class="list-group-item" href="#navigation-829" data-toggle="collapse" data-parent="#navigation">Тестирование <b class="caret"></b></a><div id="navigation-829" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Настройка тестового окружения</a>
+<a class="list-group-item" href="./guide-test-unit.html">Модульные тесты</a>
+<a class="list-group-item" href="./guide-test-functional.html">Функциональные тесты</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Приёмочные тесты</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Фикстуры</a></div>
+<a class="list-group-item" href="#navigation-830" data-toggle="collapse" data-parent="#navigation">Специальные темы <b class="caret"></b></a><div id="navigation-830" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">Шаблон приложения advanced</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Создание приложения с нуля</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Консольные команды</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Встроенные валидаторы</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Интернационализация</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Отправка почты</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Оптимизация производительности</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Окружение виртуального хостинга</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Шаблонизаторы</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Работа со сторонним кодом</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">Использование Yii в качестве микро-framework&#039;а</a></div>
+<a class="list-group-item" href="#navigation-831" data-toggle="collapse" data-parent="#navigation">Виджеты <b class="caret"></b></a><div id="navigation-831" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-ru/README.md">Виджеты Bootstrap</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-ru/README.md">Виджеты Jquery UI</a></div>
+<a class="list-group-item" href="#navigation-832" data-toggle="collapse" data-parent="#navigation">Хелперы <b class="caret"></b></a><div id="navigation-832" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url хелпер</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Контроллеры <span id="kontrollery"></span><a href="#kontrollery" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#actions">Действия</a></li>
+<li><a href="#routes">Маршруты</a></li>
+<li><a href="#creating-controllers">Создание контроллеров</a></li>
+<li><a href="#creating-actions">Создание действий</a></li>
+<li><a href="#controller-lifecycle">Жизненный цикл контроллера</a></li>
+<li><a href="#best-practices">Лучшие практики</a></li></ol></div>
+<p>Контроллеры являются частью <a href="https://ru.wikipedia.org/wiki/Model-View-Controller">MVC</a> архитектуры. Это объекты классов, унаследованных
+от <a href="./yii-base-controller.html">yii\base\Controller</a>, отвечающие за обработку запроса и генерирование ответа. В сущности, после обработки запроса <a href="guide-structure-applications.html">приложениями</a>,
+контроллеры проанализируют входные данные, передадут их в <a href="guide-structure-models.html">модели</a>, вставят результаты модели в <a href="guide-structure-views.html">представления</a>,
+и в конечном итоге сгенерируют исходящие ответы.</p>
+<h2>Действия  <span id="actions"></span><a href="#actions" class="hashlink">&para;</a></h2><p>Контроллеры состоят из <em>действий</em>, которые являются основными блоками, к которым может обращаться конечный пользователь и запрашивать исполнение того или иного
+функционала. В контроллере может быть одно или несколько действий.</p>
+<p>Следующий пример показывает <code>post</code> контроллер с двумя действиями: <code>view</code> и <code>create</code>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>\<span class="hljs-title">Post</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">NotFoundHttpException</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PostController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionView</span><span class="hljs-params">($id)</span>
+    </span>{
+        $model = Post::findOne($id);
+        <span class="hljs-keyword">if</span> ($model === <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> NotFoundHttpException;
+        }
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;render(<span class="hljs-string">'view'</span>, [
+            <span class="hljs-string">'model'</span> =&gt; $model,
+        ]);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionCreate</span><span class="hljs-params">()</span>
+    </span>{
+        $model = <span class="hljs-keyword">new</span> Post;
+
+        <span class="hljs-keyword">if</span> ($model-&gt;load(Yii::$app-&gt;request-&gt;post()) &amp;&amp; $model-&gt;save()) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;redirect([<span class="hljs-string">'view'</span>, <span class="hljs-string">'id'</span> =&gt; $model-&gt;id]);
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;render(<span class="hljs-string">'create'</span>, [
+                <span class="hljs-string">'model'</span> =&gt; $model,
+            ]);
+        }
+    }
+}
+</code></pre>
+<p>В действии <code>view</code> (определенном методом <code>actionView()</code>), код сначала загружает <a href="guide-structure-models.html">модель</a>
+согласно запрошенному ID модели; Если модель успешно загружена, то код отобразит ее с помощью <a href="guide-structure-views.html">представления</a>
+под названием <code>view</code>. В противном случае будет брошено исключение.</p>
+<p>В действии <code>create</code> (определенном методом <code>actionCreate()</code>), код аналогичен. Он сначала пытается загрузить <a href="guide-structure-models.html">модель</a>
+с помощью данных из запроса и сохранить модель. Если все прошло успешно, то код перенаправляет браузер на действие <code>view</code> с ID только
+что созданной модели. В противном случае он отобразит представление <code>create</code>, через которое пользователь может заполнить нужные данные.</p>
+<h2>Маршруты  <span id="routes"></span><a href="#routes" class="hashlink">&para;</a></h2><p>Конечные пользователи обращаются к действиям через так называемые <em>маршруты</em>. Маршрут это строка, состоящая из следующих частей:</p>
+<ul>
+<li>ID модуля: он существует, только если контроллер принадлежит не приложению, а <a href="guide-structure-modules.html">модулю</a>;</li>
+<li>ID контроллера: строка, которая уникально идентифицирует контроллер среди всех других контроллеров одного и того же приложения
+(или одного и того же модуля, если контроллер принадлежит модулю);</li>
+<li>ID действия: строка, которая уникально идентифицирует действие среди всех других действия одного и того же контроллера.</li>
+</ul>
+<p>Маршруты могут иметь следующий формат:</p>
+<pre><code class="hljs php language-php">ControllerID/ActionID
+</code></pre>
+<p>или следующий формат, если контроллер принадлежит модулю:</p>
+<pre><code class="hljs php language-php">ModuleID/ControllerID/ActionID
+</code></pre>
+<p>Таким образом, если пользователь запрашивает URL <code>http://hostname/index.php?r=site/index</code>, то <code>index</code> действие в <code>site</code> контроллере будет вызвано.
+Секция <a href="guide-runtime-routing.html">Маршрутизация</a> содержит более подробную информацию о том как маршруты сопоставляются с действиями.</p>
+<h2>Создание контроллеров  <span id="creating-controllers"></span><a href="#creating-controllers" class="hashlink">&para;</a></h2><p>В <a href="./yii-web-application.html">Веб приложениях</a>, контроллеры должны быть унаследованы от <a href="./yii-web-controller.html">yii\web\Controller</a> или его потомков.
+Аналогично для <a href="./yii-console-application.html">консольных приложений</a>, контроллеры должны быть унаследованы от <a href="./yii-console-controller.html">yii\console\Controller</a> или
+его потомков. Следующий код определяет <code>site</code> контроллер:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SiteController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+}
+</code></pre>
+<h3>ID контроллеров  <span id="controller-ids"></span><a href="#controller-ids" class="hashlink">&para;</a></h3><p>Обычно контроллер сделан таким образом, что он должен обрабатывать запросы, связанные с определенным ресурсом.
+Именно по этим причинам, ID контроллеров обычно являются существительные, ссылающиеся на ресурс, который они обрабатывают.
+Например, вы можете использовать <code>article</code> в качестве ID контроллера, которые отвечает за обработку данных статей.</p>
+<p>По-умолчанию, ID контроллеров должны содержать только следующие символы: Английские буквы в нижнем регистре, цифры, подчеркивания,
+тире и слэш. Например, оба <code>article</code> и <code>post-comment</code> являются допустимыми ID контроллеров, в то время как <code>article?</code>, <code>PostComment</code>,
+<code>admin\post</code> не являются таковыми.</p>
+<p>ID контроллеров также могут содержать префикс подпапки. Например, в <code>admin/article</code> часть <code>article</code> является контроллером в 
+подпапке <code>admin</code> в <a href="./yii-base-application.html#$controllerNamespace-detail">пространстве имен контроллеров</a>.
+Допустимыми символами для префиксов подпапок являются: Английские буквы в нижнем  и верхнем регистре, символы подчеркивания и
+слэш, где слэш используется в качестве разграничителя для многовложенных подпапок (например <code>panels/admin</code>).</p>
+<h3>Правила наименования классов контроллеров  <span id="controller-class-naming"></span><a href="#controller-class-naming" class="hashlink">&para;</a></h3><p>Названия классов контроллеров могут быть получены из ID контроллеров следующими способами:</p>
+<ul>
+<li>Привести в верхний регистр первый символ в каждом слове, разделенном дефисами. Обратите внимание что, если ID контроллера
+содержит слэш, то данное правило распространяется только на часть после последнего слэша в ID контроллера;</li>
+<li>Убрать дефисы и заменить любой прямой слэш на обратный;</li>
+<li>Добавить суффикс <code>Controller</code>;</li>
+<li>Добавить в начало <a href="./yii-base-application.html#$controllerNamespace-detail">пространство имен контроллеров</a>.</li>
+</ul>
+<p>Ниже приведены несколько примеров, с учетом того, что <a href="./yii-base-application.html#$controllerNamespace-detail">пространство имен контроллеров</a>
+имеет значение по умолчанию равное <code>app\controllers</code>:</p>
+<ul>
+<li><code>article</code> соответствует <code>app\controllers\ArticleController</code>;</li>
+<li><code>post-comment</code> соответствует <code>app\controllers\PostCommentController</code>;</li>
+<li><code>admin/post-comment</code> соответствует <code>app\controllers\admin\PostCommentController</code>;</li>
+<li><code>adminPanels/post-comment</code> соответствует <code>app\controllers\adminPanels\PostCommentController</code>.</li>
+</ul>
+<p>Классы контроллеров должны быть <a href="guide-concept-autoloading.html">автозагружаемыми</a>. Именно по этой причине, в вышеприведенном примере,
+контроллер <code>article</code> должен быть сохранен в файл, <a href="guide-concept-aliases.html">псевдоним</a> которого <code>@app/controllers/ArticleController.php</code>;
+в то время как контроллер <code>admin/post-comment</code> должен находиться в файле <code>@app/controllers/admin/PostCommentController.php</code>.</p>
+<blockquote class="info"><p><strong>Информация: </strong>Последний пример <code>admin/post-comment</code> показывает каким образом вы можете расположить контроллер в подпапке
+  <a href="./yii-base-application.html#$controllerNamespace-detail">пространства имен контроллеров</a>. Это очень удобно, когда вы хотите организовать свои контроллеры
+  в несколько категорий и не хотите использовать <a href="guide-structure-modules.html">модули</a>.</p>
+</blockquote>
+<h3>Карта контроллеров  <span id="controller-map"></span><a href="#controller-map" class="hashlink">&para;</a></h3><p>Вы можете сконфигурировать <a href="./yii-base-module.html#$controllerMap-detail">карту контроллеров</a> для того, чтобы преодолеть
+описанные выше ограничения именования ID контроллеров и названий классов. В основном это очень удобно, когда вы используете
+сторонние контроллеры, именование которых вы не можете контролировать.</p>
+<p>Вы можете сконфигурировать <a href="./yii-base-module.html#$controllerMap-detail">карту контроллеров</a> в <a href="guide-structure-applications.html#application-configurations">настройках приложения</a>
+следующим образом:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'controllerMap'</span> =&gt; [
+        <span class="hljs-comment">// объявляет "account" контроллер, используя название класса</span>
+        <span class="hljs-string">'account'</span> =&gt; <span class="hljs-string">'app\controllers\UserController'</span>,
+
+        <span class="hljs-comment">// объявляет "article" контроллер, используя массив конфигурации</span>
+        <span class="hljs-string">'article'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'app\controllers\PostController'</span>,
+            <span class="hljs-string">'enableCsrfValidation'</span> =&gt; <span class="hljs-keyword">false</span>,
+        ],
+    ],
+]
+</code></pre>
+<h3>Контроллер по умолчанию  <span id="default-controller"></span><a href="#default-controller" class="hashlink">&para;</a></h3><p>Каждое приложение имеет контроллер по умолчанию, указанный через свойство <a href="./yii-base-module.html#$defaultRoute-detail">yii\base\Application::$defaultRoute</a>.
+Когда в запросе не указан <a href="#routes">маршрут</a>, тогда будет использован маршрут указанный в данном свойстве.
+Для <a href="./yii-web-application.html">Веб приложений</a>, это значение <code>'site'</code>, в то время как для <a href="./yii-console-application.html">консольных приложений</a>,
+это <code>'help'</code>. Таким образом, если задан URL <code>http://hostname/index.php</code>, это означает, что контроллер <code>site</code> выполнит обработку запроса.</p>
+<p>Вы можете изменить контроллер по умолчанию следующим образом в <a href="guide-structure-applications.html#application-configurations">настройках приложения</a>:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'defaultRoute'</span> =&gt; <span class="hljs-string">'main'</span>,
+]
+</code></pre>
+<h2>Создание действий  <span id="creating-actions"></span><a href="#creating-actions" class="hashlink">&para;</a></h2><p>Создание действий не представляет сложностей так же как и объявление так называемых <em>методов действий</em> в классе контроллера. Метод действия
+это <em>public</em> метод, имя которого начинается со слова <code>action</code>. Возвращаемое значение метода действия представляет собой ответные данные,
+которые будут высланы конечному пользователю. Приведенный ниже код определяет два действия <code>index</code> и <code>hello-world</code>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SiteController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionIndex</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;render(<span class="hljs-string">'index'</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionHelloWorld</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'Hello World'</span>;
+    }
+}
+</code></pre>
+<h3>ID действий  <span id="action-ids"></span><a href="#action-ids" class="hashlink">&para;</a></h3><p>В основном действие разрабатывается для какой-либо конкретной обработки ресурса. По этой причине, ID действий в основном
+являются глаголами, такими как <code>view</code>, <code>update</code>, и т. д.</p>
+<p>По-умолчанию, ID действия должен содержать только следующие символы: Английские буквы в нижнем регистре, цифры,
+подчеркивания и дефисы. Дефисы в ID действий используются для разделения слов. Например, <code>view</code>, <code>update2</code>, <code>comment-post</code> являются
+допустимыми ID действий, в то время как <code>view?</code>, <code>Update</code> не являются таковыми.</p>
+<p>Вы можете создавать действия двумя способами: встроенные действия и отдельные действия. Встроенное действие является методом, определенным
+в классе контроллера, в то время как отдельное действие является экземпляром класса, унаследованного от <a href="./yii-base-action.html">yii\base\Action</a> или его потомков.
+Встроенные действия требуют меньше усилий для создания и в основном используются если у вас нет надобности в повторном использовании действий.
+Отдельные действия, с другой стороны, в основном создаются для использования в различных контроллерах или при использовании в <a href="guide-structure-extensions.html">расширениях</a>.</p>
+<h3>Встроенные действия  <span id="inline-actions"></span><a href="#inline-actions" class="hashlink">&para;</a></h3><p>Встроенные действия это те действия, которые определены в рамках методов контроллера, как мы это уже обсудили.</p>
+<p>Названия методов действий могут быть получены из ID действий следующим образом:</p>
+<ul>
+<li>Привести первый символ каждого слова в ID действия в верхний регистр;</li>
+<li>Убрать дефисы;</li>
+<li>Добавить префикс <code>action</code>.</li>
+</ul>
+<p>Например, <code>index</code> соответствует <code>actionIndex</code>, а <code>hello-world</code> соответствует <code>actionHelloWorld</code>.</p>
+<blockquote class="note"><p><strong>Примечание: </strong>Названия имен действий являются <em>регистрозависимыми</em>. Если у вас есть метод <code>ActionIndex</code>, он не будет
+  учтен как метод действия, таким образом, запрос к действию <code>index</code> приведет к выбросу исключения. Также следует учесть, что методы действий
+  должны иметь область видимости public. Методы имеющие область видимости private или protected НЕ определяют методы встроенных действий.</p>
+</blockquote>
+<p>Встроенные действия в основном используются, потому что для их создания не нужного много усилий. Тем не менее, если вы планируете повторно
+использовать некоторые действия в различных местах, или если вы хотите перераспределить действия, вы должны определить его как <em>отдельное действие</em>.</p>
+<h3>Отдельные действия  <span id="standalone-actions"></span><a href="#standalone-actions" class="hashlink">&para;</a></h3><p>Отдельные действия определяются в качестве классов, унаследованных от <a href="./yii-base-action.html">yii\base\Action</a> или его потомков.
+Например, в Yii релизах, присутствуют <a href="./yii-web-viewaction.html">yii\web\ViewAction</a> и <a href="./yii-web-erroraction.html">yii\web\ErrorAction</a>, оба из которых являются
+отдельными действиями.</p>
+<p>Для использования отдельного действия, вы должны указать его в <em>карте действий</em>, с помощью переопределения метода
+<a href="./yii-base-controller.html#actions()-detail">yii\base\Controller::actions()</a> в вашем классе контроллера, следующим образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actions</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-comment">// объявляет "error" действие с помощью названия класса</span>
+        <span class="hljs-string">'error'</span> =&gt; <span class="hljs-string">'yii\web\ErrorAction'</span>,
+
+        <span class="hljs-comment">// объявляет "view" действие с помощью конфигурационного массива</span>
+        <span class="hljs-string">'view'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\web\ViewAction'</span>,
+            <span class="hljs-string">'viewPrefix'</span> =&gt; <span class="hljs-string">''</span>,
+        ],
+    ];
+}
+</code></pre>
+<p>Как вы можете видеть, метод <code>actions()</code> должен вернуть массив, ключами которого являются ID действий, а значениями - соответствующие
+названия класса действия или <a href="guide-concept-configurations.html">конфигурация</a>. В отличие от встроенных действий, ID отдельных действий могут
+содержать произвольные символы, до тех пор пока они определены в методе <code>actions()</code>.</p>
+<p>Для создания отдельного действия, вы должны наследоваться от класса <a href="./yii-base-action.html">yii\base\Action</a> или его потомков, и реализовать
+метод <code>run()</code> с областью видимости public. Роль метода <code>run()</code> аналогична другим методам действий. Например,</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Action</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloWorldAction</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Action</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"Hello World"</span>;
+    }
+}
+</code></pre>
+<h3>Результаты действий  <span id="action-results"></span><a href="#action-results" class="hashlink">&para;</a></h3><p>Возвращаемое значение методов действий или метода <code>run()</code> отдельного действия очень важно. Оно является результатом
+выполнения соответствующего действия.</p>
+<p>Возвращаемое значение может быть объектом <a href="guide-runtime-responses.html">response</a>, который будет отослан конечному пользователю 
+в качестве ответа.</p>
+<ul>
+<li>Для <a href="./yii-web-application.html">Веб приложений</a>, возвращаемое значение также может быть произвольными данными, которые будут
+присвоены <a href="./yii-web-response.html#$data-detail">yii\web\Response::$data</a>, а затем конвертированы в строку, представляющую тело ответа.</li>
+<li>Для <a href="./yii-console-application.html">Консольных приложений</a>, возвращаемое значение также может быть числом, представляющим
+<a href="./yii-base-response.html#$exitStatus-detail">статус выхода</a> исполнения команды.</li>
+</ul>
+<p>В вышеприведенных примерах, все результаты действий являются строками, которые будут использованы в качестве тела ответа,
+высланного пользователю. Следующий пример, показывает действие может перенаправить браузер пользователя на новый URL, с помощью
+возврата response объекта (т. к. <a href="./yii-web-controller.html#redirect()-detail">redirect()</a> метод возвращает response объект):</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionForward</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// перенаправляем браузер пользователя на http://example.com</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;redirect(<span class="hljs-string">'http://example.com'</span>);
+}
+</code></pre>
+<h3>Параметры действий  <span id="action-parameters"></span><a href="#action-parameters" class="hashlink">&para;</a></h3><p>Методы действий для встроенных действий и методы <code>run()</code> для отдельных действий могут принимать параметры,
+называемые <em>параметры действий</em>. Их значения берутся из запросов. Для <a href="./yii-web-application.html">Веб приложений</a>,
+значение каждого из параметров действия берется из <code>$_GET</code>, используя название параметра в качестве ключа;
+для <a href="./yii-console-application.html">консольных приложений</a>, они соответствуют аргументам командной строки.</p>
+<p>В приведенном ниже примере, действие <code>view</code> (встроенное действие) определяет два параметра: <code>$id</code> и <code>$version</code>.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PostController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionView</span><span class="hljs-params">($id, $version = null)</span>
+    </span>{
+        <span class="hljs-comment">// ...</span>
+    }
+}
+</code></pre>
+<p>Для разных запросов параметры действий будут определены следующим образом:</p>
+<ul>
+<li><code>http://hostname/index.php?r=post/view&amp;id=123</code>: параметр <code>$id</code> будет присвоено значение <code>'123'</code>, в то время
+как <code>$version</code> будет иметь значение <code>null</code>, т. к. строка запроса не содержит параметра <code>version</code>;</li>
+<li><code>http://hostname/index.php?r=post/view&amp;id=123&amp;version=2</code>: параметрам <code>$id</code> и <code>$version</code> будут присвоены
+значения <code>'123'</code> и <code>'2'</code> соответственно;</li>
+<li><code>http://hostname/index.php?r=post/view</code>: будет брошено исключение <a href="./yii-web-badrequesthttpexception.html">yii\web\BadRequestHttpException</a>, т. к.
+обязательный параметр <code>$id</code> не был указан в запросе;</li>
+<li><code>http://hostname/index.php?r=post/view&amp;id[]=123</code>: будет брошено исключение <a href="./yii-web-badrequesthttpexception.html">yii\web\BadRequestHttpException</a>, т. к.
+параметр <code>$id</code> получил неверное значение <code>['123']</code>.</li>
+</ul>
+<p>Если вы хотите, чтобы параметр действия принимал массив значений, вы должны использовать type-hint значение <code>array</code>, как показано ниже:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionView</span><span class="hljs-params">(array $id, $version = null)</span>
+</span>{
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>Теперь, если запрос будет содержать URL <code>http://hostname/index.php?r=post/view&amp;id[]=123</code>, то параметр <code>$id</code> примет значение
+<code>['123']</code>. Если запрос будет содержать URL <code>http://hostname/index.php?r=post/view&amp;id=123</code>, то параметр <code>$id</code> все равно будет
+содержать массив, т. к. скалярное значение <code>'123'</code> будет автоматически конвертировано в массив.</p>
+<p>Вышеприведенные примеры в основном показывают как параметры действий работают для Веб приложений. Больше информации
+о параметрах консольных приложений представлено в секции <a href="guide-tutorial-console.html">Консольные команды</a>.</p>
+<h3>Действие по умолчанию  <span id="default-action"></span><a href="#default-action" class="hashlink">&para;</a></h3><p>Каждый контроллер имеет действие, указанное через свойство <a href="./yii-base-controller.html#$defaultAction-detail">yii\base\Controller::$defaultAction</a>.
+Когда <a href="#routes">маршрут</a> содержит только ID контроллера, то подразумевается, что действие контроллера по умолчанию
+было запрошено.</p>
+<p>По-умолчанию, это действие имеет значение <code>index</code>. Если вы хотите изменить это значение, просто переопределите данное
+свойство в классе контроллера следующим образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SiteController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> $defaultAction = <span class="hljs-string">'home'</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionHome</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;render(<span class="hljs-string">'home'</span>);
+    }
+}
+</code></pre>
+<h2>Жизненный цикл контроллера  <span id="controller-lifecycle"></span><a href="#controller-lifecycle" class="hashlink">&para;</a></h2><p>При обработке запроса, <a href="guide-structure-applications.html">приложение</a> создаст контроллер, основываясь на 
+запрошенном <a href="#routes">маршруте</a>. Для выполнения запроса, контроллер пройдет через следующие этапы
+жизненного цикла:</p>
+<ol>
+<li>Метод <a href="./yii-base-controller.html#init()-detail">yii\base\Controller::init()</a> будет вызван после того как контроллер будет создан и сконфигурирован;</li>
+<li>Контроллер создает объект действия, основываясь на запрошенном ID действия:<ul>
+<li>Если ID действия не указан, то будет использовано <a href="./yii-base-controller.html#$defaultAction-detail">ID действия по умолчанию</a>;</li>
+<li>Если ID действия найдено в <a href="./yii-base-controller.html#actions()-detail">карте действий</a>, то отдельное действие будет создано;</li>
+<li>Если ID действия соответствует методу действия, то встроенное действие будет создано;</li>
+<li>В противном случае, будет выброшено исключение <a href="./yii-base-invalidrouteexception.html">yii\base\InvalidRouteException</a>.</li>
+</ul>
+</li>
+<li>Контроллер последовательно вызывает метод <code>beforeAction()</code> приложения, модуля (если контроллер принадлежит модулю) и
+самого контроллера.<ul>
+<li>Если один из методов вернул <code>false</code>, то остальные, не вызванные методы <code>beforeAction</code> будут пропущены, а выполнение
+действия будет отменено;</li>
+<li>По-умолчанию, каждый вызов метода <code>beforeAction()</code> вызовет событие <code>beforeAction</code>, на которое вы можете назначить обработчики.</li>
+</ul>
+</li>
+<li>Контроллер запускает действие:<ul>
+<li>Параметры действия будут проанализированы и заполнены из данных запроса.</li>
+</ul>
+</li>
+<li>Контроллер последовательно вызывает методы <code>afterAction</code> контроллера, модуля (если контроллер принадлежит модулю) и приложения.<ul>
+<li>По-умолчанию, каждый вызов метода <code>afterAction()</code> вызовет событие <code>afterAction</code>, на которое вы можете назначить обработчики.</li>
+</ul>
+</li>
+<li>Приложение, получив результат выполнения действия, присвоит его объекту <a href="guide-runtime-responses.html">response</a>.</li>
+</ol>
+<h2>Лучшие практики  <span id="best-practices"></span><a href="#best-practices" class="hashlink">&para;</a></h2><p>В хорошо организованных приложениях контроллеры обычно очень тонкие и содержат лишь несколько строк кода.
+Если ваш контроллер слишком сложный, то обычно это означает, что вам надо провести его рефакторинг и перенести часть кода
+в другие места.</p>
+<p>В целом, контроллеры</p>
+<ul>
+<li>могут иметь доступ к данным <a href="guide-runtime-requests.html">запроса</a>;</li>
+<li>могут вызывать методы <a href="guide-structure-models.html">моделей</a> и других компонентов системы с данными запроса;</li>
+<li>могут использовать <a href="guide-structure-views.html">представления</a> для формирования ответа;</li>
+<li>не должны заниматься обработкой данных, это должно происходить в <a href="guide-structure-models.html">слое моделей</a>;</li>
+<li>должны избегать использования HTML или другой разметки, лучше это делать в <a href="guide-structure-views.html">представлениях</a>.</li>
+</ul>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 09 Dec 2020 00:16:06 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

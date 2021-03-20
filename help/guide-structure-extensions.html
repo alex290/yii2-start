@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/1728b664/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9c5d0894/solarized_light.css" rel="stylesheet">
+<link href="./assets/f2ce5bcd/style.css" rel="stylesheet">
+<script src="./assets/bbf84a7a/jquery.js"></script>
+<script src="./assets/1728b664/js/bootstrap.js"></script>
+<script src="./assets/fd63b446/jssearch.js"></script>    <title>Расширения - Структура приложения - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1536" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1536-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1536-collapse" class="collapse navbar-collapse"><ul id="w1537" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1538" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1520" data-toggle="collapse" data-parent="#navigation">Введение <b class="caret"></b></a><div id="navigation-1520" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">О Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Обновление с версии 1.1</a></div>
+<a class="list-group-item" href="#navigation-1521" data-toggle="collapse" data-parent="#navigation">Первое знакомство <b class="caret"></b></a><div id="navigation-1521" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Установка Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Запуск приложения</a>
+<a class="list-group-item" href="./guide-start-hello.html">Говорим «привет»</a>
+<a class="list-group-item" href="./guide-start-forms.html">Работа с формами</a>
+<a class="list-group-item" href="./guide-start-databases.html">Работа с базами данных</a>
+<a class="list-group-item" href="./guide-start-gii.html">Генерация кода при помощи Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Что дальше?</a></div>
+<a class="list-group-item active" href="#navigation-1522" data-toggle="collapse" data-parent="#navigation">Структура приложения <b class="caret"></b></a><div id="navigation-1522" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-structure-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Входные скрипты</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Приложения</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Компоненты приложения</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-structure-models.html">Модели</a>
+<a class="list-group-item" href="./guide-structure-views.html">Представления</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Модули</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Фильтры</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Виджеты</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Ресурсы</a>
+<a class="list-group-item active" href="./guide-structure-extensions.html">Расширения</a></div>
+<a class="list-group-item" href="#navigation-1523" data-toggle="collapse" data-parent="#navigation">Обработка запросов <b class="caret"></b></a><div id="navigation-1523" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Разбор и генерация URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Запросы</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Ответы</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Сессии и куки</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Обработка ошибок</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Логирование</a></div>
+<a class="list-group-item" href="#navigation-1524" data-toggle="collapse" data-parent="#navigation">Основные понятия <b class="caret"></b></a><div id="navigation-1524" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Компоненты</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Свойства</a>
+<a class="list-group-item" href="./guide-concept-events.html">События</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Поведения</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Конфигурации</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Псевдонимы</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Автозагрузка классов</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item" href="#navigation-1525" data-toggle="collapse" data-parent="#navigation">Работа с базами данных <b class="caret"></b></a><div id="navigation-1525" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Объекты доступа к данным (DAO)</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Построитель запросов</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Миграции</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-ru/README.md">Sphinx</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-redis/blob/master/docs/guide-ru/README.md">Redis</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-ru/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-ru/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1526" data-toggle="collapse" data-parent="#navigation">Получение данных от пользователя <b class="caret"></b></a><div id="navigation-1526" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Создание форм</a>
+<a class="list-group-item" href="./guide-input-validation.html">Валидация</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Загрузка файлов</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Табличный ввод</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Работа с несколькими моделями</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">Расширение ActiveForm на стороне клиента</a></div>
+<a class="list-group-item" href="#navigation-1527" data-toggle="collapse" data-parent="#navigation">Отображение данных <b class="caret"></b></a><div id="navigation-1527" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Форматирование данных</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Постраничная разбивка</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Сортировка</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Провайдеры данных</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Виджеты для данных</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Работа с клиентскими скриптами</a>
+<a class="list-group-item" href="./guide-output-theming.html">Темизация</a></div>
+<a class="list-group-item" href="#navigation-1528" data-toggle="collapse" data-parent="#navigation">Безопасность <b class="caret"></b></a><div id="navigation-1528" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-security-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Авторизация</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Работа с паролями</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">Криптография</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-ru/README.md">Клиенты авторизации</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Лучшие практики</a></div>
+<a class="list-group-item" href="#navigation-1529" data-toggle="collapse" data-parent="#navigation">Кеширование <b class="caret"></b></a><div id="navigation-1529" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-caching-data.html">Кэширование данных</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Кэширование фрагментов</a>
+<a class="list-group-item" href="./guide-caching-page.html">Кэширование страниц</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP кэширование</a></div>
+<a class="list-group-item" href="#navigation-1530" data-toggle="collapse" data-parent="#navigation">Веб-сервисы REST <b class="caret"></b></a><div id="navigation-1530" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Быстрый старт</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Роутинг</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Форматирование ответа</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Ограничение частоты запросов</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Версионирование</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Обработка ошибок</a></div>
+<a class="list-group-item" href="#navigation-1531" data-toggle="collapse" data-parent="#navigation">Инструменты разработчика <b class="caret"></b></a><div id="navigation-1531" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Отладочная панель и отладчик</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide/README.md">Генерация кода с Gii</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">Генератор документации API</a></div>
+<a class="list-group-item" href="#navigation-1532" data-toggle="collapse" data-parent="#navigation">Тестирование <b class="caret"></b></a><div id="navigation-1532" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Настройка тестового окружения</a>
+<a class="list-group-item" href="./guide-test-unit.html">Модульные тесты</a>
+<a class="list-group-item" href="./guide-test-functional.html">Функциональные тесты</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Приёмочные тесты</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Фикстуры</a></div>
+<a class="list-group-item" href="#navigation-1533" data-toggle="collapse" data-parent="#navigation">Специальные темы <b class="caret"></b></a><div id="navigation-1533" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">Шаблон приложения advanced</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Создание приложения с нуля</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Консольные команды</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Встроенные валидаторы</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Интернационализация</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Отправка почты</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Оптимизация производительности</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Окружение виртуального хостинга</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Шаблонизаторы</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Работа со сторонним кодом</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">Использование Yii в качестве микро-framework&#039;а</a></div>
+<a class="list-group-item" href="#navigation-1534" data-toggle="collapse" data-parent="#navigation">Виджеты <b class="caret"></b></a><div id="navigation-1534" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-ru/README.md">Виджеты Bootstrap</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-ru/README.md">Виджеты Jquery UI</a></div>
+<a class="list-group-item" href="#navigation-1535" data-toggle="collapse" data-parent="#navigation">Хелперы <b class="caret"></b></a><div id="navigation-1535" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url хелпер</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Расширения <span id="rassirenia"></span><a href="#rassirenia" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#using-extensions">Использование расширений</a></li>
+<li><a href="#creating-extensions">Создание расширений</a></li>
+<li><a href="#core-extensions">Базовые расширения</a></li></ol></div>
+<p>Расширения - это распространяемые программные пакеты, специально разработанные для использования в приложениях Yii и
+содержащие готовые функции. Например, расширение <a href="https://github.com/yiisoft/yii2-debug">yiisoft/yii2-debug</a> добавляет удобную отладочную
+панель в нижнюю часть каждой страницы вашего приложения, чтобы помочь вам разобраться в том, как генерируются
+страницы. Вы можете использовать расширения для ускорения процесса разработки. Вы также можете оформить ваш код как
+расширение, чтобы поделиться с другими людьми результатами вашей работы.</p>
+<blockquote class="info"><p><strong>Информация: </strong>Мы используем термин "расширение" для специфичных для Yii программных пакетов. Программные пакеты
+  общего назначения, которые могут быть использованы без Yii, мы будем называть "пакет" или "библиотека".</p>
+</blockquote>
+<h2>Использование расширений  <span id="using-extensions"></span><a href="#using-extensions" class="hashlink">&para;</a></h2><p>Чтобы использовать расширение, вам необходимо установить его. Большинство расширений распространяются как пакеты
+<a href="https://getcomposer.org/">Composer</a>, которые могут быть установлены посредством следующих двух шагов:</p>
+<ol>
+<li>Отредактируйте файл вашего приложения <code>composer.json</code>, указав, какие расширения (пакеты Composer) вы хотите
+установить.</li>
+<li>Выполните команду <code>php composer.phar install</code>, чтобы установить указанные расширения.</li>
+</ol>
+<p>Обратите внимание, что вам может потребоваться установить <a href="https://getcomposer.org/">Composer</a>, если у вас его нет.</p>
+<p>По умолчанию, Composer устанавливает пакеты, зарегистрированные на <a href="https://packagist.org/">Packagist</a> - крупнейшем
+репозитории для пакетов Composer с открытым исходным кодом. Вы также можете
+<a href="https://getcomposer.org/doc/05-repositories.md#repository">создать свой репозиторий</a> и настроить Composer для его
+использования. Это полезно, если вы разрабатываете закрытые расширения и хотите использовать их в нескольких своих
+проектах.</p>
+<p>Расширения, установленные Composer'ом, хранятся в директории <code>BasePath/vendor</code>, где <code>BasePath</code> -
+<a href="guide-structure-applications.html#basePath">базовая директория</a> приложения. Composer - это менеджер зависимостей, и поэтому
+после установки пакета он также установит все зависимые пакеты.</p>
+<p>Например, для установки расширения <code>yiisoft/yii2-imagine</code> нужно отредактировать ваш <code>composer.json</code> как показано далее:</p>
+<pre><code class="hljs json language-json">{
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-attr">"require"</span>: {
+        <span class="hljs-comment">// ... другие зависимости</span>
+
+        <span class="hljs-attr">"yiisoft/yii2-imagine"</span>: <span class="hljs-string">"~2.0.0"</span>
+    }
+}
+</code></pre>
+<p>После установки вы можете увидеть директорию <code>yiisoft/yii2-imagine</code>, находящуюся по пути <code>BasePath/vendor</code>. Также вы
+можете увидеть директорию <code>imagine/imagine</code>, которая содержит зависимый пакет.</p>
+<blockquote class="info"><p><strong>Информация: </strong><code>yiisoft/yii2-imagine</code> является базовым расширением, которое разрабатывает и поддерживает команда
+  разработчиков Yii. Все базовые расширения размещены на <a href="https://packagist.org/">Packagist</a> и называются
+  <code>yiisoft/yii2-xyz</code>, где <code>xyz</code> является названием расширения.</p>
+</blockquote>
+<p>Теперь вы можете использовать установленное расширение как часть вашего приложения. Следующий пример показывает, как вы
+можете использовать класс <code>yii\imagine\Image</code>, который содержится в расширении <code>yiisoft/yii2-imagine</code>.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">imagine</span>\<span class="hljs-title">Image</span>;
+
+<span class="hljs-comment">// генерация миниатюры изображения</span>
+Image::thumbnail(<span class="hljs-string">'@webroot/img/test-image.jpg'</span>, <span class="hljs-number">120</span>, <span class="hljs-number">120</span>)
+    -&gt;save(Yii::getAlias(<span class="hljs-string">'@runtime/thumb-test-image.jpg'</span>), [<span class="hljs-string">'quality'</span> =&gt; <span class="hljs-number">50</span>]);
+</code></pre>
+<blockquote class="info"><p><strong>Информация: </strong>Классы расширений автоматически загружаются <a href="guide-concept-autoloading.html">автозагрузчиком классов Yii</a>.</p>
+</blockquote>
+<h3>Ручная установка расширений  <span id="installing-extensions-manually"></span><a href="#installing-extensions-manually" class="hashlink">&para;</a></h3><p>В некоторых редких случаях вы можете захотеть установить некоторые расширения вручную, а не полагаться на Composer.
+Чтобы сделать это, вы должны</p>
+<ol>
+<li>загрузить архив с файлами расширения и распаковать его в директорию <code>vendor</code>.</li>
+<li>установить автозагрузчики классов, предоставляемые расширениями, если таковые имеются.</li>
+<li>загрузить и установить все зависимые расширения в соответствии с инструкциями.</li>
+</ol>
+<p>Если расширение не имеет автозагрузчика классов, но следует <a href="http://www.php-fig.org/psr/psr-4/">стандарту PSR-4</a>, то вы
+можете использовать автозагрузчик классов, предоставленный Yii для загрузки классов расширений. Всё, что вам нужно
+сделать, это объявить <a href="guide-concept-aliases.html#defining-aliases">псевдоним</a> для корневого каталога расширения. Например,
+если вы установили расширение в директорию <code>vendor/mycompany/myext</code> и классы расширения находятся в пространстве имён
+<code>myext</code>, то вы можете включить следующий код в конфигурацию вашего приложения:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'aliases'</span> =&gt; [
+        <span class="hljs-string">'@myext'</span> =&gt; <span class="hljs-string">'@vendor/mycompany/myext'</span>,
+    ],
+]
+</code></pre>
+<h2>Создание расширений  <span id="creating-extensions"></span><a href="#creating-extensions" class="hashlink">&para;</a></h2><p>Вы можете захотеть создать расширение, когда чувствуете необходимость поделиться своим хорошим кодом с другими людьми.
+Расширение может содержать любой код, который вам нравится, например, класс-помощник, виджет, модуль и т.д.</p>
+<p>Рекомендуется создавать расширение как <a href="https://getcomposer.org/">пакет Composer</a>, для того, чтобы его можно было
+легко установить и использовать, как описано в предыдущей главе.</p>
+<p>Ниже приведены основные шаги, которым нужно следовать, чтобы создать пакет Composer.</p>
+<ol>
+<li>Создайте проект для вашего расширения и разместите его в VCS репозитории, таком как <a href="https://github.com">github.com</a>.
+Разработка и поддержка расширения должна выполняться в этом репозитории.</li>
+<li>В корневой директории проекта создайте файл под названием <code>composer.json</code>, в соответствии с требованиями Composer.
+Вы можете обратиться к следующему разделу за более подробной информацией.</li>
+<li>Зарегистрируйте ваше расширение в репозитории Composer, таком как <a href="https://packagist.org/">Packagist</a>, чтобы другие
+пользователи могли найти и установить ваше расширение, используя Composer.</li>
+</ol>
+<h3><code>composer.json</code>  <span id="composer-json"></span><a href="#composer-json" class="hashlink">&para;</a></h3><p>Каждый пакет Composer должен иметь файл <code>composer.json</code> в своей корневой директории. Этот файл содержит метаданные о
+пакете. Вы можете найти полную спецификацию по этому файлу в
+<a href="https://getcomposer.org/doc/01-basic-usage.md#composer-json-project-setup">Руководстве Composer</a>. Следующий пример
+демонстрирует файл <code>composer.json</code> для расширения <code>yiisoft/yii2-imagine</code>:</p>
+<pre><code class="hljs json language-json">{
+    <span class="hljs-comment">// название пакета</span>
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"yiisoft/yii2-imagine"</span>,
+
+    <span class="hljs-comment">// тип пакета</span>
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"yii2-extension"</span>,
+
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"The Imagine integration for the Yii framework"</span>,
+    <span class="hljs-attr">"keywords"</span>: [<span class="hljs-string">"yii2"</span>, <span class="hljs-string">"imagine"</span>, <span class="hljs-string">"image"</span>, <span class="hljs-string">"helper"</span>],
+    <span class="hljs-attr">"license"</span>: <span class="hljs-string">"BSD-3-Clause"</span>,
+    <span class="hljs-attr">"support"</span>: {
+        <span class="hljs-attr">"issues"</span>: <span class="hljs-string">"https://github.com/yiisoft/yii2/issues?labels=ext%3Aimagine"</span>,
+        <span class="hljs-attr">"forum"</span>: <span class="hljs-string">"http://www.yiiframework.com/forum/"</span>,
+        <span class="hljs-attr">"wiki"</span>: <span class="hljs-string">"http://www.yiiframework.com/wiki/"</span>,
+        <span class="hljs-attr">"irc"</span>: <span class="hljs-string">"irc://irc.freenode.net/yii"</span>,
+        <span class="hljs-attr">"source"</span>: <span class="hljs-string">"https://github.com/yiisoft/yii2"</span>
+    },
+    <span class="hljs-attr">"authors"</span>: [
+        {
+            <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Antonio Ramirez"</span>,
+            <span class="hljs-attr">"email"</span>: <span class="hljs-string">"amigo.cobos@gmail.com"</span>
+        }
+    ],
+
+    <span class="hljs-comment">// зависимости пакета</span>
+    <span class="hljs-attr">"require"</span>: {
+        <span class="hljs-attr">"yiisoft/yii2"</span>: <span class="hljs-string">"~2.0.0"</span>,
+        <span class="hljs-attr">"imagine/imagine"</span>: <span class="hljs-string">"v0.5.0"</span>
+    },
+
+    <span class="hljs-comment">// указание автозагрузчика классов</span>
+    <span class="hljs-attr">"autoload"</span>: {
+        <span class="hljs-attr">"psr-4"</span>: {
+            <span class="hljs-attr">"yii\\imagine\\"</span>: <span class="hljs-string">""</span>
+        }
+    }
+}
+</code></pre>
+<h4>Название пакета  <span id="package-name"></span><a href="#package-name" class="hashlink">&para;</a></h4><p>Каждый пакет Composer должен иметь название, которое однозначно идентифицирует пакет среди остальных. Название пакета
+имеет формат <code>имяРазработчика/названиеПроекта</code>. Например, в пакете <code>yiisoft/yii2-imagine</code>, <code>yiisoft</code> является именем
+разработчика, а <code>yii2-imagine</code> - названием пакета.</p>
+<p>НЕ используйте <code>yiisoft</code> в качестве имени разработчика, так как оно зарезервировано для использования в коде ядра Yii.</p>
+<p>Мы рекомендуем использовать префикс <code>yii2-</code> в названии проекта для пакетов, являющихся расширениями Yii 2, например,
+<code>моёИмя/yii2-mywidget</code>. Это позволит пользователям легче определить, что пакет является расширением Yii 2.</p>
+<h4>Тип пакета  <span id="package-type"></span><a href="#package-type" class="hashlink">&para;</a></h4><p>Важно указать тип пакета вашего расширения как <code>yii2-extension</code>, чтобы пакет можно было распознать как расширение Yii во
+время установки.</p>
+<p>Когда пользователь запускает команду <code>php composer.phar install</code> для установки расширения, файл
+<code>vendor/yiisoft/extensions.php</code> будет автоматически обновлён, чтобы включить информацию о новом расширении. Из этого
+файла приложение Yii может узнать, какие расширения установлены (информацию можно получить с помощью
+<a href="./yii-base-application.html#$extensions-detail">yii\base\Application::$extensions</a>).</p>
+<h4>Зависимости  <span id="dependencies"></span><a href="#dependencies" class="hashlink">&para;</a></h4><p>Ваше расширение зависит от Yii (естественно). Вы можете посмотреть список зависимостей в секции <code>require</code>, входящей в
+файл <code>composer.json</code>. Если ваше расширение зависит от других расширений или сторонних библиотек, то вы также должны их
+перечислить. Убедитесь, что в ограничениях вы указали соответствующую версию (например, <code>1.*</code>, <code>@stable</code>) для каждой
+зависимости. Используйте стабильные версии зависимостей, когда будет выпущена стабильная версия вашего расширения.</p>
+<h4>Автозагрузка классов  <span id="class-autoloading"></span><a href="#class-autoloading" class="hashlink">&para;</a></h4><p>Для того, чтобы ваши классы были загружены автозагрузчиком классов Yii или автозагрузчиком классов Composer, вы должны
+внести секцию <code>autoload</code> в файл <code>composer.json</code>, как показано ниже:</p>
+<pre><code class="hljs json language-json">{
+    <span class="hljs-comment">// ....</span>
+
+    <span class="hljs-attr">"autoload"</span>: {
+        <span class="hljs-attr">"psr-4"</span>: {
+            <span class="hljs-attr">"yii\\imagine\\"</span>: <span class="hljs-string">""</span>
+        }
+    }
+}
+</code></pre>
+<p>Вы можете перечислить один или несколько корневых пространств имён и соответствующие им пути.</p>
+<p>Когда расширение установлено в приложение, Yii для каждого указанного корневого пространства имён создаст
+<a href="guide-concept-aliases.html#extension-aliases">псевдоним</a>, который указывает на директорию, соответствующую пространству имён.
+Например, указанная в секции <code>autoload</code> запись будет соответствовать псевдониму <code>@yii/imagine</code>.</p>
+<h3>Рекомендованные практики  <span id="recommended-practices"></span><a href="#recommended-practices" class="hashlink">&para;</a></h3><p>Поскольку расширения предназначены для использования другими людьми, вам придётся приложить дополнительные усилия в
+процессе разработки. Ниже приведены некоторые общие и рекомендованные практики для создания высококачественных
+расширений.</p>
+<h4>Пространства имён  <span id="namespaces"></span><a href="#namespaces" class="hashlink">&para;</a></h4><p>Во избежание конфликтов имён, а также для того, чтобы ваши классы были автозагружаемыми, вы должны следовать
+<a href="http://www.php-fig.org/psr/psr-4/">стандарту PSR-4</a> или <a href="http://www.php-fig.org/psr/psr-0/">стандарту PSR-0</a> в
+использовании пространств имён и названии классов вашего расширения.</p>
+<p>Пространства имён в ваших классах должны начинаться с <code>имяРазработчика\названиеРасширения</code>, где <code>названиеРасширения</code>
+совпадает с названием проекта в названии пакета, за исключением того, что оно не должно содержать префикса <code>yii2-</code>.
+Например, для расширения <code>yiisoft/yii2-imagine</code> мы используем <code>yii\imagine</code> в качестве пространства имён.</p>
+<p>Не используйте <code>yii</code>, <code>yii2</code> или <code>yiisoft</code> в качестве имени разработчика. Эти имена являются зарезервированными для
+использования в коде ядра Yii.</p>
+<h4>Классы начальной загрузки  <span id="bootstrapping-classes"></span><a href="#bootstrapping-classes" class="hashlink">&para;</a></h4><p>Иногда вы можете захотеть выполнить некоторый код своего расширения в стадии
+<a href="guide-runtime-bootstrapping.html">начальной загрузки</a> приложения. Например, ваше расширение может ответить на событие
+приложения <code>beginRequest</code>, чтобы установить некоторые настройки окружения. Вы можете в инструкции по установке вашего
+приложения написать, что необходимо назначить обработчик события <code>beginRequest</code>, но лучшим способом будет сделать это
+автоматически.</p>
+<p>Для достижения этой цели вы можете создать так называемый <em>класс начальной загрузки</em>, реализовав интерфейс
+<a href="./yii-base-bootstrapinterface.html">yii\base\BootstrapInterface</a>. Например,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">myname</span>\<span class="hljs-title">mywidget</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">BootstrapInterface</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Application</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyBootstrapClass</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">BootstrapInterface</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bootstrap</span><span class="hljs-params">($app)</span>
+    </span>{
+        $app-&gt;on(Application::EVENT_BEFORE_REQUEST, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+             <span class="hljs-comment">// остальной код</span>
+        });
+    }
+}
+</code></pre>
+<p>Затем нужно добавить этот класс в файл <code>composer.json</code> вашего расширения, как показано далее,</p>
+<pre><code class="hljs json language-json">{
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-attr">"extra"</span>: {
+        <span class="hljs-attr">"bootstrap"</span>: <span class="hljs-string">"myname\\mywidget\\MyBootstrapClass"</span>
+    }
+}
+</code></pre>
+<p>Когда расширение будет установлено в приложение, Yii автоматически инициирует экземпляр класса начальной загрузки и
+вызовет его метод <a href="./yii-base-bootstrapinterface.html#bootstrap()-detail">bootstrap()</a>  в процессе начальной загрузки каждого
+запроса.</p>
+<h4>Работа с базами данных  <span id="working-with-databases"></span><a href="#working-with-databases" class="hashlink">&para;</a></h4><p>Ваше расширение может иметь доступ к базам данных. Не думайте, что приложения, которые используют ваше расширение,
+всегда используют <code>Yii::$db</code> в качестве соединения с БД. Вместо этого вам следует объявить свойство <code>db</code> в классах,
+которым необходим доступ в БД. Это свойство позволит пользователям вашего расширения настроить соединение с БД,
+которое они будут использовать в вашем расширении. В качестве примера вы можете обратиться к классу
+<a href="./yii-caching-dbcache.html">yii\caching\DbCache</a> и посмотреть, как он объявляет и использует свойство <code>db</code>.</p>
+<p>Если в вашем приложении необходимо создать определённые таблицы БД или сделать изменения в схеме БД, вы должны</p>
+<ul>
+<li>создать файлы <a href="guide-db-migrations.html">миграций</a> для изменения схемы БД вместо простых SQL-файлов;</li>
+<li>попытаться сделать миграции, применимые к различным СУБД;</li>
+<li>избегать использования <a href="guide-db-active-record.html">Active Record</a> в миграциях.</li>
+</ul>
+<h4>Использование ресурсов  <span id="using-assets"></span><a href="#using-assets" class="hashlink">&para;</a></h4><p>Если ваше расширение является виджетом или модулем, то есть вероятность, что оно потребует некоторых
+<a href="guide-structure-assets.html">ресурсов</a> для работы. Например, модуль может отображать некоторые страницы, которые содержат
+изображения, JavaScript и CSS. Так как все файлы расширения находятся в директории, недоступной из интернета, у вас
+есть два варианта сделать директорию ресурсов непосредственно доступной из интернета:</p>
+<ul>
+<li>попросить пользователей расширения вручную скопировать файлы ресурсов в определённую, доступную из интернета папку;</li>
+<li>объявить <a href="guide-structure-assets.html">связку ресурсов</a> и полагаться на механизм публикации ресурсов, который автоматически
+копирует файлы, описанные в связке ресурсов в папку, доступную из интернета.</li>
+</ul>
+<p>Мы рекомендуем вам использовать второй подход, чтобы ваше расширение было более простым в использовании для других
+людей.</p>
+<h3>Интернационализация и локализация  <span id="i18n-l10n"></span><a href="#i18n-l10n" class="hashlink">&para;</a></h3><p>Ваше расширение может быть использовано в приложениях, поддерживающих разные языки! Поэтому, если ваше расширение
+отображает содержимое конечному пользователю, вы должны попробовать
+<a href="guide-tutorial-i18n.html">интернационализовать и локализовать</a> его. В частности,</p>
+<ul>
+<li>Если расширение отображает сообщения, предназначенные для конечных пользователей, сообщения должны быть обернуты в
+метод <code>Yii::t()</code> так, чтобы они могли быть переведены. Сообщения, предназначенные для разработчиков (например,
+внутренние сообщения исключений), не нужно переводить.</li>
+<li>Если расширение отображает числа, даты и т.п., они должны быть отформатированы, используя <span class="broken-link">yii\base\Formatter</span> с
+соответствующими правилами форматирования.</li>
+</ul>
+<p>Для более подробной информации вы можете обратиться к разделу <a href="guide-tutorial-i18n.html">Интернационализация</a></p>
+<h4>Тестирование  <span id="testing"></span><a href="#testing" class="hashlink">&para;</a></h4><p>Вы хотите, чтобы ваше расширение было стабильным и не приносило проблем другим людям. Для достижения этой цели вы
+должны протестировать ваше расширение перед его публикацией.</p>
+<p>Рекомендуется создавать различные тесты для покрытия кода вашего расширения, а не вручную тестировать его. Каждый раз
+перед тем, как выпустить новую версию расширения, вы можете просто запустить эти тесты чтобы убедиться, что всё
+работает правильно. Yii имеет поддержку тестирования, которая может помочь вам легче писать модульные, приёмочные и
+функциональные тесты. Для более подробной информации вы можете обратиться в раздел <a href="guide-test-overview.html">Тестирование</a>.</p>
+<h4>Версионирование  <span id="versioning"></span><a href="#versioning" class="hashlink">&para;</a></h4><p>Вы можете давать каждому выпуску вашего расширения номер версии (например, <code>1.0.1</code>). Мы рекомендуем вам придерживаться
+практик <a href="http://semver.org">семантического версионирования</a> при определении, какой номер версии должен использоваться.</p>
+<h4>Публикация  <span id="releasing"></span><a href="#releasing" class="hashlink">&para;</a></h4><p>Чтобы позволить другим людям узнать о вашем расширении, необходимо опубликовать его.</p>
+<p>Если это первый выпуск вашего расширения, вы должны зарегистрировать его в репозитории Composer, таком, как
+<a href="https://packagist.org/">Packagist</a>. После этого вам остаётся только создать тег выпуска (например, <code>v1.0.1</code>) в VCS
+репозитории вашего расширения и уведомить репозиторий Composer о новом выпуске. Люди смогут найти новую версию и
+установить или обновить расширение через репозиторий Composer.</p>
+<p>В выпусках вашего расширения помимо файлов с кодом вы также должны рассмотреть вопрос о включении следующих файлов,
+которые помогут людям изучить и использовать ваше расширение:</p>
+<ul>
+<li>Файл readme в корневой директории пакета: он описывает, что ваше расширение делает, а также как его установить и
+использовать. Мы рекомендуем вам написать его в формате <a href="http://daringfireball.net/projects/markdown/">Markdown</a> и
+дать ему название <code>readme.md</code>.</li>
+<li>Файл changelog в корневой директории пакета: он описывает, какие изменения произошли в каждом выпуске. Этот файл
+может быть написан в формате Markdown и назван <code>changelog.md</code>.</li>
+<li>Файл upgrade в корневой директории пакета: он даёт инструкции о том, как обновить старые версии расширения. Этот
+файл может быть написан в формате Markdown и назван <code>upgrade.md</code>.</li>
+<li>Руководства пользователя, демо-версии, скриншоты и т.д.: они необходимы, если ваше расширение предоставляет много
+возможностей, которые невозможно полностью описать в файле readme.</li>
+<li>Документация API: ваш код должен быть документирован, чтобы позволить другим людям легко читать и понимать его. Вы
+можете обратиться к <a href="https://github.com/yiisoft/yii2/blob/master/framework/base/BaseObject.php">файлу класса BaseObject</a>,
+чтобы узнать, как нужно документировать код.</li>
+</ul>
+<blockquote class="info"><p><strong>Информация: </strong>Ваши комментарии к коду могут быть написаны в формате Markdown. Расширение <code>yiisoft/yii2-apidoc</code>
+  предоставляет инструмент для генерации документации API на основе ваших комментариев.</p>
+</blockquote>
+<blockquote class="info"><p><strong>Информация: </strong>Пока это не обязательно, но мы всё-таки рекомендуем вам придерживаться определённого стиля кодирования.
+  Вы можете обратиться к <a href="https://github.com/yiisoft/yii2/wiki/Core-framework-code-style">стилю кодирования фреймворка</a>.</p>
+</blockquote>
+<h2>Базовые расширения  <span id="core-extensions"></span><a href="#core-extensions" class="hashlink">&para;</a></h2><p>Yii предоставляет следующие базовые расширения, (или <a href="https://www.yiiframework.com/extensions/official">"Official Extensions"</a>) которые разрабатывает и поддерживает команда разработчиков Yii. Они все
+зарегистрированы на <a href="https://packagist.org/">Packagist</a> и могут быть легко установлены, как описано в подразделе
+<a href="#using-extensions">Использование расширений</a>.</p>
+<ul>
+<li><a href="https://www.yiiframework.com/extension/yiisoft/yii2-apidoc">yiisoft/yii2-apidoc</a>:
+предоставляет расширяемый и высокопроизводительный генератор документации API. Оно также используется для генерации
+документации API фреймворка.</li>
+<li><a href="https://www.yiiframework.com/extension/yiisoft/yii2-authclient">yiisoft/yii2-authclient</a>:
+предоставляет набор наиболее часто используемых клиентов авторизации, таких, как Facebook OAuth2 клиент и GitHub
+OAuth2 клиент.</li>
+<li><a href="https://www.yiiframework.com/extension/yiisoft/yii2-bootstrap">yiisoft/yii2-bootstrap</a>:
+предоставляет набор виджетов, которые являются компонентами и плагинами <a href="http://getbootstrap.com/">Bootstrap</a>.</li>
+<li><a href="https://github.com/yiisoft/yii2-codeception">yiisoft/yii2-codeception</a> (deprecated):
+предоставляет поддержку тестирования, основанного на <a href="http://codeception.com/">Codeception</a>.</li>
+<li><a href="https://www.yiiframework.com/extension/yiisoft/yii2-debug">yiisoft/yii2-debug</a>:
+предоставляет поддержку отладки в приложениях Yii. Когда это расширение используется, отладочная панель появится в
+нижней части каждой страницы. Это расширение также предоставляет набор отдельных страниц для отображения более
+подробной отладочной информации.</li>
+<li><a href="https://www.yiiframework.com/extension/yiisoft/yii2-elasticsearch">yiisoft/yii2-elasticsearch</a>:
+предоставляет поддержку использования <a href="http://www.elasticsearch.org/">Elasticsearch</a>. Оно включает в себя поддержку
+основных поисковых запросов, а также реализует шаблон проектирования <a href="guide-db-active-record.html">Active Record</a>, который
+позволяет хранить записи Active Record в Elasticsearch.</li>
+<li><a href="https://github.com/yiisoft/yii2-faker">yiisoft/yii2-faker</a>:
+предоставляет поддержку использования <a href="https://github.com/fzaninotto/Faker">Faker</a> для генерации фиктивных данных.</li>
+<li><a href="https://github.com/yiisoft/yii2-gii">yiisoft/yii2-gii</a>:
+предоставляет веб-интерфейс для генерации кода, который является весьма расширяемым и может быть использован для
+быстрой генерации моделей, форм, модулей, CRUD и т.д.</li>
+<li><a href="https://github.com/yiisoft/yii2-httpclient">yiisoft/yii2-httpclient</a>:
+предоставляет HTTP клиент.</li>
+<li><a href="https://github.com/yiisoft/yii2-imagine">yiisoft/yii2-imagine</a>:
+предоставляет часто используемые функции для работы с изображениями, основанные на библиотеке
+<a href="http://imagine.readthedocs.org/">Imagine</a>.</li>
+<li><a href="https://github.com/yiisoft/yii2-jui">yiisoft/yii2-jui</a>:
+предоставляет набор виджетов, основанный на взаимодействиях и виджетах <a href="http://jqueryui.com/">JQuery UI</a>.</li>
+<li><a href="https://github.com/yiisoft/yii2-mongodb">yiisoft/yii2-mongodb</a>:
+предоставляет поддержку использования <a href="http://www.mongodb.org/">MongoDB</a>. Оно включает такие возможности, как
+базовые запросы, Active Record, миграции, кэширование, генерация кода и т.д.</li>
+<li><a href="https://github.com/yiisoft/yii2-redis">yiisoft/yii2-redis</a>:
+предоставляет поддержку использования <a href="http://redis.io/">redis</a>. Оно включает такие возможности, как базовые запросы,
+Active Record, кэширование и т.д.</li>
+<li><a href="https://github.com/yiisoft/yii2-smarty">yiisoft/yii2-smarty</a>:
+предоставляет шаблонизатор, основанный на <a href="http://www.smarty.net/">Smarty</a>.</li>
+<li><a href="https://github.com/yiisoft/yii2-sphinx">yiisoft/yii2-sphinx</a>:
+предоставляет поддержку использования <a href="http://sphinxsearch.com">Sphinx</a>. Оно включает такие возможности, как базовые
+запросы, Active Record, генерация кода и т.д.</li>
+<li><a href="https://github.com/yiisoft/yii2-swiftmailer">yiisoft/yii2-swiftmailer</a>:
+предоставляет возможности отправки email, основанные на <a href="http://swiftmailer.org/">swiftmailer</a>.</li>
+<li><a href="https://github.com/yiisoft/yii2-twig">yiisoft/yii2-twig</a>:
+предоставляет шаблонизатор, основанный на <a href="http://twig.sensiolabs.org/">Twig</a>.</li>
+</ul>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 09 Dec 2020 00:16:07 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

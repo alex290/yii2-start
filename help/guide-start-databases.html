@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/1728b664/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9c5d0894/solarized_light.css" rel="stylesheet">
+<link href="./assets/f2ce5bcd/style.css" rel="stylesheet">
+<script src="./assets/bbf84a7a/jquery.js"></script>
+<script src="./assets/1728b664/js/bootstrap.js"></script>
+<script src="./assets/fd63b446/jssearch.js"></script>    <title>Работа с базами данных - Первое знакомство - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w548" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w548-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w548-collapse" class="collapse navbar-collapse"><ul id="w549" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w550" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-532" data-toggle="collapse" data-parent="#navigation">Введение <b class="caret"></b></a><div id="navigation-532" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">О Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Обновление с версии 1.1</a></div>
+<a class="list-group-item active" href="#navigation-533" data-toggle="collapse" data-parent="#navigation">Первое знакомство <b class="caret"></b></a><div id="navigation-533" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-start-installation.html">Установка Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Запуск приложения</a>
+<a class="list-group-item" href="./guide-start-hello.html">Говорим «привет»</a>
+<a class="list-group-item" href="./guide-start-forms.html">Работа с формами</a>
+<a class="list-group-item active" href="./guide-start-databases.html">Работа с базами данных</a>
+<a class="list-group-item" href="./guide-start-gii.html">Генерация кода при помощи Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Что дальше?</a></div>
+<a class="list-group-item" href="#navigation-534" data-toggle="collapse" data-parent="#navigation">Структура приложения <b class="caret"></b></a><div id="navigation-534" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Входные скрипты</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Приложения</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Компоненты приложения</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-structure-models.html">Модели</a>
+<a class="list-group-item" href="./guide-structure-views.html">Представления</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Модули</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Фильтры</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Виджеты</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Расширения</a></div>
+<a class="list-group-item" href="#navigation-535" data-toggle="collapse" data-parent="#navigation">Обработка запросов <b class="caret"></b></a><div id="navigation-535" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Разбор и генерация URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Запросы</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Ответы</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Сессии и куки</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Обработка ошибок</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Логирование</a></div>
+<a class="list-group-item" href="#navigation-536" data-toggle="collapse" data-parent="#navigation">Основные понятия <b class="caret"></b></a><div id="navigation-536" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Компоненты</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Свойства</a>
+<a class="list-group-item" href="./guide-concept-events.html">События</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Поведения</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Конфигурации</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Псевдонимы</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Автозагрузка классов</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item" href="#navigation-537" data-toggle="collapse" data-parent="#navigation">Работа с базами данных <b class="caret"></b></a><div id="navigation-537" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Объекты доступа к данным (DAO)</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Построитель запросов</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Миграции</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-ru/README.md">Sphinx</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-redis/blob/master/docs/guide-ru/README.md">Redis</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-ru/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-ru/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-538" data-toggle="collapse" data-parent="#navigation">Получение данных от пользователя <b class="caret"></b></a><div id="navigation-538" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Создание форм</a>
+<a class="list-group-item" href="./guide-input-validation.html">Валидация</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Загрузка файлов</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Табличный ввод</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Работа с несколькими моделями</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">Расширение ActiveForm на стороне клиента</a></div>
+<a class="list-group-item" href="#navigation-539" data-toggle="collapse" data-parent="#navigation">Отображение данных <b class="caret"></b></a><div id="navigation-539" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Форматирование данных</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Постраничная разбивка</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Сортировка</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Провайдеры данных</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Виджеты для данных</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Работа с клиентскими скриптами</a>
+<a class="list-group-item" href="./guide-output-theming.html">Темизация</a></div>
+<a class="list-group-item" href="#navigation-540" data-toggle="collapse" data-parent="#navigation">Безопасность <b class="caret"></b></a><div id="navigation-540" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-security-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Авторизация</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Работа с паролями</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">Криптография</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-ru/README.md">Клиенты авторизации</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Лучшие практики</a></div>
+<a class="list-group-item" href="#navigation-541" data-toggle="collapse" data-parent="#navigation">Кеширование <b class="caret"></b></a><div id="navigation-541" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-caching-data.html">Кэширование данных</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Кэширование фрагментов</a>
+<a class="list-group-item" href="./guide-caching-page.html">Кэширование страниц</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP кэширование</a></div>
+<a class="list-group-item" href="#navigation-542" data-toggle="collapse" data-parent="#navigation">Веб-сервисы REST <b class="caret"></b></a><div id="navigation-542" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Быстрый старт</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Роутинг</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Форматирование ответа</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Ограничение частоты запросов</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Версионирование</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Обработка ошибок</a></div>
+<a class="list-group-item" href="#navigation-543" data-toggle="collapse" data-parent="#navigation">Инструменты разработчика <b class="caret"></b></a><div id="navigation-543" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Отладочная панель и отладчик</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide/README.md">Генерация кода с Gii</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">Генератор документации API</a></div>
+<a class="list-group-item" href="#navigation-544" data-toggle="collapse" data-parent="#navigation">Тестирование <b class="caret"></b></a><div id="navigation-544" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Настройка тестового окружения</a>
+<a class="list-group-item" href="./guide-test-unit.html">Модульные тесты</a>
+<a class="list-group-item" href="./guide-test-functional.html">Функциональные тесты</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Приёмочные тесты</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Фикстуры</a></div>
+<a class="list-group-item" href="#navigation-545" data-toggle="collapse" data-parent="#navigation">Специальные темы <b class="caret"></b></a><div id="navigation-545" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">Шаблон приложения advanced</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Создание приложения с нуля</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Консольные команды</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Встроенные валидаторы</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Интернационализация</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Отправка почты</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Оптимизация производительности</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Окружение виртуального хостинга</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Шаблонизаторы</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Работа со сторонним кодом</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">Использование Yii в качестве микро-framework&#039;а</a></div>
+<a class="list-group-item" href="#navigation-546" data-toggle="collapse" data-parent="#navigation">Виджеты <b class="caret"></b></a><div id="navigation-546" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-ru/README.md">Виджеты Bootstrap</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-ru/README.md">Виджеты Jquery UI</a></div>
+<a class="list-group-item" href="#navigation-547" data-toggle="collapse" data-parent="#navigation">Хелперы <b class="caret"></b></a><div id="navigation-547" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url хелпер</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Работа с базами данных <span id="rabota-s-bazami-dannyh"></span><a href="#rabota-s-bazami-dannyh" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#preparing-database">Подготавливаем базу данных</a></li>
+<li><a href="#configuring-db-connection">Настраиваем подключение к БД</a></li>
+<li><a href="#creating-active-record">Создаём потомка Active Record</a></li>
+<li><a href="#creating-action">Создаём Action</a></li>
+<li><a href="#creating-view">Создаём View</a></li>
+<li><a href="#trying-it-out">Испытываем в действии</a></li>
+<li><a href="#summary">Заключение</a></li></ol></div>
+<p>Этот раздел расскажет о том, как создать новую страницу, отображающую данные по странам, полученные из таблицы <code>countries</code> базы данных. Для достижения этой цели вам будет необходимо настроить подключение к базе данных, создать класс <a href="guide-db-active-record.html">Active Record</a>, определить <a href="guide-structure-controllers.html">action</a> и создать <a href="guide-structure-views.html">view</a>.</p>
+<p>Изучив эту часть, вы научитесь:</p>
+<ul>
+<li>Настраивать подключение к БД.</li>
+<li>Определять класс Active Record.</li>
+<li>Запрашивать данные, используя класс Active Record.</li>
+<li>Отображать данные во view с использованием пагинации.</li>
+</ul>
+<p>Обратите внимание, чтобы усвоить этот раздел, вы должны иметь базовые знания и навыки использования баз данных. 
+В частности, вы должны знать, как создать базу данных и как выполнять SQL запросы, используя клиентские инструменты для работы с БД.</p>
+<h2>Подготавливаем базу данных  <span id="preparing-database"></span><a href="#preparing-database" class="hashlink">&para;</a></h2><p>Для начала создайте базу данных под названием <code>yii2basic</code>, из которой вы будете получать данные в вашем приложении.
+Вы можете создать базу данных SQLite, MySQL, PostgreSQL, MSSQL или Oracle, так как Yii имеет встроенную поддержку для многих баз данных. Для простоты, в дальнейшем описании будет подразумеваться MySQL.</p>
+<p>После этого создайте в базе данных таблицу <code>country</code> и добавьте в неё немного демонстрационных данных. Вы можете запустить следующую SQL инструкцию, чтобы сделать это:</p>
+<pre><code class="hljs sql language-sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`country`</span> (
+  <span class="hljs-string">`code`</span> <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">2</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+  <span class="hljs-string">`name`</span> <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">52</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`population`</span> <span class="hljs-built_in">INT</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">'0'</span>
+) <span class="hljs-keyword">ENGINE</span>=<span class="hljs-keyword">InnoDB</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CHARSET</span>=utf8;
+
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`country`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">'AU'</span>,<span class="hljs-string">'Australia'</span>,<span class="hljs-number">24016400</span>);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`country`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">'BR'</span>,<span class="hljs-string">'Brazil'</span>,<span class="hljs-number">205722000</span>);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`country`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">'CA'</span>,<span class="hljs-string">'Canada'</span>,<span class="hljs-number">35985751</span>);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`country`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">'CN'</span>,<span class="hljs-string">'China'</span>,<span class="hljs-number">1375210000</span>);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`country`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">'DE'</span>,<span class="hljs-string">'Germany'</span>,<span class="hljs-number">81459000</span>);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`country`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">'FR'</span>,<span class="hljs-string">'France'</span>,<span class="hljs-number">64513242</span>);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`country`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">'GB'</span>,<span class="hljs-string">'United Kingdom'</span>,<span class="hljs-number">65097000</span>);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`country`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">'IN'</span>,<span class="hljs-string">'India'</span>,<span class="hljs-number">1285400000</span>);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`country`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">'RU'</span>,<span class="hljs-string">'Russia'</span>,<span class="hljs-number">146519759</span>);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`country`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">'US'</span>,<span class="hljs-string">'United States'</span>,<span class="hljs-number">322976000</span>);
+</code></pre>
+<p>На данный момент у вас есть база данных под названием <code>yii2basic</code> и внутри неё таблица <code>country</code> с тремя столбцами, содержащими десять строк данных.</p>
+<h2>Настраиваем подключение к БД  <span id="configuring-db-connection"></span><a href="#configuring-db-connection" class="hashlink">&para;</a></h2><p>Перед продолжением убедитесь, что у вас установлены PHP-расширение <a href="https://secure.php.net/manual/ru/book.pdo.php">PDO</a> и драйвер PDO для используемой вами базы данных (например, <code>pdo_mysql</code> для MySQL). Это базовое требование в случае использования вашим приложением реляционной базы данных.
+После того, как они установлены, откройте файл <code>config/db.php</code> и измените параметры на верные для вашей базы данных. По умолчанию этот файл содержит следующее:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\db\Connection'</span>,
+    <span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'mysql:host=localhost;dbname=yii2basic'</span>,
+    <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'root'</span>,
+    <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">''</span>,
+    <span class="hljs-string">'charset'</span> =&gt; <span class="hljs-string">'utf8'</span>,
+];
+</code></pre>
+<p>Файл <code>config/db.php</code> — типичный <a href="guide-concept-configurations.html">конфигурационный</a> инструмент, базирующийся на файлах. Данный конфигурационный файл определяет параметры, необходимые для создания и инициализации экземпляра <a href="./yii-db-connection.html">yii\db\Connection</a>, через который вы можете делать SQL запросы к подразумеваемой базе данных.</p>
+<p>Подключение к БД, настроенное выше, доступно в коде приложения через выражение <code>Yii::$app-&gt;db</code>.</p>
+<blockquote class="info"><p><strong>Информация: </strong>файл <code>config/db.php</code> будет подключен главной конфигурацией приложения <code>config/web.php</code>,
+  описывающей то, как экземпляр <a href="guide-structure-applications.html">приложения</a> должен быть инициализирован.
+  Для детальной информации, пожалуйста, обратитесь к разделу <a href="guide-concept-configurations.html">Конфигурации</a>.</p>
+</blockquote>
+<p>Если вам необходимо работать с базами данных, поддержка которых не включена непосредственно в фреймворк, стоит обратить
+внимание на следующие расширения:</p>
+<ul>
+<li><a href="https://github.com/edgardmessias/yii2-informix">Informix</a></li>
+<li><a href="https://github.com/edgardmessias/yii2-ibm-db2">IBM DB2</a></li>
+<li><a href="https://github.com/edgardmessias/yii2-firebird">Firebird</a></li>
+</ul>
+<h2>Создаём потомка Active Record  <span id="creating-active-record"></span><a href="#creating-active-record" class="hashlink">&para;</a></h2><p>Чтобы представлять и получать данные из таблицы <code>country</code>, создайте класс — потомок <a href="guide-db-active-record.html">Active Record</a>, под названием <code>Country</code> и сохраните его в файле <code>models/Country.php</code>.</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Country</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+}
+</code></pre>
+<p>Класс <code>Country</code> наследуется от <a href="./yii-db-activerecord.html">yii\db\ActiveRecord</a>. Вам не нужно писать ни строчки кода внутри него! С кодом, приведённым выше, Yii свяжет имя таблицы с именем класса.</p>
+<blockquote class="info"><p><strong>Информация: </strong>Если нет возможности задать прямую зависимость между именем таблицы и именем класса, вы можете переопределить
+  метод <a href="./yii-db-activerecord.html#tableName()-detail">yii\db\ActiveRecord::tableName()</a>, чтобы явно задать имя связанной таблицы.</p>
+</blockquote>
+<p>Используя класс <code>Country</code>, вы можете легко манипулировать данными в таблице <code>country</code>, как показано в этих фрагментах:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>\<span class="hljs-title">Country</span>;
+
+<span class="hljs-comment">// получаем все строки из таблицы "country" и сортируем их по "name"</span>
+$countries = Country::find()-&gt;orderBy(<span class="hljs-string">'name'</span>)-&gt;all();
+
+<span class="hljs-comment">// получаем строку с первичным ключом "US"</span>
+$country = Country::findOne(<span class="hljs-string">'US'</span>);
+
+<span class="hljs-comment">// отобразит "United States"</span>
+<span class="hljs-keyword">echo</span> $country-&gt;name;
+
+<span class="hljs-comment">// меняем имя страны на "U.S.A." и сохраняем в базу данных</span>
+$country-&gt;name = <span class="hljs-string">'U.S.A.'</span>;
+$country-&gt;save();
+</code></pre>
+<blockquote class="info"><p><strong>Информация: </strong>Active Record — мощный способ доступа и манипулирования данными БД в объектно-ориентированном стиле.
+  Вы можете найти подробную информацию в разделе <a href="guide-db-active-record.html">Active Record</a>. В качестве альтернативы, вы также можете взаимодействовать с базой данных, используя более низкоуровневый способ доступа, называемый <a href="guide-db-dao.html">Data Access Objects</a>.</p>
+</blockquote>
+<h2>Создаём Action  <span id="creating-action"></span><a href="#creating-action" class="hashlink">&para;</a></h2><p>Для того, чтобы показать данные по странам конечным пользователям, вам надо создать новый action. Вместо размещения нового action'a в контроллере <code>site</code>, как вы делали в предыдущих разделах, будет иметь больше смысла создать новый контроллер специально для всех действий, относящихся к данным по странам. Назовите новый контроллер <code>CountryController</code>, и создайте action <code>index</code> внутри него, как показано ниже.</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">data</span>\<span class="hljs-title">Pagination</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>\<span class="hljs-title">Country</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CountryController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionIndex</span><span class="hljs-params">()</span>
+    </span>{
+        $query = Country::find();
+
+        $pagination = <span class="hljs-keyword">new</span> Pagination([
+            <span class="hljs-string">'defaultPageSize'</span> =&gt; <span class="hljs-number">5</span>,
+            <span class="hljs-string">'totalCount'</span> =&gt; $query-&gt;count(),
+        ]);
+
+        $countries = $query-&gt;orderBy(<span class="hljs-string">'name'</span>)
+            -&gt;offset($pagination-&gt;offset)
+            -&gt;limit($pagination-&gt;limit)
+            -&gt;all();
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;render(<span class="hljs-string">'index'</span>, [
+            <span class="hljs-string">'countries'</span> =&gt; $countries,
+            <span class="hljs-string">'pagination'</span> =&gt; $pagination,
+        ]);
+    }
+}
+</code></pre>
+<p>Сохраните код выше в файле <code>controllers/CountryController.php</code>.</p>
+<p>Action <code>index</code> вызывает <code>Country::find()</code>. Данный метод Active Record строит запрос к БД и извлекает все данные из таблицы <code>country</code>.
+Чтобы ограничить количество стран, возвращаемых каждым запросом, запрос разбивается на страницы с помощью объекта <a href="./yii-data-pagination.html">yii\data\Pagination</a>. Объект <code>Pagination</code> служит двум целям:</p>
+<ul>
+<li>Устанавливает пункты <code>offset</code> и <code>limit</code> для SQL инструкции, представленной запросом, чтобы она возвращала только одну страницу данных за раз (в нашем случае максимум 5 строк на страницу).</li>
+<li>Он используется во view для отображения пагинатора, состоящего из набора кнопок с номерами страниц, это будет разъяснено в следующем подразделе.</li>
+</ul>
+<p>В конце кода action <code>index</code> выводит view с именем <code>index</code>, и передаёт в него данные по странам вместе c информацией о пагинации.</p>
+<h2>Создаём View  <span id="creating-view"></span><a href="#creating-view" class="hashlink">&para;</a></h2><p>Первым делом создайте поддиректорию с именем <code>country</code> внутри директории <code>views</code>. Эта папка будет использоваться для хранения всех view, выводимых контроллером <code>country</code>. Внутри директории <code>views/country</code> создайте файл с именем <code>index.php</code>, содержащий следующий код:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">Html</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">widgets</span>\<span class="hljs-title">LinkPager</span>;
+<span class="hljs-meta">?&gt;</span>
+&lt;h1&gt;Countries&lt;/h1&gt;
+&lt;ul&gt;
+<span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">foreach</span> ($countries <span class="hljs-keyword">as</span> $country): <span class="hljs-meta">?&gt;</span>
+    &lt;li&gt;
+        <span class="hljs-meta">&lt;?</span>= Html::encode(<span class="hljs-string">"{$country-&gt;code} ({$country-&gt;name})"</span>) <span class="hljs-meta">?&gt;</span>:
+        <span class="hljs-meta">&lt;?</span>= $country-&gt;population <span class="hljs-meta">?&gt;</span>
+    &lt;/li&gt;
+<span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">endforeach</span>; <span class="hljs-meta">?&gt;</span>
+&lt;/ul&gt;
+
+<span class="hljs-meta">&lt;?</span>= LinkPager::widget([<span class="hljs-string">'pagination'</span> =&gt; $pagination]) <span class="hljs-meta">?&gt;</span>
+</code></pre>
+<p>View имеет 2 части относительно отображения данных по странам. В первой части предоставленные данные по странам выводятся как неупорядоченный HTML-список.
+Во второй части выводится виджет <a href="./yii-widgets-linkpager.html">yii\widgets\LinkPager</a>, используя информацию о пагинации, переданную из action во view. Виджет <code>LinkPager</code> отображает набор постраничных кнопок. Клик по любой из них обновит данные по странам в соответствующей странице.</p>
+<h2>Испытываем в действии  <span id="trying-it-out"></span><a href="#trying-it-out" class="hashlink">&para;</a></h2><p>Чтобы увидеть, как работает весь вышеприведённый код, перейдите по следующей ссылке в своём браузере:</p>
+<pre><code class="hljs less"><span class="hljs-attribute">http</span>:<span class="hljs-comment">//hostname/index.php?r=country%2Findex</span>
+</code></pre>
+<p><img src="images/start-country-list.png" alt="Список Стран" /></p>
+<p>В начале вы увидите страницу, показывающую пять стран. Под странами вы увидите пагинатор с четырьмя кнопками. Если вы кликните по кнопке "2", то увидите страницу, отображающую другие пять стран из базы данных: вторая страница записей.
+Посмотрев внимательней, вы увидите, что URL в браузере тоже сменилось на</p>
+<pre><code class="hljs less"><span class="hljs-attribute">http</span>:<span class="hljs-comment">//hostname/index.php?r=country%2Findex&amp;page=2</span>
+</code></pre>
+<p>За кадром <a href="./yii-data-pagination.html">Pagination</a> предоставляет всю необходимую функциональность для постраничной разбивки набора данных:</p>
+<ul>
+<li>В начале <a href="./yii-data-pagination.html">Pagination</a> показывает первую страницу, которая отражает SELECT запрос стран с параметрами <code>LIMIT 5 OFFSET 0</code>. Как результат, первые пять стран будут получены и отображены.</li>
+<li>Виджет <a href="./yii-widgets-linkpager.html">LinkPager</a> выводит кнопки страниц используя URL'ы, созданные <a href="./yii-data-pagination.html#createUrl()-detail">Pagination</a>. Эти URL'ы будут содержать параметр запроса <code>page</code>, который представляет различные номера страниц.</li>
+<li>Если вы кликните по кнопке "2", сработает и обработается новый запрос для маршрута <code>country/index</code>. Таким образом новый запрос стран будет иметь параметры <code>LIMIT 5 OFFSET 5</code> и вернет следующие пять стран для отображения.</li>
+</ul>
+<h2>Заключение  <span id="summary"></span><a href="#summary" class="hashlink">&para;</a></h2><p>В этом разделе вы научились работать с базой данных. Также вы научились получать и отображать данные с постраничной разбивкой с помощью <a href="./yii-data-pagination.html">yii\data\Pagination</a> и <a href="./yii-widgets-linkpager.html">yii\widgets\LinkPager</a>.</p>
+<p>В следующем разделе вы научитесь использовать мощный инструмент генерации кода, называемый <a href="guide-start-gii.html">Gii</a>, чтобы с его помощью быстро осуществлять некоторые часто используемые функции, такие как операции Create-Read-Update-Delete (CRUD) для работы с данными в таблице базы данных. На самом деле код, который вы только что написали, в Yii может быть полностью сгенерирован автоматически с использованием Gii.</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 09 Dec 2020 00:16:04 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

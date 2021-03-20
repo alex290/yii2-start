@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/1728b664/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9c5d0894/solarized_light.css" rel="stylesheet">
+<link href="./assets/f2ce5bcd/style.css" rel="stylesheet">
+<script src="./assets/bbf84a7a/jquery.js"></script>
+<script src="./assets/1728b664/js/bootstrap.js"></script>
+<script src="./assets/fd63b446/jssearch.js"></script>    <title>Url хелпер - Хелперы - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1156" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1156-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1156-collapse" class="collapse navbar-collapse"><ul id="w1157" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1158" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1140" data-toggle="collapse" data-parent="#navigation">Введение <b class="caret"></b></a><div id="navigation-1140" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">О Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Обновление с версии 1.1</a></div>
+<a class="list-group-item" href="#navigation-1141" data-toggle="collapse" data-parent="#navigation">Первое знакомство <b class="caret"></b></a><div id="navigation-1141" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Установка Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Запуск приложения</a>
+<a class="list-group-item" href="./guide-start-hello.html">Говорим «привет»</a>
+<a class="list-group-item" href="./guide-start-forms.html">Работа с формами</a>
+<a class="list-group-item" href="./guide-start-databases.html">Работа с базами данных</a>
+<a class="list-group-item" href="./guide-start-gii.html">Генерация кода при помощи Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Что дальше?</a></div>
+<a class="list-group-item" href="#navigation-1142" data-toggle="collapse" data-parent="#navigation">Структура приложения <b class="caret"></b></a><div id="navigation-1142" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Входные скрипты</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Приложения</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Компоненты приложения</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-structure-models.html">Модели</a>
+<a class="list-group-item" href="./guide-structure-views.html">Представления</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Модули</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Фильтры</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Виджеты</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Расширения</a></div>
+<a class="list-group-item" href="#navigation-1143" data-toggle="collapse" data-parent="#navigation">Обработка запросов <b class="caret"></b></a><div id="navigation-1143" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Разбор и генерация URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Запросы</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Ответы</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Сессии и куки</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Обработка ошибок</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Логирование</a></div>
+<a class="list-group-item" href="#navigation-1144" data-toggle="collapse" data-parent="#navigation">Основные понятия <b class="caret"></b></a><div id="navigation-1144" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Компоненты</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Свойства</a>
+<a class="list-group-item" href="./guide-concept-events.html">События</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Поведения</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Конфигурации</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Псевдонимы</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Автозагрузка классов</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item" href="#navigation-1145" data-toggle="collapse" data-parent="#navigation">Работа с базами данных <b class="caret"></b></a><div id="navigation-1145" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Объекты доступа к данным (DAO)</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Построитель запросов</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Миграции</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-ru/README.md">Sphinx</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-redis/blob/master/docs/guide-ru/README.md">Redis</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-ru/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-ru/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1146" data-toggle="collapse" data-parent="#navigation">Получение данных от пользователя <b class="caret"></b></a><div id="navigation-1146" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Создание форм</a>
+<a class="list-group-item" href="./guide-input-validation.html">Валидация</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Загрузка файлов</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Табличный ввод</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Работа с несколькими моделями</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">Расширение ActiveForm на стороне клиента</a></div>
+<a class="list-group-item" href="#navigation-1147" data-toggle="collapse" data-parent="#navigation">Отображение данных <b class="caret"></b></a><div id="navigation-1147" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Форматирование данных</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Постраничная разбивка</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Сортировка</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Провайдеры данных</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Виджеты для данных</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Работа с клиентскими скриптами</a>
+<a class="list-group-item" href="./guide-output-theming.html">Темизация</a></div>
+<a class="list-group-item" href="#navigation-1148" data-toggle="collapse" data-parent="#navigation">Безопасность <b class="caret"></b></a><div id="navigation-1148" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-security-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Авторизация</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Работа с паролями</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">Криптография</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-ru/README.md">Клиенты авторизации</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Лучшие практики</a></div>
+<a class="list-group-item" href="#navigation-1149" data-toggle="collapse" data-parent="#navigation">Кеширование <b class="caret"></b></a><div id="navigation-1149" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-caching-data.html">Кэширование данных</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Кэширование фрагментов</a>
+<a class="list-group-item" href="./guide-caching-page.html">Кэширование страниц</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP кэширование</a></div>
+<a class="list-group-item" href="#navigation-1150" data-toggle="collapse" data-parent="#navigation">Веб-сервисы REST <b class="caret"></b></a><div id="navigation-1150" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Быстрый старт</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Роутинг</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Форматирование ответа</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Ограничение частоты запросов</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Версионирование</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Обработка ошибок</a></div>
+<a class="list-group-item" href="#navigation-1151" data-toggle="collapse" data-parent="#navigation">Инструменты разработчика <b class="caret"></b></a><div id="navigation-1151" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Отладочная панель и отладчик</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide/README.md">Генерация кода с Gii</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">Генератор документации API</a></div>
+<a class="list-group-item" href="#navigation-1152" data-toggle="collapse" data-parent="#navigation">Тестирование <b class="caret"></b></a><div id="navigation-1152" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Настройка тестового окружения</a>
+<a class="list-group-item" href="./guide-test-unit.html">Модульные тесты</a>
+<a class="list-group-item" href="./guide-test-functional.html">Функциональные тесты</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Приёмочные тесты</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Фикстуры</a></div>
+<a class="list-group-item" href="#navigation-1153" data-toggle="collapse" data-parent="#navigation">Специальные темы <b class="caret"></b></a><div id="navigation-1153" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">Шаблон приложения advanced</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Создание приложения с нуля</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Консольные команды</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Встроенные валидаторы</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Интернационализация</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Отправка почты</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Оптимизация производительности</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Окружение виртуального хостинга</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Шаблонизаторы</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Работа со сторонним кодом</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">Использование Yii в качестве микро-framework&#039;а</a></div>
+<a class="list-group-item" href="#navigation-1154" data-toggle="collapse" data-parent="#navigation">Виджеты <b class="caret"></b></a><div id="navigation-1154" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-ru/README.md">Виджеты Bootstrap</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-ru/README.md">Виджеты Jquery UI</a></div>
+<a class="list-group-item active" href="#navigation-1155" data-toggle="collapse" data-parent="#navigation">Хелперы <b class="caret"></b></a><div id="navigation-1155" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-helper-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item active" href="./guide-helper-url.html">Url хелпер</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Url <span id="url"></span><a href="#url" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#getting-common-urls">Получение общих URL</a></li>
+<li><a href="#creating-urls">Создание URL</a></li>
+<li><a href="#remember-urls">Запоминание URL</a></li>
+<li><a href="#checking-relative-urls">Проверить относительность URL</a></li></ol></div>
+<p>Хелпер Url предоставляет набор статических методов для управления URL.</p>
+<h2>Получение общих URL  <span id="getting-common-urls"></span><a href="#getting-common-urls" class="hashlink">&para;</a></h2><p>Вы можете использовать два метода получения общих URL: домашний URL (Home) и базовый URL (Base) текущего запроса.
+Используйте следующий код, чтобы получить домашний URL:</p>
+<pre><code class="hljs php language-php">$relativeHomeUrl = Url::home();
+$absoluteHomeUrl = Url::home(<span class="hljs-keyword">true</span>);
+$httpsAbsoluteHomeUrl = Url::home(<span class="hljs-string">'https'</span>);
+</code></pre>
+<p>Если вы не передали параметров, то получите относительный URL. Вы можете передать <code>true</code>, чтобы получить абсолютный URL
+для текущего протокола или явно указать протокол (<code>https</code>, <code>http</code>).</p>
+<p>Чтобы получить базовый URL текущего запроса:</p>
+<pre><code class="hljs php language-php">$relativeBaseUrl = Url::base();
+$absoluteBaseUrl = Url::base(<span class="hljs-keyword">true</span>);
+$httpsAbsoluteBaseUrl = Url::base(<span class="hljs-string">'https'</span>);
+</code></pre>
+<p>Единственный параметр данного метода работает так же как и <code>Url::home()</code>.</p>
+<h2>Создание URL  <span id="creating-urls"></span><a href="#creating-urls" class="hashlink">&para;</a></h2><p>Чтобы создать URL для соответствующего роута, используйте метод <code>Url::toRoute()</code>. Метод использует <a href="./yii-web-urlmanager.html">yii\web\UrlManager</a>.
+Для того чтобы создать URL:</p>
+<pre><code class="hljs php language-php">$url = Url::toRoute([<span class="hljs-string">'product/view'</span>, <span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">42</span>]);
+</code></pre>
+<p>Вы можете задать роут строкой, например, <code>site/index</code>. А также вы можете использовать массив, если хотите задать
+дополнительные параметры запроса для URL. Формат массива должен быть следующим:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// сгенерирует: /index.php?r=site/index&amp;param1=value1&amp;param2=value2</span>
+[<span class="hljs-string">'site/index'</span>, <span class="hljs-string">'param1'</span> =&gt; <span class="hljs-string">'value1'</span>, <span class="hljs-string">'param2'</span> =&gt; <span class="hljs-string">'value2'</span>]
+</code></pre>
+<p>Если вы хотите создать URL с якорем, то вы можете использовать параметр массива с ключом <code>#</code>. Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// сгенерирует: /index.php?r=site/index&amp;param1=value1#name</span>
+[<span class="hljs-string">'site/index'</span>, <span class="hljs-string">'param1'</span> =&gt; <span class="hljs-string">'value1'</span>, <span class="hljs-string">'#'</span> =&gt; <span class="hljs-string">'name'</span>]
+</code></pre>
+<p>Роут может быть и абсолютным, и относительным. Абсолютный URL начинается со слеша (например, <code>/site/index</code>),
+относительный - без (например, <code>site/index</code> or <code>index</code>). Относительный URL будет сконвертирован в абсолютный по следующим
+правилам:</p>
+<ul>
+<li>Если роут пустая строка, то будет использовано текущее значение <a href="./yii-base-controller.html#$route-detail">route</a>;</li>
+<li>Если роут не содержит слешей (например, <code>index</code>), то он будет считаться экшеном текущего контроллера и будет определен
+с помощью <a href="./yii-base-controller.html#$uniqueId-detail">yii\web\Controller::$uniqueId</a>;</li>
+<li>Если роут начинается не со слеша (например, <code>site/index</code>), то он будет считаться относительным роутом текущего модуля
+и будет определен с помощью <a href="./yii-base-module.html#$uniqueId-detail">uniqueId</a>.</li>
+</ul>
+<p>Начиная с версии 2.0.2, вы можете задавать роуты с помощью <a href="guide-concept-aliases.html">псевдонимов</a>. В этом случае сначала
+псевдоним будет сконвертирован в соответствующий роут, который будет преобразован в абсолютный в соответствии с вышеописанными
+правилами.</p>
+<p>Примеры использования метода:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// /index.php?r=site/index</span>
+<span class="hljs-keyword">echo</span> Url::toRoute(<span class="hljs-string">'site/index'</span>);
+
+<span class="hljs-comment">// /index.php?r=site/index&amp;src=ref1#name</span>
+<span class="hljs-keyword">echo</span> Url::toRoute([<span class="hljs-string">'site/index'</span>, <span class="hljs-string">'src'</span> =&gt; <span class="hljs-string">'ref1'</span>, <span class="hljs-string">'#'</span> =&gt; <span class="hljs-string">'name'</span>]);
+
+<span class="hljs-comment">// /index.php?r=post/edit&amp;id=100     псевдоним "@postEdit" задан как "post/edit"</span>
+<span class="hljs-keyword">echo</span> Url::toRoute([<span class="hljs-string">'@postEdit'</span>, <span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">100</span>]);
+
+<span class="hljs-comment">// http://www.example.com/index.php?r=site/index</span>
+<span class="hljs-keyword">echo</span> Url::toRoute(<span class="hljs-string">'site/index'</span>, <span class="hljs-keyword">true</span>);
+
+<span class="hljs-comment">// https://www.example.com/index.php?r=site/index</span>
+<span class="hljs-keyword">echo</span> Url::toRoute(<span class="hljs-string">'site/index'</span>, <span class="hljs-string">'https'</span>);
+</code></pre>
+<p>Другой метод <code>Url::to()</code> очень похож на <span class="broken-link">toRoute()</span>. Единственное отличие: входным параметром должен быть массив.
+Если будет передана строка, то она будет воспринята как URL.</p>
+<p>Первый аргумент может быть:</p>
+<ul>
+<li>массивом: будет вызван <span class="broken-link">toRoute()</span>, чтобы сгенерировать URL. Например: <code>['site/index']</code>, <code>['post/index', 'page' =&gt; 2]</code>.
+В разделе <span class="broken-link">toRoute()</span> подробно описано как задавать роут;</li>
+<li>Строка, начинающаяся с <code>@</code>, будет обработана как псевдоним. Будет возвращено соответствующее значение псевдонима;</li>
+<li>Пустая строка: вернет текущий URL;</li>
+<li>Обычная строка: вернет строку без изменений.</li>
+</ul>
+<p>Когда у метода задан второй параметр <code>$scheme</code> (строка или <code>true</code>), то сгенерированный URL будет с протоколом
+(полученным из <a href="./yii-web-urlmanager.html#$hostInfo-detail">yii\web\UrlManager::$hostInfo</a>). Если в <code>$url</code> указан протокол, то его значение будет заменено.</p>
+<p>Пример использования:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// /index.php?r=site/index</span>
+<span class="hljs-keyword">echo</span> Url::to([<span class="hljs-string">'site/index'</span>]);
+
+<span class="hljs-comment">// /index.php?r=site/index&amp;src=ref1#name</span>
+<span class="hljs-keyword">echo</span> Url::to([<span class="hljs-string">'site/index'</span>, <span class="hljs-string">'src'</span> =&gt; <span class="hljs-string">'ref1'</span>, <span class="hljs-string">'#'</span> =&gt; <span class="hljs-string">'name'</span>]);
+
+<span class="hljs-comment">// /index.php?r=post/edit&amp;id=100     псевдоним "@postEdit" задан как "post/edit"</span>
+<span class="hljs-keyword">echo</span> Url::to([<span class="hljs-string">'@postEdit'</span>, <span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">100</span>]);
+
+<span class="hljs-comment">// Текущий URL</span>
+<span class="hljs-keyword">echo</span> Url::to();
+
+<span class="hljs-comment">// /images/logo.gif</span>
+<span class="hljs-keyword">echo</span> Url::to(<span class="hljs-string">'@web/images/logo.gif'</span>);
+
+<span class="hljs-comment">// images/logo.gif</span>
+<span class="hljs-keyword">echo</span> Url::to(<span class="hljs-string">'images/logo.gif'</span>);
+
+<span class="hljs-comment">// http://www.example.com/images/logo.gif</span>
+<span class="hljs-keyword">echo</span> Url::to(<span class="hljs-string">'@web/images/logo.gif'</span>, <span class="hljs-keyword">true</span>);
+
+<span class="hljs-comment">// https://www.example.com/images/logo.gif</span>
+<span class="hljs-keyword">echo</span> Url::to(<span class="hljs-string">'@web/images/logo.gif'</span>, <span class="hljs-string">'https'</span>);
+</code></pre>
+<p>Начиная с версии 2.0.3, вы можете использовать <a href="./yii-helpers-baseurl.html#current()-detail">yii\helpers\Url::current()</a>, чтобы создавать URL на основе текущего
+запрошенного роута и его GET-параметров. Вы можете изменить, удалить или добавить новые GET-параметры, передав в метод
+параметр <code>$params</code>. Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// предположим $_GET = ['id' =&gt; 123, 'src' =&gt; 'google'], а текущий роут "post/view"</span>
+
+<span class="hljs-comment">// /index.php?r=post/view&amp;id=123&amp;src=google</span>
+<span class="hljs-keyword">echo</span> Url::current();
+
+<span class="hljs-comment">// /index.php?r=post/view&amp;id=123</span>
+<span class="hljs-keyword">echo</span> Url::current([<span class="hljs-string">'src'</span> =&gt; <span class="hljs-keyword">null</span>]);
+<span class="hljs-comment">// /index.php?r=post/view&amp;id=100&amp;src=google</span>
+<span class="hljs-keyword">echo</span> Url::current([<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">100</span>]);
+</code></pre>
+<h2>Запоминание URL  <span id="remember-urls"></span><a href="#remember-urls" class="hashlink">&para;</a></h2><p>Существуют задачи, когда вам необходимо запомнить URL и потом использовать его в процессе одного или нескольких
+последовательных запросов. Это может быть достигнуто следующим образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// Запомнить текущий URL</span>
+Url::remember();
+
+<span class="hljs-comment">// Запомнить определенный URL. Входные параметры смотрите на примере Url::to().</span>
+Url::remember([<span class="hljs-string">'product/view'</span>, <span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">42</span>]);
+
+<span class="hljs-comment">// Запомнить URL под определенным именем</span>
+Url::remember([<span class="hljs-string">'product/view'</span>, <span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">42</span>], <span class="hljs-string">'product'</span>);
+</code></pre>
+<p>В следующем запросе мы можем получить сохраненный URL следующим образом:</p>
+<pre><code class="hljs php language-php">$url = Url::previous();
+$productUrl = Url::previous(<span class="hljs-string">'product'</span>);
+</code></pre>
+<h2>Проверить относительность URL  <span id="checking-relative-urls"></span><a href="#checking-relative-urls" class="hashlink">&para;</a></h2><p>Чтобы проверить относительный URL или нет (например, если в нем не содержится информации о хосте), вы можете использовать
+следующий код:</p>
+<pre><code class="hljs php language-php">$isRelative = Url::isRelative(<span class="hljs-string">'test/it'</span>);
+</code></pre>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 09 Dec 2020 00:16:06 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

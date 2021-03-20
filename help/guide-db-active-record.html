@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/1728b664/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9c5d0894/solarized_light.css" rel="stylesheet">
+<link href="./assets/f2ce5bcd/style.css" rel="stylesheet">
+<script src="./assets/bbf84a7a/jquery.js"></script>
+<script src="./assets/1728b664/js/bootstrap.js"></script>
+<script src="./assets/fd63b446/jssearch.js"></script>    <title>Active Record - Работа с базами данных - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w111" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w111-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w111-collapse" class="collapse navbar-collapse"><ul id="w112" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w113" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-95" data-toggle="collapse" data-parent="#navigation">Введение <b class="caret"></b></a><div id="navigation-95" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">О Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Обновление с версии 1.1</a></div>
+<a class="list-group-item" href="#navigation-96" data-toggle="collapse" data-parent="#navigation">Первое знакомство <b class="caret"></b></a><div id="navigation-96" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Установка Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Запуск приложения</a>
+<a class="list-group-item" href="./guide-start-hello.html">Говорим «привет»</a>
+<a class="list-group-item" href="./guide-start-forms.html">Работа с формами</a>
+<a class="list-group-item" href="./guide-start-databases.html">Работа с базами данных</a>
+<a class="list-group-item" href="./guide-start-gii.html">Генерация кода при помощи Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Что дальше?</a></div>
+<a class="list-group-item" href="#navigation-97" data-toggle="collapse" data-parent="#navigation">Структура приложения <b class="caret"></b></a><div id="navigation-97" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Входные скрипты</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Приложения</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Компоненты приложения</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-structure-models.html">Модели</a>
+<a class="list-group-item" href="./guide-structure-views.html">Представления</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Модули</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Фильтры</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Виджеты</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Расширения</a></div>
+<a class="list-group-item" href="#navigation-98" data-toggle="collapse" data-parent="#navigation">Обработка запросов <b class="caret"></b></a><div id="navigation-98" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Разбор и генерация URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Запросы</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Ответы</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Сессии и куки</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Обработка ошибок</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Логирование</a></div>
+<a class="list-group-item" href="#navigation-99" data-toggle="collapse" data-parent="#navigation">Основные понятия <b class="caret"></b></a><div id="navigation-99" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Компоненты</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Свойства</a>
+<a class="list-group-item" href="./guide-concept-events.html">События</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Поведения</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Конфигурации</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Псевдонимы</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Автозагрузка классов</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item active" href="#navigation-100" data-toggle="collapse" data-parent="#navigation">Работа с базами данных <b class="caret"></b></a><div id="navigation-100" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-db-dao.html">Объекты доступа к данным (DAO)</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Построитель запросов</a>
+<a class="list-group-item active" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Миграции</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-ru/README.md">Sphinx</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-redis/blob/master/docs/guide-ru/README.md">Redis</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-ru/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-ru/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-101" data-toggle="collapse" data-parent="#navigation">Получение данных от пользователя <b class="caret"></b></a><div id="navigation-101" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Создание форм</a>
+<a class="list-group-item" href="./guide-input-validation.html">Валидация</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Загрузка файлов</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Табличный ввод</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Работа с несколькими моделями</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">Расширение ActiveForm на стороне клиента</a></div>
+<a class="list-group-item" href="#navigation-102" data-toggle="collapse" data-parent="#navigation">Отображение данных <b class="caret"></b></a><div id="navigation-102" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Форматирование данных</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Постраничная разбивка</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Сортировка</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Провайдеры данных</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Виджеты для данных</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Работа с клиентскими скриптами</a>
+<a class="list-group-item" href="./guide-output-theming.html">Темизация</a></div>
+<a class="list-group-item" href="#navigation-103" data-toggle="collapse" data-parent="#navigation">Безопасность <b class="caret"></b></a><div id="navigation-103" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-security-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Авторизация</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Работа с паролями</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">Криптография</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-ru/README.md">Клиенты авторизации</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Лучшие практики</a></div>
+<a class="list-group-item" href="#navigation-104" data-toggle="collapse" data-parent="#navigation">Кеширование <b class="caret"></b></a><div id="navigation-104" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-caching-data.html">Кэширование данных</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Кэширование фрагментов</a>
+<a class="list-group-item" href="./guide-caching-page.html">Кэширование страниц</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP кэширование</a></div>
+<a class="list-group-item" href="#navigation-105" data-toggle="collapse" data-parent="#navigation">Веб-сервисы REST <b class="caret"></b></a><div id="navigation-105" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Быстрый старт</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Роутинг</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Форматирование ответа</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Ограничение частоты запросов</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Версионирование</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Обработка ошибок</a></div>
+<a class="list-group-item" href="#navigation-106" data-toggle="collapse" data-parent="#navigation">Инструменты разработчика <b class="caret"></b></a><div id="navigation-106" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Отладочная панель и отладчик</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide/README.md">Генерация кода с Gii</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">Генератор документации API</a></div>
+<a class="list-group-item" href="#navigation-107" data-toggle="collapse" data-parent="#navigation">Тестирование <b class="caret"></b></a><div id="navigation-107" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Настройка тестового окружения</a>
+<a class="list-group-item" href="./guide-test-unit.html">Модульные тесты</a>
+<a class="list-group-item" href="./guide-test-functional.html">Функциональные тесты</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Приёмочные тесты</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Фикстуры</a></div>
+<a class="list-group-item" href="#navigation-108" data-toggle="collapse" data-parent="#navigation">Специальные темы <b class="caret"></b></a><div id="navigation-108" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">Шаблон приложения advanced</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Создание приложения с нуля</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Консольные команды</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Встроенные валидаторы</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Интернационализация</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Отправка почты</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Оптимизация производительности</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Окружение виртуального хостинга</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Шаблонизаторы</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Работа со сторонним кодом</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">Использование Yii в качестве микро-framework&#039;а</a></div>
+<a class="list-group-item" href="#navigation-109" data-toggle="collapse" data-parent="#navigation">Виджеты <b class="caret"></b></a><div id="navigation-109" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-ru/README.md">Виджеты Bootstrap</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-ru/README.md">Виджеты Jquery UI</a></div>
+<a class="list-group-item" href="#navigation-110" data-toggle="collapse" data-parent="#navigation">Хелперы <b class="caret"></b></a><div id="navigation-110" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url хелпер</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Active Record <span id="active-record"></span><a href="#active-record" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#declaring-ar-classes">Объявление классов Active Record</a></li>
+<li><a href="#db-connection">Подключение к базам данных</a></li>
+<li><a href="#querying-data">Получение данных</a></li>
+<li><a href="#accessing-data">Доступ к данным</a></li>
+<li><a href="#inserting-updating-data">Сохранение данных</a></li>
+<li><a href="#deleting-data">Удаление данных</a></li>
+<li><a href="#ar-life-cycles">Жизненные циклы Active Record</a></li>
+<li><a href="#transactional-operations">Работа с транзакциями</a></li>
+<li><a href="#optimistic-locks">Оптимистическая блокировка</a></li>
+<li><a href="#relational-data">Работа со связными данными</a></li>
+<li><a href="#saving-relations">Сохранение связных данных</a></li>
+<li><a href="#cross-database-relations">Связывание объектов из разных баз данных</a></li>
+<li><a href="#customizing-query-classes">Тонкая настройка классов Query</a></li>
+<li><a href="#polucenie-dopolnitelnyh-atributov">Получение дополнительных атрибутов</a></li></ol></div>
+<p><a href="http://ru.wikipedia.org/wiki/ActiveRecord">Active Record</a> обеспечивает объектно-ориентированный интерфейс для доступа
+и манипулирования данными, хранящимися в базах данных. Класс Active Record соответствует таблице в базе данных, объект
+Active Record соответствует строке этой таблицы, а <em>атрибут</em> объекта Active Record представляет собой значение
+отдельного столбца строки. Вместо непосредственного написания SQL-выражений вы сможете получать доступ к атрибутам
+Active Record и вызывать методы Active Record для доступа и манипулирования данными, хранящимися в таблицах базы данных.</p>
+<p>Для примера предположим, что <code>Customer</code> - это класс Active Record, который сопоставлен с таблицей <code>customer</code>, а <code>name</code> -
+столбец в таблице <code>customer</code>. Тогда вы можете написать следующий код для вставки новой строки в таблицу <code>customer</code>:</p>
+<pre><code class="hljs php language-php">$customer = <span class="hljs-keyword">new</span> Customer();
+$customer-&gt;name = <span class="hljs-string">'Qiang'</span>;
+$customer-&gt;save();
+</code></pre>
+<p>Вышеприведённый код аналогичен использованию следующего SQL-выражения в MySQL, которое менее интуитивно, потенциально
+может вызвать ошибки и даже проблемы совместимости, если вы используете различные виды баз данных:</p>
+<pre><code class="hljs php language-php">$db-&gt;createCommand(<span class="hljs-string">'INSERT INTO `customer` (`name`) VALUES (:name)'</span>, [
+    <span class="hljs-string">':name'</span> =&gt; <span class="hljs-string">'Qiang'</span>,
+])-&gt;execute();
+</code></pre>
+<p>Yii поддерживает работу с Active Record для следующих реляционных баз данных:</p>
+<ul>
+<li>MySQL 4.1 и выше: посредством <a href="./yii-db-activerecord.html">yii\db\ActiveRecord</a></li>
+<li>PostgreSQL 7.3 и выше: посредством <a href="./yii-db-activerecord.html">yii\db\ActiveRecord</a></li>
+<li>SQLite 2 и 3: посредством <a href="./yii-db-activerecord.html">yii\db\ActiveRecord</a></li>
+<li>Microsoft SQL Server 2008 и выше: посредством <a href="./yii-db-activerecord.html">yii\db\ActiveRecord</a></li>
+<li>Oracle: посредством <a href="./yii-db-activerecord.html">yii\db\ActiveRecord</a></li>
+<li>CUBRID 9.3 и выше: посредством <a href="./yii-db-activerecord.html">yii\db\ActiveRecord</a> (Имейте в виду, что вследствие
+<a href="http://jira.cubrid.org/browse/APIS-658">бага</a> в PDO-расширении для CUBRID, заключение значений в кавычки не работает,
+поэтому необходимо использовать CUBRID версии 9.3 как на клиентской стороне, так и на сервере)</li>
+<li>Sphinx: посредством <a href="./yii-sphinx-activerecord.html">yii\sphinx\ActiveRecord</a>, потребуется расширение <code>yii2-sphinx</code></li>
+<li>ElasticSearch: посредством <a href="./yii-elasticsearch-activerecord.html">yii\elasticsearch\ActiveRecord</a>, потребуется расширение <code>yii2-elasticsearch</code></li>
+</ul>
+<p>Кроме того Yii поддерживает использование Active Record со следующими NoSQL базами данных:</p>
+<ul>
+<li>Redis 2.6.12 и выше: посредством <a href="./yii-redis-activerecord.html">yii\redis\ActiveRecord</a>, потребуется расширение <code>yii2-redis</code></li>
+<li>MongoDB 1.3.0 и выше: посредством <a href="./yii-mongodb-activerecord.html">yii\mongodb\ActiveRecord</a>, потребуется расширение <code>yii2-mongodb</code></li>
+</ul>
+<p>В этом руководстве мы в основном будем описывать использование Active Record для реляционных баз данных. Однако большая
+часть этого материала также применима при использовании Active Record с NoSQL базами данных.</p>
+<h2>Объявление классов Active Record  <span id="declaring-ar-classes"></span><a href="#declaring-ar-classes" class="hashlink">&para;</a></h2><p>Для начала объявите свой собственный класс, унаследовав класс <a href="./yii-db-activerecord.html">yii\db\ActiveRecord</a>.</p>
+<h3>Настройка имени таблицы <span id="nastrojka-imeni-tablicy"></span><a href="#nastrojka-imeni-tablicy" class="hashlink">&para;</a></h3><p>По умолчанию каждый класс Active Record ассоциирован с таблицей в базе данных. Метод
+<a href="./yii-db-activerecord.html#tableName()-detail">tableName()</a> получает имя таблицы из имени класса с помощью <a href="./yii-helpers-baseinflector.html#camel2id()-detail">yii\helpers\Inflector::camel2id()</a>.
+Если таблица не названа соответственно, вы можете переопределить данный метод.</p>
+<p>Также может быть применён <a href="./yii-db-connection.html#$tablePrefix-detail">tablePrefix</a> по умолчанию. Например, если 
+<a href="./yii-db-connection.html#$tablePrefix-detail">tablePrefix</a> задан как <code>tbl_</code>, <code>Customer</code> преобразуется в <code>tbl_customer</code>, а
+<code>OrderItem</code> в <code>tbl_order_item</code>. </p>
+<p>Если имя таблицы указано в формате <code>{{%TableName}}</code>, символ <code>%</code> заменяется префиксом. Например <code>{{%post}}</code> становится
+<code>{{tbl_post}}</code>. Фигуриные скобки используются для <a href="guide-db-dao.html#quoting-table-and-column-names">экранирования в SQL-запросах</a>.</p>
+<p>В нижеследующем примере мы объявляем класс Active Record с названием <code>Customer</code> для таблицы <code>customer</code>.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">const</span> STATUS_INACTIVE = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">const</span> STATUS_ACTIVE = <span class="hljs-number">1</span>;
+    
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@return</span> string название таблицы, сопоставленной с этим ActiveRecord-классом.
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">tableName</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'{{customer}}'</span>;
+    }
+}
+</code></pre>
+<h3>Классы Active record называются "моделями" <span id="klassy-active-record-nazyvautsa-modelami"></span><a href="#klassy-active-record-nazyvautsa-modelami" class="hashlink">&para;</a></h3><p>Объекты Active Record являются <a href="guide-structure-models.html">моделями</a>. Именно поэтому мы обычно задаём классам Active Record
+пространство имён <code>app\models</code> (или другое пространство имён, предназначенное для моделей). </p>
+<p>Т.к. класс <a href="./yii-db-activerecord.html">yii\db\ActiveRecord</a> наследует класс <a href="./yii-base-model.html">yii\base\Model</a>, он обладает <em>всеми</em> возможностями
+<a href="guide-structure-models.html">моделей</a>, такими как атрибуты, правила валидации, способы сериализации данных и т.д.</p>
+<h2>Подключение к базам данных  <span id="db-connection"></span><a href="#db-connection" class="hashlink">&para;</a></h2><p>По умолчанию Active Record для доступа и манипулирования данными БД использует
+<a href="guide-structure-application-components.html">компонент приложения</a> <code>db</code> в качестве компонента
+<a href="./yii-db-connection.html">DB connection</a>. Как сказано в разделе <a href="guide-db-dao.html">Объекты доступа к данным (DAO)</a>, вы можете
+настраивать компонент <code>db</code> на уровне конфигурации приложения как показано ниже:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'db'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\db\Connection'</span>,
+            <span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'mysql:host=localhost;dbname=testdb'</span>,
+            <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'demo'</span>,
+            <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">'demo'</span>,
+        ],
+    ],
+];
+</code></pre>
+<p>Если вы хотите использовать для подключения к базе данных другой компонент подключения, отличный от <code>db</code>, вам нужно
+переопределить метод <a href="./yii-db-activerecord.html#getDb()-detail">getDb()</a>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getDb</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-comment">// использовать компонент приложения "db2"</span>
+        <span class="hljs-keyword">return</span> \Yii::$app-&gt;db2;  
+    }
+}
+</code></pre>
+<h2>Получение данных  <span id="querying-data"></span><a href="#querying-data" class="hashlink">&para;</a></h2><p>После объявления класса Active Record вы можете использовать его для получения данных из соответствующей таблицы базы
+данных. Этот процесс, как правило, состоит из следующих трёх шагов:</p>
+<ol>
+<li>Создать новый объект запроса вызовом метода <a href="./yii-db-activerecord.html#find()-detail">yii\db\ActiveRecord::find()</a>;</li>
+<li>Настроить объект запроса вызовом <a href="guide-db-query-builder.html#building-queries">методов построения запросов</a>;</li>
+<li>Вызвать один из <a href="guide-db-query-builder.html#query-methods">методов получения данных</a> для извлечения данных в виде объектов
+Active Record.</li>
+</ol>
+<p>Как вы могли заметить, эти шаги очень похожи на работу с <a href="guide-db-query-builder.html">построителем запросов</a>. Различие лишь в
+том, что для создания объекта запроса вместо оператора <code>new</code> используется метод <a href="./yii-db-activerecord.html#find()-detail">yii\db\ActiveRecord::find()</a>,
+возвращающий новый объект запроса, являющийся представителем класса <a href="./yii-db-activequery.html">yii\db\ActiveQuery</a>.</p>
+<p>Ниже приведено несколько примеров использования Active Query для получения данных:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// возвращает покупателя с идентификатором 123</span>
+<span class="hljs-comment">// SELECT * FROM `customer` WHERE `id` = 123</span>
+$customer = Customer::find()
+    -&gt;where([<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">123</span>])
+    -&gt;one();
+
+<span class="hljs-comment">// возвращает всех активных покупателей, сортируя их по идентификаторам</span>
+<span class="hljs-comment">// SELECT * FROM `customer` WHERE `status` = 1 ORDER BY `id`</span>
+$customers = Customer::find()
+    -&gt;where([<span class="hljs-string">'status'</span> =&gt; Customer::STATUS_ACTIVE])
+    -&gt;orderBy(<span class="hljs-string">'id'</span>)
+    -&gt;all();
+
+<span class="hljs-comment">// возвращает количество активных покупателей</span>
+<span class="hljs-comment">// SELECT COUNT(*) FROM `customer` WHERE `status` = 1</span>
+$count = Customer::find()
+    -&gt;where([<span class="hljs-string">'status'</span> =&gt; Customer::STATUS_ACTIVE])
+    -&gt;count();
+
+<span class="hljs-comment">// возвращает всех покупателей массивом, индексированным их идентификаторами</span>
+<span class="hljs-comment">// SELECT * FROM `customer`</span>
+$customers = Customer::find()
+    -&gt;indexBy(<span class="hljs-string">'id'</span>)
+    -&gt;all();
+</code></pre>
+<p>В примерах выше <code>$customer</code> - это объект класса <code>Customer</code>, в то время как <code>$customers</code> - это массив таких объектов. Все
+эти объекты заполнены данными таблицы <code>customer</code>.</p>
+<blockquote class="info"><p><strong>Информация: </strong>Т.к. класс <a href="./yii-db-activequery.html">yii\db\ActiveQuery</a> наследует <a href="./yii-db-query.html">yii\db\Query</a>, вы можете использовать в нём <em>все</em> методы
+  построения запросов и все методы класса Query как описано в разделе <a href="guide-db-query-builder.html">Построитель запросов</a>.</p>
+</blockquote>
+<p>Т.к. извлечение данных по первичному ключу или значениям отдельных столбцов достаточно распространённая задача, Yii
+предоставляет два коротких метода для её решения:</p>
+<ul>
+<li><a href="./yii-db-baseactiverecord.html#findOne()-detail">yii\db\ActiveRecord::findOne()</a>: возвращает один объект Active Record, заполненный первой строкой результата запроса.</li>
+<li><a href="./yii-db-baseactiverecord.html#findAll()-detail">yii\db\ActiveRecord::findAll()</a>: возвращает массив объектов Active Record, заполненных <em>всеми</em> полученными результатами запроса.</li>
+</ul>
+<p>Оба метода могут принимать параметры в одном из следующих форматов:</p>
+<ul>
+<li>скалярное значение: значение интерпретируется как первичный ключ, по которому следует искать. Yii прочитает
+информацию о структуре базы данных и автоматически определит, какой столбец таблицы содержит первичные ключи.</li>
+<li>массив скалярных значений: массив интерпретируется как набор первичных ключей, по которым следует искать.</li>
+<li>ассоциативный массив: ключи массива интерпретируются как названия столбцов, а значения - как содержимое столбцов,
+которое следует искать. За подробностями вы можете обратиться к разделу <a href="guide-db-query-builder.html#hash-format">Hash Format</a></li>
+</ul>
+<p>Нижеследующий код демонстрирует, каким образом эти методы могут быть использованы:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// возвращает покупателя с идентификатором 123</span>
+<span class="hljs-comment">// SELECT * FROM `customer` WHERE `id` = 123</span>
+$customer = Customer::findOne(<span class="hljs-number">123</span>);
+
+<span class="hljs-comment">// возвращает покупателей с идентификаторами 100, 101, 123 и 124</span>
+<span class="hljs-comment">// SELECT * FROM `customer` WHERE `id` IN (100, 101, 123, 124)</span>
+$customers = Customer::findAll([<span class="hljs-number">100</span>, <span class="hljs-number">101</span>, <span class="hljs-number">123</span>, <span class="hljs-number">124</span>]);
+
+<span class="hljs-comment">// возвращает активного покупателя с идентификатором 123</span>
+<span class="hljs-comment">// SELECT * FROM `customer` WHERE `id` = 123 AND `status` = 1</span>
+$customer = Customer::findOne([
+    <span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">123</span>,
+    <span class="hljs-string">'status'</span> =&gt; Customer::STATUS_ACTIVE,
+]);
+
+<span class="hljs-comment">// возвращает всех неактивных покупателей</span>
+<span class="hljs-comment">// SELECT * FROM `customer` WHERE `status` = 0</span>
+$customers = Customer::findAll([
+    <span class="hljs-string">'status'</span> =&gt; Customer::STATUS_INACTIVE,
+]);
+</code></pre>
+<blockquote class="warning"><p><strong>Внимание: </strong>Если вам нужно передать в эти методы данные, полученные от пользователя, убедитесь что передаваемое значение – это скаляр,
+а если необходимо указать условия в формате массива – убедитесь, что пользовательские данные не могут изменить структуру этого массива.</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// yii\web\Controller гарантирует, что $id будет скаляром</span>
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionView</span><span class="hljs-params">($id)</span>
+</span>{
+    $model = Post::findOne($id);
+    <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-comment">// явное указание имени столбца для поиска гарантирует поиск по столбцу `id`,</span>
+<span class="hljs-comment">// и возвращение одной записи как для массива, так и для скаляра в принятом от пользователя поле `id` </span>
+$model = Post::findOne([<span class="hljs-string">'id'</span> =&gt; Yii::$app-&gt;request-&gt;get(<span class="hljs-string">'id'</span>)]);
+
+<span class="hljs-comment">// НЕ используйте этот код! Пользователь может передать в параметр `id` массив</span>
+<span class="hljs-comment">// и осуществить поиск по имени столбца, которое не должно быть использовано для поиска по логике вашего приложения.</span>
+$model = Post::findOne(Yii::$app-&gt;request-&gt;get(<span class="hljs-string">'id'</span>));
+</code></pre>
+</blockquote>
+<blockquote class="note"><p><strong>Примечание: </strong>Ни метод <a href="./yii-db-baseactiverecord.html#findOne()-detail">yii\db\ActiveRecord::findOne()</a>, ни <a href="./yii-db-activequery.html#one()-detail">yii\db\ActiveQuery::one()</a> не добавляет условие <code>LIMIT 1</code> к
+  генерируемым SQL-запросам. Если ваш запрос может вернуть много строк данных, вы должны вызвать метод <code>limit(1)</code> явно
+  в целях улучшения производительности, например: <code>Customer::find()-&gt;limit(1)-&gt;one()</code>.</p>
+</blockquote>
+<p>Помимо использования методов построения запросов вы можете также писать запросы на "чистом" SQL для получения данных и
+заполнения ими объектов Active Record. Вы можете делать это посредством метода <a href="./yii-db-activerecord.html#findBySql()-detail">yii\db\ActiveRecord::findBySql()</a>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// возвращает всех неактивных покупателей</span>
+$sql = <span class="hljs-string">'SELECT * FROM customer WHERE status=:status'</span>;
+$customers = Customer::findBySql($sql, [<span class="hljs-string">':status'</span> =&gt; Customer::STATUS_INACTIVE])-&gt;all();
+</code></pre>
+<p>Не используйте дополнительные методы построения запросов после вызова метода
+<a href="./yii-db-activerecord.html#findBySql()-detail">findBySql()</a>, т.к. они будут проигнорированы.</p>
+<h2>Доступ к данным  <span id="accessing-data"></span><a href="#accessing-data" class="hashlink">&para;</a></h2><p>Как сказано выше, получаемые из базы данные заполняют объекты Active Record и каждая строка результата запроса
+соответствует одному объекту Active Record. Вы можете получить доступ к значениям столбцов с помощью атрибутов этих
+объектов. Например так:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// "id" и "email" - названия столбцов в таблице "customer"</span>
+$customer = Customer::findOne(<span class="hljs-number">123</span>);
+$id = $customer-&gt;id;
+$email = $customer-&gt;email;
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>Атрибуты объекта Active Record названы в соответствии с названиями столбцов связной таблицы с учётом
+  регистра. Yii автоматически объявляет для каждого столбца связной таблицы атрибут в Active Record. Вы НЕ должны
+  переопределять какие-либо из этих атрибутов. </p>
+</blockquote>
+<p>Атрибуты Active Record названы в соответствии с именами столбцов таблицы. Если столбцы вашей таблицы именуются через
+нижнее подчёркивание, то может оказаться, что вам придётся писать PHP-код вроде этого: <code>$customer-&gt;first_name</code> - в нём
+будет использоваться нижнее подчёркивание для разделения слов в названиях атрибутов. Если вы обеспокоены единообразием
+стиля кодирования, вам придётся переименовать столбцы вашей таблицы соответствующим образом (например, назвать столбцы
+в стиле camelCase).</p>
+<h3>Преобразование данных  <span id="data-transformation"></span><a href="#data-transformation" class="hashlink">&para;</a></h3><p>Часто бывает так, что данные вводятся и/или отображаются в формате, который отличается от формата их хранения в базе
+данных. Например, в базе данных вы храните дни рождения покупателей в формате UNIX timestamp (что, кстати говоря, не
+является хорошим дизайном), в то время как во многих случаях вы хотите манипулировать днями рождения в виде строк
+формата <code>'ДД.ММ.ГГГГ'</code>. Для достижения этой цели, вы можете объявить методы <em>преобразования данных</em> в
+ActiveRecord-классе <code>Customer</code> как показано ниже:</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getBirthdayText</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> date(<span class="hljs-string">'d.m.Y'</span>, <span class="hljs-keyword">$this</span>-&gt;birthday);
+    }
+    
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setBirthdayText</span><span class="hljs-params">($value)</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;birthday = strtotime($value);
+    }
+}
+</code></pre>
+<p>Теперь в своём PHP коде вместо доступа к <code>$customer-&gt;birthday</code>, вы сможете получить доступ к <code>$customer-&gt;birthdayText</code>,
+что позволить вам вводить и отображать дни рождения покупателей в формате <code>'ДД.ММ.ГГГГ'</code>.</p>
+<blockquote class="tip"><p><strong>Подсказка: </strong>Вышеприведённый пример демонстрирует общий способ преобразования данных в различные форматы. Если вы
+  работаете с датами и временем, вы можете использовать <a href="guide-tutorial-core-validators.html#date">DateValidator</a> и
+  <a href="./yii-jui-datepicker.html">DatePicker</a>, которые проще в использовании и являются более мощными инструментами.</p>
+</blockquote>
+<h3>Получение данных в виде массива  <span id="data-in-arrays"></span><a href="#data-in-arrays" class="hashlink">&para;</a></h3><p>Несмотря на то, что получение данных в виде Active Record объектов является удобным и гибким, этот способ не всегда
+подходит при получении большого количества данных из-за больших накладных расходов памяти. В этом случае вы можете
+получить данные в виде PHP-массива, используя перед выполнением запроса метод
+<a href="./yii-db-activequerytrait.html#asArray()-detail">asArray()</a>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// возвращает всех покупателей</span>
+<span class="hljs-comment">// каждый покупатель будет представлен в виде ассоциативного массива</span>
+$customers = Customer::find()
+    -&gt;asArray()
+    -&gt;all();
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>В то время как этот способ бережёт память и улучшает производительность, он ближе к низкому слою
+  абстракции базы данных и вы потеряете многие возможности Active Record. Важное отличие заключается в типах данных
+  значений столбцов. Когда вы получаете данные в виде объектов Active Record, значения столбцов автоматически приводятся
+  к типам, соответствующим типам столбцов; с другой стороны, когда вы получаете данные в массивах, значения столбцов
+  будут строковыми (до тех пор, пока они являются результатом работы PDO-слоя без какой-либо обработки), несмотря на
+  настоящие типы данных соответствующих столбцов.</p>
+</blockquote>
+<h3>Пакетное получение данных  <span id="data-in-batches"></span><a href="#data-in-batches" class="hashlink">&para;</a></h3><p>В главе <a href="guide-db-query-builder.html">Построитель запросов</a> мы объясняли, что вы можете использовать <em>пакетную выборку</em> для
+снижения расходов памяти при получении большого количества данных из базы. Вы можете использовать такой же подход при
+работе с Active Record. Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// получить 10 покупателей одновременно</span>
+<span class="hljs-keyword">foreach</span> (Customer::find()-&gt;batch(<span class="hljs-number">10</span>) <span class="hljs-keyword">as</span> $customers) {
+    <span class="hljs-comment">// $customers - это массив, в котором находится 10 или меньше объектов класса Customer</span>
+}
+
+<span class="hljs-comment">// получить одновременно десять покупателей и перебрать их одного за другим</span>
+<span class="hljs-keyword">foreach</span> (Customer::find()-&gt;each(<span class="hljs-number">10</span>) <span class="hljs-keyword">as</span> $customer) {
+    <span class="hljs-comment">// $customer - это объект класса Customer</span>
+}
+
+<span class="hljs-comment">// пакетная выборка с жадной загрузкой</span>
+<span class="hljs-keyword">foreach</span> (Customer::find()-&gt;with(<span class="hljs-string">'orders'</span>)-&gt;each() <span class="hljs-keyword">as</span> $customer) {
+    <span class="hljs-comment">// $customer - это объект класса Customer</span>
+}
+</code></pre>
+<h2>Сохранение данных  <span id="inserting-updating-data"></span><a href="#inserting-updating-data" class="hashlink">&para;</a></h2><p>Используя Active Record, вы легко можете сохранить данные в базу данных, осуществив следующие шаги:</p>
+<ol>
+<li>Подготовьте объект Active Record;</li>
+<li>Присвойте новые значения атрибутам Active Record;</li>
+<li>Вызовите метод <a href="./yii-db-baseactiverecord.html#save()-detail">yii\db\ActiveRecord::save()</a> для сохранения данных в базу данных.</li>
+</ol>
+<p>Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// вставить новую строку данных</span>
+$customer = <span class="hljs-keyword">new</span> Customer();
+$customer-&gt;name = <span class="hljs-string">'James'</span>;
+$customer-&gt;email = <span class="hljs-string">'james@example.com'</span>;
+$customer-&gt;save();
+
+<span class="hljs-comment">// обновить имеющуюся строку данных</span>
+$customer = Customer::findOne(<span class="hljs-number">123</span>);
+$customer-&gt;email = <span class="hljs-string">'james@newexample.com'</span>;
+$customer-&gt;save();
+</code></pre>
+<p>Метод <a href="./yii-db-baseactiverecord.html#save()-detail">save()</a> может вставить или обновить строку данных в зависимости от состояния
+Active Record объекта. Если объект создан с помощью оператора <code>new</code>, вызов метода <a href="./yii-db-baseactiverecord.html#save()-detail">save()</a>
+приведёт к вставке новой строки данных; если объект был получен с помощью запроса на получение данных, вызов 
+<a href="./yii-db-baseactiverecord.html#save()-detail">save()</a> обновит строку таблицы, соответствующую объекту Active Record.</p>
+<p>Вы можете различать два состояния Active Record объекта с помощью проверки значения его свойства
+<a href="./yii-db-baseactiverecord.html#$isNewRecord-detail">isNewRecord</a>. Это свойство также используется внутри метода
+<a href="./yii-db-baseactiverecord.html#save()-detail">save()</a> как показано ниже:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">save</span><span class="hljs-params">($runValidation = true, $attributeNames = null)</span>
+</span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;getIsNewRecord()) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;insert($runValidation, $attributeNames);
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;update($runValidation, $attributeNames) !== <span class="hljs-keyword">false</span>;
+    }
+}
+</code></pre>
+<blockquote class="tip"><p><strong>Подсказка: </strong>Вы можете вызвать <a href="./yii-db-activerecord.html#insert()-detail">insert()</a> или <a href="./yii-db-activerecord.html#update()-detail">update()</a>
+  непосредственно, чтобы вставить или обновить строку данных в таблице.</p>
+</blockquote>
+<h3>Валидация данных  <span id="data-validation"></span><a href="#data-validation" class="hashlink">&para;</a></h3><p>Т.к. класс <a href="./yii-db-activerecord.html">yii\db\ActiveRecord</a> наследует класс <a href="./yii-base-model.html">yii\base\Model</a>, он обладает такими же возможностями
+<a href="guide-input-validation.html">валидации данных</a>. Вы можете объявить правила валидации переопределив метод
+<a href="./yii-base-model.html#rules()-detail">rules()</a> и осуществлять валидацию данных посредством вызовов метода
+<a href="./yii-base-model.html#validate()-detail">validate()</a>.</p>
+<p>Когда вы вызываете метод <a href="./yii-db-baseactiverecord.html#save()-detail">save()</a>, по умолчанию он автоматически вызывает метод
+<a href="./yii-base-model.html#validate()-detail">validate()</a>. Только после успешного прохождения валидации происходит сохранение
+данных; в ином случае метод <a href="./yii-db-baseactiverecord.html#save()-detail">save()</a> просто возвращает <code>false</code>, и вы можете проверить
+свойство <a href="./yii-base-model.html#$errors-detail">errors</a> для получения сообщений об ошибках валидации.</p>
+<blockquote class="tip"><p><strong>Подсказка: </strong>Если вы уверены, что ваши данные не требуют валидации (например, данные пришли из доверенного источника),
+  вы можете вызвать <code>save(false)</code>, чтобы пропустить валидацию.</p>
+</blockquote>
+<h3>Массовое присваивание  <span id="massive-assignment"></span><a href="#massive-assignment" class="hashlink">&para;</a></h3><p>Как и обычные <a href="guide-structure-models.html">модели</a>, объекты Active Record тоже обладают
+<a href="guide-structure-models.html#massive-assignment">возможностью массового присваивания</a>. Как будет показано ниже, используя эту
+возможность, вы можете одним PHP выражением присвоить значения множества атрибутов Active Record объекту. Запомните
+однако, что только <a href="guide-structure-models.html#safe-attributes">безопасные атрибуты</a> могут быть массово присвоены.</p>
+<pre><code class="hljs php language-php">$values = [
+    <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'James'</span>,
+    <span class="hljs-string">'email'</span> =&gt; <span class="hljs-string">'james@example.com'</span>,
+];
+
+$customer = <span class="hljs-keyword">new</span> Customer();
+
+$customer-&gt;attributes = $values;
+$customer-&gt;save();
+</code></pre>
+<h3>Обновление счётчиков  <span id="updating-counters"></span><a href="#updating-counters" class="hashlink">&para;</a></h3><p>Распространённой задачей является инкремент или декремент столбца в таблице базы данных. Назовём такие столбцы
+столбцами-счётчиками. Вы можете использовать метод <a href="./yii-db-baseactiverecord.html#updateCounters()-detail">updateCounters()</a> для
+обновления одного или нескольких столбцов-счётчиков. Например:</p>
+<pre><code class="hljs php language-php">$post = Post::findOne(<span class="hljs-number">100</span>);
+
+<span class="hljs-comment">// UPDATE `post` SET `view_count` = `view_count` + 1 WHERE `id` = 100</span>
+$post-&gt;updateCounters([<span class="hljs-string">'view_count'</span> =&gt; <span class="hljs-number">1</span>]);
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>Если вы используете метод <a href="./yii-db-baseactiverecord.html#save()-detail">yii\db\ActiveRecord::save()</a> для обновления столбца-счётчика, вы можете
+  прийти к некорректному результату, т.к. вполне вероятно, что этот же счётчик был сохранён сразу несколькими запросами,
+  которые читают и записывают этот же столбец-счётчик.</p>
+</blockquote>
+<h3>Dirty-атрибуты  <span id="dirty-attributes"></span><a href="#dirty-attributes" class="hashlink">&para;</a></h3><p>Когда вы вызываете <a href="./yii-db-baseactiverecord.html#save()-detail">save()</a> для сохранения Active Record объекта, сохраняются только 
+<em>dirty-атрибуты</em>. Атрибут считается <em>dirty-атрибутом</em>, если его значение было изменено после чтения из базы данных или
+же он был сохранён в базу данных совсем недавно. Заметьте, что валидация данных осуществляется независимо от того,
+имеются ли dirty-атрибуты в объекте Active Record или нет.</p>
+<p>Active Record автоматически поддерживает список dirty-атрибутов. Это достигается за счёт хранения старых значений
+атрибутов и сравнения их с новыми. Вы можете вызвать метод <a href="./yii-db-baseactiverecord.html#getDirtyAttributes()-detail">yii\db\ActiveRecord::getDirtyAttributes()</a> для получения
+текущего списка dirty-атрибутов. Вы также можете вызвать <a href="./yii-db-baseactiverecord.html#markAttributeDirty()-detail">yii\db\ActiveRecord::markAttributeDirty()</a>, чтобы явно
+пометить атрибут в качестве dirty-атрибута.</p>
+<p>Если вам нужны значения атрибутов, какими они были до их изменения, вы можете вызвать
+<a href="./yii-db-baseactiverecord.html#getOldAttributes()-detail">getOldAttributes()</a> или
+<a href="./yii-db-baseactiverecord.html#getOldAttribute()-detail">getOldAttribute()</a>.</p>
+<blockquote class="note"><p><strong>Примечание: </strong>Сравнение старых и новых значений будет осуществлено с помощью оператора <code>===</code>, так что значение будет
+  считаться dirty-значением даже в том случае, если оно осталось таким же, но изменило свой тип. Это часто происходит,
+  когда модель получает пользовательский ввод из HTML-форм, где каждое значение представлено строкой. Чтобы убедиться в
+  корректности типа данных, например для целых значений, вы можете применить
+  <a href="guide-input-validation.html#data-filtering">фильтрацию данных</a>: <code>['attributeName', 'filter', 'filter' =&gt; 'intval']</code>.</p>
+</blockquote>
+<h3>Значения атрибутов по умолчанию  <span id="default-attribute-values"></span><a href="#default-attribute-values" class="hashlink">&para;</a></h3><p>Некоторые столбцы ваших таблиц могут иметь значения по умолчанию, объявленные в базе данных. Иногда вы можете захотеть
+предварительно заполнить этими значениями вашу веб-форму, которая соответствует Active Record объекту. Чтобы избежать
+повторного указания этих значений, вы можете вызвать метод
+<a href="./yii-db-activerecord.html#loadDefaultValues()-detail">loadDefaultValues()</a> для заполнения соответствующих Active Record атрибутов
+значениями по умолчанию, объявленными в базе данных:</p>
+<pre><code class="hljs php language-php">$customer = <span class="hljs-keyword">new</span> Customer();
+$customer-&gt;loadDefaultValues();
+<span class="hljs-comment">// $customer-&gt;xyz получит значение по умолчанию, которое было указано при объявлении столбца "xyz"</span>
+</code></pre>
+<h3>Приведение типов атрибутов  <span id="attributes-typecasting"></span><a href="#attributes-typecasting" class="hashlink">&para;</a></h3><p>При заполнении результатами запроса <a href="./yii-db-activerecord.html">yii\db\ActiveRecord</a> производит автоматическое приведение типов для значений
+атрибутов на основе информации из <a href="guide-db-dao.html#database-schema">схемы базы данны</a>. Это позволяет данным, полученным из
+колонки таблицы объявленной как целое, заноситься в экземпляр ActiveRecord как значение целого типа PHP, булево как
+булево и т.д.
+Однако, механизм приведения типов имеет несколько ограничений:</p>
+<ul>
+<li>Числа с плавающей точкой не будут обработаны, а будут представленны как строки, в противном случае они могут потерять точность.</li>
+<li>Конвертация целых чисел зависит от разрядности используемой операционной системы. В частности: значения колонок, объявленных
+как 'unsigned integer' или 'big integer' будут приведены к целому типу PHP только на 64-х разрядных системах, в то время
+как на 32-х разрядных - они будут представленны как строки.</li>
+</ul>
+<p>Имейте в виду, что преобразование типов производиться только в момент заполнения экземпляра ActiveRecord данными из результата
+запроса. При заполнении данных из HTTP запроса или непосредственно через механизм доступа к полям - автоматическая конвертация
+не производтся.
+Схема таблицы базы данных также используется при построении SQL запроса для сохранения данных ActiveRecord, обеспечивая
+соответсвие типов связываемых параметров в запросе. Однако, над атрибутами объекта ActiveRecord не будет производиться
+приведение типов в процессе сохранения.</p>
+<blockquote><p>Совет: вы можете использовать поведение <a href="./yii-behaviors-attributetypecastbehavior.html">yii\behaviors\AttributeTypecastBehavior</a> для того, чтобы производить
+  приведение типов для ActiveRecord во время валидации или сохранения.</p>
+</blockquote>
+<p>Начиная с 2.0.14, Yii ActiveRecord поддерживает сложные типы данных, такие как JSON или многомерные массивы.</p>
+<h4>JSON в MySQL и PostgreSQL <span id="json-v-mysql-i-postgresql"></span><a href="#json-v-mysql-i-postgresql" class="hashlink">&para;</a></h4><p>После заполнения данных, значение из столбца JSON будет автоматически декодировано из JSON в соответствии со стандартными правилами декодирования JSON.</p>
+<p>Чтобы сохранить значение атрибута в столбец JSON, ActiveRecord автоматически создаст объект <a href="./yii-db-jsonexpression.html">JsonExpression</a>, который будет закодирован в строку JSON на уровне <a href="guide-db-query-builder.html">QueryBuilder</a>.</p>
+<h4>Массивы в PostgreSQL <span id="massivy-v-postgresql"></span><a href="#massivy-v-postgresql" class="hashlink">&para;</a></h4><p>После заполнения данных значение из столбца <code>Array</code> будет автоматически декодировано из нотации PgSQL в объект <a href="./yii-db-arrayexpression.html">ArrayExpression</a>. Он реализует интерфейс PHP <code>ArrayAccess</code>, так что вы можете использовать его в качестве массива, или вызвать <code>-&gt;getValue ()</code>, чтобы получить сам массив.</p>
+<p>Чтобы сохранить значение атрибута в столбец массива, ActiveRecord автоматически создаст объект [[yii\db\Array Expression|ArrayExpression]], который будет закодирован <a href="guide-db-query-builder.html">QueryBuilder</a> в строковое представление массива PgSQL.</p>
+<p>Можно также использовать условия для столбцов JSON:</p>
+<pre><code class="hljs php language-php">$query-&gt;andWhere([<span class="hljs-string">'='</span>, <span class="hljs-string">'json'</span>, <span class="hljs-keyword">new</span> ArrayExpression([<span class="hljs-string">'foo'</span> =&gt; <span class="hljs-string">'bar'</span>])
+</code></pre>
+<p>Дополнительные сведения о системе построения выражений см. <a href="guide-db-query-builder.html#adding-custom-conditions-and-expressions">Query Builder – добавление пользовательских условий и выражений</a></p>
+<h3>Обновление нескольких строк данных  <span id="updating-multiple-rows"></span><a href="#updating-multiple-rows" class="hashlink">&para;</a></h3><p>Методы, представленные выше, работают с отдельными Active Record объектами, инициируя вставку или обновление данных для
+отдельной строки таблицы. Вместо них для обновления нескольких строк одновременно можно использовать метод
+<a href="./yii-db-activerecord.html#updateAll()-detail">updateAll()</a>, который является статическим.</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// UPDATE `customer` SET `status` = 1 WHERE `email` LIKE `%@example.com%`</span>
+Customer::updateAll([<span class="hljs-string">'status'</span> =&gt; Customer::STATUS_ACTIVE], [<span class="hljs-string">'like'</span>, <span class="hljs-string">'email'</span>, <span class="hljs-string">'@example.com'</span>]);
+</code></pre>
+<p>Подобным образом можно использовать метод <a href="./yii-db-activerecord.html#updateAllCounters()-detail">updateAllCounters()</a> для
+обновления значений столбцов-счётчиков в нескольких строках одновременно.</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// UPDATE `customer` SET `age` = `age` + 1</span>
+Customer::updateAllCounters([<span class="hljs-string">'age'</span> =&gt; <span class="hljs-number">1</span>]);
+</code></pre>
+<h2>Удаление данных  <span id="deleting-data"></span><a href="#deleting-data" class="hashlink">&para;</a></h2><p>Для удаления одной отдельной строки данных сначала получите Active Record объект, соответствующий этой строке, а затем
+вызовите метод <a href="./yii-db-activerecord.html#delete()-detail">yii\db\ActiveRecord::delete()</a>.</p>
+<pre><code class="hljs php language-php">$customer = Customer::findOne(<span class="hljs-number">123</span>);
+$customer-&gt;delete();
+</code></pre>
+<p>Вы можете вызвать <a href="./yii-db-activerecord.html#deleteAll()-detail">yii\db\ActiveRecord::deleteAll()</a> для удаления всех или нескольких строк данных одновременно.
+Например:</p>
+<pre><code class="hljs php language-php">Customer::deleteAll([<span class="hljs-string">'status'</span> =&gt; Customer::STATUS_INACTIVE]);
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>будьте очень осторожны, используя метод <a href="./yii-db-activerecord.html#deleteAll()-detail">deleteAll()</a>, потому что он
+  может полностью удалить все данные из вашей таблицы, если вы сделаете ошибку при указании условий удаления.</p>
+</blockquote>
+<h2>Жизненные циклы Active Record  <span id="ar-life-cycles"></span><a href="#ar-life-cycles" class="hashlink">&para;</a></h2><p>Важно понимать как устроены жизненные циклы Active Record при использовании Active Record для различных целей.
+В течение каждого жизненного цикла вызывается определённая последовательность методов, которые вы можете переопределять,
+чтобы получить возможность тонкой настройки жизненного цикла. Для встраивания своего кода вы также можете отвечать на
+конкретные события Active Record, которые срабатывают в течение жизненного цикла. Эти события особенно полезны, когда
+вы разрабатываете <a href="guide-concept-behaviors.html">поведения</a>, которые требуют тонкой настройки жизненных циклов Active Record.</p>
+<p>Ниже мы подробно опишем различные жизненные циклы Active Record и методы/события, которые участвуют в жизненных циклах.</p>
+<h3>Жизненный цикл создания нового объекта  <span id="new-instance-life-cycle"></span><a href="#new-instance-life-cycle" class="hashlink">&para;</a></h3><p>Когда создаётся новый объект Active Record с помощью оператора <code>new</code>, следующий жизненный цикл имеет место:</p>
+<ol>
+<li>Вызывается конструктор класса;</li>
+<li>Вызывается <a href="./yii-db-baseactiverecord.html#init()-detail">init()</a>:
+инициируется событие <a href="./yii-db-baseactiverecord.html#EVENT_INIT-detail">EVENT_INIT</a>.</li>
+</ol>
+<h3>Жизненный цикл получения данных  <span id="querying-data-life-cycle"></span><a href="#querying-data-life-cycle" class="hashlink">&para;</a></h3><p>Когда происходит получение данных посредством одного из <a href="#querying-data">методов получения данных</a>, каждый вновь
+создаваемый объект Active Record при заполнении данными проходит следующий жизненный цикл:</p>
+<ol>
+<li>Вызывается конструктор класса.</li>
+<li>Вызывается <a href="./yii-db-baseactiverecord.html#init()-detail">init()</a>: инициируется событие
+<a href="./yii-db-baseactiverecord.html#EVENT_INIT-detail">EVENT_INIT</a>.</li>
+<li>Вызывается <a href="./yii-db-baseactiverecord.html#afterFind()-detail">afterFind()</a>: инициируется событие
+<a href="./yii-db-baseactiverecord.html#EVENT_AFTER_FIND-detail">EVENT_AFTER_FIND</a>.</li>
+</ol>
+<h3>Жизненный цикл сохранения данных  <span id="saving-data-life-cycle"></span><a href="#saving-data-life-cycle" class="hashlink">&para;</a></h3><p>Когда вызывается метод <a href="./yii-db-baseactiverecord.html#save()-detail">save()</a> для вставки или обновления объекта Active Record,
+следующий жизненный цикл имеет место:</p>
+<ol>
+<li>Вызывается <a href="./yii-base-model.html#beforeValidate()-detail">beforeValidate()</a>: инициируется событие 
+<a href="./yii-base-model.html#EVENT_BEFORE_VALIDATE-detail">EVENT_BEFORE_VALIDATE</a>. Если метод возвращает <code>false</code> или свойство
+события <a href="./yii-base-modelevent.html#$isValid-detail">yii\base\ModelEvent::$isValid</a> равно <code>false</code>, оставшиеся шаги не выполняются.</li>
+<li>Осуществляется валидация данных. Если валидация закончилась неудачей, после 3-го шага остальные шаги не выполняются.</li>
+<li>Вызывается <a href="./yii-base-model.html#afterValidate()-detail">afterValidate()</a>: инициируется событие 
+<a href="./yii-base-model.html#EVENT_AFTER_VALIDATE-detail">EVENT_AFTER_VALIDATE</a>.</li>
+<li>Вызывается <a href="./yii-db-baseactiverecord.html#beforeSave()-detail">beforeSave()</a>: инициируется событие 
+<a href="./yii-db-baseactiverecord.html#EVENT_BEFORE_INSERT-detail">EVENT_BEFORE_INSERT</a> или событие
+<a href="./yii-db-baseactiverecord.html#EVENT_BEFORE_UPDATE-detail">EVENT_BEFORE_UPDATE</a>. Если метод возвращает <code>false</code> или свойство события
+<a href="./yii-base-modelevent.html#$isValid-detail">yii\base\ModelEvent::$isValid</a> равно <code>false</code>, оставшиеся шаги не выполняются.</li>
+<li>Осуществляется фактическая вставка или обновление данных в базу данных;</li>
+<li>Вызывается <a href="./yii-db-baseactiverecord.html#afterSave()-detail">afterSave()</a>: инициируется событие
+<a href="./yii-db-baseactiverecord.html#EVENT_AFTER_INSERT-detail">EVENT_AFTER_INSERT</a> или событие
+<a href="./yii-db-baseactiverecord.html#EVENT_AFTER_UPDATE-detail">EVENT_AFTER_UPDATE</a>.</li>
+</ol>
+<h3>Жизненный цикл удаления данных  <span id="deleting-data-life-cycle"></span><a href="#deleting-data-life-cycle" class="hashlink">&para;</a></h3><p>Когда вызывается метод <a href="./yii-db-activerecord.html#delete()-detail">delete()</a> для удаления объекта Active Record, следующий
+жизненный цикл имеет место:</p>
+<ol>
+<li>Вызывается <a href="./yii-db-baseactiverecord.html#beforeDelete()-detail">beforeDelete()</a>: инициируется событие
+<a href="./yii-db-baseactiverecord.html#EVENT_BEFORE_DELETE-detail">EVENT_BEFORE_DELETE</a>. Если метод возвращает <code>false</code> или свойство события
+<a href="./yii-base-modelevent.html#$isValid-detail">yii\base\ModelEvent::$isValid</a> равно <code>false</code>, остальные шаги не выполняются.</li>
+<li>Осуществляется фактическое удаление данных из базы данных.</li>
+<li>Вызывается <a href="./yii-db-baseactiverecord.html#afterDelete()-detail">afterDelete()</a>: инициируется событие
+<a href="./yii-db-baseactiverecord.html#EVENT_AFTER_DELETE-detail">EVENT_AFTER_DELETE</a>.</li>
+</ol>
+<blockquote class="note"><p><strong>Примечание: </strong>Вызов следующих методов НЕ инициирует ни один из вышеприведённых жизненных циклов:</p>
+<ul>
+<li><a href="./yii-db-activerecord.html#updateAll()-detail">yii\db\ActiveRecord::updateAll()</a></li>
+<li><a href="./yii-db-activerecord.html#deleteAll()-detail">yii\db\ActiveRecord::deleteAll()</a></li>
+<li><a href="./yii-db-baseactiverecord.html#updateCounters()-detail">yii\db\ActiveRecord::updateCounters()</a> </li>
+<li><a href="./yii-db-activerecord.html#updateAllCounters()-detail">yii\db\ActiveRecord::updateAllCounters()</a> </li>
+</ul>
+</blockquote>
+<h2>Работа с транзакциями  <span id="transactional-operations"></span><a href="#transactional-operations" class="hashlink">&para;</a></h2><p>Есть два способа использования <a href="guide-db-dao.html#performing-transactions">транзакций</a> при работе с Active Record.</p>
+<p>Первый способ заключается в том, чтобы явно заключить все вызовы методов Active Record в блок транзакции как показано
+ниже:</p>
+<pre><code class="hljs php language-php">$customer = Customer::findOne(<span class="hljs-number">123</span>);
+
+Customer::getDb()-&gt;transaction(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($db)</span> <span class="hljs-title">use</span> <span class="hljs-params">($customer)</span> </span>{
+    $customer-&gt;id = <span class="hljs-number">200</span>;
+    $customer-&gt;save();
+    <span class="hljs-comment">// ...другие операции с базой данных...</span>
+});
+
+<span class="hljs-comment">// или по-другому</span>
+
+$transaction = Customer::getDb()-&gt;beginTransaction();
+<span class="hljs-keyword">try</span> {
+    $customer-&gt;id = <span class="hljs-number">200</span>;
+    $customer-&gt;save();
+    <span class="hljs-comment">// ...другие операции с базой данных...</span>
+    $transaction-&gt;commit();
+} <span class="hljs-keyword">catch</span>(\<span class="hljs-keyword">Exception</span> $e) {
+    $transaction-&gt;rollBack();
+    <span class="hljs-keyword">throw</span> $e;
+} <span class="hljs-keyword">catch</span>(\Throwable $e) {
+    $transaction-&gt;rollBack();
+    <span class="hljs-keyword">throw</span> $e;
+}
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>в коде выше ради совместимости с PHP 5.x и PHP 7.x использованы два блока catch. 
+<code>\Exception</code> реализует интерфейс <a href="https://secure.php.net/manual/ru/class.throwable.php"><code>\Throwable</code> interface</a>
+начиная с PHP 7.0. Если вы используете только PHP 7 и новее, можете пропустить блок с <code>\Exception</code>.</p>
+</blockquote>
+<p>Второй способ заключается в том, чтобы перечислить операции с базой данных, которые требуют тразнакционного выполнения,
+в методе <a href="./yii-db-activerecord.html#transactions()-detail">yii\db\ActiveRecord::transactions()</a>. Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transactions</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            <span class="hljs-string">'admin'</span> =&gt; <span class="hljs-keyword">self</span>::OP_INSERT,
+            <span class="hljs-string">'api'</span> =&gt; <span class="hljs-keyword">self</span>::OP_INSERT | <span class="hljs-keyword">self</span>::OP_UPDATE | <span class="hljs-keyword">self</span>::OP_DELETE,
+            <span class="hljs-comment">// вышеприведённая строка эквивалентна следующей:</span>
+            <span class="hljs-comment">// 'api' =&gt; self::OP_ALL,</span>
+        ];
+    }
+}
+</code></pre>
+<p>Метод <a href="./yii-db-activerecord.html#transactions()-detail">yii\db\ActiveRecord::transactions()</a> должен возвращать массив, ключи которого являются именами 
+<a href="guide-structure-models.html#scenarios">сценариев</a>, а значения соответствуют операциям, которые должны быть выполнены с помощью
+транзакций. Вы должны использовать следующие константы для обозначения различных операций базы данных:</p>
+<ul>
+<li><a href="./yii-db-activerecord.html#OP_INSERT-detail">OP_INSERT</a>: операция вставки, осуществляемая с помощью метода
+<a href="./yii-db-activerecord.html#insert()-detail">insert()</a>;</li>
+<li><a href="./yii-db-activerecord.html#OP_UPDATE-detail">OP_UPDATE</a>: операция обновления, осуществляемая с помощью метода
+<a href="./yii-db-activerecord.html#update()-detail">update()</a>;</li>
+<li><a href="./yii-db-activerecord.html#OP_DELETE-detail">OP_DELETE</a>: операция удаления, осуществляемая с помощью метода
+<a href="./yii-db-activerecord.html#delete()-detail">delete()</a>.</li>
+</ul>
+<p>Используйте операторы <code>|</code> для объединения вышеприведённых констант при обозначении множества операций. Вы можете также
+использовать вспомогательную константу <a href="./yii-db-activerecord.html#OP_ALL-detail">OP_ALL</a>, чтобы обозначить одной константой все три
+вышеприведённые операции.</p>
+<h2>Оптимистическая блокировка  <span id="optimistic-locks"></span><a href="#optimistic-locks" class="hashlink">&para;</a></h2><p>Оптимистическая блокировка - это способ предотвращения конфликтов, которые могут возникать, когда одна и та же строка
+данных обновляется несколькими пользователями. Например, пользователь A и пользователь B одновременно редактируют одну и
+ту же wiki-статью. После того, как пользователь A сохранит свои изменения, пользователь B нажимает на кнопку "Сохранить"
+в попытке также сохранить свои изменения. Т.к. пользователь B работал с фактически-устаревшей версией статьи, было бы
+неплохо иметь способ предотвратить сохранение его варианта статьи и показать ему некоторое сообщение с подсказкой о том,
+что произошло.</p>
+<p>Оптимистическая блокировка решает вышеприведённую проблему за счёт использования отдельного столбца для сохранения
+номера версии каждой строки данных. Когда строка данных сохраняется с использованием устаревшего номера версии,
+выбрасывается исключение <a href="./yii-db-staleobjectexception.html">yii\db\StaleObjectException</a>, которое предохраняет строку от сохранения. Оптимистическая
+блокировка поддерживается только тогда, когда вы обновляете или удаляете существующую строку данных, используя методы
+<a href="./yii-db-activerecord.html#update()-detail">yii\db\ActiveRecord::update()</a> или <a href="./yii-db-activerecord.html#delete()-detail">yii\db\ActiveRecord::delete()</a> соответственно.</p>
+<p>Для использования оптимистической блокировки:</p>
+<ol>
+<li>Создайте столбец в таблице базы данных, ассоциированной с классом Active Record, для сохранения номера версии каждой
+строки данных. Столбец должен быть типа big integer (в Mysql это будет <code>BIGINT DEFAULT 0</code>).</li>
+<li>Переопределите метод <a href="./yii-db-baseactiverecord.html#optimisticLock()-detail">yii\db\ActiveRecord::optimisticLock()</a> таким образом, чтобы он возвращал название этого
+столбца.</li>
+<li>В веб-форме, которая принимает пользовательский ввод, добавьте скрытое поле для сохранения текущей версии обновляемой
+строки. Убедитесь, что для вашего атрибута с версией объявлены правила валидации, и валидация проходит успешно.</li>
+<li>В действии контроллера, которое занимается обновлением строки данных с использованием Active Record, оберните в блок
+try...catch код и перехватывайте исключение <a href="./yii-db-staleobjectexception.html">yii\db\StaleObjectException</a>. Реализуйте необходимую бизнес-логику
+(например, возможность слияния изменений, подсказку о том, что данные устарели) для разрешения возникшего конфликта.</li>
+</ol>
+<p>Например, предположим, что столбец с версией называется <code>version</code>. Вы можете реализовать оптимистическую блокировку с 
+помощью подобного кода:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// ------ код представления -------</span>
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">Html</span>;
+
+<span class="hljs-comment">// ...другие поля ввода</span>
+<span class="hljs-keyword">echo</span> Html::activeHiddenInput($model, <span class="hljs-string">'version'</span>);
+
+
+<span class="hljs-comment">// ------ код контроллера -------</span>
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">StaleObjectException</span>;
+
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionUpdate</span><span class="hljs-params">($id)</span>
+</span>{
+    $model = <span class="hljs-keyword">$this</span>-&gt;findModel($id);
+
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">if</span> ($model-&gt;load(Yii::$app-&gt;request-&gt;post()) &amp;&amp; $model-&gt;save()) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;redirect([<span class="hljs-string">'view'</span>, <span class="hljs-string">'id'</span> =&gt; $model-&gt;id]);
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;render(<span class="hljs-string">'update'</span>, [
+                <span class="hljs-string">'model'</span> =&gt; $model,
+            ]);
+        }
+    } <span class="hljs-keyword">catch</span> (StaleObjectException $e) {
+        <span class="hljs-comment">// логика разрешения конфликта версий</span>
+    }
+}
+</code></pre>
+<h2>Работа со связными данными  <span id="relational-data"></span><a href="#relational-data" class="hashlink">&para;</a></h2><p>Помимо работы с отдельными таблицами баз данных, Active Record также имеет возможность объединять связные данные, что
+делает их легко-доступными для получения через основные объекты данных. Например, данные покупателя связаны с данными
+заказов, потому что один покупатель может осуществить один или несколько заказов. С помощью объявления этой связи вы
+можете получить возможность доступа к информации о заказе покупателя с помощью выражения <code>$customer-&gt;orders</code>, которое
+возвращает информацию о заказе покупателя в виде массива объектов класса <code>Order</code>, которые являются Active Record
+объектами.</p>
+<h3>Объявление связей  <span id="declaring-relations"></span><a href="#declaring-relations" class="hashlink">&para;</a></h3><p>Для работы со связными данными посредством Active Record вы прежде всего должны объявить связи в классе Active Record.
+Эта задача решается простым объявлением <em>методов получения связных данных</em> для каждой интересующей вас связи как
+показано ниже:</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getOrders</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;hasMany(Order::className(), [<span class="hljs-string">'customer_id'</span> =&gt; <span class="hljs-string">'id'</span>]);
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Order</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCustomer</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;hasOne(Customer::className(), [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'customer_id'</span>]);
+    }
+}
+</code></pre>
+<p>В вышеприведённом коде мы объявили связь <code>orders</code> для класса <code>Customer</code> и связь <code>customer</code> для класса <code>Order</code>. </p>
+<p>Каждый метод получения связных данных должен быть назван в формате <code>getXyz</code>. Мы называем <code>xyz</code> (первая буква в нижнем
+регистре) <em>именем связи</em>. Помните, что имена связей чувствительны к регистру.</p>
+<p>При объявлении связи, вы должны указать следующую информацию:</p>
+<ul>
+<li>кратность связи: указывается с помощью вызова метода <a href="./yii-db-activerecord.html#hasMany()-detail">hasMany()</a> или метода
+<a href="./yii-db-activerecord.html#hasOne()-detail">hasOne()</a>. В вышеприведённом примере вы можете легко увидеть в объявлениях связей,
+что покупатель может иметь много заказов в то время, как заказ может быть сделан лишь одним покупателем.</li>
+<li>название связного Active Record класса: указывается в качестве первого параметра для метода 
+<a href="./yii-db-activerecord.html#hasMany()-detail">hasMany()</a> или для метода <a href="./yii-db-activerecord.html#hasOne()-detail">hasOne()</a>. Рекомендуется
+использовать код <code>Xyz::className()</code>, чтобы получить строку с именем класса, при этом вы сможете воспользоваться
+возможностями авто-дополнения кода, встроенного в IDE, а также получите обработку ошибок на этапе компиляции.</li>
+<li><p>связь между двумя типами данных: указываются столбцы с помощью которых два типа данных связаны. Значения массива - это
+столбцы  основного объекта данных (представлен классом Active Record, в котором объявляется связь), в то время как
+ключи массива - столбцы связанных данных.</p>
+<p>Есть простой способ запомнить это правило: как вы можете увидеть в примере выше, столбец связной Active Record
+указывается сразу после указания самого класса Active Record. Вы видите, что <code>customer_id</code> - это свойство класса
+<code>Order</code>, а <code>id</code> - свойство класса <code>Customer</code>.</p>
+</li>
+</ul>
+<h3>Доступ к связным данным  <span id="accessing-relational-data"></span><a href="#accessing-relational-data" class="hashlink">&para;</a></h3><p>После объявления связей вы можете получать доступ к связным данным с помощью имён связей. Это происходит таким же
+образом, каким осуществляется доступ к <a href="guide-concept-properties.html">свойству</a> объекта объявленному с помощью метода получения
+связных данных. По этой причине, мы называем его <em>свойством связи</em>. Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// SELECT * FROM `customer` WHERE `id` = 123</span>
+$customer = Customer::findOne(<span class="hljs-number">123</span>);
+
+<span class="hljs-comment">// SELECT * FROM `order` WHERE `customer_id` = 123</span>
+<span class="hljs-comment">// $orders - это массив объектов Order</span>
+$orders = $customer-&gt;orders;
+</code></pre>
+<blockquote class="info"><p><strong>Информация: </strong>когда вы объявляете связь с названием <code>xyz</code> посредством геттера <code>getXyz()</code>, у вас появляется возможность
+  доступа к свойству <code>xyz</code> подобно <a href="guide-concept-properties.html">свойству объекта</a>. Помните, что название связи чувствительно
+  к регистру.</p>
+</blockquote>
+<p>Если связь объявлена с помощью метода <a href="./yii-db-activerecord.html#hasMany()-detail">hasMany()</a>, доступ к свойству связи вернёт
+массив связных объектов Active Record; если связь объявлена с помощью метода <a href="./yii-db-activerecord.html#hasOne()-detail">hasOne()</a>,
+доступ к свойству связи вернёт связный Active Record объект или <code>null</code>, если связные данные не найдены.</p>
+<p>Когда вы запрашиваете свойство связи в первый раз, выполняется SQL-выражение как показано в примере выше. Если то же
+самое свойство запрашивается вновь, будет возвращён результат предыдущего SQL-запроса без повторного выполнения
+SQL-выражения. Для принудительного повторного выполнения SQL-запроса, вы можете удалить свойство связи с помощью
+операции: <code>unset($customer-&gt;orders)</code>.</p>
+<blockquote class="note"><p><strong>Примечание: </strong>Несмотря на то, что эта концепция выглядит похожей на концепцию <a href="guide-concept-properties.html">свойств объектов</a>,
+  между ними есть важное различие. Для обычных свойств объектов значения свойств имеют тот же тип, который возвращает
+  геттер. Однако метод получения связных данных возвращает объект <a href="./yii-db-activequery.html">yii\db\ActiveQuery</a>, в то время как доступ к
+  свойству связи возвращает объект <a href="./yii-db-activerecord.html">yii\db\ActiveRecord</a> или массив таких объектов.
+  <code>`</code>php
+  $customer-&gt;orders; // массив объектов <code>Order</code>
+  $customer-&gt;getOrders(); // объект ActiveQuery
+  <code>`</code>
+  Это полезно при тонкой настройке запросов к связным данным, что будет описано в следующем разделе.</p>
+</blockquote>
+<h3>Динамические запросы связных данных  <span id="dynamic-relational-query"></span><a href="#dynamic-relational-query" class="hashlink">&para;</a></h3><p>Т.к. метод получения связных данных возвращает объект запроса <a href="./yii-db-activequery.html">yii\db\ActiveQuery</a>, вы можете в дальнейшем перед его
+отправкой в базу данных настроить этот запрос, используя методы построения запросов. Например:</p>
+<pre><code class="hljs php language-php">$customer = Customer::findOne(<span class="hljs-number">123</span>);
+
+<span class="hljs-comment">// SELECT * FROM `order` WHERE `customer_id` = 123 AND `subtotal` &gt; 200 ORDER BY `id`</span>
+$orders = $customer-&gt;getOrders()
+    -&gt;where([<span class="hljs-string">'&gt;'</span>, <span class="hljs-string">'subtotal'</span>, <span class="hljs-number">200</span>])
+    -&gt;orderBy(<span class="hljs-string">'id'</span>)
+    -&gt;all();
+</code></pre>
+<p>В отличие от доступа к данным с помощью свойства связи, каждый раз при выполнении такого динамического запроса
+посредством метода получения связных данных будет выполняться SQL-запрос, даже если тот же самый динамический запрос был
+отправлен ранее.</p>
+<p>Иногда вы можете даже захотеть настроить объявление связи таким образом, чтобы вы могли более просто осуществлять 
+динамические запросы связных данных. Например, вы можете объявить связь <code>bigOrders</code> как показано ниже: </p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getBigOrders</span><span class="hljs-params">($threshold = <span class="hljs-number">100</span>)</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;hasMany(Order::className(), [<span class="hljs-string">'customer_id'</span> =&gt; <span class="hljs-string">'id'</span>])
+            -&gt;where(<span class="hljs-string">'subtotal &gt; :threshold'</span>, [<span class="hljs-string">':threshold'</span> =&gt; $threshold])
+            -&gt;orderBy(<span class="hljs-string">'id'</span>);
+    }
+}
+</code></pre>
+<p>После этого вы сможете выполнять следующие запросы связных данных:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// SELECT * FROM `order` WHERE `customer_id` = 123 AND `subtotal` &gt; 200 ORDER BY `id`</span>
+$orders = $customer-&gt;getBigOrders(<span class="hljs-number">200</span>)-&gt;all();
+
+<span class="hljs-comment">// SELECT * FROM `order` WHERE `customer_id` = 123 AND `subtotal` &gt; 100 ORDER BY `id`</span>
+$orders = $customer-&gt;bigOrders;
+</code></pre>
+<h3>Связывание посредством промежуточной таблицы  <span id="junction-table"></span><a href="#junction-table" class="hashlink">&para;</a></h3><p>При проектировании баз данных, когда между двумя таблицами имеется кратность связи many-to-many, обычно вводится 
+<a href="http://en.wikipedia.org/wiki/Junction_table">промежуточная таблица</a>. Например, таблицы <code>order</code> и <code>item</code> могут быть
+связаны посредством промежуточной таблицы с названием <code>order_item</code>. Один заказ будет соотноситься с несколькими товарами,
+в то время как один товар будет также соотноситься с несколькими заказами.</p>
+<p>При объявлении подобных связей вы можете пользоваться методом <a href="./yii-db-activerelationtrait.html#via()-detail">via()</a> или методом
+<a href="./yii-db-activequery.html#viaTable()-detail">viaTable()</a> для указания промежуточной таблицы. Разница между методами
+<a href="./yii-db-activerelationtrait.html#via()-detail">via()</a> и <a href="./yii-db-activequery.html#viaTable()-detail">viaTable()</a> заключается в том, что первый
+метод указывает промежуточную таблицу с помощью названия связи, в то время как второй метод непосредственно указывает
+промежуточную таблицу. Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Order</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getItems</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;hasMany(Item::className(), [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'item_id'</span>])
+            -&gt;viaTable(<span class="hljs-string">'order_item'</span>, [<span class="hljs-string">'order_id'</span> =&gt; <span class="hljs-string">'id'</span>]);
+    }
+}
+</code></pre>
+<p>или по-другому:</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Order</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getOrderItems</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;hasMany(OrderItem::className(), [<span class="hljs-string">'order_id'</span> =&gt; <span class="hljs-string">'id'</span>]);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getItems</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;hasMany(Item::className(), [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'item_id'</span>])
+            -&gt;via(<span class="hljs-string">'orderItems'</span>);
+    }
+}
+</code></pre>
+<p>Использовать связи, объявленные с помощью промежуточных таблиц, можно точно также, как и обычные связи. Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// SELECT * FROM `order` WHERE `id` = 100</span>
+$order = Order::findOne(<span class="hljs-number">100</span>);
+
+<span class="hljs-comment">// SELECT * FROM `order_item` WHERE `order_id` = 100</span>
+<span class="hljs-comment">// SELECT * FROM `item` WHERE `item_id` IN (...)</span>
+<span class="hljs-comment">// возвращает массив объектов Item</span>
+$items = $order-&gt;items;
+</code></pre>
+<h3>Отложенная и жадная загрузка  <span id="lazy-eager-loading"></span><a href="#lazy-eager-loading" class="hashlink">&para;</a></h3><p>В разделе <a href="#accessing-relational-data">Доступ к связным данным</a>, мы показывали, что вы можете получать доступ к свойству
+связи объекта Active Record точно также, как получаете доступ к свойству обычного объекта. SQL-запрос будет выполнен
+только во время первого доступа к свойству связи. Мы называем подобный способ получения связных данных <em>отложенной
+загрузкой</em>. Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// SELECT * FROM `customer` WHERE `id` = 123</span>
+$customer = Customer::findOne(<span class="hljs-number">123</span>);
+
+<span class="hljs-comment">// SELECT * FROM `order` WHERE `customer_id` = 123</span>
+$orders = $customer-&gt;orders;
+
+<span class="hljs-comment">// SQL-запрос не выполняется</span>
+$orders2 = $customer-&gt;orders;
+</code></pre>
+<p>Отложенная загрузка очень удобна в использовании. Однако этот метод может вызвать проблемы производительности, когда вам
+понадобится получить доступ к тем же самым свойствам связей для нескольких объектов Active Record. Рассмотрите
+следующий пример кода. Сколько SQL-запросов будет выполнено?</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// SELECT * FROM `customer` LIMIT 100</span>
+$customers = Customer::find()-&gt;limit(<span class="hljs-number">100</span>)-&gt;all();
+
+<span class="hljs-keyword">foreach</span> ($customers <span class="hljs-keyword">as</span> $customer) {
+    <span class="hljs-comment">// SELECT * FROM `order` WHERE `customer_id` = ...</span>
+    $orders = $customer-&gt;orders;
+}
+</code></pre>
+<p>Как вы могли заметить по вышеприведённым комментариям кода, будет выполнен 101 SQL-запрос! Это произойдёт из-за того,
+что каждый раз внутри цикла будет выполняться SQL-запрос при получении доступа к свойству связи <code>orders</code> каждого
+отдельного объекта <code>Customer</code>.</p>
+<p>Для решения этой проблемы производительности вы можете, как показано ниже, использовать подход, который называется
+<em>жадная загрузка</em>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// SELECT * FROM `customer` LIMIT 100;</span>
+<span class="hljs-comment">// SELECT * FROM `orders` WHERE `customer_id` IN (...)</span>
+$customers = Customer::find()
+    -&gt;with(<span class="hljs-string">'orders'</span>)
+    -&gt;limit(<span class="hljs-number">100</span>)
+    -&gt;all();
+
+<span class="hljs-keyword">foreach</span> ($customers <span class="hljs-keyword">as</span> $customer) {
+    <span class="hljs-comment">// SQL-запрос не выполняется</span>
+    $orders = $customer-&gt;orders;
+}
+</code></pre>
+<p>Посредством вызова метода <a href="./yii-db-activequerytrait.html#with()-detail">yii\db\ActiveQuery::with()</a>, вы указываете объекту Active Record вернуть заказы первых 100
+покупателей с помощью одного SQL-запроса. В результате снижаете количество выполняемых SQL-запросов от 101 до 2!</p>
+<p>Вы можете жадно загружать одну или несколько связей. Вы можете даже жадно загружать <em>вложенные связи</em>. Вложенная связь -
+это связь, которая объявлена внутри связного Active Record класса. Например, <code>Customer</code> связан с <code>Order</code> посредством
+связи <code>orders</code>, а <code>Order</code> связан с <code>Item</code> посредством связи <code>items</code>. При формировании запроса для <code>Customer</code>, вы можете
+жадно загрузить <code>items</code>, используя нотацию вложенной связи <code>orders.items</code>. </p>
+<p>Ниже представлен код, который показывает различные способы использования метода <a href="./yii-db-activequerytrait.html#with()-detail">with()</a>.
+Мы полагаем, что класс <code>Customer</code> имеет две связи: <code>orders</code> и <code>country</code> - в то время как класс <code>Order</code> имеет лишь одну
+связь <code>items</code>.</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// жадная загрузка "orders" и "country" одновременно</span>
+$customers = Customer::find()-&gt;with(<span class="hljs-string">'orders'</span>, <span class="hljs-string">'country'</span>)-&gt;all();
+<span class="hljs-comment">// аналог с использованием синтаксиса массива</span>
+$customers = Customer::find()-&gt;with([<span class="hljs-string">'orders'</span>, <span class="hljs-string">'country'</span>])-&gt;all();
+<span class="hljs-comment">// SQL-запрос не выполняется</span>
+$orders= $customers[<span class="hljs-number">0</span>]-&gt;orders;
+<span class="hljs-comment">// SQL-запрос не выполняется</span>
+$country = $customers[<span class="hljs-number">0</span>]-&gt;country;
+
+<span class="hljs-comment">// жадная загрузка связи "orders" и вложенной связи "orders.items"</span>
+$customers = Customer::find()-&gt;with(<span class="hljs-string">'orders.items'</span>)-&gt;all();
+<span class="hljs-comment">// доступ к деталям первого заказа первого покупателя </span>
+<span class="hljs-comment">// SQL-запрос не выполняется</span>
+$items = $customers[<span class="hljs-number">0</span>]-&gt;orders[<span class="hljs-number">0</span>]-&gt;items;
+</code></pre>
+<p>Вы можете жадно загрузить более глубокие вложенные связи, такие как <code>a.b.c.d</code>. Все родительские связи будут жадно
+загружены. Таким образом, когда вы вызываете метод <a href="./yii-db-activequerytrait.html#with()-detail">with()</a> с параметром <code>a.b.c.d</code>, вы
+жадно загрузите связи <code>a</code>, <code>a.b</code>, <code>a.b.c</code> и <code>a.b.c.d</code>.</p>
+<blockquote class="info"><p><strong>Информация: </strong>В целом, когда жадно загружается <code>N</code> связей, среди которых <code>M</code> связей объявлено с помощью
+  <a href="#junction-table">промежуточной таблицы</a>, суммарное количество выполняемых SQL-запросов будет равно <code>N+M+1</code>. Заметьте,
+  что вложенная связь <code>a.b.c.d</code> насчитывает 4 связи.</p>
+</blockquote>
+<p>Когда связь жадно загружается, вы можете настроить соответствующий запрос получения связных данных с использованием
+анонимной функции. Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// найти покупателей и получить их вместе с их странами и активными заказами</span>
+<span class="hljs-comment">// SELECT * FROM `customer`</span>
+<span class="hljs-comment">// SELECT * FROM `country` WHERE `id` IN (...)</span>
+<span class="hljs-comment">// SELECT * FROM `order` WHERE `customer_id` IN (...) AND `status` = 1</span>
+$customers = Customer::find()-&gt;with([
+    <span class="hljs-string">'country'</span>,
+    <span class="hljs-string">'orders'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($query)</span> </span>{
+        $query-&gt;andWhere([<span class="hljs-string">'status'</span> =&gt; Order::STATUS_ACTIVE]);
+    },
+])-&gt;all();
+</code></pre>
+<p>Когда настраивается запрос на получение связных данных для какой-либо связи, вы можете указать название связи в виде
+ключа массива и использовать анонимную функцию в качестве соответствующего значения этого массива. Анонимная функция
+получит параметр <code>$query</code>, который представляет собой объект <a href="./yii-db-activequery.html">yii\db\ActiveQuery</a>, используемый для выполнения запроса
+на получение связных данных для данной связи. В вышеприведённом примере кода мы изменили запрос на получение связных
+данных, наложив на него дополнительное условие выборки статуса заказов.</p>
+<blockquote class="note"><p><strong>Примечание: </strong>Если вы вызываете метод <a href="./yii-db-query.html#select()-detail">select()</a> в процессе жадной загрузки связей, вы должны
+убедиться, что будут выбраны столбцы, участвующие в объявлении связей. Иначе связные модели будут загружены
+неправильно. Например:</p>
+<pre><code class="hljs php language-php">$orders = Order::find()-&gt;select([<span class="hljs-string">'id'</span>, <span class="hljs-string">'amount'</span>])-&gt;with(<span class="hljs-string">'customer'</span>)-&gt;all();
+<span class="hljs-comment">// $orders[0]-&gt;customer всегда равно null. Для исправления проблемы вы должны сделать следующее:</span>
+$orders = Order::find()-&gt;select([<span class="hljs-string">'id'</span>, <span class="hljs-string">'amount'</span>, <span class="hljs-string">'customer_id'</span>])-&gt;with(<span class="hljs-string">'customer'</span>)-&gt;all();
+</code></pre>
+</blockquote>
+<h3>Использование JOIN со связями  <span id="joining-with-relations"></span><a href="#joining-with-relations" class="hashlink">&para;</a></h3><blockquote class="note"><p><strong>Примечание: </strong>Материал этого раздела применим только к реляционным базам данных, таким как MySQL, PostgreSQL, и т.д.</p>
+</blockquote>
+<p>Запросы на получение связных данных, которые мы рассмотрели выше, ссылаются только на столбцы основной таблицы при
+извлечении основной информации. На самом же деле нам часто нужно ссылаться в запросах на столбцы связных таблиц.
+Например, мы можем захотеть получить покупателей, для которых имеется хотя бы один активный заказ. Для решения этой
+проблемы мы можем построить запрос с использованием JOIN как показано ниже:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// SELECT `customer`.* FROM `customer`</span>
+<span class="hljs-comment">// LEFT JOIN `order` ON `order`.`customer_id` = `customer`.`id`</span>
+<span class="hljs-comment">// WHERE `order`.`status` = 1</span>
+<span class="hljs-comment">// </span>
+<span class="hljs-comment">// SELECT * FROM `order` WHERE `customer_id` IN (...)</span>
+$customers = Customer::find()
+    -&gt;select(<span class="hljs-string">'customer.*'</span>)
+    -&gt;leftJoin(<span class="hljs-string">'order'</span>, <span class="hljs-string">'`order`.`customer_id` = `customer`.`id`'</span>)
+    -&gt;where([<span class="hljs-string">'order.status'</span> =&gt; Order::STATUS_ACTIVE])
+    -&gt;with(<span class="hljs-string">'orders'</span>)
+    -&gt;all();
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>Важно однозначно указывать в SQL-выражениях имена столбцов при построении запросов на получение связных
+  данных с участием оператора JOIN. Наиболее распространённая практика - предварять названия столбцов с помощью имён
+  соответствующих им таблиц.</p>
+</blockquote>
+<p>Однако лучшим подходом является использование имеющихся объявлений связей с помощью вызова метода
+<a href="./yii-db-activequery.html#joinWith()-detail">yii\db\ActiveQuery::joinWith()</a>:</p>
+<pre><code class="hljs php language-php">$customers = Customer::find()
+    -&gt;joinWith(<span class="hljs-string">'orders'</span>)
+    -&gt;where([<span class="hljs-string">'order.status'</span> =&gt; Order::STATUS_ACTIVE])
+    -&gt;all();
+</code></pre>
+<p>Оба подхода выполняют одинаковый набор SQL-запросов. Однако второй подход более прозрачен и прост.</p>
+<p>По умолчанию, метод <a href="./yii-db-activequery.html#joinWith()-detail">joinWith()</a> будет использовать конструкцию <code>LEFT JOIN</code> для
+объединения основной таблицы со связной. Вы можете указать другой тип операции JOIN (например, <code>RIGHT JOIN</code>) с помощью
+третьего параметра этого метода - <code>$joinType</code>. Если вам нужен <code>INNER JOIN</code>, вы можете вместо этого просто вызвать
+метод <a href="./yii-db-activequery.html#innerJoinWith()-detail">innerJoinWith()</a>.</p>
+<p>Вызов метода <a href="./yii-db-activequery.html#joinWith()-detail">joinWith()</a> будет <a href="#lazy-eager-loading">жадно загружать</a> связные данные
+по умолчанию. Если вы не хотите получать связные данные, вы можете передать во втором параметре <code>$eagerLoading</code> значение
+<code>false</code>. </p>
+<p>Подобно методу <a href="./yii-db-activequerytrait.html#with()-detail">with()</a> вы можете объединять данные с одной или несколькими связями; вы 
+можете настроить запрос на получение связных данных "на лету"; вы можете объединять данные с вложенными связями; вы
+можете смешивать использование метода <a href="./yii-db-activequerytrait.html#with()-detail">with()</a> и метода 
+<a href="./yii-db-activequery.html#joinWith()-detail">joinWith()</a>. Например:</p>
+<pre><code class="hljs php language-php">$customers = Customer::find()-&gt;joinWith([
+    <span class="hljs-string">'orders'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($query)</span> </span>{
+        $query-&gt;andWhere([<span class="hljs-string">'&gt;'</span>, <span class="hljs-string">'subtotal'</span>, <span class="hljs-number">100</span>]);
+    },
+])-&gt;with(<span class="hljs-string">'country'</span>)
+    -&gt;all();
+</code></pre>
+<p>Иногда во время объединения двух таблиц вам может потребоваться указать некоторые дополнительные условия рядом с
+оператором <code>ON</code> во время выполнения JOIN-запроса. Это можно сделать с помощью вызова метода 
+<a href="./yii-db-activequery.html#onCondition()-detail">yii\db\ActiveQuery::onCondition()</a> как показано ниже:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// SELECT `customer`.* FROM `customer`</span>
+<span class="hljs-comment">// LEFT JOIN `order` ON `order`.`customer_id` = `customer`.`id` AND `order`.`status` = 1 </span>
+<span class="hljs-comment">// </span>
+<span class="hljs-comment">// SELECT * FROM `order` WHERE `customer_id` IN (...)</span>
+$customers = Customer::find()-&gt;joinWith([
+    <span class="hljs-string">'orders'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($query)</span> </span>{
+        $query-&gt;onCondition([<span class="hljs-string">'order.status'</span> =&gt; Order::STATUS_ACTIVE]);
+    },
+])-&gt;all();
+</code></pre>
+<p>Вышеприведённый запрос вернёт <em>всех</em> покупателей и для каждого покупателя вернёт все активные заказы. Заметьте, что это
+поведение отличается от нашего предыдущего примера, в котором возвращались только покупатели, у которых был как минимум
+один активный заказ.</p>
+<blockquote class="info"><p><strong>Информация: </strong>Когда в объекте <a href="./yii-db-activequery.html">yii\db\ActiveQuery</a> указано условие выборки с помощью метода
+  <a href="./yii-db-activequery.html#onCondition()-detail">onCondition()</a>, это условие будет размещено в конструкции <code>ON</code>, если запрос
+  содержит оператор JOIN. Если же запрос не содержит оператор JOIN, такое условие будет автоматически размещено в
+  конструкции <code>WHERE</code>.</p>
+</blockquote>
+<h4>Псевдонимы связанных таблиц  <span id="relation-table-aliases"></span><a href="#relation-table-aliases" class="hashlink">&para;</a></h4><p>Как уже было отмечено, при использовании в запросе JOIN-ов, приходится явно решать конфликты имён. Поэтому часто таблицам
+дают псевдонимы. Задать псевдоним для реляционного запроса можно следующим образом:</p>
+<pre><code class="hljs php language-php">$query-&gt;joinWith([
+  <span class="hljs-string">'orders'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($q)</span> </span>{
+      $q-&gt;from([<span class="hljs-string">'o'</span> =&gt; Order::tableName()]);
+  },
+])
+</code></pre>
+<p>Выглядит это довольно сложно. Либо приходится задавать явно имена таблиц, либо вызывать <code>Order::tableName()</code>.
+Начиная с версии 2.0.7 вы можете задать и использовать псевдоним для связанной таблицы следующим образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// join the orders relation and sort the result by orders.id</span>
+$query-&gt;joinWith([<span class="hljs-string">'orders o'</span>])-&gt;orderBy(<span class="hljs-string">'o.id'</span>);
+</code></pre>
+<p>Этот синтаксис работает для простых связей. Если необходимо использовать связующую таблицу, например 
+<code>$query-&gt;joinWith(['orders.product'])</code>, то вызовы joinWith вкладываются друг в друга:</p>
+<pre><code class="hljs php language-php">$query-&gt;joinWith([<span class="hljs-string">'orders o'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($q)</span> </span>{
+      $q-&gt;joinWith(<span class="hljs-string">'product p'</span>);
+  }])
+  -&gt;where(<span class="hljs-string">'o.amount &gt; 100'</span>);
+</code></pre>
+<h3>Обратные связи  <span id="inverse-relations"></span><a href="#inverse-relations" class="hashlink">&para;</a></h3><p>Объявления связей часто взаимны между двумя Active Record классами. Например, <code>Customer</code> связан с <code>Order</code> посредством
+связи <code>orders</code>, а <code>Order</code> взаимно связан с <code>Customer</code> посредством связи <code>customer</code>.</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getOrders</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;hasMany(Order::className(), [<span class="hljs-string">'customer_id'</span> =&gt; <span class="hljs-string">'id'</span>]);
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Order</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCustomer</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;hasOne(Customer::className(), [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'customer_id'</span>]);
+    }
+}
+</code></pre>
+<p>Теперь рассмотрим следующий участок кода:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// SELECT * FROM `customer` WHERE `id` = 123</span>
+$customer = Customer::findOne(<span class="hljs-number">123</span>);
+
+<span class="hljs-comment">// SELECT * FROM `order` WHERE `customer_id` = 123</span>
+$order = $customer-&gt;orders[<span class="hljs-number">0</span>];
+
+<span class="hljs-comment">// SELECT * FROM `customer` WHERE `id` = 123</span>
+$customer2 = $order-&gt;customer;
+
+<span class="hljs-comment">// выведет "not the same"</span>
+<span class="hljs-keyword">echo</span> $customer2 === $customer ? <span class="hljs-string">'same'</span> : <span class="hljs-string">'not the same'</span>;
+</code></pre>
+<p>Мы думали, что <code>$customer</code> и <code>$customer2</code> эквивалентны, но оказалось, что нет! Фактически они содержат одинаковые
+данные, но являются разными объектами. Когда мы получаем доступ к данным посредством <code>$order-&gt;customer</code>, выполняется
+дополнительный SQL-запрос для заполнения нового объекта <code>$customer2</code>.</p>
+<p>Чтобы избежать избыточного выполнения последнего SQL-запроса в вышеприведённом примере, мы должны подсказать Yii, что
+<code>customer</code> - <em>обратная связь</em> относительно <code>orders</code>, и сделаем это с помощью вызова метода
+<a href="./yii-db-activerelationtrait.html#inverseOf()-detail">inverseOf()</a> как показано ниже:</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getOrders</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;hasMany(Order::className(), [<span class="hljs-string">'customer_id'</span> =&gt; <span class="hljs-string">'id'</span>])-&gt;inverseOf(<span class="hljs-string">'customer'</span>);
+    }
+}
+</code></pre>
+<p>Теперь, после этих изменений в объявлении связи, получим:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// SELECT * FROM `customer` WHERE `id` = 123</span>
+$customer = Customer::findOne(<span class="hljs-number">123</span>);
+
+<span class="hljs-comment">// SELECT * FROM `order` WHERE `customer_id` = 123</span>
+$order = $customer-&gt;orders[<span class="hljs-number">0</span>];
+
+<span class="hljs-comment">// SQL-запрос не выполняется</span>
+$customer2 = $order-&gt;customer;
+
+<span class="hljs-comment">// выведет "same"</span>
+<span class="hljs-keyword">echo</span> $customer2 === $customer ? <span class="hljs-string">'same'</span> : <span class="hljs-string">'not the same'</span>;
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>обратные связи не могут быть объявлены для связей, использующих <a href="#junction-table">промежуточную таблицу</a>.
+  То есть, если связь объявлена с помощью методов <a href="./yii-db-activerelationtrait.html#via()-detail">via()</a> или
+  <a href="./yii-db-activequery.html#viaTable()-detail">viaTable()</a>, вы не должны вызывать после этого метод
+  <a href="./yii-db-activerelationtrait.html#inverseOf()-detail">inverseOf()</a>.</p>
+</blockquote>
+<h2>Сохранение связных данных  <span id="saving-relations"></span><a href="#saving-relations" class="hashlink">&para;</a></h2><p>Во время работы со связными данными вам часто требуется установить связи между двумя разными видами данных или удалить
+существующие связи. Это требует установки правильных значений для столбцов, с помощью которых заданы связи. При
+использовании Active Record вам может понадобится завершить участок кода следующим образом:</p>
+<pre><code class="hljs php language-php">$customer = Customer::findOne(<span class="hljs-number">123</span>);
+$order = <span class="hljs-keyword">new</span> Order();
+$order-&gt;subtotal = <span class="hljs-number">100</span>;
+<span class="hljs-comment">// ...</span>
+
+<span class="hljs-comment">// установка атрибута, которой задаёт связь "customer" в объекте Order</span>
+$order-&gt;customer_id = $customer-&gt;id;
+$order-&gt;save();
+</code></pre>
+<p>Active Record предоставляет метод <a href="./yii-db-baseactiverecord.html#link()-detail">link()</a>, который позволяет выполнить эту задачу
+более красивым способом:</p>
+<pre><code class="hljs php language-php">$customer = Customer::findOne(<span class="hljs-number">123</span>);
+$order = <span class="hljs-keyword">new</span> Order();
+$order-&gt;subtotal = <span class="hljs-number">100</span>;
+<span class="hljs-comment">// ...</span>
+
+$order-&gt;link(<span class="hljs-string">'customer'</span>, $customer);
+</code></pre>
+<p>Метод <a href="./yii-db-baseactiverecord.html#link()-detail">link()</a> требует указать название связи и целевой объект Active Record, с которым
+должна быть установлена связь. Метод изменит значения атрибутов, которые связывают два объекта Active Record, и сохранит
+их в базу данных. В вышеприведённом примере, метод присвоит атрибуту <code>customer_id</code> объекта <code>Order</code> значение атрибута
+<code>id</code> объекта <code>Customer</code> и затем сохранит его в базу данных.</p>
+<blockquote class="note"><p><strong>Примечание: </strong>Невозможно связать два свежесозданных объекта Active Record.</p>
+</blockquote>
+<p>Преимущество метода <a href="./yii-db-baseactiverecord.html#link()-detail">link()</a> становится ещё более очевидным, когда связь объявлена
+посредством <a href="#junction-table">промежуточной таблицы</a>. Например, вы можете использовать следующий код, чтобы связать
+объект <code>Order</code> с объектом <code>Item</code>:</p>
+<pre><code class="hljs php language-php">$order-&gt;link(<span class="hljs-string">'items'</span>, $item);
+</code></pre>
+<p>Вышеприведённый код автоматически вставит строку данных в промежуточную таблицу <code>order_item</code>, чтобы связать объект 
+<code>order</code> с объектом <code>item</code>.</p>
+<blockquote class="info"><p><strong>Информация: </strong>Метод <a href="./yii-db-baseactiverecord.html#link()-detail">link()</a> не осуществляет какую-либо валидацию данных во время
+  сохранения целевого объекта Active Record. На вас лежит ответственность за валидацию любых введённых данных перед
+  вызовом этого метода.</p>
+</blockquote>
+<p>Существует противоположная операция для <a href="./yii-db-baseactiverecord.html#link()-detail">link()</a> - это операция
+<a href="./yii-db-baseactiverecord.html#unlink()-detail">unlink()</a>, она снимает существующую связь с двух объектов Active Record. Например:</p>
+<pre><code class="hljs php language-php">$customer = Customer::find()-&gt;with(<span class="hljs-string">'orders'</span>)-&gt;where([<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">123</span>])-&gt;one();
+$customer-&gt;unlink(<span class="hljs-string">'orders'</span>, $customer-&gt;orders[<span class="hljs-number">0</span>]);
+</code></pre>
+<p>По умолчанию метод <a href="./yii-db-baseactiverecord.html#unlink()-detail">unlink()</a> задаст вторичному ключу (или ключам), который определяет
+существующую связь, значение <code>null</code>. Однако вы можете запросить удаление строки таблицы, которая содержит значение
+вторичного ключа, передав значение <code>true</code> в параметре <code>$delete</code> для этого метода.</p>
+<p>Если связь построена на основе промежуточной таблицы, вызов метода <a href="./yii-db-baseactiverecord.html#unlink()-detail">unlink()</a> инициирует
+очистку вторичных ключей в промежуточной таблице, или же удаление соответствующей строки данных в промежуточной таблице,
+если параметр <code>$delete</code> равен <code>true</code>.</p>
+<h2>Связывание объектов из разных баз данных  <span id="cross-database-relations"></span><a href="#cross-database-relations" class="hashlink">&para;</a></h2><p>Active Record позволяет вам объявить связи между классами Active Record, которые относятся к разным базам данных. Базы
+данных могут быть разных типов (например, MySQL и PostgreSQL или MS SQL и MongoDB), и они могут быть запущены на разных
+серверах. Вы можете использовать тот же самый синтаксис для осуществления запросов выборки связных данных. Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// Объект Customer соответствует таблице "customer" в реляционной базе данных (например MySQL)</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">tableName</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'customer'</span>;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getComments</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-comment">// у покупателя может быть много комментариев</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;hasMany(Comment::className(), [<span class="hljs-string">'customer_id'</span> =&gt; <span class="hljs-string">'id'</span>]);
+    }
+}
+
+<span class="hljs-comment">// Объект Comment соответствует коллекции "comment" в базе данных MongoDB</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Comment</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">mongodb</span>\<span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">collectionName</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'comment'</span>;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCustomer</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-comment">// комментарий принадлежит одному покупателю</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;hasOne(Customer::className(), [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'customer_id'</span>]);
+    }
+}
+
+$customers = Customer::find()-&gt;with(<span class="hljs-string">'comments'</span>)-&gt;all();
+</code></pre>
+<p>Вы можете использовать большую часть возможностей запросов получения связных данных, которые были описаны в этой главе.</p>
+<blockquote class="note"><p><strong>Примечание: </strong>Применимость метода <a href="./yii-db-activequery.html#joinWith()-detail">joinWith()</a> ограничена базами данных, которые
+  позволяют выполнять запросы между разными базами с использованием оператора JOIN. По этой причине вы не можете
+  использовать этот метод в вышеприведённом примере, т.к. MongoDB не поддерживает операцию JOIN.</p>
+</blockquote>
+<h2>Тонкая настройка классов Query  <span id="customizing-query-classes"></span><a href="#customizing-query-classes" class="hashlink">&para;</a></h2><p>По умолчанию все запросы данных для Active Record поддерживаются с помощью класса <a href="./yii-db-activequery.html">yii\db\ActiveQuery</a>. Для
+использования собственного класса запроса вам необходимо переопределить метод <a href="./yii-db-activerecord.html#find()-detail">yii\db\ActiveRecord::find()</a> и
+возвращать из него объект вашего собственного класса запроса. Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveQuery</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Comment</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">find</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> CommentQuery(get_called_class());
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CommentQuery</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveQuery</span>
+</span>{
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>Теперь, когда вы будете осуществлять получение данных (например, выполните <code>find()</code>, <code>findOne()</code>) или объявите связь
+(например, <code>hasOne()</code>) с объектом <code>Comment</code>, вы будете работать с объектом класса <code>CommentQuery</code> вместо <code>ActiveQuery</code>.</p>
+<blockquote class="tip"><p><strong>Подсказка: </strong>В больших проектах рекомендуется использовать собственные классы запросов, которые будут содержать в себе
+  большую часть кода, связанного с настройкой запросов, таким образом классы Active Record удастся сохранить более
+  чистыми.</p>
+</blockquote>
+<p>Вы можете настроить класс запроса большим количеством различных способов для улучшения методик построения запросов.
+Например, можете объявить новые методы построения запросов в собственном классе запросов:</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CommentQuery</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveQuery</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">active</span><span class="hljs-params">($state = true)</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;andWhere([<span class="hljs-string">'active'</span> =&gt; $state]);
+    }
+}
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>Вместо вызова метода <a href="./yii-db-querytrait.html#where()-detail">where()</a> старайтесь во время объявления новых методов
+  построения запросов использовать <a href="./yii-db-querytrait.html#andWhere()-detail">andWhere()</a> или
+  <a href="./yii-db-querytrait.html#orWhere()-detail">orWhere()</a> для добавления дополнительных условий, в этом случае уже заданные условия
+  выборок не будут перезаписаны.</p>
+</blockquote>
+<p>Это позволит вам писать код построения запросов как показано ниже:</p>
+<pre><code class="hljs php language-php">$comments = Comment::find()-&gt;active()-&gt;all();
+$inactiveComments = Comment::find()-&gt;active(<span class="hljs-keyword">false</span>)-&gt;all();
+</code></pre>
+<p>Вы также можете использовать новые методы построения запросов, когда объявляете связи для класса <code>Comment</code> или
+осуществляете запрос для выборки связных данных:</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getActiveComments</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;hasMany(Comment::className(), [<span class="hljs-string">'customer_id'</span> =&gt; <span class="hljs-string">'id'</span>])-&gt;active();
+    }
+}
+
+$customers = Customer::find()-&gt;with(<span class="hljs-string">'activeComments'</span>)-&gt;all();
+
+<span class="hljs-comment">// или по-другому:</span>
+ 
+$customers = Customer::find()-&gt;with([
+    <span class="hljs-string">'comments'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($q)</span> </span>{
+        $q-&gt;active();
+    }
+])-&gt;all();
+</code></pre>
+<blockquote class="info"><p><strong>Информация: </strong>В Yii версии 1.1 была концепция с названием <em>scope</em>. Она больше не поддерживается в Yii версии 2.0, и вы
+  можете использовать собственные классы запросов и собственные методы построения запросов, чтобы добиться той же самой
+  цели.</p>
+</blockquote>
+<h2>Получение дополнительных атрибутов <span id="polucenie-dopolnitelnyh-atributov"></span><a href="#polucenie-dopolnitelnyh-atributov" class="hashlink">&para;</a></h2><p>Когда объект Active Record заполнен результатами запроса, его атрибуты заполнены значениями соответствующих столбцов
+из полученного набора данных.</p>
+<p>Вы можете получить дополнительные столбцы или значения с помощью запроса и сохранить их внутри объекта Active Record.
+Например, предположим, что у нас есть таблица 'room', которая содержит информацию о доступных в отеле комнатах. Каждая
+комната хранит информацию о её геометрических размерах с помощью атрибутов 'length', 'width', 'height'. Представьте, что
+вам требуется получить список всех доступных комнат, отсортированных по их объёму в порядке убывания. В этом случае вы
+не можете вычислять объём с помощью PHP, потому что нам требуется сортировать записи по объёму, но вы также хотите
+отображать объем в списке. Для достижения этой цели, вам необходимо объявить дополнительный атрибут в вашем Active
+Record классе 'Room', который будет хранить значение 'volume':</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Room</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> $volume;
+
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>Далее вам необходимо составить запрос, который вычисляет объём комнаты и выполняет сортировку:</p>
+<pre><code class="hljs php language-php">$rooms = Room::find()
+    -&gt;select([
+        <span class="hljs-string">'{{room}}.*'</span>, <span class="hljs-comment">// получить все столбцы</span>
+        <span class="hljs-string">'([[length]] * [[width]] * [[height]]) AS volume'</span>, <span class="hljs-comment">// вычислить объём</span>
+    ])
+    -&gt;orderBy(<span class="hljs-string">'volume DESC'</span>) <span class="hljs-comment">// отсортировать</span>
+    -&gt;all();
+
+<span class="hljs-keyword">foreach</span> ($rooms <span class="hljs-keyword">as</span> $room) {
+    <span class="hljs-keyword">echo</span> $room-&gt;volume; <span class="hljs-comment">// содержит значение, вычисленное с помощью SQL-запроса</span>
+}
+</code></pre>
+<p>Возможность выбирать дополнительные атрибуты может быть особенно полезной для агрегирующих запросов. Представьте, что
+вам необходимо отображать список покупателей с количеством их заказов. Прежде всего вам потребуется объявить класс 
+<code>Customer</code> со связью 'orders' и дополнительным атрибутом для хранения расчётов:</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> $ordersCount;
+
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getOrders</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;hasMany(Order::className(), [<span class="hljs-string">'customer_id'</span> =&gt; <span class="hljs-string">'id'</span>]);
+    }
+}
+</code></pre>
+<p>После этого вы сможете составить запрос, который объединяет заказы и вычисляет их количество:</p>
+<pre><code class="hljs php language-php">$customers = Customer::find()
+    -&gt;select([
+        <span class="hljs-string">'{{customer}}.*'</span>, <span class="hljs-comment">// получить все атрибуты покупателя</span>
+        <span class="hljs-string">'COUNT({{order}}.id) AS ordersCount'</span> <span class="hljs-comment">// вычислить количество заказов</span>
+    ])
+    -&gt;joinWith(<span class="hljs-string">'orders'</span>) <span class="hljs-comment">// обеспечить построение промежуточной таблицы</span>
+    -&gt;groupBy(<span class="hljs-string">'{{customer}}.id'</span>) <span class="hljs-comment">// сгруппировать результаты, чтобы заставить агрегацию работать</span>
+    -&gt;all();
+</code></pre>
+<p>Недостаток этого подхода заключается в том, что если данные для поля не загружены по результатам SQL запроса, то они
+должны быть вычисленны отдельно. Это означает, что запись, полученная посредством обычного запроса без дополнительных полей в
+разделе 'select', не может вернуть реальное значения для дополнительного поля. Это же касается и только что сохранненой
+записи.</p>
+<pre><code class="hljs php language-php">$room = <span class="hljs-keyword">new</span> Room();
+$room-&gt;length = <span class="hljs-number">100</span>;
+$room-&gt;width = <span class="hljs-number">50</span>;
+$room-&gt;height = <span class="hljs-number">2</span>;
+
+$room-&gt;volume; <span class="hljs-comment">// значение будет равно `null`, т.к. поле не было заполнено</span>
+</code></pre>
+<p>Использование магических методов <a href="./yii-db-baseactiverecord.html#__get()-detail">__get()</a> и <a href="./yii-db-baseactiverecord.html#__set()-detail">__set()</a>
+позволяет эмулировать поведение обычного поля:</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Room</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">private</span> $_volume;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setVolume</span><span class="hljs-params">($volume)</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;_volume = (float) $volume;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getVolume</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">empty</span>(<span class="hljs-keyword">$this</span>-&gt;length) || <span class="hljs-keyword">empty</span>(<span class="hljs-keyword">$this</span>-&gt;width) || <span class="hljs-keyword">empty</span>(<span class="hljs-keyword">$this</span>-&gt;height)) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+        }
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;_volume === <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">$this</span>-&gt;setVolume(
+                <span class="hljs-keyword">$this</span>-&gt;length * <span class="hljs-keyword">$this</span>-&gt;width * <span class="hljs-keyword">$this</span>-&gt;height
+            );
+        }
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;_volume;
+    }
+
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>Если результат запроса на выборку данных не содержит поле 'volume', то модель сможет расчитать его автоматически
+используя имеющиеся атрибуты.</p>
+<p>Вы также можете вычислять агрегируемые поля используя объявленные отношения:</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">private</span> $_ordersCount;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setOrdersCount</span><span class="hljs-params">($count)</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;_ordersCount = (int) $count;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getOrdersCount</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;isNewRecord) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>; <span class="hljs-comment">// нет смысла выполнять запрос на поиск по пустым ключам</span>
+        }
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;_ordersCount === <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">$this</span>-&gt;setOrdersCount(<span class="hljs-keyword">$this</span>-&gt;getOrders()-&gt;count()); <span class="hljs-comment">// вычисляем агрегацию по требованию из отношения</span>
+        }
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;_ordersCount;
+    }
+
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getOrders</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;hasMany(Order::className(), [<span class="hljs-string">'customer_id'</span> =&gt; <span class="hljs-string">'id'</span>]);
+    }
+}
+</code></pre>
+<p>При такой реализации, в случае когда 'ordersCount' присутсвует в разделе 'select' - значение 'Customer::ordersCount' будет
+заполнено из результатов запроса, в противном случае - оно будет вычислено по первому требованию на основании отношения <code>Customer::orders</code>.</p>
+<p>Этот подход также можно использовать для быстрого доступа к некоторым данным отношений, в особенности для агрегации.
+Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-comment">/**
+     * Объявляет виртуальное свойство для агрегируемых данных, доступное только на чтение.
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getOrdersCount</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;isNewRecord) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>; <span class="hljs-comment">// нет смысла выполнять запрос на поиск по пустым ключам</span>
+        }
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;ordersAggregation[<span class="hljs-number">0</span>][<span class="hljs-string">'counted'</span>];
+    }
+
+    <span class="hljs-comment">/**
+     * Объявляет обычное отношение 'orders'.
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getOrders</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;hasMany(Order::className(), [<span class="hljs-string">'customer_id'</span> =&gt; <span class="hljs-string">'id'</span>]);
+    }
+
+    <span class="hljs-comment">/**
+     * Объявляет новое отношение, основанное на 'orders', которое предоставляет агрегацию.
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getOrdersAggregation</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;getOrders()
+            -&gt;select([<span class="hljs-string">'customer_id'</span>, <span class="hljs-string">'counted'</span> =&gt; <span class="hljs-string">'count(*)'</span>])
+            -&gt;groupBy(<span class="hljs-string">'customer_id'</span>)
+            -&gt;asArray(<span class="hljs-keyword">true</span>);
+    }
+
+    <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-keyword">foreach</span> (Customer::find()-&gt;with(<span class="hljs-string">'ordersAggregation'</span>)-&gt;all() <span class="hljs-keyword">as</span> $customer) {
+    <span class="hljs-keyword">echo</span> $customer-&gt;ordersCount; <span class="hljs-comment">// выводит агрегируемые данные из отношения без дополнительного запроса благодаря жадной загрузке</span>
+}
+
+$customer = Customer::findOne($pk);
+$customer-&gt;ordersCount; <span class="hljs-comment">// выводит агрегируемые данные отношения через ленивую загрузку</span>
+</code></pre>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 09 Dec 2020 00:16:02 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

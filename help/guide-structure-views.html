@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/1728b664/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9c5d0894/solarized_light.css" rel="stylesheet">
+<link href="./assets/f2ce5bcd/style.css" rel="stylesheet">
+<script src="./assets/bbf84a7a/jquery.js"></script>
+<script src="./assets/1728b664/js/bootstrap.js"></script>
+<script src="./assets/fd63b446/jssearch.js"></script>    <title>Представления - Структура приложения - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w795" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w795-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w795-collapse" class="collapse navbar-collapse"><ul id="w796" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w797" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-779" data-toggle="collapse" data-parent="#navigation">Введение <b class="caret"></b></a><div id="navigation-779" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">О Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Обновление с версии 1.1</a></div>
+<a class="list-group-item" href="#navigation-780" data-toggle="collapse" data-parent="#navigation">Первое знакомство <b class="caret"></b></a><div id="navigation-780" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Установка Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Запуск приложения</a>
+<a class="list-group-item" href="./guide-start-hello.html">Говорим «привет»</a>
+<a class="list-group-item" href="./guide-start-forms.html">Работа с формами</a>
+<a class="list-group-item" href="./guide-start-databases.html">Работа с базами данных</a>
+<a class="list-group-item" href="./guide-start-gii.html">Генерация кода при помощи Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Что дальше?</a></div>
+<a class="list-group-item active" href="#navigation-781" data-toggle="collapse" data-parent="#navigation">Структура приложения <b class="caret"></b></a><div id="navigation-781" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-structure-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Входные скрипты</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Приложения</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Компоненты приложения</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-structure-models.html">Модели</a>
+<a class="list-group-item active" href="./guide-structure-views.html">Представления</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Модули</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Фильтры</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Виджеты</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Расширения</a></div>
+<a class="list-group-item" href="#navigation-782" data-toggle="collapse" data-parent="#navigation">Обработка запросов <b class="caret"></b></a><div id="navigation-782" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Разбор и генерация URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Запросы</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Ответы</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Сессии и куки</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Обработка ошибок</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Логирование</a></div>
+<a class="list-group-item" href="#navigation-783" data-toggle="collapse" data-parent="#navigation">Основные понятия <b class="caret"></b></a><div id="navigation-783" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Компоненты</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Свойства</a>
+<a class="list-group-item" href="./guide-concept-events.html">События</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Поведения</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Конфигурации</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Псевдонимы</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Автозагрузка классов</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item" href="#navigation-784" data-toggle="collapse" data-parent="#navigation">Работа с базами данных <b class="caret"></b></a><div id="navigation-784" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Объекты доступа к данным (DAO)</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Построитель запросов</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Миграции</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-ru/README.md">Sphinx</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-redis/blob/master/docs/guide-ru/README.md">Redis</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-ru/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-ru/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-785" data-toggle="collapse" data-parent="#navigation">Получение данных от пользователя <b class="caret"></b></a><div id="navigation-785" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Создание форм</a>
+<a class="list-group-item" href="./guide-input-validation.html">Валидация</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Загрузка файлов</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Табличный ввод</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Работа с несколькими моделями</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">Расширение ActiveForm на стороне клиента</a></div>
+<a class="list-group-item" href="#navigation-786" data-toggle="collapse" data-parent="#navigation">Отображение данных <b class="caret"></b></a><div id="navigation-786" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Форматирование данных</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Постраничная разбивка</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Сортировка</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Провайдеры данных</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Виджеты для данных</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Работа с клиентскими скриптами</a>
+<a class="list-group-item" href="./guide-output-theming.html">Темизация</a></div>
+<a class="list-group-item" href="#navigation-787" data-toggle="collapse" data-parent="#navigation">Безопасность <b class="caret"></b></a><div id="navigation-787" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-security-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Авторизация</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Работа с паролями</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">Криптография</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-ru/README.md">Клиенты авторизации</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Лучшие практики</a></div>
+<a class="list-group-item" href="#navigation-788" data-toggle="collapse" data-parent="#navigation">Кеширование <b class="caret"></b></a><div id="navigation-788" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-caching-data.html">Кэширование данных</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Кэширование фрагментов</a>
+<a class="list-group-item" href="./guide-caching-page.html">Кэширование страниц</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP кэширование</a></div>
+<a class="list-group-item" href="#navigation-789" data-toggle="collapse" data-parent="#navigation">Веб-сервисы REST <b class="caret"></b></a><div id="navigation-789" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Быстрый старт</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Роутинг</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Форматирование ответа</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Ограничение частоты запросов</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Версионирование</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Обработка ошибок</a></div>
+<a class="list-group-item" href="#navigation-790" data-toggle="collapse" data-parent="#navigation">Инструменты разработчика <b class="caret"></b></a><div id="navigation-790" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Отладочная панель и отладчик</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide/README.md">Генерация кода с Gii</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">Генератор документации API</a></div>
+<a class="list-group-item" href="#navigation-791" data-toggle="collapse" data-parent="#navigation">Тестирование <b class="caret"></b></a><div id="navigation-791" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Настройка тестового окружения</a>
+<a class="list-group-item" href="./guide-test-unit.html">Модульные тесты</a>
+<a class="list-group-item" href="./guide-test-functional.html">Функциональные тесты</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Приёмочные тесты</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Фикстуры</a></div>
+<a class="list-group-item" href="#navigation-792" data-toggle="collapse" data-parent="#navigation">Специальные темы <b class="caret"></b></a><div id="navigation-792" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">Шаблон приложения advanced</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Создание приложения с нуля</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Консольные команды</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Встроенные валидаторы</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Интернационализация</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Отправка почты</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Оптимизация производительности</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Окружение виртуального хостинга</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Шаблонизаторы</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Работа со сторонним кодом</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">Использование Yii в качестве микро-framework&#039;а</a></div>
+<a class="list-group-item" href="#navigation-793" data-toggle="collapse" data-parent="#navigation">Виджеты <b class="caret"></b></a><div id="navigation-793" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-ru/README.md">Виджеты Bootstrap</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-ru/README.md">Виджеты Jquery UI</a></div>
+<a class="list-group-item" href="#navigation-794" data-toggle="collapse" data-parent="#navigation">Хелперы <b class="caret"></b></a><div id="navigation-794" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url хелпер</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Виды <span id="vidy"></span><a href="#vidy" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#creating-views">Создание видов</a></li>
+<li><a href="#rendering-views">Рендеринг видов</a></li>
+<li><a href="#layouts">Шаблоны</a></li>
+<li><a href="#using-view-components">Использование компонентов вида</a></li>
+<li><a href="#view-events">События в видах</a></li>
+<li><a href="#rendering-static-pages">Рендеринг статических страниц</a></li>
+<li><a href="#best-practices">Полезные советы</a></li></ol></div>
+<p>Виды - это часть <a href="https://ru.wikipedia.org/wiki/Model-View-Controller">MVC</a> архитектуры, это код, который отвечает за представление данных 
+конечным пользователям. В веб приложениях виды создаются обычно в виде <em>видов - шаблонов</em>, которые суть PHP скрипты, в основном содержащие HTML код 
+и код PHP, отвечающий за представление и внешний вид. Виды управляются компонентом приложения <a href="./yii-web-view.html">view</a>, который содержит часто используемые 
+методы для упорядочивания видов и их рендеринга. Для упрощения, мы будем называть виды - шаблоны просто видами.</p>
+<h2>Создание видов  <span id="creating-views"></span><a href="#creating-views" class="hashlink">&para;</a></h2><p>Как мы упоминали ранее, вид - это просто PHP скрипт, состоящий из  PHP и HTML кодa. В примере ниже - вид, который представляет форму авторизации. 
+Как видите, PHP код здесь генерирует динамический контент, как, например, заголовок страницы и саму форму, тогда как HTML организует полученные данные в готовую html страницу.</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">Html</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">widgets</span>\<span class="hljs-title">ActiveForm</span>;
+
+<span class="hljs-comment">/* <span class="hljs-doctag">@var</span> $this yii\web\View */</span>
+<span class="hljs-comment">/* <span class="hljs-doctag">@var</span> $form yii\widgets\ActiveForm */</span>
+<span class="hljs-comment">/* <span class="hljs-doctag">@var</span> $model app\models\LoginForm */</span>
+
+<span class="hljs-keyword">$this</span>-&gt;title = <span class="hljs-string">'Вход'</span>;
+<span class="hljs-meta">?&gt;</span>
+&lt;h1&gt;<span class="hljs-meta">&lt;?</span>= Html::encode(<span class="hljs-keyword">$this</span>-&gt;title) <span class="hljs-meta">?&gt;</span>&lt;/h1&gt;
+
+&lt;p&gt;Пожалуйстауйста<span class="hljs-meta">&lt;?php</span> $form = ActiveForm::begin(); <span class="hljs-meta">?&gt;</span>
+    <span class="hljs-meta">&lt;?</span>= $form-&gt;field($model, <span class="hljs-string">'username'</span>) <span class="hljs-meta">?&gt;</span>
+    <span class="hljs-meta">&lt;?</span>= $form-&gt;field($model, <span class="hljs-string">'password'</span>)-&gt;passwordInput() <span class="hljs-meta">?&gt;</span>
+    <span class="hljs-meta">&lt;?</span>= Html::submitButton(<span class="hljs-string">'Login'</span>) <span class="hljs-meta">?&gt;</span>
+<span class="hljs-meta">&lt;?php</span> ActiveForm::end(); <span class="hljs-meta">?&gt;</span>
+</code></pre>
+<p>Внутри вида, вы можете использовать <code>$this</code>, которое представляет собой <a href="./yii-web-view.html">компонент вид</a>, управляющий этим шаблоном и обеспечивающий 
+его рендеринг.</p>
+<p>Кроме <code>$this</code>, в виде могут быть доступны другие переменные, такие как <code>$form</code> и <code>$model</code> из примера выше. Эти переменные представляют собой данные, которые передаются в вид <a href="guide-structure-controllers.html">контроллерами</a> или другими объектами, которые вызывают <a href="#rendering-views">рендеринг вида</a>.</p>
+<blockquote><p>Совет: Переданные переменные могут быть перечислены в блоке комментария в начале скрипта, чтобы их смогли распознать IDE. К тому же, это хороший способ добавления документации в вид.  </p>
+</blockquote>
+<h3>Безопасность  <span id="security"></span><a href="#security" class="hashlink">&para;</a></h3><p>При создании видов, которые генерируют HTML страницы, важно кодировать и/или фильтровать данные, которые приходят от пользователей перед тем как их показывать. В противном случае ваше приложение может стать жертвой атаки типа <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B6%D1%81%D0%B0%D0%B9%D1%82%D0%BE%D0%B2%D1%8B%D0%B9_%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%B8%D0%BD%D0%B3">межсайтовый скриптинг</a></p>
+<p>Чтобы показать обычный текст, сначала кодируйте его с помощью <a href="./yii-helpers-basehtml.html#encode()-detail">yii\helpers\Html::encode()</a>. В примере ниже имя пользователя кодируется перед выводом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">Html</span>;
+<span class="hljs-meta">?&gt;</span>
+
+&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>="<span class="hljs-title">username</span>"&gt;
+    &lt;?= <span class="hljs-title">Html</span>::<span class="hljs-title">encode</span>($<span class="hljs-title">user</span>-&gt;<span class="hljs-title">name</span>) ?&gt;
+&lt;/<span class="hljs-title">div</span>&gt;
+</span></code></pre>
+<p>Чтобы показать HTML содержимое, используйте <a href="./yii-helpers-htmlpurifier.html">yii\helpers\HtmlPurifier</a> для того, чтобы отфильтровать потенциально опасное содержимое. В примере ниже содержимое поста фильтруется перед показом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">HtmlPurifier</span>;
+<span class="hljs-meta">?&gt;</span>
+
+&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>="<span class="hljs-title">post</span>"&gt;
+    &lt;?= <span class="hljs-title">HtmlPurifier</span>::<span class="hljs-title">process</span>($<span class="hljs-title">post</span>-&gt;<span class="hljs-title">text</span>) ?&gt;
+&lt;/<span class="hljs-title">div</span>&gt;
+</span></code></pre>
+<blockquote class="tip"><p><strong>Подсказка: </strong>Несмотря на то, что HTMLPurifier отлично справляется с тем, чтобы сделать вывод безопасным, работает он довольно медленно. Если от приложения требуется высокая производительность, рассмотрите возможность <a href="guide-caching-overview.html">кэширования</a> отфильтрованного результата </p>
+</blockquote>
+<h3>Организация видов  <span id="organizing-views"></span><a href="#organizing-views" class="hashlink">&para;</a></h3><p>Как и для <a href="guide-structure-controllers.html">контроллеров</a>, и <a href="guide-structure-models.html">моделей</a>, для видов тоже есть определенные соглашения в их организации.</p>
+<ul>
+<li>Виды, которые рендерятся из контроллера, по умолчанию должны располагаться в папке <code>@app/views/ControllerID</code>, где <code>ControllerID</code> это <a href="guide-structure-controllers.html#routes">ID контроллера</a> . Например, если класс контроллера - <code>PostController</code>, то папка будет <code>@app/views/post</code>; если контроллер - <code>PostCommentController</code>, то папка будет <code>@app/views/post-comment</code>. В случае, если контроллер принадлежит модулю, папка будет <code>views/ControllerID</code> в <a href="./yii-base-module.html#$basePath-detail">подпапке модуля</a>.</li>
+<li>Виды, которые рендерятся из виджетов, должны располагаться в <code>ПутьВиджета/views</code>, где <code>ПутьВиджета</code> - это папка, которая содержит класс виджета.</li>
+<li>С видами, которые рендерятся из других объектов рекомендуется поступать по той же схеме, что и с видами виджетов.</li>
+</ul>
+<p>В контроллерах и виджетах вы можете изменить папки видов по умолчанию, переопределив метод <a href="./yii-base-viewcontextinterface.html#getViewPath()-detail">yii\base\ViewContextInterface::getViewPath()</a>.</p>
+<h2>Рендеринг видов  <span id="rendering-views"></span><a href="#rendering-views" class="hashlink">&para;</a></h2><p>Вы можете рендерить виды в <a href="guide-structure-controllers.html">контроллерах</a>, <a href="guide-structure-widgets.html">widgets</a>, или из любого другого места, вызывая методы рендеринга видов. Методы вызываются приблизительно так, как это показано в примере ниже,</p>
+<pre><code class="hljs php"><span class="hljs-comment">/**
+ * <span class="hljs-doctag">@param</span> string $view название вида или путь файла, в зависимости от того, какой метод рендеринга используется 
+ * <span class="hljs-doctag">@param</span> array $params данные, которые передаются виду
+ * <span class="hljs-doctag">@return</span> string результат рендеринга
+ */</span>
+methodName($view, $params = [])
+</code></pre>
+<h3>Рендеринг в контроллерах  <span id="rendering-in-controllers"></span><a href="#rendering-in-controllers" class="hashlink">&para;</a></h3><p>Внутри <a href="guide-structure-controllers.html">контроллеров</a> можно вызывать следующие методы рендеринга видов:</p>
+<ul>
+<li><a href="./yii-base-controller.html#render()-detail">render()</a>: рендерит <a href="#named-views">именованный вид</a> и применяет <a href="#layouts">шаблон</a>
+к результату рендеринга.</li>
+<li><a href="./yii-base-controller.html#renderPartial()-detail">renderPartial()</a>: рендерит <a href="#named-views">именованный вид</a> без шаблона.</li>
+<li><a href="./yii-web-controller.html#renderAjax()-detail">renderAjax()</a>: рендерит <a href="#named-views">именованный вид</a> без шаблона,
+и добавляет все зарегистрированные JS/CSS скрипты и стили. Обычно этот метод применяется для рендеринга результата AJAX запроса.</li>
+<li><a href="./yii-base-controller.html#renderFile()-detail">renderFile()</a>: рендерит вид, заданный как путь к файлу или 
+<a href="guide-concept-aliases.html">алиас</a>.</li>
+</ul>
+<p>Например,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>\<span class="hljs-title">Post</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">NotFoundHttpException</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PostController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionView</span><span class="hljs-params">($id)</span>
+    </span>{
+        $model = Post::findOne($id);
+        <span class="hljs-keyword">if</span> ($model === <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> NotFoundHttpException;
+        }
+
+        <span class="hljs-comment">// рендерит вид с названием `view` и применяет к нему шаблон</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;render(<span class="hljs-string">'view'</span>, [
+            <span class="hljs-string">'model'</span> =&gt; $model,
+        ]);
+    }
+}
+</code></pre>
+<h3>Рендеринг в виджетах  <span id="rendering-in-widgets"></span><a href="#rendering-in-widgets" class="hashlink">&para;</a></h3><p>Внутри <a href="guide-structure-widgets.html">виджетов</a>, вы можете вызывать следующие методы для рендеринга видов.</p>
+<ul>
+<li><a href="./yii-base-widget.html#render()-detail">render()</a>: рендерит <a href="#named-views">именованный вид</a>.</li>
+<li><a href="./yii-base-widget.html#renderFile()-detail">renderFile()</a>: рендерит вид, заданный как путь файла или 
+<a href="guide-concept-aliases.html">алиас</a>.</li>
+</ul>
+<p>Например,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Widget</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">Html</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ListWidget</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Widget</span>
+</span>{
+    <span class="hljs-keyword">public</span> $items = [];
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-comment">// рендерит вид с названием `list`</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;render(<span class="hljs-string">'list'</span>, [
+            <span class="hljs-string">'items'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;items,
+        ]);
+    }
+}
+</code></pre>
+<h3>Рендеринг в видах  <span id="rendering-in-views"></span><a href="#rendering-in-views" class="hashlink">&para;</a></h3><p>Вы можете рендерить вид внутри другого вида используя методы, которые предоставляет <a href="./yii-base-view.html">компонент вида</a>:</p>
+<ul>
+<li><a href="./yii-base-view.html#render()-detail">render()</a>: рендерит <a href="#named-views">именованный вид</a>.</li>
+<li><a href="./yii-web-view.html#renderAjax()-detail">renderAjax()</a>: рендерит <a href="#named-views">именованный вид</a> и добавляет зарегистрированные JS/CSS скрипты и стили. Обычно используется для рендеринга результата AJAX запроса.</li>
+<li><a href="./yii-base-view.html#renderFile()-detail">renderFile()</a>: рендерит вид, заданный как путь к файлу или 
+<a href="guide-concept-aliases.html">алиас</a>.</li>
+</ul>
+<p>Например, следующий код рендерит <code>_overview.php</code> файл вида, который находится в той же папке что и вид, который рендерится в текущий момент. Помните, что  <code>$this</code> в виде - это <a href="./yii-base-view.html">компонент вида</a> (а не контроллер, как это было в Yii1):</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?</span>= <span class="hljs-keyword">$this</span>-&gt;render(<span class="hljs-string">'_overview'</span>) <span class="hljs-meta">?&gt;</span>
+</code></pre>
+<h3>Рендеринг в других местах  <span id="rendering-in-other-places"></span><a href="#rendering-in-other-places" class="hashlink">&para;</a></h3><p>Вы может получить доступ к  <a href="./yii-base-view.html">виду</a> как компоненту приложения вот так: 
+<code>Yii::$app-&gt;view</code>,  а затем вызвать вышеупомянутые методы, чтобы отрендерить вид. Например,</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// показывает файл "@app/views/site/license.php"</span>
+<span class="hljs-keyword">echo</span> \Yii::$app-&gt;view-&gt;renderFile(<span class="hljs-string">'@app/views/site/license.php'</span>);
+</code></pre>
+<h3>Именованные виды  <span id="named-views"></span><a href="#named-views" class="hashlink">&para;</a></h3><p>При рендеринге вида, вы можете указать нужный вид, используя как имя вида, так и путь к файлу/алиас. В большинстве случаев вы будете использовать первый вариант, т.к. он более нагляден и гибок. Мы называем виды, которые были вызваны с помощью сокращенного имени <em>именованные виды</em>.</p>
+<p>Имя вида преобразуется в соответствующий ему путь файла в соответствии со следующими правилами:</p>
+<ul>
+<li>Имя вида можно указывать без расширения. В таком случае в качестве расширения будет использоваться <code>.php</code>. К примеру, имя вида <code>about</code> соответствует файлу <code>about.php</code>.</li>
+<li>Если имя вида начинается с двойного слеша <code>//</code>, соответствующий ему путь будет <code>@app/views/ViewName</code>.
+ Т.е. вид будет искаться в <a href="./yii-base-module.html#$viewPath-detail">папке видов приложения по умолчанию</a>. Например, <code>//site/about</code> будет преобразован в <code>@app/views/site/about.php</code>.</li>
+<li>Если имя вида начинается с одинарного слеша <code>/</code>, то вид будет искаться в <a href="./yii-base-module.html#$viewPath-detail">папке видов по умолчанию</a> текущего <a href="guide-structure-modules.html">модуля</a> . Если активного модуля на данный момент нет, будет использована папка видов приложения по умолчанию, т.е. вид будет искаться в <code>@app/views</code>, как в одном из примеров выше.</li>
+<li>Если вид рендеринтся с помощью <a href="./yii-base-view.html#$context-detail">контекста</a> и контекст реализует интерфейс <a href="./yii-base-viewcontextinterface.html">yii\base\ViewContextInterface</a>,  путь к виду образуется путем присоединения <a href="./yii-base-viewcontextinterface.html#getViewPath()-detail">пути видов</a> контекста к имени вида. В основном это применимо к видам, которые рендерятся из контроллеров и виджетов. Например,
+<code>about</code> будет преобразован в <code>@app/views/site/about.php</code> если контекстом является контроллер <code>SiteController</code>.</li>
+<li>Если вид рендерится из другого вида, папка, в которой находится текущий вид будет добавлена к пути вложенного вида. Например, <code>item</code> будет преобразован в <code>@app/views/post/item</code>
+если он рендерится из вида <code>@app/views/post/index.php</code>.</li>
+</ul>
+<p>В соответствии с вышесказанным, вызов <code>$this-&gt;render('view')</code> в контроллере <code>app\controllers\PostController</code> будет рендерить файл <code>@app/views/post/view.php</code>, а вызов <code>$this-&gt;render('_overview')</code> в этом виде будет рендерить файл <code>@app/views/post/_overview.php</code>.</p>
+<h3>Доступ к данным из видов  <span id="accessing-data-in-views"></span><a href="#accessing-data-in-views" class="hashlink">&para;</a></h3><p>Данные можно передавать в вид явно или подгружать их динамически, обращаясь к контексту из вида.</p>
+<p>Передавая данные через второй параметр методов рендеринга вида, вы явно передаете данные в вид. 
+Данные должны быть представлены как обычный массив: ключ-значение. При рендеринге вида, php вызывает встроенную функцию PHP <code>extract()</code> на переданном массиве, чтобы переменные из массива "распаковались" в переменные вида. Например, следующий код в контроллере передаст две переменные виду <code>report</code> :
+ <code>$foo = 1</code> и <code>$bar = 2</code>.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> <span class="hljs-keyword">$this</span>-&gt;render(<span class="hljs-string">'report'</span>, [
+    <span class="hljs-string">'foo'</span> =&gt; <span class="hljs-number">1</span>,
+    <span class="hljs-string">'bar'</span> =&gt; <span class="hljs-number">2</span>,
+]);
+</code></pre>
+<p>Другой подход, подход контекстного доступа, извлекает данные из <a href="./yii-base-view.html">компонента вида</a> или других объектов, доступных в виде (например через глобальный контейнер <code>Yii::$app</code>). Внутри вида вы можете вызывать объект контроллера таким образом: <code>$this-&gt;context</code> (см пример снизу), и, таким образом, получить доступ к его свойствам и методам, например, как указано в примере, вы можете получить ID контроллера:</p>
+<pre><code class="hljs php language-php">ID контроллера<span class="hljs-meta">&lt;?</span>= <span class="hljs-keyword">$this</span>-&gt;context-&gt;id <span class="hljs-meta">?&gt;</span>
+</code></pre>
+<p>Явная передача данных в вид обычно более предпочтительна, т.к. она делает виды независимыми от контекста. Однако, у нее есть недостаток - необходимость каждый раз вручную строить массив данных, что может быть довольно утомительно и привести к ошибкам, если вид рендерится в разных местах.</p>
+<h3>Передача данных между видами  <span id="sharing-data-among-views"></span><a href="#sharing-data-among-views" class="hashlink">&para;</a></h3><p><a href="./yii-base-view.html">Компонент вида</a> имеет свойство <a href="./yii-base-view.html#$params-detail">params</a>, которое вы можете использовать для обмена данными между видами.</p>
+<p>Например, в виде <code>about</code> вы можете указать текущий сегмент хлебных крошек с помощью следующего кода.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">$this</span>-&gt;params[<span class="hljs-string">'breadcrumbs'</span>][] = <span class="hljs-string">'О нас'</span>;
+</code></pre>
+<p>Затем, в <a href="#layouts">шаблоне</a>, который также является видом, вы можете отобразить хлебные крошки используя данные, переданные через <a href="./yii-base-view.html#$params-detail">params</a>.</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?</span>= yii\widgets\Breadcrumbs::widget([
+    <span class="hljs-string">'links'</span> =&gt; <span class="hljs-keyword">isset</span>(<span class="hljs-keyword">$this</span>-&gt;params[<span class="hljs-string">'breadcrumbs'</span>]) ? <span class="hljs-keyword">$this</span>-&gt;params[<span class="hljs-string">'breadcrumbs'</span>] : [],
+]) <span class="hljs-meta">?&gt;</span>
+</code></pre>
+<h2>Шаблоны  <span id="layouts"></span><a href="#layouts" class="hashlink">&para;</a></h2><p>Шаблоны - особый тип видов, которые представляют собой общие части разных видов. Например, у большинства страниц веб приложений одинаковые верх и низ (хедер и футер). Можно, конечно, указать их и в каждом виде, однако лучше сделать это один раз, в шаблоне, и затем, при рендеринге, включать уже отрендеренный вид в заданное место шаблона.</p>
+<h3>Создание шаблонов  <span id="creating-layouts"></span><a href="#creating-layouts" class="hashlink">&para;</a></h3><p>Поскольку шаблоны это виды, их можно создавать точно так же, как и обычные виды. По умолчанию шаблоны хранятся в папке <code>@app/views/layouts</code>. Шаблоны, которые используются в конкретном <a href="guide-structure-modules.html">модуле</a>, хранятся в подпапке <code>views/layouts</code> <a href="./yii-base-module.html#$basePath-detail">папки модуля</a>. Вы можете изменить папку шаблонов по умолчанию, используя свойство <a href="./yii-base-module.html#$layoutPath-detail">yii\base\Module::$layoutPath</a> приложения или модулей.</p>
+<p>Пример ниже показывает как выглядит шаблон. Для лучшего понимания мы сильно упростили код шаблона. На практике, однако, в нем часто содержится больше кода, например, тэги <code>&lt;head&gt;</code>, главное меню и т.д. </p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">Html</span>;
+
+<span class="hljs-comment">/* <span class="hljs-doctag">@var</span> $this yii\web\View */</span>
+<span class="hljs-comment">/* <span class="hljs-doctag">@var</span> $content string */</span>
+<span class="hljs-meta">?&gt;</span>
+<span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">$this</span>-&gt;beginPage() <span class="hljs-meta">?&gt;</span>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=<span class="hljs-string">"en"</span>&gt;
+&lt;head&gt;
+    &lt;meta charset=<span class="hljs-string">"UTF-8"</span>/&gt;
+    <span class="hljs-meta">&lt;?</span>= Html::csrfMetaTags() <span class="hljs-meta">?&gt;</span>
+    &lt;title&gt;<span class="hljs-meta">&lt;?</span>= Html::encode(<span class="hljs-keyword">$this</span>-&gt;title) <span class="hljs-meta">?&gt;</span>&lt;/title&gt;
+    <span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">$this</span>-&gt;head() <span class="hljs-meta">?&gt;</span>
+&lt;/head&gt;
+&lt;body&gt;
+<span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">$this</span>-&gt;beginBody() <span class="hljs-meta">?&gt;</span>
+    &lt;header&gt;Моя<span class="hljs-meta">&lt;?</span>= $content <span class="hljs-meta">?&gt;</span>
+    &lt;footer&gt;Моя<span class="hljs-number">2014</span>&lt;/footer&gt;
+<span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">$this</span>-&gt;endBody() <span class="hljs-meta">?&gt;</span>
+&lt;/body&gt;
+&lt;/html&gt;
+<span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">$this</span>-&gt;endPage() <span class="hljs-meta">?&gt;</span>
+</code></pre>
+<p>Как видите, шаблон генерирует HTML тэги, которые присутствуют на всех страницах. Внутри секции <code>&lt;body&gt;</code>, шаблон выводит переменную <code>$content</code>, которая  содержит  результат рендеринга видов контента, который передается в шаблон, при работе метода  <a href="./yii-base-controller.html#render()-detail">yii\base\Controller::render()</a>.</p>
+<p>Большинство шаблонов вызывают методы, аналогично тому, как это сделано в примере выше, чтобы скрипты и тэги, зарегистрированные в других местах приложения могли быть правильно отображены в местах вызова (например, в шаблоне).</p>
+<ul>
+<li><a href="./yii-base-view.html#beginPage()-detail">beginPage()</a>: Этот метод нужно вызывать в самом начале шаблона.
+Он вызывает событие <a href="./yii-base-view.html#EVENT_BEGIN_PAGE-detail">EVENT_BEGIN_PAGE</a>, которое происходит при начале обработки страницы.</li>
+<li><a href="./yii-base-view.html#endPage()-detail">endPage()</a>: Этот метод нужно вызывать в конце страницы.
+Он вызывает событие <a href="./yii-base-view.html#EVENT_END_PAGE-detail">EVENT_END_PAGE</a> . Оно указывает на обработку конца страницы.</li>
+<li><a href="./yii-web-view.html#head()-detail">head()</a>: Этот метод нужно вызывать в <code>&lt;head&gt;</code> секции страницы html. 
+Он генерирует метку, которая будет заменена зарегистрированным ранее кодом HTML (тэги <code>link</code>, мета тэги), когда рендеринг страницы будет завершен.</li>
+<li><a href="./yii-web-view.html#beginBody()-detail">beginBody()</a>: Этот метод нужно вызывать в начале секции <code>&lt;body&gt;</code>.
+Он вызывает событие <a href="./yii-web-view.html#EVENT_BEGIN_BODY-detail">EVENT_BEGIN_BODY</a> и генерирует метку, которая будет заменена зарегистрированным HTML кодом (например, Javascript'ом), который нужно разместить в начале <code>&lt;body&gt;</code> страницы.</li>
+<li><a href="./yii-web-view.html#endBody()-detail">endBody()</a>: Этот метод нужно вызывать в конце секции <code>&lt;body&gt;</code>.
+Он вызывает событие <a href="./yii-web-view.html#EVENT_END_BODY-detail">EVENT_END_BODY</a> и генерирует метку, которая будет заменена зарегистрированным HTML кодом (например, Javascript'ом), который нужно разместить в конце <code>&lt;body&gt;</code> страницы.</li>
+</ul>
+<h3>Доступ к данным в шаблонах  <span id="accessing-data-in-layouts"></span><a href="#accessing-data-in-layouts" class="hashlink">&para;</a></h3><p>Внутри шаблона, у вас есть доступ к двум предопределенным переменным: <code>$this</code> и <code>$content</code>. Первая представляет собой 
+ <a href="./yii-base-view.html">вид</a> компонент, как и в обычных видах, тогда как последняя содержит результат рендеринга вида, который рендерится при вызове метода <a href="./yii-base-controller.html#render()-detail">render()</a> в контроллерах.</p>
+<p>Если вы хотите получить доступ к другим данным из шаблона, используйте метод явной передачи (он описан в секции <a href="#accessing-data-in-views">Доступ к данным в видах</a> настоящего документа). Если вы хотите 
+передать данные из вида шаблону, вы можете использовать метод, описанный в <a href="#sharing-data-among-views">передаче данных между видами</a>.</p>
+<h3>Использование шаблонов  <span id="using-layouts"></span><a href="#using-layouts" class="hashlink">&para;</a></h3><p>Как было описано в секции <a href="#rendering-in-controllers">Рендеринг в контроллерах</a>, когда вы рендерите вид, вызывая метод <a href="./yii-base-controller.html#render()-detail">render()</a> из контроллера, к результату рендеринга будет применен шаблон. По умолчанию будет использован шаблон <code>@app/views/layouts/main.php</code> .</p>
+<p>Вы можете использовать разные шаблоны, конфигурируя <a href="./yii-base-application.html#$layout-detail">yii\base\Application::$layout</a> или <a href="./yii-base-controller.html#$layout-detail">yii\base\Controller::$layout</a>. 
+Первый переопределяет шаблон, который используется по умолчанию всеми контроллерами, а второй переопределяет шаблон в отдельном контроллере. 
+Например, код внизу показывает, как можно сделать так, чтобы контроллер использовал шаблон <code>@app/views/layouts/post.php</code> при рендеринге вида. Другие контроллеры, если их свойство <code>layout</code> не переопределено, все еще будут использовать <code>@app/views/layouts/main.php</code> как шаблон.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PostController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> $layout = <span class="hljs-string">'post'</span>;
+    
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>Для контроллеров, принадлежащих модулю, вы также можете переопределять свойство модуля <a href="./yii-base-module.html#$layout-detail">layout</a>, чтобы 
+использовать особый шаблон для этих контроллеров.</p>
+<p>Поскольку свойство <code>layout</code> может быть сконфигурировано на разных уровнях приложения (контроллеры, модули, само приложение), 
+Yii определяет какой шаблон использовать для контроллера в два этапа.</p>
+<p>На первом этапе определяется значение шаблона и контекстный модуль.</p>
+<ul>
+<li>Если <a href="./yii-base-controller.html#$layout-detail">yii\base\Controller::$layout</a> свойство контроллера отлично от <code>null</code>, используется оно, и <a href="./yii-base-controller.html#$module-detail">модуль</a> 
+контроллера как контекстный модуль.</li>
+<li>Если <a href="./yii-base-controller.html#$layout-detail">layout</a> равно <code>null</code> (не задано), происходит поиск среди родительских модулей контроллера, включая само приложение (которое по умолчанию является родительским модулем для контроллеров, не принадлежащих модулям) и 
+находится первый модуль, свойство <a href="./yii-base-module.html#$layout-detail">layout</a> которого не равно <code>null</code> . Тогда используется найденное значение <code>layout</code> этого модуля 
+и сам модуль в качестве контекста. Если такой модуль не найден, значит шаблон применен не будет. </li>
+</ul>
+<p>На втором этапе определяется сам файл шаблона для рендеринга на основании значения <code>layout</code> и контекстного модуля. 
+Значением <code>layout</code> может быть:</p>
+<ul>
+<li>Алиас пути (например, <code>@app/views/layouts/main</code>).</li>
+<li>Абсолютный путь (например <code>/main</code>): значение <code>layout</code> начинается со слеша. Будет искаться шаблон из <a href="./yii-base-module.html#$layoutPath-detail">папки шаблонов</a> приложения, по умолчанию это <code>@app/views/layouts</code>. </li>
+<li>Относительный путь (например <code>main</code>): Будет искаться шаблон из <a href="./yii-base-module.html#$layoutPath-detail">папки шаблонов контекстного модуля</a>, по умолчанию это <code>views/layouts</code> в <a href="./yii-base-module.html#$basePath-detail">папке модуля</a>.</li>
+<li>Булево значение <code>false</code>: шаблон не будет применен. </li>
+</ul>
+<p>Если у значения <code>layout</code> нет расширения, будет использовано расширение по умолчанию - <code>.php</code>.</p>
+<h3>Вложенные шаблоны  <span id="nested-layouts"></span><a href="#nested-layouts" class="hashlink">&para;</a></h3><p>Иногда нужно вложить один шаблон в другой. Например, в разных разделах сайта используются разные шаблоны, но у всех 
+этих шаблонов есть основная разметка, которая определяет HTML5 структуру страницы. Вы можете использовать вложенные шаблоны, 
+вызывая <a href="./yii-base-view.html#beginContent()-detail">beginContent()</a> и <a href="./yii-base-view.html#endContent()-detail">endContent()</a> в дочерних 
+шаблонах таким образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">$this</span>-&gt;beginContent(<span class="hljs-string">'@app/views/layouts/base.php'</span>); <span class="hljs-meta">?&gt;</span>
+
+...код<span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">$this</span>-&gt;endContent(); <span class="hljs-meta">?&gt;</span>
+</code></pre>
+<p>В коде выше дочерний шаблон заключается в <a href="./yii-base-view.html#beginContent()-detail">beginContent()</a> и <a href="./yii-base-view.html#endContent()-detail">endContent()</a>.
+Параметр, передаваемый в метод <a href="./yii-base-view.html#beginContent()-detail">beginContent()</a> определяет родительский шаблон. Это может быть как 
+путь к файлу, так и алиас.</p>
+<p>Используя подход выше, вы можете вкладывать шаблоны друг в друга в несколько уровней.</p>
+<h3>Использование блоков  <span id="using-blocks"></span><a href="#using-blocks" class="hashlink">&para;</a></h3><p>Блоки позволяют "записывать" контент в одном месте, а показывать в другом. Они часто используются совместно с шаблонами. 
+Например, вы определяете (записываете) блок в виде и отображаете его в шаблоне.</p>
+<p>Для определения блока вызываются методы <a href="./yii-base-view.html#beginBlock()-detail">beginBlock()</a> и <a href="./yii-base-view.html#endBlock()-detail">endBlock()</a>. 
+После определения, блок доступен через <code>$view-&gt;blocks[$blockID]</code>, где <code>$blockID</code> - это уникальный ID, который вы присваиваете блоку
+в начале определения. </p>
+<p>В примере ниже показано, как можно использовать блоки, определенные в виде, чтобы динамически изменять фрагменты шаблона.</p>
+<p>Сначала, в виде, вы записываете один или несколько блоков:</p>
+<pre><code class="hljs php language-php">...
+
+<span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">$this</span>-&gt;beginBlock(<span class="hljs-string">'block1'</span>); <span class="hljs-meta">?&gt;</span>
+
+...содержимоежимое<span class="hljs-number">1.</span>..
+
+<span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">$this</span>-&gt;endBlock(); <span class="hljs-meta">?&gt;</span>
+
+...
+
+<span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">$this</span>-&gt;beginBlock(<span class="hljs-string">'block3'</span>); <span class="hljs-meta">?&gt;</span>
+
+...содержимоежимое<span class="hljs-number">3.</span>..
+
+<span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">$this</span>-&gt;endBlock(); <span class="hljs-meta">?&gt;</span>
+</code></pre>
+<p>Затем, в шаблоне, рендерите блоки если они есть, или показываете контент по умолчанию, если блок не определен.</p>
+<pre><code class="hljs php language-php">...
+<span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-keyword">$this</span>-&gt;blocks[<span class="hljs-string">'block1'</span>])): <span class="hljs-meta">?&gt;</span>
+    <span class="hljs-meta">&lt;?</span>= <span class="hljs-keyword">$this</span>-&gt;blocks[<span class="hljs-string">'block1'</span>] <span class="hljs-meta">?&gt;</span>
+<span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">else</span>: <span class="hljs-meta">?&gt;</span>
+    ... контент<span class="hljs-number">1</span> ...
+<span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">endif</span>; <span class="hljs-meta">?&gt;</span>
+
+...
+
+<span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-keyword">$this</span>-&gt;blocks[<span class="hljs-string">'block2'</span>])): <span class="hljs-meta">?&gt;</span>
+    <span class="hljs-meta">&lt;?</span>= <span class="hljs-keyword">$this</span>-&gt;blocks[<span class="hljs-string">'block2'</span>] <span class="hljs-meta">?&gt;</span>
+<span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">else</span>: <span class="hljs-meta">?&gt;</span>
+    ... контент<span class="hljs-number">2</span> ...
+<span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">endif</span>; <span class="hljs-meta">?&gt;</span>
+
+...
+
+<span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-keyword">$this</span>-&gt;blocks[<span class="hljs-string">'block3'</span>])): <span class="hljs-meta">?&gt;</span>
+    <span class="hljs-meta">&lt;?</span>= <span class="hljs-keyword">$this</span>-&gt;blocks[<span class="hljs-string">'block3'</span>] <span class="hljs-meta">?&gt;</span>
+<span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">else</span>: <span class="hljs-meta">?&gt;</span>
+    ... контент<span class="hljs-number">3</span> ...
+<span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">endif</span>; <span class="hljs-meta">?&gt;</span>
+...
+</code></pre>
+<h2>Использование компонентов вида  <span id="using-view-components"></span><a href="#using-view-components" class="hashlink">&para;</a></h2><p><a href="./yii-base-view.html">Компоненты вида</a> дают много возможностей. Несмотря на то, что существует возможность создавать индивидуальные экземпляры <a href="./yii-base-view.html">yii\base\View</a> или дочерних классов, в большинстве случаев используется 
+сам компонент <code>view</code> приложения. Вы можете сконфигурировать компонент в <a href="guide-structure-applications.html#application-configurations">конфигурации приложения</a> таким образом:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'view'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'app\components\View'</span>,
+        ],
+        <span class="hljs-comment">// ...</span>
+    ],
+]
+</code></pre>
+<p>Компоненты вида предоставляют широкие возможности по работе с видами, они описаны в отдельных секциях документации: </p>
+<ul>
+<li><a href="guide-output-theming.html">темы</a>: позволяет менять темы оформления для сайта.</li>
+<li><a href="guide-caching-fragment.html">кэширование фрагментов</a>: позволяет кэшировать фрагменты веб-страниц.</li>
+<li><a href="guide-output-client-scripts.html">работа с клиентскими скриптами</a>: Поддерживает регистрацию и рендеринг CSS и Javascript.</li>
+<li><a href="guide-structure-assets.html">управление связками</a>: позволяет регистрацию и управление <a href="guide-structure-assets.html">связками клиентского кода</a>.</li>
+<li><a href="guide-tutorial-template-engines.html">альтернативные движки шаблонов</a>: позволяет использовать другие шаблонные движки, такие как 
+<a href="http://twig.sensiolabs.org/">Twig</a>, <a href="http://www.smarty.net/">Smarty</a>.</li>
+</ul>
+<p>Также удобно пользоваться мелкими, но удобными фичами при разработке веб страниц, которые приведены ниже.</p>
+<h3>Установка заголовков страниц  <span id="setting-page-titles"></span><a href="#setting-page-titles" class="hashlink">&para;</a></h3><p>У каждой страницы должен быть заголовок. Обычно заголовок выводится в <a href="#layouts">шаблоне</a>. Однако на практике 
+заголовок часто определяется в видах, а не в шаблонах. Чтобы передать заголовок из вида в шаблон, используется свойство <a href="./yii-web-view.html#$title-detail">title</a>. </p>
+<p>В виде можно задать заголовок таким образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">$this</span>-&gt;title = <span class="hljs-string">'Мой заголовок страницы'</span>;
+<span class="hljs-meta">?&gt;</span>
+</code></pre>
+<p>В шаблоне заголовок выводится следующим образом, (убедитесь, что в <code>&lt;head&gt;</code> у вас соответствующий код):</p>
+<pre><code class="hljs php language-php">&lt;title&gt;<span class="hljs-meta">&lt;?</span>= Html::encode(<span class="hljs-keyword">$this</span>-&gt;title) <span class="hljs-meta">?&gt;</span>&lt;/title&gt;
+</code></pre>
+<h3>Регистрация мета-тэгов  <span id="registering-meta-tags"></span><a href="#registering-meta-tags" class="hashlink">&para;</a></h3><p>На веб страницах обычно есть мета-тэги, которые часто используются различными сервисами. Как и заголовки страниц, 
+мета-тэги выводятся в <code>&lt;head&gt;</code> и обычно генерируются в шаблонах.</p>
+<p>Если вы хотите указать, какие мета-тэги генерировать в видах, вы можете вызвать метод <a href="./yii-web-view.html#registerMetaTag()-detail">yii\web\View::registerMetaTag()</a> в виде так, 
+как в примере ниже: </p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">$this</span>-&gt;registerMetaTag([<span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'keywords'</span>, <span class="hljs-string">'content'</span> =&gt; <span class="hljs-string">'yii, framework, php'</span>]);
+<span class="hljs-meta">?&gt;</span>
+</code></pre>
+<p>Этот код зарегистрирует мета тэг "keywords" в виде. Зарегистрированные мета тэги рендерятся после того, как закончен 
+рендеринг шаблона. Они вставляются в то место, где в шаблоне вызван метод <a href="./yii-web-view.html#head()-detail">yii\web\View::head()</a>. Результатом рендеринга 
+мета тэгов является следующий код:</p>
+<pre><code class="hljs php language-php">&lt;meta name=<span class="hljs-string">"keywords"</span> content=<span class="hljs-string">"yii, framework, php"</span>&gt;
+</code></pre>
+<p>Обратите внимание, что при вызове метода <a href="./yii-web-view.html#registerMetaTag()-detail">yii\web\View::registerMetaTag()</a> несколько раз мета тэги будут регистрироваться 
+каждый раз без проверки на уникальность.</p>
+<p>Чтобы убедиться, что зарегистрирован только один экземпляр одного типа мета тэгов, вы можете указать ключ мета тэга в качестве второго 
+параметра при вызове метода.
+К примеру, следующий код регистрирует два мета тэга "description", однако отрендерен будет только второй.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">$this</span>-&gt;registerMetaTag([<span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'description'</span>, <span class="hljs-string">'content'</span> =&gt; <span class="hljs-string">'Мой сайт сделан с помощью Yii!'</span>], <span class="hljs-string">'description'</span>);
+<span class="hljs-keyword">$this</span>-&gt;registerMetaTag([<span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'description'</span>, <span class="hljs-string">'content'</span> =&gt; <span class="hljs-string">'Это сайт о забавных енотах.'</span>], <span class="hljs-string">'description'</span>);
+</code></pre>
+<h3>Регистрация тэгов link  <span id="registering-link-tags"></span><a href="#registering-link-tags" class="hashlink">&para;</a></h3><p>Как и <a href="#adding-meta-tags">мета тэги</a>, link тэги полезны во многих случаях, как, например, задание уникальной favicon, указание на RSS фид или указание OpenID сервера для авторизации. С link тэгами можно работать аналогично работе с мета тэгами, вызывая метод <a href="./yii-web-view.html#registerLinkTag()-detail">yii\web\View::registerLinkTag()</a>. Например, 
+вы можете зарегистрировать link тэг в виде таким образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">$this</span>-&gt;registerLinkTag([
+    <span class="hljs-string">'title'</span> =&gt; <span class="hljs-string">'Сводка новостей по Yii'</span>,
+    <span class="hljs-string">'rel'</span> =&gt; <span class="hljs-string">'alternate'</span>,
+    <span class="hljs-string">'type'</span> =&gt; <span class="hljs-string">'application/rss+xml'</span>,
+    <span class="hljs-string">'href'</span> =&gt; <span class="hljs-string">'http://www.yiiframework.com/rss.xml/'</span>,
+]);
+</code></pre>
+<p>Этот код выведет</p>
+<pre><code class="hljs xml language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Сводка новостей по Yii"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"alternate"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"application/rss+xml"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://www.yiiframework.com/rss.xml/"</span>&gt;</span>
+</code></pre>
+<p>Как и в случае с <a href="./yii-web-view.html#registerMetaTag()-detail">registerMetaTag()</a>, вы можете указать ключ вторым параметром при вызове 
+<a href="./yii-web-view.html#registerLinkTag()-detail">registerLinkTag()</a> чтобы избежать дублирования link тэгов одного типа.</p>
+<h2>События в видах  <span id="view-events"></span><a href="#view-events" class="hashlink">&para;</a></h2><p><a href="./yii-base-view.html">Компонент вида</a> вызывает несколько событий во время рендеринга. 
+Вы можете задавать обработчики для этих событий чтобы добавлять контент 
+в вид или делать пост-обработку результатов рендеринга до того, как они будут отправлены конечным пользователям.</p>
+<ul>
+<li><a href="./yii-base-view.html#EVENT_BEFORE_RENDER-detail">EVENT_BEFORE_RENDER</a>: вызывается в начале рендеринга файла в контроллере. 
+Обработчики этого события могут придать атрибуту <a href="./yii-base-viewevent.html#$isValid-detail">yii\base\ViewEvent::$isValid</a> значение <code>false</code>, чтобы отменить процесс рендеринга.</li>
+<li><a href="./yii-base-view.html#EVENT_AFTER_RENDER-detail">EVENT_AFTER_RENDER</a>: событие инициируется после рендеринга файла вызовом <a href="./yii-base-view.html#afterRender()-detail">yii\base\View::afterRender()</a>.
+Обработчики события могут получать результат рендеринга через <a href="./yii-base-viewevent.html#$output-detail">yii\base\ViewEvent::$output</a> и могут изменять это свойство для изменения 
+результата рендеринга.</li>
+<li><a href="./yii-base-view.html#EVENT_BEGIN_PAGE-detail">EVENT_BEGIN_PAGE</a>: инициируется вызовом <a href="./yii-base-view.html#beginPage()-detail">yii\base\View::beginPage()</a> в шаблонах.</li>
+<li><a href="./yii-base-view.html#EVENT_END_PAGE-detail">EVENT_END_PAGE</a>: инициируется вызовом <a href="./yii-base-view.html#endPage()-detail">yii\base\View::endPage()</a> в шаблонах.</li>
+<li><a href="./yii-web-view.html#EVENT_BEGIN_BODY-detail">EVENT_BEGIN_BODY</a>: инициируется вызовом <a href="./yii-web-view.html#beginBody()-detail">yii\web\View::beginBody()</a> в шаблонах.</li>
+<li><a href="./yii-web-view.html#EVENT_END_BODY-detail">EVENT_END_BODY</a>: инициируется вызовом <a href="./yii-web-view.html#endBody()-detail">yii\web\View::endBody()</a> в шаблонах.</li>
+</ul>
+<p>Например, следующий код вставляет дату в конец <code>body</code> страницы:</p>
+<pre><code class="hljs php language-php">\Yii::$app-&gt;view-&gt;on(View::EVENT_END_BODY, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">echo</span> date(<span class="hljs-string">'Y-m-d'</span>);
+});
+</code></pre>
+<h2>Рендеринг статических страниц  <span id="rendering-static-pages"></span><a href="#rendering-static-pages" class="hashlink">&para;</a></h2><p>Статическими страницами мы считаем страницы, которые содержат в основном статические данные и для формирования 
+которых не нужно строить динамические данные в контроллерах.</p>
+<p>Вы можете выводить статические страницы, сохраняя их в видах, а затем используя подобный код в контроллере:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionAbout</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;render(<span class="hljs-string">'about'</span>);
+}
+</code></pre>
+<p>Если сайт содержит много статических страниц, описанный выше подход не вполне подходит - его использование 
+приведет к многократному повторению похожего кода. Вместо этого вы можете использовать <a href="guide-structure-controllers.html#standalone-actions">отдельное действие</a>  <a href="./yii-web-viewaction.html">yii\web\ViewAction</a> в контроллере. Например,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SiteController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actions</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            <span class="hljs-string">'page'</span> =&gt; [
+                <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\web\ViewAction'</span>,
+            ],
+        ];
+    }
+}
+</code></pre>
+<p>Теперь, если вы создадите вид <code>about</code> в папке <code>@app/views/site/pages</code>, он будет отображаться по такому адресу: </p>
+<pre><code class="hljs less"><span class="hljs-attribute">http</span>:<span class="hljs-comment">//localhost/index.php?r=site%2Fpage&amp;view=about</span>
+</code></pre>
+<p><code>GET</code> параметр <code>view</code> сообщает <a href="./yii-web-viewaction.html">yii\web\ViewAction</a> какой вид затребован. Действие будет искать этот вид в папке <code>@app/views/site/pages</code>. 
+Вы можете сконфирурировать параметр <a href="./yii-web-viewaction.html#$viewPrefix-detail">yii\web\ViewAction::$viewPrefix</a> чтобы изменить папку в которой ищется вид.</p>
+<h2>Полезные советы  <span id="best-practices"></span><a href="#best-practices" class="hashlink">&para;</a></h2><p>Виды отвечают за представление данных моделей в формате, понятным конечным пользователям. В целом, виды</p>
+<ul>
+<li>должны в основном содержать код, отвечающий за представление, такой как HTML и простой PHP для обхода, форматирования и рендеринга данных.</li>
+<li>не должны содержать кода, который производит запросы к БД. Такими запросами должны заниматься модели.</li>
+<li>должны избегать прямого обращения к данным запроса, таким как <code>$_GET</code>, <code>$_POST</code>. Разбором запроса должны заниматься контроллеры. Если 
+данные запросов нужны для построения вида, они должны явно передаваться в вид контроллерами.</li>
+<li>могут читать свойства моделей, но не должны их изменять.</li>
+</ul>
+<p>Чтобы сделать виды более управляемыми, избегайте создания видов, которые содержат слишком сложную логику или большое количество кода. 
+Используйте следующие подходы для их упрощения:</p>
+<ul>
+<li>используйте <a href="#layouts">шаблоны</a> для отображения основных секций разметки сайта (верхняя часть (хедер), нижняя часть (футер) и т.п.)</li>
+<li>разбивайте сложный вид на несколько видов попроще. Меньшие виды можно рендерить и объединять в больший используя методы рендеринга, описанный в 
+настоящем документе.</li>
+<li>создавайте и используйте <a href="guide-structure-widgets.html">виджеты</a> как строительный материал для видов.</li>
+<li>создавайте и используйте классы-хелперы для изменения и форматирования данных в видах.</li>
+</ul>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 09 Dec 2020 00:16:05 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

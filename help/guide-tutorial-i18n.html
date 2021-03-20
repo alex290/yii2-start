@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/1728b664/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9c5d0894/solarized_light.css" rel="stylesheet">
+<link href="./assets/f2ce5bcd/style.css" rel="stylesheet">
+<script src="./assets/bbf84a7a/jquery.js"></script>
+<script src="./assets/1728b664/js/bootstrap.js"></script>
+<script src="./assets/fd63b446/jssearch.js"></script>    <title>Интернационализация - Специальные темы - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1498" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1498-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1498-collapse" class="collapse navbar-collapse"><ul id="w1499" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1500" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1482" data-toggle="collapse" data-parent="#navigation">Введение <b class="caret"></b></a><div id="navigation-1482" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">О Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Обновление с версии 1.1</a></div>
+<a class="list-group-item" href="#navigation-1483" data-toggle="collapse" data-parent="#navigation">Первое знакомство <b class="caret"></b></a><div id="navigation-1483" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Установка Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Запуск приложения</a>
+<a class="list-group-item" href="./guide-start-hello.html">Говорим «привет»</a>
+<a class="list-group-item" href="./guide-start-forms.html">Работа с формами</a>
+<a class="list-group-item" href="./guide-start-databases.html">Работа с базами данных</a>
+<a class="list-group-item" href="./guide-start-gii.html">Генерация кода при помощи Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Что дальше?</a></div>
+<a class="list-group-item" href="#navigation-1484" data-toggle="collapse" data-parent="#navigation">Структура приложения <b class="caret"></b></a><div id="navigation-1484" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Входные скрипты</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Приложения</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Компоненты приложения</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-structure-models.html">Модели</a>
+<a class="list-group-item" href="./guide-structure-views.html">Представления</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Модули</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Фильтры</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Виджеты</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Расширения</a></div>
+<a class="list-group-item" href="#navigation-1485" data-toggle="collapse" data-parent="#navigation">Обработка запросов <b class="caret"></b></a><div id="navigation-1485" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Разбор и генерация URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Запросы</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Ответы</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Сессии и куки</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Обработка ошибок</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Логирование</a></div>
+<a class="list-group-item" href="#navigation-1486" data-toggle="collapse" data-parent="#navigation">Основные понятия <b class="caret"></b></a><div id="navigation-1486" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Компоненты</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Свойства</a>
+<a class="list-group-item" href="./guide-concept-events.html">События</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Поведения</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Конфигурации</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Псевдонимы</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Автозагрузка классов</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item" href="#navigation-1487" data-toggle="collapse" data-parent="#navigation">Работа с базами данных <b class="caret"></b></a><div id="navigation-1487" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Объекты доступа к данным (DAO)</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Построитель запросов</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Миграции</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-ru/README.md">Sphinx</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-redis/blob/master/docs/guide-ru/README.md">Redis</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-ru/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-ru/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1488" data-toggle="collapse" data-parent="#navigation">Получение данных от пользователя <b class="caret"></b></a><div id="navigation-1488" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Создание форм</a>
+<a class="list-group-item" href="./guide-input-validation.html">Валидация</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Загрузка файлов</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Табличный ввод</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Работа с несколькими моделями</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">Расширение ActiveForm на стороне клиента</a></div>
+<a class="list-group-item" href="#navigation-1489" data-toggle="collapse" data-parent="#navigation">Отображение данных <b class="caret"></b></a><div id="navigation-1489" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Форматирование данных</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Постраничная разбивка</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Сортировка</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Провайдеры данных</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Виджеты для данных</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Работа с клиентскими скриптами</a>
+<a class="list-group-item" href="./guide-output-theming.html">Темизация</a></div>
+<a class="list-group-item" href="#navigation-1490" data-toggle="collapse" data-parent="#navigation">Безопасность <b class="caret"></b></a><div id="navigation-1490" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-security-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Авторизация</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Работа с паролями</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">Криптография</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-ru/README.md">Клиенты авторизации</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Лучшие практики</a></div>
+<a class="list-group-item" href="#navigation-1491" data-toggle="collapse" data-parent="#navigation">Кеширование <b class="caret"></b></a><div id="navigation-1491" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-caching-data.html">Кэширование данных</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Кэширование фрагментов</a>
+<a class="list-group-item" href="./guide-caching-page.html">Кэширование страниц</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP кэширование</a></div>
+<a class="list-group-item" href="#navigation-1492" data-toggle="collapse" data-parent="#navigation">Веб-сервисы REST <b class="caret"></b></a><div id="navigation-1492" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Быстрый старт</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Роутинг</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Форматирование ответа</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Ограничение частоты запросов</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Версионирование</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Обработка ошибок</a></div>
+<a class="list-group-item" href="#navigation-1493" data-toggle="collapse" data-parent="#navigation">Инструменты разработчика <b class="caret"></b></a><div id="navigation-1493" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Отладочная панель и отладчик</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide/README.md">Генерация кода с Gii</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">Генератор документации API</a></div>
+<a class="list-group-item" href="#navigation-1494" data-toggle="collapse" data-parent="#navigation">Тестирование <b class="caret"></b></a><div id="navigation-1494" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Настройка тестового окружения</a>
+<a class="list-group-item" href="./guide-test-unit.html">Модульные тесты</a>
+<a class="list-group-item" href="./guide-test-functional.html">Функциональные тесты</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Приёмочные тесты</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Фикстуры</a></div>
+<a class="list-group-item active" href="#navigation-1495" data-toggle="collapse" data-parent="#navigation">Специальные темы <b class="caret"></b></a><div id="navigation-1495" class="submenu panel-collapse collapse in"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">Шаблон приложения advanced</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Создание приложения с нуля</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Консольные команды</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Встроенные валидаторы</a>
+<a class="list-group-item active" href="./guide-tutorial-i18n.html">Интернационализация</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Отправка почты</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Оптимизация производительности</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Окружение виртуального хостинга</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Шаблонизаторы</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Работа со сторонним кодом</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">Использование Yii в качестве микро-framework&#039;а</a></div>
+<a class="list-group-item" href="#navigation-1496" data-toggle="collapse" data-parent="#navigation">Виджеты <b class="caret"></b></a><div id="navigation-1496" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-ru/README.md">Виджеты Bootstrap</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-ru/README.md">Виджеты Jquery UI</a></div>
+<a class="list-group-item" href="#navigation-1497" data-toggle="collapse" data-parent="#navigation">Хелперы <b class="caret"></b></a><div id="navigation-1497" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url хелпер</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Интернационализация <span id="internacionalizacia"></span><a href="#internacionalizacia" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#locale-language">Локализация и языки</a></li>
+<li><a href="#message-translation">Перевод сообщений</a></li>
+<li><a href="#message-command">Использование команды message</a></li>
+<li><a href="#view-translation">Представления</a></li>
+<li><a href="#date-number">Форматирование чисел и дат</a></li>
+<li><a href="#setup-environment">Настройка PHP-окружения</a></li>
+<li><a href="#known-problems">Известные проблемы</a></li></ol></div>
+<blockquote class="note"><p><strong>Примечание: </strong>Этот раздел находится в разработке</p>
+</blockquote>
+<p>Интернационализация (I18N) является частью процесса разработки приложения, которое может быть адаптировано для 
+нескольких языков без изменения программной логики. Это особенно важно для веб-приложений, так как потенциальные
+пользователи могут приходить из разных стран.</p>
+<p>Yii располагает несколькими средствами, призванными помочь с интернационализацией веб-приложения: <a href="#message-translation">переводом 
+сообщений</a>, <a href="#date-number">форматированием чисел и дат</a>.</p>
+<h2>Локализация и языки  <span id="locale-language"></span><a href="#locale-language" class="hashlink">&para;</a></h2><p>В Yii приложении определены два языка: <a href="./yii-base-application.html#$sourceLanguage-detail">исходный язык</a> и <a href="./yii-base-application.html#$language-detail">язык перевода</a>.</p>
+<p>На "исходном языке" написаны сообщения в коде приложения. Если мы определяем исходным языком английский, то
+в коде можно использовать конструкцию:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'I am a message!'</span>);
+</code></pre>
+<p>Язык перевода определяет, в каком виде будет отображаться текущая страница, т.е. на какой язык будут переведены
+оригинальные сообщения. Этот параметр определяется в конфигурации приложения:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'applicationID'</span>,
+    <span class="hljs-string">'basePath'</span> =&gt; dirname(<span class="hljs-keyword">__DIR__</span>),
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'language'</span> =&gt; <span class="hljs-string">'ru-RU'</span>, <span class="hljs-comment">// &lt;- здесь!</span>
+    <span class="hljs-comment">// ...</span>
+]
+</code></pre>
+<blockquote class="tip"><p><strong>Подсказка: </strong>значение по умолчанию для <a href="./yii-base-application.html#$sourceLanguage-detail">исходного языка</a> — английский.</p>
+</blockquote>
+<p>Вы можете установить значение текущего языка в самом приложении в соответствии с языком, который выбрал пользователь.
+Это необходимо сделать до того, как будет сгенерирован какой-либо вывод, чтобы не возникло проблем с его 
+корректностью. Используйте простое переопределение свойства на нужное значение:</p>
+<pre><code class="hljs php language-php">\Yii::$app-&gt;language = <span class="hljs-string">'ru-RU'</span>;
+</code></pre>
+<p>Формат для установки языка/локали: <code>ll-CC</code>, где <code>ll</code> — это двух или трёхбуквенный код языка в нижнем регистре в 
+соответствии со стандартом <a href="http://www.loc.gov/standards/iso639-2/">ISO-639</a>, а <code>CC</code> — это код страны в соответствии
+со стандартом <a href="https://ru.wikipedia.org/wiki/ISO_3166-1#Список_кодов_по_ISO_3166">ISO-3166</a>.</p>
+<blockquote class="note"><p><strong>Примечание: </strong>больше информации о синтаксисе и концепции локалей можно получить в <a href="http://userguide.icu-project.org/locale#TOC-The-Locale-Concept">документации проекта ICU</a>.</p>
+</blockquote>
+<h2>Перевод сообщений  <span id="message-translation"></span><a href="#message-translation" class="hashlink">&para;</a></h2><p>Перевод используется для локализации сообщений, которые будут выведены в приложении в соответствии с языком,
+который выбрал пользователь.</p>
+<p>По сути, Yii просто находит в файле с сообщениями на выбранном языке строку, соответствующую сообщению на исходном 
+языке приложения. Для перевода сообщений необходимо в самом приложении заключать их в метод <a href="./yii-baseyii.html#t()-detail">Yii::t()</a>. Первый 
+аргумент метода — это категория, которая позволяет группировать сообщения по определённому признаку, а второй — само 
+сообщение.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'This is a string to translate!'</span>);
+</code></pre>
+<p>Yii попытается загрузить файл перевода сообщений, соответствующий  текущему <a href="./yii-base-application.html#$language-detail">языку приложения</a>
+из одного из источников, определённых в <code>i18n</code> <a href="guide-concept-components.html">компонентах приложения</a>. Сообщения — это набор
+файлов или база данных, которая содержит переведённые строки. Следующая конфигурация определяет, что сообщения 
+должны браться из PHP-файлов:</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'components'</span> =&gt; [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'i18n'</span> =&gt; [
+        <span class="hljs-string">'translations'</span> =&gt; [
+            <span class="hljs-string">'app*'</span> =&gt; [
+                <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\i18n\PhpMessageSource'</span>,
+                <span class="hljs-comment">//'basePath' =&gt; '@app/messages',</span>
+                <span class="hljs-comment">//'sourceLanguage' =&gt; 'en-US',</span>
+                <span class="hljs-string">'fileMap'</span> =&gt; [
+                    <span class="hljs-string">'app'</span>       =&gt; <span class="hljs-string">'app.php'</span>,
+                    <span class="hljs-string">'app/error'</span> =&gt; <span class="hljs-string">'error.php'</span>,
+                ],
+            ],
+        ],
+    ],
+],
+</code></pre>
+<p>В приведённой конфигурации, <code>app*</code> — это шаблон, который определяет, какие категории обрабатываются источником. В нашем 
+случае мы обрабатываем все, что начинается с <code>app</code>. Файлы с сообщениями находятся в <code>@app/messages</code> (папке <code>messages</code>
+в вашем приложении). Массив <a href="./yii-i18n-phpmessagesource.html#$fileMap-detail">fileMap</a> определяет, какой файл будет подключаться для
+определённой категории. Если вы не хотите конфигурировать <code>fileMap</code>, можно положиться на соглашение, что название 
+категории является именем файла. Например, категория <code>app/error</code> относится к файлу <code>app/error.php</code> в рамках <a href="./yii-i18n-phpmessagesource.html#$basePath-detail">basePath</a>.</p>
+<p>Переводя сообщение <code>\Yii::t('app', 'This is a string to translate!')</code> при установленном языке приложения <code>ru-RU</code>, Yii
+сначала будет искать файл <code>@app/messages/ru-RU/app.php</code>, чтобы получить список доступных переводов. Если такого файла нет в папке
+<code>ru-RU</code>, Yii также попробует поискать в папке <code>ru</code> перед тем, как примет решение, что попытка перевода не удалась.</p>
+<p>Кроме хранения в PHP-файлах (используя <a href="./yii-i18n-phpmessagesource.html">PhpMessageSource</a>), Yii предоставляет ещё два
+класса:</p>
+<ul>
+<li><a href="./yii-i18n-gettextmessagesource.html">yii\i18n\GettextMessageSource</a>, использующий GNU Gettext для MO или PO файлов.</li>
+<li><a href="./yii-i18n-dbmessagesource.html">yii\i18n\DbMessageSource</a>, использующий базу данных.</li>
+</ul>
+<h3>Именованные указатели <span id="imenovannye-ukazateli"></span><a href="#imenovannye-ukazateli" class="hashlink">&para;</a></h3><p>Вы можете добавлять параметры в строку для перевода, которые в выводе будут заменены соответствующими значениями, 
+заключая параметр в фигурные скобки:</p>
+<pre><code class="hljs php language-php">$username = <span class="hljs-string">'Alexander'</span>;
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Hello, {username}!'</span>, [
+    <span class="hljs-string">'username'</span> =&gt; $username,
+]);
+</code></pre>
+<p>Обратите внимание, что в операции присваивания фигурные скобки не используются.</p>
+<h3>Позиционные указатели <span id="pozicionnye-ukazateli"></span><a href="#pozicionnye-ukazateli" class="hashlink">&para;</a></h3><pre><code class="hljs php language-php">$sum = <span class="hljs-number">42</span>;
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Balance: {0}'</span>, $sum);
+</code></pre>
+<blockquote class="tip"><p><strong>Подсказка: </strong>старайтесь сохранять читаемость сообщений и избегать избыточного использования позиционных
+параметров. Помните, что переводчик, скорее всего, будет располагать только файлом со строками и для него
+должно быть очевидно, на что будет заменён тот или иной указатель.</p>
+</blockquote>
+<h3>Указатели с расширенным форматированием <span id="ukazateli-s-rassirennym-formatirovaniem"></span><a href="#ukazateli-s-rassirennym-formatirovaniem" class="hashlink">&para;</a></h3><p>Чтобы использовать расширенные возможности, вам необходимо установить и включить <a href="https://secure.php.net/manual/ru/intro.intl.php">PHP-расширение intl</a>.
+После этого вам станет доступен расширенный синтаксис указателей, а также сокращённая запись <code>{placeholderName, argumentType}</code>,
+эквивалентная форме <code>{placeholderName, argumentType, argumentStyle}</code>, позволяющая определять стиль форматирования.</p>
+<p>Полная документация доступна на <a href="http://icu-project.org/apiref/icu4c/classMessageFormat.html">сайте ICU</a>, но далее в 
+документации будут приведены примеры использования расширенных возможностей интернационализации.</p>
+<h4>Числа <span id="cisla"></span><a href="#cisla" class="hashlink">&para;</a></h4><pre><code class="hljs php language-php">$sum = <span class="hljs-number">42</span>;
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Balance: {0, number}'</span>, $sum);
+</code></pre>
+<p>Вы можете использовать один из встроенных форматов (<code>integer</code>, <code>currency</code>, <code>percent</code>):</p>
+<pre><code class="hljs php language-php">$sum = <span class="hljs-number">42</span>;
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Balance: {0, number, currency}'</span>, $sum);
+</code></pre>
+<p>Или определить свой формат:</p>
+<pre><code class="hljs php language-php">$sum = <span class="hljs-number">42</span>;
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Balance: {0, number, ,000,000000}'</span>, $sum);
+</code></pre>
+<p><a href="http://icu-project.org/apiref/icu4c/classicu_1_1DecimalFormat.html">Описание форматирования</a>.</p>
+<h4>Даты <span id="daty"></span><a href="#daty" class="hashlink">&para;</a></h4><pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Today is {0, date}'</span>, time());
+</code></pre>
+<p>Встроенные форматы — это <code>short</code>, <code>medium</code>, <code>long</code> и <code>full</code>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Today is {0, date, short}'</span>, time());
+</code></pre>
+<p>Используя свой формат:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Today is {0, date,yyyy-MM-dd}'</span>, time());
+</code></pre>
+<p><a href="http://icu-project.org/apiref/icu4c/classicu_1_1SimpleDateFormat.html#details">Описание форматирования</a>.</p>
+<h4>Время <span id="vrema"></span><a href="#vrema" class="hashlink">&para;</a></h4><pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'It is {0, time}'</span>, time());
+</code></pre>
+<p>Встроенные форматы — это <code>short</code>, <code>medium</code>, <code>long</code> и <code>full</code>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'It is {0, time, short}'</span>, time());
+</code></pre>
+<p>Используя свой формат:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'It is {0, date,HH:mm}'</span>, time());
+</code></pre>
+<p><a href="http://icu-project.org/apiref/icu4c/classicu_1_1SimpleDateFormat.html#details">Описание форматирования</a>.</p>
+<h4>Числа прописью <span id="cisla-propisu"></span><a href="#cisla-propisu" class="hashlink">&para;</a></h4><pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Число {n,number} прописью: {n, spellout}'</span>, [<span class="hljs-string">'n'</span> =&gt; <span class="hljs-number">42</span>]);
+</code></pre>
+<h4>Порядковые числительные <span id="poradkovye-cislitelnye"></span><a href="#poradkovye-cislitelnye" class="hashlink">&para;</a></h4><pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Вы — {n, ordinal} посетитель!'</span>, [<span class="hljs-string">'n'</span> =&gt; <span class="hljs-number">42</span>]);
+</code></pre>
+<p>Выведет сообщение "Вы — 42-й посетитель!".</p>
+<h4>Продолжительность <span id="prodolzitelnost"></span><a href="#prodolzitelnost" class="hashlink">&para;</a></h4><pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Вы находитесь здесь уже {n, duration}'</span>, [<span class="hljs-string">'n'</span> =&gt; <span class="hljs-number">47</span>]);
+</code></pre>
+<p>Выведет сообщение "Вы находитесь здесь уже 47 сек.".</p>
+<h4>Множественное число <span id="mnozestvennoe-cislo"></span><a href="#mnozestvennoe-cislo" class="hashlink">&para;</a></h4><p>В каждом языке используется свой способ склонения порядковых числительных. Некоторые правила весьма сложны,
+так что очень удобно, что использование функционала i18n не требует определения правил склонения. Требуется
+только указать формы склоняемого слова в различных ситуациях:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(
+    <span class="hljs-string">'app'</span>,
+    <span class="hljs-string">'На диване {n, plural, =0{нет кошек} =1{лежит одна кошка} one{лежит # кошка} few{лежит # кошки} many{лежит # кошек} other{лежит # кошки}}!'</span>, 
+    [<span class="hljs-string">'n'</span> =&gt; <span class="hljs-number">0</span>]
+);
+</code></pre>
+<p>Выведет сообщение "На диване нет кошек!".</p>
+<p>В данном правиле </p>
+<ul>
+<li><code>=0</code> означает ноль; </li>
+<li><code>=1</code> соответствует ровно <code>1</code>; </li>
+<li><code>one</code> — <code>21</code>, <code>31</code>, <code>41</code> и так далее; </li>
+<li><code>few</code> — от <code>2</code> до <code>4</code>, от <code>22</code> до <code>24</code> и так далее; </li>
+<li><code>many</code> — <code>0</code>, от <code>5</code> до <code>20</code>, от <code>25</code> до <code>30</code> и так далее; </li>
+<li><code>other</code> — для всех прочих чисел (например, дробных). </li>
+<li>Решётка <code>#</code> заменяется на значение аргумента <code>n</code>. </li>
+</ul>
+<p>Для некоторых языков правила могут быть более простыми. Например, для английского будет достаточно указать:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'There {n, plural, =0{are no cats} =1{is one cat} other{are # cats}}!'</span>, [<span class="hljs-string">'n'</span> =&gt; <span class="hljs-number">0</span>]);
+</code></pre>
+<p>Следует помнить, что если вы используете указатель дважды, и в первый раз он используется как <code>plural</code>,
+второй раз он должен быть использован как <code>number</code>, иначе вы получите ошибку "Inconsistent types declared 
+for an argument: U_ARGUMENT_TYPE_MISMATCH":</p>
+<pre><code class="hljs ">В корзине: {count, number} {count, plural, one{товар} few{товара} other{товаров}}.
+</code></pre>
+<p>Подробная документация о формах склонений для различных языков доступна на сайте 
+<a href="http://cldr.unicode.org/index/cldr-spec/plural-rules">unicode.org</a>.</p>
+<h4>Вариации <span id="variacii"></span><a href="#variacii" class="hashlink">&para;</a></h4><p>Вы можете указывать критерии форматирования сообщений в зависимости от ключевых слов. Приведённый пример
+демонстрирует возможность подстановки корректного рода в зависимости от параметра:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'{name} — {gender} и {gender, select, женщина{ей} мужчина{ему} other{ему}} нравится Yii!'</span>, [
+    <span class="hljs-string">'name'</span>   =&gt; <span class="hljs-string">'Василий'</span>,
+    <span class="hljs-string">'gender'</span> =&gt; <span class="hljs-string">'мужчина'</span>,
+]);
+</code></pre>
+<p>Выведет сообщение "Василий — мужчина и ему нравится Yii!".</p>
+<p>В приведённом выражении, <code>мужчина</code> и <code>женщина</code> — это возможные варианты пола. На всякий случай, <code>other</code>
+обработает случай, если значение не совпадает с первыми двумя вариантами. Строки в скобках являются вторичными
+выражениями и могут быть просто строкой или строкой, содержащей дополнительные указатели.</p>
+<h3>Определение перевода по умолчанию <span id="opredelenie-perevoda-po-umolcaniu"></span><a href="#opredelenie-perevoda-po-umolcaniu" class="hashlink">&para;</a></h3><p>Вы можете определить переводы, которые будут использованы как переводы по умолчанию для категорий, которые
+не попадают в другие переводы. Этот перевод должен быть помечен звёздочкой <code>*</code> и указан в конфигурации
+приложения как:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// конфигурация i18n компонента</span>
+
+<span class="hljs-string">'i18n'</span> =&gt; [
+    <span class="hljs-string">'translations'</span> =&gt; [
+        <span class="hljs-string">'*'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\i18n\PhpMessageSource'</span>
+        ],
+    ],
+],
+</code></pre>
+<p>Теперь можно использовать категории без необходимости конфигурировать каждую из них, что похоже на 
+способ, которым была реализована поддержка интернационализации в Yii 1.1. Сообщения для категории будут
+загружаться из файла с переводом по умолчанию из <code>basePath</code>, т.е. <code>@app/messages</code>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> Yii::t(<span class="hljs-string">'not_specified_category'</span>, <span class="hljs-string">'message from unspecified category'</span>);
+</code></pre>
+<p>Сообщение будет загружено из файла <code>@app/messages/&lt;LanguageCode&gt;/not_specified_category.php</code></p>
+<h3>Перевод сообщений модулей <span id="perevod-soobsenij-modulej"></span><a href="#perevod-soobsenij-modulej" class="hashlink">&para;</a></h3><p>Если вы хотите перевести сообщения в модуле и при этом не сгружать их все в один файл, можете прибегнуть
+к следующему приёму:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">modules</span>\<span class="hljs-title">users</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Module</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Module</span>
+</span>{
+    <span class="hljs-keyword">public</span> $controllerNamespace = <span class="hljs-string">'app\modules\users\controllers'</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">parent</span>::init();
+        <span class="hljs-keyword">$this</span>-&gt;registerTranslations();
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">registerTranslations</span><span class="hljs-params">()</span>
+    </span>{
+        Yii::$app-&gt;i18n-&gt;translations[<span class="hljs-string">'modules/users/*'</span>] = [
+            <span class="hljs-string">'class'</span>          =&gt; <span class="hljs-string">'yii\i18n\PhpMessageSource'</span>,
+            <span class="hljs-string">'sourceLanguage'</span> =&gt; <span class="hljs-string">'en-US'</span>,
+            <span class="hljs-string">'basePath'</span>       =&gt; <span class="hljs-string">'@app/modules/users/messages'</span>,
+            <span class="hljs-string">'fileMap'</span>        =&gt; [
+                <span class="hljs-string">'modules/users/validation'</span> =&gt; <span class="hljs-string">'validation.php'</span>,
+                <span class="hljs-string">'modules/users/form'</span>       =&gt; <span class="hljs-string">'form.php'</span>,
+                ...
+            ],
+        ];
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">t</span><span class="hljs-params">($category, $message, $params = [], $language = null)</span>
+    </span>{
+        <span class="hljs-keyword">return</span> Yii::t(<span class="hljs-string">'modules/users/'</span> . $category, $message, $params, $language);
+    }
+
+}
+</code></pre>
+<p>В приведённом примере мы использовали маску для поиска совпадений, и последующую фильтрацию по
+категориям для искомого файла. Вместо использования <code>fileMap</code>, вы можете прибегнуть к соглашению,
+что имя категории совпадает с именем файла и писать <code>Module::t('validation', 'your custom validation message')</code> или
+<code>Module::t('form', 'some form label')</code> напрямую.</p>
+<h3>Перевод сообщений виджетов <span id="perevod-soobsenij-vidzetov"></span><a href="#perevod-soobsenij-vidzetov" class="hashlink">&para;</a></h3><p>Для виджетов применимо такое же правило, как и для модулей:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">widgets</span>\<span class="hljs-title">menu</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Widget</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Menu</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Widget</span>
+</span>{
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">parent</span>::init();
+        <span class="hljs-keyword">$this</span>-&gt;registerTranslations();
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">registerTranslations</span><span class="hljs-params">()</span>
+    </span>{
+        $i18n = Yii::$app-&gt;i18n;
+        $i18n-&gt;translations[<span class="hljs-string">'widgets/menu/*'</span>] = [
+            <span class="hljs-string">'class'</span>          =&gt; <span class="hljs-string">'yii\i18n\PhpMessageSource'</span>,
+            <span class="hljs-string">'sourceLanguage'</span> =&gt; <span class="hljs-string">'en-US'</span>,
+            <span class="hljs-string">'basePath'</span>       =&gt; <span class="hljs-string">'@app/widgets/menu/messages'</span>,
+            <span class="hljs-string">'fileMap'</span>        =&gt; [
+                <span class="hljs-string">'widgets/menu/messages'</span> =&gt; <span class="hljs-string">'messages.php'</span>,
+            ],
+        ];
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">echo</span> <span class="hljs-keyword">$this</span>-&gt;render(<span class="hljs-string">'index'</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">t</span><span class="hljs-params">($category, $message, $params = [], $language = null)</span>
+    </span>{
+        <span class="hljs-keyword">return</span> Yii::t(<span class="hljs-string">'widgets/menu/'</span> . $category, $message, $params, $language);
+    }
+
+}
+</code></pre>
+<p>Вместо использования <code>fileMap</code>, вы можете прибегнуть к соглашению, что имя категории совпадает с 
+именем файла и писать <code>Menu::t('messages', 'new messages {messages}', ['{messages}' =&gt; 10])</code> напрямую.</p>
+<blockquote class="note"><p><strong>Примечание: </strong>для виджетов вы можете использовать i18n представления. На них распространяются
+те же правила, что и на контроллеры.</p>
+</blockquote>
+<h3>Перевод сообщений фреймворка <span id="perevod-soobsenij-frejmvorka"></span><a href="#perevod-soobsenij-frejmvorka" class="hashlink">&para;</a></h3><p>Yii поставляется с набором сообщений по умолчанию для ошибок валидации и некоторых других строк. Эти 
+сообщения принадлежат категории <code>yii</code>. Если возникает необходимость изменить сообщения по умолчанию, 
+переопределите <code>i18n</code> <a href="guide-concept-components.html">компонент приложения</a>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'i18n'</span> =&gt; [
+    <span class="hljs-string">'translations'</span> =&gt; [
+        <span class="hljs-string">'yii'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\i18n\PhpMessageSource'</span>,
+            <span class="hljs-string">'sourceLanguage'</span> =&gt; <span class="hljs-string">'en-US'</span>,
+            <span class="hljs-string">'basePath'</span> =&gt; <span class="hljs-string">'@app/messages'</span>
+        ],
+    ],
+],
+</code></pre>
+<p>После этого разместите изменённые строки в файле <code>@app/messages/&lt;language&gt;/yii.php</code>.</p>
+<h3>Обработка недостающих переводов <span id="obrabotka-nedostausih-perevodov"></span><a href="#obrabotka-nedostausih-perevodov" class="hashlink">&para;</a></h3><p>Если в источнике перевода отсутствует необходимое сообщение, Yii отобразит исходное содержимое сообщения.
+Данное поведение тем оправданнее, чем вы более стремитесь писать в исходном коде понятный текст сообщений.
+Тем не  менее, иногда этого недостаточно, и может потребоваться произвольная обработка возникшей ситуации, 
+когда источник не содержит искомой строки. Для этого следует использовать обработку события 
+<a href="./yii-i18n-messagesource.html#EVENT_MISSING_TRANSLATION-detail">missingTranslation</a> компонента <a href="./yii-i18n-messagesource.html">yii\i18n\MessageSource</a>.</p>
+<p>Например, чтобы отметить все непереведённые строки, чтобы их было легче находить на странице, необходимо 
+создать обработчик события. Изменим конфигурацию приложения:</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'components'</span> =&gt; [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'i18n'</span> =&gt; [
+        <span class="hljs-string">'translations'</span> =&gt; [
+            <span class="hljs-string">'app*'</span> =&gt; [
+                <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\i18n\PhpMessageSource'</span>,
+                <span class="hljs-string">'fileMap'</span> =&gt; [
+                    <span class="hljs-string">'app'</span> =&gt; <span class="hljs-string">'app.php'</span>,
+                    <span class="hljs-string">'app/error'</span> =&gt; <span class="hljs-string">'error.php'</span>,
+                ],
+                <span class="hljs-string">'on missingTranslation'</span> =&gt; [<span class="hljs-string">'app\components\TranslationEventHandler'</span>, <span class="hljs-string">'handleMissingTranslation'</span>]
+            ],
+        ],
+    ],
+],
+</code></pre>
+<p>Создадим обработчик события:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">i18n</span>\<span class="hljs-title">MissingTranslationEvent</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TranslationEventHandler</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleMissingTranslation</span><span class="hljs-params">(MissingTranslationEvent $event)</span> </span>{
+        $event-&gt;translatedMessage = <span class="hljs-string">"@MISSING: {$event-&gt;category}.{$event-&gt;message} FOR LANGUAGE {$event-&gt;language} @"</span>;
+    }
+}
+</code></pre>
+<p>Если <a href="./yii-i18n-missingtranslationevent.html#$translatedMessage-detail">yii\i18n\MissingTranslationEvent::$translatedMessage</a> установлен как обработчик события, на странице будет
+выведен соответствующий результат перевода.</p>
+<blockquote class="warning"><p><strong>Внимание: </strong>каждый источник обрабатывает недостающие переводы самостоятельно. Если вы используете несколько разных
+источников сообщений и хотите обрабатывать недостающие переводы одинаково для всех, назначьте соответствующий
+обработчик события для каждого источника.</p>
+</blockquote>
+<h2>Использование команды <code>message</code>  <span id="message-command"></span><a href="#message-command" class="hashlink">&para;</a></h2><p>Переводы могут храниться в <a href="./yii-i18n-phpmessagesource.html">PHP-файлах</a>, <a href="./yii-i18n-gettextmessagesource.html">файлах .po</a> или в <a href="./yii-i18n-dbmessagesource.html">базе данных</a>. См. соответствующие классы для дополнительных опций.</p>
+<p>Прежде всего, вам необходимо создать конфигурационный файл. Решите, где вы хотите хранить его и затем выполните команду</p>
+<pre><code class="hljs bash language-bash">./yii message/config-template path/to/config.php
+</code></pre>
+<p>Откройте созданный файл и настройте параметры в соответствии со своими потребностями. Уделите особое внимание следующим параметрам:</p>
+<ul>
+<li><code>languages</code>: массив, содержащий языки, на которые ваше приложение должно быть переведено;</li>
+<li><code>messagePath</code>: путь для хранений файлов сообщений, который должен соответствовать параметру <code>basePath</code>, указанному в конфигурации компонента<code>i18n</code>.</li>
+</ul>
+<p>Вы также можете использовать команду './yii message/config', чтобы динамически сгенерировать конфигурационный файл с указанными опциями с помощью командной строки.
+Например, вы можете установить параметры <code>languages</code> и <code>messagePath</code> следующим образом:</p>
+<pre><code class="hljs bash language-bash">./yii message/config --languages=de,ja --messagePath=messages path/to/config.php
+</code></pre>
+<p>Чтобы получить список доступных параметров, выполните следующую команду:</p>
+<pre><code class="hljs bash language-bash">./yii <span class="hljs-built_in">help</span> message/config
+</code></pre>
+<p>Как только вы закончили с файлом конфигурации, вы можете, наконец, извлечь свои сообщения с помощью команды:</p>
+<pre><code class="hljs bash language-bash">./yii message path/to/config.php
+</code></pre>
+<p>Также вы можете использовать параметры, чтобы динамически менять настройки извлечения.</p>
+<p>В результате вы найдете свой файлы (если вы выбрали перевод с помощью файлов) в своей директории <code>messagePath</code>.</p>
+<h2>Представления  <span id="view-translation"></span><a href="#view-translation" class="hashlink">&para;</a></h2><p>Вместо того, чтобы переводить сообщения так, как указано в предыдущем разделе, вы можете использовать <code>i18n</code> в ваших
+представлениях, чтобы обеспечить поддержку нескольких языков. Например, если существует представление <code>views/site/index.php</code>
+и для перевода его на русский язык необходимо отдельное представление, создайте папку <code>ru-RU</code> в папке с представлением
+текущего контроллера или виджета и создайте файл для русского языка: <code>views/site/ru-RU/index.php</code>. Yii загрузит файл
+для текущего языка, если он существует, или использует исходный <code>views/site/index.php</code>, если не сможет найти локализацию.</p>
+<blockquote class="note"><p><strong>Примечание: </strong>если язык был определён, как <code>en-US</code> и соответствующих представлений не было найдено, Yii попробует
+найти представления в папке <code>en</code> перед тем, как использовать исходные.</p>
+</blockquote>
+<h2>Форматирование чисел и дат  <span id="date-number"></span><a href="#date-number" class="hashlink">&para;</a></h2><p>См. описание <a href="guide-output-formatting.html">форматирования дат</a>.</p>
+<h2>Настройка PHP-окружения  <span id="setup-environment"></span><a href="#setup-environment" class="hashlink">&para;</a></h2><p>Для работы с большей частью функций интернационализации Yii использует <a href="https://secure.php.net/manual/ru/book.intl.php">PHP-расширение intl</a>.
+Например, это расширение используют классы, отвечающие за форматирование чисел и дат <a href="./yii-i18n-formatter.html">yii\i18n\Formatter</a> и за форматирование
+строк <a href="./yii-i18n-messageformatter.html">yii\i18n\MessageFormatter</a>. Оба класса поддерживают базовый функционал даже в том случае, если расширение <code>intl</code> не
+установлено. Однако этот запасной вариант более или менее будет работать только для сайтов на английском языке, хотя даже для
+них большая часть широких возможностей расширения <code>intl</code> не будет доступна, поэтому его установка настоятельно рекомендуется.</p>
+<p><a href="https://secure.php.net/manual/ru/book.intl.php">PHP-расширение intl</a> основано на <a href="http://site.icu-project.org/">библиотеке ICU</a>, которая
+описывает правила форматирования для различных локалей. Поэтому следует помнить, что форматирование чисел и дат вместе с
+синтаксисом форматирования может отличаться в зависимости от версии библиотеки ICU, которая была скомпилирована в вашем
+дистрибутиве PHP.</p>
+<p>Чтобы сайт работал одинаково во всех окружениях, рекомендуется устанавливать одинаковую версию расширения intl, при этом 
+удостоверяясь, что везде используется одинаковая версия библиотеки ICU.</p>
+<p>Чтобы узнать, какая версия ICU используется текущим PHP интерпретатором, используйте следующий скрипт:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-string">"PHP: "</span> . PHP_VERSION . <span class="hljs-string">"\n"</span>;
+<span class="hljs-keyword">echo</span> <span class="hljs-string">"ICU: "</span> . INTL_ICU_VERSION . <span class="hljs-string">"\n"</span>;
+</code></pre>
+<p>Чтобы иметь доступ ко всем возможностям, описанным в документации, мы рекомендуем использовать ICU версии 49 или новее.
+В более ранних версиях отсутствует указатель <code>#</code> в правилах склонений. На сайте <a href="http://site.icu-project.org/download">http://site.icu-project.org/download</a>
+вы можете ознакомиться со списком доступных версий ICU. Обратите внимание, что схема нумерации версий изменилась после
+версии 4.8 и последовательность версий выглядит так: ICU 4.8, ICU 49, ICU 50, ICU 51 и так далее.</p>
+<h2>Известные проблемы  <span id="known-problems"></span><a href="#known-problems" class="hashlink">&para;</a></h2><ul>
+<li>В ICU версии 52.1 было испорчено форматирование множественных чисел (<code>plural</code>) в русском языке. Проблема решается обновлением ICU до версии 53.1 или старше.</li>
+</ul>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 09 Dec 2020 00:16:07 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

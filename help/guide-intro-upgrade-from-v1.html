@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/1728b664/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9c5d0894/solarized_light.css" rel="stylesheet">
+<link href="./assets/f2ce5bcd/style.css" rel="stylesheet">
+<script src="./assets/bbf84a7a/jquery.js"></script>
+<script src="./assets/1728b664/js/bootstrap.js"></script>
+<script src="./assets/fd63b446/jssearch.js"></script>    <title>Обновление с версии 1.1 - Введение - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1422" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1422-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1422-collapse" class="collapse navbar-collapse"><ul id="w1423" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1424" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item active" href="#navigation-1406" data-toggle="collapse" data-parent="#navigation">Введение <b class="caret"></b></a><div id="navigation-1406" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-intro-yii.html">О Yii</a>
+<a class="list-group-item active" href="./guide-intro-upgrade-from-v1.html">Обновление с версии 1.1</a></div>
+<a class="list-group-item" href="#navigation-1407" data-toggle="collapse" data-parent="#navigation">Первое знакомство <b class="caret"></b></a><div id="navigation-1407" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Установка Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Запуск приложения</a>
+<a class="list-group-item" href="./guide-start-hello.html">Говорим «привет»</a>
+<a class="list-group-item" href="./guide-start-forms.html">Работа с формами</a>
+<a class="list-group-item" href="./guide-start-databases.html">Работа с базами данных</a>
+<a class="list-group-item" href="./guide-start-gii.html">Генерация кода при помощи Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Что дальше?</a></div>
+<a class="list-group-item" href="#navigation-1408" data-toggle="collapse" data-parent="#navigation">Структура приложения <b class="caret"></b></a><div id="navigation-1408" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Входные скрипты</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Приложения</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Компоненты приложения</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-structure-models.html">Модели</a>
+<a class="list-group-item" href="./guide-structure-views.html">Представления</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Модули</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Фильтры</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Виджеты</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Расширения</a></div>
+<a class="list-group-item" href="#navigation-1409" data-toggle="collapse" data-parent="#navigation">Обработка запросов <b class="caret"></b></a><div id="navigation-1409" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Разбор и генерация URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Запросы</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Ответы</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Сессии и куки</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Обработка ошибок</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Логирование</a></div>
+<a class="list-group-item" href="#navigation-1410" data-toggle="collapse" data-parent="#navigation">Основные понятия <b class="caret"></b></a><div id="navigation-1410" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Компоненты</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Свойства</a>
+<a class="list-group-item" href="./guide-concept-events.html">События</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Поведения</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Конфигурации</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Псевдонимы</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Автозагрузка классов</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item" href="#navigation-1411" data-toggle="collapse" data-parent="#navigation">Работа с базами данных <b class="caret"></b></a><div id="navigation-1411" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Объекты доступа к данным (DAO)</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Построитель запросов</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Миграции</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-ru/README.md">Sphinx</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-redis/blob/master/docs/guide-ru/README.md">Redis</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-ru/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-ru/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1412" data-toggle="collapse" data-parent="#navigation">Получение данных от пользователя <b class="caret"></b></a><div id="navigation-1412" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Создание форм</a>
+<a class="list-group-item" href="./guide-input-validation.html">Валидация</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Загрузка файлов</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Табличный ввод</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Работа с несколькими моделями</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">Расширение ActiveForm на стороне клиента</a></div>
+<a class="list-group-item" href="#navigation-1413" data-toggle="collapse" data-parent="#navigation">Отображение данных <b class="caret"></b></a><div id="navigation-1413" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Форматирование данных</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Постраничная разбивка</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Сортировка</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Провайдеры данных</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Виджеты для данных</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Работа с клиентскими скриптами</a>
+<a class="list-group-item" href="./guide-output-theming.html">Темизация</a></div>
+<a class="list-group-item" href="#navigation-1414" data-toggle="collapse" data-parent="#navigation">Безопасность <b class="caret"></b></a><div id="navigation-1414" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-security-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Авторизация</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Работа с паролями</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">Криптография</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-ru/README.md">Клиенты авторизации</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Лучшие практики</a></div>
+<a class="list-group-item" href="#navigation-1415" data-toggle="collapse" data-parent="#navigation">Кеширование <b class="caret"></b></a><div id="navigation-1415" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-caching-data.html">Кэширование данных</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Кэширование фрагментов</a>
+<a class="list-group-item" href="./guide-caching-page.html">Кэширование страниц</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP кэширование</a></div>
+<a class="list-group-item" href="#navigation-1416" data-toggle="collapse" data-parent="#navigation">Веб-сервисы REST <b class="caret"></b></a><div id="navigation-1416" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Быстрый старт</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Роутинг</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Форматирование ответа</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Ограничение частоты запросов</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Версионирование</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Обработка ошибок</a></div>
+<a class="list-group-item" href="#navigation-1417" data-toggle="collapse" data-parent="#navigation">Инструменты разработчика <b class="caret"></b></a><div id="navigation-1417" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Отладочная панель и отладчик</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide/README.md">Генерация кода с Gii</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">Генератор документации API</a></div>
+<a class="list-group-item" href="#navigation-1418" data-toggle="collapse" data-parent="#navigation">Тестирование <b class="caret"></b></a><div id="navigation-1418" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Настройка тестового окружения</a>
+<a class="list-group-item" href="./guide-test-unit.html">Модульные тесты</a>
+<a class="list-group-item" href="./guide-test-functional.html">Функциональные тесты</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Приёмочные тесты</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Фикстуры</a></div>
+<a class="list-group-item" href="#navigation-1419" data-toggle="collapse" data-parent="#navigation">Специальные темы <b class="caret"></b></a><div id="navigation-1419" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">Шаблон приложения advanced</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Создание приложения с нуля</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Консольные команды</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Встроенные валидаторы</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Интернационализация</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Отправка почты</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Оптимизация производительности</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Окружение виртуального хостинга</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Шаблонизаторы</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Работа со сторонним кодом</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">Использование Yii в качестве микро-framework&#039;а</a></div>
+<a class="list-group-item" href="#navigation-1420" data-toggle="collapse" data-parent="#navigation">Виджеты <b class="caret"></b></a><div id="navigation-1420" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-ru/README.md">Виджеты Bootstrap</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-ru/README.md">Виджеты Jquery UI</a></div>
+<a class="list-group-item" href="#navigation-1421" data-toggle="collapse" data-parent="#navigation">Хелперы <b class="caret"></b></a><div id="navigation-1421" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url хелпер</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Обновление с версии 1.1 <span id="obnovlenie-s-versii-11"></span><a href="#obnovlenie-s-versii-11" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#ustanovka">Установка</a></li>
+<li><a href="#trebovania-php">Требования PHP</a></li>
+<li><a href="#prostranstva-imen">Пространства имён</a></li>
+<li><a href="#komponent-i-obekt">Компонент и объект</a></li>
+<li><a href="#konfiguracia-obekta">Конфигурация объекта</a></li>
+<li><a href="#sobytia">События</a></li>
+<li><a href="#psevdonimy-puti">Псевдонимы пути</a></li>
+<li><a href="#predstavlenia">Представления</a></li>
+<li><a href="#modeli">Модели</a></li>
+<li><a href="#kontrollery">Контроллеры</a></li>
+<li><a href="#vidzety">Виджеты</a></li>
+<li><a href="#temy">Темы</a></li>
+<li><a href="#konsolnye-prilozenia">Консольные приложения</a></li>
+<li><a href="#i18n">I18N</a></li>
+<li><a href="#filtry-dejstvij">Фильтры действий</a></li>
+<li><a href="#resursy">Ресурсы</a></li>
+<li><a href="#helpery">Хелперы</a></li>
+<li><a href="#formy">Формы</a></li>
+<li><a href="#postroitel-zaprosov">Построитель запросов</a></li>
+<li><a href="#active-record">Active Record</a></li>
+<li><a href="#povedenia-active-record">Поведения Active Record</a></li>
+<li><a href="#user-i-identityinterface">User и IdentityInterface</a></li>
+<li><a href="#razbor-i-generacia-url">Разбор и генерация URL</a></li>
+<li><a href="#ispolzovanie-yii-11-vmeste-s-2x">Использование Yii 1.1 вместе с 2.x</a></li></ol></div>
+<p>Между версиями 1.1 и 2.0 существует много различий, так как Yii был полностью переписан для версии 2.0.
+Таким образом, обновление с версии 1.1 не является таким же тривиальным как обновление между минорными версиями.
+В данном руководстве приведены основные различия между двумя версиями.</p>
+<p>Если прежде вы не использовали Yii 1.1, вы можете сразу перейти к разделу «<a href="guide-start-installation.html">Начало работы</a>».</p>
+<p>Также учтите, что в Yii 2.0 гораздо больше новых возможностей, чем описано далее. Настоятельно рекомендуется, изучить
+всё руководство. Вполне возможно, что-то, что раньше приходилось разрабатывать самостоятельно теперь является частью
+фреймворка.</p>
+<h2>Установка <span id="ustanovka"></span><a href="#ustanovka" class="hashlink">&para;</a></h2><p>Yii 2.0 широко использует <a href="https://getcomposer.org/">Composer</a>, который является основным менеджером зависимостей для PHP.
+Установка как фреймворка, так и расширений, осуществляется через Composer. Подробно об установке Yii 2.0 вы можете узнать
+из раздела «<a href="guide-start-installation.html">Установка Yii</a>». О том, как создавать расширения для Yii 2.0 или адаптировать
+уже имеющиеся расширения от версии 1.1, вы можете узнать из раздела «<a href="guide-structure-extensions.html#creating-extensions">Создание расширений</a>».</p>
+<h2>Требования PHP <span id="trebovania-php"></span><a href="#trebovania-php" class="hashlink">&para;</a></h2><p>Для работы Yii 2.0 необходим PHP 5.4 или выше. Данная версия включает большое количество улучшений по сравнению с
+версией 5.2, которая использовалась Yii 1.1. Таким образом, существует много различий в языке, которые вы должны принимать
+во внимание:</p>
+<ul>
+<li><a href="https://secure.php.net/manual/ru/language.namespaces.php">Пространства имён</a>;</li>
+<li><a href="https://secure.php.net/manual/ru/functions.anonymous.php">Анонимные функции</a>;</li>
+<li>Использование короткого синтаксиса для массивов: <code>[...элементы...]</code> вместо <code>array(...элементы...)</code>;</li>
+<li>Использование короткого echo <code>&lt;?=</code> для вывода в файлах представлений. С версии PHP 5.4 данную возможность можно
+использовать не опасаясь;</li>
+<li><a href="https://secure.php.net/manual/ru/book.spl.php">Классы и интерфейсы SPL</a>;</li>
+<li><a href="https://secure.php.net/manual/ru/language.oop5.late-static-bindings.php">Позднее статическое связывание (LSB)</a>;</li>
+<li><a href="https://secure.php.net/manual/ru/book.datetime.php">Классы для дат и времени</a>;</li>
+<li><a href="https://secure.php.net/manual/ru/language.oop5.traits.php">Трейты</a>;</li>
+<li><a href="https://secure.php.net/manual/ru/book.intl.php">Интернационализация (intl)</a>; Yii 2.0 использует расширение PHP <code>intl</code>
+для различного функционала интернационализации.</li>
+</ul>
+<h2>Пространства имён <span id="prostranstva-imen"></span><a href="#prostranstva-imen" class="hashlink">&para;</a></h2><p>Одним из основных изменений в Yii 2.0 является использование пространств имён. Почти каждый класс фреймворка
+находится в пространстве имён, например, <code>yii\web\Request</code>. Префикс "С" в именах классов больше не используется.
+Имена классов соответствуют структуре директорий. Например, <code>yii\web\Request</code> указывает, что соответствующий класс
+находится в файле <code>web/Request.php</code> в директории фреймворка.</p>
+<p>Благодаря загрузчику классов Yii, вы можете использовать любой класс фреймворка без необходимости непосредственно
+подключать его.</p>
+<h2>Компонент и объект <span id="komponent-i-obekt"></span><a href="#komponent-i-obekt" class="hashlink">&para;</a></h2><p>В Yii 2.0 класс <code>CComponent</code> из версии 1.1 был разделён на два класса: <a href="./yii-base-baseobject.html">yii\base\BaseObject</a> и <a href="./yii-base-component.html">yii\base\Component</a>.
+Класс <a href="./yii-base-baseobject.html">BaseObject</a> является простым базовым классом, который позволяет использовать
+<a href="guide-concept-properties.html">геттеры и сеттеры</a> для свойств. Класс <a href="./yii-base-component.html">Component</a> наследуется от
+класса <a href="./yii-base-baseobject.html">BaseObject</a> и поддерживает <a href="guide-concept-events.html">события</a> и <a href="guide-concept-behaviors.html">поведения</a>.</p>
+<p>Если вашему классу не нужны события или поведения, вы можете использовать <a href="./yii-base-baseobject.html">BaseObject</a> в качестве
+базового класса. В основном это относится к классам, представляющим собой базовые структуры данных.</p>
+<h2>Конфигурация объекта <span id="konfiguracia-obekta"></span><a href="#konfiguracia-obekta" class="hashlink">&para;</a></h2><p>Класс <a href="./yii-base-baseobject.html">BaseObject</a> предоставляет единый способ конфигурирования объектов. Любой дочерний класс
+<a href="./yii-base-baseobject.html">BaseObject</a> может определить конструктор (если нужно) как показано ниже. Это позволит конфигурировать
+его универсально:</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyClass</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">BaseObject</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">($param1, $param2, $config = [])</span>
+    </span>{
+        <span class="hljs-comment">// ... инициализация до того, как конфигурация будет применена</span>
+
+        <span class="hljs-keyword">parent</span>::__construct($config);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">parent</span>::init();
+
+        <span class="hljs-comment">// ... инициализация после того, как конфигурация была применена</span>
+    }
+}
+</code></pre>
+<p>В примере выше, последний параметр конструктора должен быть массивом конфигурации, который содержит пары в формате
+ключ-значение для инициализации свойств объекта. Вы можете переопределить метод <a href="./yii-base-baseobject.html#init()-detail">init()</a> для
+инициализации объекта после того, как конфигурация была применена к нему.</p>
+<p>Следуя этому соглашению, вы сможете создавать и конфигурировать новые объекты с помощью массива конфигурации:</p>
+<pre><code class="hljs php language-php">$object = Yii::createObject([
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'MyClass'</span>,
+    <span class="hljs-string">'property1'</span> =&gt; <span class="hljs-string">'abc'</span>,
+    <span class="hljs-string">'property2'</span> =&gt; <span class="hljs-string">'cde'</span>,
+], [$param1, $param2]);
+</code></pre>
+<p>Более подробная информация о конфигурации представлена в разделе «<a href="guide-concept-configurations.html">Настройки</a>».</p>
+<h2>События <span id="sobytia"></span><a href="#sobytia" class="hashlink">&para;</a></h2><p>В Yii 1, события создавались с помощью объявления метода <code>on</code> (например, <code>onBeforeSave</code>). В Yii 2 вы можете использовать
+любое имя события. Вызывать события можно при помощи метода <a href="./yii-base-component.html#trigger()-detail">trigger()</a>.</p>
+<pre><code class="hljs php language-php">$event = <span class="hljs-keyword">new</span> \yii\base\Event;
+$component-&gt;trigger($eventName, $event);
+</code></pre>
+<p>Для прикрепления обработчика события используйте метод <a href="./yii-base-component.html#on()-detail">on()</a>.</p>
+<pre><code class="hljs php language-php">$component-&gt;on($eventName, $handler);
+<span class="hljs-comment">// убираем обработчик</span>
+<span class="hljs-comment">// $component-&gt;off($eventName, $handler);</span>
+</code></pre>
+<p>Есть и другие улучшения по части событий, подробно описанные в разделе «<a href="guide-concept-events.html">События</a>».</p>
+<h2>Псевдонимы пути <span id="psevdonimy-puti"></span><a href="#psevdonimy-puti" class="hashlink">&para;</a></h2><p>В Yii 2.0 псевдонимы используются более широко и применяются как к путям в файловой системе, так и к URL. Теперь, для
+того, чтобы отличать псевдонимы от обычных путей и URL, требуется, чтобы имя псевдонима начиналось с символа <code>@</code>.
+Например, псевдоним <code>@yii</code> соответствует директории, в которую установлен Yii. Псевдонимы пути используются во многих
+местах. Например, значение свойства <a href="./yii-caching-filecache.html#$cachePath-detail">yii\caching\FileCache::$cachePath</a> может быть как псевдонимом пути так и
+обычным путём к папке.</p>
+<p>Псевдонимы пути тесно связаны с пространством имён классов. Рекомендуется определять псевдоним пути для каждого корневого
+пространства имён, что позволяет использовать загрузчик классов Yii без какой-либо дополнительной настройки. Например,
+так как <code>@yii</code> соответствует директории, в которую установлен фреймворк, класс <code>yii\web\Request</code> может быть загружен
+автоматически. Если вы используете сторонние библиотеки, например, из Zend Framework, вы можете определить псевдоним
+пути <code>@Zend</code> как директорию, в которую установлен этот фреймворк. После этого Yii будет способен автоматически загружать
+любой класс Zend Framework.</p>
+<p>Подробнее о псевдонимах пути можно узнать из раздела «<a href="guide-concept-aliases.html">Псевдонимы пути</a>».</p>
+<h2>Представления <span id="predstavlenia"></span><a href="#predstavlenia" class="hashlink">&para;</a></h2><p>Одним из основных изменений в Yii 2 является то, что специальная переменная <code>$this</code> в представлении, больше не соответствует
+текущему контроллеру или виджету. Вместо этого, <code>$this</code> теперь соответствует объекту <em>представления</em>, новой возможности
+введённой в версии 2.0. Объект представления имеет тип <a href="./yii-web-view.html">yii\web\View</a>, который представляет собой часть <em>view</em> в
+шаблоне проектирования MVC. Если вы хотите получить доступ к контроллеру или виджету, используйте выражение <code>$this-&gt;context</code>.</p>
+<p>Для рендеринга частичных представлений теперь используется метод <code>$this-&gt;render()</code>, а не <code>$this-&gt;renderPartial()</code>.
+Результат вызова метода <code>render</code> теперь должен быть выведен напрямую, так как <code>render</code> возвращает результат рендеринга,
+а не отображает его сразу:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> <span class="hljs-keyword">$this</span>-&gt;render(<span class="hljs-string">'_item'</span>, [<span class="hljs-string">'item'</span> =&gt; $item]);
+</code></pre>
+<p>Кроме использования PHP в качестве основного шаблонизатора, Yii 2.0 также предоставляет официальные расширения для двух
+популярных шаблонизаторов: Smarty и Twig. Шаблонизатор Prado больше не поддерживается. Для использования данных
+шаблонизаторов необходимо настроить компонент приложения <code>view</code> задав свойство <a href="./yii-base-view.html#$renderers-detail">View::$renderers</a>.
+Подробнее об этом можно прочитать в разделе «<a href="guide-tutorial-template-engines.html">Шаблонизаторы</a>».</p>
+<h2>Модели <span id="modeli"></span><a href="#modeli" class="hashlink">&para;</a></h2><p>Yii 2.0 использует в качестве базового класса для моделей <a href="./yii-base-model.html">yii\base\Model</a>, аналогичный классу <code>CModel</code> в версии 1.1.
+Класс <code>CFormModel</code> удалён. Вместо него для создания модели формы в Yii 2.0 вы должны напрямую наследоваться от <a href="./yii-base-model.html">yii\base\Model</a>.</p>
+<p>Появился новый метод <a href="./yii-base-model.html#scenarios()-detail">scenarios()</a> для объявления поддерживаемых сценариев,
+и для обозначения в каком сценарии атрибуты должны проверяться, считаться безопасными и т.п. Например,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">scenarios</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-string">'backend'</span> =&gt; [<span class="hljs-string">'email'</span>, <span class="hljs-string">'role'</span>],
+        <span class="hljs-string">'frontend'</span> =&gt; [<span class="hljs-string">'email'</span>, <span class="hljs-string">'!role'</span>],
+    ];
+}
+</code></pre>
+<p>В примере выше, объявлено два сценария: <code>backend</code> и <code>frontend</code>. Для <code>backend</code> сценария, оба атрибута <code>email</code> и <code>role</code> являются
+безопасными, и могут быть массово присвоены. Для сценария <code>frontend</code>, атрибут <code>email</code> может быть массово присвоен, а атрибут <code>role</code> нет.
+Оба атрибута <code>email</code> и <code>role</code> должны быть проверены с помощью правил валидации.</p>
+<p>Метод <a href="./yii-base-model.html#rules()-detail">rules()</a> по-прежнему используется для объявления правил валидации. Обратите внимание, что в связи с
+появлением нового метода <a href="./yii-base-model.html#scenarios()-detail">scenarios()</a>, больше не поддерживается валидатор <code>unsafe</code>.</p>
+<p>В большинстве случаев вам не нужно переопределять метод <a href="./yii-base-model.html#scenarios()-detail">scenarios()</a>, если метод <a href="./yii-base-model.html#rules()-detail">rules()</a>
+полностью указывает все существующие сценарии, и если нет надобности в объявлении атрибутов небезопасными.</p>
+<p>Более детальная информация представлена в разделе «<a href="guide-structure-models.html">Модели</a>».</p>
+<h2>Контроллеры <span id="kontrollery"></span><a href="#kontrollery" class="hashlink">&para;</a></h2><p>В качестве базового класса для контроллеров в Yii 2.0 используется <a href="./yii-web-controller.html">yii\web\Controller</a>, аналогичный <code>CController</code>
+в Yii 1.1. Базовым классом для всех действий является <a href="./yii-base-action.html">yii\base\Action</a>.</p>
+<p>Одним из основных изменений является то, что действие контроллера теперь должно вернуть результат вместо того, чтобы
+напрямую выводить его:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionView</span><span class="hljs-params">($id)</span>
+</span>{
+    $model = \app\models\Post::findOne($id);
+    <span class="hljs-keyword">if</span> ($model) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;render(<span class="hljs-string">'view'</span>, [<span class="hljs-string">'model'</span> =&gt; $model]);
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> \yii\web\NotFoundHttpException;
+    }
+}
+</code></pre>
+<p>Более детальная информация представлена в разделе «<a href="guide-structure-controllers.html">Контроллеры</a>».</p>
+<h2>Виджеты <span id="vidzety"></span><a href="#vidzety" class="hashlink">&para;</a></h2><p>В Yii 2.0 класс <a href="./yii-base-widget.html">yii\base\Widget</a> используется в качестве базового класса для виджетов, аналогично <code>CWidget</code> в Yii 1.1.</p>
+<p>Для лучшей поддержки фреймворка в IDE, Yii 2.0 использует новый синтаксис для виджетов. Новые статические методы 
+<a href="./yii-base-widget.html#begin()-detail">begin()</a>, <a href="./yii-base-widget.html#end()-detail">end()</a>, и <a href="./yii-base-widget.html#widget()-detail">widget()</a>
+используются следующим образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">widgets</span>\<span class="hljs-title">Menu</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">widgets</span>\<span class="hljs-title">ActiveForm</span>;
+
+<span class="hljs-comment">// Обратите внимание что вы должны выводить результат</span>
+<span class="hljs-keyword">echo</span> Menu::widget([<span class="hljs-string">'items'</span> =&gt; $items]);
+
+<span class="hljs-comment">// Указываем массив для конфигурации свойств объекта</span>
+$form = ActiveForm::begin([
+    <span class="hljs-string">'options'</span> =&gt; [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'form-horizontal'</span>],
+    <span class="hljs-string">'fieldConfig'</span> =&gt; [<span class="hljs-string">'inputOptions'</span> =&gt; [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'input-xlarge'</span>]],
+]);
+... поляляя::end();
+</code></pre>
+<p>Более детальная информация представлена в разделе «<a href="guide-structure-widgets.html">Виджеты</a>».</p>
+<h2>Темы <span id="temy"></span><a href="#temy" class="hashlink">&para;</a></h2><p>В Yii 2.0 темы работают совершенно по-другому. Теперь они основаны на механизме сопоставления путей исходного файла
+представления с темизированным файлом. Например, если используется сопоставление путей <code>['/web/views' =&gt; '/web/themes/basic']</code>,
+то темизированная версия файла представления <code>/web/views/site/index.php</code> будет находиться в <code>/web/themes/basic/site/index.php</code>.
+По этой причине темы могут быть применены к любому файлу представления, даже к представлению, отрендеренному внутри контекста
+контроллера или виджета. Также, больше не существует компонента <code>CThemeManager</code>. Вместо этого, <code>theme</code> является конфигурируемым
+свойством компонента приложения <code>view</code>.</p>
+<p>Более детальная информация представлена в разделе «<a href="guide-output-theming.html">Темизация</a>».</p>
+<h2>Консольные приложения <span id="konsolnye-prilozenia"></span><a href="#konsolnye-prilozenia" class="hashlink">&para;</a></h2><p>Консольные приложения теперь организованы как контроллеры, аналогично веб приложениям. Консольные контроллеры
+должны быть унаследованы от класса <a href="./yii-console-controller.html">yii\console\Controller</a>, аналогичного <code>CConsoleCommand</code> в версии 1.1.</p>
+<p>Для выполнения консольной команды, используйте <code>yii &lt;маршрут&gt;</code>, где <code>&lt;маршрут&gt;</code> это маршрут контроллера (например, <code>sitemap/index</code>).
+Дополнительные анонимные аргументы будут переданы в качестве параметров соответствующему действию контроллера, в то время как
+именованные аргументы будут переданы в соответствие с объявлениями в <a href="./yii-console-controller.html#options()-detail">yii\console\Controller::options()</a>.</p>
+<p>Yii 2.0 поддерживает автоматическую генерацию справочной информации из блоков комментариев.</p>
+<p>Более детальная информация представлена в разделе «<a href="guide-tutorial-console.html">Консольные команды</a>».</p>
+<h2>I18N <span id="i18n"></span><a href="#i18n" class="hashlink">&para;</a></h2><p>В Yii 2.0 встроенные форматтеры времени и чисел были убраны в пользу <a href="https://pecl.php.net/package/intl">PECL расширения PHP intl</a>.</p>
+<p>Перевод сообщений теперь осуществляется через компонент приложения <code>i18n</code>. Данный компонент управляет множеством
+исходных хранилищ сообщений, что позволяет вам использовать разные хранилища для исходных сообщений в зависимости
+от категории сообщения.</p>
+<p>Более детальная информация представлена в разделе «<a href="guide-tutorial-i18n.html">Интернационализация</a>».</p>
+<h2>Фильтры действий <span id="filtry-dejstvij"></span><a href="#filtry-dejstvij" class="hashlink">&para;</a></h2><p>Фильтры действий теперь сделаны с помощью поведений. Для определения нового фильтра, унаследуйтесь от <a href="./yii-base-actionfilter.html">yii\base\ActionFilter</a>.
+Для использования фильтра, прикрепите его к контроллеру в качестве поведения. Например, для использования фильтра <a href="./yii-filters-accesscontrol.html">yii\filters\AccessControl</a>,
+следует сделать следующее:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behaviors</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-string">'access'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\filters\AccessControl'</span>,
+            <span class="hljs-string">'rules'</span> =&gt; [
+                [<span class="hljs-string">'allow'</span> =&gt; <span class="hljs-keyword">true</span>, <span class="hljs-string">'actions'</span> =&gt; [<span class="hljs-string">'admin'</span>], <span class="hljs-string">'roles'</span> =&gt; [<span class="hljs-string">'@'</span>]],
+            ],
+        ],
+    ];
+}
+</code></pre>
+<p>Более детальная информация представлена в разделе «<a href="guide-structure-filters.html">Фильтры</a>».</p>
+<h2>Ресурсы <span id="resursy"></span><a href="#resursy" class="hashlink">&para;</a></h2><p>В Yii 2.0 представлена новая возможность <em>связка ресурсов</em>, которая заменяет концепт пакетов скриптов в Yii 1.1.</p>
+<p>Связка ресурсов — это коллекция файлов ресурсов (например, JavaScript файлы, CSS файлы, файлы изображений, и т.п.) в
+определенной директории. Каждая связка ресурсов представлена классом, унаследованным от <a href="./yii-web-assetbundle.html">yii\web\AssetBundle</a>.
+Связка ресурсов становится доступной через веб после её регистрации методом <a href="./yii-web-assetbundle.html#register()-detail">yii\web\AssetBundle::register()</a>.
+В отличие от Yii 1.1, страница, регистрирующая связку ресурсов, автоматически будет содержать ссылки на JavaScript и CSS
+файлы, указанные в связке.</p>
+<p>Более детальная информация представлена в разделе «<a href="guide-structure-assets.html">Ресурсы</a>».</p>
+<h2>Хелперы <span id="helpery"></span><a href="#helpery" class="hashlink">&para;</a></h2><p>В Yii 2.0 включено много широко используемых статичных классов.</p>
+<ul>
+<li><a href="./yii-helpers-html.html">yii\helpers\Html</a></li>
+<li><a href="./yii-helpers-arrayhelper.html">yii\helpers\ArrayHelper</a></li>
+<li><a href="./yii-helpers-stringhelper.html">yii\helpers\StringHelper</a></li>
+<li><a href="./yii-helpers-filehelper.html">yii\helpers\FileHelper</a></li>
+<li><a href="./yii-helpers-json.html">yii\helpers\Json</a></li>
+</ul>
+<p>Более детальная информация представлена в разделе «<a href="guide-helper-overview.html">Хелперы</a>».</p>
+<h2>Формы <span id="formy"></span><a href="#formy" class="hashlink">&para;</a></h2><p>Yii 2.0 вводит новое понятие <em>поле</em> для построения форм с помощью <a href="./yii-widgets-activeform.html">yii\widgets\ActiveForm</a>. Поле — это
+контейнер, содержащий подпись, поле ввода, сообщение об ошибке и/или вспомогательный текст.
+Поле представлено объектом <a href="./yii-widgets-activefield.html">ActiveField</a>. Используя поля, вы можете строить
+формы гораздо проще чем это было раньше:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span> $form = yii\widgets\ActiveForm::begin(); <span class="hljs-meta">?&gt;</span>
+    <span class="hljs-meta">&lt;?</span>= $form-&gt;field($model, <span class="hljs-string">'username'</span>) <span class="hljs-meta">?&gt;</span>
+    <span class="hljs-meta">&lt;?</span>= $form-&gt;field($model, <span class="hljs-string">'password'</span>)-&gt;passwordInput() <span class="hljs-meta">?&gt;</span>
+    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>="<span class="hljs-title">form</span>-<span class="hljs-title">group</span>"&gt;
+        &lt;?= <span class="hljs-title">Html</span>::<span class="hljs-title">submitButton</span>('<span class="hljs-title">Login</span>') ?&gt;
+    &lt;/<span class="hljs-title">div</span>&gt;
+&lt;?<span class="hljs-title">php</span> <span class="hljs-title">yii</span>\<span class="hljs-title">widgets</span>\<span class="hljs-title">ActiveForm</span>::<span class="hljs-title">end</span>(); ?&gt;
+</span></code></pre>
+<p>Более детальная информация представлена в разделе «<a href="guide-input-forms.html">Работа с формами</a>».</p>
+<h2>Построитель запросов <span id="postroitel-zaprosov"></span><a href="#postroitel-zaprosov" class="hashlink">&para;</a></h2><p>В версии 1.1, построение запроса было разбросано среди нескольких классов, включая <code>CDbCommand</code>,
+<code>CDbCriteria</code>, и <code>CDbCommandBuilder</code>. В Yii 2.0 запрос к БД представлен в рамках объекта <a href="./yii-db-query.html">Query</a>,
+который может быть превращён в SQL выражение с помощью <a href="./yii-db-querybuilder.html">QueryBuilder</a>. Например,</p>
+<pre><code class="hljs php language-php">$query = <span class="hljs-keyword">new</span> \yii\db\Query();
+$query-&gt;select(<span class="hljs-string">'id, name'</span>)
+      -&gt;from(<span class="hljs-string">'user'</span>)
+      -&gt;limit(<span class="hljs-number">10</span>);
+
+$command = $query-&gt;createCommand();
+$sql = $command-&gt;sql;
+$rows = $command-&gt;queryAll();
+</code></pre>
+<p>Лучшим способом использования данных методов является работа с <a href="guide-db-active-record.html">Active Record</a>.</p>
+<p>Более детальная информация представлена в разделе «<a href="guide-db-query-builder.html">Построитель запросов</a>».</p>
+<h2>Active Record <span id="active-record"></span><a href="#active-record" class="hashlink">&para;</a></h2><p>В Yii 2.0 внесено множество изменений в работу <a href="guide-db-active-record.html">Active Record</a>. Два основных из них включают в себя
+построение запросов и работу со связями.</p>
+<p>Класс <code>CDbCriteria</code> версии 1.1 был заменен <a href="./yii-db-activequery.html">yii\db\ActiveQuery</a>. Этот класс наследуется от <a href="./yii-db-query.html">yii\db\Query</a> и таким
+образом получает все методы, необходимые для построения запроса. Чтобы начать строить запрос, следует вызвать метод
+<a href="./yii-db-activerecord.html#find()-detail">yii\db\ActiveRecord::find()</a>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// Получаем всех *активных* клиентов и сортируем их по ID</span>
+$customers = Customer::find()
+    -&gt;where([<span class="hljs-string">'status'</span> =&gt; $active])
+    -&gt;orderBy(<span class="hljs-string">'id'</span>)
+    -&gt;all();
+</code></pre>
+<p>Для объявления связи следует просто объявить геттер, который возвращает объект <a href="./yii-db-activequery.html">ActiveQuery</a>.
+Имя свойства, определённое геттером, представляет собой название связи. Например, следующий код объявляет связь
+<code>orders</code> (в версии 1.1, вам нужно было бы объявить связи в одном месте — методе <code>relations()</code>):</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getOrders</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;hasMany(<span class="hljs-string">'Order'</span>, [<span class="hljs-string">'customer_id'</span> =&gt; <span class="hljs-string">'id'</span>]);
+    }
+}
+</code></pre>
+<p>Теперь вы можете использовать выражение <code>$customer-&gt;orders</code> для получения всех заказов клиента из связанной таблицы. Вы также
+можете использовать следующий код, чтобы применить нужные условия «на лету»:</p>
+<pre><code class="hljs php language-php">$orders = $customer-&gt;getOrders()-&gt;andWhere(<span class="hljs-string">'status=1'</span>)-&gt;all();
+</code></pre>
+<p>Yii 2.0 осуществляет жадную загрузку связи не так, как это было в 1.1. В частности, в версии 1.1 для выбора данных из
+основной и связанной таблиц будет использован запрос JOIN. В Yii 2.0 будут выполнены два запроса без использования JOIN:
+первый запрос возвращает данные для основной таблицы, а второй, осуществляющий фильтрацию по первичным ключами основной
+таблицы — для связанной.</p>
+<p>Вместо того, чтобы при выборке большого количества записей возвращать объекты <a href="./yii-db-activerecord.html">ActiveRecord</a>, вы
+можете использовать в построении запроса метод <a href="./yii-db-activequerytrait.html#asArray()-detail">asArray()</a>. Это заставит вернуть
+результат запроса в виде массива, что при большом количестве записей может существенно снизить затрачиваемое процессорное
+время и объём потребляемой памяти. Например:</p>
+<pre><code class="hljs php language-php">$customers = Customer::find()-&gt;asArray()-&gt;all();
+</code></pre>
+<p>Ещё одно изменение связано с тем, что вы больше не можете определять значения по умолчанию через public свойства.
+Вы должны установить их в методе <code>init</code> вашего класса, если это требуется.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">parent</span>::init();
+    <span class="hljs-keyword">$this</span>-&gt;status = <span class="hljs-keyword">self</span>::STATUS_NEW;
+}
+</code></pre>
+<p>Также в версии 1.1 были некоторые проблемы с переопределением конструктора ActiveRecord. Данные проблемы отсутствуют
+в версии 2.0. Обратите внимание, что при добавлении параметров в конструктор, вам, возможно, понадобится переопределить метод
+<a href="./yii-db-baseactiverecord.html#instantiate()-detail">yii\db\ActiveRecord::instantiate()</a>.</p>
+<p>Существует также множество других улучшений в ActiveRecord. Подробнее о них можно узнать в разделе
+«<a href="guide-db-active-record.html">Active Record</a>».</p>
+<h2>Поведения Active Record <span id="povedenia-active-record"></span><a href="#povedenia-active-record" class="hashlink">&para;</a></h2><p>В версии 2.0 отсутствует базовый класс для поведений <code>CActiveRecordBehavior</code>. Если вам необходимо создать поведение для
+Active Record, стоит наследовать его класс напрямую от <code>yii\base\Behavior</code>. Если поведение должно реагировать на какие-либо
+события, необходимо перекрыть метод <code>events()</code> следующим образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Behavior</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyBehavior</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Behavior</span>
+</span>{
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">events</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            ActiveRecord::EVENT_BEFORE_VALIDATE =&gt; <span class="hljs-string">'beforeValidate'</span>,
+        ];
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">beforeValidate</span><span class="hljs-params">($event)</span>
+    </span>{
+        <span class="hljs-comment">// ...</span>
+    }
+}
+</code></pre>
+<h2>User и IdentityInterface <span id="user-i-identityinterface"></span><a href="#user-i-identityinterface" class="hashlink">&para;</a></h2><p>Класс <code>CWebUser</code> из версии 1.1 теперь заменён классом <a href="./yii-web-user.html">yii\web\User</a>. Также больше не существует класса <code>CUserIdentity</code>.
+Вы должны реализовать интерфейс <a href="./yii-web-identityinterface.html">yii\web\IdentityInterface</a>, что гораздо проще. Пример реализации представлен в шаблоне
+приложения advanced.</p>
+<p>Более подробная информация представлена в разделах «<a href="guide-security-authentication.html">Аутентификация</a>»,
+«<a href="guide-security-authorization.html">Авторизация</a>» и «<a href="guide-tutorial-advanced-app.html">Шаблон приложения advanced</a>».</p>
+<h2>Разбор и генерация URL <span id="razbor-i-generacia-url"></span><a href="#razbor-i-generacia-url" class="hashlink">&para;</a></h2><p>Работа с URL в Yii 2.0 аналогична той, что была в версии 1.1. Основное изменение заключается в том, что теперь
+поддерживаются дополнительные параметры. Например, если у вас имеется правило, объявленное следующим образом, то
+оно совпадет с <code>post/popular</code> и <code>post/1/popular</code>. В версии 1.1, вам пришлось бы использовать два правила, для достижения
+того же результата.</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'pattern'</span> =&gt; <span class="hljs-string">'post/&lt;page:\d+&gt;/&lt;tag&gt;'</span>,
+    <span class="hljs-string">'route'</span> =&gt; <span class="hljs-string">'post/index'</span>,
+    <span class="hljs-string">'defaults'</span> =&gt; [<span class="hljs-string">'page'</span> =&gt; <span class="hljs-number">1</span>],
+]
+</code></pre>
+<p>Более детальная информация представлена в разделе «<a href="guide-runtime-routing.html">Разбор и генерация URL</a>».</p>
+<h2>Использование Yii 1.1 вместе с 2.x <span id="ispolzovanie-yii-11-vmeste-s-2x"></span><a href="#ispolzovanie-yii-11-vmeste-s-2x" class="hashlink">&para;</a></h2><p>Информация об использовании кода для Yii 1.1 вместе с Yii 2.0 представлена в разделе
+«<a href="guide-tutorial-yii-integration.html#using-both-yii2-yii1">Одновременное использование Yii 1.1 и 2.0</a>».</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 09 Dec 2020 00:16:07 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

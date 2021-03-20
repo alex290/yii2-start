@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/1728b664/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9c5d0894/solarized_light.css" rel="stylesheet">
+<link href="./assets/f2ce5bcd/style.css" rel="stylesheet">
+<script src="./assets/bbf84a7a/jquery.js"></script>
+<script src="./assets/1728b664/js/bootstrap.js"></script>
+<script src="./assets/fd63b446/jssearch.js"></script>    <title>Ресурсы - Структура приложения - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w681" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w681-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w681-collapse" class="collapse navbar-collapse"><ul id="w682" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w683" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-665" data-toggle="collapse" data-parent="#navigation">Введение <b class="caret"></b></a><div id="navigation-665" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">О Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Обновление с версии 1.1</a></div>
+<a class="list-group-item" href="#navigation-666" data-toggle="collapse" data-parent="#navigation">Первое знакомство <b class="caret"></b></a><div id="navigation-666" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Установка Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Запуск приложения</a>
+<a class="list-group-item" href="./guide-start-hello.html">Говорим «привет»</a>
+<a class="list-group-item" href="./guide-start-forms.html">Работа с формами</a>
+<a class="list-group-item" href="./guide-start-databases.html">Работа с базами данных</a>
+<a class="list-group-item" href="./guide-start-gii.html">Генерация кода при помощи Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Что дальше?</a></div>
+<a class="list-group-item active" href="#navigation-667" data-toggle="collapse" data-parent="#navigation">Структура приложения <b class="caret"></b></a><div id="navigation-667" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-structure-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Входные скрипты</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Приложения</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Компоненты приложения</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-structure-models.html">Модели</a>
+<a class="list-group-item" href="./guide-structure-views.html">Представления</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Модули</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Фильтры</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Виджеты</a>
+<a class="list-group-item active" href="./guide-structure-assets.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Расширения</a></div>
+<a class="list-group-item" href="#navigation-668" data-toggle="collapse" data-parent="#navigation">Обработка запросов <b class="caret"></b></a><div id="navigation-668" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Разбор и генерация URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Запросы</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Ответы</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Сессии и куки</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Обработка ошибок</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Логирование</a></div>
+<a class="list-group-item" href="#navigation-669" data-toggle="collapse" data-parent="#navigation">Основные понятия <b class="caret"></b></a><div id="navigation-669" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Компоненты</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Свойства</a>
+<a class="list-group-item" href="./guide-concept-events.html">События</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Поведения</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Конфигурации</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Псевдонимы</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Автозагрузка классов</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item" href="#navigation-670" data-toggle="collapse" data-parent="#navigation">Работа с базами данных <b class="caret"></b></a><div id="navigation-670" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Объекты доступа к данным (DAO)</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Построитель запросов</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Миграции</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-ru/README.md">Sphinx</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-redis/blob/master/docs/guide-ru/README.md">Redis</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-ru/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-ru/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-671" data-toggle="collapse" data-parent="#navigation">Получение данных от пользователя <b class="caret"></b></a><div id="navigation-671" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Создание форм</a>
+<a class="list-group-item" href="./guide-input-validation.html">Валидация</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Загрузка файлов</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Табличный ввод</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Работа с несколькими моделями</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">Расширение ActiveForm на стороне клиента</a></div>
+<a class="list-group-item" href="#navigation-672" data-toggle="collapse" data-parent="#navigation">Отображение данных <b class="caret"></b></a><div id="navigation-672" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Форматирование данных</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Постраничная разбивка</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Сортировка</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Провайдеры данных</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Виджеты для данных</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Работа с клиентскими скриптами</a>
+<a class="list-group-item" href="./guide-output-theming.html">Темизация</a></div>
+<a class="list-group-item" href="#navigation-673" data-toggle="collapse" data-parent="#navigation">Безопасность <b class="caret"></b></a><div id="navigation-673" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-security-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Авторизация</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Работа с паролями</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">Криптография</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-ru/README.md">Клиенты авторизации</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Лучшие практики</a></div>
+<a class="list-group-item" href="#navigation-674" data-toggle="collapse" data-parent="#navigation">Кеширование <b class="caret"></b></a><div id="navigation-674" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-caching-data.html">Кэширование данных</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Кэширование фрагментов</a>
+<a class="list-group-item" href="./guide-caching-page.html">Кэширование страниц</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP кэширование</a></div>
+<a class="list-group-item" href="#navigation-675" data-toggle="collapse" data-parent="#navigation">Веб-сервисы REST <b class="caret"></b></a><div id="navigation-675" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Быстрый старт</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Роутинг</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Форматирование ответа</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Ограничение частоты запросов</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Версионирование</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Обработка ошибок</a></div>
+<a class="list-group-item" href="#navigation-676" data-toggle="collapse" data-parent="#navigation">Инструменты разработчика <b class="caret"></b></a><div id="navigation-676" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Отладочная панель и отладчик</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide/README.md">Генерация кода с Gii</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">Генератор документации API</a></div>
+<a class="list-group-item" href="#navigation-677" data-toggle="collapse" data-parent="#navigation">Тестирование <b class="caret"></b></a><div id="navigation-677" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Настройка тестового окружения</a>
+<a class="list-group-item" href="./guide-test-unit.html">Модульные тесты</a>
+<a class="list-group-item" href="./guide-test-functional.html">Функциональные тесты</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Приёмочные тесты</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Фикстуры</a></div>
+<a class="list-group-item" href="#navigation-678" data-toggle="collapse" data-parent="#navigation">Специальные темы <b class="caret"></b></a><div id="navigation-678" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">Шаблон приложения advanced</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Создание приложения с нуля</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Консольные команды</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Встроенные валидаторы</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Интернационализация</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Отправка почты</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Оптимизация производительности</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Окружение виртуального хостинга</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Шаблонизаторы</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Работа со сторонним кодом</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">Использование Yii в качестве микро-framework&#039;а</a></div>
+<a class="list-group-item" href="#navigation-679" data-toggle="collapse" data-parent="#navigation">Виджеты <b class="caret"></b></a><div id="navigation-679" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-ru/README.md">Виджеты Bootstrap</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-ru/README.md">Виджеты Jquery UI</a></div>
+<a class="list-group-item" href="#navigation-680" data-toggle="collapse" data-parent="#navigation">Хелперы <b class="caret"></b></a><div id="navigation-680" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url хелпер</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Ресурсы <span id="resursy"></span><a href="#resursy" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#asset-bundles">Комплекты ресурсов</a></li>
+<li><a href="#defining-asset-bundles">Задание Комплекта Ресурсов</a></li>
+<li><a href="#using-asset-bundles">Использование Комплекта Ресурсов</a></li>
+<li><a href="#common-asset-bundles">Обычное Использование Комплекта Ресурсов</a></li>
+<li><a href="#asset-conversion">Преобразование Ресурсов</a></li>
+<li><a href="#combining-compressing-assets">Объединение и Сжатие Ресурсов</a></li></ol></div>
+<p>Ресурс в Yii это файл который может быть задан в Web странице. Это может быть CSS файл, JavaScript файл, изображение или видео файл и т.д. Ресурсы располагаются в Web доступных директориях и обслуживаются непосредственно Web серверами.</p>
+<p>Желательно, управлять ресурсами программно. Например, при использовании виджета <a href="./yii-jui-datepicker.html">yii\jui\DatePicker</a> в странице, автоматически включаются необходимые CSS и JavaScript файлы, вместо того чтобы просить Вас вручную найти эти файлы и включить их. И когда Вы обновляете виджет до новой версии, будут автоматически использованы новые версии файлов-ресурсов. В этом руководстве будет описана мощная возможность управления ресурсами представленная в Yii.</p>
+<h2>Комплекты ресурсов  <span id="asset-bundles"></span><a href="#asset-bundles" class="hashlink">&para;</a></h2><p>Yii управляет ресурсами как единицей <em>комплекта ресурсов</em>. Комплект ресурсов - это простой набор ресурсов расположенных в директории. Когда Вы регистрируете комплект ресурсов в <a href="guide-structure-views.html">представлении</a>, в отображаемой Web странице включается набор CSS и JavaScript файлов.</p>
+<h2>Задание Комплекта Ресурсов <span id="defining-asset-bundles"></span><a href="#defining-asset-bundles" class="hashlink">&para;</a></h2><p>Комплект ресурсов определяется как PHP класс расширяющийся от <a href="./yii-web-assetbundle.html">yii\web\AssetBundle</a>. Имя комплекта соответствует полному имени PHP класса (без ведущей обратной косой черты - backslash "\"). Класс комплекта ресурсов должен быть в состоянии <a href="guide-concept-autoloading.html">возможности автозагрузки</a>. При задании комплекта ресурсов обычно указывается где ресурсы находятся, какие CSS и JavaScript файлы содержит комплект, и как комплект зависит от других комплектов.</p>
+<p>Следующий код задаёт основной комплект ресурсов используемый в <a href="guide-start-installation.html">шаблоне базового приложения</a>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">assets</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">AssetBundle</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppAsset</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AssetBundle</span>
+</span>{
+    <span class="hljs-keyword">public</span> $basePath = <span class="hljs-string">'@webroot'</span>;
+    <span class="hljs-keyword">public</span> $baseUrl = <span class="hljs-string">'@web'</span>;
+    <span class="hljs-keyword">public</span> $css = [
+        <span class="hljs-string">'css/site.css'</span>,
+    ];
+    <span class="hljs-keyword">public</span> $js = [
+    ];
+    <span class="hljs-keyword">public</span> $depends = [
+        <span class="hljs-string">'yii\web\YiiAsset'</span>,
+        <span class="hljs-string">'yii\bootstrap\BootstrapAsset'</span>,
+    ];
+}
+</code></pre>
+<p>В коде выше класс <code>AppAsset</code> указывает, что файлы ресурса находятся в директории <code>@webroot</code>, которой соответствует URL <code>@web</code>; комплект содержит единственный CSS файл <code>css/site.css</code> и не содержит JavaScript файлов; комплект зависит от двух других комплектов: <a href="./yii-web-yiiasset.html">yii\web\YiiAsset</a> и <a href="./yii-bootstrap-bootstrapasset.html">yii\bootstrap\BootstrapAsset</a>. Более детальное объяснение о свойствах <a href="./yii-web-assetbundle.html">yii\web\AssetBundle</a> может быть найдено ниже:</p>
+<ul>
+<li><a href="./yii-web-assetbundle.html#$sourcePath-detail">sourcePath</a>: задаёт корневую директорию содержащую файлы ресурса в этом комплекте. Это свойство должно быть установлено если корневая директория не доступна из Web. В противном случае, Вы должны установить <a href="./yii-web-assetbundle.html#$basePath-detail">basePath</a> свойство и <a href="./yii-web-assetbundle.html#$baseUrl-detail">baseUrl</a> свойство вместо текущего. Здесь могут быть использованы <a href="guide-concept-aliases.html">псевдонимы путей</a>.</li>
+<li><a href="./yii-web-assetbundle.html#$basePath-detail">basePath</a>: задаёт Web доступную директорию, которая содержит файлы ресурсов текущего комплекта. Когда Вы задаёте свойство <a href="./yii-web-assetbundle.html#$sourcePath-detail">sourcePath</a> <a href="#asset-manager">Менеджер ресурсов</a> опубликует ресурсы текущего комплекта в Web доступную директорию и перезапишет соответственно данное свойство. Вы должны задать данное свойство если Ваши файлы ресурсов уже в Web доступной директории и не нужно опубликовывать ресурсы. Здесь могут быть использованы <a href="guide-concept-aliases.html">псевдонимы путей</a>.</li>
+<li><a href="./yii-web-assetbundle.html#$baseUrl-detail">baseUrl</a>: задаёт URL соответствующий директории <a href="./yii-web-assetbundle.html#$basePath-detail">basePath</a>. Также как и для <a href="./yii-web-assetbundle.html#$basePath-detail">basePath</a>, если Вы задаёте свойство <a href="./yii-web-assetbundle.html#$sourcePath-detail">sourcePath</a> <a href="#asset-manager">Менеджер ресурсов</a> опубликует ресурсы и перезапишет это свойство соответственно. Здесь могут быть использованы <a href="guide-concept-aliases.html">псевдонимы путей</a>.</li>
+<li><a href="./yii-web-assetbundle.html#$js-detail">js</a>: массив, перечисляющий JavaScript файлы, содержащиеся в данном комплекте. Заметьте, что только прямая косая черта (forward slash - "/") может быть использована, как разделитель директорий. Каждый JavaScript файл может быть задан в одном из следующих форматов:<ul>
+<li>относительный путь, представленный локальным JavaScript файлом (например <code>js/main.js</code>). Актуальный путь файла может быть определён путём добавления <a href="./yii-web-assetmanager.html#$basePath-detail">yii\web\AssetManager::$basePath</a> к относительному пути, и актуальный URL файла может быть определён путём добавления <a href="./yii-web-assetmanager.html#$baseUrl-detail">yii\web\AssetManager::$baseUrl</a> к относительному пути.</li>
+<li>абсолютный URL, представленный внешним JavaScript файлом. Например,
+<code>http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js</code> или
+<code>//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js</code>.</li>
+</ul>
+</li>
+<li><a href="./yii-web-assetbundle.html#$css-detail">css</a>: массив, перечисляющий CSS файлы, содержащиеся в данном комплекте. Формат этого массива такой же, как и у <a href="./yii-web-assetbundle.html#$js-detail">js</a>.</li>
+<li><a href="./yii-web-assetbundle.html#$depends-detail">depends</a>: массив, перечисляющий имена комплектов ресурсов, от которых зависит данный комплект.</li>
+<li><a href="./yii-web-assetbundle.html#$jsOptions-detail">jsOptions</a>: задаёт параметры, которые будут относится к методу <a href="./yii-web-view.html#registerJsFile()-detail">yii\web\View::registerJsFile()</a>, когда он вызывается для регистрации <em>каждого</em> JavaScript файла данного комплекта.</li>
+<li><a href="./yii-web-assetbundle.html#$cssOptions-detail">cssOptions</a>: задаёт параметры, которые будут приняты методом <a href="./yii-web-view.html#registerCssFile()-detail">yii\web\View::registerCssFile()</a>, когда он вызывается для регистрации <em>каждого</em> CSS файла данного комплекта.</li>
+<li><a href="./yii-web-assetbundle.html#$publishOptions-detail">publishOptions</a>: задаёт параметры, которые будут приняты методом <a href="./yii-web-assetmanager.html#publish()-detail">yii\web\AssetManager::publish()</a>, когда метод будет вызван, опубликуются исходные файлы ресурсов в Web директории. Этот параметр используется только в том случае, если задаётся свойство <a href="./yii-web-assetbundle.html#$sourcePath-detail">sourcePath</a>.</li>
+</ul>
+<h3>Расположение ресурсов <span id="asset-locations"></span><a href="#asset-locations" class="hashlink">&para;</a></h3><p>Ресурсы, в зависимости от их расположения, могут быть классифицированы как:</p>
+<ul>
+<li>исходные ресурсы: файлы ресурсов, расположенные вместе с исходным кодом PHP, которые не могут быть непосредственно доступны через Web. Для того, чтобы использовать исходные ресурсы на странице, они должны быть скопированы в Web директорию и превратиться в так называемые опубликованные ресурсы. Этот процесс называется <em>публикацией ресурсов</em>, который более подробно описан ниже</li>
+<li>опубликованные ресурсы: файлы ресурсов, расположенные в Web директории и, таким образом, могут быть напрямую доступны через Web.</li>
+<li>внешние ресурсы: файлы ресурсов, расположенные на другом Web сервере, отличного от веб-хостинга вашего приложения.</li>
+</ul>
+<p>При определении класса комплекта ресурсов, если Вы задаёте свойство <a href="./yii-web-assetbundle.html#$sourcePath-detail">sourcePath</a>, это означает, что любые перечисленные ресурсы, используя относительные пути, будут рассматриваться как исходные ресурсы. Если Вы не задаёте данное свойство, это означает, что эти ресурсы - это опубликованные ресурсы (в этом случае Вам следует указать <a href="./yii-web-assetbundle.html#$basePath-detail">basePath</a> и <a href="./yii-web-assetbundle.html#$baseUrl-detail">baseUrl</a>, чтобы дать знать Yii где ресурсы располагаются).</p>
+<p>Рекомендуется размещать ресурсы, принадлежащие приложению, в Web директорию, для того, чтобы избежать не нужного процесса публикации ресурсов. Вот почему <code>AppAsset</code> в предыдущем примере задаёт <a href="./yii-web-assetbundle.html#$basePath-detail">basePath</a> вместо <a href="./yii-web-assetbundle.html#$sourcePath-detail">sourcePath</a>.</p>
+<p>Для <a href="guide-structure-extensions.html">расширений</a>, в связи с тем, что их ресурсы располагаются вместе с их исходным кодом в директориях, которые не являются веб-доступными, необходимо указать свойство <a href="./yii-web-assetbundle.html#$sourcePath-detail">sourcePath</a> при задании класса комплекта ресурсов для них.</p>
+<blockquote class="note"><p><strong>Примечание: </strong>Не используйте <code>@webroot/assets</code> как <a href="./yii-web-assetbundle.html#$sourcePath-detail">source path</a>. Эта директория по умолчанию используется менеджером ресурсов <a href="./yii-web-assetmanager.html">asset manager</a> для сохранения файлов ресурсов, опубликованных из их исходного месторасположения. Любое содержимое этой директории расценивается как временное и может быть удалено.</p>
+</blockquote>
+<h3>Зависимости ресурсов  <span id="asset-dependencies"></span><a href="#asset-dependencies" class="hashlink">&para;</a></h3><p>Когда Вы включаете несколько CSS или JavaScript файлов в Web страницу, они должны следовать в определенном порядке, <b> чтобы избежать переопределения при выдаче</b>. Например, если Вы используете виджет jQuery UI в Web странице, вы должны убедиться, что jQuery JavaScript файл был включен до jQuery UI JavaScript файла. Мы называем такой порядок зависимостью между ресурсами.</p>
+<p>Зависимости ресурсов в основном указываются через свойство <a href="./yii-web-assetbundle.html#$depends-detail">yii\web\AssetBundle::$depends</a>. Например в <code>AppAsset</code>, комплект ресурсов зависит от двух других комплектов ресурсов: <a href="./yii-web-yiiasset.html">yii\web\YiiAsset</a> и <a href="./yii-bootstrap-bootstrapasset.html">yii\bootstrap\BootstrapAsset</a>, что обозначает, что CSS и JavaScript файлы <code>AppAsset</code> будут включены <em>после</em> файлов этих двух комплектов зависимостей.</p>
+<p>Зависимости ресурсов являются также зависимыми. Это значит, что если комплект А зависит от В, который зависит от С, то А тоже зависит от С.</p>
+<h3>Параметры ресурсов  <span id="asset-options"></span><a href="#asset-options" class="hashlink">&para;</a></h3><p>Вы можете задать свойства <a href="./yii-web-assetbundle.html#$cssOptions-detail">cssOptions</a> и <a href="./yii-web-assetbundle.html#$jsOptions-detail">jsOptions</a>, чтобы настроить путь для включения CSS и JavaScript файлов в страницу. Значения этих свойств будут приняты методами <a href="./yii-web-view.html#registerCssFile()-detail">yii\web\View::registerCssFile()</a> и <a href="./yii-web-view.html#registerJsFile()-detail">yii\web\View::registerJsFile()</a> соответственно, когда они (методы) вызываются <a href="guide-structure-views.html">представлением</a> происходит включение CSS и JavaScript файлов.</p>
+<blockquote class="note"><p><strong>Примечание: </strong>Параметры, заданные в комплекте класса применяются для <em>каждого</em> CSS/JavaScript-файла в комплекте. Если Вы хотите использовать различные параметры для разных файлов, Вы должны создать раздельные комплекты ресурсов, и использовать одну установку параметров для каждого комплекта.</p>
+</blockquote>
+<p>Например, условно включим CSS файл для браузера IE9 или ниже. Для этого Вы можете использовать следующий параметр:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> $cssOptions = [<span class="hljs-string">'condition'</span> =&gt; <span class="hljs-string">'lte IE9'</span>];
+</code></pre>
+<p>Это вызовет CSS файл из комплекта, который будет включен в страницу, используя следующие HTML теги:</p>
+<pre><code class="hljs xml language-html"><span class="hljs-comment">&lt;!--[if lte IE9]&gt;
+&lt;link rel="stylesheet" href="path/to/foo.css"&gt;
+&lt;![endif]--&gt;</span>
+</code></pre>
+<p>Для того чтобы обернуть созданную CSS ссылку в тег <code>&lt;noscript&gt;</code>, Вы можете настроить <code>cssOptions</code> следующим образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> $cssOptions = [<span class="hljs-string">'noscript'</span> =&gt; <span class="hljs-keyword">true</span>];
+</code></pre>
+<p>Для включения JavaScript файла в head раздел страницы (по умолчанию, JavaScript файлы включаются в конец раздела body) используйте следующий параметр:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> $jsOptions = [<span class="hljs-string">'position'</span> =&gt; \yii\web\View::POS_HEAD];
+</code></pre>
+<p>По умолчанию, когда комплект ресурсов публикуется, всё содержимое в заданной директории <a href="./yii-web-assetbundle.html#$sourcePath-detail">yii\web\AssetBundle::$sourcePath</a> будет опубликовано. Вы можете настроить это поведение, сконфигурировав свойство <a href="./yii-web-assetbundle.html#$publishOptions-detail">publishOptions</a>. Например, опубликовать одну или несколько поддиректорий <a href="./yii-web-assetbundle.html#$sourcePath-detail">yii\web\AssetBundle::$sourcePath</a> в классе комплекта ресурсов Вы можете в следующим образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">assets</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">AssetBundle</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FontAwesomeAsset</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AssetBundle</span> 
+</span>{
+    <span class="hljs-keyword">public</span> $sourcePath = <span class="hljs-string">'@bower/font-awesome'</span>; 
+    <span class="hljs-keyword">public</span> $css = [ 
+        <span class="hljs-string">'css/font-awesome.min.css'</span>, 
+    ]; 
+    <span class="hljs-keyword">public</span> $publishOptions = [
+        <span class="hljs-string">'only'</span> =&gt; [
+            <span class="hljs-string">'fonts/*'</span>,
+            <span class="hljs-string">'css/*'</span>,
+        ]
+    ];
+}  
+</code></pre>
+<p>Более сложную логику можно реализовать с помощью переопределения <code>init()</code>. Ниже указан пример публикации поддиректорий этим способом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">assets</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">AssetBundle</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FontAwesomeAsset</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AssetBundle</span> 
+</span>{
+    <span class="hljs-keyword">public</span> $sourcePath = <span class="hljs-string">'@bower/font-awesome'</span>; 
+    <span class="hljs-keyword">public</span> $css = [ 
+        <span class="hljs-string">'css/font-awesome.min.css'</span>, 
+    ]; 
+    
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">parent</span>::init();
+        <span class="hljs-keyword">$this</span>-&gt;publishOptions[<span class="hljs-string">'beforeCopy'</span>] = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($from, $to)</span> </span>{
+            <span class="hljs-keyword">if</span> (basename(dirname($from)) !== <span class="hljs-string">'font-awesome'</span>) {
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+            }
+            $dirname = basename($from);
+            <span class="hljs-keyword">return</span> $dirname === <span class="hljs-string">'fonts'</span> || $dirname === <span class="hljs-string">'css'</span>;
+        };
+    }
+}  
+</code></pre>
+<p>В выше указанном примере определён комплект ресурсов для <a href="http://fontawesome.io/">пакета "fontawesome"</a>. Задан параметр публикации <code>beforeCopy</code>, здесь только <code>fonts</code> и <code>css</code> поддиректории будут опубликованы.</p>
+<h3>Установка ресурсов Bower и NPM <span id="bower-npm-assets"></span><a href="#bower-npm-assets" class="hashlink">&para;</a></h3><p>Большинство JavaScript/CSS пакетов управляются <a href="http://bower.io/">Bower</a> и/или <a href="https://www.npmjs.org/">NPM</a>.
+В мире PHP мы испольуем Composer для управления зависимостями, но он не позволяет устанавливать пакеты Bower и NPM, просто указывая их в <code>composer.json</code>.</p>
+<p>Чтобы получить такую возможность, нужно немного настроить Composer. Существует два варианта:</p>
+<hr />
+<h5>Используя репозиторий asset-packagist <span id="ispolzua-repozitorij-asset-packagist"></span><a href="#ispolzua-repozitorij-asset-packagist" class="hashlink">&para;</a></h5><p>Этот способ удовлетворяет потребности большинства проектов, которым нужны Bower или NPM пакеты.</p>
+<blockquote class="note"><p><strong>Примечание: </strong>Начиная с версии 2.0.13, Basic и Advanced шаблоны приложений уже сконфигурированы для использования asset-packagist,
+  так что этот раздел можно пропустить.</p>
+</blockquote>
+<p>В файле <code>composer.json</code> вашего проекта, добавьте следующие строки:</p>
+<pre><code class="hljs json language-json"><span class="hljs-string">"repositories"</span>: [
+    {
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"composer"</span>,
+        <span class="hljs-attr">"url"</span>: <span class="hljs-string">"https://asset-packagist.org"</span>
+    }
+]
+</code></pre>
+<p>Настройте <a href="guide-concept-aliases.html">алиасы</a> <code>@npm</code> и <code>@bower</code> в файле <a href="guide-concept-configurations.html">конфигурации вашего приложения</a>:</p>
+<pre><code class="hljs php language-php">$config = [
+    ...
+    <span class="hljs-string">'aliases'</span> =&gt; [
+        <span class="hljs-string">'@bower'</span> =&gt; <span class="hljs-string">'@vendor/bower-asset'</span>,
+        <span class="hljs-string">'@npm'</span>   =&gt; <span class="hljs-string">'@vendor/npm-asset'</span>,
+    ],
+    ...
+];
+</code></pre>
+<p>Посетите <a href="https://asset-packagist.org">asset-packagist.org</a> чтобы узнать, как это работает.</p>
+<h5>Используя fxp/composer-asset-plugin <span id="ispolzua-fxpcomposer-asset-plugin"></span><a href="#ispolzua-fxpcomposer-asset-plugin" class="hashlink">&para;</a></h5><p>По сравнению с asset-packagist, composer-asset-plugin не требует изменять конфигурацию приложения. Вместо этого, требуется
+установить специальный глобальный пакет Composer, выполнив следующую команду:</p>
+<pre><code class="hljs bash language-bash">composer global require <span class="hljs-string">"fxp/composer-asset-plugin:^1.4.1"</span>
+</code></pre>
+<p>Эта команда устанавливает <a href="https://github.com/francoispluchino/composer-asset-plugin/">composer asset plugin</a> глобально,
+что позволит устанавливать зависимости из Bower и NPM. После установки все проекты на вашем комьютере будут поддерживать
+установку Bower и NPM пакетов, описанных в <code>composer.json</code>.</p>
+<p>Добавьте следующие строки в <code>composer.json</code> вашего проекта, чтобы указать директории, в которые будут установлены
+необходимые Bower и NPM пакеты:</p>
+<pre><code class="hljs json language-json"><span class="hljs-string">"extra"</span>: {
+    <span class="hljs-attr">"asset-installer-paths"</span>: {
+        <span class="hljs-attr">"npm-asset-library"</span>: <span class="hljs-string">"vendor/npm"</span>,
+        <span class="hljs-attr">"bower-asset-library"</span>: <span class="hljs-string">"vendor/bower"</span>
+    }
+}
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong><code>fxp/composer-asset-plugin</code> выполняет команду <code>composer update</code> существенно дольше, по сравнению с asset-packagist.</p>
+</blockquote>
+<hr />
+<p>После настройки Composer для поддержки Bower и NPM пакетов:</p>
+<ol>
+<li>Исправьте файл <code>composer.json</code> Вашего приложения или расширения и включите пакет в список в раздел <code>require</code>. Следует использовать <code>bower-asset/PackageName</code> (для Bower пакетов) или <code>npm-asset/PackageName</code> (для NPM пакетов) для обращения к соответствующей библиотеке.</li>
+<li>Выполните <code>composer update</code></li>
+<li>Создайте класс комплекта ресурсов и перечислите JavaScript/CSS файлы, которые Вы планируете использовать в Вашем приложении или расширении. Вы должны задать свойство <a href="./yii-web-assetbundle.html#$sourcePath-detail">sourcePath</a> как <code>@bower/PackageName</code> или <code>@npm/PackageName</code>.</li>
+</ol>
+<p>Это происходит потому, что Composer устанавливает Bower или NPM пакет в директорию, соответствующую этим псевдонимам.</p>
+<blockquote class="note"><p><strong>Примечание: </strong>В некоторых пакетах файлы дистрибутива могут находиться в поддиректории. В этом случае, Вы должны задать поддиректорию как значение <a href="./yii-web-assetbundle.html#$sourcePath-detail">sourcePath</a>. Например, <a href="./yii-web-jqueryasset.html">yii\web\JqueryAsset</a> использует <code>@bower/jquery/dist</code> вместо <code>@bower/jquery</code>.</p>
+</blockquote>
+<h2>Использование Комплекта Ресурсов <span id="using-asset-bundles"></span><a href="#using-asset-bundles" class="hashlink">&para;</a></h2><p>Для использования комплекта ресурсов, зарегистрируйте его в <a href="guide-structure-views.html">представлении</a> вызвав метод <a href="./yii-web-assetbundle.html#register()-detail">yii\web\AssetBundle::register()</a>. Например, комплект ресурсов в представлении может быть зарегистрирован следующим образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">assets</span>\<span class="hljs-title">AppAsset</span>;
+AppAsset::register(<span class="hljs-keyword">$this</span>);  <span class="hljs-comment">// $this - представляет собой объект представления</span>
+</code></pre>
+<blockquote class="info"><p><strong>Информация: </strong>Метод <a href="./yii-web-assetbundle.html#register()-detail">yii\web\AssetBundle::register()</a> возвращает объект комплекта ресурсов, содержащий информацию о публикуемых ресурсах, таких как <a href="./yii-web-assetbundle.html#$basePath-detail">basePath</a> или <a href="./yii-web-assetbundle.html#$baseUrl-detail">baseUrl</a>.</p>
+</blockquote>
+<p>Если Вы регистрируете комплект ресурсов в других местах (т.е. не в представлении), Вы должны обеспечить необходимый объект представления. Например, при регистрации комплекта ресурсов в классе <a href="guide-structure-widgets.html">widget</a>, Вы можете взять за объект представления <code>$this-&gt;view</code>.</p>
+<p>Когда комплект ресурсов регистрируется в представлении, Yii регистрирует все зависимые от него комплекты ресурсов. И, если комплект ресурсов расположен в директории не доступной из Web, то он будет опубликован в Web директории. Затем, когда представление отображает страницу, сгенерируются теги <code>&lt;link&gt;</code> и <code>&lt;script&gt;</code> для CSS и JavaScript файлов, перечисленных в регистрируемых комплектах. Порядок этих тегов определён зависимостью среди регистрируемых комплектов, и последовательность ресурсов перечислена в <a href="./yii-web-assetbundle.html#$css-detail">yii\web\AssetBundle::$css</a> и <a href="./yii-web-assetbundle.html#$js-detail">yii\web\AssetBundle::$js</a> свойствах.</p>
+<h3>Динамические Комплекты Ресурсов  <span id="dynamic-asset-bundles"></span><a href="#dynamic-asset-bundles" class="hashlink">&para;</a></h3><p>Поскольку комплект ресурсов это обычный PHP класс, он может содержать дополнительную логику, связанную с ним, и может
+корректировать свои внутренние параметры динамически. Например, вы можете использовать сложную JavaScript библиотеку,
+которая предоставляет интернационализацию через отдельные исходные файлы: по одному на каждый поддерживаемый язык.
+Таким образом, вам нужно добавить определенный '.js' файл на вашу страницу, чтобы применить перевод для библиотеки.
+Этого можно достичь, переопределив метод <a href="./yii-web-assetbundle.html#init()-detail">yii\web\AssetBundle::init()</a>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">assets</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">AssetBundle</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SophisticatedAssetBundle</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AssetBundle</span>
+</span>{
+    <span class="hljs-keyword">public</span> $sourcePath = <span class="hljs-string">'/path/to/sophisticated/src'</span>;
+    <span class="hljs-keyword">public</span> $js = [
+        <span class="hljs-string">'sophisticated.js'</span> <span class="hljs-comment">// file, which is always used</span>
+    ];
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">parent</span>::init();
+        <span class="hljs-keyword">$this</span>-&gt;js[] = <span class="hljs-string">'i18n/'</span> . Yii::$app-&gt;language . <span class="hljs-string">'.js'</span>; <span class="hljs-comment">// dynamic file added</span>
+    }
+}
+</code></pre>
+<p>Конкретный комплект ресурсов может быть также изменен через его экземпляр, возвращенный методом <a href="./yii-web-assetbundle.html#register()-detail">yii\web\AssetBundle::register()</a>.
+Например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">assets</span>\<span class="hljs-title">SophisticatedAssetBundle</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+
+$bundle = SophisticatedAssetBundle::register(Yii::$app-&gt;view);
+$bundle-&gt;js[] = <span class="hljs-string">'i18n/'</span> . Yii::$app-&gt;language . <span class="hljs-string">'.js'</span>; <span class="hljs-comment">// dynamic file added</span>
+</code></pre>
+<blockquote><p>Замечание: несмотря на то, что динамическая корректировка комплекта ресурсов поддерживается, ее использование - это
+  <strong>плохая</strong> практика, которая может привести к неожиданным побочных эффектам, и которой следует избегать.</p>
+</blockquote>
+<h3>Настройка Комплектов Ресурсов  <span id="customizing-asset-bundles"></span><a href="#customizing-asset-bundles" class="hashlink">&para;</a></h3><p>Yii управляет комплектами ресурсов через компонент приложения называемый <code>assetManager</code>, который реализован в <a href="./yii-web-assetmanager.html">yii\web\AssetManager</a>. Путём настройки свойства <a href="./yii-web-assetmanager.html#$bundles-detail">yii\web\AssetManager::$bundles</a>, возможно настроить поведение комплекта ресурсов. Например, комплект ресурсов <a href="./yii-web-jqueryasset.html">yii\web\JqueryAsset</a> по умолчанию использует <code>jquery.js</code> файл из установленного jquery Bower пакета. Для повышения доступности и производительности, можно использовать версию jquery на Google хостинге.
+Это может быть достигнуто, настроив <code>assetManager</code> в конфигурации приложения следующим образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'bundles'</span> =&gt; [
+                <span class="hljs-string">'yii\web\JqueryAsset'</span> =&gt; [
+                    <span class="hljs-string">'sourcePath'</span> =&gt; <span class="hljs-keyword">null</span>,   <span class="hljs-comment">// не опубликовывать комплект</span>
+                    <span class="hljs-string">'js'</span> =&gt; [
+                        <span class="hljs-string">'//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'</span>,
+                    ]
+                ],
+            ],
+        ],
+    ],
+];
+</code></pre>
+<p>Можно сконфигурировать несколько комплектов ресурсов аналогично через <a href="./yii-web-assetmanager.html#$bundles-detail">yii\web\AssetManager::$bundles</a>. Ключи массива должны быть именами класса (без впереди стоящей обратной косой черты) комплектов ресурсов, а значения массивов должны соответствовать <a href="guide-concept-configurations.html">конфигурации массивов</a>.</p>
+<blockquote><p>Совет: Можно условно выбрать, какой из ресурсов будет использован в комплекте ресурсов. Следующий пример показывает, как можно использовать в разработке окружения <code>jquery.js</code> или <code>jquery.min.js</code> в противном случае:</p>
+</blockquote>
+<blockquote><pre><code class="hljs php language-php"><span class="hljs-string">'yii\web\JqueryAsset'</span> =&gt; [
+    <span class="hljs-string">'js'</span> =&gt; [
+        YII_ENV_DEV ? <span class="hljs-string">'jquery.js'</span> : <span class="hljs-string">'jquery.min.js'</span>
+    ]
+],
+</code></pre>
+</blockquote>
+<p>Можно запретить один или несколько комплектов ресурсов, связав <code>false</code> с именами комплектов ресурсов, которые Вы хотите сделать недоступными. Когда Вы регистрируете недоступный комплект ресурсов в представлении, обратите внимание, что зависимость комплектов будет зарегистрирована, и представление также не включит ни один из ресурсов комплекта в отображаемую страницу. Например, для запрета <a href="./yii-web-jqueryasset.html">yii\web\JqueryAsset</a> можно использовать следующую конфигурацию: </p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'bundles'</span> =&gt; [
+                <span class="hljs-string">'yii\web\JqueryAsset'</span> =&gt; <span class="hljs-keyword">false</span>,
+            ],
+        ],
+    ],
+];
+</code></pre>
+<p>Можно также запретить <em>все</em> комплекты ресурсов, установив <a href="./yii-web-assetmanager.html#$bundles-detail">yii\web\AssetManager::$bundles</a> как <code>false</code>.</p>
+<p>Имейте в виду, что настройки, установленные через <a href="./yii-web-assetmanager.html#$bundles-detail">yii\web\AssetManager::$bundles</a>, применяются в момент создания комплекта
+ресурсов, т.е. в момент срабатывания конструктора. Таким образом, любые изменения, которые произведены над экземпляром
+комплекта ресурсов после этого, перекроют настройки, установленные на уровне <a href="./yii-web-assetmanager.html#$bundles-detail">yii\web\AssetManager::$bundles</a>.
+В частности, изменения, произведенные внутри метода <a href="./yii-web-assetbundle.html#init()-detail">yii\web\AssetBundle::init()</a> или после регистрации комплекта ресурсов,
+имеют приоритет над настройками <code>AssetManager</code>.
+Ниже приведены примеры, в которых значения, установленные через <a href="./yii-web-assetmanager.html#$bundles-detail">yii\web\AssetManager::$bundles</a> не возымеют никакого эффекта:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// Program source code:</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">assets</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">AssetBundle</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LanguageAssetBundle</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AssetBundle</span>
+</span>{
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">parent</span>::init();
+        <span class="hljs-keyword">$this</span>-&gt;baseUrl = <span class="hljs-string">'@web/i18n/'</span> . Yii::$app-&gt;language; <span class="hljs-comment">// can NOT be handled by `AssetManager`!</span>
+    }
+}
+<span class="hljs-comment">// ...</span>
+
+$bundle = \app\assets\LargeFileAssetBundle::register(Yii::$app-&gt;view);
+$bundle-&gt;baseUrl = YII_DEBUG ? <span class="hljs-string">'@web/large-files'</span>: <span class="hljs-string">'@web/large-files/minified'</span>; <span class="hljs-comment">// can NOT be handled by `AssetManager`!</span>
+
+
+<span class="hljs-comment">// Application config :</span>
+
+<span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'bundles'</span> =&gt; [
+                <span class="hljs-string">'app\assets\LanguageAssetBundle'</span> =&gt; [
+                    <span class="hljs-string">'baseUrl'</span> =&gt; <span class="hljs-string">'http://some.cdn.com/files/i18n/en'</span> <span class="hljs-comment">// makes NO effect!</span>
+                ],
+                <span class="hljs-string">'app\assets\LargeFileAssetBundle'</span> =&gt; [
+                    <span class="hljs-string">'baseUrl'</span> =&gt; <span class="hljs-string">'http://some.cdn.com/files/large-files'</span> <span class="hljs-comment">// makes NO effect!</span>
+                ],
+            ],
+        ],
+    ],
+];
+</code></pre>
+<h3>Привязка ресурсов <span id="asset-mapping"></span><a href="#asset-mapping" class="hashlink">&para;</a></h3><p>Иногда необходимо исправить пути до файлов ресурсов, в нескольких комплектах ресурсов. Например, комплект А использует <code>jquery.min.js</code> версии 1.11.1, а комплект В использует <code>jquery.js</code> версии 2.1.1. Раньше Вы могли решить данную проблему, настраивая каждый комплект ресурсов по отдельности, но более простой способ - использовать <em>asset map</em> возможность, чтобы найти неверные ресурсы и исправить их. Сделать это можно, сконфигурировав свойство <a href="./yii-web-assetmanager.html#$assetMap-detail">yii\web\AssetManager::$assetMap</a> следующим образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'assetMap'</span> =&gt; [
+                <span class="hljs-string">'jquery.js'</span> =&gt; <span class="hljs-string">'//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'</span>,
+            ],
+        ],
+    ],
+];
+</code></pre>
+<p>Ключи <a href="./yii-web-assetmanager.html#$assetMap-detail">assetMap</a> - это имена ресурсов, которые Вы хотите исправить, а значения - это требуемые пути для ресурсов. Когда регистрируется комплект ресурсов в представлении, каждый соответствующий файл ресурса в <a href="./yii-web-assetbundle.html#$css-detail">css</a> или <a href="./yii-web-assetbundle.html#$js-detail">js</a> массивах будет рассмотрен в соответствии с этой привязкой. И, если какой-либо из ключей найден, как последняя часть пути до файла ресурса (путь на который начинается с <a href="./yii-web-assetbundle.html#$sourcePath-detail">yii\web\AssetBundle::$sourcePath</a> по возможности), то соответствующее значение заменит ресурс и будет зарегистрировано в представлении. Например, путь до файла ресурса <code>my/path/to/jquery.js</code> - это соответствует ключу <code>jquery.js</code>.</p>
+<blockquote class="note"><p><strong>Примечание: </strong>Ресурсы заданные только с использованием относительного пути могут использоваться в привязке ресурсов. Пути ресурсов должны быть абсолютные URLs или путь относительно <a href="./yii-web-assetmanager.html#$basePath-detail">yii\web\AssetManager::$basePath</a>.</p>
+</blockquote>
+<h3>Публикация Ресурсов <span id="asset-publishing"></span><a href="#asset-publishing" class="hashlink">&para;</a></h3><p>Как уже было сказано выше, если комплект ресурсов располагается в директории которая не доступна из Web, эти ресурсы будут скопированы в Web директорию, когда комплект будет зарегистрирован в представлении. Этот процесс называется <em>публикацией ресурсов</em>, его автоматически выполняет <a href="./yii-web-assetmanager.html">asset manager</a>.</p>
+<p>По умолчанию, ресурсы публикуются в директорию <code>@webroot/assets</code> которая соответствует URL <code>@web/assets</code>. Можно настроить это местоположение сконфигурировав свойства <a href="./yii-web-assetmanager.html#$basePath-detail">basePath</a> и <a href="./yii-web-assetmanager.html#$baseUrl-detail">baseUrl</a>.</p>
+<p>Вместо публикации ресурсов путём копирования файлов, можно рассмотреть использование символических ссылок, если Ваша операционная система или Web сервер это разрешают. Эта функция может быть включена путем установки <a href="./yii-web-assetmanager.html#$linkAssets-detail">linkAssets</a> в <code>true</code>.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'linkAssets'</span> =&gt; <span class="hljs-keyword">true</span>,
+        ],
+    ],
+];
+</code></pre>
+<p>С конфигурацией, установленной выше, менеджер ресурсов будет создавать символические ссылки на исходные пути комплекта ресурсов когда он будет публиковаться. Это быстрее, чем копирование файлов, а также может гарантировать, что опубликованные ресурсы всегда up-to-date(обновлённые/свежие).</p>
+<h3>Перебор Кэша <span id="cache-busting"></span><a href="#cache-busting" class="hashlink">&para;</a></h3><p>Для Web приложения запущенного в режиме продакшена, считается нормальной практикой разрешить HTTP кэширование для ресурсов и других статичных источников. Недостаток такой практики в том, что всякий раз, когда изменяется ресурс и разворачивается продакшен, пользователь может по-прежнему использовать старую версию ресурса вследствие HTTP кэширования. Чтобы избежать этого, можно использовать возможность перебора кэша, которая была добавлена в версии 2.0.3, для этого можно настроить <a href="./yii-web-assetmanager.html">yii\web\AssetManager</a> следующим образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'appendTimestamp'</span> =&gt; <span class="hljs-keyword">true</span>,
+        ],
+    ],
+];
+</code></pre>
+<p>Делая таким образом, к URL каждого опубликованного ресурса будет добавляться временная метка его последней модификации. Например, URL для <code>yii.js</code> может выглядеть как <code>/assets/5515a87c/yii.js?v=1423448645"</code>, где параметр <code>v</code> представляет собой временную метку последней модификации файла <code>yii.js</code>. Теперь если изменить ресурс, его URL тоже будет изменен, это означает что клиент получит последнюю версию ресурса.</p>
+<h2>Обычное Использование Комплекта Ресурсов <span id="common-asset-bundles"></span><a href="#common-asset-bundles" class="hashlink">&para;</a></h2><p>Код ядра Yii содержит большое количество комплектов ресурсов. Среди них, следующие комплекты широко используются и могут упоминаться в Вашем приложении или коде расширения:</p>
+<ul>
+<li><a href="./yii-web-yiiasset.html">yii\web\YiiAsset</a>: Включает основной <code>yii.js</code> файл который реализует механизм организации JavaScript кода в модулях. Также обеспечивает специальную поддержку для <code>data-method</code> и <code>data-confirm</code> атрибутов и содержит другие полезные функции.</li>
+<li><a href="./yii-web-jqueryasset.html">yii\web\JqueryAsset</a>: Включает <code>jquery.js</code> файл из jQuery Bower пакета.</li>
+<li><a href="./yii-bootstrap-bootstrapasset.html">yii\bootstrap\BootstrapAsset</a>: Включает CSS файл из Twitter Bootstrap фреймворка.</li>
+<li><a href="./yii-bootstrap-bootstrappluginasset.html">yii\bootstrap\BootstrapPluginAsset</a>: Включает JavaScript файл из Twitter Bootstrap фреймворка для поддержки Bootstrap JavaScript плагинов.</li>
+<li><a href="./yii-jui-juiasset.html">yii\jui\JuiAsset</a>: Включает CSS и JavaScript файлы из jQuery UI библиотеки.</li>
+</ul>
+<p>Если Ваш код зависит от jQuery, jQuery UI или Bootstrap, Вам необходимо использовать эти предопределенные комплекты ресурсов, а не создавать свои собственные варианты. Если параметры по умолчанию этих комплектов не удовлетворяют Вашим нуждам, Вы можете настроить их как описано в подразделе <a href="#customizing-asset-bundles">Настройка Комплектов Ресурсов</a>.</p>
+<h2>Преобразование Ресурсов <span id="asset-conversion"></span><a href="#asset-conversion" class="hashlink">&para;</a></h2><p>Вместо того, чтобы напрямую писать CSS и/или JavaScript код, разработчики часто пишут его в некотором <b>расширенном синтаксисе</b> и используют специальные инструменты конвертации в CSS/JavaScript. Например, для CSS кода можно использовать <a href="http://lesscss.org/">LESS</a> или <a href="http://sass-lang.com/">SCSS</a>; а для JavaScript можно использовать <a href="http://www.typescriptlang.org/">TypeScript</a>.</p>
+<p>Можно перечислить файлы ресурсов в <b>расширенном синтаксисе</b> в <a href="./yii-web-assetbundle.html#$css-detail">css</a> и <a href="./yii-web-assetbundle.html#$js-detail">js</a> свойствах из комплекта ресурсов. Например,</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppAsset</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AssetBundle</span>
+</span>{
+    <span class="hljs-keyword">public</span> $basePath = <span class="hljs-string">'@webroot'</span>;
+    <span class="hljs-keyword">public</span> $baseUrl = <span class="hljs-string">'@web'</span>;
+    <span class="hljs-keyword">public</span> $css = [
+        <span class="hljs-string">'css/site.less'</span>,
+    ];
+    <span class="hljs-keyword">public</span> $js = [
+        <span class="hljs-string">'js/site.ts'</span>,
+    ];
+    <span class="hljs-keyword">public</span> $depends = [
+        <span class="hljs-string">'yii\web\YiiAsset'</span>,
+        <span class="hljs-string">'yii\bootstrap\BootstrapAsset'</span>,
+    ];
+}
+</code></pre>
+<p>Когда Вы регистрируете такой комплект ресурсов в представлении, <a href="./yii-web-assetmanager.html">asset manager</a> автоматически запустит нужные инструменты препроцессора и конвертирует ресурсы в CSS/JavaScript, если их расширенный синтаксис распознан. Когда представление окончательно отобразит страницу, в неё будут включены файлы CSS/JavaScript, вместо оригинальных ресурсов в расширенном синтаксисе.</p>
+<p>Yii использует имена расширений файлов для идентификации расширенного синтаксиса внутри ресурса. По умолчанию признаны следующие синтаксисы и имена расширений файлов:</p>
+<ul>
+<li><a href="http://lesscss.org/">LESS</a>: <code>.less</code></li>
+<li><a href="http://sass-lang.com/">SCSS</a>: <code>.scss</code></li>
+<li><a href="http://learnboost.github.io/stylus/">Stylus</a>: <code>.styl</code></li>
+<li><a href="http://coffeescript.org/">CoffeeScript</a>: <code>.coffee</code></li>
+<li><a href="http://www.typescriptlang.org/">TypeScript</a>: <code>.ts</code></li>
+</ul>
+<p>Yii ориентируется на установленные инструменты конвертации ресурсов препроцессора. Например, используя <a href="http://lesscss.org/">LESS</a>, Вы должны установить команду <code>lessc</code> препроцессора.</p>
+<p>Вы можете настроить команды препроцессора и поддерживать расширенный синтаксис сконфигурировав <a href="./yii-web-assetmanager.html#$converter-detail">yii\web\AssetManager::$converter</a> следующим образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'converter'</span> =&gt; [
+                <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\web\AssetConverter'</span>,
+                <span class="hljs-string">'commands'</span> =&gt; [
+                    <span class="hljs-string">'less'</span> =&gt; [<span class="hljs-string">'css'</span>, <span class="hljs-string">'lessc {from} {to} --no-color'</span>],
+                    <span class="hljs-string">'ts'</span> =&gt; [<span class="hljs-string">'js'</span>, <span class="hljs-string">'tsc --out {to} {from}'</span>],
+                ],
+            ],
+        ],
+    ],
+];
+</code></pre>
+<p>В примере выше, Вы задали поддержку расширенного синтаксиса через <a href="./yii-web-assetconverter.html#$commands-detail">yii\web\AssetConverter::$commands</a> свойство.
+Ключи массива - это имена расширений файлов (без ведущей точки), а значения массива - это образующийся файл ресурса имён расширений и команд для выполнения конвертации ресурса. Маркеры <code>{from}</code> и <code>{to}</code> в командах будут заменены соответственно исходным путём файла ресурсов и путём назначения файла ресурсов.</p>
+<blockquote class="note"><p><strong>Примечание: </strong>Существуют другие способы работы с ресурсами расширенного синтаксиса, кроме того, который указан выше.
+Например, Вы можете использовать инструменты построения, такие как <a href="http://gruntjs.com/">grunt</a> для отслеживания и автоматической конвертации ресурсов расширенного синтаксиса. В этом случае, Вы должны перечислить конечные CSS/JavaScript файлы в комплекте ресурсов вместо исходных файлов.</p>
+</blockquote>
+<h2>Объединение и Сжатие Ресурсов <span id="combining-compressing-assets"></span><a href="#combining-compressing-assets" class="hashlink">&para;</a></h2><p>Web страница может включать много CSS и/или JavaScript файлов. Чтобы сократить количество HTTP запросов и общий размер загрузки этих файлов, общепринятой практикой является объединение и сжатие нескольких CSS/JavaScript файлов в один или в более меньшее количество, а затем включение этих сжатых файлов вместо исходных в Web страницы.</p>
+<blockquote class="note"><p><strong>Примечание: </strong>Комбинирование и сжатие ресурсов обычно необходимо, когда приложение находится в режиме продакшена.
+В режиме разработки, использование исходных CSS/JavaScript файлов часто более удобно для отладочных целей.</p>
+</blockquote>
+<p>Далее, мы представим подход комбинирования и сжатия файлов ресурсов без необходимости изменения Вашего существующего кода приложения.</p>
+<ol>
+<li>Найдите все комплекты ресурсов в Вашем приложении, которые Вы планируете скомбинировать и сжать.</li>
+<li>Распределите эти комплекты в одну или несколько групп. Обратите внимание, что каждый комплект может принадлежать только одной группе.</li>
+<li>Скомбинируйте/сожмите CSS файлы каждой группы в один файл. Сделайте то же самое для JavaScript файлов.</li>
+<li>Определите новый комплект ресурсов для каждой группы:<ul>
+<li>Или установите <a href="./yii-web-assetbundle.html#$css-detail">css</a> и <a href="./yii-web-assetbundle.html#$js-detail">js</a> свойства. Соответствующие CSS и JavaScript файлы будут объединены.</li>
+<li>Или настройте комплекты ресурсов каждой группы, установив их <a href="./yii-web-assetbundle.html#$css-detail">css</a> и <a href="./yii-web-assetbundle.html#$js-detail">js</a> свойства как пустые, и установите их <a href="./yii-web-assetbundle.html#$depends-detail">depends</a> свойство как новый комплект ресурсов, созданный для группы.</li>
+</ul>
+</li>
+</ol>
+<p>Используя этот подход, при регистрации комплекта ресурсов в представлении, автоматически регистрируется новый комплект ресурсов для группы, к которому исходный комплект принадлежит. В результате скомбинированные/сжатые файлы ресурсов включаются в страницу вместо исходных.</p>
+<h3>Пример  <span id="example"></span><a href="#example" class="hashlink">&para;</a></h3><p>Давайте рассмотрим пример, чтобы объяснить вышеуказанный подход.</p>
+<p>Предположим, ваше приложение имеет две страницы, X и Y. Страница X использует комплект ресурсов A, B и C, в то время, как страница Y использует комплект ресурсов, B, C и D.</p>
+<p>У Вас есть два пути, чтобы разделить эти комплекты ресурсов. Первый - использовать одну группу, включающую в себя все комплекты ресурсов. Другой путь - положить комплект А в группу Х, D в группу Y, а (B, C) в группу S. Какой из этих вариантов лучше? Первый способ имеет преимущество в том, что в обоих страницах одинаково скомбинированы файлы CSS и JavaScript, что делает HTTP кэширование более эффективным. С другой стороны, поскольку одна группа содержит все комплекты, размер скомбинированных CSS и JavaScript файлов будет больше, и таким образом увеличится время отдачи файла (загрузки страницы). Для простоты в этом примере, мы будем использовать первый способ, то есть использовать единую группу, содержащую все пакеты.</p>
+<blockquote class="note"><p><strong>Примечание: </strong>Разделение комплекта ресурсов на группы это не тривиальная задача. Это, как правило, требует анализа реальных данных о трафике различных ресурсов на разных страницах. В начале вы можете начать с одной группы, для простоты.</p>
+</blockquote>
+<p>Используйте существующие инструменты (например <a href="https://developers.google.com/closure/compiler/">Closure Compiler</a>, 
+<a href="https://github.com/yui/yuicompressor/">YUI Compressor</a>) для объединения и сжатия CSS и JavaScript файлов во всех комплектах. Обратите внимание, что файлы должны быть объединены в том порядке, который удовлетворяет зависимости между комплектами. Например, если комплект A зависит от В, который зависит от С и D, то Вы должны перечислить файлы ресурсов начиная с С и D, затем B, и только после этого А.</p>
+<p>После объединения и сжатия, Вы получите один CSS файл и один JavaScript файл. Предположим, они названы как <code>all-xyz.css</code> и <code>all-xyz.js</code>, где <code>xyz</code> это временная метка или хэш, который используется, чтобы создать уникальное имя файла, чтобы избежать проблем с HTTP кэшированием.</p>
+<p>Сейчас мы находимся на последнем шаге. Настройте <a href="./yii-web-assetmanager.html">asset manager</a> в конфигурации вашего приложения, как показано ниже:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'bundles'</span> =&gt; [
+                <span class="hljs-string">'all'</span> =&gt; [
+                    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\web\AssetBundle'</span>,
+                    <span class="hljs-string">'basePath'</span> =&gt; <span class="hljs-string">'@webroot/assets'</span>,
+                    <span class="hljs-string">'baseUrl'</span> =&gt; <span class="hljs-string">'@web/assets'</span>,
+                    <span class="hljs-string">'css'</span> =&gt; [<span class="hljs-string">'all-xyz.css'</span>],
+                    <span class="hljs-string">'js'</span> =&gt; [<span class="hljs-string">'all-xyz.js'</span>],
+                ],
+                <span class="hljs-string">'A'</span> =&gt; [<span class="hljs-string">'css'</span> =&gt; [], <span class="hljs-string">'js'</span> =&gt; [], <span class="hljs-string">'depends'</span> =&gt; [<span class="hljs-string">'all'</span>]],
+                <span class="hljs-string">'B'</span> =&gt; [<span class="hljs-string">'css'</span> =&gt; [], <span class="hljs-string">'js'</span> =&gt; [], <span class="hljs-string">'depends'</span> =&gt; [<span class="hljs-string">'all'</span>]],
+                <span class="hljs-string">'C'</span> =&gt; [<span class="hljs-string">'css'</span> =&gt; [], <span class="hljs-string">'js'</span> =&gt; [], <span class="hljs-string">'depends'</span> =&gt; [<span class="hljs-string">'all'</span>]],
+                <span class="hljs-string">'D'</span> =&gt; [<span class="hljs-string">'css'</span> =&gt; [], <span class="hljs-string">'js'</span> =&gt; [], <span class="hljs-string">'depends'</span> =&gt; [<span class="hljs-string">'all'</span>]],
+            ],
+        ],
+    ],
+];
+</code></pre>
+<p>Как объяснено в подразделе <a href="#customizing-asset-bundles">Настройка Комплектов Ресурсов</a>, приведенная выше конфигурация
+изменяет поведение по умолчанию каждого комплекта. В частности, комплекты A, B, C и D не имеют больше никаких файлов ресурсов. Теперь они все зависят от <code>all</code> комплекта, который содержит скомбинированные <code>all-xyz.css</code> и <code>all-xyz.js</code> файлы. Следовательно, для страницы X, вместо включения исходных файлов ресурсов из комплектов A, B и C, только два этих объединённых файла будут включены, то же самое произойдёт и со страницей Y.</p>
+<p>Есть еще один трюк, чтобы сделать работу вышеуказанного подхода более отлаженной. Вместо изменения конфигурационного файла приложения напрямую, можно поставить комплект массива настроек в отдельный файл, и условно включить этот файл в конфигурацию приложения. Например,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'bundles'</span> =&gt; <span class="hljs-keyword">require</span> <span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">'/'</span> . (YII_ENV_PROD ? <span class="hljs-string">'assets-prod.php'</span> : <span class="hljs-string">'assets-dev.php'</span>),  
+        ],
+    ],
+];
+</code></pre>
+<p>То есть, массив конфигурации комплекта ресурсов сохраняется в <code>assets-prod.php</code> для режима продакшена, и в <code>assets-dev.php</code> для режима не продакшена (разработки).</p>
+<blockquote><p>Замечание: этот механизм объединения комплектов ресурсов основан на способности <a href="./yii-web-assetmanager.html#$bundles-detail">yii\web\AssetManager::$bundles</a> перекрывать
+  поля регистрируемых комплектов ресурсов. Однако, как уже было сказано выше, эта возможность не распространяется на
+  изменения, внесенные в комплекты ресурсов на уровне метода <a href="./yii-web-assetbundle.html#init()-detail">yii\web\AssetBundle::init()</a> или после регистрации. Вам
+  следует избегать использования динамических комплектов ресурсов в процессе объединения.</p>
+</blockquote>
+<h3>Использование команды <code>asset</code> <span id="using-asset-command"></span><a href="#using-asset-command" class="hashlink">&para;</a></h3><p>Yii предоставляет консольную команду с именем <code>asset</code> для автоматизации подхода, который мы только что описали.</p>
+<p>Чтобы использовать эту команду, Вы должны сначала создать файл конфигурации для описания того, как комплекты ресурсов должны быть скомбинированы, и как они должны быть сгруппированы. Затем Вы можете использовать подкоманду <code>asset/template</code>, чтобы сгенерировать первый шаблон и затем отредактировать его под свои нужды.</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> asset/template assets.php
+</code></pre>
+<p>Данная команда сгенерирует файл с именем <code>assets.php</code> в текущей директории. Содержание этого файла можно увидеть ниже:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-comment">/**
+ * Файл конфигурации команды консоли "yii asset".
+ * Обратите внимание, что в консольной среде, некоторые псевдонимы путей, такие как "<span class="hljs-doctag">@webroot</span>' и '<span class="hljs-doctag">@web</span> ",
+ * не могут быть использованы.
+ * Пожалуйста, определите отсутствующие псевдонимы путей.
+ */</span>
+<span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// Настроить команду/обратный вызов для сжатия файлов JavaScript:</span>
+    <span class="hljs-string">'jsCompressor'</span> =&gt; <span class="hljs-string">'java -jar compiler.jar --js {from} --js_output_file {to}'</span>,
+    <span class="hljs-comment">// Настроить команду/обратный вызов для сжатия файлов CSS:</span>
+    <span class="hljs-string">'cssCompressor'</span> =&gt; <span class="hljs-string">'java -jar yuicompressor.jar --type css {from} -o {to}'</span>,
+    <span class="hljs-comment">// Whether to delete asset source after compression:</span>
+    <span class="hljs-string">'deleteSource'</span> =&gt; <span class="hljs-keyword">false</span>,
+    <span class="hljs-comment">// Список комплектов ресурсов для сжатия:</span>
+    <span class="hljs-string">'bundles'</span> =&gt; [
+        <span class="hljs-comment">// 'yii\web\YiiAsset',</span>
+        <span class="hljs-comment">// 'yii\web\JqueryAsset',</span>
+    ],
+    <span class="hljs-comment">// Комплект ресурса после сжатия:</span>
+    <span class="hljs-string">'targets'</span> =&gt; [
+        <span class="hljs-string">'all'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\web\AssetBundle'</span>,
+            <span class="hljs-string">'basePath'</span> =&gt; <span class="hljs-string">'@webroot/assets'</span>,
+            <span class="hljs-string">'baseUrl'</span> =&gt; <span class="hljs-string">'@web/assets'</span>,
+            <span class="hljs-string">'js'</span> =&gt; <span class="hljs-string">'js/all-{hash}.js'</span>,
+            <span class="hljs-string">'css'</span> =&gt; <span class="hljs-string">'css/all-{hash}.css'</span>,
+        ],
+    ],
+    <span class="hljs-comment">// Настройка менеджера ресурсов:</span>
+    <span class="hljs-string">'assetManager'</span> =&gt; [
+    ],
+];
+</code></pre>
+<p>Вы должны изменить этот файл и указать в <code>bundles</code> параметре, какие комплекты Вы планируете объединить. В параметре <code>targets</code> вы должны указать, как комплекты должны быть поделены в группы. Вы можете указать одну или несколько групп, как уже было сказано выше.</p>
+<blockquote class="note"><p><strong>Примечание: </strong>Так как псевдонимы путей <code>@webroot</code> и <code>@web</code> не могут быть использованы в консольном приложении, Вы должны явно задать их в файле конфигурации.</p>
+</blockquote>
+<p>JavaScript файлы объединены, сжаты и записаны в <code>js/all-{hash}.js</code>, где {hash} перенесён из хэша результирующего файла.</p>
+<p>Параметры <code>jsCompressor</code> и <code>cssCompressor</code> указывают на консольные команды или обратный вызов PHP, выполняющие JavaScript и CSS объединение/сжатие. По умолчанию Yii использует <a href="https://developers.google.com/closure/compiler/">Closure Compiler</a> для объединения JavaScript файлов и <a href="https://github.com/yui/yuicompressor/">YUI Compressor</a> для объединения CSS файлов. Вы должны установить эти инструменты вручную или настроить данные параметры, чтобы использовать ваши любимые инструменты.</p>
+<p>Вы можете запустить команду <code>asset</code> с файлом конфигурации для объединения и сжатия файлов ресурсов, а затем создать новый файл конфигурации комплекта ресурса <code>assets-prod.php</code>:</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> asset assets.php config/assets-prod.php
+</code></pre>
+<p>Сгенерированный файл конфигурации может быть включен в конфигурацию приложения, как описано в последнем подразделе.</p>
+<blockquote><p>Примечание: в случае если вы перенастраиваете комплекты ресурсов через <a href="./yii-web-assetmanager.html#$bundles-detail">yii\web\AssetManager::$bundles</a> или
+  <a href="./yii-web-assetmanager.html#$assetMap-detail">yii\web\AssetManager::$assetMap</a>, и хотите, чтобы эти настройки применились для исходных файлов для сжатия,
+  вы должны занести эти опции в раздел <code>assetManager</code> файла кофигурации для команды <code>asset</code>.</p>
+</blockquote>
+<blockquote><p>Замечание: составляя набор исходных комплектов ресурсов для сжатия, следует избегать использования таких, чьи параметры
+  могут изменяться динамически (т.е. на уровне метода <code>init()</code> или после регистрации), поскольку они могут функционировать
+  неправильно после сжатия.</p>
+</blockquote>
+<blockquote><p>Для справки: Команда <code>asset</code> является не единственной опцией для автоматического процесса объединения и сжатия ресурсов.
+  Вы можете также использовать такой замечательный инструмент запуска приложений как <a href="http://gruntjs.com/">grunt</a> для достижения той же цели.</p>
+</blockquote>
+<h3>Группировка Комплектов Ресурсов  <span id="grouping-asset-bundles"></span><a href="#grouping-asset-bundles" class="hashlink">&para;</a></h3><p>В последнем подразделе, мы пояснили, как объединять все комплекты ресурсов в единый в целях минимизации HTTP запросов для файлов ресурсов, упоминавшихся в приложении. Это не всегда желательно на практике. Например, представьте себе, что Ваше приложение содержит "front end", а также и "back end", каждый из которых использует свой набор JavaScript и CSS файлов. В этом случае, объединение всех комплектов ресурсов с обеих сторон в один не имеет смысла потому, что комплекты ресурсов для "front end" не используются в "back end", и это будет бесполезной тратой трафика - отправлять "back end" ресурсы, когда страница из "front end" будет запрошена.</p>
+<p>Для решения вышеуказанной проблемы, вы можете разделить комплекты по группам и объединить комплекты ресурсов для каждой группы. Следующая конфигурация показывает, как Вы можете объединять комплекты ресурсов:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    ...
+    <span class="hljs-comment">// Укажите выходной комплект для групп:</span>
+    <span class="hljs-string">'targets'</span> =&gt; [
+        <span class="hljs-string">'allShared'</span> =&gt; [
+            <span class="hljs-string">'js'</span> =&gt; <span class="hljs-string">'js/all-shared-{hash}.js'</span>,
+            <span class="hljs-string">'css'</span> =&gt; <span class="hljs-string">'css/all-shared-{hash}.css'</span>,
+            <span class="hljs-string">'depends'</span> =&gt; [
+                <span class="hljs-comment">// Включаем все ресурсы поделённые между 'backend' и 'frontend'</span>
+                <span class="hljs-string">'yii\web\YiiAsset'</span>,
+                <span class="hljs-string">'app\assets\SharedAsset'</span>,
+            ],
+        ],
+        <span class="hljs-string">'allBackEnd'</span> =&gt; [
+            <span class="hljs-string">'js'</span> =&gt; <span class="hljs-string">'js/all-{hash}.js'</span>,
+            <span class="hljs-string">'css'</span> =&gt; <span class="hljs-string">'css/all-{hash}.css'</span>,
+            <span class="hljs-string">'depends'</span> =&gt; [
+                <span class="hljs-comment">// Включаем только 'backend' ресурсы:</span>
+                <span class="hljs-string">'app\assets\AdminAsset'</span>
+            ],
+        ],
+        <span class="hljs-string">'allFrontEnd'</span> =&gt; [
+            <span class="hljs-string">'js'</span> =&gt; <span class="hljs-string">'js/all-{hash}.js'</span>,
+            <span class="hljs-string">'css'</span> =&gt; <span class="hljs-string">'css/all-{hash}.css'</span>,
+            <span class="hljs-string">'depends'</span> =&gt; [], <span class="hljs-comment">// Включаем все оставшиеся ресурсы</span>
+        ],
+    ],
+    ...
+];
+</code></pre>
+<p>Как вы можете видеть, комплекты ресурсов поделены на три группы: <code>allShared</code>, <code>allBackEnd</code> и <code>allFrontEnd</code>. Каждая из которых зависит от соответствующего набора комплектов ресурсов. Например, <code>allBackEnd</code> зависит от <code>app\assets\AdminAsset</code>. При запуске команды <code>asset</code> с данной конфигурацией будут объединены комплекты ресурсов согласно приведенной выше спецификации.</p>
+<blockquote><p>Для справки: Вы можете оставить <code>depends</code> конфигурацию пустой для одного из намеченных комплектов. Поступая таким образом, данный комплект ресурсов будет зависеть от всех остальных комплектов ресурсов, от которых другие целевые комплекты не зависят.</p>
+</blockquote>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 09 Dec 2020 00:16:05 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

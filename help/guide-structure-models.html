@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/1728b664/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9c5d0894/solarized_light.css" rel="stylesheet">
+<link href="./assets/f2ce5bcd/style.css" rel="stylesheet">
+<script src="./assets/bbf84a7a/jquery.js"></script>
+<script src="./assets/1728b664/js/bootstrap.js"></script>
+<script src="./assets/fd63b446/jssearch.js"></script>    <title>Модели - Структура приложения - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w871" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w871-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w871-collapse" class="collapse navbar-collapse"><ul id="w872" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w873" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-855" data-toggle="collapse" data-parent="#navigation">Введение <b class="caret"></b></a><div id="navigation-855" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">О Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Обновление с версии 1.1</a></div>
+<a class="list-group-item" href="#navigation-856" data-toggle="collapse" data-parent="#navigation">Первое знакомство <b class="caret"></b></a><div id="navigation-856" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Установка Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Запуск приложения</a>
+<a class="list-group-item" href="./guide-start-hello.html">Говорим «привет»</a>
+<a class="list-group-item" href="./guide-start-forms.html">Работа с формами</a>
+<a class="list-group-item" href="./guide-start-databases.html">Работа с базами данных</a>
+<a class="list-group-item" href="./guide-start-gii.html">Генерация кода при помощи Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Что дальше?</a></div>
+<a class="list-group-item active" href="#navigation-857" data-toggle="collapse" data-parent="#navigation">Структура приложения <b class="caret"></b></a><div id="navigation-857" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-structure-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Входные скрипты</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Приложения</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Компоненты приложения</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Контроллеры</a>
+<a class="list-group-item active" href="./guide-structure-models.html">Модели</a>
+<a class="list-group-item" href="./guide-structure-views.html">Представления</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Модули</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Фильтры</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Виджеты</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Расширения</a></div>
+<a class="list-group-item" href="#navigation-858" data-toggle="collapse" data-parent="#navigation">Обработка запросов <b class="caret"></b></a><div id="navigation-858" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Разбор и генерация URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Запросы</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Ответы</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Сессии и куки</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Обработка ошибок</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Логирование</a></div>
+<a class="list-group-item" href="#navigation-859" data-toggle="collapse" data-parent="#navigation">Основные понятия <b class="caret"></b></a><div id="navigation-859" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Компоненты</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Свойства</a>
+<a class="list-group-item" href="./guide-concept-events.html">События</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Поведения</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Конфигурации</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Псевдонимы</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Автозагрузка классов</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item" href="#navigation-860" data-toggle="collapse" data-parent="#navigation">Работа с базами данных <b class="caret"></b></a><div id="navigation-860" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Объекты доступа к данным (DAO)</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Построитель запросов</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Миграции</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-ru/README.md">Sphinx</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-redis/blob/master/docs/guide-ru/README.md">Redis</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-ru/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-ru/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-861" data-toggle="collapse" data-parent="#navigation">Получение данных от пользователя <b class="caret"></b></a><div id="navigation-861" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Создание форм</a>
+<a class="list-group-item" href="./guide-input-validation.html">Валидация</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Загрузка файлов</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Табличный ввод</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Работа с несколькими моделями</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">Расширение ActiveForm на стороне клиента</a></div>
+<a class="list-group-item" href="#navigation-862" data-toggle="collapse" data-parent="#navigation">Отображение данных <b class="caret"></b></a><div id="navigation-862" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Форматирование данных</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Постраничная разбивка</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Сортировка</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Провайдеры данных</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Виджеты для данных</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Работа с клиентскими скриптами</a>
+<a class="list-group-item" href="./guide-output-theming.html">Темизация</a></div>
+<a class="list-group-item" href="#navigation-863" data-toggle="collapse" data-parent="#navigation">Безопасность <b class="caret"></b></a><div id="navigation-863" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-security-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Авторизация</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Работа с паролями</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">Криптография</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-ru/README.md">Клиенты авторизации</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Лучшие практики</a></div>
+<a class="list-group-item" href="#navigation-864" data-toggle="collapse" data-parent="#navigation">Кеширование <b class="caret"></b></a><div id="navigation-864" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-caching-data.html">Кэширование данных</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Кэширование фрагментов</a>
+<a class="list-group-item" href="./guide-caching-page.html">Кэширование страниц</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP кэширование</a></div>
+<a class="list-group-item" href="#navigation-865" data-toggle="collapse" data-parent="#navigation">Веб-сервисы REST <b class="caret"></b></a><div id="navigation-865" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Быстрый старт</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Роутинг</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Форматирование ответа</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Ограничение частоты запросов</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Версионирование</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Обработка ошибок</a></div>
+<a class="list-group-item" href="#navigation-866" data-toggle="collapse" data-parent="#navigation">Инструменты разработчика <b class="caret"></b></a><div id="navigation-866" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Отладочная панель и отладчик</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide/README.md">Генерация кода с Gii</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">Генератор документации API</a></div>
+<a class="list-group-item" href="#navigation-867" data-toggle="collapse" data-parent="#navigation">Тестирование <b class="caret"></b></a><div id="navigation-867" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Настройка тестового окружения</a>
+<a class="list-group-item" href="./guide-test-unit.html">Модульные тесты</a>
+<a class="list-group-item" href="./guide-test-functional.html">Функциональные тесты</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Приёмочные тесты</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Фикстуры</a></div>
+<a class="list-group-item" href="#navigation-868" data-toggle="collapse" data-parent="#navigation">Специальные темы <b class="caret"></b></a><div id="navigation-868" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">Шаблон приложения advanced</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Создание приложения с нуля</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Консольные команды</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Встроенные валидаторы</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Интернационализация</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Отправка почты</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Оптимизация производительности</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Окружение виртуального хостинга</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Шаблонизаторы</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Работа со сторонним кодом</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">Использование Yii в качестве микро-framework&#039;а</a></div>
+<a class="list-group-item" href="#navigation-869" data-toggle="collapse" data-parent="#navigation">Виджеты <b class="caret"></b></a><div id="navigation-869" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-ru/README.md">Виджеты Bootstrap</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-ru/README.md">Виджеты Jquery UI</a></div>
+<a class="list-group-item" href="#navigation-870" data-toggle="collapse" data-parent="#navigation">Хелперы <b class="caret"></b></a><div id="navigation-870" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url хелпер</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Модели <span id="modeli"></span><a href="#modeli" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#attributes">Атрибуты</a></li>
+<li><a href="#scenarios">Сценарии</a></li>
+<li><a href="#validation-rules">Правила валидации</a></li>
+<li><a href="#massive-assignment">Массовое Присвоение</a></li>
+<li><a href="#data-exporting">Экспорт Данных</a></li>
+<li><a href="#best-practices">Лучшие практические методики разработки моделей</a></li></ol></div>
+<p>Модели являются частью архитектуры <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">MVC</a> (Модель-Вид-Контроллер). Они представляют собой объекты бизнес данных, правил и логики.</p>
+<p>Вы можете создавать классы моделей путём расширения класса <a href="./yii-base-model.html">yii\base\Model</a> или его дочерних классов. Базовый класс <a href="./yii-base-model.html">yii\base\Model</a> поддерживает много полезных функций:</p>
+<ul>
+<li><a href="#attributes">Атрибуты</a>: представляют собой рабочие данные и могут быть доступны как обычные свойства объекта или элементы массива;</li>
+<li><a href="#attribute-labels">Метки атрибутов</a>: задают отображение атрибута;</li>
+<li><a href="#massive-assignment">Массовое присвоение</a>: поддержка заполнения нескольких атрибутов в один шаг;</li>
+<li><a href="#validation-rules">Правила проверки</a>: обеспечивают ввод данных на основе заявленных правил проверки;</li>
+<li><a href="#data-exporting">Экспорт Данных</a>: разрешает данным модели быть экспортированными в массивы с настройкой форматов.</li>
+</ul>
+<p>Класс <code>Model</code> также является базовым классом для многих расширенных моделей, таких как <a href="guide-db-active-record.html">Active Record</a>. Пожалуйста, обратитесь к соответствующей документации для более подробной информации об этих расширенных моделях.</p>
+<blockquote class="info"><p><strong>Информация: </strong>Вы не обязаны основывать свои классы моделей на <a href="./yii-base-model.html">yii\base\Model</a>. Однако, поскольку в yii есть много компонентов, созданных для поддержки <a href="./yii-base-model.html">yii\base\Model</a>, обычно так делать предпочтительнее для базового класса модели.</p>
+</blockquote>
+<h2>Атрибуты  <span id="attributes"></span><a href="#attributes" class="hashlink">&para;</a></h2><p>Модели предоставляют рабочие данные в терминах <em>атрибутах</em>. Каждый атрибут представляет собой публично доступное свойство модели. Метод <a href="./yii-base-model.html#attributes()-detail">yii\base\Model::attributes()</a> определяет какие атрибуты имеет класс модели.</p>
+<p>Вы можете получить доступ к атрибуту как к обычному свойству объекта:</p>
+<pre><code class="hljs php language-php">$model = <span class="hljs-keyword">new</span> \app\models\ContactForm;
+
+<span class="hljs-comment">// "name" - это атрибут модели ContactForm</span>
+$model-&gt;name = <span class="hljs-string">'example'</span>;
+<span class="hljs-keyword">echo</span> $model-&gt;name;
+</code></pre>
+<p>Также возможно получить доступ к атрибутам как к элементам массива, спасибо поддержке <a href="https://secure.php.net/manual/ru/class.arrayaccess.php">ArrayAccess</a> и <a href="https://secure.php.net/manual/ru/class.traversable.php">Traversable</a>
+в <a href="./yii-base-model.html">yii\base\Model</a>:</p>
+<pre><code class="hljs php language-php">$model = <span class="hljs-keyword">new</span> \app\models\ContactForm;
+
+<span class="hljs-comment">// доступ к атрибутам как к элементам массива</span>
+$model[<span class="hljs-string">'name'</span>] = <span class="hljs-string">'example'</span>;
+<span class="hljs-keyword">echo</span> $model[<span class="hljs-string">'name'</span>];
+
+<span class="hljs-comment">// Модель является обходимой(traversable) с использованием foreach.</span>
+<span class="hljs-keyword">foreach</span> ($model <span class="hljs-keyword">as</span> $name =&gt; $value) {
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">"$name: $value\n"</span>;
+}
+</code></pre>
+<h3>Определение Атрибутов  <span id="defining-attributes"></span><a href="#defining-attributes" class="hashlink">&para;</a></h3><p>По умолчанию, если ваш класс модели расширяется напрямую от <a href="./yii-base-model.html">yii\base\Model</a>, то все <em>не статичные публичные</em> переменные являются атрибутами. Например, у класса модели <code>ContactForm</code> , который находится ниже, четыре атрибута: <code>name</code>, <code>email</code>, <code>subject</code> и <code>body</code>. Модель <code>ContactForm</code> используется для представления входных данных, полученных из HTML формы.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Model</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ContactForm</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Model</span>
+</span>{
+    <span class="hljs-keyword">public</span> $name;
+    <span class="hljs-keyword">public</span> $email;
+    <span class="hljs-keyword">public</span> $subject;
+    <span class="hljs-keyword">public</span> $body;
+}
+</code></pre>
+<p>Вы можете переопределить метод <a href="./yii-base-model.html#attributes()-detail">yii\base\Model::attributes()</a>, чтобы определять атрибуты другим способом. Метод должен возвращать имена атрибутов в модели. Например <a href="./yii-db-activerecord.html">yii\db\ActiveRecord</a> делает так, возвращая имена столбцов из связанной таблицы базы данных в качестве имён атрибутов. Также может понадобиться переопределить магические методы, такие как <code>__get()</code>, <code>__set()</code> для того, чтобы атрибуты могли быть доступны как обычные свойства объекта.</p>
+<h3>Метки атрибутов  <span id="attribute-labels"></span><a href="#attribute-labels" class="hashlink">&para;</a></h3><p>При отображении значений или при получении ввода значений атрибутов, часто требуется отобразить некоторые надписи, связанные с атрибутами. Например, если атрибут назван <code>firstName</code>, Вы можете отобразить его как <code>First Name</code>, что является более удобным для пользователя, в тех случаях, когда атрибут отображается конечным пользователям в таких местах, как форма входа и сообщения об ошибках.</p>
+<p>Вы можете получить метку атрибута, вызвав <a href="./yii-base-model.html#getAttributeLabel()-detail">yii\base\Model::getAttributeLabel()</a>. Например,</p>
+<pre><code class="hljs php language-php">$model = <span class="hljs-keyword">new</span> \app\models\ContactForm;
+
+<span class="hljs-comment">// отобразит "Name"</span>
+<span class="hljs-keyword">echo</span> $model-&gt;getAttributeLabel(<span class="hljs-string">'name'</span>);
+</code></pre>
+<p>По умолчанию, метки атрибутов автоматически генерируются из названия атрибута. Генерация выполняется методом <a href="./yii-base-model.html#generateAttributeLabel()-detail">yii\base\Model::generateAttributeLabel()</a>. Он превращает первую букву каждого слова в верхний регистр, если имена переменных состоят из нескольких слов. Например, <code>username</code> станет <code>Username</code>, а <code>firstName</code> станет <code>First Name</code>.</p>
+<p>Если Вы не хотите использовать автоматически сгенерированные метки, Вы можете переопределить метод <a href="./yii-base-model.html#attributeLabels()-detail">yii\base\Model::attributeLabels()</a>, чтобы явно объявить метку атрибута. Например,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Model</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ContactForm</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Model</span>
+</span>{
+    <span class="hljs-keyword">public</span> $name;
+    <span class="hljs-keyword">public</span> $email;
+    <span class="hljs-keyword">public</span> $subject;
+    <span class="hljs-keyword">public</span> $body;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">attributeLabels</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'Your name'</span>,
+            <span class="hljs-string">'email'</span> =&gt; <span class="hljs-string">'Your email address'</span>,
+            <span class="hljs-string">'subject'</span> =&gt; <span class="hljs-string">'Subject'</span>,
+            <span class="hljs-string">'body'</span> =&gt; <span class="hljs-string">'Content'</span>,
+        ];
+    }
+}
+</code></pre>
+<p>Для приложений поддерживающих мультиязычность, Вы можете перевести метки атрибутов. Это можно сделать в методе <a href="./yii-base-model.html#attributeLabels()-detail">attributeLabels()</a> как показано ниже:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">attributeLabels</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-string">'name'</span> =&gt; \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Your name'</span>),
+        <span class="hljs-string">'email'</span> =&gt; \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Your email address'</span>),
+        <span class="hljs-string">'subject'</span> =&gt; \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Subject'</span>),
+        <span class="hljs-string">'body'</span> =&gt; \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Content'</span>),
+    ];
+}
+</code></pre>
+<p>Можно даже условно определять метки атрибутов. Например, на основе <a href="#scenarios">сценариев</a> и использованной в нём модели , Вы можете возвращать различные метки для одного и того же атрибута.</p>
+<blockquote><p>Для справки: Строго говоря, метки атрибутов являются частью <a href="guide-structure-views.html">видов</a>. Но объявление меток в моделях часто очень удобно и приводит к чистоте кода и повторному его использованию.</p>
+</blockquote>
+<h2>Сценарии  <span id="scenarios"></span><a href="#scenarios" class="hashlink">&para;</a></h2><p>Модель может быть использована в различных <em>сценариях</em>. Например, модель <code>User</code> может быть использована для коллекции входных логинов пользователей, а также может быть использована для цели регистрации пользователей.  	
+В различных сценариях, модель может использовать различные бизнес-правила и логику. Например, атрибут <code>email</code> может потребоваться во время регистрации пользователя, но не во время входа пользователя в систему.</p>
+<p>Модель использует свойство <a href="./yii-base-model.html#$scenario-detail">yii\base\Model::$scenario</a>, чтобы отслеживать сценарий, в котором она используется. По умолчанию, модель поддерживает только один сценарий с именем <code>default</code>. В следующем коде показано два способа установки сценария модели:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// сценарий задается как свойство</span>
+$model = <span class="hljs-keyword">new</span> User;
+$model-&gt;scenario = User::SCENARIO_LOGIN;
+
+<span class="hljs-comment">// сценарий задается через конфигурацию</span>
+$model = <span class="hljs-keyword">new</span> User([<span class="hljs-string">'scenario'</span> =&gt; User::SCENARIO_LOGIN]);
+</code></pre>
+<p>По умолчанию сценарии, поддерживаемые моделью, определяются <a href="#validation-rules">правилами валидации</a> объявленными
+в модели. Однако Вы можете изменить это поведение путем переопределения метода <a href="./yii-base-model.html#scenarios()-detail">yii\base\Model::scenarios()</a> как показано ниже:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">const</span> SCENARIO_LOGIN = <span class="hljs-string">'login'</span>;
+    <span class="hljs-keyword">const</span> SCENARIO_REGISTER = <span class="hljs-string">'register'</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">scenarios</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            <span class="hljs-keyword">self</span>::SCENARIO_LOGIN =&gt; [<span class="hljs-string">'username'</span>, <span class="hljs-string">'password'</span>],
+            <span class="hljs-keyword">self</span>::SCENARIO_REGISTER =&gt; [<span class="hljs-string">'username'</span>, <span class="hljs-string">'email'</span>, <span class="hljs-string">'password'</span>],
+        ];
+    }
+}
+</code></pre>
+<blockquote class="info"><p><strong>Информация: </strong>В приведенном выше и следующих примерах, классы моделей расширяются от <a href="./yii-db-activerecord.html">yii\db\ActiveRecord</a> потому, что использование нескольких сценариев обычно происходит от классов <a href="guide-db-active-record.html">Active Record</a>.</p>
+</blockquote>
+<p>Метод <code>scenarios()</code> возвращает массив, ключами которого являются имена сценариев, а значения - соответствующие <em>активные атрибуты</em>. Активные атрибуты могут быть <a href="#massive-assignment">массово присвоены</a> и подлежат <a href="#validation-rules">валидации</a>. В приведенном выше примере, атрибуты <code>username</code> и <code>password</code> это активные атрибуты сценария <code>login</code>, а в сценарии <code>register</code> так же активным атрибутом является <code>email</code> вместе с <code>username</code> и <code>password</code>.</p>
+<p>По умолчанию реализация <code>scenarios()</code> вернёт все найденные сценарии в правилах валидации, задекларированных в методе <a href="./yii-base-model.html#rules()-detail">yii\base\Model::rules()</a>. При переопределении метода <code>scenarios()</code>, если Вы хотите ввести новые сценарии помимо стандартных, Вы можете написать код на основе следующего примера:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">const</span> SCENARIO_LOGIN = <span class="hljs-string">'login'</span>;
+    <span class="hljs-keyword">const</span> SCENARIO_REGISTER = <span class="hljs-string">'register'</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">scenarios</span><span class="hljs-params">()</span>
+    </span>{
+        $scenarios = <span class="hljs-keyword">parent</span>::scenarios();
+        $scenarios[<span class="hljs-keyword">self</span>::SCENARIO_LOGIN] = [<span class="hljs-string">'username'</span>, <span class="hljs-string">'password'</span>];
+        $scenarios[<span class="hljs-keyword">self</span>::SCENARIO_REGISTER] = [<span class="hljs-string">'username'</span>, <span class="hljs-string">'email'</span>, <span class="hljs-string">'password'</span>];
+        <span class="hljs-keyword">return</span> $scenarios;
+    }
+}
+</code></pre>
+<p>Возможности сценариев в основном используются <a href="#validation-rules">валидацией</a> и <a href="#massive-assignment">массовым присвоением атрибутов</a>. Однако, Вы можете использовать их и для других целей. Например, Вы можете различным образом объявлять <a href="#attribute-labels">метки атрибутов</a> на основе текущего сценария.</p>
+<h2>Правила валидации  <span id="validation-rules"></span><a href="#validation-rules" class="hashlink">&para;</a></h2><p>Когда данные модели, получены от конечных пользователей, они должны быть проверены, для того чтобы убедиться, что данные удовлетворяют определенным правилам (так называемым <em>правилам валидации</em> также известными как <em>бизнес-правила</em>). Например, дана модель <code>ContactForm</code>, возможно Вы захотите убедиться, что все атрибуты являются не пустыми значениями, а атрибут <code>email</code> содержит допустимый адрес электронной почты. Если значения нескольких атрибутов не удовлетворяют соответствующим бизнес-правилам, то должны быть показаны соответствующие сообщения об ошибках, чтобы помочь конечному пользователю исправить допущенные ошибки.</p>
+<p>Вы можете вызвать <a href="./yii-base-model.html#validate()-detail">yii\base\Model::validate()</a> для проверки полученных данных. Данный метод будет использовать
+правила валидации определённые в <a href="./yii-base-model.html#rules()-detail">yii\base\Model::rules()</a> для проверки каждого соответствующего атрибута. Если ошибок не найдено, то возвращается <code>true</code>, в противном случае возвращается <code>false</code>, а ошибки содержит свойство <a href="./yii-base-model.html#$errors-detail">yii\base\Model::$errors</a>. Например,</p>
+<pre><code class="hljs php language-php">$model = <span class="hljs-keyword">new</span> \app\models\ContactForm;
+
+<span class="hljs-comment">// модель заполнения атрибутов данными, вводимыми пользователем</span>
+$model-&gt;attributes = \Yii::$app-&gt;request-&gt;post(<span class="hljs-string">'ContactForm'</span>);
+
+<span class="hljs-keyword">if</span> ($model-&gt;validate()) {
+    <span class="hljs-comment">// все данные верны</span>
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">// проверка не удалась:  $errors - это массив содержащий сообщения об ошибках</span>
+    $errors = $model-&gt;errors;
+}
+</code></pre>
+<p>Объявляем правила валидации связанные с моделью, переопределяем метод <a href="./yii-base-model.html#rules()-detail">yii\base\Model::rules()</a> возврата правил атрибутов модели которые следует удовлетворить. В следующем примере показаны правила проверки объявленные в модели <code>ContactForm</code>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-comment">// name, email, subject и body атрибуты обязательны</span>
+        [[<span class="hljs-string">'name'</span>, <span class="hljs-string">'email'</span>, <span class="hljs-string">'subject'</span>, <span class="hljs-string">'body'</span>], <span class="hljs-string">'required'</span>],
+
+        <span class="hljs-comment">// атрибут email должен быть правильным email адресом</span>
+        [<span class="hljs-string">'email'</span>, <span class="hljs-string">'email'</span>],
+    ];
+}
+</code></pre>
+<p>Правило может использоваться для проверки одного или нескольких атрибутов, также и атрибут может быть проверен одним или несколькими правилами. Пожалуйста, обратитесь к разделу <a href="guide-input-validation.html">Проверка входных значений</a> для более подробной информации о том, как объявлять правила проверки.</p>
+<p>Иногда необходимо, чтобы правила применялись только в определенных <a href="#scenarios">сценариях</a>. Чтобы это сделать необходимо указать свойство <code>on</code> в правилах, следующим образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-comment">// username, email и password требуются в сценарии "register"</span>
+        [[<span class="hljs-string">'username'</span>, <span class="hljs-string">'email'</span>, <span class="hljs-string">'password'</span>], <span class="hljs-string">'required'</span>, <span class="hljs-string">'on'</span> =&gt; <span class="hljs-keyword">self</span>::SCENARIO_REGISTER],
+
+        <span class="hljs-comment">// username и password требуются в сценарии "login"</span>
+        [[<span class="hljs-string">'username'</span>, <span class="hljs-string">'password'</span>], <span class="hljs-string">'required'</span>, <span class="hljs-string">'on'</span> =&gt; <span class="hljs-keyword">self</span>::SCENARIO_LOGIN],
+    ];
+}
+</code></pre>
+<p>Если не указать свойство <code>on</code>, то правило применяется во всех сценариях. Правило называется <em>активным правилом</em> если оно может быть применено в текущем сценарии <a href="./yii-base-model.html#$scenario-detail">scenario</a>.</p>
+<p>Атрибут будет проверяться тогда и только тогда если он является активным атрибутом объявленным в <code>scenarios()</code> и
+связанным с одним или несколькими активными правилами, объявленными в <code>rules()</code>.</p>
+<h2>Массовое Присвоение  <span id="massive-assignment"></span><a href="#massive-assignment" class="hashlink">&para;</a></h2><p>Массовое присвоение - это удобный способ заполнения модели данными вводимыми пользователем с помощью одной строки кода. Он заполняет атрибуты модели путем присвоения входных данных непосредственно свойству <a href="./yii-base-model.html#$attributes-detail">yii\base\Model::$attributes</a>. Следующие два куска кода эквивалентны, они оба пытаются присвоить данные из формы представленные конечными пользователями атрибутам модели <code>ContactForm</code>. Ясно, что первый код гораздо чище и менее подвержен ошибкам, чем второй:</p>
+<pre><code class="hljs php language-php">$model = <span class="hljs-keyword">new</span> \app\models\ContactForm;
+$model-&gt;attributes = \Yii::$app-&gt;request-&gt;post(<span class="hljs-string">'ContactForm'</span>);
+</code></pre>
+<pre><code class="hljs php language-php">$model = <span class="hljs-keyword">new</span> \app\models\ContactForm;
+$data = \Yii::$app-&gt;request-&gt;post(<span class="hljs-string">'ContactForm'</span>, []);
+$model-&gt;name = <span class="hljs-keyword">isset</span>($data[<span class="hljs-string">'name'</span>]) ? $data[<span class="hljs-string">'name'</span>] : <span class="hljs-keyword">null</span>;
+$model-&gt;email = <span class="hljs-keyword">isset</span>($data[<span class="hljs-string">'email'</span>]) ? $data[<span class="hljs-string">'email'</span>] : <span class="hljs-keyword">null</span>;
+$model-&gt;subject = <span class="hljs-keyword">isset</span>($data[<span class="hljs-string">'subject'</span>]) ? $data[<span class="hljs-string">'subject'</span>] : <span class="hljs-keyword">null</span>;
+$model-&gt;body = <span class="hljs-keyword">isset</span>($data[<span class="hljs-string">'body'</span>]) ? $data[<span class="hljs-string">'body'</span>] : <span class="hljs-keyword">null</span>;
+</code></pre>
+<h3>Безопасные Атрибуты  <span id="safe-attributes"></span><a href="#safe-attributes" class="hashlink">&para;</a></h3><p>Массовое присвоение применяется только к так называемым <em>безопасным атрибутам</em>, которые являются атрибутами, перечисленными в <a href="./yii-base-model.html#scenarios()-detail">yii\base\Model::scenarios()</a> в текущем сценарии <a href="./yii-base-model.html#$scenario-detail">scenario</a> модели. Например, если модель <code>User</code> имеет следующий заданный сценарий, в данном случае это сценарий <code>login</code>, то только <code>username</code> и <code>password</code> могут быть массово присвоены. Любые другие атрибуты останутся нетронутыми.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">scenarios</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-keyword">self</span>::SCENARIO_LOGIN =&gt; [<span class="hljs-string">'username'</span>, <span class="hljs-string">'password'</span>],
+        <span class="hljs-keyword">self</span>::SCENARIO_REGISTER =&gt; [<span class="hljs-string">'username'</span>, <span class="hljs-string">'email'</span>, <span class="hljs-string">'password'</span>],
+    ];
+}
+</code></pre>
+<blockquote class="info"><p><strong>Информация: </strong>Причиной того, что массовое присвоение атрибутов применяется только к безопасным атрибутам, является то, что необходимо контролировать какие атрибуты могут быть изменены конечными пользователями. Например, если модель <code>User</code> имеет атрибут <code>permission</code>, который определяет разрешения, назначенные пользователю, то необходимо быть уверенным, что данный атрибут может быть изменён только администраторами через бэкэнд-интерфейс.</p>
+</blockquote>
+<p>По умолчанию <a href="./yii-base-model.html#scenarios()-detail">yii\base\Model::scenarios()</a> будет возвращать все сценарии и атрибуты найденные в <a href="./yii-base-model.html#rules()-detail">yii\base\Model::rules()</a>, если не переопределить этот метод, атрибут будет считаться безопасным только в случае, если он участвует в любом из активных правил проверки.</p>
+<p>По этой причине существует специальный валидатор с псевдонимом <code>safe</code>, он предоставляет возможность объявить атрибут безопасным без фактической его проверки. Например, следующие правила определяют, что оба атрибута <code>title</code> и <code>description</code> являются безопасными атрибутами.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        [[<span class="hljs-string">'title'</span>, <span class="hljs-string">'description'</span>], <span class="hljs-string">'safe'</span>],
+    ];
+}
+</code></pre>
+<h3>Небезопасные атрибуты  <span id="unsafe-attributes"></span><a href="#unsafe-attributes" class="hashlink">&para;</a></h3><p>Как сказано выше, метод <a href="./yii-base-model.html#scenarios()-detail">yii\base\Model::scenarios()</a> служит двум целям: определения, какие атрибуты должны быть проверены, и определения, какие атрибуты являются безопасными (т.е. не требуют проверки). В некоторых случаях необходимо проверить атрибут не объявляя его безопасным. Вы можете сделать это с помощью префикса восклицательный знак <code>!</code> в имени атрибута при объявлении его в <code>scenarios()</code> как атрибут <code>secret</code> в следующем примере:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">scenarios</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-keyword">self</span>::SCENARIO_LOGIN =&gt; [<span class="hljs-string">'username'</span>, <span class="hljs-string">'password'</span>, <span class="hljs-string">'!secret'</span>],
+    ];
+}
+</code></pre>
+<p>Когда модель будет присутствовать в сценарии <code>login</code>, то все три эти атрибута будут проверены. Однако, только атрибуты <code>username</code> и <code>password</code> могут быть массово присвоены. Назначить входное значение атрибуту <code>secret</code> нужно явно следующим образом,</p>
+<pre><code class="hljs php language-php">$model-&gt;secret = $secret;
+</code></pre>
+<h2>Экспорт Данных  <span id="data-exporting"></span><a href="#data-exporting" class="hashlink">&para;</a></h2><p>Часто нужно экспортировать модели в различные форматы. Например, может потребоваться преобразовать коллекцию моделей в JSON или Excel формат. Процесс экспорта может быть разбит на два самостоятельных шага. На первом этапе модели преобразуются в массивы; на втором этапе массивы преобразуются в целевые форматы. Вы можете сосредоточиться только на первом шаге потому, что второй шаг может быть достигнут путем универсального инструмента форматирования данных, такого как <a href="./yii-web-jsonresponseformatter.html">yii\web\JsonResponseFormatter</a>.</p>
+<p>Самый простой способ преобразования модели в массив - использовать свойство <a href="./yii-base-model.html#$attributes-detail">yii\base\Model::$attributes</a>.
+Например</p>
+<pre><code class="hljs php language-php">$post = \app\models\Post::findOne(<span class="hljs-number">100</span>);
+$array = $post-&gt;attributes;
+</code></pre>
+<p>По умолчанию свойство <a href="./yii-base-model.html#$attributes-detail">yii\base\Model::$attributes</a> возвращает значения <em>всех</em> атрибутов объявленных в <a href="./yii-base-model.html#attributes()-detail">yii\base\Model::attributes()</a>.</p>
+<p>Более гибкий и мощный способ конвертирования модели в массив - использовать метод <a href="./yii-base-arrayabletrait.html#toArray()-detail">yii\base\Model::toArray()</a>. Его поведение по умолчанию такое же как и у <a href="./yii-base-model.html#$attributes-detail">yii\base\Model::$attributes</a>. Тем не менее, он позволяет выбрать, какие элементы данных, называемые <em>полями</em>, поставить в результирующий массив и как они должны быть отформатированы. На самом деле, этот способ экспорта моделей по умолчанию применяется при разработке в RESTful Web service, как описано в <a href="guide-rest-response-formatting.html">Response Formatting</a>.</p>
+<h3>Поля  <span id="fields"></span><a href="#fields" class="hashlink">&para;</a></h3><p>Поле - это просто именованный элемент в массиве, который может быть получен вызовом метода <a href="./yii-base-arrayabletrait.html#toArray()-detail">yii\base\Model::toArray()</a> модели.</p>
+<p>По умолчанию имена полей эквивалентны именам атрибутов. Однако, это поведение можно изменить, переопределив методы
+<a href="./yii-base-model.html#fields()-detail">fields()</a> и/или <a href="./yii-base-arrayabletrait.html#extraFields()-detail">extraFields()</a>. Оба метода должны возвращать список определенных полей. Поля определённые <code>fields()</code> являются полями по умолчанию, это означает, что <code>toArray()</code> будет возвращать эти поля по умолчанию. Метод <code>extraFields()</code> определяет дополнительно доступные поля, которые также могут быть возвращены <code>toArray()</code> так много, как Вы укажите их через параметр <code>$expand</code>. Например, следующий код будет возвращать все поля определённые в <code>fields()</code>, а также поля <code>prettyName</code> и <code>fullAddress</code>, если они определены в <code>extraFields()</code>.</p>
+<pre><code class="hljs php language-php">$array = $model-&gt;toArray([], [<span class="hljs-string">'prettyName'</span>, <span class="hljs-string">'fullAddress'</span>]);
+</code></pre>
+<p>Вы можете переопределить <code>fields()</code> чтобы добавить, удалить, переименовать или переопределить поля. Возвращаемым значением <code>fields()</code> должен быть массив. Ключами массива являются имена полей, а значениями - соответствующие определения полей, которые могут быть либо именами свойств/атрибутов, либо анонимными функциями, возвращающими соответствующие значения полей. В частном случае, когда имя поля совпадает с именем его атрибута, возможно опустить ключ массива. Например,</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// использовать явное перечисление всех полей, лучше всего тогда, когда вы хотите убедиться,</span>
+<span class="hljs-comment">// что изменения в вашей таблице базы данных или атрибуте модели не вызывают изменение вашего поля</span>
+<span class="hljs-comment">// (для поддержания обратной совместимости API интерфейса).</span>
+
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fields</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-comment">// здесь имя поля совпадает с именем атрибута</span>
+        <span class="hljs-string">'id'</span>,
+
+        <span class="hljs-comment">// здесь имя поля - "email", соответствующее ему имя атрибута - "email_address"</span>
+        <span class="hljs-string">'email'</span> =&gt; <span class="hljs-string">'email_address'</span>,
+
+        <span class="hljs-comment">// здесь имя поля - "name", а значение определяется обратным вызовом PHP</span>
+        <span class="hljs-string">'name'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;first_name . <span class="hljs-string">' '</span> . <span class="hljs-keyword">$this</span>-&gt;last_name;
+        },
+    ];
+}
+
+<span class="hljs-comment">// использовать фильтрование нескольких полей лучше тогда, когда вы хотите наследовать</span>
+<span class="hljs-comment">// родительскую реализацию и черный список некоторых "чувствительных" полей.</span>
+
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fields</span><span class="hljs-params">()</span>
+</span>{
+    $fields = <span class="hljs-keyword">parent</span>::fields();
+
+    <span class="hljs-comment">// удаляем поля, содержащие конфиденциальную информацию</span>
+    <span class="hljs-keyword">unset</span>($fields[<span class="hljs-string">'auth_key'</span>], $fields[<span class="hljs-string">'password_hash'</span>], $fields[<span class="hljs-string">'password_reset_token'</span>]);
+
+    <span class="hljs-keyword">return</span> $fields;
+}
+</code></pre>
+<blockquote class="warning"><p><strong>Внимание: </strong>по умолчанию все атрибуты модели будут включены в экспортируемый массив, вы должны проверить ваши данные и убедиться, что они не содержат конфиденциальной информации. Если такая информация присутствует, вы должны переопределить <code>fields()</code> и отфильтровать поля. В приведенном выше примере мы выбираем и отфильтровываем <code>auth_key</code>, <code>password_hash</code> и <code>password_reset_token</code>.</p>
+</blockquote>
+<h2>Лучшие практические методики разработки моделей  <span id="best-practices"></span><a href="#best-practices" class="hashlink">&para;</a></h2><p>Модели являются центральным местом представления бизнес-данных, правил и логики. Они часто повторно используются в разных местах. В хорошо спроектированном приложении, модели, как правило, намного больше, чем <a href="guide-structure-controllers.html">контроллеры</a>.</p>
+<p>В целом, модели</p>
+<ul>
+<li>могут содержать атрибуты для представления бизнес-данных;</li>
+<li>могут содержать правила проверки для обеспечения целостности и достоверности данных;</li>
+<li>могут содержать методы с реализацией бизнес-логики;</li>
+<li>не следует напрямую задавать запрос на доступ, либо сессии, либо любые другие данные об окружающей среде. Эти данные должны быть введены <a href="guide-structure-controllers.html">контроллерами</a> в модели;</li>
+<li>следует избегать встраивания HTML или другого отображаемого кода - это лучше делать в <a href="guide-structure-views.html">видах</a>;</li>
+<li>избегайте слишком большого количества <a href="#scenarios">сценариев</a> в одной модели.</li>
+</ul>
+<p>Рекомендации выше обычно учитываются при разработке больших сложных систем. В таких системах, модели могут быть очень большими, в связи с тем, что они используются во многих местах и поэтому могут содержать множество наборов правил и бизнес-логики. Это часто заканчивается кошмаром при поддержании кода модели, поскольку одним касанием кода можно повлиять на несколько разных мест. Чтобы сделать код модели более легким в обслуживании, Вы можете предпринять следующую стратегию:</p>
+<ul>
+<li>Определить набор базовых классов моделей, которые являются общими для разных <a href="guide-structure-applications.html">приложений</a> или <a href="guide-structure-modules.html">модулей</a>. Эти классы моделей должны содержать минимальный набор правил и логики, которые являются общими среди всех используемых приложений или модулей.</li>
+<li>В каждом <a href="guide-structure-applications.html">приложении</a> или <a href="guide-structure-modules.html">модуле</a> в котором используется модель, определить конкретный класс модели (или классы моделей), отходящий от соответствующего базового класса модели. Конкретный класс модели должен содержать правила и логику, которые являются специфическими для данного приложения или модуля.</li>
+</ul>
+<p>Например, в <a href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">шаблоне приложения advanced</a>, Вы можете определить базовым классом модели <code>common\models\Post</code>. Тогда для frontend приложения, Вы определяете и используете конкретный класс модели <code>frontend\models\Post</code>, который расширяется от <code>common\models\Post</code>. И аналогичным образом для backend приложения, Вы определяете <code>backend\models\Post</code>. С помощью такой стратегии, можно быть уверенным, что код в <code>frontend\models\Post</code> используется только для конкретного frontend приложения, и если делаются любые изменения в нём, то не нужно беспокоиться, что изменения могут сломать backend приложение.</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 09 Dec 2020 00:16:06 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

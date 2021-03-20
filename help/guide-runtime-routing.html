@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/1728b664/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9c5d0894/solarized_light.css" rel="stylesheet">
+<link href="./assets/f2ce5bcd/style.css" rel="stylesheet">
+<script src="./assets/bbf84a7a/jquery.js"></script>
+<script src="./assets/1728b664/js/bootstrap.js"></script>
+<script src="./assets/fd63b446/jssearch.js"></script>    <title>Разбор и генерация URL - Обработка запросов - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w928" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w928-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w928-collapse" class="collapse navbar-collapse"><ul id="w929" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w930" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-912" data-toggle="collapse" data-parent="#navigation">Введение <b class="caret"></b></a><div id="navigation-912" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">О Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Обновление с версии 1.1</a></div>
+<a class="list-group-item" href="#navigation-913" data-toggle="collapse" data-parent="#navigation">Первое знакомство <b class="caret"></b></a><div id="navigation-913" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Установка Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Запуск приложения</a>
+<a class="list-group-item" href="./guide-start-hello.html">Говорим «привет»</a>
+<a class="list-group-item" href="./guide-start-forms.html">Работа с формами</a>
+<a class="list-group-item" href="./guide-start-databases.html">Работа с базами данных</a>
+<a class="list-group-item" href="./guide-start-gii.html">Генерация кода при помощи Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Что дальше?</a></div>
+<a class="list-group-item" href="#navigation-914" data-toggle="collapse" data-parent="#navigation">Структура приложения <b class="caret"></b></a><div id="navigation-914" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Входные скрипты</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Приложения</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Компоненты приложения</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-structure-models.html">Модели</a>
+<a class="list-group-item" href="./guide-structure-views.html">Представления</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Модули</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Фильтры</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Виджеты</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Расширения</a></div>
+<a class="list-group-item active" href="#navigation-915" data-toggle="collapse" data-parent="#navigation">Обработка запросов <b class="caret"></b></a><div id="navigation-915" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-runtime-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item active" href="./guide-runtime-routing.html">Разбор и генерация URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Запросы</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Ответы</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Сессии и куки</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Обработка ошибок</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Логирование</a></div>
+<a class="list-group-item" href="#navigation-916" data-toggle="collapse" data-parent="#navigation">Основные понятия <b class="caret"></b></a><div id="navigation-916" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Компоненты</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Свойства</a>
+<a class="list-group-item" href="./guide-concept-events.html">События</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Поведения</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Конфигурации</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Псевдонимы</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Автозагрузка классов</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item" href="#navigation-917" data-toggle="collapse" data-parent="#navigation">Работа с базами данных <b class="caret"></b></a><div id="navigation-917" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Объекты доступа к данным (DAO)</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Построитель запросов</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Миграции</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-ru/README.md">Sphinx</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-redis/blob/master/docs/guide-ru/README.md">Redis</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-ru/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-ru/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-918" data-toggle="collapse" data-parent="#navigation">Получение данных от пользователя <b class="caret"></b></a><div id="navigation-918" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Создание форм</a>
+<a class="list-group-item" href="./guide-input-validation.html">Валидация</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Загрузка файлов</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Табличный ввод</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Работа с несколькими моделями</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">Расширение ActiveForm на стороне клиента</a></div>
+<a class="list-group-item" href="#navigation-919" data-toggle="collapse" data-parent="#navigation">Отображение данных <b class="caret"></b></a><div id="navigation-919" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Форматирование данных</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Постраничная разбивка</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Сортировка</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Провайдеры данных</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Виджеты для данных</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Работа с клиентскими скриптами</a>
+<a class="list-group-item" href="./guide-output-theming.html">Темизация</a></div>
+<a class="list-group-item" href="#navigation-920" data-toggle="collapse" data-parent="#navigation">Безопасность <b class="caret"></b></a><div id="navigation-920" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-security-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Авторизация</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Работа с паролями</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">Криптография</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-ru/README.md">Клиенты авторизации</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Лучшие практики</a></div>
+<a class="list-group-item" href="#navigation-921" data-toggle="collapse" data-parent="#navigation">Кеширование <b class="caret"></b></a><div id="navigation-921" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-caching-data.html">Кэширование данных</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Кэширование фрагментов</a>
+<a class="list-group-item" href="./guide-caching-page.html">Кэширование страниц</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP кэширование</a></div>
+<a class="list-group-item" href="#navigation-922" data-toggle="collapse" data-parent="#navigation">Веб-сервисы REST <b class="caret"></b></a><div id="navigation-922" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Быстрый старт</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Роутинг</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Форматирование ответа</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Ограничение частоты запросов</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Версионирование</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Обработка ошибок</a></div>
+<a class="list-group-item" href="#navigation-923" data-toggle="collapse" data-parent="#navigation">Инструменты разработчика <b class="caret"></b></a><div id="navigation-923" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Отладочная панель и отладчик</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide/README.md">Генерация кода с Gii</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">Генератор документации API</a></div>
+<a class="list-group-item" href="#navigation-924" data-toggle="collapse" data-parent="#navigation">Тестирование <b class="caret"></b></a><div id="navigation-924" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Настройка тестового окружения</a>
+<a class="list-group-item" href="./guide-test-unit.html">Модульные тесты</a>
+<a class="list-group-item" href="./guide-test-functional.html">Функциональные тесты</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Приёмочные тесты</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Фикстуры</a></div>
+<a class="list-group-item" href="#navigation-925" data-toggle="collapse" data-parent="#navigation">Специальные темы <b class="caret"></b></a><div id="navigation-925" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">Шаблон приложения advanced</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Создание приложения с нуля</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Консольные команды</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Встроенные валидаторы</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Интернационализация</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Отправка почты</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Оптимизация производительности</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Окружение виртуального хостинга</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Шаблонизаторы</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Работа со сторонним кодом</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">Использование Yii в качестве микро-framework&#039;а</a></div>
+<a class="list-group-item" href="#navigation-926" data-toggle="collapse" data-parent="#navigation">Виджеты <b class="caret"></b></a><div id="navigation-926" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-ru/README.md">Виджеты Bootstrap</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-ru/README.md">Виджеты Jquery UI</a></div>
+<a class="list-group-item" href="#navigation-927" data-toggle="collapse" data-parent="#navigation">Хелперы <b class="caret"></b></a><div id="navigation-927" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url хелпер</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Разбор и генерация URL <span id="razbor-i-generacia-url"></span><a href="#razbor-i-generacia-url" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#url-formats">Форматы URL</a></li>
+<li><a href="#routing">Роутинг</a></li>
+<li><a href="#creating-urls">Создание URL</a></li>
+<li><a href="#using-pretty-urls">Использование человекопонятных URL</a></li>
+<li><a href="#performance-consideration">Производительность</a></li></ol></div>
+<p>При обработке запрошенного URL, Yii приложение первым делом разбирает URL в <a href="guide-structure-controllers.html#marsruty">маршрут</a>. Полученный маршрут используется при создании
+соответствующего экземпляра действия контроллера для обработки запроса. Этот процесс называется <em>роутинг</em>.</p>
+<p>Обратный роутингу процесс называется <em>Создание URL</em>, он отвечает за создание URL из заданного маршрута и соответствующих параметров запроса. При необходимости, созданный URL всегда может быть преобразован в 
+первоначальные маршрут и параметры запроса.</p>
+<p>В основе роутинга и создания URL лежит использование <a href="./yii-web-urlmanager.html">URL manager</a>, 
+зарегистрированного в качестве <a href="guide-structure-application-components.html">компонента приложения</a> <code>urlManager</code>. 
+<a href="./yii-web-urlmanager.html">URL manager</a> содержит метод <a href="./yii-web-urlmanager.html#parseRequest()-detail">parseRequest()</a> 
+для разбора входящего запроса на маршрут и параметры запроса, и метод <a href="./yii-web-urlmanager.html#createUrl()-detail">createUrl()</a> 
+для создания URL из заданного маршрута и параметров запроса.</p>
+<p>Настройка компонента <code>urlManager</code> в конфигурации приложения, позволяет приложению распознавать различные 
+форматы URL без внесения изменений в существующий код приложения. Например, для 
+создания URL для действия <code>post/view</code>, можно использовать следующий код:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">Url</span>;
+
+<span class="hljs-comment">// Url::to() вызывает UrlManager::createUrl() для создания URL</span>
+$url = Url::to([<span class="hljs-string">'post/view'</span>, <span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">100</span>]);
+</code></pre>
+<p>В зависимости от настройки <code>urlManager</code>, URL может быть создан в одном из следующих форматов (или любом другом формате). При последующем запросе URL в таком формате, он будет разобран на исходные маршрут и параметры запроса.</p>
+<pre><code class="hljs ">/index.php?r=post/view&amp;id=100
+/index.php/post/100
+/post/100
+</code></pre>
+<h2>Форматы URL  <span id="url-formats"></span><a href="#url-formats" class="hashlink">&para;</a></h2><p><a href="./yii-web-urlmanager.html">URL manager</a> поддерживает два формата URL:</p>
+<ul>
+<li>Обычный.</li>
+<li>Человекопонятные URL. </li>
+</ul>
+<p>Обычный формат URL использует параметр <code>r</code> для передачи маршрута и любые другие параметры для передачи остальных параметров запроса. Например, URL <code>/index.php?r=post/view&amp;id=100</code> задает маршрут <code>post/view</code> и параметр <code>id</code>, равный 100. Данный формат не требует специальной конфигурации <a href="./yii-web-urlmanager.html">URL manager</a> и работает с любыми настройками веб-сервера.</p>
+<p>Человекопонятный формат URL представляет собой дополнительный путь, следующий за именем входного скрипта, описывающий маршрут и остальные параметров запроса. Например, дополнительный путь в URL <code>/index.php/post/100</code> - это <code>/post/100</code>, который может представлять маршрут <code>post/view</code> и параметр <code>id</code> со значением равным 100, при наличии соответствующего <a href="./yii-web-urlmanager.html#$rules-detail">правила</a>. Для использования ЧПУ, необходимо создать набор правил, соответствующих требованиям к URL.</p>
+<p>Переключение между двумя форматами URL осуществляется при помощи свойства <a href="./yii-web-urlmanager.html#$enablePrettyUrl-detail">enablePrettyUrl</a> компонента <a href="./yii-web-urlmanager.html">URL manager</a> без внесения изменений в код приложения.</p>
+<h2>Роутинг  <span id="routing"></span><a href="#routing" class="hashlink">&para;</a></h2><p>Роутинг осуществляется в два этапа:</p>
+<ul>
+<li>Входящий запрос разбирается в маршрут и параметры запроса.</li>
+<li>Для обработки запроса создается <a href="guide-structure-controllers.html#actions">действие контроллера</a>, соответствующее полученному
+маршруту.</li>
+</ul>
+<p>При использовании простого формата URL, получение маршрута из запроса заключается в получении параметра <code>r</code> из массива <code>GET</code>.</p>
+<p>При использовании ЧПУ, компонент <a href="./yii-web-urlmanager.html">URL manager</a> ищет среди зарегистрированных <a href="./yii-web-urlmanager.html#$rules-detail">правил</a> подходящее для разрешения запроса в маршрут.
+Если такое правило не найдено, вызывается исключение <a href="./yii-web-notfoundhttpexception.html">yii\web\NotFoundHttpException</a>.</p>
+<p>После того, как из запроса получен маршрут, самое время создать действие контроллера, соответствующее этому маршруту.
+Маршрут разделяется на несколько частей, метками деления служат прямые слеши. Например, маршрут <code>site/index</code> будет разделен на <code>site</code> и <code>index</code>. Каждая из частей представляет собой <em>идентификатор</em>, который может ссылаться на модуль, контроллер или действие. Начиная с первой части маршрута, приложение следует следующему алгоритму для создания модуля (если есть), контроллера и действия:</p>
+<ol>
+<li>Текущим модулем считаем приложение.</li>
+<li>Проверяем, содержит ли <a href="./yii-base-module.html#$controllerMap-detail">карта контроллеров</a> текущего модуля текущий <em>идентификатор</em>.
+Если содержит, в соответствии с конфигурацией контроллера, найденной в карте, создаем объект контроллера и переходим в п. 5 для обработки оставшейся части маршрута.</li>
+<li>Проверяем, есть ли модуль, соответствующий <em>идентификатору</em> в списке модулей (свойство <a href="./yii-base-module.html#$modules-detail">modules</a>) текущего модуля. Если есть, в соответствии с конфигурацией модуля, найденной в списке модулей, создаем модуль и переходим в п. 2, считая только что созданный модуль текущим.</li>
+<li>Рассматриваем <em>идентификатор</em> как <a href="guide-structure-controllers.html#id-kontrollerov">идентификатор контроллера</a> и создаем объект контроллера. Для оставшейся части маршрута выполняем п. 5.</li>
+<li>Контроллер ищет текущий <em>идентификатор</em> в его <a href="./yii-base-controller.html#actions()-detail">карте действий</a>. В случае нахождения, контроллер создает действие, в соответствии с конфигурацией, найденной в карте. Иначе, контроллер пытается создать встроенное действие, описанное методом, соответствующим текущему <a href="guide-structure-controllers.html#id-dejstvij">идентификатору действия</a>.</li>
+</ol>
+<p>При возникновении ошибок на любом из описанных выше этапов, вызывается исключение <a href="./yii-web-notfoundhttpexception.html">yii\web\NotFoundHttpException</a>, указывающее на ошибку в процессе роутинга.</p>
+<h3>Маршрут по умолчанию  <span id="default-route"></span><a href="#default-route" class="hashlink">&para;</a></h3><p>В случае, если в результате разбора запроса  получен пустой маршрут, вместо него будет использован, так называемый, маршрут по умолчанию. Изначально, маршрут по умолчанию имеет значение <code>site/index</code>, и указывает на действие <code>index</code> контроллера <code>site</code>. Указать свое значение можно при помощи свойства приложения <a href="./yii-web-application.html#$defaultRoute-detail">defaultRoute</a>, например так:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'defaultRoute'</span> =&gt; <span class="hljs-string">'main/index'</span>,
+];
+</code></pre>
+<p>В добавок к маршруту по умолчанию приложения, существует маршрут по умолчанию модулей. Например, если у нас есть модуль 
+<code>user</code> и запрос разбирается в маршрут <code>user</code>, <a href="./yii-base-module.html#$defaultRoute-detail">defaultRoute</a> модуля используется для
+определения контроллера. По умолчанию имя контроллера —<code>default</code>. Если действие не задано в <a href="./yii-base-module.html#$defaultRoute-detail">defaultRoute</a>,
+то для его определения используется свойство <a href="./yii-base-controller.html#$defaultAction-detail">defaultAction</a> контроллера.
+В данном примере полный маршрут будет <code>user/default/index</code>.</p>
+<h3>Маршрут <code>catchAll</code>  <span id="catchall-route"></span><a href="#catchall-route" class="hashlink">&para;</a></h3><p>Иногда возникает необходимость временно перевести приложение в режим обслуживания и отображать одно информационное сообщение для всех запросов. Существует много вариантов реализации этой задачи. Но одним из самых простых, является использование свойства <a href="./yii-web-application.html#$catchAll-detail">yii\web\Application::$catchAll</a>, например так:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'catchAll'</span> =&gt; [<span class="hljs-string">'site/offline'</span>],
+];
+</code></pre>
+<p>В данном случае, действие <code>site/offline</code> будет обрабатывать все входящие запросы.</p>
+<p>Свойство <code>catchAll</code> должно принимать массив, первый элемент которого определяет маршрут, а остальные элементы (пары ключ-значение) определяют параметры, <a href="guide-structure-controllers.html#parametry-dejstvij">передаваемые действию</a>.</p>
+<h2>Создание URL  <span id="creating-urls"></span><a href="#creating-urls" class="hashlink">&para;</a></h2><p>Для создания разных видов URL из заданных маршрутов и параметров, Yii предоставляет метод-помощник <a href="./yii-helpers-baseurl.html#to()-detail">yii\helpers\Url::to()</a>. Примеры:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">Url</span>;
+
+<span class="hljs-comment">// создает URL для маршрута: /index.php?r=post/index</span>
+<span class="hljs-keyword">echo</span> Url::to([<span class="hljs-string">'post/index'</span>]);
+
+<span class="hljs-comment">// создает URL для маршрута с параметрами: /index.php?r=post/view&amp;id=100</span>
+<span class="hljs-keyword">echo</span> Url::to([<span class="hljs-string">'post/view'</span>, <span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">100</span>]);
+
+<span class="hljs-comment">// создает якорный URL: /index.php?r=post/view&amp;id=100#content</span>
+<span class="hljs-keyword">echo</span> Url::to([<span class="hljs-string">'post/view'</span>, <span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">100</span>, <span class="hljs-string">'#'</span> =&gt; <span class="hljs-string">'content'</span>]);
+
+<span class="hljs-comment">// создает абсолютный URL: http://www.example.com/index.php?r=post/index</span>
+<span class="hljs-keyword">echo</span> Url::to([<span class="hljs-string">'post/index'</span>], <span class="hljs-keyword">true</span>);
+
+<span class="hljs-comment">// создает абсолютный URL с использованием схемы https: https://www.example.com/index.php?r=post/index</span>
+<span class="hljs-keyword">echo</span> Url::to([<span class="hljs-string">'post/index'</span>], <span class="hljs-string">'https'</span>);
+</code></pre>
+<p>Обратите внимание, что в последнем примере подразумевается использование обычного формата URL. При использовании ЧПУ, будут созданы другие URL, соответствующие <a href="./yii-web-urlmanager.html#$rules-detail">правилам создания URL</a>.</p>
+<p>Маршрут, переданный методу <a href="./yii-helpers-baseurl.html#to()-detail">yii\helpers\Url::to()</a>, является контекстно-зависимым. Он может быть <em>относительным</em> или <em>абсолютным</em>, в зависимости от следующих правил:</p>
+<ul>
+<li>Если маршрут является пустой строкой, будет использован текущий <a href="./yii-base-controller.html#$route-detail">маршрут</a>;</li>
+<li>Если маршрут не содержит слешей вообще, он рассматривается как <em>идентификатор</em> действия текущего контроллера и будет дополнен значением <a href="./yii-base-controller.html#$uniqueId-detail">uniqueId</a> текущего контроллера в качестве префикса;</li>
+<li>Если маршрут не содержит слеша в начале, он будет рассматриваться как маршрут относительно текущего модуля и будет дополнен значением <a href="./yii-base-module.html#$uniqueId-detail">uniqueId</a> текущего модуля, в качестве префикса.</li>
+</ul>
+<p>Начиная с версии 2.0.2, при составлении маршрутов, стало возможным использовать <a href="guide-concept-aliases.html">псевдонимы</a>. В таком случае, псевдоним будет преобразован в маршрут, который будет использован для создания URL по правилам, указанным выше.</p>
+<p>Для примера, будем считать, что текущим модулем является <code>admin</code>, а текущим контроллером - <code>post</code>,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">Url</span>;
+
+<span class="hljs-comment">// запрошенный маршрут: /index.php?r=admin/post/index</span>
+<span class="hljs-keyword">echo</span> Url::to([<span class="hljs-string">''</span>]);
+
+<span class="hljs-comment">// относительный маршрут с указанием только идентификатора действия: /index.php?r=admin/post/index</span>
+<span class="hljs-keyword">echo</span> Url::to([<span class="hljs-string">'index'</span>]);
+
+<span class="hljs-comment">// относительный маршрут: /index.php?r=admin/post/index</span>
+<span class="hljs-keyword">echo</span> Url::to([<span class="hljs-string">'post/index'</span>]);
+
+<span class="hljs-comment">// абсолютный маршрут: /index.php?r=post/index</span>
+<span class="hljs-keyword">echo</span> Url::to([<span class="hljs-string">'/post/index'</span>]);
+
+<span class="hljs-comment">// /index.php?r=post/index     псевдоним "@posts" определен как "/post/index"</span>
+<span class="hljs-keyword">echo</span> Url::to([<span class="hljs-string">'@posts'</span>]);
+</code></pre>
+<p>В основе реализации метода <a href="./yii-helpers-baseurl.html#to()-detail">yii\helpers\Url::to()</a> лежит использование двух методов компонента <a href="./yii-web-urlmanager.html">URL manager</a>: <a href="./yii-web-urlmanager.html#createUrl()-detail">createUrl()</a> и <a href="./yii-web-urlmanager.html#createAbsoluteUrl()-detail">createAbsoluteUrl()</a>. Ниже будут рассмотрены способы конфигурации <a href="./yii-web-urlmanager.html">URL manager</a> для создания URL в различных форматах.</p>
+<p>Метод <a href="./yii-helpers-baseurl.html#to()-detail">yii\helpers\Url::to()</a> также поддерживает создание URL, не связанных с маршрутами приложения.
+В данном случае, нужно передать в качестве первого параметра строку, а не массив. Например,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">Url</span>;
+
+<span class="hljs-comment">// запрошенный URL: /index.php?r=admin/post/index</span>
+<span class="hljs-keyword">echo</span> Url::to();
+
+<span class="hljs-comment">// URL из псевдонима: http://example.com</span>
+Yii::setAlias(<span class="hljs-string">'@example'</span>, <span class="hljs-string">'http://example.com/'</span>);
+<span class="hljs-keyword">echo</span> Url::to(<span class="hljs-string">'@example'</span>);
+
+<span class="hljs-comment">// абсолютный URL: http://example.com/images/logo.gif</span>
+<span class="hljs-keyword">echo</span> Url::to(<span class="hljs-string">'/images/logo.gif'</span>, <span class="hljs-keyword">true</span>);
+</code></pre>
+<p>Кроме метода <code>to()</code>, класс <a href="./yii-helpers-url.html">yii\helpers\Url</a> предоставляет и другие удобные методы для создания URL. Например,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">Url</span>;
+
+<span class="hljs-comment">// домашний URL: /index.php?r=site/index</span>
+<span class="hljs-keyword">echo</span> Url::home();
+
+<span class="hljs-comment">// базовый URL, удобно использовать в случае, когда приложение расположено в подкаталоге</span>
+<span class="hljs-comment">// относительно корневого каталога веб-сервера</span>
+<span class="hljs-keyword">echo</span> Url::base();
+
+<span class="hljs-comment">// канонический URL запрошенного URL</span>
+<span class="hljs-comment">// подробнее https://support.google.com/webmasters/answer/139066?hl=ru</span>
+<span class="hljs-keyword">echo</span> Url::canonical();
+
+<span class="hljs-comment">// запомнить запрошенный URL и восстановить его при следующих запросах</span>
+Url::remember();
+<span class="hljs-keyword">echo</span> Url::previous();
+</code></pre>
+<h2>Использование человекопонятных URL  <span id="using-pretty-urls"></span><a href="#using-pretty-urls" class="hashlink">&para;</a></h2><p>Для активации ЧПУ, необходимо настроить компонент <code>urlManager</code> в конфигурации приложения следующим образом:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'urlManager'</span> =&gt; [
+            <span class="hljs-string">'enablePrettyUrl'</span> =&gt; <span class="hljs-keyword">true</span>,
+            <span class="hljs-string">'showScriptName'</span> =&gt; <span class="hljs-keyword">false</span>,
+            <span class="hljs-string">'enableStrictParsing'</span> =&gt; <span class="hljs-keyword">false</span>,
+            <span class="hljs-string">'rules'</span> =&gt; [
+                <span class="hljs-comment">// ...</span>
+            ],
+        ],
+    ],
+]
+</code></pre>
+<p>Свойство <a href="./yii-web-urlmanager.html#$enablePrettyUrl-detail">enablePrettyUrl</a> является ключевым, активирует формат ЧПУ.
+Остальные свойства необязательные. Однако в примере выше показан самый популярный вариант конфигурации ЧПУ.</p>
+<ul>
+<li><a href="./yii-web-urlmanager.html#$showScriptName-detail">showScriptName</a>: это свойство определяет необходимость включения имени входного скрипта в создаваемый URL. Например, при его значении <code>false</code>, вместо <code>/index.php/post/100</code>, будет сгенерирован URL <code>/post/100</code>.</li>
+<li><a href="./yii-web-urlmanager.html#$enableStrictParsing-detail">enableStrictParsing</a>: это свойство позволяет включить строгий разбор URL. Если строгий разбор URL включен, запрошенный URL должен соответствовать хотя бы одному из <a href="./yii-web-urlmanager.html#$rules-detail">правил</a>, иначе будет вызвано исключение <a href="./yii-web-notfoundhttpexception.html">yii\web\NotFoundHttpException</a>. Если строгий разбор URL отключен и ни одно из <a href="./yii-web-urlmanager.html#$rules-detail">правил</a> не подходит для разбора запрошенного URL, часть этого URL, представляющая путь, будет использована как маршрут.</li>
+<li><a href="./yii-web-urlmanager.html#$rules-detail">rules</a>: это свойство содержит набор правил для разбора и создания URL. Это основное свойство, с которым нужно работать, чтобы URL создавались в формате, соответствующем требованиям приложения.</li>
+</ul>
+<blockquote class="note"><p><strong>Примечание: </strong>Для того, чтобы скрыть имя входного скрипта в создаваемых URL, кроме установки значения свойства <a href="./yii-web-urlmanager.html#$showScriptName-detail">showScriptName</a> в <code>false</code>, необходимо настроить веб-сервер, чтобы он мог правильно определять PHP-скрипт, который должен быть запущен, если в запрошенном URL он не указан явно. Рекомендованные настройки для Apache и Nginx описаны в разделе <a href="guide-start-installation.html#rekomenduemye-nastrojki-apache">Установка Yii</a>.</p>
+</blockquote>
+<h3>Правила URL  <span id="url-rules"></span><a href="#url-rules" class="hashlink">&para;</a></h3><p>Правила URL - это экземпляр класса <a href="./yii-web-urlrule.html">yii\web\UrlRule</a> или класса, унаследованного от него. Каждое правило состоит из шаблона, используемого для поиска пути в запрошенном URL, маршрута и нескольких параметров запроса. Правило может быть использовано для разбора запроса в том случае, если шаблон правила совпадает с запрошенным URL. Правило может быть использовано для создания URL в том случае, если его маршрут и параметры запроса совпадают с заданными.</p>
+<p>При включенном режиме ЧПУ, компонент <a href="./yii-web-urlmanager.html">URL manager</a> использует правила URL, содержащиеся в его свойстве <a href="./yii-web-urlmanager.html#$rules-detail">rules</a>, для разбора входящих запросов и создания URL. Обычно, при разборе входящего запроса, <a href="./yii-web-urlmanager.html">URL manager</a> проверяет все правила в порядке их следования, до <em>первого</em> правила, соответствующего запрошенному URL. Найденное правило используется для разбора URL на маршрут и параметры запроса. Аналогично для создания URL компонент <a href="./yii-web-urlmanager.html">URL manager</a> ищет первое правило, соответствующее заданному маршруту и параметрам и использует его для создания URL.</p>
+<p><a href="./yii-web-urlmanager.html#$rules-detail">Правила</a> задаются ассоциативным массивом, где ключи определяют шаблоны, а значения соответствующие маршруты. Каждая пара шаблон-маршрут составляет правило разбора URL. Например, следующие <a href="./yii-web-urlmanager.html#$rules-detail">правила</a> определяют два правила разбора URL. Первое правило задает соответствие URL <code>posts</code> маршруту <code>post/index</code>. Второе правило задает соответствие URL, соответствующего регулярному выражению <code>post/(\d+)</code> маршруту <code>post/view</code> и параметру <code>id</code>.</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'posts'</span> =&gt; <span class="hljs-string">'post/index'</span>, 
+    <span class="hljs-string">'post/&lt;id:\d+&gt;'</span> =&gt; <span class="hljs-string">'post/view'</span>,
+]
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>Шаблон правила используется для поиска соответствия с частью URL, определяющей путь. Например, в URL <code>/index.php/post/100?source=ad</code> путь определяет часть <code>post/100</code> (начальный и конечный слеши игнорируются), соответствующая регулярному выражению <code>post/(\d+)</code>.</p>
+</blockquote>
+<p>Правила URL можно определять не только в виде пар шаблон-маршрут, но и в виде массива. Каждый массив используется для определения одного правила. Такой вид определения правил используется в случаях, когда необходимо указать другие параметры правила URL. Например,</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// ...другие правила URL...</span>
+    
+    [
+        <span class="hljs-string">'pattern'</span> =&gt; <span class="hljs-string">'posts'</span>,
+        <span class="hljs-string">'route'</span> =&gt; <span class="hljs-string">'post/index'</span>,
+        <span class="hljs-string">'suffix'</span> =&gt; <span class="hljs-string">'.json'</span>,
+    ],
+]
+</code></pre>
+<p>По умолчанию, если в конфигурации правила URL не указан явно параметр <code>class</code>, будет создано правило класса <a href="./yii-web-urlrule.html">yii\web\UrlRule</a>.</p>
+<h3>Именованные параметры  <span id="named-parameters"></span><a href="#named-parameters" class="hashlink">&para;</a></h3><p>Правило URL может содержать несколько именованных параметров запроса, которые указываются в шаблоне в следующем формате: <code>&lt;ParamName:RegExp&gt;</code>, где <code>ParamName</code> определяет имя параметра, а <code>RegExp</code> - необязательное регулярное выражение, используемое для определения значения параметра. В случае, если <code>RegExp</code> не указан, значением параметра будет любая последовательность символов кроме слешей.</p>
+<blockquote class="note"><p><strong>Примечание: </strong>Возможно указание только регулярного выражения для параметров. В таком случае остальная часть шаблона будет считаться простым текстом.</p>
+</blockquote>
+<p>После разбора URL, параметры запроса, соответствующие шаблону правила, будут доступны в массиве <code>$_GET</code> через компонент приложения <code>request</code>.
+При создании URL, значения указанных параметров будут вставлены в URL в соответствии с шаблоном правила.</p>
+<p>Рассмотрим несколько примеров работы с именованными параметрами. Допустим, мы определили следующие три правила URL:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'posts/&lt;year:\d{4}&gt;/&lt;category&gt;'</span> =&gt; <span class="hljs-string">'post/index'</span>,
+    <span class="hljs-string">'posts'</span> =&gt; <span class="hljs-string">'post/index'</span>,
+    <span class="hljs-string">'post/&lt;id:\d+&gt;'</span> =&gt; <span class="hljs-string">'post/view'</span>,
+]
+</code></pre>
+<p>При разборе следующих URL:</p>
+<ul>
+<li><code>/index.php/posts</code> будет разобран в маршрут <code>post/index</code> при помощи второго правила;</li>
+<li><code>/index.php/posts/2014/php</code> будет разобран на маршрут <code>post/index</code> и параметры <code>year</code> со значением 2014, <code>category</code> со значением <code>php</code> при помощи первого правила;</li>
+<li><code>/index.php/post/100</code> будет разобран на маршрут <code>post/view</code> и параметр <code>id</code> со значением 100 при помощи третьего правила;</li>
+<li><code>/index.php/posts/php</code> вызовет исключение <a href="./yii-web-notfoundhttpexception.html">yii\web\NotFoundHttpException</a>, если <a href="./yii-web-urlmanager.html#$enableStrictParsing-detail">yii\web\UrlManager::$enableStrictParsing</a> имеет значение <code>true</code>, так как правило для разбора данного URL отсутствует. Если <a href="./yii-web-urlmanager.html#$enableStrictParsing-detail">yii\web\UrlManager::$enableStrictParsing</a> имеет значение <code>false</code> (по умолчанию), значение <code>posts/php</code> будет возвращено в качестве маршрута.</li>
+</ul>
+<p>При создании URL:</p>
+<ul>
+<li><code>Url::to(['post/index'])</code> создаст <code>/index.php/posts</code> при помощи второго правила;</li>
+<li><code>Url::to(['post/index', 'year' =&gt; 2014, 'category' =&gt; 'php'])</code> создаст <code>/index.php/posts/2014/php</code> при помощи первого правила;</li>
+<li><code>Url::to(['post/view', 'id' =&gt; 100])</code> создаст <code>/index.php/post/100</code> при помощи третьего правила;</li>
+<li><code>Url::to(['post/view', 'id' =&gt; 100, 'source' =&gt; 'ad'])</code> создаст <code>/index.php/post/100?source=ad</code> при помощи третьего правила.
+Параметр <code>source</code> не указан в правиле, поэтому он добавлен в созданный URL в качестве параметра запроса.</li>
+<li><code>Url::to(['post/index', 'category' =&gt; 'php'])</code> создаст <code>/index.php/post/index?category=php</code> без использования правил. При отсутствии подходящего правила, URL будет создан простым соединением маршрута, как части пути, и параметров, как части запроса.</li>
+</ul>
+<h3>Параметры в маршрутах  <span id="parameterizing-routes"></span><a href="#parameterizing-routes" class="hashlink">&para;</a></h3><p>В маршруте правила URL возможно указание имен параметров. Это позволяет использовать правило URL для обработки нескольких маршрутов. Например, следующие правила содержат параметры <code>controller</code> и <code>action</code> в маршрутах.</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'&lt;controller:(post|comment)&gt;/&lt;id:\d+&gt;/&lt;action:(create|update|delete)&gt;'</span> =&gt; <span class="hljs-string">'&lt;controller&gt;/&lt;action&gt;'</span>,
+    <span class="hljs-string">'&lt;controller:(post|comment)&gt;/&lt;id:\d+&gt;'</span> =&gt; <span class="hljs-string">'&lt;controller&gt;/view'</span>,
+    <span class="hljs-string">'&lt;controller:(post|comment)&gt;s'</span> =&gt; <span class="hljs-string">'&lt;controller&gt;/index'</span>,
+]
+</code></pre>
+<p>Для разбора URL <code>/index.php/comment/100/create</code> будет использовано первое правило, которое установит значения параметров <code>controller</code> равным <code>comment</code> и <code>action</code> равным <code>create</code>. Таким образом, маршрут <code>&lt;controller&gt;/&lt;action&gt;</code> будет разрешен в <code>comment/create</code>.</p>
+<p>Аналогично, для маршрута <code>comment/index</code>, при помощи третьего правила, будет создан URL <code>comment/index</code>.</p>
+<blockquote class="note"><p><strong>Примечание: </strong>Использование параметров в маршрутах позволяет значительно уменьшить количество правил URL и улучшить производительность компонента <a href="./yii-web-urlmanager.html">URL manager</a>.</p>
+</blockquote>
+<p>По умолчанию все параметры, указанные в правиле, являются обязательными. Если запрошенный URL не содержит обязательный параметр, или если URL создается без обязательного параметра, данное правило не будет применено. Свойство <a href="./yii-web-urlrule.html#$defaults-detail">yii\web\UrlRule::$defaults</a> позволяет сделать нужные параметры не обязательными. Параметры, перечисленные в данном свойстве, будут иметь заданные значения, в случае если они пропущены.</p>
+<p>В следующем правиле описаны необязательные параметры <code>page</code> и <code>tag</code>, которые примут значения <code>1</code> и <code>пустая строка</code> в случае, если они будут пропущены.</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// ...другие правила...</span>
+    [
+        <span class="hljs-string">'pattern'</span> =&gt; <span class="hljs-string">'posts/&lt;page:\d+&gt;/&lt;tag&gt;'</span>,
+        <span class="hljs-string">'route'</span> =&gt; <span class="hljs-string">'post/index'</span>,
+        <span class="hljs-string">'defaults'</span> =&gt; [<span class="hljs-string">'page'</span> =&gt; <span class="hljs-number">1</span>, <span class="hljs-string">'tag'</span> =&gt; <span class="hljs-string">''</span>],
+    ],
+]
+</code></pre>
+<p>Вышеприведенное правило может быть использовано для разбора или создания следующих URL:</p>
+<ul>
+<li><code>/index.php/posts</code>: <code>page</code> равно 1, <code>tag</code> равно ''.</li>
+<li><code>/index.php/posts/2</code>: <code>page</code> равно 2, <code>tag</code> равно ''.</li>
+<li><code>/index.php/posts/2/news</code>: <code>page</code> равно 2, <code>tag</code> равно <code>'news'</code>.</li>
+<li><code>/index.php/posts/news</code>: <code>page</code> равно 1, <code>tag</code> равно <code>'news'</code>.</li>
+</ul>
+<p>Без использования необязательных параметров понадобилось бы создать 4 правила для достижения того же результата.</p>
+<h3>Правила с именами серверов  <span id="rules-with-server-names"></span><a href="#rules-with-server-names" class="hashlink">&para;</a></h3><p>Существует возможность включать имена серверов в шаблон правил URL. Главным образом, это удобно, когда требуется разное поведение приложения, в зависимости от разных имен веб-серверов. Например, следующее правило позволит разобрать URL <code>http://admin.example.com/login</code> в маршрут <code>admin/user/login</code> и <code>http://www.example.com/login</code> в <code>site/login</code>.</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'http://admin.example.com/login'</span> =&gt; <span class="hljs-string">'admin/user/login'</span>,
+    <span class="hljs-string">'http://www.example.com/login'</span> =&gt; <span class="hljs-string">'site/login'</span>,
+]
+</code></pre>
+<p>Также возможно комбинирование параметров и имени сервера для динамического извлечения данных из него. Например, следующее правило позволит разобрать URL <code>http://en.example.com/posts</code> на маршрут и параметр <code>language=en</code>.</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'http://&lt;language:\w+&gt;.example.com/posts'</span> =&gt; <span class="hljs-string">'post/index'</span>,
+]
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>Правила, содержащие имя сервера, НЕ должны содержать в шаблоне подкаталог пути ко входному скрипту. Например, если приложение расположено в <code>http://www.example.com/sandbox/blog</code>, шаблон должен быть <code>http://www.example.com/posts</code>, вместо <code>http://www.example.com/sandbox/blog/posts</code>. Это позволит изменять расположение приложения без необходимости внесения изменений в его код.</p>
+</blockquote>
+<h3>Суффиксы в URL  <span id="url-suffixes"></span><a href="#url-suffixes" class="hashlink">&para;</a></h3><p>Компонент предоставляет возможность добавления к URL суффиксов. Например, можно добавить к URL <code>.html</code>, чтобы они выглядели как статические HTML-страницы; можно добавить к URL суффикс <code>.json</code>, для указания на ожидаемый тип данных ответа. Настроить суффиксы в URL можно при помощи соответствующего свойства <a href="./yii-web-urlmanager.html#$suffix-detail">yii\web\UrlManager::$suffix</a> в конфигурации приложения:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'urlManager'</span> =&gt; [
+            <span class="hljs-string">'enablePrettyUrl'</span> =&gt; <span class="hljs-keyword">true</span>,
+            <span class="hljs-string">'showScriptName'</span> =&gt; <span class="hljs-keyword">false</span>,
+            <span class="hljs-string">'enableStrictParsing'</span> =&gt; <span class="hljs-keyword">true</span>,
+            <span class="hljs-string">'suffix'</span> =&gt; <span class="hljs-string">'.html'</span>,
+            <span class="hljs-string">'rules'</span> =&gt; [
+                <span class="hljs-comment">// ...</span>
+            ],
+        ],
+    ],
+]
+</code></pre>
+<p>Данная конфигурация позволяет компоненту <a href="./yii-web-urlmanager.html">URL manager</a> разбирать и создавать URL с суффиксом <code>.html</code>.</p>
+<blockquote class="tip"><p><strong>Подсказка: </strong>При установке суффикса <code>/</code>, все URL будут заканчиваться слешем.</p>
+</blockquote>
+<blockquote class="note"><p><strong>Примечание: </strong>При настроенном суффиксе, все URL не содержащие этот суффикс будут расценены как неизвестные URL. Такое поведение рекомендовано для SEO (поисковая оптимизация).</p>
+</blockquote>
+<p>Иногда возникает необходимость использовать разные суффиксы для разных URL. Добиться этого можно настройкой свойства <a href="./yii-web-urlrule.html#$suffix-detail">suffix</a> у каждого правила. Когда это свойство установлено, оно имеет приоритет перед общей конфигурацией компонента <a href="./yii-web-urlmanager.html">URL manager</a>. Например, следующая конфигурация содержит правило URL, которое использует <code>.json</code> в качестве суффикса вместо глобального <code>.html</code>.</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'urlManager'</span> =&gt; [
+            <span class="hljs-string">'enablePrettyUrl'</span> =&gt; <span class="hljs-keyword">true</span>,
+            <span class="hljs-string">'showScriptName'</span> =&gt; <span class="hljs-keyword">false</span>,
+            <span class="hljs-string">'enableStrictParsing'</span> =&gt; <span class="hljs-keyword">true</span>,
+            <span class="hljs-string">'suffix'</span> =&gt; <span class="hljs-string">'.html'</span>,
+            <span class="hljs-string">'rules'</span> =&gt; [
+                <span class="hljs-comment">// ...</span>
+                [
+                    <span class="hljs-string">'pattern'</span> =&gt; <span class="hljs-string">'posts'</span>,
+                    <span class="hljs-string">'route'</span> =&gt; <span class="hljs-string">'post/index'</span>,
+                    <span class="hljs-string">'suffix'</span> =&gt; <span class="hljs-string">'.json'</span>,
+                ],
+            ],
+        ],
+    ],
+]
+</code></pre>
+<h3>Нормализация URL  <span id="url-normalization"></span><a href="#url-normalization" class="hashlink">&para;</a></h3><p>Начиная с версии 2.0.10 <a href="./yii-web-urlmanager.html">UrlManager</a> может быть настроен на использование <a href="./yii-web-urlnormalizer.html">UrlNormalizer</a>,
+что позволяет справиться с вариациями одного и того же URL с присутствующим или отсутствующим слешем в конце.
+Технически <code>http://example.com/path</code> и <code>http://example.com/path/</code> являются разными URL, отдача одинакового содержимого
+в обоих вариантах может негативно повлиять на SEO. По умолчанию нормализатор заменяет повторяющиеся слеши на один и либо
+убирает, либо добавляет завершающие слеши в зависимости от суффикса и производит <a href="https://ru.wikipedia.org/wiki/HTTP_301">редирект 301</a>
+на нормализованный URL. Нормализатор может быть настроен как глобально для менеджера URL, так и индивидуально для
+каждого правила. По умолчанию все правила используют нормализатор, заданный в менеджере URL. Вы можете выставить
+<a href="./yii-web-urlrule.html#$normalizer-detail">UrlRule::$normalizer</a> в <code>false</code> для отключения нормализации для конкретного правила.</p>
+<p>Ниже преведён пример конфигурации UrlNormalizer:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'urlManager'</span> =&gt; [
+            <span class="hljs-string">'enablePrettyUrl'</span> =&gt; <span class="hljs-keyword">true</span>,
+            <span class="hljs-string">'showScriptName'</span> =&gt; <span class="hljs-keyword">false</span>,
+            <span class="hljs-string">'enableStrictParsing'</span> =&gt; <span class="hljs-keyword">true</span>,
+            <span class="hljs-string">'suffix'</span> =&gt; <span class="hljs-string">'.html'</span>,
+            <span class="hljs-string">'normalizer'</span> =&gt; [
+                <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\web\UrlNormalizer'</span>,
+                <span class="hljs-string">'action'</span> =&gt; UrlNormalizer::ACTION_REDIRECT_TEMPORARY, <span class="hljs-comment">// используем временный редирект вместо постоянного</span>
+            ],
+            <span class="hljs-string">'rules'</span> =&gt; [
+                <span class="hljs-comment">// ...</span>
+                [
+                    <span class="hljs-string">'pattern'</span> =&gt; <span class="hljs-string">'posts'</span>,
+                    <span class="hljs-string">'route'</span> =&gt; <span class="hljs-string">'post/index'</span>,
+                    <span class="hljs-string">'suffix'</span> =&gt; <span class="hljs-string">'/'</span>,
+                    <span class="hljs-string">'normalizer'</span> =&gt; <span class="hljs-keyword">false</span>, <span class="hljs-comment">// отключаем нормализатор для этого правила</span>
+                ],
+                [
+                    <span class="hljs-string">'pattern'</span> =&gt; <span class="hljs-string">'tags'</span>,
+                    <span class="hljs-string">'route'</span> =&gt; <span class="hljs-string">'tag/index'</span>,
+                    <span class="hljs-string">'normalizer'</span> =&gt; [
+                        <span class="hljs-string">'collapseSlashes'</span> =&gt; <span class="hljs-keyword">false</span>, <span class="hljs-comment">// не убираем дублирующиеся слеши для этого правила</span>
+                    ],
+                ],
+            ],
+        ],
+    ],
+]
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>По умолчанию <a href="./yii-web-urlmanager.html#$normalizer-detail">UrlManager::$normalizer</a> отключен. Чтобы использовать
+  нормализацию, его необходимо сконфигурировать.</p>
+</blockquote>
+<h3>Методы HTTP  <span id="http-methods"></span><a href="#http-methods" class="hashlink">&para;</a></h3><p>При реализации RESTful API, зачастую бывает необходимость в том, чтобы один и тот же URL был разобран в разные маршруты, в зависимости от HTTP-метода запроса. Это легко достигается указанием HTTP-методов, поддерживаемых правилом в начале шаблона. Если правило поддерживает несколько HTTP-методов, их имена разделяются запятыми. Например, следующие правила имеют шаблон <code>post/&lt;id:\d+&gt;</code> с разными поддерживаемыми HTTP-методами. Запрос <code>PUT post/100</code> будет разобран в маршрут <code>post/create</code>, в то время, как запрос <code>GET post/100</code> будер разобран в <code>post/view</code>.</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'PUT,POST post/&lt;id:\d+&gt;'</span> =&gt; <span class="hljs-string">'post/create'</span>,
+    <span class="hljs-string">'DELETE post/&lt;id:\d+&gt;'</span> =&gt; <span class="hljs-string">'post/delete'</span>,
+    <span class="hljs-string">'post/&lt;id:\d+&gt;'</span> =&gt; <span class="hljs-string">'post/view'</span>,
+]
+</code></pre>
+<blockquote class="note"><p><strong>Примечание: </strong>Если правило URL содержит HTTP-метод в шаблоне, это правило будет использовано только при разборе URL. Такое правило не будет учитываться компонентом <a href="./yii-web-urlmanager.html">URL manager</a> при создании URL.</p>
+</blockquote>
+<blockquote class="tip"><p><strong>Подсказка: </strong>Для упрощения маршрутизации RESTful API, Yii предоставляет специальный класс <a href="./yii-rest-urlrule.html">yii\rest\UrlRule</a>, который достаточно эффективен и предоставляет такие удобные возможности, как автоматическое приведение идентификаторов контроллеров к множественной форме. Более подробную информацию можно найти в разделе Веб-сервисы REST <a href="guide-rest-routing.html">Роутинг</a>.</p>
+</blockquote>
+<h3>Гибкая настройка правил  <span id="customizing-rules"></span><a href="#customizing-rules" class="hashlink">&para;</a></h3><p>В предыдущих примерах, преимущественно, приводились правила URL, заданные парами шаблон-маршрут. Это самый распространенный, краткий формат. В некоторых случаях возникает необходимость более гибкой настройки правил, например указание суффикса при помощи свойства <a href="./yii-web-urlrule.html#$suffix-detail">yii\web\UrlRule::$suffix</a>. Пример конфигурации правила URL при помощи массива был рассмотрен в главе <a href="#suffiksy-v-url">Суффиксы в URL</a>:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// ...другие правила URL...</span>
+    
+    [
+        <span class="hljs-string">'pattern'</span> =&gt; <span class="hljs-string">'posts'</span>,
+        <span class="hljs-string">'route'</span> =&gt; <span class="hljs-string">'post/index'</span>,
+        <span class="hljs-string">'suffix'</span> =&gt; <span class="hljs-string">'.json'</span>,
+    ],
+]
+</code></pre>
+<blockquote class="info"><p><strong>Информация: </strong>По умолчанию, если в конфигурации правила явно не задан параметр <code>class</code>, будет создано правило класса <a href="./yii-web-urlrule.html">yii\web\UrlRule</a>.</p>
+</blockquote>
+<h3>Добавление правил URL динамически  <span id="adding-rules"></span><a href="#adding-rules" class="hashlink">&para;</a></h3><p>Правила URL могут быть динамически добавлены в компонент <a href="./yii-web-urlmanager.html">URL manager</a>. Часто это необходимо подключаемым <a href="guide-structure-modules.html">модулям</a> для настройки своих правил URL. Для того чтобы динамически добавленные правила могли влиять на процесс роутинга, они должны быть добавлены в процессе <a href="guide-runtime-bootstrapping.html">предзагрузки</a>. В частности, модули должны реализовываться интерфейс <a href="./yii-base-bootstrapinterface.html">yii\base\BootstrapInterface</a> и добавлять правила в методе <a href="./yii-base-bootstrapinterface.html#bootstrap()-detail">bootstrap()</a>, например:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bootstrap</span><span class="hljs-params">($app)</span>
+</span>{
+    $app-&gt;getUrlManager()-&gt;addRules([
+        <span class="hljs-comment">// правила URL описываются здесь</span>
+    ], <span class="hljs-keyword">false</span>);
+}
+</code></pre>
+<p>Также необходимо включить данный модуль в <a href="./yii-web-application.html#bootstrap()-detail">yii\web\Application::bootstrap()</a>, чтобы он смог участвовать в процессе <a href="guide-runtime-bootstrapping.html">предзагрузки</a>.</p>
+<h3>Создание классов правил  <span id="creating-rules"></span><a href="#creating-rules" class="hashlink">&para;</a></h3><p>Несмотря на то, что встроенный класс <a href="./yii-web-urlrule.html">yii\web\UrlRule</a> достаточно функционален для большинства проектов, иногда возникает необходимость в создании своего класса правил URL. Например, на сайте продавца автомобилей существует необходимость поддержки URL в таком формате: <code>/Manufacturer/Model</code>, где и <code>Manufacturer</code> и <code>Model</code> должны соответствовать данным, хранящимся в базе данных. Стандартный класс <a href="./yii-web-urlrule.html">yii\web\UrlRule</a> не подойдет, так как он рассчитан на работу со статичными шаблонами.</p>
+<p>Для решения данной проблемы можно создать такой класс правила URL.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">UrlRuleInterface</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">BaseObject</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CarUrlRule</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BaseObject</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">UrlRuleInterface</span>
+</span>{
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createUrl</span><span class="hljs-params">($manager, $route, $params)</span>
+    </span>{
+        <span class="hljs-keyword">if</span> ($route === <span class="hljs-string">'car/index'</span>) {
+            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>($params[<span class="hljs-string">'manufacturer'</span>], $params[<span class="hljs-string">'model'</span>])) {
+                <span class="hljs-keyword">return</span> $params[<span class="hljs-string">'manufacturer'</span>] . <span class="hljs-string">'/'</span> . $params[<span class="hljs-string">'model'</span>];
+            } <span class="hljs-keyword">elseif</span> (<span class="hljs-keyword">isset</span>($params[<span class="hljs-string">'manufacturer'</span>])) {
+                <span class="hljs-keyword">return</span> $params[<span class="hljs-string">'manufacturer'</span>];
+            }
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;  <span class="hljs-comment">// данное правило не применимо</span>
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parseRequest</span><span class="hljs-params">($manager, $request)</span>
+    </span>{
+        $pathInfo = $request-&gt;getPathInfo();
+        <span class="hljs-keyword">if</span> (preg_match(<span class="hljs-string">'%^(\w+)(/(\w+))?$%'</span>, $pathInfo, $matches)) {
+            <span class="hljs-comment">// Ищем совпадения $matches[1] и $matches[3] </span>
+            <span class="hljs-comment">// с данными manufacturer и model в базе данных</span>
+            <span class="hljs-comment">// Если нашли, устанавливаем $params['manufacturer'] и/или $params['model']</span>
+            <span class="hljs-comment">// и возвращаем ['car/index', $params]</span>
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;  <span class="hljs-comment">// данное правило не применимо</span>
+    }
+}
+</code></pre>
+<p>И использовать новый класс <a href="./yii-web-urlmanager.html#$rules-detail">yii\web\UrlManager::$rules</a> при определении правил URL:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// ...другие правила...</span>
+    
+    [
+        <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'app\components\CarUrlRule'</span>, 
+        <span class="hljs-comment">// ...настройка других параметров правила...</span>
+    ],
+]
+</code></pre>
+<h2>Производительность  <span id="performance-consideration"></span><a href="#performance-consideration" class="hashlink">&para;</a></h2><p>При разработке сложных веб-приложений, важно оптимизировать правила URL так, чтобы разбор запросов и создание URL занимали минимальное время.</p>
+<p>Использование параметров в маршрутах позволяет уменьшить количество правил, что значительно увеличивает производительность.</p>
+<p>При разборе или создании URL, компонент <a href="./yii-web-urlmanager.html">URL manager</a> проверяет правила в порядке их определения. Поэтому следует более узконаправленные и/или часто используемые правила размещать раньше прочих.</p>
+<p>В случае, если несколько правил имеют один и тот же префикс в шаблоне или маршруте, можно рассмотреть использование <a href="./yii-web-groupurlrule.html">yii\web\GroupUrlRule</a>, что позволит компоненту <a href="./yii-web-urlmanager.html">URL manager</a> более эффективно обрабатывать правила группами. Часто это бывает полезно в случае, если приложение состоит из модулей, каждый из которых имеет свой набор правил с идентификатором модуля в качестве общего префикса.</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 09 Dec 2020 00:16:06 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

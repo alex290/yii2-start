@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/1728b664/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9c5d0894/solarized_light.css" rel="stylesheet">
+<link href="./assets/f2ce5bcd/style.css" rel="stylesheet">
+<script src="./assets/bbf84a7a/jquery.js"></script>
+<script src="./assets/1728b664/js/bootstrap.js"></script>
+<script src="./assets/fd63b446/jssearch.js"></script>    <title>Встроенные валидаторы - Специальные темы - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w35" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w35-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w35-collapse" class="collapse navbar-collapse"><ul id="w36" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w37" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-19" data-toggle="collapse" data-parent="#navigation">Введение <b class="caret"></b></a><div id="navigation-19" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">О Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Обновление с версии 1.1</a></div>
+<a class="list-group-item" href="#navigation-20" data-toggle="collapse" data-parent="#navigation">Первое знакомство <b class="caret"></b></a><div id="navigation-20" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Установка Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Запуск приложения</a>
+<a class="list-group-item" href="./guide-start-hello.html">Говорим «привет»</a>
+<a class="list-group-item" href="./guide-start-forms.html">Работа с формами</a>
+<a class="list-group-item" href="./guide-start-databases.html">Работа с базами данных</a>
+<a class="list-group-item" href="./guide-start-gii.html">Генерация кода при помощи Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Что дальше?</a></div>
+<a class="list-group-item" href="#navigation-21" data-toggle="collapse" data-parent="#navigation">Структура приложения <b class="caret"></b></a><div id="navigation-21" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Входные скрипты</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Приложения</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Компоненты приложения</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-structure-models.html">Модели</a>
+<a class="list-group-item" href="./guide-structure-views.html">Представления</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Модули</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Фильтры</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Виджеты</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Расширения</a></div>
+<a class="list-group-item" href="#navigation-22" data-toggle="collapse" data-parent="#navigation">Обработка запросов <b class="caret"></b></a><div id="navigation-22" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Разбор и генерация URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Запросы</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Ответы</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Сессии и куки</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Обработка ошибок</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Логирование</a></div>
+<a class="list-group-item" href="#navigation-23" data-toggle="collapse" data-parent="#navigation">Основные понятия <b class="caret"></b></a><div id="navigation-23" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Компоненты</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Свойства</a>
+<a class="list-group-item" href="./guide-concept-events.html">События</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Поведения</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Конфигурации</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Псевдонимы</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Автозагрузка классов</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item" href="#navigation-24" data-toggle="collapse" data-parent="#navigation">Работа с базами данных <b class="caret"></b></a><div id="navigation-24" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Объекты доступа к данным (DAO)</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Построитель запросов</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Миграции</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-ru/README.md">Sphinx</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-redis/blob/master/docs/guide-ru/README.md">Redis</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-ru/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-ru/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-25" data-toggle="collapse" data-parent="#navigation">Получение данных от пользователя <b class="caret"></b></a><div id="navigation-25" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Создание форм</a>
+<a class="list-group-item" href="./guide-input-validation.html">Валидация</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Загрузка файлов</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Табличный ввод</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Работа с несколькими моделями</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">Расширение ActiveForm на стороне клиента</a></div>
+<a class="list-group-item" href="#navigation-26" data-toggle="collapse" data-parent="#navigation">Отображение данных <b class="caret"></b></a><div id="navigation-26" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Форматирование данных</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Постраничная разбивка</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Сортировка</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Провайдеры данных</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Виджеты для данных</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Работа с клиентскими скриптами</a>
+<a class="list-group-item" href="./guide-output-theming.html">Темизация</a></div>
+<a class="list-group-item" href="#navigation-27" data-toggle="collapse" data-parent="#navigation">Безопасность <b class="caret"></b></a><div id="navigation-27" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-security-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Авторизация</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Работа с паролями</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">Криптография</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-ru/README.md">Клиенты авторизации</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Лучшие практики</a></div>
+<a class="list-group-item" href="#navigation-28" data-toggle="collapse" data-parent="#navigation">Кеширование <b class="caret"></b></a><div id="navigation-28" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-caching-data.html">Кэширование данных</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Кэширование фрагментов</a>
+<a class="list-group-item" href="./guide-caching-page.html">Кэширование страниц</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP кэширование</a></div>
+<a class="list-group-item" href="#navigation-29" data-toggle="collapse" data-parent="#navigation">Веб-сервисы REST <b class="caret"></b></a><div id="navigation-29" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Быстрый старт</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Роутинг</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Форматирование ответа</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Ограничение частоты запросов</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Версионирование</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Обработка ошибок</a></div>
+<a class="list-group-item" href="#navigation-30" data-toggle="collapse" data-parent="#navigation">Инструменты разработчика <b class="caret"></b></a><div id="navigation-30" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Отладочная панель и отладчик</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide/README.md">Генерация кода с Gii</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">Генератор документации API</a></div>
+<a class="list-group-item" href="#navigation-31" data-toggle="collapse" data-parent="#navigation">Тестирование <b class="caret"></b></a><div id="navigation-31" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Настройка тестового окружения</a>
+<a class="list-group-item" href="./guide-test-unit.html">Модульные тесты</a>
+<a class="list-group-item" href="./guide-test-functional.html">Функциональные тесты</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Приёмочные тесты</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Фикстуры</a></div>
+<a class="list-group-item active" href="#navigation-32" data-toggle="collapse" data-parent="#navigation">Специальные темы <b class="caret"></b></a><div id="navigation-32" class="submenu panel-collapse collapse in"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">Шаблон приложения advanced</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Создание приложения с нуля</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Консольные команды</a>
+<a class="list-group-item active" href="./guide-tutorial-core-validators.html">Встроенные валидаторы</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Интернационализация</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Отправка почты</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Оптимизация производительности</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Окружение виртуального хостинга</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Шаблонизаторы</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Работа со сторонним кодом</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">Использование Yii в качестве микро-framework&#039;а</a></div>
+<a class="list-group-item" href="#navigation-33" data-toggle="collapse" data-parent="#navigation">Виджеты <b class="caret"></b></a><div id="navigation-33" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-ru/README.md">Виджеты Bootstrap</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-ru/README.md">Виджеты Jquery UI</a></div>
+<a class="list-group-item" href="#navigation-34" data-toggle="collapse" data-parent="#navigation">Хелперы <b class="caret"></b></a><div id="navigation-34" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url хелпер</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Встроенные валидаторы <span id="vstroennye-validatory"></span><a href="#vstroennye-validatory" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#boolean">boolean</a></li>
+<li><a href="#captcha">captcha</a></li>
+<li><a href="#compare">compare</a></li>
+<li><a href="#date">date</a></li>
+<li><a href="#default">default</a></li>
+<li><a href="#double">double</a></li>
+<li><a href="#email">email</a></li>
+<li><a href="#exist">exist</a></li>
+<li><a href="#file">file</a></li>
+<li><a href="#filter">filter</a></li>
+<li><a href="#image">image</a></li>
+<li><a href="#ip">ip</a></li>
+<li><a href="#in">in</a></li>
+<li><a href="#integer">integer</a></li>
+<li><a href="#match">match</a></li>
+<li><a href="#number">number</a></li>
+<li><a href="#required">required</a></li>
+<li><a href="#safe">safe</a></li>
+<li><a href="#string">string</a></li>
+<li><a href="#trim">trim</a></li>
+<li><a href="#unique">unique</a></li>
+<li><a href="#url">url</a></li></ol></div>
+<p>Yii предоставляет встроенный набор часто используемых валидаторов, расположенных, в первую очередь,
+в пространстве имен <code>yii\validators</code>. Вместо того, чтобы использовать длинные имена классов валидаторов,
+вы можете использовать <em>псевдонимы</em>, чтобы указать на использование этих валидаторов.
+Например, вы можете использовать псевдоним <code>required</code>, чтобы сослаться на класс <a href="./yii-validators-requiredvalidator.html">yii\validators\RequiredValidator</a>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        [[<span class="hljs-string">'email'</span>, <span class="hljs-string">'password'</span>], <span class="hljs-string">'required'</span>],
+    ];
+}
+</code></pre>
+<p>Все поддерживаемые псевдонимы валидаторов можно увидеть в свойстве <a href="./yii-validators-validator.html#$builtInValidators-detail">yii\validators\Validator::$builtInValidators</a>.</p>
+<p>Ниже мы опишем основные способы использования и свойства всех встроенных валидаторов.</p>
+<h2><a href="./yii-validators-booleanvalidator.html">boolean</a>  <span id="boolean"></span><a href="#boolean" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// Проверяет 'selected' на равенство 0 или 1, без учета типа данных</span>
+    [<span class="hljs-string">'selected'</span>, <span class="hljs-string">'boolean'</span>],
+
+    <span class="hljs-comment">// Проверяет, что "deleted" - это тип данных boolean и содержит true или false</span>
+    [<span class="hljs-string">'deleted'</span>, <span class="hljs-string">'boolean'</span>, <span class="hljs-string">'trueValue'</span> =&gt; <span class="hljs-keyword">true</span>, <span class="hljs-string">'falseValue'</span> =&gt; <span class="hljs-keyword">false</span>, <span class="hljs-string">'strict'</span> =&gt; <span class="hljs-keyword">true</span>],
+]
+</code></pre>
+<p>Этот валидатор проверяет, что второе значение является <em>boolean</em>.</p>
+<ul>
+<li><code>trueValue</code>: значение, соответствующее <code>true</code>. По умолчанию - <code>'1'</code>.</li>
+<li><code>falseValue</code>: значение, соответствующее <code>false</code>. По умолчанию - <code>'0'</code>.</li>
+<li><code>strict</code>: должна ли проверка учитывать соответствие типов данных <code>trueValue</code> или <code>falseValue</code>. По умолчанию - <code>false</code>.</li>
+</ul>
+<blockquote class="note"><p><strong>Примечание: </strong>Из-за того, что как правило данные, полученные из HTML-форм, представляются в виде строки, обычно вам стоит
+оставить свойство <a href="./yii-validators-booleanvalidator.html#$strict-detail">strict</a> равным <code>false</code>.</p>
+</blockquote>
+<h2><a href="./yii-captcha-captchavalidator.html">captcha</a>  <span id="captcha"></span><a href="#captcha" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    [<span class="hljs-string">'verificationCode'</span>, <span class="hljs-string">'captcha'</span>],
+]
+</code></pre>
+<p>Этот валидатор обычно используется вместе с <a href="./yii-captcha-captchaaction.html">yii\captcha\CaptchaAction</a> и <a href="./yii-captcha-captcha.html">yii\captcha\Captcha</a>, чтобы
+убедиться, что данные в инпуте соответствуют верификационному коду, отображенному с помощью виджета
+<a href="./yii-captcha-captcha.html">CAPTCHA</a>.</p>
+<ul>
+<li><code>caseSensitive</code>: необходимо ли учитывать чувствительность к регистру при сравнении. По умолчанию - <code>false</code>.</li>
+<li><code>captchaAction</code>: <a href="guide-structure-controllers.html#routes">маршрут</a>, соответствующий
+<a href="./yii-captcha-captchaaction.html">CAPTCHA action</a>, который рендерит изображение с <em>CAPTCHA</em>. По умолчанию - <code>'site/captcha'</code>.</li>
+<li><code>skipOnEmpty</code>: может ли валидация быть пропущена, если <em>input</em> пустой. По умолчанию - <code>false</code>,
+что означает, что <em>input</em> обязателен.</li>
+</ul>
+<h2><a href="./yii-validators-comparevalidator.html">compare</a>  <span id="compare"></span><a href="#compare" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// проверяет, является ли значение атрибута "password" таким же, как "password_repeat"</span>
+    [<span class="hljs-string">'password'</span>, <span class="hljs-string">'compare'</span>],
+    
+    <span class="hljs-comment">// то же, что и выше, но атрибут для сравнения указан явно</span>
+    [<span class="hljs-string">'password'</span>, <span class="hljs-string">'compare'</span>, <span class="hljs-string">'compareAttribute'</span> =&gt; <span class="hljs-string">'password_repeat'</span>],
+
+    <span class="hljs-comment">// проверяет, что возраст больше или равен 30</span>
+    [<span class="hljs-string">'age'</span>, <span class="hljs-string">'compare'</span>, <span class="hljs-string">'compareValue'</span> =&gt; <span class="hljs-number">30</span>, <span class="hljs-string">'operator'</span> =&gt; <span class="hljs-string">'&gt;='</span>, <span class="hljs-string">'type'</span> =&gt; <span class="hljs-string">'number'</span>],
+]
+</code></pre>
+<p>Этот валидатор сравнивает значение указанного атрибута с другим, чтобы удостовериться, что их отношение
+соответствует описанному в свойстве <code>operator</code>.</p>
+<ul>
+<li><code>compareAttribute</code>: имя атрибута, с которым нужно сравнить значение. Когда валидатор используется
+для проверки атрибута, значением по умолчанию для этого свойства будет имя этого же атрибута
+с суффиксом <code>_repeat</code>. Например, если проверяющийся атрибут - <code>password</code>,
+то значение свойства по умолчанию будет <code>password_repeat</code>.</li>
+<li><code>compareValue</code>: постоянное значение, с которым будут сравниваться входящие данные. Когда одновременно указаны
+ это свойство и <code>compareAttribute</code>, это свойство получит приоритет.</li>
+<li><code>operator</code>: оператор сравнения. По умолчанию <code>==</code>, что означает проверку на эквивалентность входящих данных и в
+<code>compareAttribute</code>, и в <code>compareValue</code>. Поддерживаются следующие операторы:<ul>
+<li><code>==</code>: проверяет два значения на эквивалентность. Сравнение не учитывает тип данных.</li>
+<li><code>===</code>: проверяет два значения на эквивалентность. Сравнение строгое и учитывает тип данных.</li>
+<li><code>!=</code>: проверяет, что два значения не эквивалентны. Сравнение не учитывает тип данных.</li>
+<li><code>!==</code>: проверяет, что два значения не эквивалентны. Сравнение строгое и учитывает тип данных.</li>
+<li><code>&gt;</code>: проверяет, что валидируемое значение больше, чем то, с которым происходит сравнение.</li>
+<li><code>&gt;=</code>: проверяет, что валидируемое значение больше или равно тому, с которым происходит сравнение.</li>
+<li><code>&lt;</code>: проверяет, что валидируемое значение меньше, чем то, с которым происходит сравнение.</li>
+<li><code>&lt;=</code>: проверяет, что валидируемое значение меньше или равно тому, с которым происходит сравнение.</li>
+</ul>
+</li>
+<li><code>type</code>: По умолчанию при сравнении используется тип '<a href="./yii-validators-comparevalidator.html#TYPE_STRING-detail">string</a>'. То есть
+ значения сравниваются побайтово. При сравнении чисел необходимо задать <a href="./yii-validators-comparevalidator.html#$type-detail">$type</a>
+ как '<a href="./yii-validators-comparevalidator.html#TYPE_NUMBER-detail">number</a>'.     </li>
+</ul>
+<h2><a href="./yii-validators-datevalidator.html">date</a>  <span id="date"></span><a href="#date" class="hashlink">&para;</a></h2><p>Валидатор <a href="./yii-validators-datevalidator.html">date</a> можно использовать тремя способами:</p>
+<pre><code class="hljs php language-php">[
+    [[<span class="hljs-string">'from'</span>, <span class="hljs-string">'to'</span>], <span class="hljs-string">'date'</span>],
+    [[<span class="hljs-string">'from_datetime'</span>, <span class="hljs-string">'to_datetime'</span>], <span class="hljs-string">'datetime'</span>],
+    [[<span class="hljs-string">'some_time'</span>], <span class="hljs-string">'time'</span>],
+]
+</code></pre>
+<p>Этот валидатор проверяет соответствие входящих данных форматам <em>date</em>, <em>time</em> или <em>datetime</em>.
+Опционально, он может конвертировать входящее значение в UNIX timestamp и сохранить в атрибуте,
+описанном здесь: <a href="./yii-validators-datevalidator.html#$timestampAttribute-detail">timestampAttribute</a>.</p>
+<ul>
+<li><code>format</code>: формат даты/времени, согласно которому должна быть сделана проверка.
+ Значение может быть паттерном, описанным в <a href="http://userguide.icu-project.org/formatparse/datetime#TOC-Date-Time-Format-Syntax">руководстве ICU</a>
+ или форматом PHP префиксированным <code>php:</code>. Формат должен приниматься классом <code>Datetime</code>. Подробнее о нём можно
+ прочитать в <a href="https://secure.php.net/manual/ru/datetime.createfromformat.php">руководстве PHP по date_create_from_format()</a>.
+ Если значение не задано, используется <code>Yii::$app-&gt;formatter-&gt;dateFormat</code>.
+ Подробнее читайте в <a href="./yii-validators-datevalidator.html#$format-detail">документации по API</a>.</li>
+<li><p><code>timestampAttribute</code>: имя атрибута, которому данный валидатор может присваивать значение UNIX timestamp,
+ получаемое из входных даты и времени. Это может быть как тот же атрибут, что валидируется в данный момент. Если это так,
+ после валидации оригинальное значение будет перезаписано значеним timestamp.
+ Дополнительные примеры вы можете найти в разделе <a href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide/topics-date-picker.md">"Handling date input with the DatePicker"</a>.</p>
+<p>Начиная с версии 2.0.4, для атрибута могут быть заданы формат и часовой пояс через
+<a href="./yii-validators-datevalidator.html#$timestampAttributeFormat-detail">$timestampAttributeFormat</a> и
+<a href="./yii-validators-datevalidator.html#$timestampAttributeTimeZone-detail">$timestampAttributeTimeZone</a> соответственно.</p>
+<p>При использовании <code>timestampAttribute</code>, входное значение будет конвертировано в unix timestamp, который по определению
+содержит время в UTC. То есть будет произведено преобразование из <a href="./yii-validators-datevalidator.html#$timeZone-detail">входного часового пояса</a>
+в UTC.</p>
+</li>
+<li><p>Начиная с версии 2.0.4 также можно задать <a href="./yii-validators-datevalidator.html#$min-detail">минимальное</a> и
+<a href="./yii-validators-datevalidator.html#$max-detail">максимальное</a> значение timestamp.</p>
+</li>
+</ul>
+<p>В том случае, если ввод не обязателен, вам может понадобится добавить <a href="#default">фильтр значения по умолчанию</a> в
+дополнение к валидатору даты для того, чтобы пустой ввод сохранялся как <code>null</code>. В противном случае вы можете получить
+даты вроде <code>0000-00-00</code> в базе данных или <code>1970-01-01</code> в полях ввода виджета date picker.</p>
+<pre><code class="hljs php language-php">[
+    [[<span class="hljs-string">'from_date'</span>, <span class="hljs-string">'to_date'</span>], <span class="hljs-string">'default'</span>, <span class="hljs-string">'value'</span> =&gt; <span class="hljs-keyword">null</span>],
+    [[<span class="hljs-string">'from_date'</span>, <span class="hljs-string">'to_date'</span>], <span class="hljs-string">'date'</span>],
+],
+</code></pre>
+<h2><a href="./yii-validators-defaultvaluevalidator.html">default</a>  <span id="default"></span><a href="#default" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// установить null для "age" в качестве значения по умолчанию</span>
+    [<span class="hljs-string">'age'</span>, <span class="hljs-string">'default'</span>, <span class="hljs-string">'value'</span> =&gt; <span class="hljs-keyword">null</span>],
+
+    <span class="hljs-comment">// установить "USA" в качестве значения по умолчанию для "country"</span>
+    [<span class="hljs-string">'country'</span>, <span class="hljs-string">'default'</span>, <span class="hljs-string">'value'</span> =&gt; <span class="hljs-string">'USA'</span>],
+
+    <span class="hljs-comment">// установить в "from" и "to" дату 3 дня и 6 дней от сегодняшней, если они пустые</span>
+    [[<span class="hljs-string">'from'</span>, <span class="hljs-string">'to'</span>], <span class="hljs-string">'default'</span>, <span class="hljs-string">'value'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($model, $attribute)</span> </span>{
+        <span class="hljs-keyword">return</span> date(<span class="hljs-string">'Y-m-d'</span>, strtotime($attribute === <span class="hljs-string">'to'</span> ? <span class="hljs-string">'+3 days'</span> : <span class="hljs-string">'+6 days'</span>));
+    }],
+]
+</code></pre>
+<p>Этот валидатор не проверяет данные. Вместо этого он присваивает значения по умолчанию проходящим проверку
+атрибутам, если они пусты.</p>
+<ul>
+<li><code>value</code>: значение по умолчанию или функция обратного вызова, которая возвращает значение по умолчанию,
+которое будет присвоено проверяемому атрибуту, если он пустой. Функция обратного вызова должна выглядеть так:</li>
+</ul>
+<pre><code class="hljs php language-php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span><span class="hljs-params">($model, $attribute)</span> </span>{
+    <span class="hljs-comment">// ... вычисление $value ...</span>
+    <span class="hljs-keyword">return</span> $value;
+}
+</code></pre>
+<blockquote class="info"><p><strong>Информация: </strong>Как определить, является значение пустым или нет, более подробно описано в отдельной статье
+  в секции <a href="guide-input-validation.html#handling-empty-inputs">Пустые значения</a>.</p>
+</blockquote>
+<h2><a href="./yii-validators-numbervalidator.html">double</a>  <span id="double"></span><a href="#double" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// проверяет, является ли "salary" числом типа double</span>
+    [<span class="hljs-string">'salary'</span>, <span class="hljs-string">'double'</span>],
+]
+</code></pre>
+<p>Этот валидатор проверяет, что входящее значение является корректным <em>double</em> числом. Он идентичен
+валидатору <a href="#number">number</a>. (Прим. пер.: корректным float числом).</p>
+<ul>
+<li><code>max</code>: верхний лимит (включительно) для значений. Если не установлен, значит, валидатор не будет проверять верхний лимит.</li>
+<li><code>min</code>: Нижний лимит (включительно) для значений. Если не установлен, валидатор не будет проверять нижний лимит.</li>
+</ul>
+<h2><a href="./yii-validators-emailvalidator.html">email</a>  <span id="email"></span><a href="#email" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// проверяет, что "email" - это корректный email-адрес</span>
+    [<span class="hljs-string">'email'</span>, <span class="hljs-string">'email'</span>],
+]
+</code></pre>
+<p>Валидатор проверяет, что значение входящих данных является корректным email-адресом.</p>
+<ul>
+<li><code>allowName</code>: можно ли передавать в атрибут имя (пример: <code>John Smith &lt;john.smith@example.com&gt;</code>). По умолчанию - <code>false</code>.</li>
+<li><code>checkDNS</code>, проверяет, существует ли доменное имя для введенного адреса (и A, и MX запись).
+Учтите, что проверка может закончится неудачей, что может быть вызвано временными проблемами с DNS, даже если
+email-адрес корректен. По умолчанию - <code>false</code>.</li>
+<li><code>enableIDN</code>, нужно ли учитывать IDN (многоязычные доменные имена). По умолчанию - <code>false</code>. Учтите, что для использования
+IDN-валидации вам нужно установить и включить PHP расширение <code>intl</code>, иначе будет выброшено исключение.</li>
+</ul>
+<h2><a href="./yii-validators-existvalidator.html">exist</a>  <span id="exist"></span><a href="#exist" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// a1 должно существовать в столбце, который представляется атрибутом "a1"</span>
+    [<span class="hljs-string">'a1'</span>, <span class="hljs-string">'exist'</span>],
+
+    <span class="hljs-comment">// a1 должно существовать, но его значение будет использовать a2 для проверки существования</span>
+    [<span class="hljs-string">'a1'</span>, <span class="hljs-string">'exist'</span>, <span class="hljs-string">'targetAttribute'</span> =&gt; <span class="hljs-string">'a2'</span>],
+
+    <span class="hljs-comment">// и a1, и a2 должны существовать, в противном случае оба атрибута будут возвращать ошибку</span>
+    [[<span class="hljs-string">'a1'</span>, <span class="hljs-string">'a2'</span>], <span class="hljs-string">'exist'</span>, <span class="hljs-string">'targetAttribute'</span> =&gt; [<span class="hljs-string">'a1'</span>, <span class="hljs-string">'a2'</span>]],
+
+    <span class="hljs-comment">// и a1, и a2 должны существовать, но только атрибут a1 будет возвращать ошибку</span>
+    [<span class="hljs-string">'a1'</span>, <span class="hljs-string">'exist'</span>, <span class="hljs-string">'targetAttribute'</span> =&gt; [<span class="hljs-string">'a1'</span>, <span class="hljs-string">'a2'</span>]],
+
+    <span class="hljs-comment">// a1 требует проверки существования a2 и a3 (используя значение a1)</span>
+    [<span class="hljs-string">'a1'</span>, <span class="hljs-string">'exist'</span>, <span class="hljs-string">'targetAttribute'</span> =&gt; [<span class="hljs-string">'a2'</span>, <span class="hljs-string">'a1'</span> =&gt; <span class="hljs-string">'a3'</span>]],
+
+    <span class="hljs-comment">// a1 должен существовать. Если a1 - массив, то каждый его элемент должен существовать</span>
+    [<span class="hljs-string">'a1'</span>, <span class="hljs-string">'exist'</span>, <span class="hljs-string">'allowArray'</span> =&gt; <span class="hljs-keyword">true</span>],
+]
+</code></pre>
+<p>Этот валидатор ищет входящие данные в столбце таблицы. Он работает только с атрибутами
+модели <a href="guide-db-active-record.html">Active Record</a>. Он поддерживает проверку и одного столбца, и нескольких.</p>
+<ul>
+<li><code>targetClass</code>: имя класса <a href="guide-db-active-record.html">Active Record</a>, который должен быть использован для проверки
+входящего значения. Если не установлен, будет использован класс текущей модели.</li>
+<li><code>targetAttribute</code>: имя атрибута в <code>targetClass</code> который должен быть использован для проверки существования
+входящего значения. Если не установлен, будет использовано имя атрибута, который проверяется в данный момент.
+Вы можете использовать массив для валидации нескольких столбцов одновременно. Значения массива являются атрибутами,
+которые будут использованы для проверки существования, тогда как ключи массива будут являться атрибутами, чьи значения
+будут проверены. Если ключ и значения одинаковы, вы можете указать только значение.</li>
+<li><code>filter</code>: дополнительный фильтр, который будет добавлен к запросу в базу данных для проверки на существование значения.
+Это может быть строка или массив, представляющие дополнительные условия в запросе (подробнее о формате
+значений запроса: <a href="./yii-db-query.html#where()-detail">yii\db\Query::where()</a>), или анонимная функция с сигнатурой <code>function ($query)</code>,
+где <code>$query</code> - это <a href="./yii-db-query.html">Query</a> объект, который вы можете модифицировать в функции.</li>
+<li><code>allowArray</code>: разрешать ли значению быть массивом. По умолчанию - <code>false</code>. Если свойство установлено в <code>true</code>
+и тип входящих данных - массив, тогда каждый его элемент должен существовать в соответствующем столбце таблицы.
+Помните, что это свойство не может быть установлено в <code>true</code>, если вы валидируете несколько столбцов, передавая
+их в <code>targetAttribute</code> как массив.</li>
+</ul>
+<h2><a href="./yii-validators-filevalidator.html">file</a>  <span id="file"></span><a href="#file" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// проверяет, что "primaryImage" - это загруженное изображение в формате PNG, JPG или GIF</span>
+    <span class="hljs-comment">// размер файла должен быть меньше 1MB</span>
+    [<span class="hljs-string">'primaryImage'</span>, <span class="hljs-string">'file'</span>, <span class="hljs-string">'extensions'</span> =&gt; [<span class="hljs-string">'png'</span>, <span class="hljs-string">'jpg'</span>, <span class="hljs-string">'gif'</span>], <span class="hljs-string">'maxSize'</span> =&gt; <span class="hljs-number">1024</span>*<span class="hljs-number">1024</span>],
+]
+</code></pre>
+<p>Этот валидатор проверяет, что input является корректным загруженным файлом.</p>
+<ul>
+<li><code>extensions</code>: список имен расширений, которые допустимы для загрузки. Это также может быть или массив, или
+строка, содержащая имена файловых расширений, разделенных пробелом или запятой (пр.: "gif, jpg").
+Имя расширения не чувствительно к регистру. По умолчанию - <code>null</code>, что значит, что все имена файловых расширений
+допустимы.</li>
+<li><code>mimeTypes</code>: список MIME-типов, которые допустимы для загрузки. Это может быть или массив, или строка,
+содержащая MIME-типы файлов, разделенные пробелом или запятой (пример: "image/jpeg, image/png").
+В именах MIME-типов допустимо использовать символ <code>*</code> для выбора группы mime-типов.
+Например, <code>image/*</code> разрешит все типы, которы начинаются с <code>image/</code> (пример: <code>image/jpeg</code>, <code>image/png</code>).
+Имена MIME-типов не чувствительны к регистру. По умолчанию - <code>null</code>, что значит, что допустимы все MIME-типы.
+Более детальную информацию можно найти в <a href="https://ru.wikipedia.org/wiki/Список_MIME-типов">списке MIME-типов</a>.</li>
+<li><code>minSize</code>: минимальный размер файла в байтах, разрешенный для загрузки. По умолчанию - <code>null</code>, что значит, что нет
+минимального лимита.</li>
+<li><code>maxSize</code>: максимальный размер файла в байтах, разрешенный для загрузки. По умолчанию - <code>null</code>, что значит, что нет
+максимального лимита.</li>
+<li><code>maxFiles</code>: максимальное количество файлов, которое может быть передано в атрибут. По умолчанию 1, что значит, что
+input должен быть файлом в единственном экземпляре. Если больше, чем 1, то атрибут должен быть массивом,
+состоящим из не более, чем <code>maxFiles</code> загруженных файлов.</li>
+<li><code>checkExtensionByMimeType</code>: нужно ли проверять расширение файла исходя из его MIME-типа. Если они не соответствуют
+друг другу, то файл будет считаться некорректным. По умолчанию - <code>true</code>, то есть проверка будет произведена.</li>
+</ul>
+<p><code>FileValidator</code> используется вместе с <a href="./yii-web-uploadedfile.html">yii\web\UploadedFile</a>. Пожалуйста, посмотрите раздел
+<a href="guide-input-file-upload.html">Загрузка файлов</a> для более полного понимания загрузки и проверки файлов.</p>
+<h2><a href="./yii-validators-filtervalidator.html">filter</a>  <span id="filter"></span><a href="#filter" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// обрезает пробелы вокруг "username" и "email"</span>
+    [[<span class="hljs-string">'username'</span>, <span class="hljs-string">'email'</span>], <span class="hljs-string">'filter'</span>, <span class="hljs-string">'filter'</span> =&gt; <span class="hljs-string">'trim'</span>, <span class="hljs-string">'skipOnArray'</span> =&gt; <span class="hljs-keyword">true</span>],
+
+    <span class="hljs-comment">// нормализует значение "phone"</span>
+    [<span class="hljs-string">'phone'</span>, <span class="hljs-string">'filter'</span>, <span class="hljs-string">'filter'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($value)</span> </span>{
+        <span class="hljs-comment">// нормализация значения происходит тут</span>
+        <span class="hljs-keyword">return</span> $value;
+    }],
+    
+    <span class="hljs-comment">// нормализует значение "phone" используя функцию "normalizePhone"</span>
+    [<span class="hljs-string">'phone'</span>, <span class="hljs-string">'filter'</span>, <span class="hljs-string">'filter'</span> =&gt; [<span class="hljs-keyword">$this</span>, <span class="hljs-string">'normalizePhone'</span>]],
+        
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">normalizePhone</span><span class="hljs-params">($value)</span> </span>{
+        <span class="hljs-keyword">return</span> $value;
+    }
+]
+</code></pre>
+<p>Этот валидатор не проверяет данные. Вместо этого он применяет указанный фильтр к входящему значению и
+присваивает результат применения фильтра атрибуту.</p>
+<ul>
+<li><code>filter</code>: PHP-callback, осуществляющий фильтрацию. Это может быть глобальная php функция, анонимная функция
+и т.д. Функция должна выглядеть как <code>function ($value) { return $newValue; }</code>. Это свойство обязательно должно
+быть установлено.</li>
+<li><code>skipOnArray</code>: нужно ли пропускать валидацию, если входящим значением является массив. По умолчанию - <code>false</code>.
+Помните, что если фильтр не может принимать массив, вы должны установить это значение в <code>true</code>. Иначе могут
+произойти различные ошибки PHP.</li>
+</ul>
+<blockquote><p>Трюк: Если вы хотите удалить пробелы вокруг значений атрибута, вы можете использовать валидатор <a href="#trim">trim</a>.</p>
+</blockquote>
+<h2><a href="./yii-validators-imagevalidator.html">image</a>  <span id="image"></span><a href="#image" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// проверяет, что "primaryImage" - это валидное изображение с указанными размерами</span>
+    [<span class="hljs-string">'primaryImage'</span>, <span class="hljs-string">'image'</span>, <span class="hljs-string">'extensions'</span> =&gt; <span class="hljs-string">'png, jpg'</span>,
+        <span class="hljs-string">'minWidth'</span> =&gt; <span class="hljs-number">100</span>, <span class="hljs-string">'maxWidth'</span> =&gt; <span class="hljs-number">1000</span>,
+        <span class="hljs-string">'minHeight'</span> =&gt; <span class="hljs-number">100</span>, <span class="hljs-string">'maxHeight'</span> =&gt; <span class="hljs-number">1000</span>,
+    ],
+]
+</code></pre>
+<p>Этот валидатор проверяет, что входящие данные являются корректным файлом изображения. Он расширяет <a href="#file">file</a>
+валидатор и наследует все его свойства. Кроме того, он поддерживает следующие дополнительные свойства, специфичные
+для валидации изображений:</p>
+<ul>
+<li><code>minWidth</code>: минимальная ширина изображения. По умолчанию <code>null</code>, что значит, что нет нижнего лимита.</li>
+<li><code>maxWidth</code>: максимальная ширина изображения. По умолчанию <code>null</code>, что значит, что нет верхнего лимита.</li>
+<li><code>minHeight</code>: минимальная высота изображения. По умолчанию <code>null</code>, что значит, что нет нижнего лимита.</li>
+<li><code>maxHeight</code>: максимальная высота изображения. По умолчанию <code>null</code>, что значит, что нет верхнего лимита.</li>
+</ul>
+<h2><a href="./yii-validators-ipvalidator.html">ip</a>  <span id="ip"></span><a href="#ip" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// проверяет, что "ip_address" - это валидный IPv4 или IPv6 адрес</span>
+    [<span class="hljs-string">'ip_address'</span>, <span class="hljs-string">'ip'</span>],
+
+
+    <span class="hljs-comment">// проверяет, что "ip_address" - это валидный IPv6 адрес или подсеть,</span>
+    <span class="hljs-comment">// значение будет развернуто в формат полной записи IPv6 адреса</span>
+    [<span class="hljs-string">'ip_address'</span>, <span class="hljs-string">'ip'</span>, <span class="hljs-string">'ipv4'</span> =&gt; <span class="hljs-keyword">false</span>, <span class="hljs-string">'subnet'</span> =&gt; <span class="hljs-keyword">null</span>, <span class="hljs-string">'expandIPv6'</span> =&gt; <span class="hljs-keyword">true</span>],
+
+    <span class="hljs-comment">// проверяет, что "ip_address" - это валидный IPv4 или IPv6 адрес,</span>
+    <span class="hljs-comment">// разрешает использования символа отрацания `!`</span>
+    [<span class="hljs-string">'ip_address'</span>, <span class="hljs-string">'ip'</span>, <span class="hljs-string">'negation'</span> =&gt; <span class="hljs-keyword">true</span>],
+]
+</code></pre>
+<p>Этот валидатор проверяет, является ли входящее значение валидным IPv4/IPv6 адресом или подсетью.
+Он также может изменять значение атрибута, если включена нормализация или развертывание IPv6 адресов.</p>
+<p>Валидатор имеет такие свойства:</p>
+<ul>
+<li><code>ipv4</code>: может ли проверяемое значение быть IPv4 адрессом. По умолчанию <code>true</code>.</li>
+<li><code>ipv6</code>: может ли проверяемое значение быть IPv6 адрессом. По умолчанию <code>true</code>.</li>
+<li><p><code>subnet</code>: может ли проверяемое значение быть IP адресом с CIDR (подсетью), например <code>192.168.10.0/24</code></p>
+<ul>
+<li><code>true</code> - указание подсети обязательно;</li>
+<li><code>false</code> - указание подсети запрещено;</li>
+<li><code>null</code> - указание подсети возможно, но не обязательно.</li>
+</ul>
+<p>  По умолчанию <code>false</code>.</p>
+</li>
+<li><code>normalize</code>: нормализировать ли проверяемый IP адрес без CIDR к IP адресу с наименьшим CIDR
+(32 для IPv4 или 128 для IPv6). Свойство действует только если <code>subnet</code> не установлен в <code>false</code>. Например:<ul>
+<li><code>10.0.1.5</code> будет приведен к <code>10.0.1.5/32</code></li>
+<li><code>2008:db0::1</code> будет приведен к <code>2008:db0::1/128</code></li>
+</ul>
+</li>
+<li><code>negation</code>: может ли проверяемое значение иметь символ отрицания <code>!</code> в начале, например <code>!192.168.0.1</code>.
+По умолчанию <code>false</code>.</li>
+<li><code>expandIPv6</code>: разворачивать ли IPv6 адрес в формат полной записи.
+Например, IPv6 адрес <code>2008:db0::1</code> будет развернут в <code>2008:0db0:0000:0000:0000:0000:0000:0001</code>. По умолчанию <code>false</code>.</li>
+<li><p><code>ranges</code>: массив IPv4 или IPv6 диапазонов, которые разрешены или запрещены.</p>
+<p>  Если свойство не установлено, все IP адреса разрешены. Иначе, правила будут проверяться последовательно до первого
+вхождения. IP адрес будет запрещен, если не подпадет ни под одно правило. Например:
+  <code>`</code>php
+  [</p>
+<pre><code class="hljs php">   <span class="hljs-string">'client_ip'</span>, <span class="hljs-string">'ip'</span>, <span class="hljs-string">'ranges'</span> =&gt; [
+       <span class="hljs-string">'192.168.10.128'</span>
+       <span class="hljs-string">'!192.168.10.0/24'</span>,
+       <span class="hljs-string">'any'</span> <span class="hljs-comment">// разрешает все остальные IP адреса</span>
+   ]
+</code></pre>
+<p>  ]
+  <code>`</code>
+В этом примере, доступ разрешен для всех IPv4 и IPv6 адресов кроме подсети <code>192.168.10.0/24</code>.
+IPv4 адрес <code>192.168.10.128</code> также разрешен, так как находится перед запрещающим правилом.</p>
+</li>
+<li><p><code>networks</code>: массив псевдониимов, которые могут быть использованы в <code>ranges</code>. Формат массива:</p>
+<ul>
+<li>ключ - имя псевдонима</li>
+<li>значение - массив строк. Строка может быть как диапазоном адресов, так и другим псведонимом. Строка может иметь
+  символ отрицания <code>!</code> в начале (не зависит от свойства <code>negation</code>).</li>
+</ul>
+<p>  Следующие псевдонимы определены по умолчанию:</p>
+<ul>
+<li><code>*</code>: <code>any</code></li>
+<li><code>any</code>: <code>0.0.0.0/0, ::/0</code></li>
+<li><code>private</code>: <code>10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16, fd00::/8</code></li>
+<li><code>multicast</code>: <code>224.0.0.0/4, ff00::/8</code></li>
+<li><code>linklocal</code>: <code>169.254.0.0/16, fe80::/10</code></li>
+<li><code>localhost</code>: <code>127.0.0.0/8', ::1</code></li>
+<li><code>documentation</code>: <code>192.0.2.0/24, 198.51.100.0/24, 203.0.113.0/24, 2001:db8::/32</code></li>
+<li><code>system</code>: <code>multicast, linklocal, localhost, documentation</code></li>
+</ul>
+</li>
+</ul>
+<blockquote class="info"><p><strong>Информация: </strong>Этот валидатор стал доступным начиная с версии 2.0.7.</p>
+</blockquote>
+<h2><a href="./yii-validators-rangevalidator.html">in</a>  <span id="in"></span><a href="#in" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// проверяет, что значение "level" равно 1, 2 или 3</span>
+    [<span class="hljs-string">'level'</span>, <span class="hljs-string">'in'</span>, <span class="hljs-string">'range'</span> =&gt; [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]],
+]
+</code></pre>
+<p>Этот валидатор проверяет, что входящее значение соответствует одному из значений, указанных в <code>range</code>.</p>
+<ul>
+<li><code>range</code>: список значений, с которыми будет сравниваться входящее значение.</li>
+<li><code>strict</code>: должно ли сравнение входящего значения со списком значений быть строгим (учитывать тип данных).
+По умолчанию <code>false</code>.</li>
+<li><code>not</code>: должен ли результат проверки быть инвертирован. По умолчанию - <code>false</code>. Если свойство установлено в <code>true</code>,
+валидатор проверяет, что входящее значение НЕ соответствует ни одному из значений, указанных в <code>range</code>.</li>
+<li><code>allowArray</code>: устанавливает, допустимо ли использовать массив в качестве входных данных. Если установлено в <code>true</code>
+и входящие данные являются массивом, для каждого элемента входящего массива должно быть найдено соответствие в
+<code>range</code>.</li>
+</ul>
+<h2><a href="./yii-validators-numbervalidator.html">integer</a>  <span id="integer"></span><a href="#integer" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// проверяет "age" на то, что это integer значение</span>
+    [<span class="hljs-string">'age'</span>, <span class="hljs-string">'integer'</span>],
+]
+</code></pre>
+<p>Проверяет, что входящее значение является integer значением.</p>
+<ul>
+<li><code>max</code>: верхний лимит (включительно) для числа. Если не установлено, валидатор не будет проверять верхний лимит.</li>
+<li><code>min</code>: нижний лимит (включительно) для числа. Если не установлено, валидатор не будет проверять нижний лимит.</li>
+</ul>
+<h2><a href="./yii-validators-regularexpressionvalidator.html">match</a>  <span id="match"></span><a href="#match" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// проверяет, что "username" начинается с буквы и содержит только буквенные символы,</span>
+    <span class="hljs-comment">// числовые символы и знак подчеркивания</span>
+    [<span class="hljs-string">'username'</span>, <span class="hljs-string">'match'</span>, <span class="hljs-string">'pattern'</span> =&gt; <span class="hljs-string">'/^[a-z]\w*$/i'</span>]
+]
+</code></pre>
+<p>Этот валидатор проверяет, что входящее значение совпадает с указанным регулярным выражением.</p>
+<ul>
+<li><code>pattern</code>: регулярное выражение, с которым должно совпадать входящее значение. Это свойство должно быть установлено,
+иначе будет выброшено исключение.</li>
+<li><code>not</code>: инвертирует регулярное выражение. По умолчанию <code>false</code>, что значит, что валидация будет успешна,
+ только если входящее значение совпадают с шаблоном. Если установлено в <code>true</code>, валидация будет успешна,
+ только если входящее значение НЕ совпадает с шаблоном.</li>
+</ul>
+<h2><a href="./yii-validators-numbervalidator.html">number</a>  <span id="number"></span><a href="#number" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// проверяет, является ли "salary" числом</span>
+    [<span class="hljs-string">'salary'</span>, <span class="hljs-string">'number'</span>],
+]
+</code></pre>
+<p>Этот валидатор проверяет, являются ли входящие значения числовыми. Он эквивалентен валидатору <a href="#double">double</a>.</p>
+<ul>
+<li><code>max</code>: верхний лимит (включительно) для числа. Если не установлено, валидатор не будет проверять верхний лимит.</li>
+<li><code>min</code>: нижний лимит (включительно) для числа. Если не установлено, валидатор не будет проверять нижний лимит.</li>
+</ul>
+<h2><a href="./yii-validators-requiredvalidator.html">required</a>  <span id="required"></span><a href="#required" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// проверяет, являются ли "username" и "password" не пустыми</span>
+    [[<span class="hljs-string">'username'</span>, <span class="hljs-string">'password'</span>], <span class="hljs-string">'required'</span>],
+]
+</code></pre>
+<p>Этот валидатор проверяет, являются ли входящие значения не пустыми.</p>
+<ul>
+<li><code>requiredValue</code>: желаемое значение, которому должны соответствовать проверяемые данные. Если не установлено,
+это значит, что данные должны быть не пусты.</li>
+<li><code>strict</code>: учитывать или нет соответствие типу данных при валидации (строгое сравнение).
+Если <code>requiredValue</code> не установлено, а это свойство установлено в <code>true</code>, валидатор проверит, что входящее значение
+строго не соответствует <code>null</code>; если свойство установлено в <code>false</code>, валидатор будет проверять значение на пустоту с
+приведением типов.
+Если <code>requiredValue</code> установлено, сравнение между входящими данными и <code>requiredValue</code> будет также учитывать тип
+данных, если это свойство установлено в <code>true</code>.</li>
+</ul>
+<blockquote class="info"><p><strong>Информация: </strong>как определить, является ли значение пустым или нет, подробнее рассказывается
+  в секции <a href="guide-input-validation.html#handling-empty-inputs">Пустые значения</a>.</p>
+</blockquote>
+<h2><a href="./yii-validators-safevalidator.html">safe</a>  <span id="safe"></span><a href="#safe" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// обозначает "description" как safe атрибут</span>
+    [<span class="hljs-string">'description'</span>, <span class="hljs-string">'safe'</span>],
+]
+</code></pre>
+<p>Этот валидатор не проверяет данные. Вместо этого он указывает, что атрибут является
+<a href="guide-structure-models.html#safe-attributes">безопасным атрибутом</a>.</p>
+<h2><a href="./yii-validators-stringvalidator.html">string</a>  <span id="string"></span><a href="#string" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// проверяет, что "username" это строка с длиной от 4 до 24 символов</span>
+    [<span class="hljs-string">'username'</span>, <span class="hljs-string">'string'</span>, <span class="hljs-string">'length'</span> =&gt; [<span class="hljs-number">4</span>, <span class="hljs-number">24</span>]],
+]
+</code></pre>
+<p>Этот валидатор проверяет, что входящее значение - это корректная строка с указанной длиной.</p>
+<ul>
+<li><code>length</code>: описывает длину для строки, проходящей валидацию. Может быть определен следующими
+ способами:<ul>
+<li>числом: точная длина, которой должна соответствовать строка;</li>
+<li>массив с одним элементом: минимальная длина входящей строки (напр.: <code>[8]</code>). Это перезапишет <code>min</code>.</li>
+<li>массив с двумя элементами: минимальная и максимальная длина входящей строки (напр.: <code>[8, 128]</code>).
+   Это перезапишет и <code>min</code>, и <code>max</code>.</li>
+</ul>
+</li>
+<li><code>min</code>: минимальная длина входящей строки. Если не установлено, то не будет ограничения на минимальную длину.</li>
+<li><code>max</code>: максимальная длина входящей строки. Если не установлено, то не будет ограничения на максимальную длину.</li>
+<li><code>encoding</code>: кодировка входящей строки. Если не установлено, будет использовано значение из
+<a href="./yii-base-application.html#$charset-detail">charset</a>, которое по умолчанию установлено в <code>UTF-8</code>.</li>
+</ul>
+<h2><a href="./yii-validators-filtervalidator.html">trim</a>  <span id="trim"></span><a href="#trim" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// обрезает пробелы вокруг "username" и "email"</span>
+    [[<span class="hljs-string">'username'</span>, <span class="hljs-string">'email'</span>], <span class="hljs-string">'trim'</span>],
+]
+</code></pre>
+<p>Этот валидатор не производит проверки данных. Вместо этого он будет обрезать пробелы вокруг входящих данных.
+Помните, что если входящие данные являются массивом, то они будут проигнорированы этим валидатором.</p>
+<h2><a href="./yii-validators-uniquevalidator.html">unique</a>  <span id="unique"></span><a href="#unique" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// a1 должен быть уникальным в столбце, который представляет "a1" атрибут</span>
+    [<span class="hljs-string">'a1'</span>, <span class="hljs-string">'unique'</span>],
+
+    <span class="hljs-comment">// a1 должен быть уникальным, но для проверки на уникальность</span>
+    <span class="hljs-comment">// будет использован столбец a2</span>
+    [<span class="hljs-string">'a1'</span>, <span class="hljs-string">'unique'</span>, <span class="hljs-string">'targetAttribute'</span> =&gt; <span class="hljs-string">'a2'</span>],
+
+    <span class="hljs-comment">// a1 и a2 вместе должны быть уникальны, и каждый из них</span>
+    <span class="hljs-comment">// будет получать сообщения об ошибке</span>
+    [[<span class="hljs-string">'a1'</span>, <span class="hljs-string">'a2'</span>], <span class="hljs-string">'unique'</span>, <span class="hljs-string">'targetAttribute'</span> =&gt; [<span class="hljs-string">'a1'</span>, <span class="hljs-string">'a2'</span>]],
+
+    <span class="hljs-comment">// a1 и a2 вместе должны быть уникальны, но только a1 будет получать сообщение об ошибке</span>
+    [<span class="hljs-string">'a1'</span>, <span class="hljs-string">'unique'</span>, <span class="hljs-string">'targetAttribute'</span> =&gt; [<span class="hljs-string">'a1'</span>, <span class="hljs-string">'a2'</span>]],
+
+    <span class="hljs-comment">// a1 должен быть уникальным, что устанавливается проверкой уникальности a2 и a3</span>
+    <span class="hljs-comment">// (используя значение a1)</span>
+    [<span class="hljs-string">'a1'</span>, <span class="hljs-string">'unique'</span>, <span class="hljs-string">'targetAttribute'</span> =&gt; [<span class="hljs-string">'a2'</span>, <span class="hljs-string">'a1'</span> =&gt; <span class="hljs-string">'a3'</span>]],
+]
+</code></pre>
+<p>Этот валидатор проверяет входящие данные на уникальность в столбце таблицы. Он работает только с
+атрибутами модели <a href="guide-db-active-record.html">Active Record</a>. Он поддерживает проверку либо одного столбца,
+либо нескольких.</p>
+<ul>
+<li><code>targetClass</code>: имя класса <a href="guide-db-active-record.html">Active Record</a>, который должен быть использован
+для проверки значения во входящих данных. Если не установлен, будет использован класс модели, которая
+в данный момент проходит проверку.</li>
+<li><code>targetAttribute</code>: имя атрибута в <code>targetClass</code>, который должен быть использован для проверки на
+уникальность входящего значения. Если не установлено, будет использован атрибут, проверяемый
+в данный момент.
+Вы можете использовать массив для проверки нескольких столбцов таблицы на уникальность. Значения массива -
+это атрибуты, которые будут использованы для валидации, а ключи массива - это атрибуты, которые предоставляют
+данные для валидации. Если ключ и значение одинаковые, вы можете указать только значение.</li>
+<li><code>filter</code>: дополнительный фильтр, который можно присоединить к запросу в БД, чтобы использовать его при
+проверке значения на уникальность. Это может быть строка или массив, представляющие дополнительные условия для запроса
+(см. <a href="./yii-db-query.html#where()-detail">yii\db\Query::where()</a> о формате условий в запросе), или анонимная функция вида <code>function ($query)</code>,
+где <code>$query</code> это объект <a href="./yii-db-query.html">Query</a>, который вы можете изменить в функции.</li>
+</ul>
+<h2><a href="./yii-validators-urlvalidator.html">url</a>  <span id="url"></span><a href="#url" class="hashlink">&para;</a></h2><pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// Проверяет, что "website" является корректным URL. Добавляет http:// к атрибуту "website".</span>
+    <span class="hljs-comment">// если у него нет URI схемы</span>
+    [<span class="hljs-string">'website'</span>, <span class="hljs-string">'url'</span>, <span class="hljs-string">'defaultScheme'</span> =&gt; <span class="hljs-string">'http'</span>],
+]
+</code></pre>
+<p>Этот валидатор проверяет, что входящее значение является корректным URL.</p>
+<ul>
+<li><code>validSchemes</code>: массив с указанием на URI-схему, которая должна считаться корректной. По умолчанию
+<code>['http', 'https']</code>, что означает, что и <code>http</code>, и <code>https</code> URI будут считаться корректными.</li>
+<li><code>defaultScheme</code>: схема URI, которая будет присоединена к входящим данным, если в них отсутствует URI-схема.
+По умолчанию <code>null</code>, что значит, что входящие данные не будут изменены.</li>
+<li><code>enableIDN</code>: должна ли валидация учитывать IDN (интернационализованные доменные имена).
+По умолчанию - <code>false</code>. Учтите, что для того, чтобы IDN валидация работала корректно, вы должны установить <code>intl</code>
+PHP расширение, иначе будет выброшено исключение.</li>
+</ul>
+<blockquote class="note"><p><strong>Примечание: </strong>Валидатор проверяет, что протокол и хост в URL являются корректными. Валидатор НЕ проверяет другие части URL
+и НЕ предназначен для защиты от XSS или любых других видов атак. Обратитесь к секции
+<a href="guide-security-best-practices.html">Лучшие практики безопасности</a> чтобы узнать больше о том, как предтвращать известные угрозы
+при разработке приложений.</p>
+</blockquote>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 09 Dec 2020 00:16:02 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

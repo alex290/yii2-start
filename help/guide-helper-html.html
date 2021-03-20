@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/1728b664/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9c5d0894/solarized_light.css" rel="stylesheet">
+<link href="./assets/f2ce5bcd/style.css" rel="stylesheet">
+<script src="./assets/bbf84a7a/jquery.js"></script>
+<script src="./assets/1728b664/js/bootstrap.js"></script>
+<script src="./assets/fd63b446/jssearch.js"></script>    <title>Html - Хелперы - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w586" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w586-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w586-collapse" class="collapse navbar-collapse"><ul id="w587" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w588" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-570" data-toggle="collapse" data-parent="#navigation">Введение <b class="caret"></b></a><div id="navigation-570" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">О Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Обновление с версии 1.1</a></div>
+<a class="list-group-item" href="#navigation-571" data-toggle="collapse" data-parent="#navigation">Первое знакомство <b class="caret"></b></a><div id="navigation-571" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Установка Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Запуск приложения</a>
+<a class="list-group-item" href="./guide-start-hello.html">Говорим «привет»</a>
+<a class="list-group-item" href="./guide-start-forms.html">Работа с формами</a>
+<a class="list-group-item" href="./guide-start-databases.html">Работа с базами данных</a>
+<a class="list-group-item" href="./guide-start-gii.html">Генерация кода при помощи Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Что дальше?</a></div>
+<a class="list-group-item" href="#navigation-572" data-toggle="collapse" data-parent="#navigation">Структура приложения <b class="caret"></b></a><div id="navigation-572" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Входные скрипты</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Приложения</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Компоненты приложения</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-structure-models.html">Модели</a>
+<a class="list-group-item" href="./guide-structure-views.html">Представления</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Модули</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Фильтры</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Виджеты</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Расширения</a></div>
+<a class="list-group-item" href="#navigation-573" data-toggle="collapse" data-parent="#navigation">Обработка запросов <b class="caret"></b></a><div id="navigation-573" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Разбор и генерация URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Запросы</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Ответы</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Сессии и куки</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Обработка ошибок</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Логирование</a></div>
+<a class="list-group-item" href="#navigation-574" data-toggle="collapse" data-parent="#navigation">Основные понятия <b class="caret"></b></a><div id="navigation-574" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Компоненты</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Свойства</a>
+<a class="list-group-item" href="./guide-concept-events.html">События</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Поведения</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Конфигурации</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Псевдонимы</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Автозагрузка классов</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item" href="#navigation-575" data-toggle="collapse" data-parent="#navigation">Работа с базами данных <b class="caret"></b></a><div id="navigation-575" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Объекты доступа к данным (DAO)</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Построитель запросов</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Миграции</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-ru/README.md">Sphinx</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-redis/blob/master/docs/guide-ru/README.md">Redis</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-ru/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-ru/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-576" data-toggle="collapse" data-parent="#navigation">Получение данных от пользователя <b class="caret"></b></a><div id="navigation-576" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Создание форм</a>
+<a class="list-group-item" href="./guide-input-validation.html">Валидация</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Загрузка файлов</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Табличный ввод</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Работа с несколькими моделями</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">Расширение ActiveForm на стороне клиента</a></div>
+<a class="list-group-item" href="#navigation-577" data-toggle="collapse" data-parent="#navigation">Отображение данных <b class="caret"></b></a><div id="navigation-577" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Форматирование данных</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Постраничная разбивка</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Сортировка</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Провайдеры данных</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Виджеты для данных</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Работа с клиентскими скриптами</a>
+<a class="list-group-item" href="./guide-output-theming.html">Темизация</a></div>
+<a class="list-group-item" href="#navigation-578" data-toggle="collapse" data-parent="#navigation">Безопасность <b class="caret"></b></a><div id="navigation-578" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-security-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Авторизация</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Работа с паролями</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">Криптография</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-ru/README.md">Клиенты авторизации</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Лучшие практики</a></div>
+<a class="list-group-item" href="#navigation-579" data-toggle="collapse" data-parent="#navigation">Кеширование <b class="caret"></b></a><div id="navigation-579" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-caching-data.html">Кэширование данных</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Кэширование фрагментов</a>
+<a class="list-group-item" href="./guide-caching-page.html">Кэширование страниц</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP кэширование</a></div>
+<a class="list-group-item" href="#navigation-580" data-toggle="collapse" data-parent="#navigation">Веб-сервисы REST <b class="caret"></b></a><div id="navigation-580" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Быстрый старт</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Роутинг</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Форматирование ответа</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Ограничение частоты запросов</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Версионирование</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Обработка ошибок</a></div>
+<a class="list-group-item" href="#navigation-581" data-toggle="collapse" data-parent="#navigation">Инструменты разработчика <b class="caret"></b></a><div id="navigation-581" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Отладочная панель и отладчик</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide/README.md">Генерация кода с Gii</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">Генератор документации API</a></div>
+<a class="list-group-item" href="#navigation-582" data-toggle="collapse" data-parent="#navigation">Тестирование <b class="caret"></b></a><div id="navigation-582" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Настройка тестового окружения</a>
+<a class="list-group-item" href="./guide-test-unit.html">Модульные тесты</a>
+<a class="list-group-item" href="./guide-test-functional.html">Функциональные тесты</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Приёмочные тесты</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Фикстуры</a></div>
+<a class="list-group-item" href="#navigation-583" data-toggle="collapse" data-parent="#navigation">Специальные темы <b class="caret"></b></a><div id="navigation-583" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">Шаблон приложения advanced</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Создание приложения с нуля</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Консольные команды</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Встроенные валидаторы</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Интернационализация</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Отправка почты</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Оптимизация производительности</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Окружение виртуального хостинга</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Шаблонизаторы</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Работа со сторонним кодом</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">Использование Yii в качестве микро-framework&#039;а</a></div>
+<a class="list-group-item" href="#navigation-584" data-toggle="collapse" data-parent="#navigation">Виджеты <b class="caret"></b></a><div id="navigation-584" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-ru/README.md">Виджеты Bootstrap</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-ru/README.md">Виджеты Jquery UI</a></div>
+<a class="list-group-item active" href="#navigation-585" data-toggle="collapse" data-parent="#navigation">Хелперы <b class="caret"></b></a><div id="navigation-585" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-helper-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item active" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url хелпер</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Html-помощник <span id="html-pomosnik"></span><a href="#html-pomosnik" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#basics">Основы</a></li>
+<li><a href="#forms">Формы</a></li>
+<li><a href="#styles-and-scripts">Подключение встроенных стилей и скриптов</a></li>
+<li><a href="#hyperlinks">Ссылки</a></li>
+<li><a href="#images">Изображения</a></li>
+<li><a href="#lists">Списки</a></li></ol></div>
+<p>Каждое веб-приложение формирует большое количество HTML-разметки. Если разметка статическая, её можно эффективно
+сформировать <a href="https://secure.php.net/manual/ru/language.basic-syntax.phpmode.php">смешиванием PHP и HTML в одном файле</a>, но
+когда разметка динамическая, становится сложно формировать её без дополнительной помощи. Yii предоставляет такую помощь
+в виде Html-помощника, который обеспечивает набор статических методов для обработки часто-используемых HTML тэгов, их
+атрибутов и содержимого.</p>
+<blockquote class="note"><p><strong>Примечание: </strong>Если ваша разметка близка к статической, лучше использовать непосредственно HTML. Нет никакой
+  необходимости в том, чтобы всё подряд оборачивать вызовами Html-помощника.</p>
+</blockquote>
+<h2>Основы  <span id="basics"></span><a href="#basics" class="hashlink">&para;</a></h2><p>Так как формирование динамической HTML-разметки при помощи конкатенации строк очень быстро вносит хаос в проект, Yii 
+предоставляет набор методов для управления атрибутами тэгов и формирования тэгов на основе этих атрибутов.</p>
+<h3>Формирование тэгов  <span id="generating-tags"></span><a href="#generating-tags" class="hashlink">&para;</a></h3><p>Код формирования тэга выглядит следующим образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?</span>= Html::tag(<span class="hljs-string">'p'</span>, Html::encode($user-&gt;name), [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'username'</span>]) <span class="hljs-meta">?&gt;</span>
+</code></pre>
+<p>Здесь первый аргумент - это название тэга. Второй - содержимое, которое будет заключено между открывающим и закрывающим
+тэгами. Заметьте, что мы используем <code>Html::encode</code>. Это связано с тем, что содержимое не экранируется автоматически,
+чтобы можно было по-необходимости использовать чистый HTML. Третий аргумент - это массив настроек для HTML-кода, а
+другими словами - массив атрибутов для тэга. В этом массиве ключи являются названиями атрибутов, например <code>class</code>,
+<code>href</code> или <code>target</code>, а значения в массиве являются значениями этих атрибутов.</p>
+<p>Вышеприведённый код сформирует следующую HTML-разметку:</p>
+<pre><code class="hljs xml language-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"username"</span>&gt;</span>samdark<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+<p>В тех случаях, когда вам необходимо только закрыть или открыть тэг, можно использовать методы <code>Html::beginTag()</code> и
+<code>Html::endTag()</code>.</p>
+<p>Дополнительные атрибуты используются во многих методах Html-помощника и в различных виджетах. Во всех этих случаях в
+дело вступают механизмы дополнительной обработки данных, о которых следует знать:</p>
+<ul>
+<li>Если значение равно <code>null</code>, соответствующий атрибут не будет выведен.</li>
+<li>Атрибуты, значения которых имеют тип boolean, будут интерпретированы как
+<a href="http://www.w3.org/TR/html5/infrastructure.html#boolean-attributes">логические атрибуты</a>.</li>
+<li>Значения атрибутов будут экранированы с использованием метода <a href="./yii-helpers-basehtml.html#encode()-detail">Html::encode()</a>.</li>
+<li><p>Если в качестве значения атрибута передан массив, он будет обработан следующим образом:</p>
+<ul>
+<li><p>Если атрибут является одним из атрибутов данных, указанных в <a href="./yii-helpers-basehtml.html#$dataAttributes-detail">yii\helpers\Html::$dataAttributes</a>, например <code>data</code>
+или <code>ng</code>, то будет сформирован список атрибутов по одному для каждого элемента массива. Например, код
+<code>'data' =&gt; ['id' =&gt; 1, 'name' =&gt; 'yii']</code> сформирует <code>data-id="1" data-name="yii"</code>; а код 
+<code>'data' =&gt; ['params' =&gt; ['id' =&gt; 1, 'name' =&gt; 'yii'], 'status' =&gt; 'ok']</code> сформирует
+<code>data-params='{"id":1,"name":"yii"}' data-status="ok"</code>. Заметьте, что в последнем примере используется формат JSON
+для формирования вывода вложенного массива.</p>
+</li>
+<li><p>Если атрибут НЕ является атрибутом данных, значение будет сконвертировано в формат JSON. Например, код
+<code>['params' =&gt; ['id' =&gt; 1, 'name' =&gt; 'yii']</code> сформирует <code>params='{"id":1,"name":"yii"}'</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Формирование CSS классов и стилей  <span id="forming-css"></span><a href="#forming-css" class="hashlink">&para;</a></h3><p>При формировании атрибутов для HTML-тэгов часто приходится начинать с некоторых атрибутов по умолчанию, которые затем
+необходимо изменять. Для того, чтобы добавить или удалить CSS-класс, можно использовать следующий подход:</p>
+<pre><code class="hljs php language-php">$options = [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'btn btn-default'</span>];
+
+<span class="hljs-keyword">if</span> ($type === <span class="hljs-string">'success'</span>) {
+    Html::removeCssClass($options, <span class="hljs-string">'btn-default'</span>);
+    Html::addCssClass($options, <span class="hljs-string">'btn-success'</span>);
+}
+
+<span class="hljs-keyword">echo</span> Html::tag(<span class="hljs-string">'div'</span>, <span class="hljs-string">'Всё получилось!'</span>, $options);
+
+<span class="hljs-comment">// в случае, если $type содержит строку 'success', будет сформирован вывод</span>
+<span class="hljs-comment">// &lt;div class="btn btn-success"&gt;Всё получилось!&lt;/div&gt;</span>
+</code></pre>
+<p>Можно указать несколько CSS-классов, используя синтаксис массива:</p>
+<pre><code class="hljs php language-php">$options = [<span class="hljs-string">'class'</span> =&gt; [<span class="hljs-string">'btn'</span>, <span class="hljs-string">'btn-default'</span>]];
+
+<span class="hljs-keyword">echo</span> Html::tag(<span class="hljs-string">'div'</span>, <span class="hljs-string">'Сохранить'</span>, $options);
+<span class="hljs-comment">// выведет '&lt;div class="btn btn-default"&gt;Сохранить&lt;/div&gt;'</span>
+</code></pre>
+<p>При добавлении или удалении классов тоже можно использовать массивы:</p>
+<pre><code class="hljs php language-php">$options = [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'btn'</span>];
+
+<span class="hljs-keyword">if</span> ($type === <span class="hljs-string">'success'</span>) {
+    Html::addCssClass($options, [<span class="hljs-string">'btn-success'</span>, <span class="hljs-string">'btn-lg'</span>]);
+}
+
+<span class="hljs-keyword">echo</span> Html::tag(<span class="hljs-string">'div'</span>, <span class="hljs-string">'Сохранить'</span>, $options);
+<span class="hljs-comment">// выведет '&lt;div class="btn btn-success btn-lg"&gt;Сохранить&lt;/div&gt;'</span>
+</code></pre>
+<p><code>Html::addCssClass()</code> предотвращает дублирование классов, поэтому можно не беспокоиться, что какой-либо класс
+будет добавлен дважды:</p>
+<pre><code class="hljs php language-php">$options = [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'btn btn-default'</span>];
+
+Html::addCssClass($options, <span class="hljs-string">'btn-default'</span>); <span class="hljs-comment">// класс 'btn-default' уже добавлен</span>
+
+<span class="hljs-keyword">echo</span> Html::tag(<span class="hljs-string">'div'</span>, <span class="hljs-string">'Сохранить'</span>, $options);
+<span class="hljs-comment">// выведет '&lt;div class="btn btn-default"&gt;Сохранить&lt;/div&gt;'</span>
+</code></pre>
+<p>Если CSS-класс задаётся с помощью массива, можно использовать именованные ключи массива для обозначения логического
+предназначения класса. В этом случае класс с таким же ключом будет проигнорирован во время использования
+<code>Html::addCssClass()</code>:</p>
+<pre><code class="hljs php language-php">$options = [
+    <span class="hljs-string">'class'</span> =&gt; [
+        <span class="hljs-string">'btn'</span>,
+        <span class="hljs-string">'theme'</span> =&gt; <span class="hljs-string">'btn-default'</span>,
+    ]
+];
+
+Html::addCssClass($options, [<span class="hljs-string">'theme'</span> =&gt; <span class="hljs-string">'btn-success'</span>]); <span class="hljs-comment">// ключ 'theme' уже использован</span>
+
+<span class="hljs-keyword">echo</span> Html::tag(<span class="hljs-string">'div'</span>, <span class="hljs-string">'Сохранить'</span>, $options);
+<span class="hljs-comment">// отобразит '&lt;div class="btn btn-default"&gt;Сохранить&lt;/div&gt;'</span>
+</code></pre>
+<p>CSS-стили могут быть установлены схожим образом с помощью атрибута <code>style</code>:</p>
+<pre><code class="hljs php language-php">$options = [<span class="hljs-string">'style'</span> =&gt; [<span class="hljs-string">'width'</span> =&gt; <span class="hljs-string">'100px'</span>, <span class="hljs-string">'height'</span> =&gt; <span class="hljs-string">'100px'</span>]];
+
+<span class="hljs-comment">// в результате будет style="width: 100px; height: 200px; position: absolute;"</span>
+Html::addCssStyle($options, <span class="hljs-string">'height: 200px; position: absolute;'</span>);
+
+<span class="hljs-comment">// в результате будет style="position: absolute;"</span>
+Html::removeCssStyle($options, [<span class="hljs-string">'width'</span>, <span class="hljs-string">'height'</span>]);
+</code></pre>
+<p>При использовании метода <a href="./yii-helpers-basehtml.html#addCssStyle()-detail">addCssStyle()</a> можно указать массив, пары ключ-значение
+которого соответствуют названиям и значениям CSS-свойств, или строку, например <code>width: 100px; height: 200px;</code>. Эти два
+формата могут быть преобразованы друг в друга с помощью методов
+<a href="./yii-helpers-basehtml.html#cssStyleFromArray()-detail">cssStyleFromArray()</a> и
+<a href="./yii-helpers-basehtml.html#cssStyleToArray()-detail">cssStyleToArray()</a>. Метод
+<a href="./yii-helpers-basehtml.html#removeCssStyle()-detail">removeCssStyle()</a> принимает на вход массив атрибутов, которые следует удалить.
+Если удаляется всего один атрибут, его можно передать строкой.</p>
+<h3>Экранирование контента  <span id="encoding-and-decoding-content"></span><a href="#encoding-and-decoding-content" class="hashlink">&para;</a></h3><p>Для корректного и безопасного отображения контента специальные символы в HTML-коде должны быть экранированы. В чистом
+PHP это осуществляется с помощью функций <a href="https://secure.php.net/manual/ru/function.htmlspecialchars.php">htmlspecialchars</a>
+и <a href="https://secure.php.net/manual/ru/function.htmlspecialchars-decode.php">htmlspecialchars_decode</a>. Проблема использования
+этих функций заключается в том, что приходится указывать кодировку и дополнительные флаги во время каждого вызова.
+Поскольку флаги всё время одинаковы, а кодировка остаётся одной и той же в пределах приложения, Yii в целях
+безопасности предоставляет два компактных и простых в использовании метода:</p>
+<pre><code class="hljs php language-php">$userName = Html::encode($user-&gt;name);
+<span class="hljs-keyword">echo</span> $userName;
+
+$decodedUserName = Html::decode($userName);
+</code></pre>
+<h2>Формы  <span id="forms"></span><a href="#forms" class="hashlink">&para;</a></h2><p>Разметка форм состоит из повторяющихся действий и часто приводит к ошибкам, поэтому есть целый набор методов, которые
+помогают справиться с этой задачей.</p>
+<blockquote class="note"><p><strong>Примечание: </strong>Рассмотрите возможность использования <a href="./yii-widgets-activeform.html">ActiveForm</a>, если работаете с моделями и
+  нуждаетесь в валидации данных.</p>
+</blockquote>
+<h3>Создание форм  <span id="creating-forms"></span><a href="#creating-forms" class="hashlink">&para;</a></h3><p>Открывающий тэг формы может быть выведен с помощью метода <a href="./yii-helpers-basehtml.html#beginForm()-detail">beginForm()</a> как показано
+ниже:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?</span>= Html::beginForm([<span class="hljs-string">'order/update'</span>, <span class="hljs-string">'id'</span> =&gt; $id], <span class="hljs-string">'post'</span>, [<span class="hljs-string">'enctype'</span> =&gt; <span class="hljs-string">'multipart/form-data'</span>]) <span class="hljs-meta">?&gt;</span>
+</code></pre>
+<p>Первый аргумент - это URL-адрес, на который будет отправлена форма. Он может быть задан в виде Yii-маршрута и
+параметров, подходящих для передачи в метод <a href="./yii-helpers-baseurl.html#to()-detail">Url::to()</a>. Второй аргумент - способ отправки
+данных: по умолчанию это <code>post</code>. Третий аргумент - массив атрибутов формы. В данном примере мы изменяем способ
+кодирования данных в POST-запросе на <code>multipart/form-data</code>. Это необходимо для загрузки файлов.</p>
+<p>Закрыть тэг формы можно простым кодом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?</span>= Html::endForm() <span class="hljs-meta">?&gt;</span>
+</code></pre>
+<h3>Кнопки  <span id="buttons"></span><a href="#buttons" class="hashlink">&para;</a></h3><p>Для формирования кнопок можно использовать следующий код:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?</span>= Html::button(<span class="hljs-string">'Нажми меня!'</span>, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'teaser'</span>]) <span class="hljs-meta">?&gt;</span>
+<span class="hljs-meta">&lt;?</span>= Html::submitButton(<span class="hljs-string">'Отправить'</span>, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'submit'</span>]) <span class="hljs-meta">?&gt;</span>
+<span class="hljs-meta">&lt;?</span>= Html::resetButton(<span class="hljs-string">'Сбросить'</span>, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'reset'</span>]) <span class="hljs-meta">?&gt;</span>
+</code></pre>
+<p>Первый аргумент во всех трёх методах - это название кнопки, а второй - её атрибуты. Название кнопки не экранируется,
+поэтому при получении данных от конечных пользователей экранируйте их с помощью метода
+<a href="./yii-helpers-basehtml.html#encode()-detail">Html::encode()</a>.</p>
+<h3>Поля ввода  <span id="input-fields"></span><a href="#input-fields" class="hashlink">&para;</a></h3><p>Методы формирования полей ввода делятся на две группы. Первые начинаются со слова <code>active</code> и называются "active inputs",
+а вторые не содержат в своём названии слова <code>active</code>. "Active inputs" формируют поля ввода, которые получают данные из
+указанного атрибута модели, в то время как обычные методы формирования полей ввода непосредственно принимают данные.</p>
+<p>Наиболее общие методы для формирования полей ввода:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// тип, название поля ввода, установленное в поле значение, атрибуты поля ввода</span>
+<span class="hljs-meta">&lt;?</span>= Html::input(<span class="hljs-string">'text'</span>, <span class="hljs-string">'username'</span>, $user-&gt;name, [<span class="hljs-string">'class'</span> =&gt; $username]) <span class="hljs-meta">?&gt;</span>
+
+<span class="hljs-comment">// тип, модель, атрибут модели, атрибуты поля ввода</span>
+<span class="hljs-meta">&lt;?</span>= Html::activeInput(<span class="hljs-string">'text'</span>, $user, <span class="hljs-string">'name'</span>, [<span class="hljs-string">'class'</span> =&gt; $username]) <span class="hljs-meta">?&gt;</span>
+</code></pre>
+<p>Если вам заранее известен тип поля ввода, удобнее будет пользоваться этими вспомогательными методами:</p>
+<ul>
+<li><a href="./yii-helpers-basehtml.html#buttonInput()-detail">yii\helpers\Html::buttonInput()</a></li>
+<li><a href="./yii-helpers-basehtml.html#submitInput()-detail">yii\helpers\Html::submitInput()</a></li>
+<li><a href="./yii-helpers-basehtml.html#resetInput()-detail">yii\helpers\Html::resetInput()</a></li>
+<li><a href="./yii-helpers-basehtml.html#textInput()-detail">yii\helpers\Html::textInput()</a>, <a href="./yii-helpers-basehtml.html#activeTextInput()-detail">yii\helpers\Html::activeTextInput()</a></li>
+<li><a href="./yii-helpers-basehtml.html#hiddenInput()-detail">yii\helpers\Html::hiddenInput()</a>, <a href="./yii-helpers-basehtml.html#activeHiddenInput()-detail">yii\helpers\Html::activeHiddenInput()</a></li>
+<li><a href="./yii-helpers-basehtml.html#passwordInput()-detail">yii\helpers\Html::passwordInput()</a> / <a href="./yii-helpers-basehtml.html#activePasswordInput()-detail">yii\helpers\Html::activePasswordInput()</a></li>
+<li><a href="./yii-helpers-basehtml.html#fileInput()-detail">yii\helpers\Html::fileInput()</a>, <a href="./yii-helpers-basehtml.html#activeFileInput()-detail">yii\helpers\Html::activeFileInput()</a></li>
+<li><a href="./yii-helpers-basehtml.html#textarea()-detail">yii\helpers\Html::textarea()</a>, <a href="./yii-helpers-basehtml.html#activeTextarea()-detail">yii\helpers\Html::activeTextarea()</a></li>
+</ul>
+<p>Сигнатура методов для формирования радио-переключателей и чекбоксов немного отличается: </p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?</span>= Html::radio(<span class="hljs-string">'agree'</span>, <span class="hljs-keyword">true</span>, [<span class="hljs-string">'label'</span> =&gt; <span class="hljs-string">'Я согласен'</span>]) <span class="hljs-meta">?&gt;</span>
+<span class="hljs-meta">&lt;?</span>= Html::activeRadio($model, <span class="hljs-string">'agree'</span>, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'agreement'</span>]) <span class="hljs-meta">?&gt;</span>
+
+<span class="hljs-meta">&lt;?</span>= Html::checkbox(<span class="hljs-string">'agree'</span>, <span class="hljs-keyword">true</span>, [<span class="hljs-string">'label'</span> =&gt; <span class="hljs-string">'Я согласен'</span>]) <span class="hljs-meta">?&gt;</span>
+<span class="hljs-meta">&lt;?</span>= Html::activeCheckbox($model, <span class="hljs-string">'agree'</span>, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'agreement'</span>]) <span class="hljs-meta">?&gt;</span>
+</code></pre>
+<p>Выпадающие и обычные списки могут быть сформированы следующим образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?</span>= Html::dropDownList(<span class="hljs-string">'list'</span>, $currentUserId, ArrayHelper::map($userModels, <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>)) <span class="hljs-meta">?&gt;</span>
+<span class="hljs-meta">&lt;?</span>= Html::activeDropDownList($users, <span class="hljs-string">'id'</span>, ArrayHelper::map($userModels, <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>)) <span class="hljs-meta">?&gt;</span>
+
+<span class="hljs-meta">&lt;?</span>= Html::listBox(<span class="hljs-string">'list'</span>, $currentUserId, ArrayHelper::map($userModels, <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>)) <span class="hljs-meta">?&gt;</span>
+<span class="hljs-meta">&lt;?</span>= Html::activeListBox($users, <span class="hljs-string">'id'</span>, ArrayHelper::map($userModels, <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>)) <span class="hljs-meta">?&gt;</span>
+</code></pre>
+<p>Первый аргумент - это значение атрибута <code>name</code> для поля ввода, второй - выбранное в нём значение и, наконец, 
+третий аргумент - это массив, ключами которого является список значений для формирования списка, а значениями массива
+являются названия пунктов в нём.</p>
+<p>Если вы хотите сделать в списке доступными для выбора несколько вариантов, хорошим выбором будет список чекбоксов:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?</span>= Html::checkboxList(<span class="hljs-string">'roles'</span>, [<span class="hljs-number">16</span>, <span class="hljs-number">42</span>], ArrayHelper::map($roleModels, <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>)) <span class="hljs-meta">?&gt;</span>
+<span class="hljs-meta">&lt;?</span>= Html::activeCheckboxList($user, <span class="hljs-string">'role'</span>, ArrayHelper::map($roleModels, <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>)) <span class="hljs-meta">?&gt;</span>
+</code></pre>
+<p>Если нет, используйте радио-переключатель:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?</span>= Html::radioList(<span class="hljs-string">'roles'</span>, [<span class="hljs-number">16</span>, <span class="hljs-number">42</span>], ArrayHelper::map($roleModels, <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>)) <span class="hljs-meta">?&gt;</span>
+<span class="hljs-meta">&lt;?</span>= Html::activeRadioList($user, <span class="hljs-string">'role'</span>, ArrayHelper::map($roleModels, <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>)) <span class="hljs-meta">?&gt;</span>
+</code></pre>
+<h3>Тэги label и отображение ошибок  <span id="labels-and-errors"></span><a href="#labels-and-errors" class="hashlink">&para;</a></h3><p>Так же как и для полей ввода, есть два метода формирования тэгов label для форм. Есть "active label", считывающий
+данные из модели и обычный тэг "label", принимающий на вход непосредственно сами данные:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?</span>= Html::label(<span class="hljs-string">'Имя пользователя'</span>, <span class="hljs-string">'username'</span>, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'label username'</span>]) <span class="hljs-meta">?&gt;</span>
+<span class="hljs-meta">&lt;?</span>= Html::activeLabel($user, <span class="hljs-string">'username'</span>, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'label username'</span>])
+</code></pre>
+<p>Для отображения общего списка ошибок формы на основе модели или моделей можно использовать следующий подход:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?</span>= Html::errorSummary($posts, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'errors'</span>]) <span class="hljs-meta">?&gt;</span>
+</code></pre>
+<p>Для отображения одной отдельной ошибки:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?</span>= Html::error($post, <span class="hljs-string">'title'</span>, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'error'</span>]) <span class="hljs-meta">?&gt;</span>
+</code></pre>
+<h3>Атрибуты name и value для полей ввода  <span id="input-names-and-values"></span><a href="#input-names-and-values" class="hashlink">&para;</a></h3><p>Также имеются методы для получения значений атрибутов id, name и value для полей ввода, сформированных на основе
+моделей. Эти методы используются в основном внутренними механизмами, но иногда могут оказаться подходящими и для прямого
+использования:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// Post[title]</span>
+<span class="hljs-keyword">echo</span> Html::getInputName($post, <span class="hljs-string">'title'</span>);
+
+<span class="hljs-comment">// post-title</span>
+<span class="hljs-keyword">echo</span> Html::getInputId($post, <span class="hljs-string">'title'</span>);
+
+<span class="hljs-comment">// моё первое сообщение</span>
+<span class="hljs-keyword">echo</span> Html::getAttributeValue($post, <span class="hljs-string">'title'</span>);
+
+<span class="hljs-comment">// $post-&gt;authors[0]</span>
+<span class="hljs-keyword">echo</span> Html::getAttributeValue($post, <span class="hljs-string">'[0]authors[0]'</span>);
+</code></pre>
+<p>В вышеприведённом коде первый аргумент - это модель, а второй аргумент - выражение для поиска атрибута модели. В самом
+простом случае оно представляет собой название атрибута модели, а вообще это может быть название, которому предшествует
+(и/или после которого следует) индекс массива. Такой формат используется в основном для табличного ввода данных:</p>
+<ul>
+<li><code>[0]content</code> используется для табличного ввода данных, чтобы указать на атрибут "content" первой модели табличного
+ввода;</li>
+<li><code>dates[0]</code> указывает на первый элемент массива, с помощью которого задан атрибут модели "dates";</li>
+<li><code>[0]dates[0]</code> указывает на первый элемент массива, с помощью которого задан атрибут "dates" первой модели табличного
+ввода.</li>
+</ul>
+<p>Для того, чтобы получить название атрибута модели в чистом виде (без суффиксов и префиксов), можно использовать
+следующий подход:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// dates</span>
+<span class="hljs-keyword">echo</span> Html::getAttributeName(<span class="hljs-string">'dates[0]'</span>);
+</code></pre>
+<h2>Подключение встроенных стилей и скриптов  <span id="styles-and-scripts"></span><a href="#styles-and-scripts" class="hashlink">&para;</a></h2><p>Для формирования встроенных скриптов и стилей есть два метода:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?</span>= Html::style(<span class="hljs-string">'.danger { color: #f00; }'</span>, [<span class="hljs-string">'media'</span> =&gt; <span class="hljs-string">'print'</span>]) <span class="hljs-meta">?&gt;</span>
+
+Результатом<span class="hljs-string">"print"</span>&gt;.danger { color: <span class="hljs-comment">#f00; }&lt;/style&gt;</span>
+
+
+<span class="hljs-meta">&lt;?</span>= Html::script(<span class="hljs-string">'alert("Привет!");'</span>) <span class="hljs-meta">?&gt;</span>
+
+Результатом<span class="hljs-string">"Привет!"</span>);&lt;/script&gt;
+</code></pre>
+<p>Если вы хотите подключить внешний CSS-файл:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?</span>= Html::cssFile(<span class="hljs-string">'@web/css/ie5.css'</span>, [<span class="hljs-string">'condition'</span> =&gt; <span class="hljs-string">'IE 5'</span>]) <span class="hljs-meta">?&gt;</span>
+
+В<span class="hljs-number">5</span>]&gt;
+    &lt;link href=<span class="hljs-string">"http://example.com/css/ie5.css"</span> /&gt;
+&lt;![<span class="hljs-keyword">endif</span>]--&gt;
+</code></pre>
+<p>Первый аргумент - URL-адрес. Второй - массив настроек. Помимо обычных настроек можно указать следующие:</p>
+<ul>
+<li><code>condition</code> для оборачивания тэга <code>&lt;link</code> с помощью условных комментариев с определённым условием. Надеемся, что вам
+никогда не понадобятся условные комментарии ;)</li>
+<li><code>noscript</code> может быть установлен в значение <code>true</code>, чтобы обернуть тэг <code>&lt;link</code> с помощью тэга <code>&lt;noscript&gt;</code>, таким
+образом скрипт будет подключён только в том случае, если у пользователя в браузере нет поддержки JavaScript или же 
+пользователь сам отключил его.</li>
+</ul>
+<p>Для подключения JavaScript-файла используйте код:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?</span>= Html::jsFile(<span class="hljs-string">'@web/js/main.js'</span>) <span class="hljs-meta">?&gt;</span>
+</code></pre>
+<p>Как и в случае с CSS, первый аргумент указывает ссылку на файл, который должен быть подключен. Настройки задаются во
+втором аргументе. Можно указать настройку <code>condition</code> таким же образом, каким она указывается для метода <code>cssFile</code>.</p>
+<h2>Ссылки  <span id="hyperlinks"></span><a href="#hyperlinks" class="hashlink">&para;</a></h2><p>Существует удобный метод формирования ссылок:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?</span>= Html::a(<span class="hljs-string">'Профиль'</span>, [<span class="hljs-string">'user/view'</span>, <span class="hljs-string">'id'</span> =&gt; $id], [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'profile-link'</span>]) <span class="hljs-meta">?&gt;</span>
+</code></pre>
+<p>Первый аргумент - это текст ссылки. Он не экранируется, поэтому при использовании данных, полученных от конечных 
+пользователей, необходимо экранировать его с помощью <code>Html::encode()</code>. Второй аргумент - это содержимое атрибута <code>href</code>
+тэга <code>&lt;a</code>. Смотрите <a href="guide-helper-url.html">Url::to()</a> для получения подробностей относительно значений, которые могут быть
+переданы в качестве второго аргумента. Третий аргумент - массив атрибутов для тэга.</p>
+<p>Если нужно сформировать ссылку <code>mailto</code>, можно использовать следующий подход:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?</span>= Html::mailto(<span class="hljs-string">'Обратная связь'</span>, <span class="hljs-string">'admin@example.com'</span>) <span class="hljs-meta">?&gt;</span>
+</code></pre>
+<h2>Изображения  <span id="images"></span><a href="#images" class="hashlink">&para;</a></h2><p>Для формирования тэга изображения используйте следующий код:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?</span>= Html::img(<span class="hljs-string">'@web/images/logo.png'</span>, [<span class="hljs-string">'alt'</span> =&gt; <span class="hljs-string">'Наш логотип'</span>]) <span class="hljs-meta">?&gt;</span>
+
+в<span class="hljs-string">"http://example.com/images/logo.png"</span> alt=<span class="hljs-string">"Наш логотип"</span> /&gt;
+</code></pre>
+<p>Помимо <a href="guide-concept-aliases.html">псевдонимов</a> первый аргумент может принимать маршруты, параметры и URL-адреса таким же образом
+как и метод <a href="guide-helper-url.html">Url::to()</a>.</p>
+<h2>Списки  <span id="lists"></span><a href="#lists" class="hashlink">&para;</a></h2><p>Неупорядоченные списки могут быть сформированы следующим образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?</span>= Html::ul($posts, [<span class="hljs-string">'item'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($item, $index)</span> </span>{
+    <span class="hljs-keyword">return</span> Html::tag(
+        <span class="hljs-string">'li'</span>,
+        <span class="hljs-keyword">$this</span>-&gt;render(<span class="hljs-string">'post'</span>, [<span class="hljs-string">'item'</span> =&gt; $item]),
+        [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'post'</span>]
+    );
+}]) <span class="hljs-meta">?&gt;</span>
+</code></pre>
+<p>Для формирования упорядоченных списков используйте <code>Html::ol()</code>.</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 09 Dec 2020 00:16:04 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

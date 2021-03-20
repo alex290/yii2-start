@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/1728b664/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9c5d0894/solarized_light.css" rel="stylesheet">
+<link href="./assets/f2ce5bcd/style.css" rel="stylesheet">
+<script src="./assets/bbf84a7a/jquery.js"></script>
+<script src="./assets/1728b664/js/bootstrap.js"></script>
+<script src="./assets/fd63b446/jssearch.js"></script>    <title>Модули - Структура приложения - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1042" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1042-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1042-collapse" class="collapse navbar-collapse"><ul id="w1043" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1044" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1026" data-toggle="collapse" data-parent="#navigation">Введение <b class="caret"></b></a><div id="navigation-1026" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">О Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Обновление с версии 1.1</a></div>
+<a class="list-group-item" href="#navigation-1027" data-toggle="collapse" data-parent="#navigation">Первое знакомство <b class="caret"></b></a><div id="navigation-1027" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Установка Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Запуск приложения</a>
+<a class="list-group-item" href="./guide-start-hello.html">Говорим «привет»</a>
+<a class="list-group-item" href="./guide-start-forms.html">Работа с формами</a>
+<a class="list-group-item" href="./guide-start-databases.html">Работа с базами данных</a>
+<a class="list-group-item" href="./guide-start-gii.html">Генерация кода при помощи Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Что дальше?</a></div>
+<a class="list-group-item active" href="#navigation-1028" data-toggle="collapse" data-parent="#navigation">Структура приложения <b class="caret"></b></a><div id="navigation-1028" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-structure-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Входные скрипты</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Приложения</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Компоненты приложения</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-structure-models.html">Модели</a>
+<a class="list-group-item" href="./guide-structure-views.html">Представления</a>
+<a class="list-group-item active" href="./guide-structure-modules.html">Модули</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Фильтры</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Виджеты</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Расширения</a></div>
+<a class="list-group-item" href="#navigation-1029" data-toggle="collapse" data-parent="#navigation">Обработка запросов <b class="caret"></b></a><div id="navigation-1029" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Разбор и генерация URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Запросы</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Ответы</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Сессии и куки</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Обработка ошибок</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Логирование</a></div>
+<a class="list-group-item" href="#navigation-1030" data-toggle="collapse" data-parent="#navigation">Основные понятия <b class="caret"></b></a><div id="navigation-1030" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Компоненты</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Свойства</a>
+<a class="list-group-item" href="./guide-concept-events.html">События</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Поведения</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Конфигурации</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Псевдонимы</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Автозагрузка классов</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item" href="#navigation-1031" data-toggle="collapse" data-parent="#navigation">Работа с базами данных <b class="caret"></b></a><div id="navigation-1031" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Объекты доступа к данным (DAO)</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Построитель запросов</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Миграции</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide-ru/README.md">Sphinx</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-redis/blob/master/docs/guide-ru/README.md">Redis</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide-ru/README.md">MongoDB</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-elasticsearch/blob/master/docs/guide-ru/README.md">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1032" data-toggle="collapse" data-parent="#navigation">Получение данных от пользователя <b class="caret"></b></a><div id="navigation-1032" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Создание форм</a>
+<a class="list-group-item" href="./guide-input-validation.html">Валидация</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Загрузка файлов</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Табличный ввод</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Работа с несколькими моделями</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">Расширение ActiveForm на стороне клиента</a></div>
+<a class="list-group-item" href="#navigation-1033" data-toggle="collapse" data-parent="#navigation">Отображение данных <b class="caret"></b></a><div id="navigation-1033" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Форматирование данных</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Постраничная разбивка</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Сортировка</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Провайдеры данных</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Виджеты для данных</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Работа с клиентскими скриптами</a>
+<a class="list-group-item" href="./guide-output-theming.html">Темизация</a></div>
+<a class="list-group-item" href="#navigation-1034" data-toggle="collapse" data-parent="#navigation">Безопасность <b class="caret"></b></a><div id="navigation-1034" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-security-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Авторизация</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Работа с паролями</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">Криптография</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-ru/README.md">Клиенты авторизации</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Лучшие практики</a></div>
+<a class="list-group-item" href="#navigation-1035" data-toggle="collapse" data-parent="#navigation">Кеширование <b class="caret"></b></a><div id="navigation-1035" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-caching-data.html">Кэширование данных</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Кэширование фрагментов</a>
+<a class="list-group-item" href="./guide-caching-page.html">Кэширование страниц</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP кэширование</a></div>
+<a class="list-group-item" href="#navigation-1036" data-toggle="collapse" data-parent="#navigation">Веб-сервисы REST <b class="caret"></b></a><div id="navigation-1036" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Быстрый старт</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Ресурсы</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Контроллеры</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Роутинг</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Форматирование ответа</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Аутентификация</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Ограничение частоты запросов</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Версионирование</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Обработка ошибок</a></div>
+<a class="list-group-item" href="#navigation-1037" data-toggle="collapse" data-parent="#navigation">Инструменты разработчика <b class="caret"></b></a><div id="navigation-1037" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide/README.md">Отладочная панель и отладчик</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide/README.md">Генерация кода с Gii</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">Генератор документации API</a></div>
+<a class="list-group-item" href="#navigation-1038" data-toggle="collapse" data-parent="#navigation">Тестирование <b class="caret"></b></a><div id="navigation-1038" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Настройка тестового окружения</a>
+<a class="list-group-item" href="./guide-test-unit.html">Модульные тесты</a>
+<a class="list-group-item" href="./guide-test-functional.html">Функциональные тесты</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Приёмочные тесты</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Фикстуры</a></div>
+<a class="list-group-item" href="#navigation-1039" data-toggle="collapse" data-parent="#navigation">Специальные темы <b class="caret"></b></a><div id="navigation-1039" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/README.md">Шаблон приложения advanced</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Создание приложения с нуля</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Консольные команды</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Встроенные валидаторы</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Интернационализация</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Отправка почты</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Оптимизация производительности</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Окружение виртуального хостинга</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Шаблонизаторы</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Работа со сторонним кодом</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">Использование Yii в качестве микро-framework&#039;а</a></div>
+<a class="list-group-item" href="#navigation-1040" data-toggle="collapse" data-parent="#navigation">Виджеты <b class="caret"></b></a><div id="navigation-1040" class="submenu panel-collapse collapse"><a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="http://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-ru/README.md">Виджеты Bootstrap</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-ru/README.md">Виджеты Jquery UI</a></div>
+<a class="list-group-item" href="#navigation-1041" data-toggle="collapse" data-parent="#navigation">Хелперы <b class="caret"></b></a><div id="navigation-1041" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Обзор</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url хелпер</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Модули <span id="moduli"></span><a href="#moduli" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#creating-modules">Создание модулей</a></li>
+<li><a href="#using-modules">Использование модулей</a></li>
+<li><a href="#nested-modules">Вложенные модули</a></li>
+<li><a href="#best-practices">Лучшие практики</a></li></ol></div>
+<p>Модули - это законченные программные блоки, состоящие из <a href="guide-structure-models.html">моделей</a>, <a href="guide-structure-views.html">представлений</a>, <a href="guide-structure-controllers.html">контроллеров</a> и других вспомогательных компонентов. При установке модулей в <a href="guide-structure-applications.html">приложение</a>, конечный пользователь получает доступ к их контроллерам. По этой причине модули часто рассматриваются как миниатюрные приложения. В отличие от <a href="guide-structure-applications.html">приложений</a>, модули нельзя развертывать отдельно. Модули должны находиться внутри приложений.</p>
+<h2>Создание модулей  <span id="creating-modules"></span><a href="#creating-modules" class="hashlink">&para;</a></h2><p>Модуль помещается в директорию, которая называется <a href="./yii-base-module.html#$basePath-detail">базовым путем</a> модуля. Так же как и в
+директории приложения, в этой директории существуют поддиректории <code>controllers</code>, <code>models</code>, <code>views</code> и другие, в которых
+размещаются контроллеры, модели, представления и другие элементы. В следующем примере показано примерное содержимое модуля:</p>
+<pre><code class="hljs javascript">forum/
+    Module.php                   файлйлл
+    controllers/                 содержитржититт
+        DefaultController.php    файлйлл
+    models/                      содержитржититт
+    views/                       содержитржититт
+        layouts/                 содержитржититт
+        <span class="hljs-keyword">default</span>/                 содержитржититт
+            index.php            файлйлл
+</code></pre>
+<h3>Классы модулей  <span id="module-classes"></span><a href="#module-classes" class="hashlink">&para;</a></h3><p>Каждый модуль объявляется с помощью уникального класса, который наследуется от <a href="./yii-base-module.html">yii\base\Module</a>. Этот класс должен
+быть помещен в корне <a href="./yii-base-module.html#$basePath-detail">базового пути</a> модуля и поддерживать <a href="guide-concept-autoloading.html">автозагрузку</a>.
+Во время доступа к модулю будет создан один экземпляр соответствующего класса модуля. Как и
+<a href="guide-structure-applications.html">экземпляры приложения</a>, экземпляры модулей нужны, чтобы код модулей мог получить общий
+доступ к данным и компонентам.</p>
+<p>Приведем пример того, как может выглядеть класс модуля:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">modules</span>\<span class="hljs-title">forum</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Module</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Module</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">parent</span>::init();
+
+        <span class="hljs-keyword">$this</span>-&gt;params[<span class="hljs-string">'foo'</span>] = <span class="hljs-string">'bar'</span>;
+        <span class="hljs-comment">// ... остальной инициализирующий код ...</span>
+    }
+}
+</code></pre>
+<p>Если метод <code>init()</code> стал слишком громоздким из-за кода, который задает свойства модуля, эти свойства можно сохранить
+в виде <a href="guide-concept-configurations.html">конфигурации</a>, а затем загрузить в методе <code>init()</code> следующим образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">parent</span>::init();
+    <span class="hljs-comment">// инициализация модуля с помощью конфигурации, загруженной из config.php</span>
+    \Yii::configure(<span class="hljs-keyword">$this</span>, <span class="hljs-keyword">require</span> <span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">'/config.php'</span>);
+}
+</code></pre>
+<p>При этом в конфигурационном файле <code>config.php</code> может быть код следующего вида, аналогичный
+<a href="guide-structure-applications.html#application-configurations">конфигурации приложения</a>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-comment">// список конфигураций компонентов</span>
+    ],
+    <span class="hljs-string">'params'</span> =&gt; [
+        <span class="hljs-comment">// список параметров</span>
+    ],
+];
+</code></pre>
+<h3>Контроллеры в модулях  <span id="controllers-in-modules"></span><a href="#controllers-in-modules" class="hashlink">&para;</a></h3><p>При создании контроллеров модуля принято помещать классы контроллеров в подпространство <code>controllers</code> пространства
+имён класса модуля. Это также подразумевает, что файлы классов контроллеров должны располагаться в директории <code>controllers</code>
+<a href="./yii-base-module.html#$basePath-detail">базового пути</a> модуля. Например, чтобы описать контроллер <code>post</code> в модуле <code>forum</code> из
+предыдущего примера, класс контроллера объявляется следующим образом:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">modules</span>\<span class="hljs-title">forum</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PostController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>Изменить пространство имен классов контроллеров можно задав свойство <a href="./yii-base-module.html#$controllerNamespace-detail">yii\base\Module::$controllerNamespace</a>. Если
+какие-либо контроллеры выпадают из этого пространства имен, доступ к ним можно осуществить, настроив свойство
+<a href="./yii-base-module.html#$controllerMap-detail">yii\base\Module::$controllerMap</a>, аналогично тому, <a href="guide-structure-applications.html#controller-map">как это делается в приложении</a>.</p>
+<h3>Представления в модулях  <span id="views-in-modules"></span><a href="#views-in-modules" class="hashlink">&para;</a></h3><p>Представления модуля также следует поместить в поддиректорию <code>views</code> <a href="./yii-base-module.html#$basePath-detail">базового пути</a>
+модуля. Виды, которые рендерит контроллер модуля, должны располагаться в директории <code>views/ControllerID</code>, где <code>ControllerID</code>
+соответствует <a href="guide-structure-controllers.html#routes">идентификатору контроллера</a>. Например, если контроллер реализуется
+классом <code>PostController</code>, представления следует разместить в поддиректории <code>views/post</code>
+<a href="./yii-base-module.html#$basePath-detail">базового пути</a> модуля.</p>
+<p>В модуле можно задать <a href="guide-structure-views.html#layouts">шаблон</a>, который будет использоваться для рендеринга всех представлений
+контроллерами модуля. По умолчанию шаблон помещается в директорию <code>views/layouts</code>, а свойство <a href="./yii-base-module.html#$layout-detail">yii\base\Module::$layout</a>
+должно указывать на имя этого шаблона. Если не задать свойство <code>layout</code>, модуль будет использовать шаблон, заданный
+в приложении.</p>
+<h3>Консольные команды в модулях  <span id="console-commands-in-modules"></span><a href="#console-commands-in-modules" class="hashlink">&para;</a></h3><p>Ваш модуль также может объявлять команды, которые будут доступны через <a href="guide-tutorial-console.html">консоль</a>.</p>
+<p>Для того, чтобы команда стала доступна, надо изменить свойство <a href="./yii-base-module.html#$controllerNamespace-detail">yii\base\Module::$controllerNamespace</a> для консольного
+режима так, чтобы оно содержало пространство имён ваших команд.</p>
+<p>Этого можно добиться проверяя класс экземпляра приложения Yii в методе <code>init</code> модуля:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">parent</span>::init();
+    <span class="hljs-keyword">if</span> (Yii::$app <span class="hljs-keyword">instanceof</span> \yii\console\Application) {
+        <span class="hljs-keyword">$this</span>-&gt;controllerNamespace = <span class="hljs-string">'app\modules\forum\commands'</span>;
+    }
+}
+</code></pre>
+<p>Ваши команды будут доступны из командной строки как:</p>
+<pre><code class="hljs twig"><span class="xml">yii <span class="hljs-tag">&lt;<span class="hljs-name">module_id</span>&gt;</span>/<span class="hljs-tag">&lt;<span class="hljs-name">command</span>&gt;</span>/<span class="hljs-tag">&lt;<span class="hljs-name">sub_command</span>&gt;</span>
+</span></code></pre>
+<h2>Использование модулей  <span id="using-modules"></span><a href="#using-modules" class="hashlink">&para;</a></h2><p>Чтобы задействовать модуль в приложении, достаточно включить его в свойство <a href="./yii-base-module.html#$modules-detail">modules</a>
+в конфигурации приложения. Следующий код в <a href="guide-structure-applications.html#application-configurations">конфигурации приложения</a>
+задействует модуль <code>forum</code>:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'modules'</span> =&gt; [
+        <span class="hljs-string">'forum'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'app\modules\forum\Module'</span>,
+            <span class="hljs-comment">// ... другие настройки модуля ...</span>
+        ],
+    ],
+]
+</code></pre>
+<blockquote class="info"><p><strong>Информация: </strong>Для подключения консольных команд вашего модуля,
+нужно также включить его в <a href="guide-tutorial-console.html#configuration">конфигурации консольного приложения</a></p>
+</blockquote>
+<p>Свойству <a href="./yii-base-module.html#$modules-detail">modules</a> присваивается массив, содержащий конфигурацию модуля. Каждый ключ массива
+представляет собой <em>идентификатор модуля</em>, который однозначно определяет модуль среди других модулей приложения,
+а соответствующий массив - это <a href="guide-concept-configurations.html">конфигурация</a> для создания модуля.</p>
+<h3>Маршруты  <span id="routes"></span><a href="#routes" class="hashlink">&para;</a></h3><p>Как маршруты приложения используются для обращения к контроллерам приложения, <a href="guide-structure-controllers.html#routes">маршруты</a>
+модуля используются, чтобы обращаться к контроллерам этого модуля. Маршрут контроллера в модуле должен начинаться с
+идентификатора модуля, за которым следуют <a href="guide-structure-controllers.html#controller-ids">идентификатор контроллера</a> и
+<a href="guide-structure-controllers.html#action-ids">идентификатор действия</a>. Например, если в приложении задействован модуль <code>forum</code>,
+то маршрут <code>forum/post/index</code> соответствует действию <code>index</code> контроллера <code>post</code> этого модуля. Если маршрут состоит только
+из идентификатора модуля, то контроллер и действие определяются исходя из свойства <a href="./yii-base-module.html#$defaultRoute-detail">yii\base\Module::$defaultRoute</a>,
+которое по умолчанию равно <code>default</code>. Таким образом, маршрут <code>forum</code> соответствует контроллеру <code>default</code> модуля <code>forum</code>.</p>
+<p>Правила в URL manager для модулей должны быть добавленны перед началом работы <a href="./yii-web-urlmanager.html#parseRequest()-detail">yii\web\UrlManager::parseRequest()</a>, что не 
+позволяет размещать код добавления правил модуля в <code>init()</code>, так как инициализация происходит уже после обработки маршрутов. Таким образом, добавление маршрутов необходимо осуществить в <a href="guide-structure-extensions.html#bootstrapping-classes">предзагрузке
+модуля</a>. Хорошей практикой, также, будет объединение всех правил модуля
+при помощи <a href="./yii-web-groupurlrule.html">yii\web\GroupUrlRule</a>.  </p>
+<p>Если же вы используете модуль для <a href="guide-rest-versioning.html">версионирования API</a>, URL правила необходимо добавлять
+непосредственно в конфигурации <code>urlManager</code> приложения.</p>
+<h3>Получение доступа к модулям  <span id="accessing-modules"></span><a href="#accessing-modules" class="hashlink">&para;</a></h3><p>Зачастую внутри модуля может потребоваться доступ к экземпляру <a href="#module-classes">класса модуля</a>, через который получаются
+идентификатор модуля, его параметры, компоненты, и т. п. Это можно сделать с помощью следующей конструкции:</p>
+<pre><code class="hljs php language-php">$module = MyModuleClass::getInstance();
+</code></pre>
+<p>где <code>MyModuleClass</code> соответствует имени класса модуля, доступ к которому нужно получить. Метод <code>getInstance()</code> возвращает
+запрошенный в данный момент экземпляр класса модуля. Если модуль не запрошен, метод вернет <code>null</code>. Учтите, что обычно
+экземпляры класса модуля вручную не создаются, так как созданный вручную экземпляр будет отличаться от экземпляра,
+созданного Yii в качестве ответа на запрос.</p>
+<blockquote class="info"><p><strong>Информация: </strong>При разработке модуля нельзя исходить из предположения, что модулю будет назначен конкретный идентификатор.
+Это связано с тем, что идентификатор, назначаемый модулю при использовании в приложении или в другом модуле, может быть
+выбран совершенно произвольно. Чтобы получить идентификатор модуля, нужно вначале выбрать экземпляр модуля, как это
+описано выше, а затем получить доступ к идентификатору через свойство <code>$module-&gt;id</code>.</p>
+</blockquote>
+<p>Доступ к экземпляру модуля можно получить следующими способами:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// получение дочернего модуля с идентификатором "forum"</span>
+$module = \Yii::$app-&gt;getModule(<span class="hljs-string">'forum'</span>);
+
+<span class="hljs-comment">// получение модуля, к которому принадлежит запрошенный в настоящее время контроллер</span>
+$module = \Yii::$app-&gt;controller-&gt;module;
+</code></pre>
+<p>Первый подход годится только если известен идентификатор модуля, а второй подход наиболее полезен, если известно,
+какой контроллер запрошен.</p>
+<p>Имея экземпляр модуля можно получить доступ к параметрам и компонентам, зарегистрированным в модуле. Например,</p>
+<pre><code class="hljs php language-php">$maxPostCount = $module-&gt;params[<span class="hljs-string">'maxPostCount'</span>];
+</code></pre>
+<h3>Предзагрузка модулей  <span id="bootstrapping-modules"></span><a href="#bootstrapping-modules" class="hashlink">&para;</a></h3><p>Может потребоваться запускать некоторые модули при каждом запросе. Модуль <a href="./yii-debug-module.html">debug</a> - один из таких
+модулей. Для этого список идентификаторов таких модулей необходимо указать в свойстве
+<a href="./yii-base-application.html#bootstrap()-detail">bootstrap</a> приложения.</p>
+<p>Например, следующая конфигурация приложения обеспечивает загрузку модуля <code>debug</code> при каждом запросе:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'bootstrap'</span> =&gt; [
+        <span class="hljs-string">'debug'</span>,
+    ],
+
+    <span class="hljs-string">'modules'</span> =&gt; [
+        <span class="hljs-string">'debug'</span> =&gt; <span class="hljs-string">'yii\debug\Module'</span>,
+    ],
+]
+</code></pre>
+<h2>Вложенные модули  <span id="nested-modules"></span><a href="#nested-modules" class="hashlink">&para;</a></h2><p>Модули могут вкладываться друг в друга без ограничений по глубине. Иными словами, в модуле содержится модуль, в который
+входит еще один модуль, и т. д. Первый модуль называется <em>родительским</em>, остальные - <em>дочерними</em>. Дочерние модули
+объявляются в свойстве <a href="./yii-base-module.html#$modules-detail">modules</a> родительских модулей. Например,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">modules</span>\<span class="hljs-title">forum</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Module</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Module</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">parent</span>::init();
+
+        <span class="hljs-keyword">$this</span>-&gt;modules = [
+            <span class="hljs-string">'admin'</span> =&gt; [
+                <span class="hljs-comment">// здесь имеет смысл использовать более лаконичное пространство имен</span>
+                <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'app\modules\forum\modules\admin\Module'</span>,
+            ],
+        ];
+    }
+}
+</code></pre>
+<p>Маршрут к контроллеру вложенного модуля должен содержать идентификаторы всех его предков. Например, маршрут
+<code>forum/admin/dashboard/index</code> соответствует действию <code>index</code> контроллера <code>dashboard</code> модуля <code>admin</code>, который в свою
+очередь является дочерним модулем модуля <code>forum</code>.</p>
+<blockquote class="info"><p><strong>Информация: </strong>Метод <a href="./yii-base-module.html#getModule()-detail">getModule()</a> возвращает только те дочерние модули, которые
+принадлежат родительскому модулю непосредственно. В свойстве <a href="./yii-base-application.html#$loadedModules-detail">yii\base\Application::$loadedModules</a> содержится
+список загруженных модулей, в том числе прямых и косвенных потомков, с индексированием по имени класса.</p>
+</blockquote>
+<h2>Лучшие практики <span id="best-practices"></span><a href="#best-practices" class="hashlink">&para;</a></h2><p>Модули лучше всего подходят для крупных приложений, функционал которых можно разделить на несколько групп, в каждой из
+которых функции тесно связаны между собой. Каждая группа функций может разрабатываться в виде модуля, над которым работает
+один разработчик или одна команда.</p>
+<p>Модули - это хороший способ повторно использовать код на уровне групп функций. В виде модулей можно реализовать такую
+функциональность, как управление пользователями или управление комментариями, а затем использовать эти модули в будущих
+разработках.</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 09 Dec 2020 00:16:06 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>
