@@ -168,6 +168,7 @@ class SiteController extends Controller
         // добавляем роль "admin" и даём роли разрешение "adminPermission"
         // а также все разрешения роли "user"
         $admin = $auth->createRole('admin');
+	$admin->description = 'Администратор';
         $auth->add($admin);
         $auth->addChild($admin, $adminPermission);
         $auth->addChild($admin, $user);
